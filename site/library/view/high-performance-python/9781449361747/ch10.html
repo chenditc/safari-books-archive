@@ -1,0 +1,1012 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/high-performance-python/9781449361747/ch10.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781449361747"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch10.html"
+  data-epub-title="High Performance Python" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/high-performance-python/9781449361747/ch10.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781449361747" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch10.html" data-epub-title="High Performance Python" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781449361747"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>10. Clusters and Job Queues - High Performance Python</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content h1,#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important}#sbo-rt-content h2{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content h3{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content h4{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content h5{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section.chapter div.titlepage,#sbo-rt-content section.appendix div.titlepage,#sbo-rt-content section.preface div.titlepage{page-break-inside:avoid;page-break-after:avoid}#sbo-rt-content section.chapter>div.titlepage,#sbo-rt-content section.preface>div.titlepage,#sbo-rt-content section.appendix>div.titlepage{margin-bottom:50px}#sbo-rt-content section.chapter>div.titlepage h2.title,#sbo-rt-content section.preface>div.titlepage h2.title,#sbo-rt-content section.appendix>div.titlepage h2.title{font-size:2em;line-height:1;margin-bottom:15px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div.toc-title{margin-bottom:30px !important}#sbo-rt-content div.part h1{font-size:2em;text-align:center;margin-top:0 !important;padding:50px 0 20px 0;border-bottom:1px solid #000}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:30px 0 30px 0 !important;max-height:100%;page-break-inside:avoid}#sbo-rt-content div.figure-title,#sbo-rt-content div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:30px 0 20px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure{border:none}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div.example{margin:10px 0 15px 0 !important}#sbo-rt-content div.example-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div.example-contents pre.programlisting,#sbo-rt-content div.example-contents pre.screen{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content div.book div.titlepage h1.title{font-size:3em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content div.book div.titlepage h2.subtitle{text-align:center;color:#000;margin:0 !important;font-style:italic;font-family:serif;font-size:1.5em}#sbo-rt-content div.book div.titlepage div.author h3{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div.footnote{font-size:90%}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:1em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content div.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content div.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.calloutlist>dl>dd>div.orderedlist{margin-top:25pt}#sbo-rt-content div.calloutlist>dl>dd>div.orderedlist>ol.orderedlist>li{margin-bottom:25pt}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.warning,#sbo-rt-content div.caution,#sbo-rt-content div.important{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.important{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div.caution{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3,#sbo-rt-content div.important h3{font:bold 90%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.important h3{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:20px 0 0 0 !important;text-align:center;padding:0}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold}#sbo-rt-content div.index dt{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}
+    </style><link rel="canonical" href="/Library/view/high-performance-python/9781449361747/ch10.html"><meta name="description" content="Chapter&nbsp;10.&nbsp;Clusters and Job Queues Questions you’ll be able to answer after this chapter Why are clusters useful? What are the costs of clustering? How can we convert ... "><meta property="og:title" content="10. Clusters and Job Queues"><meta itemprop="isPartOf" content="/library/view/high-performance-python/9781449361747/"><meta itemprop="name" content="10. Clusters and Job Queues"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch10.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781449361747/"><meta property="og:description" itemprop="description" content="Chapter&nbsp;10.&nbsp;Clusters and Job Queues Questions you’ll be able to answer after this chapter Why are clusters useful? What are the costs of clustering? How can we convert ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781449361594"><meta property="og:book:author" itemprop="author" content="Ian Ozsvald"><meta property="og:book:author" itemprop="author" content="Micha Gorelick"><meta property="og:book:tag" itemprop="about" content="Python"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      High Performance Python
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781449361747/chapter/ch10.html" data-for-analytics="9781449361747:ch10.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch10.html&amp;text=High%20Performance%20Python&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch10.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch10.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%2010.%20Clusters%20and%20Job%20Queues&amp;body=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch10.html%0D%0Afrom%20High%20Performance%20Python%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch09.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">9. The multiprocessing module</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch11.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">11. Using Less RAM</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><section class="chapter" epub:type="chapter" id="clustering"><div class="titlepage"><div><div><h2 class="title">Chapter&nbsp;10.&nbsp;Clusters and Job Queues</h2></div></div></div><div class="sidebar"><div class="sidebar-title">Questions you’ll be able to answer after this chapter</div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+Why are clusters useful?
+</li><li class="listitem">
+What are the costs of clustering?
+</li><li class="listitem">
+How can we convert a multiprocessing solution into a clustered solution?
+</li><li class="listitem">
+How does IPython Cluster work?
+</li><li class="listitem">
+How does NSQ help with making robust production systems?
+</li></ul></div></div><p>A cluster is commonly recognized to be a collection of computers working
+together to solve a common task, it could be viewed from the outside as a larger
+single system.</p><p>In the 1990s the term Beowulf Cluster
+<sup>[<a id="id820094" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820094" class="footnote">78</a>]</sup> popularized the notion
+of using a cluster of commodity PCs on a local area network for clustered
+processing. Google
+<sup>[<a id="id820108" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820108" class="footnote">79</a>]</sup> later popularized the
+idea of clusters of commodity PCs in their data centers, particularly for
+running map/reduce tasks. At the other end of the scale the TOP500
+<sup>[<a id="id820104" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820104" class="footnote">80</a>]</sup> project ranks the most powerful
+computer systems each year, typically these have a clustered design and the
+fastest machines all use Linux.</p><p>Amazon Webservices (AWS) is commonly used for both engineering a production cluster in the cloud and for building on-demand clusters for short-lived tasks like machine learning. With AWS you could buy sets of 8 Intel Xeon cores with 60GB of RAM for $1.68USD each per hour, alongside 244GB RAM machines and machines with GPUs. Look at <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clustering-ipython">Using IPython Parallel to support research</a> and the StarCluster package if you’d like to explore AWS for ad-hoc clusters for compute-heavy tasks.</p><p>Different computing tasks require different configurations, sizes and
+capabilities in a cluster, I’ll define some common scenarios in this chapter.</p><p><span class="emphasis"><em>Before</em></span> you move to a clustered solution do make sure that you have:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+Profiled your system so you understand the bottlenecks
+</li><li class="listitem">
+Exploited compiler solutions like <code class="literal">Cython</code>
+</li><li class="listitem">
+Exploited multiple cores on a single machine (possibly a big machine with many cores)
+</li><li class="listitem">
+Exploited techniques for using less RAM
+</li></ul></div><p>Keeping your system to one machine (even if the “one machine” is a really beefy computer with lots of RAM and many CPUs) will make your life easier. Move to a cluster if you really need a <span class="emphasis"><em>lot</em></span> of CPUs or the ability to process data from disks in parallel or you have production needs like resiliency and speed of response.</p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_benefits_of_clustering">Benefits of clustering</h2></div></div></div><p>The most obvious benefit of a cluster is that you can easily
+scale computing requirements - if you need to process more data or to get an
+answer quicker you just add more machines (or “nodes”).</p><p>By adding machines you can also improve reliability - each machine’s components have a certain likelihood of
+failing and with a good design the failure of a number of components will
+not stop the operation of the cluster.</p><p>Clusters are also used to create systems that scale dynamically - a common use
+case is to cluster a set of servers that process web requests (or associated
+data - e.g. resizing user photos, transcoding video or transcribing speech) and
+to activate more servers as demand increases at certain times of the day.</p><p>Dynamic scaling is a very cost-effective way of dealing with non-uniform usage
+patterns, as long as the machine activation time is fast enough to deal with the
+speed of changing demand.</p><p>A subtler benefit of clustering is that clusters can be separated geographically
+but still centrally controlled. If one geographic area suffers an outage (e.g.
+flood or power loss) then the other cluster can continue to work, perhaps with
+more processing units being added to handle the demand. Clusters also allow you
+to run heterogeneous software environments (e.g. different versions of operating
+systems and processing software) which <span class="emphasis"><em>might</em></span> improve robustness of the overall
+system - note that this is definitely an expert-level topic!</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_clusters_can_introduce_more_pain_than_you_might_expect">Clusters can introduce more pain than you might expect</h2></div></div></div><p>Moving to a clustered solution requires a change in thinking, this is an
+evolution of the change in thinking required when you move from serial to
+parallel code that we introduced back in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch09.html">Chapter&nbsp;9</a>. Suddenly you
+have to consider what happens when you have more than one machine - you have
+latency between machines, you need to know if your other machines are working and you need to
+keep all the machines running the same version of your software. System administration is probably your biggest challenge.</p><p>In addition,
+you normally have to think hard about the algorithms you are implementing and
+what happens once you have all these additional moving parts which may need to
+stay in sync.  This additional planning can impose a heavy mental tax, it is
+likely to distract you from your core task and once a system grows large enough
+you’ll probably require a dedicated engineer to join your team.</p><div class="note"><h3 class="title">Note</h3><p>The reason why we’ve tried to focus on using 1 machine efficiently in this book
+is because both Micha and I believe that life is easier if you’re only dealing
+with 1 computer rather than a collection (though we confess it can be <span class="emphasis"><em>way</em></span> more
+fun to play with a cluster - until it breaks). If you can scale vertically (by
+buying more RAM or more CPUs) then it is worth investigating this approach in
+favor of clustering. Your processing needs may of course exceed what’s possible
+with vertical scaling. The robustness of a cluster may be more important than
+having a single machine. If you’re a single person on this task then do realise
+that running a cluster will suck some of your time.</p></div><p>When designing a clustered solution you’ll need to remember that each machine’s
+configuration might be different (each machine will have a different load and
+different local data) - how will you get all the right data onto the machine
+that’s processing your job? Does the latency involved in moving the job and data
+amount to a problem? Do your jobs need to communicate partial results to each
+other? What happens if a process fails or the machine dies or a hardware wipes
+itself when several jobs are running? Failures can be introduced if you don’t
+consider these questions.</p><p>You should also consider that failures <span class="emphasis"><em>can be acceptable</em></span> - you probably don’t
+need 99.999% reliability when you’re running a content-based web service, if on
+occasion a job fails (e.g. a picture doesn’t get resized quickly enough) and the
+user is required to reload a page then that’s something that everyone is already
+used to. It might not be the solution you want to give to the user but accepting
+a little bit of failure typically reduces your engineering and management costs
+by a worthwhile margin. On the flip side if a high frequency trading system
+experiences failures then the cost of bad stock market trades could be
+considerable!</p><p>Maintaining a fixed infrastructure can become expensive. Machines are relatively
+cheap to purchase but they have an awful habbit of going wrong - automatic
+software upgrades can go wrong, network cards fail, disks have write errors,
+power supplies can give spikey power which disrupts data, cosmic rays can flip a
+bit in a RAM module. The more computers you have the more time will be lost to
+dealing with these issues. Sooner or later you’ll want to add a system engineer
+who can deal with these problems, so add another $100,000 to the budget. Using a
+cloud-based cluster can mitigate a lot of these problems (it costs more but you
+don’t have to deal with the hardware maintenance), some cloud providers also
+offer a spot-priced market
+<sup>[<a id="id820363" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820363" class="footnote">81</a>]</sup> for
+cheap but temporary computing resources.</p><p>An insidious problem with a cluster that grows organically over time is that
+perhaps nobody ever documented how to restart it safely if everything gets
+turned off. If you don’t have a documented restart plan then you should assume
+you’ll have to write one at the worst possible time (I’ve been involved in
+debugging this sort of problem on Christmas Eve - this is not the Christmas
+present you want!). At this point you’ll also learn just how long it can take
+each part of a system to run up to speed - it might take minutes for each part
+of a cluster to boot and to start to process jobs, if you have 10 parts that
+operate in succession then it might take an hour to get the whole system running
+from cold. The consequence is that you might have an hour’s worth of backlogged
+data - do you then have the necessary capacity to deal with this backlog in a
+timely fashion?</p><p>Slack behavior can be a cause of expensive mistakes, complex and hard to
+anticipate behavior can also cause expensive unexpected outcomes. Let’s look at
+two high-profile cluster failures and see what lessons we can learn.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_462_million_wall_street_loss_through_poor_cluster_upgrade_strategy">$462 Million Wall Street loss through poor cluster upgrade strategy</h3></div></div></div><p>In 2012 the high frequency trading firm Knigh Capital lost $462 million after a
+bug was introduced during a software upgrade in their cluster
+<sup>[<a id="id820485" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820485" class="footnote">82</a>]</sup>.
+The software made more orders for shares than customers had requested.</p><p>In the trading software and older flag was repurposed for a new function. The
+upgrade was rolled out to 7 of the 8 live machines, the eighth machine used
+older code to handle the flag which resulted in the wrong trades being made. The
+SEC noted that Knight Capital didn’t have a second technician review the upgrade
+and no process to review the upgrade existed.</p><p>The underlying mistake seems to have two causes. The first was that the software
+development process hadn’t remove an obsolete feature so the stale code stayed
+around. The second was that no manual review process was in place to confirm
+that the upgrade was completed successfully.</p><p>Technical debt adds a cost that eventually has to be paid - preferably by taking
+time when not under pressure to remove the debt. Always use unit-tests both when
+building and when refactoring code. The lack of a written checklist during
+system upgrades along with a second pair of eyes could cost you an expensive
+failure. There’s a reason that airplane pilots have to work through a take-off
+checklist - it means that nobody ever skips the important steps, no matter how
+many times they might have done them before.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_skype_8217_s_24_hour_global_outage">Skype’s 24 hour global outage</h3></div></div></div><p>Skype suffered a 24 hour planet-wide failure in 2010
+<sup>[<a id="id820461" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820461" class="footnote">83</a>]</sup>.
+Behind the scenes Skype is supported by a peer-to-peer network. An overload in
+one part of the system (used to process off-line instant messages) caused
+delayed responses from Windows clients, some versions of the Windows client
+didn’t properly handle the delayed responses and would crash - approximately 40%
+of the live clients crashed including 25% of the public SuperNodes. SuperNodes
+are critical to routing data in the network.</p><p>After 25% of the routing capacity fell off of the network (it came back on, but
+slowly), the network overall was under great strain. The crashed Windows client
+nodes were also restarting and attempting to rejoin the network, adding a new
+volume of traffic on the already overloaded system. The SuperNodes have a
+back-off procedure if they experience too much load, so they started to
+shut-down in response to the waves of traffic.</p><p>Overall Skype became mostly unavailable for 24 hours. The recovery process
+involved first setting up hundreds of new MegaSuperNodes configured to deal with
+the increased traffic and then following up with thousands more. Over the coming
+days the network recovered.</p><p>This incident caused a lot of embarrassment for Skype, clearly it also changed
+their focus to damage-limitation for several tense days. Customers would have
+been forced to look for alternative solutions for voice calls which is likely to
+have been a marketing boon for competitors.</p><p>Given the complexity of the network and the escalation of failures that
+occurred, it is likely that this failure would have been hard to both predict
+and to plan for. The reason that <span class="emphasis"><em>all</em></span> of the nodes on the network didn’t fail
+was due to different versions of the software and different platforms - there’s
+a reliability benefit to having a heterogenous network rather than a homogenous
+system.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_common_cluster_designs">Common cluster designs</h2></div></div></div><p>It is common to start with a local ad-hoc cluster of reasonably-equivalent
+machines. You might wonder if you can add old computers to an ad-hoc network but
+typically older CPUs eat a lot of power and run very slowly, so they don’t
+contribute as nearly as much as you might hope compared to one new
+high-specification machine. An in-office cluster requires someone who can
+maintain it. A cluster in Amazon’s EC2, Microft’s Azure or run by an academic
+institution off-loads the hardware support to their team.</p><p>If you have well-understood processing requirements it might make sense to
+design a custom cluster, perhaps one that uses an InfiniBand high-speed
+interconnect in place of gigabit ethernet or one that uses a particular
+configuration of RAID drives that support your read, write or resiliency
+requirements. You might want to combine both CPUs and GPUs on some machines, or
+just to default to CPUs.</p><p>You might want a massively decentralised processing cluster as used by projects
+like <span class="email"><a class="email" href="mailto:SETI@home">SETI@home</a></span> and <span class="email"><a class="email" href="mailto:Folding@home">Folding@home</a></span> through the Berkeley Open Infrastructure for
+Network Computing (BOINC) system
+<sup>[<a id="id820477" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820477" class="footnote">84</a>]</sup>,
+it still shares a centralized co-ordination system but the computing nodes join
+and leave the project in an ad-hoc fashion.</p><p>On top of the hardware design you can run different software architectures.
+Queues of work are the most common and easiest to understand - typically jobs
+are put onto a queue and consumed by a processor, the result of processing might
+go onto another queue for further processing or used as a final result (e.g. so
+it gets added into a database). Message passing systems are slightly different -
+messages get put onto a message bus which are then consumed by other machines,
+the messages might time-out and get deleted and they might be consumed by
+multiple machines. A more complex system is when processes talk to each other
+using Inter Process Communication - this can be considered an expert level
+configuration as there are lots of ways that you can set it up badly which’ll
+result in you losing your sanity. Only go down the IPC route if you really know
+that you need it.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_how_to_start_a_clustered_solution">How to start a clustered solution</h2></div></div></div><p>The easiest way to start a clustered system is to begin with 1 machine that will
+both run the job server and a job processor (just 1 for 1 CPU). If your tasks
+are CPU-bound then run 1 job processor per CPU, if your tasks are I/O bound
+then run several per CPU, if they’re RAM-bound then be careful that you don’t
+run out of RAM. Get your single machine solution working, with 1 processor, then
+add more. Make your code fail in unpredictable ways (e.g. do a <code class="literal">1/0</code> in your
+code, use <code class="literal">kill -9 &lt;pid&gt;</code> on your worker, pull the power from the socket so the
+whole machine dies) - check if your system is robust.</p><p>Obviously you’ll want to do heavier testing than this - a unit-test suite full
+of coding errors and artificial exceptions is good. Personally I like to throw
+in unexpected events - e.g. a processor than runs a set of jobs whilst an
+external process is systematically killing important processes and confirming
+that these all get restarted cleanly by whatever monitoring process you’re
+using.</p><p>Once your have 1 running job processor then add a second. Check that you’re not
+using too much RAM. Do you process jobs twice as fast as before?</p><p>Now introduce a second machine, with just 1 job processor on that new machine
+and 0 job processors on the co-ordinating machine. Does it process jobs as fast
+as when you had the processor on the co-ordination machine? If not, why not? Is
+latency a problem? Do you have different configurations? Maybe you have
+different machine hardware like CPUs, RAM and cache sizes?</p><p>Now add another 9 computers and test to see if you’re processing jobs 10 times
+faster than before. If not, why not? Are network collisions now occurring which
+slow down your overall processing rate?</p><p>To reliably start the cluster’s components when the machine boots I tend to use
+either a cron-job, Circus <sup>[<a id="id820570" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820570" class="footnote">85</a>]</sup>
+or supervisord <sup>[<a id="id820554" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820554" class="footnote">86</a>]</sup> and sometimes Upstart
+<sup>[<a id="id820560" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820560" class="footnote">87</a>]</sup> (which is being replaced by
+systemd). Circus is newer than supervisord, both are Python based. cron is old
+but very reliable if you’re just starting scripts like a monitor process that
+can start sub-processes as required.</p><p>One you have a reliable cluster you might want to introduce a random-killer tool
+like Netflix’s ChaosMonkey <sup>[<a id="id820663" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820663" class="footnote">88</a>]</sup>
+which deliberately kills parts of your system to test them for resiliency. Your
+processes and your hardware will die so it doesn’t hurt to know that you’re
+likely to survive at least the errors you predict might happen.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_ways_to_avoid_pain_when_using_clusters">Ways to avoid pain when using clusters</h2></div></div></div><p>One particularly painful experience I encountered was when a series of queues in
+a clustered system ground to a halt. Later queues were not being consumed, so
+they filled up. That machine ran out of RAM, so the processes died. Earlier
+queues were being processed but couldn’t pass their results to the next queue,
+so they crashed. In the end the first queue was being filled but not consumed,
+so it crashed. After that we were paying for data from a supplier that
+ultimately was discarded. You must sketch out some notes to consider the various
+ways your cluster will die (not <span class="emphasis"><em>if it dies</em></span> but simply <span class="emphasis"><em>what happens when it
+dies</em></span>) - will you lose data (and is this a problem?)? Will you have a large
+backlog that’s too painful to process?</p><p>An easily debugged system <span class="emphasis"><em>probably</em></span> beats having a faster system. Engineer time
+and the cost of down-time is <span class="emphasis"><em>probably</em></span> your larger expense (this isn’t true if
+you’re running a missile defense program but it is probably true for a
+start-up). Rather than shaving a few bytes by using a low level compressed
+binary protocol consider using human-readable text in JSON when passinng
+messages. It does add an overhead for sending the messages and decoding them but
+when you’re left with a partial database after a core computer has caught fire,
+you’ll be glad that you can read the important messages quickly as you work to
+bring the system back online.</p><p>Make sure it is cheap on time and money to deploy updates to the system - both
+operating system updates and new versions of your software. Every time anything
+changes in the cluster you risk the system responding in odd ways if it is in a
+schizophrenic state. Make sure you use a deployment system like Fabric
+<sup>[<a id="id820614" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820614" class="footnote">89</a>]</sup>, Salt
+<sup>[<a id="id820626" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820626" class="footnote">90</a>]</sup>, Chef
+<sup>[<a id="id820636" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820636" class="footnote">91</a>]</sup>, Puppet <sup>[<a id="id820737" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820737" class="footnote">92</a>]</sup> or
+a system image like a Debian <code class="literal">.deb</code> or Redhat <code class="literal">.rpm</code> or an Amazon Machine Image
+<sup>[<a id="id820753" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820753" class="footnote">93</a>]</sup>. Being able to
+robustly deploy an update that upgrades an entire cluster (with a report on any
+problems found) massively reduces stress during difficult times.</p><p>Positive reporting is useful - every day send an email to someone detailing the
+performance of the cluster. If that email doesn’t turn up then that’s a useful
+clue that something’s happened. Probably you want other early warning systems
+that’ll notify you faster - Pingdom <sup>[<a id="id820616" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820616" class="footnote">94</a>]</sup> and
+ServerDensity <sup>[<a id="id820702" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820702" class="footnote">95</a>]</sup> are particularly useful
+here. A Dead Man’s Switch which reacts to the absence of an event is another
+useful backup (e.g. DeadManSwitch <sup>[<a id="id820693" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820693" class="footnote">96</a>]</sup>).</p><p>Reporting to the team on the health of the cluster is very useful. This might be
+an admin page inside a web application or a separate report. Ganglia
+<sup>[<a id="id820686" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820686" class="footnote">97</a>]</sup> is great for this. I’ve seen a Star
+Trek LCARS-like interface running on a spare PC in an office that plays the “red
+alert” sound when problems were detected - that’s particularly effective at
+getting the attention of an entire office. I’ve even seen Arduinos driving
+analogue instruments like old fashioned boiler pressure gauges (they make a nice
+sound when the needle moves!) showing system load. This kind of reporting is
+important so that everyone understands the difference between “normal” and “this
+might ruin Friday night!”.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_three_clustering_solutions">Three clustering solutions</h2></div></div></div><p>In the following sections we introduce <code class="literal">ParallelPython</code>, <code class="literal">IPython Parallel</code> and <code class="literal">NSQ</code>.</p><p><code class="literal">ParallelPython</code> has a very similar interface to <code class="literal">multiprocessing</code>. Upgrading your <code class="literal">multiprocessing</code> solution from a multi-core single machine to multi-machine is the matter of a few minutes work. <code class="literal">ParallelPython</code> has few dependencies and is easy to configure for research work on a local cluster. It isn’t very powerful and lacks communication mechanisms but for sending out embarrassingly parallel jobs to a small local cluster it is very easy to use.</p><p><code class="literal">IPython Cluster</code> is very easy to use on one machine with multiple cores, since many researchers use <code class="literal">IPython</code> as their shell it is natural to also use it for parallel job control. To build a cluster requires a little bit of system administration knowledge and some dependencies (such as ZeroMQ) are required, so the setup is a little more involved than with <code class="literal">ParallelPython</code>. A huge win with <code class="literal">IPython Parallel</code> is the fact that you can use remote clusters (e.g. using Amazon’s AWS and EC2) just as easily as local clusters.</p><p><code class="literal">NSQ</code> is a production-ready queuing system used in companies like Bitly. It has persistance (so if machines die then jobs can be picked up again by another machine) and strong mechanisms for scalability. With this greater power comes a slightly greater need for system administration and engineering skills.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="cluster-parallelpython">Using the ParallelPython module for simple local clusters</h2></div></div></div><p>The parallelpython <sup>[<a id="id820820" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820820" class="footnote">98</a>]</sup> module enables
+local clusters of workers using an interface that is similar to
+<code class="literal">multiprocessing</code>. Handily this means that converting code from
+<code class="literal">multiprocessing</code> using <code class="literal">map</code> to parallelpython is very easy. You can run code
+using 1 machine or an ad-hoc network just as easily. You can install it using
+<code class="literal">pip install pp</code>.</p><p>We can calculate Pi using the Monte Carlo method as we did back in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch09.html#multiprocessing-estimating-pi">Estimating Pi using Processes and Threads</a>
+using our local machine, notice how similar in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clusters-parallelpython1">Example&nbsp;10-1</a>  the interface is to the earlier <code class="literal">multiprocessing</code> example. We create a list of work into
+<code class="literal">nbr_trials_per_process</code> and pass these to 4 local processes. We could create as
+many work items as we wanted, they’d be consumed as workers became free.</p><div class="example"><a id="clusters-parallelpython1"></a><div class="example-title">Example&nbsp;10-1.&nbsp;parallelpython local example</div><div class="example-contents"><pre class="screen">...
+import pp
+
+NBR_ESTIMATES = 1e8
+
+def calculate_pi(nbr_estimates):
+    steps = xrange(int(nbr_estimates))
+    nbr_trials_in_unit_circle = 0
+    for step in steps:
+        x = random.uniform(0, 1)
+        y = random.uniform(0, 1)
+        is_in_unit_circle = x * x + y * y &lt;= 1.0
+        nbr_trials_in_unit_circle += is_in_unit_circle
+    return nbr_trials_in_unit_circle
+
+if __name__ == "__main__":
+    NBR_PROCESSES = 4
+    job_server = pp.Server(ncpus=NBR_PROCESSES)
+    print "Starting pp with", job_server.get_ncpus(), "workers"
+    nbr_trials_per_process = [NBR_ESTIMATES] * NBR_PROCESSES
+    jobs = []
+    for input_args in nbr_trials_per_process:
+        job = job_server.submit(calculate_pi, (input_args,), (), ("random",))
+        jobs.append(job)
+    # each job blocks until the result is ready
+    nbr_in_unit_circles = [job() for job in jobs]
+    print "Amount of work:", sum(nbr_trials_per_process)
+    print sum(nbr_in_unit_circles) * 4 / NBR_ESTIMATES / NBR_PROCESSES</pre></div></div><p>In <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clusters-parallelpython2">Example&nbsp;10-2</a> we’ll extend the example - this time we’ll
+require 1024 jobs of 100,000,000 estimates each with a dynamically configured
+cluster. On remote machines we can run <code class="literal">python ppserver.py -w 4 -a -d</code> and
+remote servers will start using 4 processes (the default would be 8 on my laptop
+but I don’t want to use the 4 HyperThreads so I’ve chosen 4 CPUs), with
+autoconnect and with a debug log. The debug log prints debug information to the
+screen, this is useful for checking that work has been received. The autoconnect
+flag means that we don’t have to specify IP addresses, we let <code class="literal">pp</code> advertise
+itself and connect to the servers.</p><div class="example"><a id="clusters-parallelpython2"></a><div class="example-title">Example&nbsp;10-2.&nbsp;parallelpython over a cluster</div><div class="example-contents"><pre class="screen">    ...
+    NBR_JOBS = 1024
+    NBR_LOCAL_CPUS = 4
+    ppservers = ("*",)  # set IP list to be auto-discovered
+    job_server = pp.Server(ppservers=ppservers, ncpus=NBR_LOCAL_CPUS)
+
+    print "Starting pp with", job_server.get_ncpus(), "local workers"
+    nbr_trials_per_process = [NBR_ESTIMATES] * NBR_JOBS
+    jobs = []
+    for input_args in nbr_trials_per_process:
+        job = job_server.submit(calculate_pi, (input_args,), (), ("random",))
+        jobs.append(job)
+    ...</pre></div></div><p>If I run with a second powerful laptop then the computation time roughly halves.
+If I use an old MacBook with 1 CPU then the MacBook barely helps - often it’ll
+compute 1 of the jobs so slowly that the fast laptop is left idle with no more
+work to perform, so the overall completion time is longer than if just the fast
+laptop were used by itself.</p><p>This is a very useful way to begin building an ad-hoc cluster for light
+computation tasks. You probably don’t want to use it in a production environment
+(probably Celery or GearMan is a better choice) but for research and easy
+scaling when learning about a problem it gives you a quick win.</p><p><code class="literal">pp</code> doesn’t help with distributing code or static data to remote machines, you
+have to move external libraries (e.g. anything you might have compiled into a
+static library) to the remote machines and provide any shared data. It does
+handle pickling the code to run, additional imports and the data you supply from
+the controller process.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="clustering-ipython">Using IPython Parallel to support research</h2></div></div></div><p>The IPython cluster support comes via <code class="literal">ipcluster</code>
+<sup>[<a id="id820980" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id820980" class="footnote">99</a>]</sup>. IPython becomes an
+interface to local and remote processing engines where data can be pushed
+amongst the engines and jobs can be pushed to remote machines. Remote debugging
+is possible and MPI is optionally supported. This same communication mechanism powers the IPython Notebook interface.</p><p>This is great for a research
+setting - you can push jobs to machines in a local cluster, interact and debug
+if there’s a problem, push data to machines and collect results back - all
+interactively. Note also that PyPy runs IPython and IPython Parallel, the combination might be very powerful (if you don’t use <code class="literal">numpy</code>).</p><p>Behind the scenes ZeroMQ is used as the messaging middle-ware, you’ll need to
+have this installed. If you’re building a cluster on a local network then you
+can avoid ssh authentication, if you need some security then ssh is fully
+supported but it makes configuration a little more involved - start on a local
+trusted network and build out as you learn how each component works.</p><p>The project is split into 4 components. An <span class="emphasis"><em>engine</em></span> is a synchronous Python
+interpreter that runs your code, you’ll run a set of these to enable parallel
+computing. A <span class="emphasis"><em>controller</em></span> provides an interface to the engines, it is
+responsible for work distribution and provides a <span class="emphasis"><em>direct</em></span> interface and a <span class="emphasis"><em>load
+balanced interface</em></span> which provides a work scheduler. A <span class="emphasis"><em>hub</em></span> keeps track of
+engines, schedulers and clients. <span class="emphasis"><em>Schedulers</em></span> hide the synchronous nature of the
+engines and provide an asynchronous interface.</p><p>On my laptop I’ll start 4 engines using <code class="literal">$ ipcluster start -n 4</code>. In
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-firsttest">Example&nbsp;10-3</a> we start IPython and check that a local <code class="literal">Client</code>
+can see our 4 local engines. We can address all 4 engines using <code class="literal">c[:]</code> and we
+apply a function to each engine - <code class="literal">apply_sync</code> takes a callable so we supply a 0
+argument <code class="literal">lambda</code> which will return a string. Each of our 4 local engines will
+run one of these functions, returning the same result.</p><div class="example"><a id="cluster-ipython-firsttest"></a><div class="example-title">Example&nbsp;10-3.&nbsp;Testing that we can see the local engines in IPython</div><div class="example-contents"><pre class="screen">In [1]: from IPython.parallel import Client
+
+In [2]: c = Client()
+
+In [3]: print c.ids
+[0, 1, 2, 3]
+
+In [4]: c[:].apply_sync(lambda:"Hello High Performance Pythonistas!")
+Out[4]:
+['Hello High Performance Pythonistas!',
+ 'Hello High Performance Pythonistas!',
+ 'Hello High Performance Pythonistas!',
+ 'Hello High Performance Pythonistas!']</pre></div></div><p>Having constructed our engines they’re now in an empty state. If we import
+modules locally, they won’t be imported in the remote engines. A clean way to
+import both locally and remotely is to use the <code class="literal">sync_imports</code> context manager. In
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-secondtest">Example&nbsp;10-4</a> we’ll <code class="literal">import os</code> on both the local IPython and
+the 4 connected engines, then call <code class="literal">apply_sync</code> again to the 4 engines to fetch
+their PIDs. If we didn’t do the remote imports then we’d get a <code class="literal">NameError</code> as
+the remote engines wouldn’t know about the <code class="literal">os</code> module. We can also use
+<code class="literal">execute</code> to run any Python command remotely on the engines.</p><div class="example"><a id="cluster-ipython-secondtest"></a><div class="example-title">Example&nbsp;10-4.&nbsp;Import modules into our remote engines</div><div class="example-contents"><pre class="screen">In [5]: dview=c[:]  # this is a Direct View (not a Load Balanced View)
+
+In [6]: with dview.sync_imports():
+   ....:     import os
+   ....:
+importing os on engine(s)
+
+In [7]: dview.apply_sync(lambda:os.getpid())
+Out[7]: [15079, 15080, 15081, 15089]
+
+In [8]: dview.execute("import sys")  # another way to execute commands remotely</pre></div></div><p>You’ll want to push data to the engines, the <code class="literal">push</code> command shown in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-pushdata">Example&nbsp;10-5</a> lets you send a dictionary of items that are added
+to the global namespace of each engine. There’s a corresponding <code class="literal">pull</code> to
+retrieve items, you give it keys and it’ll return the corresponding values from
+each of the engines.</p><div class="example"><a id="cluster-ipython-pushdata"></a><div class="example-title">Example&nbsp;10-5.&nbsp;Push shared data to the engines</div><div class="example-contents"><pre class="screen">In [9]: dview.push({'shared_data':[50, 100]})
+Out[9]: &lt;AsyncResult: _push&gt;
+
+In [10]: dview.apply_sync(lambda:len(shared_data))
+Out[10]: [2, 2, 2, 2]</pre></div></div><p>Now let’s add a second machine to the cluster. First - kill the <code class="literal">ipengine</code>
+engines that we’d created before and exit IPython. We’ll start from a clean
+slate. You’ll need a second machine available which has ssh configured to allow
+you to automatically login.</p><p>In <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-make-local-profile">Example&nbsp;10-6</a> we’ll create a new profile for our
+cluster. A set of configuration files are placed in the
+<code class="literal">&lt;HOME&gt;/.ipython/profile_mycluster</code> directory, by default the engines are
+configured to accept connections from localhost only and not from external
+devices. Edit <code class="literal">ipengine_config.py</code> to configure the <code class="literal">HubFactory</code> to accept
+external connections, save and then start a new <code class="literal">ipcluster</code> using our new
+profile. We’re back to having 4 local engines.</p><div class="example"><a id="cluster-ipython-make-local-profile"></a><div class="example-title">Example&nbsp;10-6.&nbsp;Create a local profile that accepts public connections</div><div class="example-contents"><pre class="screen">$ ipython profile create mycluster --parallel
+$ gvim /home/ian/.ipython/profile_mycluster/ipengine_config.py
+# add "c.HubFactory.ip = '*'" near the top
+$ ipcluster start -n 4 --profile=mycluster</pre></div></div><p>Next we need to pass this configuration file to our remote machine. In
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-copy-profile-remotely">Example&nbsp;10-7</a> we use <code class="literal">scp</code> to copy
+<code class="literal">ipcontroller-engine.json</code> (which was created when we started <code class="literal">ipcluster</code>) to
+the remote machine’s <code class="literal">.config/ipython/profile_default/security</code> directory. Once
+it is copied, on the remote machine run <code class="literal">ipengine</code> and it’ll look in the default
+directory for <code class="literal">ipcontroller-engine.json</code>, if it connects successfully then
+you’ll see a message like the one shown below.</p><div class="example"><a id="cluster-ipython-copy-profile-remotely"></a><div class="example-title">Example&nbsp;10-7.&nbsp;Copy the edited profile to the remote machine and test</div><div class="example-contents"><pre class="screen"># On the local machine
+$ scp /home/ian/.ipython/profile_mycluster/security/ipcontroller-engine.json
+      ian@192.168.0.16:/home/ian/.config/ipython/profile_default/security/
+
+# Now on the remote machine
+ian@ubuntu:~$ ipengine
+...Using existing profile dir: u'/home/ian/.config/ipython/profile_default'
+...Loading url_file u'/home/ian/.config/ipython/profile_default/security/
+       ipcontroller-engine.json'
+...Registering with controller at tcp://192.168.0.128:35963
+...Starting to monitor the heartbeat signal from the hub every 3010 ms.
+...Using existing profile dir: u'/home/ian/.config/ipython/profile_default'
+...Completed registration with id 4</pre></div></div><p>Let’s test the configuration. In <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-test-cluster">Example&nbsp;10-8</a> we’ll start a
+local IPython shell using the new profile, we’ll retrieve a list of 5 clients (4
+locally and 1 remotely), then we’ll ask for Python’s version info - you can see
+that on the remote machine I’m using the Anaconda distribution. We only get 1
+additional engine as the remote machine in this case is a single core MacBook.</p><div class="example"><a id="cluster-ipython-test-cluster"></a><div class="example-title">Example&nbsp;10-8.&nbsp;Test that the new machine is a part of the cluster</div><div class="example-contents"><pre class="screen">$ ipython --profile=mycluster
+Python 2.7.5+ (default, Sep 19 2013, 13:48:49)
+Type "copyright", "credits" or "license" for more information.
+IPython 1.1.0 -- An enhanced Interactive Python.
+...
+In [1]: from IPython.parallel import Client
+
+In [2]: c = Client()
+
+In [3]: c.ids
+Out[3]: [0, 1, 2, 3, 4]
+
+In [4]: dview=c[:]
+
+In [5]: with dview.sync_imports():
+   ...:     import sys
+
+In [6]: dview.apply_sync(lambda:sys.version)
+Out[6]:
+['2.7.5+ (default, Sep 19 2013, 13:48:49) \n[GCC 4.8.1]',
+ '2.7.5+ (default, Sep 19 2013, 13:48:49) \n[GCC 4.8.1]',
+ '2.7.5+ (default, Sep 19 2013, 13:48:49) \n[GCC 4.8.1]',
+ '2.7.5+ (default, Sep 19 2013, 13:48:49) \n[GCC 4.8.1]',
+ '2.7.6 |Anaconda 1.9.2 (64-bit)| (default, Jan 17 2014, 10:13:17) \n
+            [GCC 4.1.2 20080704 (Red Hat 4.1.2-54)]']</pre></div></div><p>Let’s put it all together. In <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-ipython-pi">Example&nbsp;10-9</a> we’ll use the 5 engines to
+estimate Pi as we did using <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cluster-parallelpython">Using the ParallelPython module for simple local clusters</a>. This time we’ll use the
+<code class="literal">@require</code> decorator to import the <code class="literal">random</code> module in the engines. We use a
+direct view to send our work out to the engines, this blocks until all the
+results come back, then we estimate Pi as we’ve done before.</p><div class="example"><a id="cluster-ipython-pi"></a><div class="example-title">Example&nbsp;10-9.&nbsp;Estimating Pi using our local cluster</div><div class="example-contents"><pre class="screen">from IPython.parallel import Client, require
+NBR_ESTIMATES = 1e8
+
+@require('random')
+def calculate_pi(nbr_estimates):
+    ...
+    return nbr_trials_in_unit_circle
+
+if __name__ == "__main__":
+    c = Client()
+    nbr_engines = len(c.ids)
+    print "We're using {} engines".format(nbr_engines)
+    dview = c[:]
+    nbr_in_unit_circles = dview.apply_sync(calculate_pi, NBR_ESTIMATES)
+
+    print "Estimates made:", nbr_in_unit_circles
+
+    # work using the engines only
+    nbr_jobs = len(nbr_in_unit_circles)
+    print sum(nbr_in_unit_circles) * 4 / NBR_ESTIMATES / nbr_jobs</pre></div></div><p>IPython Parallel offers much more than what’s shown here. Asychronous jobs and
+mappings over larger input ranges are of course possible. A <code class="literal">CompositeError</code> is
+a higher level Exception that wraps up the same Exception that’s occurred on
+multiple engines (rather than you receiving multiple identical exceptions if
+you’ve deployed bad code!), it is a convenience when dealing with lots of
+engines
+<sup>[<a id="id821380" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821380" class="footnote">100</a>]</sup>.</p><p>One particularly powerful feature of IPython Parallel is that it supports
+StarCluster so you can easily use larger clustering environments including
+supercomputers and cloud services like Amazon’s EC2. To further ease this sort
+of cluster’s development the Anaconda distribution includes support for
+StarCluster. Olivier Grisel gives a great tutorial on Advanced Machine Learning
+with scikit-learn
+<sup>[<a id="id821389" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821389" class="footnote">101</a>]</sup>
+at PyCon 2013, at the 2 hour point he demos using StarCluster for machine
+learning via IPython Parallel on Amazon EC2 spot instances.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_nsq_for_robust_production_clustering">NSQ for robust production clustering</h2></div></div></div><p>In a production environment, you will need a solution that is more robust than
+the other solutions we’ve talked about so far.  This is because during the
+everyday operation of your cluster, nodes may become unavailable, code may
+crash, networks may go down, or one of the other thousands of problems that can
+happen will happen.  The problem is that previous systems have one computer
+where commands are issued and a limited and static number of computers that read
+the commands and execute them.  Instead, we would like a system where we can
+have multiple actors communicating via some message bus—this would allow us
+to have an arbitrary and constantly changing number of message creators and
+consumers.</p><p>One simple solution to these problems is NSQ
+<sup>[<a id="id821521" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821521" class="footnote">102</a>]</sup>, a highly performant distributed
+messaging platform.  While it is written in GO it is completely data format and
+language agnostic.  As a result, there are libraries in many languages and the
+basic interface into it is a REST API which only requires the ability to make
+HTTP calls.  Furthermore, we can send messages in any format we want; JSON,
+Pickle, mesgpack, etc.  Most importantly however, it provides fundamental
+guarantees regarding message delivery and does all of this using two simple
+design patterns—queues and pub/subs.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_queues">Queues</h3></div></div></div><p>A queue is a type of buffer for messages.  Whenever you want to send a message
+to another part of your processing pipeline, you send it to the queue and it’ll
+wait in the queue until there is an available worker to read it.  A queue is
+most useful in distributed processing when there is an imbalance between
+production and consumption.  If this imbalance occurs we can simply scale
+horizontally by adding more data consumers until the message production rate and
+consumption rate are equal.  In addition, if the computers responsible for
+consuming messages go down, the messages are not and are simply queued until
+there is an available consumer, thus giving us message delivery guarantees.</p><p>For example, let’s say we would like to process new recommendations for a user
+every time they rate a new item on our site.  If we didn’t have a queue, then
+the “rate” action would directly call the “recalculate-recommendations” action,
+regardless of how busy the servers dealing with recommendations are.  If all of
+a sudden, thousands of users decide to rate something your recommendations could
+get so swamped with requests they could start timing out, dropping messages and
+generally become unresponsive!</p><p>On the other hand, with a queue the recommendations servers ask for more tasks
+when they are ready.  A new “rate” action would put a new task on the queue, and
+when a recommendations server becomes ready to do more work it would grab it
+from the queue and process it.  In this setup, if more users than normal start
+rating items, our queue would fill up and act as a buffer for the
+recommendations servers—their workload would be unaffected and they could
+still process messages until the queue is empty.</p><p>One potential problem with this is that if a queue becomes completely
+overwhelmed with work, it will be storing quite a lot of messages.  NSQ solves
+this by having multiple storage back-ends—when there aren’t many messages then
+they are stored in memory and as more messages start coming in the messages get
+put onto disk.</p><div class="note"><h3 class="title">Note</h3><p>Generally when working with queued systems, it is a good idea to try to have the
+downstream systems (ie: the recommendations systems in the above example) be at
+60% capacity with a normal workload.  This is a good compromise between
+allocating too many resources for a problem and giving your servers enough extra
+power for when the amount of work increases beyond normal levels.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_pub_sub">Pub/Sub</h3></div></div></div><p>A pub/sub (short for publisher/subscriber), on the other hand, describes who
+gets what messages.  What happens is that a data publisher can put data out of a
+particular topic, and data subscribers can subscribe to different feeds of data.
+Whenever the publisher puts out a piece of information, it gets sent to all of
+the subscribers—they each get an identical copy of the original information.
+This can be thought of like a newspaper: many people can subscribe to a
+particular newspaper and whenever a new edition of the newspaper comes out,
+every subscriber gets an identical copy of it.  In addition, the producer of the
+newspaper doesn’t need to know all of the people it’s papers are being sent to.
+As a result, publishers and subscribers are decoupled from each other which
+allows our system to be more robust as our network changes while still in
+production.</p><p>In addition to this, NSQ adds the notion of a data consumer.  That is, multiple
+processes can be connected to the same data subscription.  Whenever a new piece
+of data comes out, every subscriber gets a copy of the data, however only one
+consumer of each subscription sees that data.  In the newspaper analogy this can
+be thought of as multiple people in the same household who read the newspaper.
+The newspaper will deliver one paper to the house, since that house only has one
+subscription, and whoever in the house gets the mail first gets to read that
+data. Each of these consumers do the same processing to a message when they see
+it, however they can potentially be on multiple computers and thus add more
+processing power to the entire pool.</p><p>We can see a depiction of this pub/sub/consumer paradigm in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clustering_nsq_overview">Figure&nbsp;10-1</a>.  If a new message gets published on the “clicks”
+topic, all of the subscribers will get a copy (ie: “metrics”, “spam_analysis”
+and “archive”).  However, each subscriber is comprised of one or more consumers
+which represent actual processes which react to the messages.  So, one one
+consumer within the “metrics” subscription will see this message.  The next
+message will go to another consumer and so on.</p><div class="figure"><a id="clustering_nsq_overview"></a><div class="figure-contents"><div class="mediaobject"><img style="width: 378; " src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/figures/nsq.png.jpg" alt="NSQ Ideology" width="500" height="338" data-mfp-src="/library/view/high-performance-python/9781449361747/figures/nsq.png.jpg"></div></div><div class="figure-title">Figure&nbsp;10-1.&nbsp;NSQ Ideology</div></div><p>The benefits of staggering out the messages between a potentially large pool of
+consumers is essentially automatic load balancing.  If a message takes quite a
+long time to process, that consumer will not signal to NSQ that it is ready for
+more messages and thus the other consumers will get the majority of future
+messages (until that original consumer is ready to process again).  In addition,
+it allows consumers to disconnect (whether by choice or because of failure) or
+new consumers to connect to the cluster while still maintaining processing
+power within a particular subscription group.  For example, if we find that
+metrics takes quite a while to process and it often is not keeping up with
+demand, we can simply add more processes that join  the consumer pool for that
+subscription group and this gives us more processing power.  On the other hand,
+if we see that most of our processes are idle (ie: not getting any messages), we
+can easily remove consumers from this subscription pool.</p><p>It is also important to note that anything can publish data.  A consumer doesn’t
+simply need to be a consumer—it can consume data from one topic and then
+publish it to another topic.  In fact, this chain is an important work-flow when
+it comes to this paradigm for distributed computing.  Consumers will read from a
+topic of data, transform the data in some way, and then publish the data onto a
+new topic that other consumers can further transform.  In this way, different
+topics represent different data, subscription groups represent different
+transformations on the data and consumers are the actual workers who transform
+individual messages.</p><p>Furthermore, there is an incredible redundancy in this system.  There can be
+many <code class="literal">nsq</code> processes that each consumer connects to and there can be many
+consumers connected to a particular subscription.  This makes it so that there
+is no single point of failure and your system will be robust even if several
+machines disappear.  We can see in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clustering_nsq_spof">Figure&nbsp;10-2</a> that even if one of
+the computers in the diagram goes down, the system is still able to deliver and
+process messages.  In addition, since NSQ saves pending messages to disk when
+shutting down, unless the hardware loss is catastrophic your data will most
+likely still be intact and be delivered.  Lastly, if a consumer is shut down
+before responding a particular message, then NSQ will re-send that message to
+another consumer.  This means that even as consumers get shut down we know that
+all the messages in a topic will be responded to at least once. <sup>[<a id="id821597" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821597" epub:type="noteref" class="footnote">103</a>]</sup></p><div class="figure"><a id="clustering_nsq_spof"></a><div class="figure-contents"><div class="mediaobject"><img style="width: 378; " src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/figures/nsq_spof.png.jpg" alt="NSQ Connection Topology" width="500" height="307" data-mfp-src="/library/view/high-performance-python/9781449361747/figures/nsq_spof.png.jpg"></div></div><div class="figure-title">Figure&nbsp;10-2.&nbsp;NSQ Connection Topology</div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_distributed_prime_calculation">Distributed Prime Calculation</h3></div></div></div><p>Code that uses NSQ is generally asynchronous <sup>[<a id="id821674" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821674" epub:type="noteref" class="footnote">104</a>]</sup> (see <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch08.html">Chapter&nbsp;8</a> for
+a full explanation of this), although it doesn’t necessarily have to be.  In the
+following example, we will create a pool of workers that read from a topic
+called <span class="emphasis"><em>numbers</em></span> that simply has JSON blobs with a number in them.  The
+consumers will read this topic, find out if the numbers are primes, and then
+write to another topic depending on whether the number was prime.  This will
+give us two new topics, <span class="emphasis"><em>primes</em></span> and <span class="emphasis"><em>non_primes</em></span> that other consumers can
+connect to in order to do more calculations. <sup>[<a id="id821629" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821629" epub:type="noteref" class="footnote">105</a>]</sup></p><p>As said before, there are many benefits to doing CPU bound work like this.
+Firstly, we have all the guarantees of robustness, which may or may not be
+useful for this project.  More importantly, however, we get automatic load
+balancing.  That means that if one consumer gets a number that takes a
+particularly long time to process, the other consumers will pick up the slack.</p><p>A consumer is created by creating an <code class="literal">nsq.Reader</code> object with the topic and
+subscription group specified (as can be seen at the end of
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clustering_nsq_example">Example&nbsp;10-10</a>).  We also must specify the location of the running
+<code class="literal">nsqd</code> instance (or the <code class="literal">nsqlookupd</code> instance which we will not get into in this
+section).  In addition, we specify a handler which is simply a function which
+gets called for each message from the topic.</p><p>To create a producer, we create an <code class="literal">nsq.Writer</code> object and specify the location
+of one (or multiple) <code class="literal">nsqd</code> instances to write to.  This gives us the ability to
+write to <code class="literal">nsq</code>, asynchronously, simply by specifying the topic name and the
+message. <sup>[<a id="id821743" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id821743" epub:type="noteref" class="footnote">106</a>]</sup></p><div class="example"><a id="clustering_nsq_example"></a><div class="example-title">Example&nbsp;10-10.&nbsp;Distributed prime calculation with NSQ</div><div class="example-contents"><pre class="programlisting"><code class="kn">import</code> <code class="nn">nsq</code>
+<code class="kn">from</code> <code class="nn">tornado</code> <code class="kn">import</code> <code class="n">gen</code>
+
+<code class="kn">from</code> <code class="nn">functools</code> <code class="kn">import</code> <code class="n">partial</code>
+<code class="kn">import</code> <code class="nn">ujson</code> <code class="kn">as</code> <code class="nn">json</code>
+
+<code class="nd">@gen.coroutine</code>
+<code class="k">def</code> <code class="nf">write_message</code><code class="p">(</code><code class="n">topic</code><code class="p">,</code> <code class="n">data</code><code class="p">,</code> <code class="n">writer</code><code class="p">):</code>
+    <code class="n">response</code> <code class="o">=</code> <code class="k">yield</code> <code class="n">gen</code><code class="o">.</code><code class="n">Task</code><code class="p">(</code><code class="n">writer</code><code class="o">.</code><code class="n">pub</code><code class="p">,</code> <code class="n">topic</code><code class="p">,</code> <code class="n">data</code><code class="p">)</code> <code class="c"># </code><a id="CO23-1"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/1.png">
+    <code class="k">if</code> <code class="nb">isinstance</code><code class="p">(</code><code class="n">response</code><code class="p">,</code> <code class="n">nsq</code><code class="o">.</code><code class="n">Error</code><code class="p">):</code>
+        <code class="k">print</code> <code class="s">"Error with Message: {}: {}"</code><code class="o">.</code><code class="n">format</code><code class="p">(</code><code class="n">data</code><code class="p">,</code> <code class="n">response</code><code class="p">)</code>
+        <code class="k">yield</code> <code class="n">write_message</code><code class="p">(</code><code class="n">data</code><code class="p">,</code> <code class="n">writer</code><code class="p">)</code>
+    <code class="k">else</code><code class="p">:</code>
+        <code class="k">print</code> <code class="s">"Published Message: "</code><code class="p">,</code> <code class="n">data</code>
+
+<code class="k">def</code> <code class="nf">calculate_prime</code><code class="p">(</code><code class="n">message</code><code class="p">,</code> <code class="n">writer</code><code class="p">):</code>
+    <code class="n">message</code><code class="o">.</code><code class="n">enable_async</code><code class="p">()</code> <code class="c"># </code><a id="CO23-2"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/2.png">
+    <code class="n">data</code> <code class="o">=</code> <code class="n">json</code><code class="o">.</code><code class="n">loads</code><code class="p">(</code><code class="n">message</code><code class="o">.</code><code class="n">body</code><code class="p">)</code>
+
+    <code class="n">prime</code> <code class="o">=</code> <code class="n">is_prime</code><code class="p">(</code><code class="n">data</code><code class="p">[</code><code class="s">"number"</code><code class="p">])</code>
+    <code class="n">data</code><code class="p">[</code><code class="s">"prime"</code><code class="p">]</code> <code class="o">=</code> <code class="n">prime</code>
+    <code class="k">if</code> <code class="n">prime</code><code class="p">:</code>
+        <code class="n">topic</code> <code class="o">=</code> <code class="s">'primes'</code>
+    <code class="k">else</code><code class="p">:</code>
+        <code class="n">topic</code> <code class="o">=</code> <code class="s">'non_primes'</code>
+
+    <code class="n">output_message</code> <code class="o">=</code> <code class="n">json</code><code class="o">.</code><code class="n">dumps</code><code class="p">(</code><code class="n">data</code><code class="p">)</code>
+    <code class="n">write_message</code><code class="p">(</code><code class="n">topic</code><code class="p">,</code> <code class="n">output_message</code><code class="p">,</code> <code class="n">writer</code><code class="p">)</code>
+    <code class="n">message</code><code class="o">.</code><code class="n">finish</code><code class="p">()</code> <code class="c"># </code><a id="CO23-3"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/3.png">
+
+<code class="k">if</code> <code class="n">__name__</code> <code class="o">==</code> <code class="s">"__main__"</code><code class="p">:</code>
+    <code class="n">writer</code> <code class="o">=</code> <code class="n">nsq</code><code class="o">.</code><code class="n">Writer</code><code class="p">([</code><code class="s">'127.0.0.1:4150'</code><code class="p">,</code> <code class="p">])</code>
+    <code class="n">handler</code> <code class="o">=</code> <code class="n">partial</code><code class="p">(</code><code class="n">calculate_prime</code><code class="p">,</code> <code class="n">writer</code><code class="o">=</code><code class="n">writer</code><code class="p">)</code>
+    <code class="n">reader</code> <code class="o">=</code> <code class="n">nsq</code><code class="o">.</code><code class="n">Reader</code><code class="p">(</code>
+        <code class="n">message_handler</code> <code class="o">=</code> <code class="n">handler</code><code class="p">,</code>
+        <code class="n">nsqd_tcp_addresses</code> <code class="o">=</code> <code class="p">[</code><code class="s">'127.0.0.1:4150'</code><code class="p">,</code> <code class="p">],</code>
+        <code class="n">topic</code> <code class="o">=</code> <code class="s">'numbers'</code><code class="p">,</code>
+        <code class="n">channel</code> <code class="o">=</code> <code class="s">'worker_group_a'</code><code class="p">,</code>
+    <code class="p">)</code>
+    <code class="n">nsq</code><code class="o">.</code><code class="n">run</code><code class="p">()</code></pre><div class="calloutlist"><dl><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#CO23-1"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/1.png"></a> </dt><dd><p>
+We will asynchronously write the result to a new topic, and retry writing if it fails for some reason
+</p></dd><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#CO23-2"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/2.png"></a> </dt><dd><p>
+By enabling async on a message, we can perform asynchronous operations while processing the message
+</p></dd><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#CO23-3"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/3.png"></a> </dt><dd><p>
+With async-enabled messages, we must signal to NSQ when we are done with a message
+</p></dd></dl></div></div></div><p>In order to set up the nsq ecosystem, we will first start an instance of <code class="literal">nsqd</code>
+on our local machine,</p><pre class="programlisting"><code class="nv">$ </code>nsqd
+2014/05/10 16:48:42 nsqd v0.2.27 <code class="o">(</code>built w/go1.2.1<code class="o">)</code>
+2014/05/10 16:48:42 worker id 382
+2014/05/10 16:48:42 NSQ: persisting topic/channel metadata to nsqd.382.dat
+2014/05/10 16:48:42 TCP: listening on <code class="o">[</code>::<code class="o">]</code>:4150
+2014/05/10 16:48:42 HTTP: listening on <code class="o">[</code>::<code class="o">]</code>:4151</pre><p>Now, we can start as many instances of our python code,
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#clustering_nsq_example">Example&nbsp;10-10</a>, as we want.  In fact, we can have these instances
+running on other computers as long as the reference to the <code class="literal">nsqd_tcp_address</code> in
+the instantiation of the <code class="literal">nsq.Reader</code> is still valid.  These consumers will
+connect to nsqd and await messages to be published on the <span class="emphasis"><em>numbers</em></span> topic.</p><p>There are many ways data can be published to the <span class="emphasis"><em>numbers</em></span> topic.  We will use
+command line tools to do this since knowing how to poke and prod a system goes a
+long way in understanding how to properly deal with it.  We can simply use the
+HTTP interface to publish messages to the topic,</p><pre class="programlisting"><code class="nv">$ </code><code class="k">for </code>i in <code class="sb">`</code>seq 10000<code class="sb">`</code>
+&gt; <code class="k">do</code>
+&gt;   <code class="nb">echo</code> <code class="o">{</code><code class="se">\"</code>number<code class="se">\"</code>: <code class="nv">$i</code><code class="o">}</code> | curl -d@- <code class="s2">"http://127.0.0.1:4151/pub?topic=numbers"</code>
+&gt; <code class="k">done</code></pre><p>As this command starts running, we are publishing messages with different
+numbers in them to the <span class="emphasis"><em>numbers</em></span> topic.  At the same time, all of our producers
+will start outputting status messages that they have seen and processed
+messages.  In addition, these numbers are being published to either the <span class="emphasis"><em>primes</em></span>
+or <span class="emphasis"><em>non_primes</em></span> topic.  This allows us to have other data consumers that connect
+to either of these topics to get a filtered subset of our original data.  For
+example, an application that requires only the prime numbers can simply connect
+to the <code class="literal">primes</code> topic and constantly have new primes for its calculation.  We
+can see the status of this by uses the <code class="literal">stats</code> HTTP endpoint for nsq,</p><pre class="programlisting"><code class="nv">$ </code>curl <code class="s2">"http://127.0.0.1:4151/stats"</code>
+nsqd v0.2.27 <code class="o">(</code>built w/go1.2.1<code class="o">)</code>
+
+   <code class="o">[</code>numbers        <code class="o">]</code> depth: 0     be-depth: 0     msgs: 3060     e2e%:
+      <code class="o">[</code>worker_group_a           <code class="o">]</code> depth: 1785  be-depth: 0     inflt: 1    def: 0
+                                  re-q: 0     timeout: 0     msgs: 3060     e2e%:
+        <code class="o">[</code>V2 muon:55915           <code class="o">]</code> state: 3 inflt: 1    rdy: 0    fin: 1469
+                                   re-q: 0        msgs: 1469     connected: 24s
+
+   <code class="o">[</code>primes         <code class="o">]</code> depth:  195  be-depth: 0     msgs: 1274     e2e%:
+
+   <code class="o">[</code>non_primes     <code class="o">]</code> depth: 1274  be-depth: 0     msgs: 1274     e2e%:</pre><p>We can see above that the <span class="emphasis"><em>numbers</em></span> topic has one subscription group,
+<span class="emphasis"><em>worker_group_a</em></span> with one consumer.  In addition, the subscription group has a
+large depth of 1785 messages which means that we are putting messages into nsq
+faster than we can process them.  This would be an indication to add more
+consumers so that we have more processing power to get through more messages.
+Furthermore, we can see that the particular consumer has been connected for 24
+seconds, has processed 1469 messages and currently has 1 message in-flight.
+This status endpoint gives quite a good deal of information to debug your nsq
+setup!  Lastly, we see the <span class="emphasis"><em>primes</em></span> and <span class="emphasis"><em>non_primes</em></span> topic that has no
+subscribers or consumers.  This means that the messages will be stored until a
+subscriber comes requesting the data.</p><div class="note"><h3 class="title">Note</h3><p>In production, you can use the even more powerful tool <code class="literal">nsqadmin</code> which provides
+a web interface with very detailed overviews of all topics/subscribers and
+consumers.  In addition, it easily allows you to pause and delete subscribers and
+topics.</p></div><p>Lastly, to actually see the messages we would create a new consumer for the
+<span class="emphasis"><em>primes</em></span> that simply archives the results to a file or database.  Alternatively,
+we can use the <code class="literal">nsq_tail</code> tool to take a peak into the data and see what it
+contains.</p><pre class="programlisting"><code class="nv">$ </code>nsq_tail --topic primes --nsqd-tcp-address<code class="o">=</code>127.0.0.1:4150
+2014/05/10 17:05:33 starting Handler go-routine
+2014/05/10 17:05:33 <code class="o">[</code>127.0.0.1:4150<code class="o">]</code> connecting to nsqd
+2014/05/10 17:05:33 <code class="o">[</code>127.0.0.1:4150<code class="o">]</code> IDENTIFY response:
+                    <code class="o">{</code>MaxRdyCount:2500 TLSv1:false Deflate:false Snappy:false<code class="o">}</code>
+<code class="o">{</code><code class="s2">"prime"</code>:true,<code class="s2">"number"</code>:5<code class="o">}</code>
+<code class="o">{</code><code class="s2">"prime"</code>:true,<code class="s2">"number"</code>:7<code class="o">}</code>
+<code class="o">{</code><code class="s2">"prime"</code>:true,<code class="s2">"number"</code>:11<code class="o">}</code>
+<code class="o">{</code><code class="s2">"prime"</code>:true,<code class="s2">"number"</code>:13<code class="o">}</code>
+<code class="o">{</code><code class="s2">"prime"</code>:true,<code class="s2">"number"</code>:17<code class="o">}</code></pre></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_other_clustering_tools_to_look_at">Other clustering tools to look at</h2></div></div></div><p>Job processing systems using queues have existed since the start of the computer
+science industry, back when computers were very slow and lots of jobs needed to
+be processed. As a result there are <span class="emphasis"><em>many</em></span> libraries for queues and many of
+these can be used in a cluster configuration. We strongly suggest that you pick
+a mature library with an active community behind it, supporting the same feature
+set that you’ll need and not too many additional features.</p><p>The more features a library has, the more ways you’ll find to mis-configure it
+and waste time on debugging. Simplicity is <span class="emphasis"><em>generally</em></span> the right aim when
+dealing with clustered solutions. We list a few of the more commonly used
+clustering solutions below.</p><p>Celery <sup>[<a id="id823350" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id823350" class="footnote">107</a>]</sup> (BSD license) is a widely used
+asynchronous task queue using a distributed messaging architecture, written in
+Python. It supports Python, PyPy and Jython. Typically is uses RabbitMQ as the
+message broker but it also supports Redis, MongoDB and other storage systems. It
+is often used in web development projects. Andrew Godwin discusses Celery in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch12.html#lessons-from-field-andrew">Task queues at Lanyrd.com</a>.</p><p>Gearman <sup>[<a id="id823372" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id823372" class="footnote">108</a>]</sup> (BSD license) is a multi-platform job
+processing system. It is very useful if you are integrating job processing using
+different technologies, bindings are available for Python, PHP, C++, Perl and
+many other languages.</p><p>PyRes <sup>[<a id="id823395" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id823395" class="footnote">109</a>]</sup> is a Redis based lightweight
+task manager for Python. Jobs are added to queues in Redis and consumers are
+setup to process them, optionally passing results back on a new queue. It is a
+very easy system to start with if your needs are light and Python-only.</p><p>Amazon’s Simple Queue Service <sup>[<a id="id823439" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id823439" class="footnote">110</a>]</sup> is a job
+processing system integrated into Amazon Web Services. Job consumers and
+producers can live inside AWS or can be external, so SQS is easy to start with
+and supports easy migration into the cloud. Library supports exists for many
+languages.</p><p>Clusters can also be used for distributed <code class="literal">numpy</code> processing, this is a relatively young development in the Python world. Both Enthought and Continuum have solutions via the <code class="literal">distarray</code> <sup>[<a id="id823457" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id823457" class="footnote">111</a>]</sup> and <code class="literal">blaze</code> <sup>[<a id="id823403" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#ftn.id823403" class="footnote">112</a>]</sup> packages. Note that these packages attempt to deal with the complicated problems of synchronization and data locality (there is no one-size-fits-all solution) on your behalf, so be aware that you probably have to think about how your data is laid out and accessed.</p><p>So far in the book we’ve looked at profiling to understand slow parts of your code, compiling and <code class="literal">numpy</code> to make your code run faster and various approaches to multiple processes and computers. In the penultimate chapter we’ll look at ways of using less RAM through different data structures and probabilistic approaches. These lessons could help you to keep all your data on one machine, avoiding the need to run a cluster.</p></div><div class="footnotes" epub:type="footnotes"><br><hr style="width: 100; align: left;"><div class="footnote" id="ftn.id820094"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820094" class="simpara">78</a>] </sup><a class="ulink" href="http://en.wikipedia.org/wiki/Beowulf_cluster" target="_top">http://en.wikipedia.org/wiki/Beowulf_cluster</a></p></div><div class="footnote" id="ftn.id820108"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820108" class="simpara">79</a>] </sup><a class="ulink" href="http://en.wikipedia.org/wiki/Google_platform" target="_top">http://en.wikipedia.org/wiki/Google_platform</a></p></div><div class="footnote" id="ftn.id820104"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820104" class="simpara">80</a>] </sup><a class="ulink" href="http://en.wikipedia.org/wiki/TOP500" target="_top">http://en.wikipedia.org/wiki/TOP500</a></p></div><div class="footnote" id="ftn.id820363"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820363" class="simpara">81</a>] </sup><a class="ulink" href="http://aws.amazon.com/ec2/purchasing-options/spot-instances/" target="_top">http://aws.amazon.com/ec2/purchasing-options/spot-instances/</a></p></div><div class="footnote" id="ftn.id820485"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820485" class="simpara">82</a>] </sup><a class="ulink" href="http://www.theregister.co.uk/2013/10/23/lone_sysadmin_caused_462_meeellion_wall_street_crash/" target="_top">http://www.theregister.co.uk/2013/10/23/lone_sysadmin_caused_462_meeellion_wall_street_crash/</a></p></div><div class="footnote" id="ftn.id820461"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820461" class="simpara">83</a>] </sup><a class="ulink" href="http://beeyeas.blogspot.co.uk/2014/01/cio-update-post-mortem-on-skype-outage.html" target="_top">http://beeyeas.blogspot.co.uk/2014/01/cio-update-post-mortem-on-skype-outage.html</a></p></div><div class="footnote" id="ftn.id820477"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820477" class="simpara">84</a>] </sup><a class="ulink" href="http://en.wikipedia.org/wiki/Berkeley_Open_Infrastructure_for_Network_Computing" target="_top">http://en.wikipedia.org/wiki/Berkeley_Open_Infrastructure_for_Network_Computing</a></p></div><div class="footnote" id="ftn.id820570"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820570" class="simpara">85</a>] </sup><a class="ulink" href="https://circus.readthedocs.org/en/latest/" target="_top">https://circus.readthedocs.org/en/latest/</a></p></div><div class="footnote" id="ftn.id820554"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820554" class="simpara">86</a>] </sup><a class="ulink" href="http://supervisord.org/" target="_top">http://supervisord.org/</a></p></div><div class="footnote" id="ftn.id820560"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820560" class="simpara">87</a>] </sup><a class="ulink" href="http://en.wikipedia.org/wiki/Upstart" target="_top">http://en.wikipedia.org/wiki/Upstart</a></p></div><div class="footnote" id="ftn.id820663"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820663" class="simpara">88</a>] </sup><a class="ulink" href="https://github.com/Netflix/SimianArmy" target="_top">https://github.com/Netflix/SimianArmy</a></p></div><div class="footnote" id="ftn.id820614"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820614" class="simpara">89</a>] </sup><a class="ulink" href="http://www.fabfile.org/" target="_top">http://www.fabfile.org/</a></p></div><div class="footnote" id="ftn.id820626"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820626" class="simpara">90</a>] </sup><a class="ulink" href="https://salt.readthedocs.org/en/latest/" target="_top">https://salt.readthedocs.org/en/latest/</a></p></div><div class="footnote" id="ftn.id820636"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820636" class="simpara">91</a>] </sup><a class="ulink" href="http://www.getchef.com/" target="_top">http://www.getchef.com/</a></p></div><div class="footnote" id="ftn.id820737"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820737" class="simpara">92</a>] </sup><a class="ulink" href="http://puppetlabs.com/" target="_top">http://puppetlabs.com/</a></p></div><div class="footnote" id="ftn.id820753"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820753" class="simpara">93</a>] </sup><a class="ulink" href="http://en.wikipedia.org/wiki/Amazon_Machine_Image" target="_top">http://en.wikipedia.org/wiki/Amazon_Machine_Image</a></p></div><div class="footnote" id="ftn.id820616"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820616" class="simpara">94</a>] </sup><a class="ulink" href="https://www.pingdom.com/" target="_top">https://www.pingdom.com/</a></p></div><div class="footnote" id="ftn.id820702"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820702" class="simpara">95</a>] </sup><a class="ulink" href="https://www.serverdensity.com/" target="_top">https://www.serverdensity.com/</a></p></div><div class="footnote" id="ftn.id820693"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820693" class="simpara">96</a>] </sup><a class="ulink" href="http://www.deadmansswitch.net/" target="_top">http://www.deadmansswitch.net/</a></p></div><div class="footnote" id="ftn.id820686"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820686" class="simpara">97</a>] </sup><a class="ulink" href="http://ganglia.sourceforge.net/" target="_top">http://ganglia.sourceforge.net/</a></p></div><div class="footnote" id="ftn.id820820"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820820" class="simpara">98</a>] </sup><a class="ulink" href="http://www.parallelpython.com/" target="_top">http://www.parallelpython.com/</a></p></div><div class="footnote" id="ftn.id820980"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id820980" class="simpara">99</a>] </sup><a class="ulink" href="http://ipython.org/ipython-doc/dev/parallel/" target="_top">http://ipython.org/ipython-doc/dev/parallel/</a></p></div><div class="footnote" id="ftn.id821380"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821380" class="simpara">100</a>] </sup><a class="ulink" href="http://ipython.org/ipython-doc/dev/parallel/parallel_multiengine.html#parallel-exceptions" target="_top">http://ipython.org/ipython-doc/dev/parallel/parallel_multiengine.html#parallel-exceptions</a></p></div><div class="footnote" id="ftn.id821389"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821389" class="simpara">101</a>] </sup><a class="ulink" href="http://pyvideo.org/video/1719/advanced-machine-learning-with-scikit-learn" target="_top">http://pyvideo.org/video/1719/advanced-machine-learning-with-scikit-learn</a></p></div><div class="footnote" id="ftn.id821521"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821521" class="simpara">102</a>] </sup><a class="ulink" href="https://github.com/bitly/nsq" target="_top">https://github.com/bitly/nsq</a></p></div><div class="footnote" epub:type="footnote" id="ftn.id821597"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821597" class="simpara">103</a>] </sup>This
+can be quite advantageous when working in AWS where we can have our <code class="literal">nsqd</code>
+processes run on a reserved instance and our consumers working on a cluster of
+spot instances.</p></div><div class="footnote" epub:type="footnote" id="ftn.id821674"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821674" class="simpara">104</a>] </sup>This asynchronisity comes
+from NSQ’s protocol for sending messages to consumers being PUSH based.  This
+makes it so we can have an asynchronous read from our connection to NSQ happen
+in the background and wake up when a message is found</p></div><div class="footnote" epub:type="footnote" id="ftn.id821629"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821629" class="simpara">105</a>] </sup>This sort of chaining of
+data analysis is called pipelining and can be an effective way to perform
+multiple types of analysis on the same data efficiently.</p></div><div class="footnote" epub:type="footnote" id="ftn.id821743"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id821743" class="simpara">106</a>] </sup>You can also easily publish a message manually with an HTTP
+call, however this <code class="literal">nsq.Writer</code> object simplifies much of the error handling</p></div><div class="footnote" id="ftn.id823350"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id823350" class="simpara">107</a>] </sup><a class="ulink" href="http://www.celeryproject.org/" target="_top">http://www.celeryproject.org/</a></p></div><div class="footnote" id="ftn.id823372"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id823372" class="simpara">108</a>] </sup><a class="ulink" href="http://gearman.org/" target="_top">http://gearman.org/</a></p></div><div class="footnote" id="ftn.id823395"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id823395" class="simpara">109</a>] </sup><a class="ulink" href="https://github.com/binarydud/pyres" target="_top">https://github.com/binarydud/pyres</a></p></div><div class="footnote" id="ftn.id823439"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id823439" class="simpara">110</a>] </sup><a class="ulink" href="http://aws.amazon.com/sqs/" target="_top">http://aws.amazon.com/sqs/</a></p></div><div class="footnote" id="ftn.id823457"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id823457" class="simpara">111</a>] </sup><a class="ulink" href="https://github.com/enthought/distarray" target="_top">https://github.com/enthought/distarray</a></p></div><div class="footnote" id="ftn.id823403"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#id823403" class="simpara">112</a>] </sup><a class="ulink" href="https://github.com/ContinuumIO/blaze" target="_top">https://github.com/ContinuumIO/blaze</a></p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch09.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">9. The multiprocessing module</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch11.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">11. Using Less RAM</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781449361747/chapter/ch10.html" data-for-analytics="9781449361747:ch10.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch10.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

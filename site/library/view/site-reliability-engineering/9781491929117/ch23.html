@@ -1,0 +1,1985 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/site-reliability-engineering/9781491929117/ch23.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781491929117"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch23.html"
+  data-epub-title="Site Reliability Engineering" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg gr__safaribooksonline_com zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/site-reliability-engineering/9781491929117/ch23.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781491929117" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch23.html" data-epub-title="Site Reliability Engineering" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491929117"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>23. Managing Critical State: Distributed Consensus for Reliability - Site Reliability Engineering</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/c1c7ad294784.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content p.byline{text-align:left;margin:-33px auto 35px;font-style:italic;font-weight:bold}#sbo-rt-content div.preface p+p.byline{margin:1em 0 0}#sbo-rt-content div.preface p.byline+p.byline{margin:0}#sbo-rt-content div.sect1>p.byline{margin:-.25em 0 1em}#sbo-rt-content div.sect1>p.byline+p.byline{margin-top:-1em}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding-top:10px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure,#sbo-rt-content aside[data-type="sidebar"] figure{border:none}#sbo-rt-content aside[data-type="sidebar"] p.byline{font-family:sans-serif;font-size:90%;font-weight:bold;font-style:italic;text-align:center;text-indent:0;margin:5px auto 6px;page-break-after:avoid}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"] h2,#sbo-rt-content section[data-type="titlepage"] p.subtitle{font-size:1em;font-weight:normal;text-align:center}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"],#sbo-rt-content section[data-type="titlepage"] p.author{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content section[data-type="titlepage"] p.edition{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:normal;text-align:center;text-transform:uppercase;margin-top:2em}#sbo-rt-content section[data-type="titlepage"]:after{content:url(css_assets/titlepage_footer_ebook.png);position:absolute;bottom:0;max-width:100%}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div[data-type="footnotes"]{font-size:85%;border-top:2px solid black;padding-left:1.5em;margin-top:1.5em}#sbo-rt-content p[data-type="footnote"]{margin-top:-.5em}#sbo-rt-content p[data-type="footnote"] sup{left:-1em;top:1.2em;position:relative;display:block}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:.25em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{font-weight:bold;font-size:110%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:10px 0 10px 0 !important;text-align:center;padding:0;page-break-after:avoid}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold;text-indent:0}#sbo-rt-content div.index li{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content div.index ul{list-style-type:none;padding-left:0;margin-left:0}#sbo-rt-content div.index ul li{padding-left:0;margin-left:0}#sbo-rt-content div.index ul li ul li{margin-left:20px}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}#sbo-rt-content span.roman_text{font-style:normal !important}
+    </style><link rel="canonical" href="/Library/view/site-reliability-engineering/9781491929117/ch23.html"><meta name="description" content=" Chapter 23. Managing Critical State: Distributed Consensus for Reliability Written by Laura Nolan Edited by Tim Harvey Processes crash or may need to be restarted. Hard drives fail. Natural disasters ... "><meta property="og:title" content="23. Managing Critical State: Distributed Consensus for Reliability"><meta itemprop="isPartOf" content="/library/view/site-reliability-engineering/9781491929117/"><meta itemprop="name" content="23. Managing Critical State: Distributed Consensus for Reliability"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch23.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491929117/"><meta property="og:description" itemprop="description" content=" Chapter 23. Managing Critical State: Distributed Consensus for Reliability Written by Laura Nolan Edited by Tim Harvey Processes crash or may need to be restarted. Hard drives fail. Natural disasters ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781491929124"><meta property="og:book:author" itemprop="author" content="Niall Richard Murphy"><meta property="og:book:author" itemprop="author" content="Jennifer Petoff"><meta property="og:book:author" itemprop="author" content="Chris Jones"><meta property="og:book:author" itemprop="author" content="Betsy Beyer"><meta property="og:book:tag" itemprop="about" content="Engineering"><meta property="og:book:tag" itemprop="about" content="Networking"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--></head>
+
+
+<body class="reading sidenav nav-collapsed  js-show-related scalefonts" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Site Reliability Engineering
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch23.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch23.html&amp;text=Site%20Reliability%20Engineering&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch23.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch23.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%2023.%20Managing%20Critical%20State%3A%20Distributed%20Consensus%20for%20Reliability&amp;body=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch23.html%0D%0Afrom%20Site%20Reliability%20Engineering%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch22.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">22. Addressing Cascading Failures</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch24.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">24. Distributed Periodic Scheduling with Cron</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 23. Managing Critical State: Distributed Consensus for Reliability"><div class="chapter" id="chapter_distributed-consensus">
+<h1><span class="label">Chapter 23. </span>Managing Critical State: Distributed Consensus for Reliability</h1>
+
+
+<p class="byline">Written by Laura Nolan</p>
+
+<p class="byline">Edited by Tim Harvey</p>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="need for" id="idm140203532844064"></a>Processes crash or may need to be restarted. Hard drives fail. Natural
+disasters can take out several datacenters in a region. Site
+Reliability Engineers need to anticipate these sorts of failures and
+develop strategies to keep systems running in spite of them. These
+strategies usually entail running such systems across multiple
+sites. Geographically distributing a system is relatively
+straightforward, but also introduces the need to maintain a consistent
+view of system state, which is a more nuanced and difficult
+undertaking.</p>
+
+<p>Groups of processes may want to reliably agree on questions such as:</p>
+
+<ul>
+<li>
+<p>Which process is the leader of a group of processes?</p>
+</li>
+<li>
+<p>What is the set of processes in a group?</p>
+</li>
+<li>
+<p>Has a message been successfully committed to a distributed queue?</p>
+</li>
+<li>
+<p>Does a process hold a lease or not?</p>
+</li>
+<li>
+<p>What is a value in a datastore for a given key?</p>
+</li>
+</ul>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="benefits of" id="idm140203532836560"></a>We’ve found distributed consensus to be effective in building reliable and
+highly available systems that require a consistent view of some system state.
+The distributed consensus problem deals with reaching agreement among a group
+of processes connected by an unreliable communications network. For instance,
+several processes in a distributed system may need to be able to form a
+consistent view of a critical piece of configuration, whether or not a
+distributed lock is held, or if a message on a queue has been processed. It is
+one of the most fundamental concepts in distributed computing and one we rely
+on for virtually every service we offer. <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_consensus">Figure&nbsp;23-1</a> illustrates a simple model of how a group of processes can achieve a consistent view of system state through distributed consensus.</p>
+
+<figure><div id="fig_distributed-consensus_consensus" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2301.png" alt="Distributed consensus: agreement among a group of processes." width="824" height="734">
+<h6><span class="label">Figure 23-1. </span>Distributed consensus: agreement among a group of processes</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="leader election" id="idm140203532831376"></a><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="locking, use in" id="idm140203532830704"></a>Whenever you see leader election, critical shared state, or
+distributed locking, we recommend using <em>distributed consensus systems
+that have been formally proven and tested thoroughly</em>. Informal
+approaches to solving this problem can lead to outages, and more
+insidiously, to subtle and hard-to-fix data consistency problems that
+may prolong outages in your system unnecessarily.</p>
+<aside data-type="sidebar" epub:type="sidebar"><div class="sidebar" id="idm140203532828656">
+<h5>CAP Theorem</h5>
+<p><a data-type="indexterm" data-primary="CAP theorem" id="idm140203532827520"></a>The CAP theorem (<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Fox99">[Fox99]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bre12">[Bre12]</a>) holds that a distributed system
+cannot simultaneously have all three of the following properties:</p>
+
+<ul>
+<li>
+<p>Consistent views of the data at each node</p>
+</li>
+<li>
+<p>Availability of the data at each node</p>
+</li>
+<li>
+<p>Tolerance to network partitions <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Gil02">[Gil02]</a></p>
+</li>
+</ul>
+
+<p>The logic is intuitive: if two nodes can’t communicate
+(because the network is partitioned), then the system as a whole can
+either stop serving some or all requests at some or all nodes (thus
+reducing availability), or it can serve requests as usual, which
+results in inconsistent views of the data at each node.</p>
+</div></aside>
+
+<p class="pagebreak-before"><a data-type="indexterm" data-primary="network partitions" id="idm140203532819600"></a>Because network partitions are inevitable (cables get cut, packets get lost or
+delayed due to congestion, hardware breaks, networking components become
+misconfigured, etc.), understanding distributed consensus really amounts to
+understanding how consistency and availability work for your particular
+application. Commercial pressures often demand high levels of availability, and
+many applications require consistent views on their data.</p>
+
+<p><a data-type="indexterm" data-primary="ACID datastore semantics" id="idm140203532818064"></a><a data-type="indexterm" data-primary="datastores" data-secondary="ACID and BASE" id="idm140203532817376"></a>Systems and software engineers are usually familiar with the traditional ACID
+datastore semantics (Atomicity, Consistency, Isolation, and Durability), but a
+growing number of distributed datastore technologies provide a different set of
+semantics known as BASE (Basically Available, Soft state, and Eventual
+consistency). Datastores that support BASE semantics have useful applications
+for certain kinds of data and can handle large volumes of data and transactions
+that would be much more costly, and perhaps altogether infeasible, with
+datastores that support ACID semantics.</p>
+
+<p><a data-type="indexterm" data-primary="eventual consistency" id="idm140203532815424"></a><a data-type="indexterm" data-primary="clock drift" id="idm140203532814752"></a><a data-type="indexterm" data-primary="consistency" data-secondary="eventual" id="idm140203532814080"></a>Most of these systems that support BASE semantics rely on multimaster
+replication, where writes can be committed to different processes concurrently,
+and there is some mechanism to resolve conflicts (often as simple as
+“latest timestamp wins”). This approach is usually known as <em>eventual consistency</em>.
+However, eventual consistency can lead to surprising results <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Lu15">[Lu15]</a>, particularly in the event of
+<em>clock drift</em> (which is inevitable in distributed systems) or network
+partitioning <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Kin15">[Kin15]</a>.<sup><a data-type="noteref" id="idm140203532810032-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#idm140203532810032">1</a></sup></p>
+
+<p>It is also difficult for developers to design systems that work well
+with datastores that support only BASE semantics. Jeff Shute <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Shu13">[Shu13]</a>, for
+example, has stated, “we find developers spend a significant
+fraction of their time building extremely complex and error-prone
+mechanisms to cope with eventual consistency and handle data that may
+be out of date. We think this is an unacceptable burden to place on
+developers and that consistency problems should be solved at the
+database level.”</p>
+
+<p>System designers cannot sacrifice correctness in order to achieve
+reliability or performance, particularly around critical state. For
+example, consider a system that handles financial transactions:
+reliability or performance requirements don’t provide much value if
+the financial data is not correct. Systems need to be able to reliably
+synchronize critical state across multiple processes. Distributed
+consensus algorithms provide this functionality.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Motivating the Use of Consensus: Distributed Systems Coordination Failure"><div class="sect1" id="idm140203532805376">
+<h1>Motivating the Use of Consensus: Distributed Systems Coordination Failure</h1>
+
+<p>Distributed systems are complex and subtle to understand, monitor, and
+troubleshoot. Engineers running such systems are often surprised by
+behavior in the presence of failures. Failures are relatively rare
+events, and it is not a usual practice to test systems under these
+conditions. It is very difficult to reason about system behavior
+during failures. Network partitions are particularly challenging—a
+problem that appears to be caused by a full partition may instead be
+the result of:</p>
+
+<ul>
+<li>
+<p>A very slow network</p>
+</li>
+<li>
+<p>Some, but not all, messages being dropped</p>
+</li>
+<li>
+<p>Throttle occurring in one direction, but not the other direction</p>
+</li>
+</ul>
+
+<p>The following sections provide examples of problems that occurred in
+real-world distributed systems and discuss how leader election and
+distributed consensus algorithms could be used to prevent such issues.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Case Study 1: The Split-Brain Problem"><div class="sect2" id="idm140203537313440">
+<h2>Case Study 1: The Split-Brain Problem</h2>
+
+<p>A service is a content repository that allows collaboration between
+multiple users. It uses sets of two replicated file servers in
+different racks for reliability. The service needs to avoid writing
+data simultaneously to both file servers in a set, because doing so could
+result in data corruption (and possibly unrecoverable data).</p>
+
+<p>Each pair of file servers has one leader and one follower. The servers monitor each
+other via heartbeats. If one file server cannot contact its partner, it issues a
+STONITH (Shoot The Other Node in the Head) command to its partner node to shut
+the node down, and then takes mastership of its files. This practice is an
+industry standard method of reducing split-brain instances, although as we
+shall see, it is conceptually unsound.</p>
+
+<p>What happens if the network becomes slow, or starts dropping packets?
+In this scenario, file servers exceed their heartbeat timeouts and, as
+designed, send STONITH commands to their partner nodes and take
+mastership. However, some commands may not be delivered due to the
+compromised network. File server pairs may now be in a state in which
+both nodes are expected to be active for the same resource, or where
+both are down because both issued and received STONITH commands. This
+results in either corruption or unavailability of data.</p>
+
+<p>The problem here is that the system is trying to solve a leader
+election problem using simple timeouts. Leader election is a
+reformulation of the distributed asynchronous consensus problem, which
+cannot be solved correctly by using heartbeats.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Case Study 2: Failover Requires Human Intervention"><div class="sect2" id="idm140203537308976">
+<h2>Case Study 2: Failover Requires Human Intervention</h2>
+
+<p>A highly sharded database system has a primary for each shard, which
+replicates synchronously to a secondary in another datacenter. An
+external system checks the health of the primaries, and, if they are
+no longer healthy, promotes the secondary to primary. If the primary
+can’t determine the health of its secondary, it makes itself
+unavailable and escalates to a human in order to avoid the split-brain
+scenario seen in Case Study 1.</p>
+
+<p>This solution doesn’t risk data loss, but it does negatively impact
+availability of data. It also unnecessarily increases operational load
+on the engineers who run the system, and human intervention scales
+poorly. This sort of event, where a primary and secondary have
+problems communicating, is highly likely to occur in the case of a
+larger infrastructure problem, when the responding engineers may
+already be overloaded with other tasks. If the network is so badly
+affected that a distributed consensus system cannot elect a master, a human is likely not better positioned to do so.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Case Study 3: Faulty Group-Membership Algorithms"><div class="sect2" id="idm140203537305888">
+<h2>Case Study 3: Faulty Group-Membership Algorithms</h2>
+
+<p>A system has a component that performs indexing and searching
+services. When starting, nodes use a gossip protocol to discover each
+other and join the cluster. The cluster elects a leader, which
+performs coordination. In the case of a network partition that splits
+the cluster, each side (incorrectly) elects a master and accepts
+writes and deletions, leading to a split-brain scenario and data
+corruption.</p>
+
+<p>The problem of determining a consistent view of group membership
+across a group of processes is another instance of the distributed
+consensus problem.</p>
+
+<p>In fact, many distributed systems problems turn out to be different versions of
+distributed consensus, including master election, group membership, all kinds
+of distributed locking and leasing, reliable distributed queuing and messaging,
+and maintenance of any kind of critical shared state that must be viewed
+consistently across a group of processes. All of these problems should be
+solved only using distributed consensus algorithms that have been proven
+formally correct, and whose implementations have been tested extensively.
+Ad hoc means of solving these sorts of problems (such as heartbeats and gossip
+protocols) will always have reliability problems in practice.</p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="How Distributed Consensus Works"><div class="sect1" id="idm140203537302016">
+<h1>How Distributed Consensus Works</h1>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="principles" id="idm140203537300864"></a><a data-type="indexterm" data-primary="asynchronous distributed consensus" id="idm140203537299904"></a><a data-type="indexterm" data-primary="synchronous consensus" id="idm140203537299216"></a>The consensus problem has multiple variants. When dealing with
+distributed software systems, we are interested in <em>asynchronous
+distributed consensus</em>, which applies to environments with potentially
+unbounded delays in message passing. (<em>Synchronous consensus</em> applies
+to real-time systems, in which dedicated hardware means that messages
+will always be passed with specific timing guarantees.)</p>
+
+<p><a data-type="indexterm" data-primary="crash-fail vs. crash-recover algorithms" id="idm140203537296912"></a>Distributed consensus algorithms may be <em>crash-fail</em> (which assumes that
+crashed nodes never return to the system) or <em>crash-recover</em>. Crash-recover
+algorithms are much more useful, because most problems in real systems are
+transient in nature due to a slow network, restarts, and so on.</p>
+
+<p><a data-type="indexterm" data-primary="Byzantine failures" id="idm140203537294656"></a>Algorithms may deal with Byzantine or non-Byzantine failures. <em>Byzantine
+failure</em> occurs when a process passes incorrect messages due to a bug or
+malicious activity, and are comparatively costly to handle, and less often
+encountered.</p>
+
+<p><a data-type="indexterm" data-primary="FLP impossibility result" id="idm140203537292896"></a>Technically, solving the asynchronous distributed consensus problem in
+bounded time is impossible. As proven by the Dijkstra Prize–winning
+<em>FLP impossibility result</em> <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Fis85">[Fis85]</a>, no asynchronous distributed consensus
+algorithm can guarantee progress in the presence of an unreliable
+network.</p>
+
+<p>In practice, we approach the distributed consensus problem in bounded
+time by ensuring that the system will have sufficient healthy replicas
+and network connectivity to make progress reliably most of the
+time. In addition, the system should have backoffs with randomized
+delays. This setup both prevents retries from causing cascade effects
+and avoids the dueling proposers problem described later in this
+chapter. The protocols guarantee safety, and adequate redundancy in
+the system encourages liveness.</p>
+
+<p><a data-type="indexterm" data-primary="Paxos consensus algorithm" data-secondary="Lamport’s Paxos protocol" data-seealso="consensus algorithms" id="idm140203537289296"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Paxos" id="idm140203537288048"></a>The original solution to the distributed consensus problem was Lamport’s Paxos
+protocol <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Lam98">[Lam98]</a>, but other protocols exist that solve the problem,
+including Raft <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ong14">[Ong14]</a>, Zab <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Jun11">[Jun11]</a>, and Mencius <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mao08">[Mao08]</a>. Paxos itself
+has many variations intended to increase performance <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Zoo14">[Zoo14]</a>. These usually
+vary only in a single detail, such as giving a special leader role to one
+process to streamline the protocol.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Paxos Overview: An Example Protocol"><div class="sect2" id="idm140203537282336">
+<h2>Paxos Overview: An Example Protocol</h2>
+
+<p>Paxos operates as a sequence of proposals, which may or may not be
+accepted by a majority of the processes in the system. If a proposal
+isn’t accepted, it fails. Each proposal has a sequence number, which
+imposes a strict ordering on all of the operations in the system.</p>
+
+<p>In the first phase of the protocol, the proposer sends a sequence
+number to the acceptors. Each acceptor will agree to accept the
+proposal only if it has not yet seen a proposal with a higher
+sequence number. Proposers can try again with a higher sequence number
+if necessary. Proposers must use unique sequence numbers (drawing from
+disjoint sets, or incorporating their hostname into the sequence
+number, for instance).</p>
+
+<p>If a proposer receives agreement from a majority of the acceptors, it
+can commit the proposal by sending a commit message with a value.</p>
+
+<p>The strict sequencing of proposals solves any problems relating to
+ordering of messages in the system. The requirement for a majority to
+commit means that two different values cannot be committed for the
+same proposal, because any two majorities will overlap in at least one
+node. Acceptors must write a journal on persistent storage whenever
+they agree to accept a proposal, because the acceptors need to honor
+these guarantees after restarting.</p>
+
+<p>Paxos on its own isn’t that useful: all it lets you do is to agree on
+a value and proposal number once. Because only a quorum of nodes need
+to agree on a value, any given node may not have a complete view of
+the set of values that have been agreed to. This limitation is true
+for most distributed consensus algorithms.</p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="System Architecture Patterns for Distributed Consensus"><div class="sect1" id="idm140203537277248">
+<h1>System Architecture Patterns for Distributed Consensus</h1>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="patterns for" id="DCSsapat23"></a>Distributed consensus algorithms are low-level and primitive: they
+simply allow a set of nodes to agree on a value, once. They don’t map
+well to real design tasks. What makes distributed consensus useful is
+the addition of higher-level system components such as datastores,
+configuration stores, queues, locking, and leader election services to
+provide the practical system functionality that distributed consensus
+algorithms don’t address. Using higher-level components reduces
+complexity for system designers. It also allows underlying distributed
+consensus algorithms to be changed if necessary in response to changes
+in the environment in which the system runs or changes in
+nonfunctional requirements.</p>
+
+<p><a data-type="indexterm" data-primary="Zookeeper" id="idm140203537273712"></a><a data-type="indexterm" data-primary="Consul" id="idm140203537273040"></a><a data-type="indexterm" data-primary="Chubby lock service" id="idm140203537272368"></a>Many systems that successfully use consensus algorithms actually do so as
+clients of some service that implements those algorithms, such as Zookeeper,
+Consul, and etcd. Zookeeper <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Hun10">[Hun10]</a> was the first open source consensus
+system to gain traction in the industry because it was easy to use, even with
+applications that weren’t designed to use distributed consensus. The Chubby
+service fills a similar niche at Google. Its authors point out <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bur06">[Bur06]</a> that
+providing consensus primitives as a service rather than as libraries that
+engineers build into their applications frees application maintainers of having
+to deploy their systems in a way compatible with a highly available
+consensus service (running the right number of replicas, dealing with group
+membership, dealing with performance, etc.).</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Reliable Replicated State Machines"><div class="sect2" id="idm140203537269168">
+<h2>Reliable Replicated State Machines</h2>
+
+<p><a data-type="indexterm" data-primary="replicated state machine (RSM)" id="idm140203537268016"></a>A <em>replicated state machine</em> (RSM) is a system that executes the same set of
+operations, in the same order, on several processes. RSMs are the fundamental
+building block of useful distributed systems components and services such as
+data or configuration storage, locking, and leader election (described in more
+detail later).</p>
+
+<p>The operations on an RSM are ordered globally through a consensus algorithm. This is a
+powerful concept: several papers (<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Agu10">[Agu10]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Kir08">[Kir08]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Sch90">[Sch90]</a>)
+show that any deterministic program can be implemented as a
+highly available replicated service by being implemented as an RSM.</p>
+
+<p>As shown in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_consensus-rsm-relationship">Figure&nbsp;23-2</a>,
+replicated state machines are a system implemented at a logical layer
+above the consensus algorithm. The consensus algorithm deals with
+agreement on the sequence of operations, and the RSM executes the
+operations in that order. Because not every member of the consensus
+group is necessarily a member of each consensus quorum, RSMs may need
+to synchronize state from peers. As described by Kirsch and Amir
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Kir08">[Kir08]</a>, you can use a <em>sliding-window protocol</em> to reconcile state
+between peer processes in an RSM.</p>
+
+<figure><div id="fig_distributed-consensus_consensus-rsm-relationship" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2302.png" alt="The relationship between consensus algorithms and replicated state machines." width="1552" height="450">
+<h6><span class="label">Figure 23-2. </span>The relationship between consensus algorithms and replicated state machines</h6>
+</div></figure>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Reliable Replicated Datastores and Configuration Stores"><div class="sect2" id="idm140203537257696">
+<h2>Reliable Replicated Datastores and Configuration Stores</h2>
+
+<p><a data-type="indexterm" data-primary="reliable replicated datastores" id="idm140203537256528"></a><a data-type="indexterm" data-primary="datastores" data-secondary="reliable replicated" id="idm140203537255840"></a>Reliable replicated datastores are an application of replicated state machines.
+Replicated datastores use consensus algorithms in the critical path of their
+work. Thus, performance, throughput, and the ability to scale are very
+important in this type of design. As with datastores built with other
+underlying technologies, consensus-based datastores can provide a variety of
+consistency semantics for read operations, which make a huge difference to how
+the datastore scales. These trade-offs are discussed in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#xref_distributed-consensus_performance">“Distributed Consensus Performance”</a>.</p>
+
+<p><a data-type="indexterm" data-primary="timestamps" id="idm140203537253104"></a>Other (nondistributed-consensus–based) systems often simply rely on timestamps
+to provide bounds on the age of data being returned. Timestamps are highly
+problematic in distributed systems because it’s impossible to guarantee that
+clocks are synchronized across multiple machines. Spanner <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cor12">[Cor12]</a> addresses
+this problem by modeling the worst-case uncertainty involved and slowing
+down processing where necessary to resolve that uncertainty.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Highly Available Processing Using Leader Election"><div class="sect2" id="idm140203537250720">
+<h2>Highly Available Processing Using Leader Election</h2>
+
+<p><a data-type="indexterm" data-primary="leader election" id="idm140203537249552"></a>Leader election in distributed systems is an equivalent problem to
+distributed consensus. Replicated services that use a single leader to
+perform some specific type of work in the system are very common; the
+single leader mechanism is a way of ensuring mutual exclusion at a
+coarse level.</p>
+
+<p><a data-type="indexterm" data-primary="GFS (Google File System)" id="idm140203537248160"></a>This type of design is appropriate where the work of the service
+leader can be performed by one process or is sharded. System designers can construct a highly available
+service by writing it as though it was a simple
+program, replicating that process and using leader election to ensure
+that only one leader is working at any point in time (as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_ha-with-rsm">Figure&nbsp;23-3</a>). Often the work of the
+leader is that of coordinating some pool of workers in the
+system. This pattern was used in GFS <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ghe03">[Ghe03]</a> (which has been replaced by
+Colossus) and the Bigtable key-value store <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cha06">[Cha06]</a>.</p>
+
+<figure><div id="fig_distributed-consensus_ha-with-rsm" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2303.png" alt="Highly available system using a replicated service for master election." width="944" height="970">
+<h6><span class="label">Figure 23-3. </span>Highly available system using a replicated service for master election</h6>
+</div></figure>
+
+<p>In this type of component, unlike the replicated datastore, the
+consensus algorithm is not in the critical path of the main work the
+system is doing, so throughput is usually not a major concern.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Distributed Coordination and Locking Services"><div class="sect2" id="idm140203537241168">
+<h2>Distributed Coordination and Locking Services</h2>
+
+<p><a data-type="indexterm" data-primary="barrier tools" id="idm140203537240000"></a><a data-type="indexterm" data-primary="lock services" id="idm140203537239328"></a><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="coordination, use in" id="idm140203537238656"></a>A <em>barrier</em> in a distributed computation is a primitive that blocks a
+group of processes from proceeding until some condition is met (for
+example, until all parts of one phase of a computation are
+completed). Use of a barrier effectively splits a distributed
+computation into logical phases. For instance, as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_mapreduce-barriers">Figure&nbsp;23-4</a>, a barrier could be
+used in implementing the MapReduce <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Dea04">[Dea04]</a> model to ensure that the
+entire Map phase is completed before the Reduce part of the
+computation proceeds.</p>
+
+<figure><div id="fig_distributed-consensus_mapreduce-barriers" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2304.png" alt="Barriers for process coordination in the MapReduce computation." width="1252" height="680">
+<h6><span class="label">Figure 23-4. </span>Barriers for process coordination in the MapReduce computation</h6>
+</div></figure>
+
+<p>The barrier could be implemented by a single coordinator process, but this
+implementation adds a single point of failure that is usually unacceptable. The
+barrier can also be implemented as an RSM. The Zookeeper consensus service can implement the barrier pattern: see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Hun10">[Hun10]</a> and <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Zoo14">[Zoo14]</a>.</p>
+
+<p><em>Locks</em> are another useful coordination primitive that can be
+ implemented as an RSM. Consider a distributed system in which worker
+ processes atomically consume some input files and write
+ results. Distributed locks can be used to prevent multiple workers
+ from processing the same input file. In practice, it is essential to
+ use renewable leases with timeouts instead of indefinite locks,
+ because doing so prevents locks from being held indefinitely by
+ processes that crash. Distributed locking is beyond the scope of this
+ chapter, but bear in mind that distributed locks are a low-level
+ systems primitive that should be used with care. Most applications
+ should use a higher-level system that provides distributed
+ transactions.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Reliable Distributed Queuing and Messaging"><div class="sect2" id="idm140203537228624">
+<h2>Reliable Distributed Queuing and Messaging</h2>
+
+<p><a data-type="indexterm" data-primary="Remote Procedure Call (RPC)" data-secondary="deadlines" data-tertiary="queue management" id="idm140203537227456"></a><a data-type="indexterm" data-primary="queuing" data-secondary="management of" id="idm140203537226224"></a>Queues are a common data structure, often used as a way to distribute
+tasks between a number of worker processes.</p>
+
+<p><a data-type="indexterm" data-primary="lease systems" id="idm140203537224736"></a>Queuing-based systems can tolerate failure and loss of worker nodes
+relatively easily. However, the system must ensure that claimed tasks
+are successfully processed. For that purpose, a <em>lease system</em>
+(discussed earlier in regard to locks) is recommended instead of an
+outright removal from the queue. The downside of queuing-based
+systems is that loss of the queue prevents the entire system from
+operating. Implementing the queue as an RSM can minimize the risk, and
+make the entire system far more robust.</p>
+
+<p><em>Atomic broadcast</em> <a data-type="indexterm" data-primary="atomic broadcast systems" id="idm140203537222256"></a>is a distributed systems primitive in which
+ messages are received reliably and in the same order by all
+ participants. This is an incredibly powerful distributed systems
+ concept and very useful in designing practical systems. A huge number
+ of publish-subscribe messaging infrastructures exist for the use of
+ system designers, although not all of them provide atomic
+ guarantees. Chandra and Toueg <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cha96">[Cha96]</a> demonstrate the equivalence of
+ atomic broadcast and consensus.</p>
+
+<p><a data-type="indexterm" data-primary="queuing-as-work-distribution pattern" id="idm140203537219856"></a>The <em>queuing-as-work-distribution</em> pattern, which uses the queue as a
+load balancing device, as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_queuing">Figure&nbsp;23-5</a>, can be considered to be
+point-to-point messaging. Messaging systems usually also implement a
+publish-subscribe queue, where messages may be consumed by many
+clients that subscribe to a channel or topic. In this one-to-many
+case, the messages on the queue are stored as a persistent ordered
+list. Publish-subscribe systems can be used for many types of
+applications that require clients to subscribe to receive notifications
+of some type of event. Publish-subscribe systems can also be used to
+implement coherent distributed caches.</p>
+
+<figure><div id="fig_distributed-consensus_queuing" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2305.png" alt="A queue-oriented work distribution system using a reliable consensus-based queuing component." width="1124" height="877">
+<h6><span class="label">Figure 23-5. </span>A queue-oriented work distribution system using a reliable consensus-based queuing component</h6>
+</div></figure>
+
+<p>Queuing and messaging systems often need excellent throughput, but don’t need
+extremely low latency (due to seldom being directly user-facing). However, very
+high latencies in a system like the one just described, which has multiple
+workers claiming tasks from a queue, could become a problem if the percentage
+of processing time for each task grew significantly.<a data-type="indexterm" data-primary="" data-startref="DCSsapat23" id="idm140203537214096"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Distributed Consensus Performance"><div class="sect1" id="xref_distributed-consensus_performance">
+<h1>Distributed Consensus Performance</h1>
+
+<p><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="improving performance of" id="idm140203537211232"></a><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="performance of" id="DCSperf23"></a>Conventional wisdom has generally held that consensus algorithms are too slow
+and costly to use for many systems that require high throughput <em>and</em> low latency
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bol11">[Bol11]</a>. This conception is simply not true—while implementations can be
+slow, there are a number of tricks that can improve performance. Distributed
+consensus algorithms are at the core of many of Google’s critical systems, described in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ana13">[Ana13]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bur06">[Bur06]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cor12">[Cor12]</a>, and <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Shu13">[Shu13]</a>, and they have proven
+extremely effective in practice. Google’s scale is not an advantage here: in
+fact, our scale is more of a disadvantage because it introduces two main
+challenges: our datasets tend to be large and our systems run over a wide
+geographical distance. Larger datasets multiplied by several replicas represent
+significant computing costs, and larger geographical distances increase latency
+between replicas, which in turn reduces performance.</p>
+
+<p>There is no one “best” distributed consensus and state machine replication
+algorithm for performance, because performance is dependent on a number of factors
+relating to workload, the system’s performance objectives, and how the system
+is to be deployed.<sup><a data-type="noteref" id="idm140203537202784-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#idm140203537202784">2</a></sup>
+While some of the following sections present research, with the aim of
+increasing understanding of what is possible to achieve with distributed
+consensus, many of the systems described are available and are in use now.</p>
+
+<p><em>Workloads</em> <a data-type="indexterm" data-primary="workloads" id="idm140203537201008"></a>can vary in many ways and understanding how they can vary is
+critical to discussing performance. In the case of a consensus system, workload
+may vary in terms of:</p>
+
+<ul>
+<li>
+<p>Throughput: the number of proposals being made per unit of time at
+peak load</p>
+</li>
+<li>
+<p>The type of requests: proportion of operations that change state</p>
+</li>
+<li>
+<p>The consistency semantics required for read operations</p>
+</li>
+<li>
+<p>Request sizes, if size of data payload can vary</p>
+</li>
+</ul>
+
+<p>Deployment strategies vary, too. For example:</p>
+
+<ul>
+<li>
+<p>Is the deployment local area or wide area?</p>
+</li>
+<li>
+<p>What kinds of quorum are used, and where are the majority of
+processes?</p>
+</li>
+<li>
+<p>Does the system use sharding, pipelining, and batching?</p>
+</li>
+</ul>
+
+<p>Many consensus systems use a distinguished leader process and require
+all requests to go to this special node. As shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_distance-latency">Figure&nbsp;23-6</a>, as a result, the
+performance of the system as perceived by clients in different
+geographic locations may vary considerably, simply because more
+distant nodes have longer round-trip times to the leader process.</p>
+
+<figure><div id="fig_distributed-consensus_distance-latency" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2306.png" alt="The effect of distance from a server process on perceived latency at the client." width="1103" height="500">
+<h6><span class="label">Figure 23-6. </span>The effect of distance from a server process on perceived latency at the client</h6>
+</div></figure>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Multi-Paxos: Detailed Message Flow"><div class="sect2" id="xref_distributed-consensus_multi-paxos">
+<h2>Multi-Paxos: Detailed Message Flow</h2>
+
+<p><a data-type="indexterm" data-primary="Multi-Paxos protocol" id="idm140203537186656"></a><a data-type="indexterm" data-primary="strong leader process" id="idm140203537185984"></a>The Multi-Paxos protocol uses a <em>strong leader process</em>: unless a
+leader has not yet been elected or some failure occurs, it requires
+only one round trip from the proposer to a quorum of acceptors to
+reach consensus. Using a strong leader process is optimal in terms of
+the number of messages to be passed, and is typical of many consensus
+<span class="keep-together">protocols</span>.</p>
+
+<p><a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_multipaxos-basic">Figure&nbsp;23-7</a> shows an initial state
+with a new proposer executing the first <code>Prepare</code>/<code>Promise</code> phase of the
+protocol. Executing this phase establishes a new numbered view, or
+leader term. On subsequent executions of the protocol, while the view
+remains the same, the first phase is unnecessary because the proposer
+that established the view can simply send <code>Accept</code> messages, and
+consensus is reached once a quorum of responses is received (including
+the proposer itself).</p>
+
+<figure><div id="fig_distributed-consensus_multipaxos-basic" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2307.png" alt="Basic Multi-Paxos message flow." width="1346" height="662">
+<h6><span class="label">Figure 23-7. </span>Basic Multi-Paxos message flow</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="dueling proposers situation" id="idm140203537178400"></a>Another process in the group can assume the proposer role to propose
+messages at any time, but changing the proposer has a performance
+cost. It necessitates the extra round trip to execute Phase 1 of the
+protocol, but more importantly, it may cause a <em>dueling proposers</em>
+situation in which proposals repeatedly interrupt each other and no
+proposals can be accepted, as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_multipaxos-livelock">Figure&nbsp;23-8</a>. Because this scenario is
+a form of a livelock, it can continue indefinitely.</p>
+
+<figure><div id="fig_distributed-consensus_multipaxos-livelock" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2308.png" alt="Dueling proposers in Multi-Paxos." width="1467" height="886">
+<h6><span class="label">Figure 23-8. </span>Dueling proposers in Multi-Paxos</h6>
+</div></figure>
+
+<p>All practical consensus systems address this issue of collisions,
+usually either by electing a proposer process, which makes all
+proposals in the system, or by using a rotating proposer that
+allocates each process particular slots for their proposals.</p>
+
+<p><a data-type="indexterm" data-primary="Raft consensus protocol" data-seealso="consensus algorithms" id="idm140203537172736"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Raft" id="idm140203537171792"></a>For systems that use a leader process, the leader election process
+must be tuned carefully to balance the system unavailability that
+occurs when no leader is present with the risk of dueling
+proposers. It’s important to implement the right timeouts and backoff
+strategies. If multiple processes detect that there is no leader and
+all attempt to become leader at the same time, then none of the
+processes is likely to succeed (again, dueling proposers). Introducing
+randomness is the best approach. Raft <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ong14">[Ong14]</a>, for example,
+has a well-thought-out method of approaching the leader election
+process.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Scaling Read-Heavy Workloads"><div class="sect2" id="idm140203537168960">
+<h2>Scaling Read-Heavy Workloads</h2>
+
+<p><a data-type="indexterm" data-primary="read workload, scaling" id="idm140203537167808"></a>Scaling read workload is often critical because many workloads are read-heavy.
+Replicated datastores have the advantage that the data is available in multiple
+places, meaning that if strong consistency is not required for all reads, data
+could be read from <em>any</em> replica. This technique of reading from replicas works
+well for certain applications, such as Google’s Photon system <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ana13">[Ana13]</a>, which
+uses distributed consensus to coordinate the work of multiple pipelines. Photon
+uses an atomic compare-and-set operation for state modification (inspired by
+atomic registers), which must be absolutely consistent; but read operations may
+be served from any replica, because stale data results in extra work being performed
+but not incorrect results <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Gup15">[Gup15]</a>. The trade-off is worthwhile.</p>
+
+<p>In order to guarantee that data being read is up-to-date and
+consistent with any changes made before the read is performed,
+it is necessary to do one of the following:</p>
+
+<ul>
+<li>
+<p>Perform a read-only consensus operation.</p>
+</li>
+<li>
+<p>Read the data from a replica that is guaranteed to be the most up-to-date. In a system that uses a stable leader process (as many
+distributed consensus implementations do), the leader can provide
+this guarantee.</p>
+</li>
+<li>
+<p>Use quorum leases, in which some replicas are granted a lease on
+all or part of the data in the system, allowing strongly consistent
+local reads at the cost of some write performance. This technique
+is discussed in detail in the following section.</p>
+</li>
+</ul>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Quorum Leases"><div class="sect2" id="idm140203537159664">
+<h2>Quorum Leases</h2>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="quorum leasing technique" data-seealso="consensus algorithms" id="idm140203537158528"></a><a data-type="indexterm" data-primary="quorum" data-see="distributed consensus systems" id="idm140203537157280"></a>Quorum leases <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mor14">[Mor14]</a> are a recently developed distributed consensus
+performance optimization aimed at reducing latency and increasing
+throughput for read operations. As previously mentioned, in the case
+of classic Paxos and most other distributed consensus protocols,
+performing a strongly consistent read (i.e., one that is guaranteed to
+have the most up-to-date view of state) requires either a distributed
+consensus operation that reads from a quorum of replicas, or a stable
+leader replica that is guaranteed to have seen all recent state
+changing operations. In many systems, read operations vastly outnumber
+writes, so this reliance on either a distributed operation or a single
+replica harms latency and system throughput.</p>
+
+<p>The quorum leasing technique simply grants a read lease on some subset
+of the replicated datastore’s state to a quorum of replicas. The lease
+is for a specific (usually brief) period of time. Any operation that
+changes the state of that data must be acknowledged by all replicas in
+the read quorum. If any of these replicas becomes unavailable, the
+data cannot be modified until the lease expires.</p>
+
+<p>Quorum leases are particularly useful for read-heavy workloads in
+which reads for particular subsets of the data are concentrated in a
+single geographic region.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Distributed Consensus Performance and Network Latency"><div class="sect2" id="idm140203537152896">
+<h2>Distributed Consensus Performance and Network Latency</h2>
+
+<p><a data-type="indexterm" data-primary="network latency" id="idm140203537151728"></a>Consensus systems face two major physical constraints on performance when
+committing state changes. One is network round-trip time and the other is time
+it takes to write data to persistent storage, which will be examined later.</p>
+
+<p><a data-type="indexterm" data-primary="round-trip-time (RTT)" id="idm140203537150400"></a>Network round-trip times vary enormously depending on source and
+destination location, which are impacted both by the physical distance
+between the source and the destination, and by the amount of
+congestion on the network. Within a single datacenter, round-trip
+times between machines should be on the order of a millisecond. A
+typical round-trip-time (RTT) within the United States is 45
+milliseconds, and from New York to London is 70 milliseconds.</p>
+
+<p>Consensus system performance over a local area network can be comparable to
+that of an asynchronous leader-follower replication system <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bol11">[Bol11]</a>, such as many
+traditional databases use for replication. However, much of the availability
+benefits of distributed consensus systems require replicas to be “distant” from
+each other, in order to be in different failure domains.</p>
+
+<p><a data-type="indexterm" data-primary="TCP/IP communication protocol" id="idm140203537147232"></a>Many consensus systems use TCP/IP as their communication protocol. TCP/IP is
+connection-oriented and provides some strong reliability guarantees regarding
+FIFO sequencing of messages. However, setting up a new TCP/IP connection
+requires a network round trip to perform the three-way handshake that sets up a
+connection before any data can be sent or received. TCP/IP slow start initially
+limits the bandwidth of the connection until its limits have been established.
+Initial TCP/IP window sizes range from 4 to 15 KB.</p>
+
+<p>TCP/IP slow start is probably not an issue for the processes that form a
+consensus group: they will establish connections to each other and keep these
+connections open for reuse because they’ll be in frequent communication.
+However, for systems with a very high number of clients, it may not be
+practical for all clients to keep a persistent connection to the consensus
+clusters open, because open TCP/IP connections do consume some resources, e.g.,
+file descriptors, in addition to generating keepalive traffic. This overhead
+may be an important issue for applications that use very highly sharded
+consensus-based datastores containing thousands of replicas and an even larger
+numbers of clients. A solution is to use a pool of regional proxies, as shown in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_proxies">Figure&nbsp;23-9</a>, which hold
+persistent TCP/IP connections to the consensus group in order to avoid the
+setup overhead over long distances. Proxies may also be a good way to
+encapsulate sharding and load balancing strategies, as well as discovery of
+cluster members and leaders.</p>
+
+<figure><div id="fig_distributed-consensus_proxies" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2309.png" alt="Using proxies to reduce the need for clients to open TCP/IP connections across regions." width="1106" height="889">
+<h6><span class="label">Figure 23-9. </span>Using proxies to reduce the need for clients to open TCP/IP connections across regions</h6>
+</div></figure>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Reasoning About Performance: Fast Paxos"><div class="sect2" id="xref_distributed-consensus_fast-paxos">
+<h2>Reasoning About Performance: Fast Paxos</h2>
+
+<p><a data-type="indexterm" data-primary="Paxos consensus algorithm" data-secondary="Fast Paxos consensus algorithm" id="idm140203537139632"></a><a data-type="indexterm" data-primary="Paxos consensus algorithm" data-secondary="Classic Paxos algorithm" id="idm140203537138656"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Fast Paxos" id="idm140203537137696"></a>Fast Paxos <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Lam06">[Lam06]</a> is a version of the Paxos algorithm designed to
+improve its performance over wide area networks. Using Fast Paxos, each client
+can send <code>Propose</code> messages directly to each member of a group of acceptors,
+instead of through a leader, as in Classic Paxos or Multi-Paxos. The idea is to
+substitute one parallel message send from the client to all acceptors in Fast
+Paxos for two message send operations in Classic Paxos:</p>
+
+<ul>
+<li>
+<p>One message from the client to a single proposer</p>
+</li>
+<li>
+<p>A parallel message send operation from the proposer to the other
+replicas</p>
+</li>
+</ul>
+
+<p>Intuitively, it seems as though Fast Paxos should always be faster than Classic
+Paxos. However, that’s not true: if the client in the Fast Paxos system has a
+high RTT (round-trip time) to the acceptors, and the acceptors have fast
+connections to each other, we have substituted <em>N</em> parallel messages across the
+slower network links (in Fast Paxos) for one message across the slower link
+plus <em>N</em> parallel messages across the faster links (Classic Paxos). Due to the
+latency tail effect, the majority of the time, a single round trip across a
+slow link with a distribution of latencies is faster than a quorum (as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Jun07">[Jun07]</a>), and therefore, Fast Paxos is slower than Classic Paxos in this case.</p>
+
+<p>Many systems batch multiple operations into a single transaction at the
+acceptor to increase throughput. Having clients act as proposers also makes it
+much more difficult to batch proposals. The reason for this is that proposals
+arrive independently at acceptors so you can’t then batch them in a consistent
+way.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Stable Leaders"><div class="sect2" id="idm140203537128720">
+<h2>Stable Leaders</h2>
+
+<p><a data-type="indexterm" data-primary="stable leaders" id="idm140203537127584"></a><a data-type="indexterm" data-primary="Zab consensus" id="idm140203537126912"></a><a data-type="indexterm" data-primary="Raft consensus protocol" id="idm140203537126240"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Zab" data-seealso="distributed consensus systems" id="idm140203537125568"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Raft" id="idm140203537124336"></a>We have seen how Multi-Paxos elects a stable leader to improve performance. Zab
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Jun11">[Jun11]</a> and Raft <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ong14">[Ong14]</a> are also examples of protocols that elect a stable
+leader for performance reasons. This approach can allow read optimizations, as
+the leader has the most up-to-date state, but also has several problems:</p>
+
+<ul>
+<li>
+<p>All operations that change state must be sent via the leader, a
+requirement that adds network latency for clients that are not
+located near the leader.</p>
+</li>
+<li>
+<p>The leader process’s outgoing network bandwidth is a system
+bottleneck <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mao08">[Mao08]</a>, because the leader’s <code>Accept</code> message contains all
+of the data related to any proposal, whereas other messages contain
+only acknowledgments of a numbered transaction with no data
+payload.</p>
+</li>
+<li>
+<p>If the leader happens to be on a machine with performance problems,
+then the throughput of the entire system will be reduced.</p>
+</li>
+</ul>
+
+<p><a data-type="indexterm" data-primary="Mencius algorithm" id="idm140203537116144"></a><a data-type="indexterm" data-primary="Paxos consensus algorithm" data-secondary="Egalitarian Paxos consensus algorithm" id="idm140203537115472"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Egalitarian Paxos" id="idm140203537114496"></a>Almost all distributed consensus systems that have been designed with
+performance in mind use either the single stable leader pattern or a
+system of rotating leadership in which each numbered distributed
+consensus algorithm is preassigned to a replica (usually by a simple
+modulus of the transaction ID). Algorithms that use this approach
+include Mencius <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mao08">[Mao08]</a> and Egalitarian Paxos <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mor12a">[Mor12a]</a>.</p>
+
+<p>Over a wide area network with clients spread out geographically and
+replicas from the consensus group located reasonably near to the
+clients, such leader election leads to lower perceived latency for
+clients because their network RTT to the nearest replica will, on
+average, be smaller than that to an arbitrary leader.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Batching"><div class="sect2" id="idm140203537110320">
+<h2>Batching</h2>
+
+<p><a data-type="indexterm" data-primary="batching" id="idm140203537109184"></a><a data-type="indexterm" data-primary="pipelining" id="idm140203537108512"></a>Batching, as described in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#xref_distributed-consensus_fast-paxos">“Reasoning About Performance: Fast Paxos”</a>,
+increases system throughput, but it still leaves replicas idle while
+they await replies to messages they have sent. The inefficiencies
+presented by idle replicas can be solved by <em>pipelining</em>, which
+allows multiple proposals to be in-flight at once. This optimization
+is very similar to the TCP/IP case, in which the protocol attempts to
+“keep the pipe full” using a sliding-window approach. Pipelining is
+normally used in combination with batching.</p>
+
+<p>The batches of requests in the pipeline are still globally ordered
+with a view number and a transaction number, so this method does not
+violate the global ordering properties required to run a replicated
+state machine. This optimization method is discussed in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bol11">[Bol11]</a> and <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#San11">[San11]</a>.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Disk Access"><div class="sect2" id="idm140203537103296">
+<h2>Disk Access</h2>
+
+<p><a data-type="indexterm" data-primary="disk access" id="idm140203537102160"></a><a data-type="indexterm" data-primary="persistent storage" id="idm140203537101488"></a><a data-type="indexterm" data-primary="Paxos consensus algorithm" data-secondary="disk access and" id="idm140203537100816"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Paxos" id="idm140203537099856"></a>Logging to persistent storage is required so that a node, having crashed and
+returned to the cluster, honors whatever previous commitments it made regarding
+ongoing consensus transactions. In the Paxos protocol, for instance, acceptors
+cannot agree to a proposal when they have already agreed to a proposal with a
+higher sequence number. If details of agreed and committed proposals are not
+logged to persistent storage, then an acceptor might violate the protocol if it
+crashes and is restarted, leading to inconsistent state.</p>
+
+<p>The time required to write an entry to a log on disk varies greatly
+depending on what hardware or virtualized environment is used, but is
+likely to take between one and several milliseconds.</p>
+
+<p><a data-type="indexterm" data-primary="Multi-Paxos protocol" data-seealso="consensus algorithms" id="idm140203537097328"></a><a data-type="indexterm" data-primary="consensus algorithms" data-secondary="Multi-Paxos" id="idm140203537096384"></a>The message flow for Multi-Paxos was discussed in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#xref_distributed-consensus_multi-paxos">“Multi-Paxos: Detailed Message Flow”</a>, but this section did not
+show where the protocol must log state changes to disk. A disk write
+must happen whenever a process makes a commitment that it must
+honor. In the performance-critical second phase of Multi-Paxos, these
+points occur before an acceptor sends an <code>Accepted</code> message in response
+to a proposal, and before the proposer sends the <code>Accept</code> message,
+because this <code>Accept</code> message is also an implicit <code>Accepted</code> message <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Lam98">[Lam98]</a>.</p>
+
+<p>This means that the latency for a single consensus operation involves
+the following:</p>
+
+<ul>
+<li>
+<p>One disk write on the proposer</p>
+</li>
+<li>
+<p>Parallel messages to the acceptors</p>
+</li>
+<li>
+<p>Parallel disk writes at the acceptors</p>
+</li>
+<li>
+<p>The return messages</p>
+</li>
+</ul>
+
+<p>There is a version of the Multi-Paxos protocol that’s useful for cases
+in which disk write time dominates: this variant doesn’t consider the
+proposer’s <code>Accept</code> message to be an implicit <code>Accepted</code> message. Instead,
+the proposer writes to disk in parallel with the other processes and
+sends an explicit <code>Accept</code> message. Latency then becomes proportional to
+the time taken to send two messages and for a quorum of processes to
+execute a synchronous write to disk in parallel.</p>
+
+<p>If latency for performing a small random write to disk is on the order
+of 10 milliseconds, the rate of consensus operations will be limited
+to approximately 100 per minute. These times assume that network round-trip times are negligible and the proposer performs its logging in
+parallel with the acceptors.</p>
+
+<p>As we have seen already, distributed consensus algorithms are often
+used as the basis for building a replicated state machine. RSMs also
+need to keep transaction logs for recovery purposes (for the same
+reasons as any datastore). The consensus algorithm’s log and the RSM’s
+transaction log can be combined into a single log. Combining these
+logs avoids the need to constantly alternate between writing to two
+different physical locations on disk <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bol11">[Bol11]</a>, reducing the time spent on
+seek operations. The disks can sustain more operations per second and
+therefore, the system as a whole can perform more transactions.</p>
+
+<p>In a datastore, disks have purposes other than maintaining logs:
+system state is generally maintained on disk. Log writes must be
+flushed directly to disk, but writes for state changes can be written
+to a memory cache and flushed to disk later, reordered to use the most
+efficient schedule <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bol11">[Bol11]</a>.</p>
+
+<p>Another possible optimization is batching multiple client operations
+together into one operation at the proposer (<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ana13">[Ana13]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bol11">[Bol11]</a>,
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cha07">[Cha07]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Jun11">[Jun11]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mao08">[Mao08]</a>,
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mor12a">[Mor12a]</a>). This amortizes the fixed costs of the disk
+logging and network latency over the larger number of operations,
+increasing throughput.<a data-type="indexterm" data-primary="" data-startref="DCSperf23" id="idm140203537074880"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Deploying Distributed Consensus-Based Systems"><div class="sect1" id="idm140203537073456">
+<h1>Deploying Distributed Consensus-Based Systems</h1>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="deploying" id="DCSdeploy23"></a>The most critical decisions system designers must make when deploying
+a consensus-based system concern the number of replicas to be deployed
+and the location of those replicas.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Number of Replicas"><div class="sect2" id="idm140203537070576">
+<h2>Number of Replicas</h2>
+
+<p><a data-type="indexterm" data-primary="replicas" data-secondary="number deployed" id="idm140203537069440"></a><a data-type="indexterm" data-primary="majority quorums" id="idm140203537068496"></a><a data-type="indexterm" data-primary="Byzantine failures" id="idm140203537067824"></a>In general, consensus-based systems operate using <em>majority quorums</em>,
+i.e., a group of <img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/eq_33.png" alt="2 f plus 1" width="71" height="27"> replicas may tolerate <img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/eq_34.png" alt="f" width="11" height="25"> failures (if
+Byzantine fault tolerance, in which the system is resistant to
+replicas returning incorrect results, is required, then <img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/eq_35.png" alt="3 f plus 1" width="70" height="27">
+replicas may tolerate <img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/eq_36.png" alt="f" width="11" height="25"> failures <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cas99">[Cas99]</a>). For non-Byzantine
+failures, the minimum number of replicas that can be deployed is three—if two are deployed, then there is no tolerance for failure of any
+process. Three replicas may tolerate one failure. Most system
+downtime is a result of planned maintenance <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ken12">[Ken12]</a>: three replicas allow
+a system to operate normally when one replica is down for maintenance
+(assuming that the remaining two replicas can handle system load at an
+acceptable performance).</p>
+
+<p>If an unplanned failure occurs during a maintenance window, then the
+consensus system becomes unavailable. Unavailability of the
+consensus system is usually unacceptable, and so five replicas
+should be run, allowing the system to operate with up to two
+failures. No intervention is necessarily required if four out of five
+replicas in a consensus system remain, but if three are left, an additional
+replica or two should be added.</p>
+
+<p>If a consensus system loses so many of its replicas that it cannot form a
+quorum, then that system is, in theory, in an unrecoverable state because the
+durable logs of at least one of the missing replicas cannot be accessed. If no
+quorum remains, it’s possible that a decision that was seen only by the missing
+replicas was made. Administrators may be able to force a change in the group
+membership and add new replicas that catch up from the existing one in order to
+proceed, but the possibility of data loss always remains—a situation that
+should be avoided if at all possible.</p>
+
+<p>In a disaster, administrators have to decide whether to perform such a forceful
+reconfiguration or to wait for some period of time for machines with system
+state to become available. When such decisions are being made, treatment of the
+system’s log (in addition to monitoring) becomes critical. Theoretical papers
+often point out that consensus can be used to construct a replicated log, but
+fail to discuss how to deal with replicas that may fail and recover (and thus
+miss some sequence of consensus decisions) or lag due to slowness. In order to
+maintain robustness of the system, it is important that these replicas do catch
+up.</p>
+
+<p><a data-type="indexterm" data-primary="replicated logs" id="idm140203537058192"></a>The <em>replicated log</em> is not always a first-class citizen in
+distributed consensus theory, but it is a very important aspect of
+production systems. Raft describes a method for managing the
+consistency of replicated logs <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ong14">[Ong14]</a> explicitly defining how any gaps in
+a replica’s log are filled. If a five-instance Raft system loses all of
+its members except for its leader, the leader is still guaranteed to
+have full knowledge of all committed decisions. On the other hand, if
+the missing majority of members included the leader, no strong
+guarantees can be made regarding how up-to-date the remaining replicas
+are.</p>
+
+<p>There is a relationship between performance and the number of replicas in a
+system that do not need to form part of a quorum: a minority of slower replicas
+may lag behind, allowing the quorum of better-performing replicas to run faster
+(as long as the leader performs well). If replica performance varies
+significantly, then every failure may reduce the performance of the system
+overall because slow outliers will be required to form a quorum. The more failures
+or lagging replicas a system can tolerate, the better the system’s performance
+overall is likely to be.</p>
+
+<p><a data-type="indexterm" data-primary="Photon" id="idm140203537054240"></a>The issue of cost should also be considered in managing replicas: each
+replica uses costly computing resources. If the system in question is
+a single cluster of processes, the cost of running replicas is
+probably not a large consideration. However, the cost of replicas
+can be a serious consideration for systems such as Photon <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ana13">[Ana13]</a>, which
+uses a sharded configuration in which each shard is a full group of
+processes running a consensus algorithm. As the number of shards
+grows, so does the cost of each additional replica, because a number
+of processes equal to the number of shards must be added to the
+system.</p>
+
+<p>The decision about the number of replicas for any system is thus a
+trade-off between the following factors:</p>
+
+<ul>
+<li>
+<p>The need for reliability</p>
+</li>
+<li>
+<p>Frequency of planned maintenance affecting the system</p>
+</li>
+<li>
+<p>Risk</p>
+</li>
+<li>
+<p>Performance</p>
+</li>
+<li>
+<p>Cost</p>
+</li>
+</ul>
+
+<p>This calculation will be different for each system: systems have
+different service level objectives for availability; some
+organizations perform maintenance more regularly than others; and
+organizations use hardware of varying cost, quality, and reliability.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Location of Replicas"><div class="sect2" id="idm140203537045456">
+<h2>Location of Replicas</h2>
+
+<p><a data-type="indexterm" data-primary="replicas" data-secondary="location of" id="idm140203537044320"></a>Decisions about where to deploy the processes that comprise a
+consensus cluster are made based upon two factors: a trade-off between
+the failure domains that the system should handle, and the latency
+requirements for the system. Multiple complex issues are at play
+in deciding where to locate replicas.</p>
+
+<p>A <em>failure domain</em> is the set of components of a system that can
+become unavailable as a result of a single failure. Example failure
+domains include the following:</p>
+
+<ul>
+<li>
+<p>A physical machine</p>
+</li>
+<li>
+<p>A rack in a datacenter served by a single power supply</p>
+</li>
+<li>
+<p>Several racks in a datacenter that are served by one piece of
+networking <span class="keep-together">equipment</span></p>
+</li>
+<li>
+<p>A datacenter that could be rendered unavailable by a fiber optic
+cable cut</p>
+</li>
+<li>
+<p>A set of datacenters in a single geographic area that could all be
+affected by a single natural disaster such as a hurricane</p>
+</li>
+</ul>
+
+<p>In general, as the distance between replicas increases, so does the
+round-trip time between replicas, as well as the size of the failure
+the system will be able to tolerate. For most consensus systems,
+increasing the round-trip time between replicas will also increase the
+latency of operations.</p>
+
+<p>The extent to which latency matters, as well as the ability to survive
+a failure in a particular domain, is very system-dependent. Some
+consensus system architectures don’t require particularly high
+throughput or low latency: for example, a consensus system that exists
+in order to provide group membership and leader election services for
+a highly available service probably isn’t heavily loaded, and if the
+consensus transaction time is only a fraction of the leader lease
+time, then its performance isn’t critical. Batch-oriented systems are
+also less affected by latency: operation batch sizes can be increased
+to increase throughput.</p>
+
+<p>It doesn’t always make sense to continually increase the size of the
+failure domain whose loss the system can withstand. For instance, if
+all of the clients using a consensus system are running within a
+particular failure domain (say, the New York area) and deploying a
+distributed consensus–based system across a wider geographical area
+would allow it to remain serving during outages in that failure domain
+(say, Hurricane Sandy), is it worth it? Probably not, because the
+system’s clients will be down as well so the system will see no
+traffic. The extra cost in terms of latency, throughput, and computing
+resources would give no benefit.</p>
+
+<p>You should take disaster recovery into account when deciding where to locate
+your replicas: in a system that stores critical data, the consensus replicas
+are also essentially online copies of the system data. However, when critical
+data is at stake, it’s important to back up regular snapshots elsewhere, even
+in the case of solid consensus–based systems that are deployed in several
+diverse failure domains. There are two failure domains that you can never
+escape: the software itself, and human error on the part of the system’s
+administrators. Bugs in software can emerge under unusual circumstances and
+cause data loss, while system misconfiguration can have similar effects. Human
+operators can also err, or perform sabotage causing data loss.</p>
+
+<p>When making decisions about location of replicas, remember that the
+most important measure of performance is client perception: ideally,
+the network round-trip time from the clients to the consensus system’s
+replicas should be minimized. Over a wide area network, leaderless
+protocols like Mencius or Egalitarian Paxos may have a performance
+edge, particularly if the consistency constraints of the application
+mean that it is possible to execute read-only operations on any system
+replica without performing a consensus operation.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Capacity and Load Balancing"><div class="sect2" id="idm140203537030800">
+<h2>Capacity and Load Balancing</h2>
+
+<p><a data-type="indexterm" data-primary="sharded deployments" id="idm140203537029648"></a><a data-type="indexterm" data-primary="capacity planning" data-secondary="distributed consensus systems and" id="idm140203537028976"></a><a data-type="indexterm" data-primary="load balancing" data-secondary="distributed consensus systems and" id="idm140203537028016"></a><a data-type="indexterm" data-primary="replicas" data-secondary="adding" id="idm140203537027056"></a>When designing a deployment, you must make sure there is sufficient
+capacity to deal with load. In the case of <em>sharded deployments</em>, you
+can adjust capacity by adjusting the number of shards. However, for
+systems that can read from consensus group members that are not the
+leader, you can increase read capacity by adding more replicas. Adding
+more replicas has a cost: in an algorithm that uses a strong leader,
+adding replicas imposes more load on the leader process, while in a
+peer-to-peer protocol, adding replicas imposes more load on all
+processes. However, if there is ample capacity for write operations,
+but a read-heavy workload is stressing the system, adding replicas may
+be the best approach.</p>
+
+<p>It should be noted that adding a replica in a majority quorum system
+can potentially decrease system availability somewhat (as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_region-diversity">Figure&nbsp;23-10</a>). A typical deployment
+for Zookeeper or Chubby uses five replicas, so a majority quorum
+requires three replicas. The system will still make progress if two
+replicas, or 40%, are unavailable. With six replicas, a quorum
+requires four replicas: only 33% of the replicas can be unavailable if
+the system is to remain live.</p>
+
+<p>Considerations regarding failure domains therefore apply even more
+strongly when a sixth replica is added: if an organization has five
+datacenters, and generally runs consensus groups with five processes,
+one in each datacenter, then loss of one datacenter still leaves one
+spare replica in each group. If a sixth replica is deployed in one of
+the five datacenters, then an outage in that datacenter removes both
+of the spare replicas in the group, thereby reducing capacity by 33%.</p>
+
+<figure><div id="fig_distributed-consensus_region-diversity" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2310.png" alt="Adding an extra replica in one region may reduce system availability. Colocating multiple replicas in a single datacenter may reduce system availability: here there is a quorum without any redundancy remaining." width="592" height="585">
+<h6><span class="label">Figure 23-10. </span>Adding an extra replica in one region may reduce system availability. Colocating multiple replicas in a single datacenter may reduce system availability: here, there is a quorum without any redundancy remaining.</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="cascading failures" data-secondary="defined" id="idm140203537019424"></a>If clients are dense in a particular geographic region, it is best to locate
+replicas close to clients. However, deciding where exactly to locate replicas
+may require some careful thought around load balancing and how a system deals
+with overload. As shown in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_sharded-leaders">Figure&nbsp;23-11</a>, if a
+system simply routes client read requests to the nearest replica, then a large
+spike in load concentrated in one region may overwhelm the nearest replica, and
+then the next-closest replica, and so on—this is <em>cascading failure</em> (see
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch22.html#chapter_cascading-failure">Chapter&nbsp;22</a>). This type of overload can often happen as a
+result of batch jobs beginning, especially if several begin at the same time.</p>
+
+<p><a data-type="indexterm" data-primary="replicas" data-secondary="drawbacks of leader replicas" id="idm140203537015312"></a>We’ve already seen the reason that many distributed consensus systems
+use a leader process to improve performance. However, it’s important
+to understand that the leader replicas will use more computational
+resources, particularly outgoing network capacity. This is because the
+leader sends proposal messages that include the proposed data, but
+replicas send smaller messages, usually just containing agreement with
+a particular consensus transaction ID. Organizations that run
+highly sharded consensus systems with a very large number of processes
+may find it necessary to ensure that leader processes for the
+different shards are balanced relatively evenly across different
+datacenters. Doing so prevents the system as a whole from being
+bottlenecked on outgoing network capacity for just one datacenter, and
+makes for much greater overall system capacity.</p>
+
+<figure><div id="fig_distributed-consensus_sharded-leaders" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2311.png" alt="Colocating leader processes leads to uneven bandwidth utilization." width="1026" height="697">
+<h6><span class="label">Figure 23-11. </span>Colocating leader processes leads to uneven bandwidth utilization</h6>
+</div></figure>
+
+<p>Another downside of deploying consensus groups in multiple datacenters
+(shown by <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_sharded-leaders">Figure&nbsp;23-11</a>) is the very
+extreme change in the system that can occur if the datacenter hosting
+the leaders suffers a widespread failure (power, networking equipment
+failure, or fiber cut, for instance). As shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_colocated-failure">Figure&nbsp;23-12</a>, in this failure
+scenario, all of the leaders should fail over to another datacenter,
+either split evenly or en masse into one datacenter. In either case,
+the link between the other two datacenters will suddenly receive a lot
+more network traffic from this system. This would be an inopportune
+moment to discover that the capacity on that link is insufficient.</p>
+
+<figure><div id="fig_distributed-consensus_colocated-failure" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2312.png" alt="When colocated leaders fail over en masse patterns of network utilization change dramatically." width="1509" height="693">
+<h6><span class="label">Figure 23-12. </span>When colocated leaders fail over en masse, patterns of network utilization change dramatically</h6>
+</div></figure>
+
+<p>However, this type of deployment could easily be an unintended result
+of automatic processes in the system that have bearing on how leaders
+are chosen. For instance:</p>
+
+<ul>
+<li>
+<p>Clients will experience better latency for any operations
+handled via the leader if the leader is located closest to them. An
+algorithm that attempts to site leaders near the bulk
+of clients could take advantage of this insight.</p>
+</li>
+<li>
+<p>An algorithm might try to locate leaders on machines with the best
+performance. A pitfall of this approach is that if one of the three
+datacenters houses faster machines, then a
+disproportionate amount of traffic will be sent to that datacenter,
+resulting in extreme traffic changes should that datacenter go
+offline. To avoid this problem, the algorithm must also take into
+account distribution balance against machine capabilities when
+selecting machines.</p>
+</li>
+<li>
+<p>A leader election algorithm might favor processes that have been
+running longer. Longer-running processes are quite likely to be
+correlated with location if software releases are performed on a
+per-datacenter basis.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect3" data-pdf-bookmark="Quorum composition"><div class="sect3" id="idm140203537001376">
+<h3>Quorum composition</h3>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="quorum composition" id="idm140203537000240"></a><a data-type="indexterm" data-primary="replicas" data-secondary="location of" id="idm140203536999280"></a>When determining where to locate replicas in a consensus group, it is
+important to consider the effect of the geographical distribution
+(or, more precisely, the network latencies between replicas) on the performance of the group.</p>
+
+<p>One approach is to spread the replicas as evenly as possible, with
+similar RTTs between all replicas. All other factors being equal (such
+as workload, hardware, and network performance), this arrangement
+should lead to fairly consistent performance across all regions,
+regardless of where the group leader is located (or for each member of
+the consensus group, if a leaderless protocol is in use).</p>
+
+<p>Geography can greatly complicate this approach. This is particularly
+true for intra-continental versus transpacific and transatlantic
+traffic. Consider a system that spans North America and Europe: it
+is impossible to locate replicas equidistant from each other because
+there will always be a longer lag for transatlantic traffic than for
+intracontinental traffic. No matter what, transactions from one
+region will need to make a transatlantic round trip in order to reach
+consensus.</p>
+
+<p>However, as shown in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_overlapping-quorums">Figure&nbsp;23-13</a>, in order to try to
+distribute traffic as evenly as possible, systems designers might
+choose to site five replicas, with two replicas roughly centrally in
+the US, one on the east coast, and two in Europe. Such a distribution
+would mean that in the average case, consensus could be achieved in
+North America without waiting for replies from Europe, or that from Europe,
+consensus can be achieved by exchanging messages only with the east
+coast replica. The east coast replica acts as a linchpin of sorts,
+where two possible quorums overlap.</p>
+
+<figure><div id="fig_distributed-consensus_overlapping-quorums" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2313.png" alt="Overlapping quorums with one replica acting as a link." width="624" height="354">
+<h6><span class="label">Figure 23-13. </span>Overlapping quorums with one replica acting as a link</h6>
+</div></figure>
+
+<p>As shown in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_overlapping-quorums-failure">Figure&nbsp;23-14</a>,
+loss of this replica means that system latency is likely to change
+drastically: instead of being largely influenced by either central US
+to east coast RTT or EU to east coast RTT, latency will be based on
+EU to central RTT, which is around 50% higher than EU to east
+coast RTT. The geographic distance and network RTT between the nearest
+possible quorum increases enormously.</p>
+
+<figure><div id="fig_distributed-consensus_overlapping-quorums-failure" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2314.png" alt="Loss of the link replica immediately leads to a longer RTT for any quorum." width="624" height="354">
+<h6><span class="label">Figure 23-14. </span>Loss of the link replica immediately leads to a longer RTT for any quorum</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="hierarchical quorums" id="idm140203536988032"></a>This scenario is a key weakness of the simple majority quorum when
+applied to groups composed of replicas with very different RTTs
+between members. In such cases, a hierarchical quorum approach may be
+useful. As diagrammed in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#fig_distributed-consensus_hierarchical-quorums">Figure&nbsp;23-15</a>, nine replicas may
+be deployed in three groups of three. A quorum may be formed by a
+majority of groups, and a group may be included in the quorum if a
+majority of the group’s members are available. This means that a
+replica may be lost in the central group without incurring a large
+impact on overall system performance because the central group may
+still vote on transactions with two of its three replicas.</p>
+
+<p>There is, however, a resource cost associated with running a higher
+number of replicas. In a highly sharded system with a read-heavy workload that is largely fulfillable by replicas, we might mitigate this cost by using fewer consensus groups. Such a strategy
+means that the overall number of processes in the system may not
+change.<a data-type="indexterm" data-primary="" data-startref="DCSdeploy23" id="idm140203536984960"></a></p>
+
+<figure><div id="fig_distributed-consensus_hierarchical-quorums" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_2315.png" alt="Hierarchical quorums can be used to reduce reliance on the central replica." width="624" height="354">
+<h6><span class="label">Figure 23-15. </span>Hierarchical quorums can be used to reduce reliance on the central replica</h6>
+</div></figure>
+</div></section>
+
+
+
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Monitoring Distributed Consensus Systems"><div class="sect1" id="idm140203536981152">
+<h1>Monitoring Distributed Consensus Systems</h1>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="monitoring" id="idm140203536979984"></a>As we’ve already seen, distributed consensus algorithms are at the
+core of many of Google’s critical systems (<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ana13">[Ana13]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Bur06">[Bur06]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cor12">[Cor12]</a>, <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Shu13">[Shu13]</a>). All important production systems need monitoring,
+in order to detect outages or problems and for troubleshooting.
+Experience has shown us that there are certain specific aspects of
+distributed consensus systems that warrant special attention. These
+are:</p>
+<dl>
+<dt>The number of members running in each consensus group, and the status of each process (healthy or not healthy)</dt>
+<dd>
+<p>A process may be
+running but unable to make progress for some (e.g., hardware-related) reason.</p>
+</dd>
+<dt>Persistently lagging replicas</dt>
+<dd>
+<p>Healthy members of a consensus
+group can still potentially be in multiple different states. A group
+member may be recovering state from peers after startup, or lagging
+behind the quorum in the group, or it may be up-to-date and
+participating fully, and it may be the leader.</p>
+</dd>
+<dt>Whether or not a leader exists</dt>
+<dd>
+<p>A system based on an algorithm
+such as Multi-Paxos that uses a leader role must be monitored to
+ensure that a leader exists, because if the system has no leader, it is
+totally unavailable.</p>
+</dd>
+<dt>Number of leader changes</dt>
+<dd>
+<p>Rapid changes of leadership impair
+performance of consensus systems that use a stable leader, so the
+number of leader changes should be monitored. Consensus algorithms
+usually mark a leadership change with a new term or view number, so
+this number provides a useful metric to monitor. Too rapid of an
+increase in leader changes signals that the leader is flapping,
+perhaps due to network connectivity issues. A decrease in the view
+number could signal a serious bug.</p>
+</dd>
+<dt>Consensus transaction number</dt>
+<dd>
+<p>Operators need to know whether or
+not the consensus system is making progress. Most consensus
+algorithms use an increasing consensus transaction number to indicate
+progress. This number should be seen to be increasing over time if a
+system is healthy.</p>
+</dd>
+<dt>Number of proposals seen; number of proposals agreed upon</dt>
+<dd>
+<p>These
+numbers indicate whether or not the system is operating correctly.</p>
+</dd>
+<dt>Throughput and latency</dt>
+<dd>
+<p>Although not specific to distributed
+consensus systems, these characteristics of their consensus system
+should be monitored and understood by administrators.</p>
+</dd>
+</dl>
+
+<p>In order to understand system performance and to help troubleshoot
+performance issues, you might also monitor the following:</p>
+
+<ul>
+<li>
+<p>Latency distributions for proposal acceptance</p>
+</li>
+<li>
+<p>Distributions of network latencies observed between parts of the
+system in different locations</p>
+</li>
+<li>
+<p>The amount of time acceptors spend on durable logging</p>
+</li>
+<li>
+<p>Overall bytes accepted per second in the system</p>
+</li>
+</ul>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Conclusion"><div class="sect1" id="idm140203536958640">
+<h1>Conclusion</h1>
+
+<p><a data-type="indexterm" data-primary="distributed consensus systems" data-secondary="overview of" id="idm140203536957504"></a>We explored the definition of the distributed consensus
+problem, and presented some system architecture patterns for
+distributed-consensus based systems, as well as examining the
+performance characteristics and some of the operational concerns
+around distributed consensus–based systems.</p>
+
+<p>We deliberately avoided an in-depth discussion about specific
+algorithms, protocols, or implementations in this chapter. Distributed
+coordination systems and the technologies underlying them are evolving
+quickly, and this information would rapidly become out of date, unlike
+the fundamentals that are discussed here. However, these fundamentals,
+along with the articles referenced throughout this chapter, will enable you to use the
+distributed coordination tools available today, as well as future
+<span class="keep-together">software</span>.</p>
+
+<p>If you remember nothing else from this chapter, keep in mind the sorts
+of problems that distributed consensus can be used to solve, and the
+types of problems that can arise when ad hoc methods such as
+heartbeats are used instead of distributed consensus. Whenever you see
+leader election, critical shared state, or distributed locking, think
+about distributed consensus: any lesser approach is a ticking bomb
+waiting to explode in your systems.</p>
+</div></section>
+
+
+
+
+
+
+
+<div data-type="footnotes"><p data-type="footnote" id="idm140203532810032"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#idm140203532810032-marker">1</a></sup> Kyle Kingsbury has written an extensive series of articles on distributed systems correctness, which contain many examples of unexpected and incorrect behavior in these kinds of datastores. See <a href="https://aphyr.com/tags/jepsen"><em class="hyperlink">https://aphyr.com/tags/jepsen</em></a>.</p><p data-type="footnote" id="idm140203537202784"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#idm140203537202784-marker">2</a></sup> In particular, the performance of the original Paxos algorithm is not ideal, but has been greatly improved over the years.</p></div></div></section></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch22.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">22. Addressing Cascading Failures</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch24.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">24. Distributed Periodic Scheduling with Cron</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch23.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="js-related-container related"></div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+    
+
+
+  
+
+<div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch23.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

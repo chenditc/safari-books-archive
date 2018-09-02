@@ -1,0 +1,409 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/how-google-tests/9780132851572/ch01.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9780132851572"
+  data-publishers="Addison-Wesley Professional"
+
+
+
+  data-htmlfile-name="ch01.html"
+  data-epub-title="How Google Tests Software" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/how-google-tests/9780132851572/ch01.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9780132851572" data-publishers="Addison-Wesley Professional" data-htmlfile-name="ch01.html" data-epub-title="How Google Tests Software" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780132851572"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>Chapter 1. Introduction to Google Software Testing - How Google Tests Software</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    #sbo-rt-content div{margin-top:4pt;margin-bottom:4pt;margin-right:15pt}#sbo-rt-content .cover{margin-top:2pt;margin-bottom:2pt;text-align:center}#sbo-rt-content h1{margin-top:5pt;text-align:center;margin-bottom:12pt;font-weight:bold}#sbo-rt-content h2{margin-top:7pt;margin-bottom:25pt;font-weight:bold}#sbo-rt-content h3{margin-top:9pt;margin-bottom:8pt;font-weight:bold}#sbo-rt-content h4{margin-top:9pt;margin-bottom:6pt;font-weight:bold}#sbo-rt-content .h4a{margin-top:9pt;margin-left:13pt;margin-bottom:6pt;font-weight:bold}#sbo-rt-content h5{margin-top:9pt;margin-bottom:6pt;font-weight:bold}#sbo-rt-content .author{text-align:center;font-weight:bold;margin-top:60pt;margin-bottom:12pt}#sbo-rt-content .publisher{text-align:center;margin-top:210pt;margin-bottom:6pt}#sbo-rt-content .publishertext{text-align:center;margin-top:6pt;margin-bottom:6pt}#sbo-rt-content .copy{margin-top:5pt;margin-bottom:5pt;text-indent:.024pt}#sbo-rt-content .copy1{margin-top:5pt;margin-bottom:6pt;margin-left:13pt}#sbo-rt-content p{margin-top:5pt;margin-bottom:4pt;text-indent:.024pt}#sbo-rt-content .toc-preface{margin-top:12pt;margin-bottom:8pt;text-indent:.024pt}#sbo-rt-content .toc-chapter{margin-top:12pt;margin-bottom:6pt;text-indent:.024pt}#sbo-rt-content .toc-appendix{margin-top:12pt;margin-bottom:6pt;text-indent:.024pt}#sbo-rt-content .toc-section{margin-top:4pt;margin-bottom:4pt;margin-left:21pt}#sbo-rt-content .toc-section1{margin-top:4pt;margin-bottom:4pt;margin-left:50pt}#sbo-rt-content strong{font-weight:bold}#sbo-rt-content em{font-style:italic}#sbo-rt-content .em{font-family:"Courier New Italic";font-style:italic}#sbo-rt-content .strong{font-family:"Courier New Bold"}#sbo-rt-content code{font-size:small}#sbo-rt-content .dedication{margin-top:70pt;margin-bottom:4pt;margin-left:100pt}#sbo-rt-content .dedication1{margin-top:15pt;margin-bottom:4pt;margin-left:100pt}#sbo-rt-content div.image,#sbo-rt-content img{margin:0 auto;padding:0;text-align:center;max-width:99%;max-height:99%;clear:both}#sbo-rt-content .toc-index{margin-top:12pt;margin-bottom:6pt;text-indent:.024pt}#sbo-rt-content .blockquote{margin-top:8pt;margin-bottom:8pt;margin-left:17pt;margin-right:17pt}#sbo-rt-content .blockquote1{margin-top:4pt;margin-bottom:4pt;text-indent:.024pt}#sbo-rt-content .attribution{margin-top:4pt;margin-bottom:8pt;text-align:right;margin-right:70pt}#sbo-rt-content .attribution1{margin-top:1pt;margin-bottom:1pt;margin-left:100pt}#sbo-rt-content .note{font-size:medium;margin-top:9pt;margin-bottom:8pt;font-weight:bold;margin-left:20pt;page-break-inside:avoid;page-break-after:avoid}#sbo-rt-content .note1{font-size:medium;margin-top:6pt;margin-bottom:12pt;margin-left:36pt;margin-right:24pt;page-break-inside:avoid;background-color:#E6E6E6}#sbo-rt-content .note2{font-size:medium;margin-top:4pt;margin-bottom:4pt;margin-left:36pt;margin-right:24pt;page-break-inside:avoid}#sbo-rt-content .notepara{margin-top:5pt;margin-bottom:4pt;margin-left:30pt;margin-right:30pt}#sbo-rt-content .sidebar{font-size:medium;margin-top:9pt;margin-bottom:8pt;page-break-inside:avoid;page-break-after:avoid;font-weight:bold;margin-left:15pt}#sbo-rt-content .sidebar2{font-size:medium;margin-top:9pt;margin-bottom:8pt;page-break-inside:avoid;page-break-after:avoid;margin-left:15pt}#sbo-rt-content .sidebar1{font-size:medium;margin-top:5pt;margin-bottom:12pt;margin-left:15pt;background-color:#E6E6E6}#sbo-rt-content .sidebarpara{margin-top:5pt;margin-bottom:4pt;margin-left:25pt;margin-right:25pt}#sbo-rt-content .footnotes{margin-top:5pt;margin-bottom:4pt;font-size:small;text-indent:-7pt;margin-left:20pt}#sbo-rt-content .right{margin-top:5pt;margin-bottom:5pt;text-align:right;margin-right:70pt}#sbo-rt-content .right1{margin-top:5pt;margin-bottom:10pt;text-align:right;margin-right:35pt}#sbo-rt-content .caption{font-size:medium;page-break-before:avoid;page-break-inside:avoid;text-align:center}#sbo-rt-content .caption1{font-size:medium;page-break-after:avoid;page-break-inside:avoid;text-align:center}#sbo-rt-content .indenthanging{margin-top:4pt;margin-bottom:4pt;margin-left:30pt}#sbo-rt-content .indenthangingB{margin-top:4pt;margin-bottom:4pt;margin-left:43pt;text-indent:-8pt}#sbo-rt-content .indenthangingB1{margin-top:4pt;margin-bottom:4pt;margin-left:55pt;text-indent:-8pt}#sbo-rt-content .indenthangingB2{margin-top:4pt;margin-bottom:4pt;margin-left:52pt;text-indent:-12pt}#sbo-rt-content .indenthangingN{margin-top:4pt;margin-bottom:4pt;margin-left:25pt;text-indent:-12pt}#sbo-rt-content .indenthangingN2{margin-top:4pt;margin-bottom:4pt;margin-left:25pt;text-indent:-13pt}#sbo-rt-content .indenthangingN1{margin-top:4pt;margin-bottom:4pt;margin-left:48pt;text-indent:-10pt}#sbo-rt-content .indentparab{margin-top:4pt;margin-bottom:4pt;margin-left:43pt}#sbo-rt-content .programlisting{font-family:"Courier New";font-size:small;margin-top:5pt;margin-bottom:4pt}#sbo-rt-content .indexmain{margin-top:2pt;margin-bottom:2pt;text-indent:.024pt}#sbo-rt-content .indexsub{margin-top:2pt;margin-bottom:2pt;margin-left:15pt;text-indent:.024pt}#sbo-rt-content .indexsubsub{margin-top:2pt;margin-bottom:2pt;margin-left:31pt;text-indent:.024pt}
+    </style><link rel="canonical" href="/Library/view/how-google-tests/9780132851572/ch01.html"><meta name="description" content="Chapter 1. Introduction to Google Software Testing James Whittaker There is one question I get more than any other. Regardless of the country I am visiting or the conference I ... "><meta property="og:title" content="Chapter 1. Introduction to Google Software Testing"><meta itemprop="isPartOf" content="/library/view/how-google-tests/9780132851572/"><meta itemprop="name" content="Chapter 1. Introduction to Google Software Testing"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/how-google-tests/9780132851572/ch01.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780132851572/"><meta property="og:description" itemprop="description" content="Chapter 1. Introduction to Google Software Testing James Whittaker There is one question I get more than any other. Regardless of the country I am visiting or the conference I ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Addison-Wesley Professional"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780132851572"><meta property="og:book:author" itemprop="author" content="Jeff Carollo"><meta property="og:book:author" itemprop="author" content="Jason Arbon"><meta property="og:book:author" itemprop="author" content="James A. Whittaker"><meta property="og:book:tag" itemprop="about" content="Core Programming"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      How Google Tests Software
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780132851572/chapter/ch01.html" data-for-analytics="9780132851572:ch01.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/how-google-tests/9780132851572/ch01.html&amp;text=How%20Google%20Tests%20Software&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/how-google-tests/9780132851572/ch01.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/how-google-tests/9780132851572/ch01.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20Chapter%201.%20Introduction%20to%20Google%20Software%20Testing&amp;body=https://www.safaribooksonline.com/library/view/how-google-tests/9780132851572/ch01.html%0D%0Afrom%20How%20Google%20Tests%20Software%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/how-google-tests/9780132851572/pre07.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">About the Authors</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/how-google-tests/9780132851572/ch02.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">Chapter 2. The Software Engineer in Test</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><h2 id="ch01"><a id="page_1"></a>Chapter 1. Introduction to Google Software Testing</h2>
+<p class="right"><em>James Whittaker</em></p>
+<p>There is one question I get more than any other. Regardless of the country I am visiting or the conference I am attending, this one question never fails to surface. Even Nooglers ask it as soon as they emerge from new-employee orientation: “<em>How does Google test software</em>?”</p>
+<p>I am not sure how many times I have answered that question or even how many different versions I have given, but the answer keeps evolving the longer time I spend at Google and the more I learn about the nuances of our various testing practices. I had it in the back of my mind that I would write a book and when Alberto, who likes to threaten to turn testing books into adult diapers to give them a reason for existence, actually suggested I write such a book, I knew it was going to happen.</p>
+<p>Still, I waited. My first problem was that I was not the right person to write this book. There were many others who preceded me at Google and I wanted to give them a crack at writing it first. My second problem was that I as test director for Chrome and Chrome OS (a position now occupied by one of my former directs) had insights into only a slice of the Google testing solution. There was so much more to Google testing that I needed to learn.</p>
+<p>At Google, software testing is part of a centralized organization called Engineering Productivity that spans the developer and tester tool chain, release engineering, and testing from the unit level all the way to exploratory testing. There are a great deal of shared tools and test infrastructure for web properties such as search, ads, apps, YouTube, and everything else we do on the Web. Google has solved many of the problems of speed and scale and this enables us, despite being a large company, to release software at the pace of a start-up. As Patrick Copeland pointed out in his preface to this book, much of this magic has its roots in the test team.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">At Google, software testing is part of a centralized organization called Engineering Productivity.</p>
+<hr></div>
+<p><a id="page_2"></a>When Chrome OS released in December 2010 and leadership was successfully passed to one of my directs, I began getting more heavily involved in other products. That was the beginning of this book, and I tested the waters by writing the first blog post,<sup><a id="ch01fn_01"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn01" class="totri-footnote">1</a></sup> “How Google Tests Software,” and the rest is history. Six months later, the book was done and I wish I had not waited so long to write it. I learned more about testing at Google in the last six months than I did my entire first two years, and Nooglers are now reading this book as part of their orientation.</p>
+<p>This isn’t the only book about how a big company tests software. I was at Microsoft when Alan Page, BJ Rollison, and Ken Johnston wrote <em>How We Test Software at Microsoft</em> and lived first-hand many of the things they wrote about in that book. Microsoft was on top of the testing world. It had elevated test to a place of honor among the software engineering elite. Microsoft testers were the most sought after conference speakers. Its first director of test, Roger Sherman, attracted test-minded talent from all over the globe to Redmond, Washington. It was a golden age for software testing.</p>
+<p>And the company wrote a big book to document it all.</p>
+<p>I didn’t get to Microsoft early enough to participate in that book, but I got a second chance. I arrived at Google when testing was on the ascent. Engineering Productivity was rocketing from a couple of hundred people to the 1,200 it has today. The growing pains Pat spoke of in his preface were in their last throes and the organization was in its fastest growth spurt ever. The Google testing blog was drawing hundreds of thousands of page views every month, and GTAC<sup><a id="ch01fn_02"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn02" class="totri-footnote">2</a></sup> had become a staple conference on the industry testing circuit. Patrick was promoted shortly after my arrival and had a dozen or so directors and engineering managers reporting to him. If you were to grant software testing a renaissance, Google was surely its epicenter.</p>
+<p>This means the Google testing story merits a big book, too. The problem is, I don’t write big books. But then, Google is known for its simple and straightforward approach to software. Perhaps this book is in line with that reputation.</p>
+<p><em>How Google Tests Software</em> contains the core information about what it means to be a Google tester and how we approach the problems of scale, complexity, and mass usage. There is information here you won’t find anywhere else, but if it is not enough to satisfy your craving for how we test, there is more available on the Web. Just Google it!</p>
+<p>There is more to this story, though, and it must be told. I am finally ready to tell it. The way Google tests software might very well become the way many companies test as more software leaves the confines of the desktop for the freedom of the Web. If you’ve read the Microsoft book, don’t expect to find much in common with this one. Beyond the number of <a id="page_3"></a>authors—both books have three—and the fact that each book documents testing practices at a large software company, the approaches to testing couldn’t be more different.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">The way Google tests software might very well become the way many companies test as more software leaves the confines of the desktop for the freedom of the Web.</p>
+<hr></div>
+<p>Patrick Copeland dealt with how the Google methodology came into being in his preface to this book and since those early days, it has continued to evolve organically as the company grew. Google is a melting pot of engineers who used to work somewhere else. Techniques proven ineffective at former employers were either abandoned or improved upon by Google’s culture of innovation. As the ranks of testers swelled, new practices and ideas were tried and those that worked in practice at Google became part of Google and those proven to be baggage were jettisoned. Google testers are willing to try anything once but are quick to abandon techniques that do not prove useful.</p>
+<p>Google is a company built on innovation and speed, releasing code the moment it is useful (when there are few users to disappoint) and iterating on features with early adopters (to maximize feedback). Testing in such an environment has to be incredibly nimble and techniques that require too much upfront planning or continuous maintenance simply won’t work. At times, testing is interwoven with development to the point that the two practices are indistinguishable from each other, and at other times, it is so completely independent that developers aren’t even aware it is going on.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">At times, testing is interwoven with development to the point that the two practices are indistinguishable from each other, and at other times, it is so completely independent that developers aren’t even aware it is going on.</p>
+<hr></div>
+<p>Throughout Google’s growth, this fast pace has slowed only a little. We can nearly produce an operating system within the boundaries of a single calendar year; we release client applications such as Chrome every few weeks; and web applications change daily—all this despite the fact that our start-up credentials have long ago expired. In this environment, it is almost easier to describe what testing is not—dogmatic, process-heavy, labor-intensive, and time-consuming—than what it is, although this book is an attempt to do exactly that. One thing is for sure: Testing must not create friction that slows down innovation and development. At least it will not do it twice.</p>
+<p>Google’s success at testing cannot be written off as owing to a small or simple software portfolio. The size and complexity of Google’s software testing problem are as large as any company’s out there. From client operating systems, to web apps, to mobile, to enterprise, to commerce and social, <a id="page_4"></a>Google operates in pretty much every industry vertical. Our software is big; it’s complex; it has hundreds of millions of users; it’s a target for hackers; much of our source code is open to external scrutiny; lots of it is legacy; we face regulatory reviews; our code runs in hundreds of countries and in many different languages, and on top of this, users expect software from Google to be simple to use and to “just work.” What Google testers accomplish on a daily basis cannot be credited to working on easy problems. Google testers face nearly every testing challenge that exists every single day.</p>
+<p>Whether Google has it right (probably not) is up for debate, but one thing is certain: The approach to testing at Google is different from any other company I know, and with the inexorable movement of software away from the desktop and toward the cloud, it seems possible that Google-like practices will become increasingly common across the industry. It is my and my co-authors’ hope that this book sheds enough light on the Google formula to create a debate over just how the industry should be facing the important task of producing reliable software that the world can rely on. Google’s approach might have its shortcomings, but we’re willing to publish it and open it to the scrutiny of the international testing community so that it can continue to improve and evolve.</p>
+<p>Google’s approach is more than a little counterintuitive: We have fewer dedicated testers in our entire company than many of our competitors have on a single product team. Google Test is no million-man army. We are small and elite Special Forces that have to depend on superior tactics and advanced weaponry to stand a fighting chance at success. As with military Special Forces, it is this scarcity of resources that forms the base of our secret sauce. The absence of plenty forces us to get good at prioritizing, or as Larry Page puts it: “Scarcity brings clarity.” From features to test techniques, we’ve learned to create high impact, low-drag activities in our pursuit of quality. Scarcity also makes testing resources highly valued, and thus, well regarded, keeping smart people actively and energetically involved in the discipline. The first piece of advice I give people when they ask for the keys to our success: Don’t hire too many testers.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">The first piece of advice I give people when they ask for the keys to our success: Don’t hire too many testers.</p>
+<hr></div>
+<p>How does Google get by with such small ranks of test folks? If I had to put it simply, I would say that at Google, the burden of quality is on the shoulders of those writing the code. Quality is never “some tester’s” problem. Everyone who writes code at Google is a tester, and quality is literally the problem of this collective (see <a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#ch01fig01">Figure 1.1</a>). Talking about dev to test ratios at Google is like talking about air quality on the surface of the sun. It’s not a concept that even makes sense. If you are an engineer, you are a tester. If you are an engineer with the word test in your title, then you are an enabler of good testing for those other engineers who do not.</p>
+<div class="image"><a id="page_5"></a><a id="ch01fig01"></a><img src="https://www.safaribooksonline.com/library/view/how-google-tests/9780132851572/graphics/01fig01.jpg" alt="image" width="400" height="362" data-mfp-src="/library/view/how-google-tests/9780132851572/graphics/01fig01.jpg"></div>
+<p class="caption"><strong>Figure 1.1 Google engineers prefer quality over features.</strong></p>
+<p>The fact that we produce world-class software is evidence that our particular formula deserves some study. Perhaps there are parts of it that will work in other organizations. Certainly there are parts of it that can be improved. What follows is a summary of our formula. In later chapters, we dig into specifics and show details of just how we put together a test practice in a developer-centric culture.</p>
+<h3 id="ch01sec1lev1">Quality ≠ Test</h3>
+<p>“Quality cannot be tested in” is so cliché it has to be true. From automobiles to software, if it isn’t built right in the first place, then it is never going to <em>be</em> right. Ask any car company that has ever had to do a mass recall how expensive it is to bolt on quality after the fact. Get it right from the beginning or you’ve created a permanent mess.</p>
+<p>However, this is neither as simple nor as accurate as it sounds. Although it is true that quality cannot be tested in, it is equally evident that without testing, it is impossible to develop anything of quality. How does one decide if what you built is high quality without testing it?</p>
+<p>The simple solution to this conundrum is to stop treating development and test as separate disciplines. Testing and development go hand in hand. Code a little and test what you built. Then code some more and test some more. Test isn’t a separate practice; it’s part and parcel of the development process itself. Quality is not equal to test. Quality is achieved by putting <a id="page_6"></a>development and testing into a blender and mixing them until one is indistinguishable from the other.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">Quality is not equal to test. Quality is achieved by putting development and testing into a blender and mixing them until one is indistinguishable from the other.</p>
+<hr></div>
+<p>At Google, this is exactly our goal: to merge development and testing so that you cannot do one without the other. Build a little and then test it. Build some more and test some more. The key here is <em>who</em> is doing the testing. Because the number of actual dedicated testers at Google is so disproportionately low, the only possible answer has to be the developer. Who better to do all that testing than the people doing the actual coding? Who better to find the bug than the person who wrote it? Who is more incentivized to avoid writing the bug in the first place? The reason Google can get by with so few dedicated testers is because developers own quality. If a product breaks in the field, the first point of escalation is the developer who created the problem, not the tester who didn’t catch it.</p>
+<p>This means that quality is more an act of prevention than it is detection. Quality is a development issue, not a testing issue. To the extent that we are able to embed testing practice inside development, we have created a process that is hyper-incremental where mistakes can be rolled back if any one increment turns out to be too buggy. We’ve not only prevented a lot of customer issues, we have greatly reduced the number of dedicated testers necessary to ensure the absence of recall-class bugs. At Google, testing is aimed at determining how well this prevention method works.</p>
+<p>Manifestations of this blending of development and testing are inseparable from the Google development mindset, from code review notes asking “where are your tests?” to posters in the bathrooms reminding developers about best-testing practices.<sup><a id="ch01fn_03"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn03" class="totri-footnote">3</a></sup> Testing must be an unavoidable aspect of development, and the marriage of development and testing is where quality is achieved.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">Testing must be an unavoidable aspect of development, and the marriage of development and testing is where quality is achieved.</p>
+<hr></div>
+<h3 id="ch01sec1lev2">Roles</h3>
+<p>In order for the “you build it, you break it” motto to be real (and kept real over time), there are roles beyond the traditional feature developer that are necessary. Specifically, engineering roles that enable developers to do testing efficiently and effectively have to exist. At Google, we have created <a id="page_7"></a>roles in which some engineers are responsible for making other engineers more productive and more quality-minded. These engineers often identify themselves as <em>testers,</em> but their actual mission is one of productivity. Testers are there to make developers more productive and a large part of that productivity is avoiding re-work because of sloppy development. Quality is thus a large part of that productivity. We are going to spend significant time talking about each of these roles in detail in subsequent chapters; therefore, a summary suffices for now.</p>
+<p>The <strong>software engineer (</strong>SWE<strong>)</strong> is the traditional developer role. SWEs write functional code that ships to users. They create design documentation, choose data structures and overall architecture, and they spend the vast majority of their time writing and reviewing code. SWEs write a lot of test code, including test-driven design (TDD), unit tests, and, as we explain later in this chapter, participate in the construction of small, medium, and large tests. SWEs own quality for everything they touch whether they wrote it, fixed it, or modified it. That’s right, if a SWE has to modify a function and that modification breaks an existing test or requires a new one, they must author that test. SWEs spend close to 100 percent of their time writing code.</p>
+<p>The <strong>software engineer in test (</strong>SET<strong>)</strong> is also a developer role, except his focus is on testability and general test infrastructure. SETs review designs and look closely at code quality and risk. They refactor code to make it more testable and write unit testing frameworks and automation. They are a partner in the SWE codebase, but are more concerned with increasing quality and test coverage than adding new features or increasing performance. SETs also spend close to 100 percent of their time writing code, but they do so in service of quality rather than coding features a customer might use.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">SETs are partners in the SWE codebase, but are more concerned with increasing quality and test coverage than adding new features or increasing performance. SETs write code that allows SWEs to test their features.</p>
+<hr></div>
+<p>The <strong>test engineer</strong> (TE) is related to the SET role, but it has a different focus. It is a role that puts testing on behalf of the user first and developers second. Some Google TEs spend a good deal of their time writing code in the form of automation scripts and code that drives usage scenarios and even mimics the user. They also organize the testing work of SWEs and SETs, interpret test results, and drive test execution, particularly in the late stages of a project as the push toward release intensifies. TEs are product experts, quality advisers, and analyzers of risk. Many of them write a lot of code; many of them write only a little.</p>
+<div class="note1"><hr>
+<p class="note"><a id="page_8"></a>Note</p>
+<p class="notepara">The TE role puts testing on behalf of the user first. TEs organize the overall quality practices, interpret test results, drive test execution, and build end-to-end test automation.</p>
+<hr></div>
+<p>From a quality standpoint, SWEs own features and the quality of those features in isolation. They are responsible for fault-tolerant designs, failure recovery, TDD, unit tests, and working with the SET to write tests that exercise the code for their features.</p>
+<p>SETs are developers who provide testing features. A framework that can isolate newly developed code by simulating an actual working environment (a process involving such things as stubs, mocks, and fakes, which are all described later) and submit queues for managing code check-ins. In other words, SETs write code that enables SWEs to test their features. Much of the actual testing is performed by the SWEs. SETs are there to ensure that features are testable and that the SWEs are actively involved in writing test cases.</p>
+<p>Clearly, an SET’s primary focus is on the developer. Individual feature quality is the target and enabling developers to easily test the code they write is the primary focus of the SET. User-focused testing is the job of the Google TE. Assuming that the SWEs and SETs performed module- and feature-level testing adequately, the next task is to understand how well this collection of executable code and data works together to satisfy the needs of the user. TEs act as double-checks on the diligence of the developers. Any obvious bugs are an indication that early cycle developer testing was inadequate or sloppy. When such bugs are rare, TEs can turn to the primary task of ensuring that the software runs common user scenarios, meets performance expectations, is secure, internationalized, accessible, and so on. TEs perform a lot of testing and manage coordination among other TEs, contract testers, crowd sourced testers, dogfooders,<sup><a id="ch01fn_04"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn04" class="totri-footnote">4</a></sup> beta users, and early adopters. They communicate among all parties the risks inherent in the basic design, feature complexity, and failure avoidance methods. After TEs get engaged, there is no end to their mission.</p>
+<h3 id="ch01sec1lev3">Organizational Structure</h3>
+<p>In most organizations I have worked with, developers and testers exist as part of the same product team. Organizationally, developers and testers <a id="page_9"></a>report to the same product team manager. One product, one team, and everyone involved is always on the same page.</p>
+<p>Unfortunately, I have never actually seen it work that way. Senior managers tend to come from program management or development and not testing ranks. In the push to ship, priorities often favor getting features complete and other fit-and-finish tasks over core quality. As a single team, the tendency is for testing to be subservient to development. Clearly, this is evident in the industry’s history of buggy products and premature releases. Service Pack 1 anyone?</p>
+<div class="note1"><hr>
+<p class="note">Note</p>
+<p class="notepara">As a single team, senior managers tend to come from program management or development and not testing ranks. In the push to ship, priorities often favor getting features complete and other fit-and-finish tasks over core quality. The tendency for such organizational structures is for testing to be subservient to development.</p>
+<hr></div>
+<p>Google’s reporting structure is divided into what we call Focus Areas or FAs. There is an FA for Client (Chrome, Google Toolbar, and so on), Geo (Maps, Google Earth, and so on), Ads, Apps, Mobile, and so on. All SWEs report to a director or VP of a FA.</p>
+<p>SETs and TEs break this mold. Test exists in a separate and horizontal (across the product FAs) Focus Area called Engineering Productivity. Testers are essentially on loan to the product teams and are free to raise quality concerns and ask questions about functional areas that are missing tests or that exhibit unacceptable bug rates. Because we don’t report to the product teams, we can’t simply be told to get with the program. Our priorities are our own and they never waiver from reliability, security, and so on unless we decide something else takes precedence. If a development team wants us to take any shortcuts related to testing, these must be negotiated in advance and we can always decide to say no.</p>
+<p>This structure also helps to keep the number of testers low. A product team cannot arbitrarily lower the technical bar for testing talent or hire more testers than they need simply to dump menial work on them. Menial work around any specific feature is the job of the developer who owns the feature and it cannot be pawned off on some hapless tester. Testers are assigned by Engineering Productivity leads who act strategically based on the priority, complexity, and needs of the product team in comparison to other product teams. Obviously, we can get it wrong, and we sometimes do, but in general, this creates a balance of resources against actual and not perceived need.</p>
+<div class="note1"><hr>
+<p class="note"><a id="page_10"></a>Note</p>
+<p class="notepara">Testers are assigned to product teams by Engineering Productivity leads who act strategically based on the priority, complexity, and needs of the product team in comparison to other product teams. This creates a balance of resources against actual and not perceived need. As a central resource, good ideas and practices tend to get adopted companywide.</p>
+<hr></div>
+<p>The on-loan status of testers also facilitates movement of SETs and TEs from project to project, which not only keeps them fresh and engaged, but also ensures that good ideas move rapidly around the company. A test technique or tool that works for a tester on a Geo product is likely to be used again when that tester moves to Chrome. There’s no faster way of moving innovations in test than moving the actual innovators.</p>
+<p>It is generally accepted that 18 months on a product is enough for a tester and that after that time, he or she can (but doesn’t have to) leave without repercussion to another team. One can imagine the downside of losing such expertise, but this is balanced by a company full of generalist testers with a wide variety of product and technology familiarity. Google is a company full of testers who understand client, web, browser, and mobile technologies, and who can program effectively in multiple languages and on a variety of platforms. And because Google’s products and services are more tightly integrated than ever before, testers can move around the company and have relevant expertise no matter where they go.</p>
+<h3 id="ch01sec1lev4">Crawl, Walk, Run</h3>
+<p>One of the key ways Google achieves good results with fewer testers than many companies is that we rarely attempt to ship a large set of features at once. In fact, the exact opposite is the goal: Build the core of a product and release it the moment it is useful to as large a crowd as feasible, and then get their feedback and iterate. This is what we did with Gmail, a product that kept its beta tag for four years. That tag was our warning to users that it was still being perfected. We removed the beta tag only when we reached our goal of 99.99 percent uptime for a real user’s email data. We did it again with Android producing the G1, a useful and well-reviewed product that then became much better and more fully featured with the Nexus line of phones that followed it. It’s important to note here that when customers are paying for early versions, they have to be functional enough to make them worth their while. Just because it is an early version doesn’t mean it has to be a poor product.</p>
+<div class="note1"><hr>
+<p class="note"><a id="page_11"></a>Note</p>
+<p class="notepara">Google often builds the “minimum useful product” as an initial version and then quickly iterates successive versions allowing for internal and user feedback and careful consideration of quality with every small step. Products proceed through canary, development, testing, beta, and release channels before making it to users.</p>
+<hr></div>
+<p>It’s not as cowboy a process as it might sound at first glance. In fact, in order to make it to what we call the beta channel release, a product must go through a number of other channels and prove its worth. For Chrome, a product I spent my first two years at Google working on, multiple channels were used depending on our confidence in the product’s quality and the extent of feedback we were looking for. The sequence looks something like this:</p>
+<p class="indenthangingB">• <strong>Canary Channel</strong>: This is used for daily builds we suspect aren’t fit for release. Like a canary in a coalmine, if a daily build fails to survive, then it is a sign our process has gotten chaotic and we need to re-examine our work. Canary Channel builds are only for the ultra-tolerant user running experiments and certainly not for someone depending on the application to get real work done. In general, only engineers (developer and testers) and managers working on the product pull builds from the canary channel.</p>
+<div class="note1"><hr>
+<p class="note">Note</p>
+<p class="notepara">The Android team goes one step further, and has its core development team’s phone continually running on the nearly daily build. The thought is that they will be unlikely to check in bad code it if impacts the ability to call home.</p>
+<hr></div>
+<p class="indenthangingB">• <strong>Dev Channel:</strong> This is what developers use for their day-to-day work. These are generally weekly builds that have sustained successful usage and passed some set of tests (we discuss this in subsequent chapters). All engineers on a product are <em>required</em> to pick up the Dev Channel build and use it for real work and for sustained testing. If a Dev Channel build isn’t suitable for real work, then back to the Canary channel it goes. This is not a happy situation and causes a great deal of re-evaluation by the engineering team.</p>
+<p class="indenthangingB">• <strong>Test Channel:</strong> This is essentially the best build of the month in terms of the one that passes the most sustained testing and the one engineers trust the most for their work. The Test Channel build can be picked up by internal dogfood users and represents a candidate Beta Channel build given good sustained performance. At some point, a Test Channel build becomes stable enough to be used internally companywide and <a id="page_12"></a>sometimes given to external collaborators and partners who would benefit from an early look at the product.</p>
+<p class="indenthangingB">• <strong>Beta Channel</strong> or <strong>Release Channel:</strong> These builds are stable Test Channel builds that have survived internal usage and pass every quality bar the team sets. These are the first builds to get external exposure.</p>
+<p>This crawl, walk, run approach gives us the chance to run tests and experiment on our applications early and obtain feedback from real human beings in addition to all the automation we run in each of these channels every day.</p>
+<h3 id="ch01sec1lev5">Types of Tests</h3>
+<p>Instead of distinguishing between code, integration, and system testing, Google uses the language of <em>small</em>, <em>medium,</em> and <em>large</em> tests (not to be confused with t-shirt sizing language of estimation among the agile community), emphasizing scope over form. Small tests cover small amounts of code and so on. Each of the three engineering roles can execute any of these types of tests and they can be performed as automated or manual tests. Practically speaking, the smaller the test, the more likely it is to be automated.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">Instead of distinguishing between code, integration, and system testing, Google uses the language of <em>small</em>, <em>medium,</em> and <em>large</em> tests, emphasizing scope over form.</p>
+<hr></div>
+<p><em>Small tests</em> are mostly (but not always) automated and exercise the code within a single function or module. The focus is on typical functional issues, data corruption, error conditions, and off-by-one mistakes. Small tests are of short duration, usually running in seconds or less. They are most likely written by a SWE, less often by an SET, and hardly ever by TEs. Small tests generally require mocks and faked environments to run. (Mocks and fakes are stubs—substitutes for actual functions—that act as placeholders for dependencies that might not exist, are too buggy to be reliable, or too difficult to emulate error conditions. They are explained in greater detail in later chapters.) TEs rarely write small tests but might run them when they are trying to diagnose a particular failure. The question a small test attempts to answer is, “<em>Does this code do what it is supposed to do?”</em></p>
+<p><em>Medium tests</em> are usually automated and involve two or more interacting features. The focus is on testing the interaction between features that call each other or interact directly; we call these <em>nearest neighbor functions</em>. SETs drive the development of these tests early in the product cycle as individual features are completed and SWEs are heavily involved in writing, debugging, and maintaining the actual tests. If a medium test fails or <a id="page_13"></a>breaks, the developer takes care of it autonomously. Later in the development cycle, TEs can execute medium tests either manually (in the event the test is difficult or prohibitively expensive to automate) or with automation. The question a medium test attempts to answer is, “<em>Does a set of near neighbor functions interoperate with each other the way they are supposed to?”</em></p>
+<p><em>Large tests</em> cover three or more (usually more) features and represent real user scenarios, use real user data sources, and can take hours or even longer to run. There is some concern with overall integration of the features, but large tests tend to be more results-driven, checking that the software satisfies user needs. All three roles are involved in writing large tests and everything from automation to exploratory testing can be the vehicle to accomplish them. The question a large test attempts to answer is, “<em>Does the product operate the way a user would expect and produce the desired results?”</em> End-to-end scenarios that operate on the complete product or service are large tests.</p>
+<div class="note1"><hr>
+<p class="note">Note</p>
+<p class="notepara"><strong>Small tests</strong> cover a single unit of code in a completely faked environment. <strong>Medium tests</strong> cover multiple and interacting units of code in a faked or real environment. <strong>Large tests</strong> cover any number of units of code in the actual production environment with real and not faked resources.</p>
+<hr></div>
+<p>The actual language of small, medium, and large isn’t important. Call them whatever you want as long as the terms have meaning that everyone agrees with.<sup><a id="ch01fn_05"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn05" class="totri-footnote">5</a></sup> The important thing is that Google testers share a common language to talk about what is getting tested and how those tests are scoped. When some enterprising testers begin talking about a fourth class they dubbed <em>enormous tests,</em> every other tester in the company could imagine a systemwide test covering every feature and that runs for a very long time. No additional explanation is necessary.<sup><a id="ch01fn_06"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn06" class="totri-footnote">6</a></sup></p>
+<p>The primary driver of what gets tested and how much is a very dynamic process and varies from product to product. Google prefers to release often and leans toward getting a product out to users quickly so we can get feedback and iterate. Google tries hard to develop only products that users will find compelling and to get new features out to users as early <a id="page_14"></a>as possible so they might benefit from them. Plus, we avoid over-investing in features no user wants because we learn this early. This requires that we involve users and external developers early in the process so we have a good handle on whether what we are delivering hits the mark.</p>
+<p>Finally, the mix between automated and manual testing definitely favors the former for all three sizes of tests. If it can be automated and the problem doesn’t require human cleverness and intuition, then it should be automated. Only those problems, in any of the previous categories, that specifically require human judgment, such as the beauty of a user interface or whether exposing some piece of data constitutes a privacy concern, should remain in the realm of manual testing.</p>
+<div class="sidebar1"><hr>
+<p class="sidebarpara">The mix between automated and manual testing definitely favors the former for all three sizes of tests. If it can be automated and the problem doesn’t require human cleverness and intuition, then it should be automated.</p>
+<hr></div>
+<p>Having said that, it is important to note that Google performs a great deal of manual testing, both scripted and exploratory, but even this testing is done under the watchful eye of automation. Recording technology converts manual tests to automated tests, with point-and-click validation of content and positioning, to be re-executed build after build to ensure minimal regressions, and to keep manual testers always focusing on new issues. We also automate the submission of bug reports and the routing of manual testing tasks.<sup><a id="ch01fn_07"></a><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/footnotes.html#ch01fn07" class="totri-footnote">7</a></sup> For example, if an automated test breaks, the system determines the last code change that is the most likely culprit, sends email to its authors, and files a bug automatically. The ongoing effort to automate to within the “last inch of the human mind” is currently the design spec for the next generation of test-engineering tools Google builds.</p>
+<div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/how-google-tests/9780132851572/pre07.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">About the Authors</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/how-google-tests/9780132851572/ch02.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">Chapter 2. The Software Engineer in Test</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780132851572/chapter/ch01.html" data-for-analytics="9780132851572:ch01.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    <div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/how-google-tests/9780132851572/ch01.html#">Reset</a>
+</div>
+</div>
+    
+  
+
+<div class="annotator-notice"></div></body></html>

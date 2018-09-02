@@ -16,11 +16,11 @@
 
 .annotator-hide { display: none; visibility: hidden; }
 
-.annotator-adder { margin-top: -48px; margin-left: -24px; width: 48px; height: 48px; background-position: left top; }
+.annotator-adder { margin-top: -48px; margin-left: -24px; width: 48px; height: 48px; background-position: 0% 0%; }
 
-.annotator-adder:hover { background-position: center top; }
+.annotator-adder:hover { background-position: 50% 0%; }
 
-.annotator-adder:active { background-position: right center; }
+.annotator-adder:active { background-position: 100% 50%; }
 
 .annotator-widget { }
 

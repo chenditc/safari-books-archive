@@ -1,0 +1,1279 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/building-applications-on/9781491926543/ch02.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781491926543"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch02.html"
+  data-epub-title="Building Applications on Mesos" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/building-applications-on/9781491926543/ch02.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781491926543" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch02.html" data-epub-title="Building Applications on Mesos" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491926543"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>2. Getting Started with Mesos - Building Applications on Mesos</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding-top:10px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure,#sbo-rt-content aside[data-type="sidebar"] figure{border:none}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:3em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"]{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div.footnote{font-size:90%}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:.25em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{font-weight:bold;font-size:110%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:10px 0 10px 0 !important;text-align:center;padding:0;page-break-after:avoid}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold;text-indent:0}#sbo-rt-content div.index li{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content div.index ul{list-style-type:none;padding-left:0;margin-left:0}#sbo-rt-content div.index ul li{padding-left:0;margin-left:0}#sbo-rt-content div.index ul li ul li{margin-left:20px}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}
+    </style><link rel="canonical" href="/Library/view/building-applications-on/9781491926543/ch02.html"><meta name="description" content=" Chapter 2. Getting Started with Mesos Now that you have a high-level understanding of the kinds of problems that Mesos can solve, let’s dive in. What terminology is used ... "><meta property="og:title" content="2. Getting Started with Mesos"><meta itemprop="isPartOf" content="/library/view/building-applications-on/9781491926543/"><meta itemprop="name" content="2. Getting Started with Mesos"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/ch02.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491926543/"><meta property="og:description" itemprop="description" content=" Chapter 2. Getting Started with Mesos Now that you have a high-level understanding of the kinds of problems that Mesos can solve, let’s dive in. What terminology is used ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781491926529"><meta property="og:book:author" itemprop="author" content="David Greenberg"><meta property="og:book:tag" itemprop="about" content="Databases"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Building Applications on Mesos
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491926543/chapter/ch02.html" data-for-analytics="9781491926543:ch02.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/ch02.html&amp;text=Building%20Applications%20on%20Mesos&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/ch02.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/ch02.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%202.%20Getting%20Started%20with%20Mesos&amp;body=https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/ch02.html%0D%0Afrom%20Building%20Applications%20on%20Mesos%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/building-applications-on/9781491926543/ch01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">1. Introduction to Mesos</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/building-applications-on/9781491926543/ch03.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">3. Porting an Existing Application to Mesos</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 2. Getting Started with Mesos"><div class="chapter" id="idm4773760">
+<h1><span class="label">Chapter 2. </span>Getting Started with Mesos</h1>
+
+
+<p>Now that you have a high-level understanding of the kinds of problems that Mesos can solve, let’s dive in.
+What terminology is used by the project?
+How does Mesos manage resources?
+What structural constraints does Mesos impose on applications?
+By answering these questions and more, you’ll develop the vocabulary and understanding to discuss Mesos.
+In subsequent chapters, we’ll go into specifics about each technology, in order to develop applied skills in building applications with Mesos.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Frameworks"><div class="sect1" id="idp462624">
+<h1>Frameworks</h1>
+
+<p>In <a data-type="indexterm" data-primary="frameworks" id="fw2"></a>the Mesos world, we assume that our distributed systems have a <a data-type="indexterm" data-primary="central controllers" id="idp465552"></a>central controller and many workers.
+This is how most successful, scalable systems work: Google’s BigTable, Apache Hadoop, and Twitter’s Storm all have some sort of central controller that organizes their workers.
+Of course, the workers should be designed to work independently from the controller so that they’re not bottlenecked by it and don’t rely on it for their availability.
+Applications that run on Mesos are called <em>frameworks</em>.
+A framework has two parts: the controller portion, which is called the <em>scheduler</em>, <a data-type="indexterm" data-primary="schedulers" id="s2"></a>and the worker portion, which are called the<a data-type="indexterm" data-primary="executors" id="e2"></a> <em>executors</em>.</p>
+
+<p>To run a framework on a Mesos cluster, we must run its scheduler.
+A scheduler is simply a process that can speak the Mesos protocol; frequently, our schedulers run on Marathon, but it’s always necessary to consider how to ensure high availability for the scheduler.
+When a scheduler first starts up, it connects to the Mesos cluster so that it can use the cluster’s resources.
+As the scheduler runs, it makes requests to Mesos to launch executors as it sees fit.
+This complete flexibility for the scheduler is what makes Mesos so powerful: schedulers can launch tasks based on resource availability, changing workloads, or external triggers.
+Today, there exist schedulers that can manage fleets of web services, schedulers that coordinate Storm topologies, and schedulers that optimize batch job placement.</p>
+
+<p>When a scheduler wants to do some work, it launches an executor.
+The executor is simply the scheduler’s worker: the scheduler then decides to send one or more <em>tasks</em> <a data-type="indexterm" data-primary="tasks" id="idm4405232"></a>to the executor, which will work on those tasks independently, sending status updates to the scheduler until the tasks are <a data-type="indexterm" data-primary="executors" data-startref="e2" id="idm4404224"></a><a data-type="indexterm" data-primary="schedulers" data-startref="s2" id="idm4403280"></a>complete.
+We’ll learn more about the distinction between tasks and executors in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#tasks_and_executors_intro">“Tasks and Executors”</a>.</p>
+
+<p>Now that we’ve got an idea of what a framework is, let’s take a step down the stack to learn about the Mesos cluster <a data-type="indexterm" data-primary="frameworks" data-startref="fw2" id="idm4400880"></a>itself.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Masters and Slaves"><div class="sect1" id="idm4399648">
+<h1>Masters and Slaves</h1>
+
+<p>A <a data-type="indexterm" data-primary="slaves" id="idm4398240"></a><a data-type="indexterm" data-primary="masters" id="masters2"></a>Mesos cluster is comprised of two components: the Mesos <em>masters</em> and the Mesos <em>slaves</em>.
+The masters are the software that coordinates the cluster; the slaves are what execute code in containers.
+You might be thinking, “That sounds awfully similar to how frameworks work.”</p>
+
+<p>In that case, you’d be 100% correct.
+The Mesos cluster mirrors the organization of the frameworks that run on top of it, because the master/slave pattern is simple, flexible, and effective.
+The cluster software needs to be separate, however, to ensure that frameworks remain isolated and secure from one another.
+First, we’ll look at a few key ideas about the Mesos masters; then, we’ll take a look at the slaves.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="The Masters"><div class="sect2" id="idm4394320">
+<h2>The Masters</h2>
+
+<p>The <a data-type="indexterm" data-primary="masters" data-secondary="responsibilities of" id="masters2ro"></a>Mesos masters are the brain of the cluster.
+They have several responsibilities:</p>
+
+<ul>
+<li>
+<p>They are the central source of truth for running tasks.</p>
+</li>
+<li>
+<p>They fairly share the cluster between all the connected frameworks.</p>
+</li>
+<li>
+<p>They host the primary UI for the cluster.</p>
+</li>
+<li>
+<p>They ensure high availability and efficient allocation of resources. Considered together, they are a single point of failure, but Mesos automatically handles and recovers from individual master failures.</p>
+</li>
+</ul>
+
+<p>Let’s unpack these responsibilities, and see what they mean for the design of the masters and how they impact our clusters:</p>
+<dl>
+<dt>Masters <a data-type="indexterm" data-primary="masters" data-secondary="and task metadata" id="idm590736"></a><a data-type="indexterm" data-primary="task metadata" id="idm589728"></a>are the central source of truth for all running tasks</dt>
+<dd>
+<p>In order for masters to be able to serve the UI and data about tasks with minimal latency, all task metadata is kept in memory.
+This means that the nodes that run the masters should have plenty of memory—on a cluster with thousands of concurrent tasks, the masters could, for instance, consume 20 GB of RAM.
+Note that this excludes completed tasks, which relieves the memory pressure on the masters for some workloads.
+The masters make an effort to store the metadata related to recently completed tasks, but in the interest of saving memory, they have a fixed-size buffer to store the last few hundred thousand tasks.
+On a very high throughput cluster, this could mean that completed task metadata is only available in the master for a few minutes.
+To retain task metadata for longer, you can use the Mesos monitoring system <a href="https://github.com/twosigma/satellite">Satellite</a> to automatically replicate the task metadata to a NoSQL database.</p>
+</dd>
+<dt>Masters fairly share the cluster between connected <a data-type="indexterm" data-primary="frameworks" data-secondary="resources" id="idm586048"></a>frameworks</dt>
+<dd>
+<p>The masters are responsible for offering resources to frameworks.
+Since the masters know exactly which frameworks are using which resources, they’re able to determine which frameworks are using less than their share, and give those frameworks the first choice of free resources.<sup><a data-type="noteref" id="idm305504-marker" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#idm305504" class="totri-footnote">1</a></sup>
+When configuring a Mesos cluster, you have many knobs for controlling the way resources are distributed amongst connected frameworks.
+Whenever a framework connects to Mesos, it connects with a role.
+Each role can have resources specifically set aside for it, and each role can be assigned a different weighted share of the remainder of the cluster.
+The administrators of the cluster can configure roles to ensure that each framework’s SLA is met (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#mesos_roles">“Roles”</a>).</p>
+</dd>
+<dt>Masters host the primary UI</dt>
+<dd>
+<p>When <a data-type="indexterm" data-primary="master UI" id="idm301120"></a><a data-type="indexterm" data-primary="UI, master" id="idm300384"></a>you want to use a browser to inspect and interact with the Mesos cluster, you’ll typically first visit the master UI, which is on port 5050 by default.
+This UI allows you to see how many resources are available in total on your cluster, and how many are used.
+It allows you to see all of the connected frameworks, as well as information about them such as their framework ID and when they registered with Mesos.
+You can also see details about all of the current resource offers and tasks.
+The master UI automatically links each task with the UI of the slave that task is running on, so that you can even access files from the task’s sandbox, such as its logs.</p>
+</dd>
+<dt>Masters ensure high availability</dt>
+<dd>
+<p>Mesos <a data-type="indexterm" data-primary="clusters, highly available" id="idm297664"></a><a data-type="indexterm" data-primary="masters" data-secondary="for high availability" id="masters2fha"></a>seeks to simplify building and running a highly available cluster.
+This is the reason that you should run three or five masters: as long as a majority of the masters are still running, the cluster can continue to operate as normal.
+The masters use the battle-tested <a href="http://bit.ly/paxoswiki">Paxos</a> algorithm to durably synchronize their beliefs about the status of the cluster.
+Since all masters have the same up-to-date view, any one of them can service and process requests.
+At the same time, Mesos seeks to enable building highly scalable clusters, which means being able to rapidly manage thousands of cluster allocations.
+To accomplish this, only one master is elected leader at a time.
+The leader is thus able to efficiently compute and make decisions about resource allocations, without being slowed down by waiting for the other masters on every decision.
+This design allows Mesos to achieve very high rates of scalable resource allocation, but still offer high availability in the face of partial failures.
+Of course, losing a majority of the masters does force the Mesos cluster to operate in a “safe mode”—when a majority of the masters are down, frameworks will not be able to allocate new resources or launch new tasks; however, running tasks will continue as normal.
+This means that even during a master outage, as long as the frameworks in use can continue to function without launching new tasks, the cluster as a whole can offer uninterrupted service even as individual <a data-type="indexterm" data-primary="masters" data-secondary="for high availability" data-startref="masters2fha" id="idm293360"></a><a data-type="indexterm" data-primary="masters" data-secondary="responsibilities of" data-startref="masters2ro" id="idm292112"></a>components fail.</p>
+</dd>
+</dl>
+
+<p>In this book, we won’t cover how to install and run the Mesos masters and slaves: there are numerous tutorials on the Internet that cover exactly that, and they are customized for whatever operating system and deployment system you <a data-type="indexterm" data-primary="masters" data-startref="masters2" id="idp10928"></a>prefer.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="The Slaves"><div class="sect2" id="idp12160">
+<h2>The Slaves</h2>
+<div data-type="tip"><h1>Slave Will Be Renamed to Agent in Mesos 1.0</h1>
+<p>When Mesos reaches the 1.0 release, the nomenclature will change—the Mesos slave will be called the Mesos agent, and all occurences of “slave” will be changed <a data-type="indexterm" data-primary="agent, Mesos" id="idp14752"></a>to “agent.”</p>
+</div>
+
+<p>The complement of the Mesos masters are the slaves.
+The slaves have a different set of <a data-type="indexterm" data-primary="slaves" data-secondary="responsibilities of" id="slaves2ro"></a>responsibilities:</p>
+<ol>
+<li>
+<p>They launch and manage the containers that host the executors (both LXC containers and Docker images).</p>
+</li>
+<li>
+<p>They provide a UI to access data from within the containers.</p>
+</li>
+<li>
+<p>They communicate with their local executors in order to manage communications with the Mesos masters.</p>
+</li>
+<li>
+<p>They advertise information about the hosts they’re running on, including information about running tasks and executors, available resources, and other metadata.</p>
+</li>
+<li>
+<p>They manage status updates from their tasks.</p>
+</li>
+<li>
+<p>They checkpoint their state to enable rolling restarts of the cluster.</p>
+</li>
+
+</ol>
+
+<p>Let’s break these down in turn:</p>
+<dl>
+<dt>Container management</dt>
+<dd>
+<p>Mesos <a data-type="indexterm" data-primary="containerizers" id="idp25936"></a><a data-type="indexterm" data-primary="slaves" data-secondary="container management" id="idp3320336"></a>provides the best multitenancy isolation story for large clusters to date.
+It does so through the use of containerization technology.
+Containers are a lightweight, extremely low-resource way to guarantee specific programs access to specific quantities of resources.
+For instance, a container could guarantee that a web server always can use 2 CPUs, 1 GB of RAM, and 500 MBps of network bandwidth, regardless of the demand of any other application on the machine.
+Mesos slaves have deep integration with LXC, the standard <a href="https://linuxcontainers.org/">Linux Containers</a> technology, as well as with <a href="https://www.docker.com/">Docker</a>, the most popular packaging and containerization technology.
+Since the slaves need to be able to launch containers and ensure that the executors are run as specific users, the slave process typically runs as <code>root</code>,<sup><a data-type="noteref" id="idp3323936-marker" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#idp3323936" class="totri-footnote">2</a></sup> so that it can create containers and run different executors as different users.</p>
+</dd>
+<dt>UI for slave-specific data</dt>
+<dd>
+<p>Just <a data-type="indexterm" data-primary="slave UI" id="idp3325984"></a><a data-type="indexterm" data-primary="UI, slave" id="idp3326720"></a>as the Mesos master UI exposes information about the state of the whole cluster, such as all the active tasks and frameworks, the slave UI exposes information about what’s happening on a specific slave.
+Besides presenting a drilled-down version of the master UI (showing only frameworks, tasks, and executors that are related to that slave), the slave UI allows for interactive browsing of all the files within a container.
+This feature makes it easy to inspect the logs of any current or completed task, which is invaluable in debugging and monitoring the cluster.
+Frequently, Mesos framework UIs will link to the slaves’ UIs, so that users can easily browse, view, and download the files produced by their tasks.</p>
+</dd>
+<dt>Communication with executors and masters</dt>
+<dd>
+<p>If <a data-type="indexterm" data-primary="slaves" data-secondary="executor-master communication" id="idp3329792"></a>you’re reading this book, you’ve probably worked on <a data-type="indexterm" data-primary="distributed systems" id="idp3330896"></a>distributed systems (or else you’re about to).
+If that’s the case, then you know (or will soon find out) that <em>distributed systems are hard</em>.
+In order to help us mere mortal programmers with these hard problems, the Mesos slave intermediates communications between <a data-type="indexterm" data-primary="executor-master communication" id="idp3332352"></a><a data-type="indexterm" data-primary="master-executor communication" id="idp3333088"></a>executors and the masters.
+This means that every communication between executors and slaves is done locally, on a 100% reliable local loopback interface, which frees us from distributed systems reliability concerns.<sup><a data-type="noteref" id="idp3334128-marker" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#idp3334128" class="totri-footnote">3</a></sup>
+Therefore, the Mesos slave can take responsibility for checkpointing and resynchronizing state during transient network problems or restarts, which helps to reduce the difficulty in building reliable worker applications.</p>
+</dd>
+<dt>Advertising information about their host</dt>
+<dd>
+<p>In Mesos, it is up to each <a data-type="indexterm" data-primary="slaves" data-secondary="host information reporting" id="idp3392640"></a><a data-type="indexterm" data-primary="host information reporting" id="idp3393632"></a>slave to self-report the amount of resources it has available for running tasks.
+This design makes it trivial to add new capacity to a Mesos cluster: once a slave machine is started and the Mesos slave process connects to the masters, the slave chooses to communicate what resources it’s making available to the cluster.
+By default, the slave process will autodetect the CPUs, memory, and disks on the machine and expose them all to Mesos, available to any role. (The slave will reserve 1 GB or 50% of detected memory, whichever is smaller, in order to run itself and other operating system services. Likewise, it will reserve 5 GB or 50% of detected disk, whichever is smaller.)
+However, on the command line, you can specify exactly how many resources should be exposed, and whether any or all of those resources should be reserved for one or more roles.
+Besides the automatically detected resources, administrators can configure slaves to expose custom-defined resources, which we’ll learn more about in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#configuring_custom_resources">“Configuring Custom Resources”</a>.
+A slaves can also expose arbitrary key/value data about the machine (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#configuring_attributes">“Configuring Slave Attributes”</a> for details).
+This is a great way to express information that might be useful to some schedulers, such as which rack the machine is on, what generation of processor features it supports, or what operating system it is running.
+By enhancing the advertised information that a slave shares with the cluster, you can add powerful features to your schedulers; for example, see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch03.html#marathon_using_placement_constraints">“Using Placement Constraints”</a> to see how this data can enable rack-aware Marathon task placement.</p>
+</dd>
+<dt>Status updates</dt>
+<dd>
+<p>When <a data-type="indexterm" data-primary="slaves" data-secondary="status updates" id="idp3399568"></a><a data-type="indexterm" data-primary="tasks" data-secondary="status updates" id="idp3400576"></a><a data-type="indexterm" data-primary="status updates" id="idp3401520"></a>a task sends a status update to its scheduler, it is guaranteed to be delivered at least once.
+It’s the responsibility of the slave to store all status updates locally to disk, and periodically retransmit them if they aren’t acknowledged by the task’s scheduler.
+Without this, frameworks could fail to learn when their tasks complete during transient network or scheduler failures.</p>
+</dd>
+<dt>Rolling restarts</dt>
+<dd>
+<p>There’s a <a data-type="indexterm" data-primary="rolling restarts" id="idp3404000"></a><a data-type="indexterm" data-primary="slaves" data-secondary="and rolling restarts" data-secondary-sortas="rolling" id="idp3404736"></a>tricky situation that arises when building an always-up distributed system: you need to be able to upgrade things without incurring any downtime.
+Typically, what you might try to do is restart a small fraction of your slaves at a time—that way, you never dip below 90% or 95% capacity.
+Unfortunately, there’s a problem with this strategy.
+Consider the slaves on which you’re running in-memory caches.
+Even if you restart them one at a time, it may take a long time to repopulate those caches, thus resulting in one of two choices: complete the slave upgrade faster, and suffer degraded application performance for far longer than the upgrade itself takes, or upgrade the slaves slowly and increase the time needed for the rolling upgrade by an order of magnitude or more.
+Mesos slaves have a feature called checkpointing, which gives us a third choice: the slave can periodically write snapshots of its own state plus the state of its tasks and executors, so that when you restart the slave process, rather than killing all of its tasks and executors, the new, upgraded version of the slave can simply read the checkpoint files and pick up where the previous version left off by reconnecting to the existing executors.
+This way, a rolling reboot of your slaves can be done quickly, and not a single task need die.</p>
+</dd>
+</dl>
+<aside data-type="sidebar" epub:type="sidebar"><div class="sidebar" id="configuring_cgroups">
+<h5>Using Cgroups on Mesos Slaves</h5>
+<p><em>Cgroups</em>, a <a data-type="indexterm" data-primary="Cgroups" id="idp27504"></a><a data-type="indexterm" data-primary="slaves" data-secondary="Cgroups" id="idp28128"></a>shortened name for <em>control groups</em>, are a way to group Linux processes together in order to do resource accounting and allocation.
+Every Mesos slave should have cgroups enabled, because they provide the CPU and memory isolation that ultimately makes Mesos so reliable.
+Processes on a Linux system belong to a node in the cgroup hierarchy; each node in the hierarchy has a certain share of the resources, and each child of a node has some subset of that node’s resources.
+Through these resource hierarchies, anything from CPU shares and memory to network and disk I/O bandwidth can be accounted for and precisely shared.
+This sharing and accounting is what guarantees that one task can’t starve another of resources.
+When the Mesos slave uses cgroups, it actually dynamically creates and destroys nodes in the hierarchy to match the allocations that the master calculates.
+This simplifies the administrators’ jobs, since they need only ensure that cgroups have been enabled in the OS on the slave.</p>
+
+<p>You can read about how to enable cgroups on <a href="https://wiki.debian.org/LXC">the Debian wiki</a> and in the <a href="http://red.ht/1T3Qu9k">Red Hat Resource Management Guide</a>.
+Mesos slaves will automatically work with Debian’s and Red Hat 7’s default cgroup instructions.</p>
+
+<p>To enable cgroup isolation on the Mesos slaves, you must pass the command-line option <code>--isolation='cgroups/cpu,cgroups/mem'</code> to every slave.
+It is not recommended to use the default Posix isolator in production, as it doesn’t provide the same robust isolation guarantees that the cgroups isolator does.
+Its primary purpose is to get process monitoring data when running Mesos for development purposes on a Mac.</p>
+</div></aside>
+
+<p>Now we know the key responsibilities of the Mesos slave.
+The fundamental purpose of the slave is to expose the cluster’s resources; in the next section, we’ll learn what resources are and how to define custom <a data-type="indexterm" data-primary="slaves" data-secondary="responsibilities of" data-startref="slaves2ro" id="idp34320"></a>resources.</p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Resources"><div class="sect1" id="custom_resources_info">
+<h1>Resources</h1>
+
+<p>The <a data-type="indexterm" data-primary="resources" data-secondary="definition" id="idp37664"></a><a data-type="indexterm" data-primary="resources" id="res2"></a>fundamental abstraction in Mesos is that of the resource—tasks and executors consume resources while performing their work.
+A common question is: “What is a resource?”
+The answer is broad: a resource is anything that a task or executor uses while doing its work.
+For example, the standard resources (and thus the resources that nearly every framework uses) are <code>cpus</code>, <code>mem</code> (memory), <code>disk</code>, and <code>ports</code>.
+The <a data-type="indexterm" data-primary="resources" data-secondary="disk" id="idp42240"></a><a data-type="indexterm" data-primary="resources" data-secondary="ports" id="idp43248"></a><a data-type="indexterm" data-primary="resources" data-secondary="ranges" id="idm288896"></a><a data-type="indexterm" data-primary="resources" data-secondary="sets" id="idm287952"></a>first three of those resources are scalar: they represent a total amount available, from which tasks deduct their usage.
+There are other resource types available in Mesos, as well.
+<em>Ranges</em> are lists of integers from which single elements or subranges can be allocated; for example, these are used to represent the ports available and in use.
+The last resource type, <em>sets</em>, are simply unordered collections of strings.
+We’ll see an example of a set later on.
+First, let’s learn about the standard resources:</p>
+<dl>
+<dt><code>cpus</code></dt>
+<dd>
+<p>This <a data-type="indexterm" data-primary="resources" data-secondary="cpus" id="idm283968"></a>resource expresses how many CPU cores are available.
+Tasks may use fractional parts of a CPU—this is possible because Mesos slaves use CPU shares, rather than reserving specific CPUs.
+This means that, if you have 1.5 <code>cpus</code> reserved, your processes will be allowed to use a total of 1.5 seconds of CPU time each second.
+That could mean that, within a single executor, two processes each get 750 milliseconds of CPU time per second, or one process gets 1 second of CPU time and another gets 500 milliseconds of CPU time each in a given second.
+The benefit of using CPU shares is that if some task would be able to utilize more than its share, and no other task would use an otherwise idle CPU, the first task can potentially use more than its share.
+As a result, the <code>cpus</code> reserved provides a guaranteed minimum of CPU time available to the task—if additional capacity is available, it will be allowed to use more.</p>
+</dd>
+<dt><code>mem</code></dt>
+<dd>
+<p><code>mem</code> <a data-type="indexterm" data-primary="resources" data-secondary="mem (memory)" id="idm279344"></a>is how many megabytes of memory are available.
+Unlike CPUs, which can burst to use more than their allocation if there’s spare capacity, memory is a strictly preallocated resource.
+As a result, choosing the correct memory for tasks can be tricky: too little, and the tasks get killed when they try to allocate more than their allotment; too much, and memory sits idle that could otherwise be used for running more tasks.</p>
+</dd>
+<dt><code>disk</code></dt>
+<dd>
+<p><code>disk</code> represents the amount of scratch space (in megabytes) that should be available in the container’s sandbox.
+Since disk usage can be highly variable due to the unpredictability of errors filling up logs, many framework developers don’t worry about reserving this resource in their tasks.
+Furthermore, by default, Mesos slaves don’t even enforce when a task uses more disk than allocated. (To change that behavior, you can pass the option <code>--enforce_container_disk_quota</code> on your slaves’ command lines.
+The other reason that this value is ignored is that the Mesos slaves automatically garbage collect the sandboxes of finished tasks when they need to reclaim disk space (see the following sidebar for details and advice on configuring garbage collection for slaves).</p>
+</dd>
+</dl>
+<aside data-type="sidebar" epub:type="sidebar" class="pagebreak-before"><div class="sidebar" id="sandbox_disk_gc_config">
+<h5>Configuring Slave Sandbox Garbage Collection</h5>
+<p>As <a data-type="indexterm" data-primary="slaves" data-secondary="garbage collector (GC)" id="slaves2gc"></a><a data-type="indexterm" data-primary="garbage collector (GC)" id="gc2"></a>tasks run on your Mesos cluster, they’re sure to write data to disk.
+They can generate logs, temporarily store output files, or cache their data or binaries.
+As mentioned, most Mesos users don’t bother to enable the disk quota enforcement, since most disks are so big that it’s unlikely a single job will fill them up.
+However, this logic works only in the short term.
+After days or weeks of running tasks, the sum of all the outputs of the tasks on a given machine will certainly exceed that slave’s disk capacity.
+To solve this problem, Mesos slaves garbage collect old data from their disks.
+Let’s look at the command-line options that configure the slave disk garbage collector (GC):</p>
+<dl>
+<dt><code>--gc_delay</code></dt>
+<dd>
+<p>This option selects the maximum amount of time that an executor directory can exist before it is deleted.
+For example, it could be set to <code>--gc_delay=3days</code> or <code>--gc_delay=2weeks</code>; the default is <code>--gc_delay=1weeks</code>.
+Note that the system may shorten this delay, depending on the available disk usage.</p>
+</dd>
+<dt><code>--disk_watch_interval</code></dt>
+<dd>
+<p>This option selects how often the disk usage is checked (and thus how often the GC will run).
+It uses the same time notation as the GC delay setting.
+For example, it could be set to <code>--disk_watch_interval=10secs</code>; the default value is <code>--disk_watch_interval=1mins</code>.
+If you set this to be too frequent, you could impact hard drive performance by enumerating directories too often.</p>
+</dd>
+<dt><code>--gc_disk_headroom</code></dt>
+<dd>
+<p>This option selects what percentage of headroom, or free space, should be targeted by the GC.
+If you set the headroom too small, a task that writes to the disk too fast could consume all of the available space before the GC has time to run.
+On the flipside, if you set this too large, files will be garbage collected far earlier than necessary, which could make debugging annoying (e.g., if your data got deleted before you could look through it).
+The value of this option should be between 0.0 and 1.0; the default is <code>--gc_disk_headroom=0.1</code>, meaning that Mesos targets 10% of the disk as free space.
+The formula used to calculate the maximum age for an output directory is:</p>
+</dd>
+</dl>
+<div data-type="equation">
+<p><code>max_age</code> = max (0.0, (1.0 – <code>gc_disk_headroom</code> – <code>disk_usage</code>))</p>
+</div>
+</div></aside>
+<dl>
+<dt><code>ports</code></dt>
+<dd>
+<p>Ports <a data-type="indexterm" data-primary="resources" data-secondary="ports" id="idp3218688"></a>are the first (and only default) nonscalar resource on Mesos slaves that we’ll need to understand.
+Many tasks, such as HTTP servers, will want to open one or more ports, so that they can listen for incoming connections.
+Since each port can only be bound to one task, Mesos helps by allowing tasks to reserve specific ports, so that each task uses a nonconflicting range.
+Furthermore, if a task <em>must</em> be bound to a particular port, then it can decline offers that don’t include that port in the available range.
+By default, Mesos slaves expose ports 31000–32000; however, you can change this range by setting the <code>ports</code> resource to whatever you’d like on the command line.</p>
+</dd>
+</dl>
+
+<p>Now <a data-type="indexterm" data-primary="slaves" data-secondary="garbage collector (GC)" data-startref="slaves2gc" id="idp3221952"></a><a data-type="indexterm" data-primary="garbage collector (GC)" data-startref="gc2" id="idp3223232"></a>that we’ve seen the basics of Mesos slave resources and learned about their default behaviors, let’s learn how we can customize the resources offered.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Configuring Custom Resources"><div class="sect2" id="configuring_custom_resources">
+<h2>Configuring Custom Resources</h2>
+
+<p>Perhaps <a data-type="indexterm" data-primary="slaves" data-secondary="custom resource configuration" id="idp3434896"></a><a data-type="indexterm" data-primary="resources" data-secondary="custom resource configuration" id="idp3435968"></a>you want to increase or decrease the resources set aside for operating system services.
+Maybe you need to expose additional ports, or ports within a particular range, in order to run a certain framework.
+Or possibly your slave machines have an exotic type of hardware, like a GPGPU, and you’d like to have Mesos manage the reservation and allocation of these devices.
+Finally, perhaps you’d like to reserve some of your resources to only be usable by a particular <a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#mesos_roles">role</a>.
+In any of these cases, you must provide a custom resource configuration to your Mesos slave.</p>
+
+<p>Mesos resources are specified as key/value pairs.
+The <em>key</em> is the name of the resource: for example, <code>cpus</code>, <code>mem</code>, <code>disk</code>, or <code>ports</code>.
+The <em>value</em> is how many of those resources are available; the resource’s type is determined by the value’s syntax.
+Each resource is written as <em><code>key:value</code></em>; all the resources are concatenated together with semicolons and passed via the command line.
+Mesos supports scalar, set, and range resources.
+You can view the full grammar of resource attributes <a href="http://mesos.apache.org/documentation/attributes-resources/">in the Mesos documentation</a>, but we’ll go over a simple example.</p>
+
+<p>Suppose that we’d like to have our slave advertise the following resources: 4.5 CPUs, 8 GB of RAM, the ports in the ranges of 1000–5000 and 31000–32000, and that it has 2 GPGPUs.
+Then, we’ll have the following settings:</p>
+<table>
+
+<thead>
+<tr>
+<th>Resource</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><code>cpus</code></p></td>
+<td><p><code>4.5</code></p></td>
+<td><p>Note that for scalar resources, you can provide a double.</p></td>
+</tr>
+<tr>
+<td><p><code>mem</code></p></td>
+<td><p><code>8192</code></p></td>
+<td><p>Remember that memory is in MB.</p></td>
+</tr>
+<tr>
+<td><p><code>ports</code></p></td>
+<td><p><code>[1000-5000,31000-32000]</code></p></td>
+<td><p>Ranges are written in square brackets; commas separate discontinuities.</p></td>
+</tr>
+<tr>
+<td><p><code>gpgpus</code></p></td>
+<td><p><code>{gpu1,gpu2}</code></p></td>
+<td><p>Sets are written in curly braces; elements are separated by commas.</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>To pass this on the command line, we’d use the flag:</p>
+
+<pre data-type="programlisting">--resources='cpus:4;mem:8192;ports:[1000-5000;31000-32000];gpgpus:{gpu1,gpu2}'</pre>
+
+<p>All of the resources specified will belong to the <a data-type="indexterm" data-primary="resources" data-startref="res2" id="idp3458208"></a>default role.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Configuring Slave Attributes"><div class="sect2" id="configuring_attributes">
+<h2>Configuring Slave Attributes</h2>
+
+<p>Slaves <a data-type="indexterm" data-primary="slaves" data-secondary="attribute configuration" id="idp3461248"></a>can expose arbitrary key/value data about the machine as attributes.
+Unlike resources, attributes are not used by the Mesos allocator.
+They are merely passed along to framework schedulers to aid in their scheduling decisions.
+Suppose that you wanted to pass the following table of key/value pairs as attributes on the slave:</p>
+<table>
+
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><code>operating_system</code></p></td>
+<td><p><code>ubuntu</code></p></td>
+</tr>
+<tr>
+<td><p><code>cpu_class</code></p></td>
+<td><p><code>haswell</code></p></td>
+</tr>
+<tr>
+<td><p><code>zone</code></p></td>
+<td><p><code>us_east</code></p></td>
+</tr>
+<tr>
+<td><p><code>rack</code></p></td>
+<td><p><code>22</code></p></td>
+</tr>
+</tbody>
+</table>
+
+<p>To pass these attributes into the slave, we separate the keys and values with colons and separate the pairs with semicolons.
+This is the final command-line option pass:</p>
+
+<pre data-type="programlisting">--attributes='operating_system:ubuntu;cpu_class:haswell;zone:us_east;rack:22'</pre>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Roles"><div class="sect1" id="mesos_roles">
+<h1>Roles</h1>
+
+<p>In <a data-type="indexterm" data-primary="roles" id="r2"></a>order to decide which resources can be offered to which frameworks, Mesos includes the concept of “roles.”
+A role is like a group: you can have the <code>dgrnbrg</code> role (for things you run), the <code>qa</code> role (for quality assurance-related tasks), the <code>db</code> role (for databases), and so on.
+Besides being used to exclusively reserve resources, roles also can be used to assign weights to Mesos’s fair sharing algorithm.
+This allows you to specify that some roles should receive a greater ratio of resources on the cluster than others.
+When registering a framework, you may specify which role it belongs to by setting the <code>role</code> field in the <code>FrameworkInfo</code> message used to register.
+Frameworks will only receive offers that are for their role, or for the <code>*</code> role.</p>
+
+<p>If you’d like to use roles, then you must include a comma-separated list of the valid roles on the master.
+For example, if you’d like to have <code>dev</code>, <code>qa</code>, and <code>prod</code> roles, then you’d need to pass <code>--roles=dev,qa,prod</code> to the master.
+To assign weights to those roles, so that <code>dev</code> gets twice as many offers as <code>qa</code> and <code>prod</code> gets three times as many offers as <code>qa</code>, you’d pass <code>--weights='dev=2,qa=1,prod=3'</code>.</p>
+<div data-type="tip"><h1>Securing Roles</h1>
+<p>By <a data-type="indexterm" data-primary="roles" data-secondary="securing" id="idp345520"></a>default, any framework may claim to belong to any role.
+If necessary, roles can be secured through access control lists (ACLs), a security feature that is beyond the scope of this book.
+The <code>register_frameworks</code> ACL controls which roles each principal (aka user) can use when registering frameworks.</p>
+</div>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Static and Dynamic Slave Reservations"><div class="sect2" id="slave_reservations">
+<h2>Static and Dynamic Slave Reservations</h2>
+
+<p>Slave reservations are the way to ensure that specific resources are always available for particular use cases.
+Until Mesos 0.25, only static reservations were available for operators.
+Now, there’s also a dynamic API to reserve and unreserve resources without needing to change the command line.</p>
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect3" data-pdf-bookmark="Static reservations"><div class="sect3" id="idp349808">
+<h3>Static reservations</h3>
+
+<p>Rather <a data-type="indexterm" data-primary="slave reservations" data-secondary="static" id="sr2s"></a><a data-type="indexterm" data-primary="roles" data-secondary="static slave reservations" id="r2sr"></a><a data-type="indexterm" data-primary="static slave reservations" id="sr2"></a><a data-type="indexterm" data-primary="reservations" data-secondary="static" id="r2s"></a>than only specifying which resources a slave exposes on its command line, we can also specify which roles can use those resources; this reserves those resources for a particular role.
+In the previous example, we didn’t specify any roles for the resources; as a result, all the resources were assigned to the default role.
+The default role is set by the <code>--default_role</code> <a data-type="indexterm" data-primary="roles" data-secondary="default role" id="r2dr"></a>slave command-line option.
+If <code>--default_role</code> is unset, then the default role will be <code>*</code> (anyone).</p>
+
+<p>To specify the role for a particular resource, we place the role name in parentheses after the resource.
+Let’s suppose that we have a machine with 4 CPUs and 16 GB of RAM.
+We’d like to reserve 1 CPU and 4 GB of RAM for the role <code>prod</code>, and 2 CPUs and 1 GB of RAM for the role <code>qa</code>.
+The remainder of the resources should be able to be used by any user of the system.
+Then, we’ll have the following settings:</p>
+<table>
+
+<thead>
+<tr>
+<th>Resource</th>
+<th>Value</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><code>cpus</code></p></td>
+<td><p><code>1</code></p></td>
+<td><p><code>prod</code></p></td>
+</tr>
+<tr>
+<td><p><code>mem</code></p></td>
+<td><p><code>4096</code></p></td>
+<td><p><code>prod</code></p></td>
+</tr>
+<tr>
+<td><p><code>cpus</code></p></td>
+<td><p><code>2</code></p></td>
+<td><p><code>qa</code></p></td>
+</tr>
+<tr>
+<td><p><code>mem</code></p></td>
+<td><p><code>1024</code></p></td>
+<td><p><code>qa</code></p></td>
+</tr>
+<tr>
+<td><p><code>cpus</code></p></td>
+<td><p><code>13</code></p></td>
+<td><p><code>*</code></p></td>
+</tr>
+<tr>
+<td><p><code>mem</code></p></td>
+<td><p><code>11264</code></p></td>
+<td><p><code>*</code></p></td>
+</tr>
+</tbody>
+</table>
+
+<p>To configure the slave, we can use the following command-line argument (note that this should all be typed on a single line, without the <code>\</code> or any spaces; the command line has been wrapped here to fit in the page margins):</p>
+
+<pre data-type="programlisting">--resources='cpus(prod):1;mem(prod):4096; \
+  cpus(qa):2;mem(qa):1024;cpus:13;mem:11264'</pre>
+
+<p>Note that we don’t have to specify the role for the resources intended for <code>*</code>, since that’s the default role.
+We could also change the default role to <code>prod</code>, and thus the command line would change:</p>
+
+<pre data-type="programlisting">--default_role=prod \
+  --resources='cpus:1;mem:4096;cpus(qa):2;mem(qa):1024;cpus(*):13;mem(*):11264'</pre>
+
+<p>Note that changing the default role <a data-type="indexterm" data-primary="roles" data-secondary="default role" data-startref="r2dr" id="idm1063728"></a>means that the autodetected disk and port ranges will also go to the <code>prod</code> role.</p>
+
+<p>As you can see, slave reservations are a very powerful system that gives you control to ensure that production-critical workloads always receive a minimum allocation.
+At the same time, they’re relatively tedious to configure and difficult to change, since they require changing the slave command <a data-type="indexterm" data-primary="slave reservations" data-secondary="static" data-startref="sr2s" id="idm1061200"></a><a data-type="indexterm" data-primary="roles" data-secondary="static slave reservations" data-startref="r2sr" id="idm1059952"></a><a data-type="indexterm" data-primary="static slave reservations" data-startref="sr2" id="idm1058720"></a><a data-type="indexterm" data-primary="reservations" data-secondary="static" data-startref="r2s" id="idm1057760"></a>line.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect3" data-pdf-bookmark="Dynamic reservations"><div class="sect3" id="dynamic_reservations">
+<h3>Dynamic reservations</h3>
+
+<p>As <a data-type="indexterm" data-primary="slave reservations" data-secondary="dynamic" id="sr2d"></a><a data-type="indexterm" data-primary="roles" data-secondary="dynamic slave reservations" id="r2dr1"></a><a data-type="indexterm" data-primary="dynamic slave reservations" id="dr2"></a>of Mesos 0.25, reservations can be created and destroyed via the <code>/master/reserve</code> and <code>/master/unreserve</code> HTTP endpoints.
+Let’s look at how we’d reserve and unreserve the resources as shown in the previous section.
+For these examples, we’ll assume that we’ve configured HTTP Basic authentication for a user principal <code>admin</code>, and that the appropriate ACLs have been configured.
+First we’ll write some JSON, specifying the resources to reserve  (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#resources_dot_json">Example&nbsp;2-1</a>).</p>
+<div id="resources_dot_json" data-type="example">
+<h5><span class="label">Example 2-1. </span>resources.json</h5>
+
+<pre data-type="programlisting" data-code-language="json"><code class="p">[</code><code>
+    </code><code class="p">{</code><code>
+        </code><code class="nt">"name"</code><code class="p">:</code><code> </code><code class="s2">"cpus"</code><code class="p">,</code><code>
+        </code><code class="nt">"type"</code><code class="p">:</code><code> </code><code class="s2">"SCALAR"</code><code class="p">,</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO1-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO1-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a><code>
+        </code><code class="nt">"scalar"</code><code class="p">:</code><code> </code><code class="p">{</code><code> </code><code class="nt">"value"</code><code class="p">:</code><code> </code><code class="mi">1</code><code> </code><code class="p">}</code><code class="p">,</code><code>
+        </code><code class="nt">"role"</code><code class="p">:</code><code> </code><code class="s2">"prod"</code><code class="p">,</code><code>
+        </code><code class="nt">"reservation"</code><code class="p">:</code><code> </code><code class="p">{</code><code>
+            </code><code class="nt">"principal"</code><code class="p">:</code><code> </code><code class="s2">"admin"</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO1-2" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO1-2"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/2.png"></a><code>
+        </code><code class="p">}</code><code>
+    </code><code class="p">}</code><code class="p">,</code><code>
+    </code><code class="p">{</code><code>
+        </code><code class="nt">"name"</code><code class="p">:</code><code> </code><code class="s2">"mem"</code><code class="p">,</code><code>
+        </code><code class="nt">"type"</code><code class="p">:</code><code> </code><code class="s2">"SCALAR"</code><code class="p">,</code><code>
+        </code><code class="nt">"scalar"</code><code class="p">:</code><code> </code><code class="p">{</code><code> </code><code class="nt">"value"</code><code class="p">:</code><code> </code><code class="mi">4096</code><code> </code><code class="p">}</code><code class="p">,</code><code>
+        </code><code class="nt">"role"</code><code class="p">:</code><code> </code><code class="s2">"prod"</code><code class="p">,</code><code>
+        </code><code class="nt">"reservation"</code><code class="p">:</code><code> </code><code class="p">{</code><code>
+            </code><code class="nt">"principal"</code><code class="p">:</code><code> </code><code class="s2">"admin"</code><code>
+        </code><code class="p">}</code><code>
+    </code><code class="p">}</code><code class="p">,</code><code>
+    </code><code class="p">{</code><code>
+        </code><code class="nt">"name"</code><code class="p">:</code><code> </code><code class="s2">"cpus"</code><code class="p">,</code><code>
+        </code><code class="nt">"type"</code><code class="p">:</code><code> </code><code class="s2">"SCALAR"</code><code class="p">,</code><code>
+        </code><code class="nt">"scalar"</code><code class="p">:</code><code> </code><code class="p">{</code><code> </code><code class="nt">"value"</code><code class="p">:</code><code> </code><code class="mi">2</code><code> </code><code class="p">}</code><code class="p">,</code><code>
+        </code><code class="nt">"role"</code><code class="p">:</code><code> </code><code class="s2">"qa"</code><code class="p">,</code><code>
+        </code><code class="nt">"reservation"</code><code class="p">:</code><code> </code><code class="p">{</code><code>
+            </code><code class="nt">"principal"</code><code class="p">:</code><code> </code><code class="s2">"admin"</code><code>
+        </code><code class="p">}</code><code>
+    </code><code class="p">}</code><code class="p">,</code><code>
+    </code><code class="p">{</code><code>
+        </code><code class="nt">"name"</code><code class="p">:</code><code> </code><code class="s2">"mem"</code><code class="p">,</code><code>
+        </code><code class="nt">"type"</code><code class="p">:</code><code> </code><code class="s2">"SCALAR"</code><code class="p">,</code><code>
+        </code><code class="nt">"scalar"</code><code class="p">:</code><code> </code><code class="p">{</code><code> </code><code class="nt">"value"</code><code class="p">:</code><code> </code><code class="mi">1024</code><code> </code><code class="p">}</code><code class="p">,</code><code>
+        </code><code class="nt">"role"</code><code class="p">:</code><code> </code><code class="s2">"qa"</code><code class="p">,</code><code>
+        </code><code class="nt">"reservation"</code><code class="p">:</code><code> </code><code class="p">{</code><code>
+            </code><code class="nt">"principal"</code><code class="p">:</code><code> </code><code class="s2">"admin"</code><code>
+        </code><code class="p">}</code><code>
+    </code><code class="p">}</code></pre></div>
+<dl class="calloutlist">
+<dt><a class="co" id="callout_getting_started_with_mesos_CO1-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO1-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a></dt>
+<dd><p>The HTTP API specifies resources the same way as the Mesos resource protobuf. See <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#mesos_proto_explanation">“Understanding mesos.proto”</a> to learn more about this structure.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO1-2" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO1-2"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/2.png"></a></dt>
+<dd><p>Dynamic reservations must be associated with a user, <a data-type="indexterm" data-primary="principals" id="idp7004608"></a>or <em>principal</em>. To make this reservation, we’ll need to present the credentials of the <code>admin</code> user when we submit it.</p></dd>
+</dl>
+
+<p>To submit this reservation, we’ll also need the slave ID of the slave on which we want to make this reservation
+(we’ll use <code>$SLAVEID</code> in the example; a normal slave ID will look like <code>201509191529-2380865683-5050-11189-4621</code>).
+Let’s see how to combine our user credentials, <em>resources.json</em>, and slave ID into <a data-type="indexterm" data-primary="curl command" id="idp6996288"></a>a <code>curl</code> command:</p>
+
+<pre data-type="programlisting">curl -u admin:password \ <a class="co" id="co_getting_started_with_mesos_CO2-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO2-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a>
+     -d slaveId=$SLAVEID\ <a class="co" id="co_getting_started_with_mesos_CO2-2" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO2-2"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/2.png"></a>
+     -d resources="$(cat resources.json)"\ <a class="co" id="co_getting_started_with_mesos_CO2-3" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO2-3"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/3.png"></a>
+     -X POST\ <a class="co" id="co_getting_started_with_mesos_CO2-4" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO2-4"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/4.png" alt="4" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/4.png"></a>
+     http://&lt;ip&gt;:&lt;port&gt;/master/reserve <a class="co" id="co_getting_started_with_mesos_CO2-5" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO2-5"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/5.png" alt="5" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/5.png"></a></pre>
+<dl class="calloutlist">
+<dt><a class="co" id="callout_getting_started_with_mesos_CO2-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO2-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a></dt>
+<dd><p>For this example, we assume that the <code>admin</code> user’s password was set to <code>password</code>.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO2-2" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO2-2"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/2.png"></a></dt>
+<dd><p>We provide the slave ID and resources as key/value pairs to the endpoint.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO2-3" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO2-3"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/3.png"></a></dt>
+<dd><p>We will pass the resources in JSON format to <code>curl</code>. Note that the actual data that Mesos sees looks like <code>slaveId=$SLAVEID&amp;resources=$JSON</code>.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO2-4" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO2-4"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/4.png" alt="4" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/4.png"></a></dt>
+<dd><p>Both the <code>/reserve</code> and <code>/unreserve</code> endpoints require <code>POST</code>ing the data.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO2-5" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO2-5"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/5.png" alt="5" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/5.png"></a></dt>
+<dd><p>We need to specify the URL of the Mesos master. This API makes reservations more convenient to configure, since you only need to interact with the master, rather than configuring each slave’s reservation by interacting with that slave directly.</p></dd>
+</dl>
+
+<p>Destroying a reservation is almost identical to creating it:</p>
+
+<pre data-type="programlisting">curl -u admin:password \
+     -d slaveId=$SLAVEID\
+     -d resources="$(cat resources.json)"\
+     -X POST\
+     http://&lt;ip&gt;:&lt;port&gt;/master/unreserve <a class="co" id="co_getting_started_with_mesos_CO3-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO3-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a></pre>
+<dl class="calloutlist">
+<dt><a class="co" id="callout_getting_started_with_mesos_CO3-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO3-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a></dt>
+<dd><p>Note that the only thing we change is that we’re now using the <code>/unreserve</code> endpoint. We still need to specify exactly which resources are being unreserved.</p></dd>
+</dl>
+
+<p>The new HTTP API for slave reservations promises to make ad hoc reservations much simpler to create, manage, and destroy.
+We should start to see tools to interact with this API at a higher level emerging as adoption increases (bear in mind that it was only released in October 2015).</p>
+</div></section>
+
+
+
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Tasks and Executors"><div class="sect1" id="tasks_and_executors_intro">
+<h1>Tasks and Executors</h1>
+
+<p>When <a data-type="indexterm" data-primary="slave reservations" data-secondary="dynamic" data-startref="sr2d" id="idp7236304"></a><a data-type="indexterm" data-primary="roles" data-secondary="dynamic slave reservations" data-startref="r2dr" id="idp7230928"></a><a data-type="indexterm" data-primary="dynamic slave reservations" data-startref="dr2" id="idp7232112"></a><a data-type="indexterm" data-primary="tasks" data-secondary="versus executors" id="t2ve"></a><a data-type="indexterm" data-primary="executors" data-secondary="versus tasks" id="e2vt"></a>a scheduler wants to do some work, it launches an <em>executor</em>.
+The executor is simply the scheduler’s worker: the scheduler can decide to send one or more <em>tasks</em> to an executor, which will work on those tasks independently, sending status updates to the scheduler until the tasks are complete.</p>
+
+<p>Up to this point, we haven’t tried to distinguish the ideas of tasks and executors, because usually each executor has a single task, so there’s not much point in differentiating between them.
+However, some frameworks leverage the full power of the task and executor abstraction, and to understand these frameworks we must understand the abstraction.
+For that we must first understand the problem: tasks are things that our scheduler wants to run in a container on a slave;
+however, we’d sometimes like to be able to run multiple tasks in the same container.
+For example, this pattern shows up with Storm workers and Hadoop TaskTrackers, each of which can contain many tasks.</p>
+
+<p>So, what’s an executor?
+An executor is a process container that runs tasks.</p>
+
+<p>And what’s a task?
+A task is the unit of work in Mesos.</p>
+
+<p><a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#relationship_slaves_executors">Figure&nbsp;2-1</a> illustrates the relationship between the elements of this abstraction.</p>
+
+<figure><div id="relationship_slaves_executors" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/baom_0201.png" alt="Image depicting executors and tasks on a slave" width="703" height="868" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/baom_0201.png">
+<h6><span class="label">Figure 2-1. </span>Relationship between slaves (machines), executors (containers), and tasks</h6>
+</div></figure>
+
+<p>There are also some caveats that you should be aware of:</p>
+<dl>
+<dt>Tasks can adjust the size of the executor’s container</dt>
+<dd>
+<p>When you launch a task or executor in Mesos, both have resources attached to them.
+The reason for this is that an executor has a basic amount of resources that it requires for itself, and then each task can use additional resources.
+Mesos will automatically expand and contract the executor’s container to have resources equal to the sum of those required by the executor plus all of its running tasks.</p>
+</dd>
+<dt>APIs can be task or executor oriented</dt>
+<dd>
+<p>When programming for the executor API (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch05.html#ch_mesos_executor">Chapter&nbsp;5</a> for details), some communication APIs between the executor and scheduler are are specified per task (such as <code>launchTask</code> and <code>statusUpdate</code>), whereas other APIs are per executor (such as <code>frameworkMessage</code>).
+It’s up to the framework developers to make sure that they associate messages with tasks whenever necessary, regardless of whether the Mesos API does that automatically.</p>
+</dd>
+<dt>Most frameworks don’t worry about distinguishing tasks and executors</dt>
+<dd>
+<p>Nearly every Mesos framework has one task for each executor.
+This means they don’t need to worry about various idiosyncrasies in the executor APIs.
+Unfortunately, that in turn means that occasionally the executor APIs can be difficult to understand, since they see less use.</p>
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="CommandExecutor"><div class="sect2" id="command_executor_info">
+<h2>CommandExecutor</h2>
+
+<p>Most <a data-type="indexterm" data-primary="CommandExecutor" id="idp7214576"></a>users and developers don’t need to leverage the sophisticated features of the Mesos executor APIs.
+To assist rapid and reliable application development, Mesos comes with the <code>CommandExecutor</code>, which is a special, simplified executor.
+If your task simply launches a command-line application (and optionally downloads it from a location in storage) or a Docker image, you can specify a <code>CommandInfo</code> when launching a task, rather than an <code>ExecutorInfo</code>.
+If you do this, then Mesos will launch the specified command with the built-in <code>CommandExecutor</code>, which will handle the Mesos messaging protocol for you.
+Many frameworks, such as Chronos and Marathon, often use the <code>CommandExecutor</code> for its <a data-type="indexterm" data-primary="tasks" data-secondary="versus executors" data-startref="t2ve" id="idp7208704"></a><a data-type="indexterm" data-primary="executors" data-secondary="versus tasks" data-startref="e2vt" id="idp7205248"></a>simplicity.</p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Understanding mesos.proto"><div class="sect1" id="mesos_proto_explanation">
+<h1>Understanding mesos.proto</h1>
+
+<p>Throughout <a data-type="indexterm" data-primary="protobufs" id="p2"></a><a data-type="indexterm" data-primary="mesos.proto" id="mp2"></a><a data-type="indexterm" data-primary="Google Protocol Buffers" id="gpb2"></a>this book and your own development efforts, you’ll often wonder how you configure some API or what the configuration options are for some feature.
+All communication with Mesos is encoded in <a href="https://developers.google.com/protocol-buffers/">Google Protocol Buffers</a> (commonly known as <em>protobufs</em>).
+Lucky for us, all of the data schemas are stored in a central location: the file <em>include/mesos/mesos.proto</em> in the <a href="https://github.com/apache/mesos">Mesos codebase</a>.
+Let’s take a tour of Google protobufs, and learn some idioms that frequently show up in the Mesos codebase.</p>
+
+<p>Protobufs is an interface description language that allows an application’s developers to specify strongly typed messages that exist in their system.
+Many languages have protobuf compilers, which convert <em>.proto</em> files into efficient serializers and deserializers so that all of the languages can communicate with an efficient binary encoding.</p>
+
+<p>First, let’s learn the basics of protobufs:</p>
+
+<pre data-type="programlisting" data-code-language="protobuf"><code class="cm">/** </code><a class="co" id="co_getting_started_with_mesos_CO4-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a><code class="cm">
+ *  This represents information about a user.
+ *  We'll respect their privacy as much as possible.
+ */</code><code>
+</code><code class="kd">message</code><code> </code><code class="nc">UserInfo</code><code> </code><code class="p">{</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-2" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-2"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/2.png"></a><code>
+</code><code>  </code><code class="c1">// The name of the user </code><a class="co" id="co_getting_started_with_mesos_CO4-3" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-3"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/3.png"></a><code class="c1">
+</code><code>  </code><code class="k">required</code><code> </code><code class="kt">string</code><code> </code><code class="na">username</code><code> </code><code class="o">=</code><code> </code><code class="mi">1</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-4" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-4"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/4.png" alt="4" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/4.png"></a><code>
+</code><code>  </code><code class="k">required</code><code> </code><code class="n">Name</code><code> </code><code class="na">name</code><code> </code><code class="o">=</code><code> </code><code class="mi">2</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-5" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-5"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/5.png" alt="5" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/5.png"></a><code>
+</code><code>  </code><code class="k">optional</code><code> </code><code class="kt">uint32</code><code> </code><code class="na">age</code><code> </code><code class="o">=</code><code> </code><code class="mi">4</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-6" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-6"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/6.png" alt="6" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/6.png"></a><code>
+</code><code>  </code><code class="c1">// Auxiliary info
+</code><code>  </code><code class="k">optional</code><code> </code><code class="kt">bytes</code><code> </code><code class="na">aux_info</code><code> </code><code class="o">=</code><code> </code><code class="mi">3</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-7" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-7"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/7.png" alt="7" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/7.png"></a><code>
+</code><code class="p">}</code><code>
+</code><code>
+</code><code class="kd">message</code><code> </code><code class="nc">Name</code><code> </code><code class="p">{</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-8" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-8"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/8.png" alt="8" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/8.png"></a><code>
+</code><code>  </code><code class="k">optional</code><code> </code><code class="kt">string</code><code> </code><code class="na">first</code><code> </code><code class="o">=</code><code> </code><code class="mi">1</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-9" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-9"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/9.png" alt="9" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/9.png"></a><code>
+</code><code>  </code><code class="k">optional</code><code> </code><code class="kt">string</code><code> </code><code class="na">last</code><code> </code><code class="o">=</code><code> </code><code class="mi">2</code><code class="p">;</code><code>
+</code><code>
+</code><code>  </code><code class="kd">message</code><code> </code><code class="nc">MiddleName</code><code> </code><code class="p">{</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-10" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-10"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/10.png" alt="10" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/10.png"></a><code>
+</code><code>    </code><code class="k">optional</code><code> </code><code class="kt">string</code><code> </code><code class="na">regular</code><code> </code><code class="o">=</code><code> </code><code class="mi">1</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-11" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-11"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/11.png" alt="11" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/11.png"></a><code>
+</code><code>    </code><code class="k">optional</code><code> </code><code class="kt">string</code><code> </code><code class="na">patronymic</code><code> </code><code class="o">=</code><code> </code><code class="mi">2</code><code class="p">;</code><code>
+</code><code>  </code><code class="p">}</code><code>
+</code><code>
+</code><code>  </code><code class="k">repeated</code><code> </code><code class="n">MiddleName</code><code> </code><code class="na">middle</code><code> </code><code class="o">=</code><code> </code><code class="mi">3</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-12" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-12"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/12.png" alt="12" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/12.png"></a><code>
+</code><code>
+</code><code>  </code><code class="k">optional</code><code> </code><code class="kt">uint32</code><code> </code><code class="na">total_parts</code><code> </code><code class="o">=</code><code> </code><code class="mi">4</code><code> </code><code class="p">[</code><code class="k">default</code><code> </code><code class="o">=</code><code> </code><code class="mi">2</code><code class="p">]</code><code class="p">;</code><code> </code><a class="co" id="co_getting_started_with_mesos_CO4-13" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#callout_getting_started_with_mesos_CO4-13"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/13.png" alt="13" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/13.png"></a><code>
+</code><code class="p">}</code></pre>
+<dl class="calloutlist">
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-1" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-1"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/1.png"></a></dt>
+<dd><p>Protobufs supports block comments in the style of JavaDocs.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-2" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-2"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/2.png"></a></dt>
+<dd><p>The main syntactic form in a <em>.proto</em> file is the <code>message</code>, which has a name (<code>UserInfo</code>) and a set of typed, named fields.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-3" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-3"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/3.png"></a></dt>
+<dd><p>Protobufs also supports comments that span to the end of the line, like C and Java.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-4" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-4"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/4.png" alt="4" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/4.png"></a></dt>
+<dd><p>A field has four parts: whether is it <code>required</code>, <code>optional</code>, or <code>repeated</code>; the type (<code>string</code>, in this case); the name of the field; and the field index. Each field index must be unique to the message; it is the developer’s responsibility to never reuse the indices, because they are the foundation on which backward compatibility in the binary format is built.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-5" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-5"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/5.png" alt="5" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/5.png"></a></dt>
+<dd><p>A field’s type can itself be another <code>message</code>.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-6" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-6"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/6.png" alt="6" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/6.png"></a></dt>
+<dd><p>Protobufs has many built-in numeric types; Mesos primarily uses <code>int32</code>, <code>uint32</code>, and <code>double</code>. Also, notice that the field indices don’t have to be in numeric order—they’re usually grouped to reflect the structure of the message.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-7" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-7"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/7.png" alt="7" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/7.png"></a></dt>
+<dd><p><code>bytes</code> allows you to store arbitrary binary data in a protobuf. In Mesos’s protobuf messages, this is used to enable developers to define custom additional payloads.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-8" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-8"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/8.png" alt="8" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/8.png"></a></dt>
+<dd><p>Generally, most or all of a project’s messages are defined in a single file.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-9" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-9"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/9.png" alt="9" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/9.png"></a></dt>
+<dd><p>You don’t <em>need</em> to make any fields <code>required</code>.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-10" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-10"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/10.png" alt="10" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/10.png"></a></dt>
+<dd><p>Messages can be nested into other messages.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-11" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-11"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/11.png" alt="11" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/11.png"></a></dt>
+<dd><p>Note that the field numbering restarts within every message, even nested messages.</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-12" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-12"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/12.png" alt="12" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/12.png"></a></dt>
+<dd><p>Fields can also be repeated, in which case they’re a list of zero or more entries of the specified type (in this case, <code>MiddleName</code>).</p></dd>
+<dt><a class="co" id="callout_getting_started_with_mesos_CO4-13" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#co_getting_started_with_mesos_CO4-13"><img src="https://www.safaribooksonline.com/library/view/building-applications-on/9781491926543/assets/13.png" alt="13" width="12" height="12" data-mfp-src="/library/view/building-applications-on/9781491926543/assets/13.png"></a></dt>
+<dd><p>Protobufs allows default values to be specified.</p></dd>
+</dl>
+
+<p>Besides the basics, there are a few patterns that frequently show up in <em>mesos.proto</em>.
+Firstly, any ID in the system typically has a message defined for it, with only a single required string value (c.f. <code>FrameworkID</code>, <code>TaskID</code>).
+This is beneficial for typed languages like C++, Scala, and Java, because it ensures that different types of IDs can’t get mixed up.
+Secondly, when there is a choice for what to specify (for instance, a custom executor vs. a command executor), both choices are made <code>optional</code>, and there should be a comment in <em>mesos.proto</em> that explains the choice.
+Most messages that can be generated by framework code have a <code>data</code> field of type <code>bytes</code>: this is the place to put any serialized messages or data you may want to transmit.</p>
+<div data-type="tip"><h1>The Browser Tab I Never Close</h1>
+<p>Given the reliance on comments for this pattern, I always have <em>mesos.proto</em> open when I’m developing framework code.</p>
+</div>
+
+<p>Another common pattern in <em>mesos.proto</em> is <em>tagged unions</em>.
+A <a data-type="indexterm" data-primary="tagged unions" id="idp7781184"></a><a data-type="indexterm" data-primary="protobufs" data-secondary="tagged union" id="idp7781792"></a>tagged union is also known as a <em>discriminated union</em>; <a data-type="indexterm" data-primary="discriminated unions" id="idp7783152"></a>it is used when there are multiple mutually exclusive choices for how to configure something.
+Unions of this type, such as the <code>Resource</code> message, have every choice <code>optional</code>, so that you can fill in just one per message. There is also a required <code>Type</code> field, which indicates to the code which field you intended to specify. For example, to specify a scalar resource, the <code>Type</code> of the resource should be <code>SCALAR</code> and the <code>scalar</code> field should contain the value.</p>
+
+<p>Finally, <em>mesos.proto</em> is usually where new features of Mesos are specified and incubated.
+As a result, you’ll often see upcoming features described in <em>mesos.proto</em> without other official documentation.
+For example, the service discovery system and the persistent volumes features were in <em>mesos.proto</em> for several releases prior to becoming stable, supported features in Mesos.
+<em>mesos.proto</em> can give you a lot of insight into what’s coming up for Mesos; however, it can be confusing and overwhelming if you don’t ignore messages and fields unrelated to your task at <a data-type="indexterm" data-primary="mesos.proto" data-startref="mp2" id="idp7788848"></a><a data-type="indexterm" data-primary="Google Protocol Buffers" data-startref="gpb2" id="idp7789696"></a><a data-type="indexterm" data-primary="protobufs" data-startref="p2" id="idp7790544"></a>hand.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Not Managed by Mesos"><div class="sect1" id="idp7199280">
+<h1>Not Managed by Mesos</h1>
+
+<p>To have a functional Mesos cluster, you’ll need a few other applications that are difficult or impossible to run as frameworks:</p>
+<dl>
+<dt>ZooKeeper</dt>
+<dd>
+<p>Mesos <a data-type="indexterm" data-primary="ZooKeeper" id="idp7794176"></a>uses <a href="https://zookeeper.apache.org/">ZooKeeper</a> to provide discovery services across your cluster.
+ZooKeeper quorums are named by the DNS names of the machines that they run on; as a result, the Mesos cluster’s ZooKeeper quorum usually runs on three or five specific machines, so that it can have a stable name.</p>
+</dd>
+<dt>Databases</dt>
+<dd>
+<p>Initial <a data-type="indexterm" data-primary="database hosting" id="idp7797200"></a>support for persistent volumes was only recently added, in Mesos version 0.23.
+As a result, most databases don’t yet have mature Mesos frameworks.
+Nevertheless, work is rapidly progressing on hosting databases on Mesos.
+<a data-type="indexterm" data-primary="Twitter" id="idp7798176"></a><a data-type="indexterm" data-primary="Cotton" data-seealso="Myriad" id="idp7798784"></a>Twitter has been developing <a data-type="indexterm" data-primary="Apache Cotton" id="idp7799760"></a>Apache Cotton (previously called Mysos), which runs and manages MySQL on Mesos, since 2014.
+Mesosphere <a data-type="indexterm" data-primary="Mesosphere" id="idp7800608"></a><a data-type="indexterm" data-primary="Cassandra" id="idp7801216"></a><a data-type="indexterm" data-primary="Kafka" id="idp7801824"></a>has also been working with its partners to productionalize Cassandra and Kafka on Mesos, and
+Basho <a data-type="indexterm" data-primary="Basho" id="idp7802672"></a><a data-type="indexterm" data-primary="Riak" id="idp7803280"></a>has released a beta version of a Riak framework for Mesos, which includes a high-performance proxy layer that was enabled by Mesos.</p>
+</dd>
+<dt>Monitoring</dt>
+<dd>
+<p>Mesos <a data-type="indexterm" data-primary="frameworks" data-secondary="monitoring" id="idp7805184"></a>watches and monitors its frameworks, which helps developers build highly available and reliable systems.
+But, in the loosely translated words of the Roman poet Juvenal, “Who watches the watchers?”
+Mesos itself needs to be monitored; it collects instantaneous usage and utilization data, but that data should be archived and graphed to understand the cluster’s behavior over time.
+In addition, Mesos isn’t built to identify issues with the machines that it’s running on.
+Thus, a robust, productionalized Mesos cluster should have host-level monitoring, and it should archive and alert on data collected by Mesos itself.
+One integrated solution to this is <a href="https://github.com/twosigma/satellite">Satellite</a>, which can automatically disable flaky slaves, generate alerts on custom conditions, and store historical data to InfluxDB, ElasticSearch, and many other databases.</p>
+</dd>
+</dl>
+
+<p>Luckily, setting up a monitoring system and one ZooKeeper cluster involves a lot less work than setting up standalone versions of all the frameworks that we’re going to run on Mesos!</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Summary"><div class="sect1" id="idp7808624">
+<h1>Summary</h1>
+
+<p>A Mesos cluster is comprised of the masters, which coordinate the cluster, and the slaves, which execute tasks on behalf of frameworks.
+The master/slave structure of the Mesos cluster is mirrored by the frameworks, which are each composed of a scheduler that controls executors, which run on the slaves.</p>
+
+<p>Mesos <a data-type="indexterm" data-primary="slaves" id="idp7810704"></a><a data-type="indexterm" data-primary="masters" id="idp7811312"></a>slaves can be customized with additional key/value metadata, custom resource types, and roles, which are all ways to ensure that framework schedulers can choose the best slaves on which to run their executors, and to help the administrators to guarantee the allocation behaviors of the Mesos masters.
+The master and slave states can be browsed through web UIs that cross-reference data across the cluster.</p>
+
+<p>Executors <a data-type="indexterm" data-primary="executors" id="idp7812848"></a>are the processes that actually run inside of containers on the slaves.
+In Mesos, executors can host one or more tasks, which provides flexibility for framework authors to structure their applications however they’d like; however, most frameworks use the <code>CommandExecutor</code> <a data-type="indexterm" data-primary="CommandExecutor" id="idp7814240"></a>to run one task per executor (i.e., one task per container).</p>
+
+<p>Finally, although Mesos provides a lot of functionality, one still must deploy certain tools outside of Mesos: specifically, a <a data-type="indexterm" data-primary="ZooKeeper" id="idp7815504"></a>ZooKeeper quorum to bootstrap the cluster, a monitoring system, and possibly some databases.</p>
+
+<p>Now that we’ve had a tour of Mesos, let’s learn how to port an existing web application onto Mesos!</p>
+</div></section>
+
+
+
+
+
+
+
+<div data-type="footnotes"><p data-type="footnote" id="idm305504"><sup><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#idm305504-marker" class="totri-footnote">1</a></sup> Mesos uses a fair-sharing allocation algorithm called Dominant Resource Fairness (DRF). You can read about it in <a href="https://www.cs.berkeley.edu/~alig/papers/drf.pdf">Ali Ghodsi et al.’s 2011 paper “Dominant Resource Fairness: Fair Allocation of Multiple Resource Types.”</a></p><p data-type="footnote" id="idp3323936"><sup><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#idp3323936-marker" class="totri-footnote">2</a></sup> It’s possible to run a slave as a specific user, and then that Mesos slave can only run executors as that user. This can be useful in high-security environments or during development.</p><p data-type="footnote" id="idp3334128"><sup><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#idp3334128-marker" class="totri-footnote">3</a></sup> This isn’t really true. Remember, distributed systems are hard!</p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/building-applications-on/9781491926543/ch01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">1. Introduction to Mesos</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/building-applications-on/9781491926543/ch03.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">3. Porting an Existing Application to Mesos</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491926543/chapter/ch02.html" data-for-analytics="9781491926543:ch02.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    <div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/building-applications-on/9781491926543/ch02.html#">Reset</a>
+</div>
+</div>
+  
+
+<div class="annotator-notice"></div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

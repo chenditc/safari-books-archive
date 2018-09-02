@@ -1,0 +1,1166 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/site-reliability-engineering/9781491929117/ch06.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781491929117"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch06.html"
+  data-epub-title="Site Reliability Engineering" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/site-reliability-engineering/9781491929117/ch06.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781491929117" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch06.html" data-epub-title="Site Reliability Engineering" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491929117"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>6. Monitoring Distributed Systems - Site Reliability Engineering</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/c1c7ad294784.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content p.byline{text-align:left;margin:-33px auto 35px;font-style:italic;font-weight:bold}#sbo-rt-content div.preface p+p.byline{margin:1em 0 0}#sbo-rt-content div.preface p.byline+p.byline{margin:0}#sbo-rt-content div.sect1>p.byline{margin:-.25em 0 1em}#sbo-rt-content div.sect1>p.byline+p.byline{margin-top:-1em}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding-top:10px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure,#sbo-rt-content aside[data-type="sidebar"] figure{border:none}#sbo-rt-content aside[data-type="sidebar"] p.byline{font-family:sans-serif;font-size:90%;font-weight:bold;font-style:italic;text-align:center;text-indent:0;margin:5px auto 6px;page-break-after:avoid}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"] h2,#sbo-rt-content section[data-type="titlepage"] p.subtitle{font-size:1em;font-weight:normal;text-align:center}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"],#sbo-rt-content section[data-type="titlepage"] p.author{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content section[data-type="titlepage"] p.edition{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:normal;text-align:center;text-transform:uppercase;margin-top:2em}#sbo-rt-content section[data-type="titlepage"]:after{content:url(css_assets/titlepage_footer_ebook.png);position:absolute;bottom:0;max-width:100%}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div[data-type="footnotes"]{font-size:85%;border-top:2px solid black;padding-left:1.5em;margin-top:1.5em}#sbo-rt-content p[data-type="footnote"]{margin-top:-.5em}#sbo-rt-content p[data-type="footnote"] sup{left:-1em;top:1.2em;position:relative;display:block}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:.25em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{font-weight:bold;font-size:110%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:10px 0 10px 0 !important;text-align:center;padding:0;page-break-after:avoid}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold;text-indent:0}#sbo-rt-content div.index li{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content div.index ul{list-style-type:none;padding-left:0;margin-left:0}#sbo-rt-content div.index ul li{padding-left:0;margin-left:0}#sbo-rt-content div.index ul li ul li{margin-left:20px}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}#sbo-rt-content span.roman_text{font-style:normal !important}
+    </style><link rel="canonical" href="/Library/view/site-reliability-engineering/9781491929117/ch06.html"><meta name="description" content=" Chapter 6. Monitoring Distributed Systems Written by Rob Ewaschuk Edited by Betsy Beyer Google’s SRE teams have some basic principles and best practices for building successful monitoring and alerting ... "><meta property="og:title" content="6. Monitoring Distributed Systems"><meta itemprop="isPartOf" content="/library/view/site-reliability-engineering/9781491929117/"><meta itemprop="name" content="6. Monitoring Distributed Systems"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch06.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491929117/"><meta property="og:description" itemprop="description" content=" Chapter 6. Monitoring Distributed Systems Written by Rob Ewaschuk Edited by Betsy Beyer Google’s SRE teams have some basic principles and best practices for building successful monitoring and alerting ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781491929124"><meta property="og:book:author" itemprop="author" content="Niall Richard Murphy"><meta property="og:book:author" itemprop="author" content="Jennifer Petoff"><meta property="og:book:author" itemprop="author" content="Chris Jones"><meta property="og:book:author" itemprop="author" content="Betsy Beyer"><meta property="og:book:tag" itemprop="about" content="Engineering"><meta property="og:book:tag" itemprop="about" content="Networking"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  js-show-related scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Site Reliability Engineering
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch06.html" data-for-analytics="9781491929117:ch06.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch06.html&amp;text=Site%20Reliability%20Engineering&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch06.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch06.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%206.%20Monitoring%20Distributed%20Systems&amp;body=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch06.html%0D%0Afrom%20Site%20Reliability%20Engineering%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch05.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">5. Eliminating Toil</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch07.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">7. The Evolution of Automation at Google</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 6. Monitoring Distributed Systems"><div class="chapter" id="chapter_monitoring">
+<h1><span class="label">Chapter 6. </span>Monitoring Distributed Systems</h1>
+
+
+<p class="byline">Written by Rob Ewaschuk</p>
+
+<p class="byline">Edited by Betsy Beyer</p>
+
+<p>Google’s SRE teams have some basic principles and best practices for
+building successful monitoring and
+alerting systems. This chapter offers guidelines
+for what issues should interrupt a human via a page, and how to deal
+with issues that aren’t serious enough to trigger a page.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Definitions"><div class="sect1" id="idm140203538246864">
+<h1>Definitions</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="terminology" id="idm140203538245728"></a>There’s no uniformly shared vocabulary for discussing all topics related
+to monitoring. Even within Google, usage of the following terms
+varies, but the most common interpretations are listed here.</p>
+<dl>
+<dt>Monitoring</dt>
+<dd>
+<p>Collecting, processing, aggregating,
+and displaying real-time quantitative data about a system, such as
+query counts and types, error counts and types, processing times,
+and server lifetimes.</p>
+</dd>
+<dt>White-box monitoring</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="white-box monitoring" id="idm140203538241600"></a>Monitoring based
+on metrics exposed by the internals of the system, including logs,
+interfaces like the Java Virtual Machine Profiling Interface, or
+an HTTP handler that emits internal statistics.</p>
+</dd>
+<dt>Black-box monitoring</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="black-box monitoring" id="idm140203538239408"></a>Testing
+externally visible behavior as a user would see it.</p>
+</dd>
+<dt>Dashboard</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="dashboards" data-secondary="defined" id="idm140203538237344"></a>An application (usually web-based) that provides a
+summary view of a service’s core metrics. A
+dashboard may have filters, selectors, and so on,
+but is prebuilt to expose the metrics most important to its
+users. The dashboard might also display team information such as
+ticket queue length, a list of high-priority bugs, the current on-call
+engineer for a given area of responsibility, or recent pushes.</p>
+</dd>
+<dt>Alert</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="alerts" data-secondary="defined" id="idm140203538234672"></a>A notification intended to be read by a human
+and that is pushed to a system such as a bug or ticket queue, an
+email alias, or a pager. Respectively, these alerts are classified
+as <em>tickets</em>, <em>email alerts</em>,<sup><a data-type="noteref" id="idm140203538232512-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538232512" class="totri-footnote">1</a></sup> and
+<em>pages</em>.</p>
+</dd>
+<dt>Root cause</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="root cause" data-secondary="defined" id="idm140203538230192"></a>A defect in a software or human system that, if
+repaired, instills confidence that this event won’t happen again
+in the same way. A given incident might have multiple root causes:
+for example, perhaps it was caused by a combination of
+insufficient process automation, software that crashed on bogus
+input, <em>and</em> insufficient testing of the script used to generate
+the configuration. Each of these factors might stand alone as a
+root cause, and each should be repaired.</p>
+</dd>
+<dt>Node and machine</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="machines" data-secondary="defined" id="idm140203538227024"></a>Used interchangeably to indicate a single
+instance of a running kernel in either a physical server, virtual
+machine, or container. There might be multiple <em>services</em> worth
+monitoring on a single machine. The services may either be:</p>
+<ul>
+<li>Related to each other: for example, a caching server and a
+    web server</li>
+<li>Unrelated services sharing hardware: for example, a code
+    repository and a master for a configuration system like <a href="https://puppetlabs.com/puppet/puppet-open-source">Puppet</a> or <a href="https://www.chef.io/chef/">Chef</a></li>
+</ul>
+</dd>
+<dt>Push</dt>
+<dd>
+<p>Any change to a service’s running software or its
+configuration.</p>
+</dd>
+</dl>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Why Monitor?"><div class="sect1" id="idm140203538220512">
+<h1>Why Monitor?</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="benefits of monitoring" id="idm140203538219376"></a>There are many reasons to monitor a system, including:</p>
+<dl>
+<dt>Analyzing long-term trends</dt>
+<dd>
+<p>How big is my database and how fast
+is it growing?  How quickly is my daily-active user count growing?</p>
+</dd>
+<dt>Comparing over time or experiment groups</dt>
+<dd>
+<p>Are queries faster with
+Acme Bucket of Bytes 2.72 versus Ajax DB 3.14? How much better is my
+memcache hit rate with an extra node? Is my site slower than it
+was last week?</p>
+</dd>
+<dt>Alerting</dt>
+<dd>
+<p>Something is broken, and somebody needs to fix it right
+now! Or, something might break soon, so somebody should look soon.</p>
+</dd>
+<dt>Building dashboards</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="dashboards" data-secondary="benefits of" id="idm140203538212480"></a>Dashboards should answer
+basic questions about your service, and normally include some form
+of the four golden signals (discussed in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#xref_monitoring_golden-signals">“The Four Golden Signals”</a>).</p>
+</dd>
+<dt>Conducting <em>ad hoc</em> retrospective analysis (i.e., debugging)</dt>
+<dd>
+<p>Our
+latency just shot up; what else happened around the same time?</p>
+</dd>
+</dl>
+
+<p>System monitoring is also helpful in supplying raw input into business analytics and in facilitating analysis of security breaches. Because this book focuses on the engineering domains in which SRE has particular expertise, we won’t discuss these applications of monitoring here.</p>
+
+<p>Monitoring and alerting enables a system to tell us when it’s broken,
+or perhaps to tell us what’s about to break. When the system isn’t
+able to automatically fix itself, we want a human to investigate the
+alert, determine if there’s a real problem at hand, mitigate the
+problem, and determine the root cause of the problem.  Unless you’re
+performing security auditing on very narrowly scoped components of a
+system, you should never trigger an alert simply because “something
+seems a bit weird.”</p>
+
+<p>Paging a human is a quite expensive use of an employee’s time. If an
+employee is at work, a page interrupts their workflow. If the employee
+is at home, a page interrupts their personal time, and perhaps even
+their sleep. When pages occur too frequently, employees second-guess,
+skim, or even ignore incoming alerts, sometimes even ignoring a “real”
+page that’s masked by the noise. Outages can be prolonged because
+other noise interferes with a rapid diagnosis and fix.  Effective
+alerting systems have good signal and very low noise.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Setting Reasonable Expectations for Monitoring"><div class="sect1" id="idm140203538205264">
+<h1>Setting Reasonable Expectations for Monitoring</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="setting expectations for" id="idm140203538204096"></a>Monitoring a complex application is a significant engineering endeavor
+in and of itself. Even with substantial existing infrastructure for
+instrumentation, collection, display, and alerting in place, a Google
+SRE team with 10–12 members typically has one or sometimes two members
+whose primary assignment is to build and maintain monitoring systems
+for their service. This number has decreased over time as we
+generalize and centralize common monitoring infrastructure, but every
+SRE team typically has at least one “monitoring person.” (That being
+said, while it can be fun to have access to traffic graph dashboards
+and the like, SRE teams carefully avoid any situation that requires
+someone to “stare at a screen to watch for problems.”)</p>
+
+<p><a data-type="indexterm" data-primary="post hoc analysis" id="idm140203538201936"></a>In general, Google has trended toward simpler and faster monitoring
+systems, with better tools for <em>post hoc</em> analysis. We avoid “magic”
+systems that try to learn thresholds or automatically detect
+causality.  Rules that detect unexpected changes in end-user request
+rates are one counterexample; while these rules are still kept as
+simple as possible, they give a very quick detection of a very simple,
+specific, severe anomaly. Other uses of monitoring data such as
+capacity planning and traffic prediction can
+tolerate more fragility, and thus, more complexity. Observational
+experiments conducted over a very long time horizon (months or years)
+with a low sampling rate (hours or days) can also often tolerate more
+fragility because occasional missed samples won’t hide a long-running
+trend.</p>
+
+<p><a data-type="indexterm" data-primary="dependency hierarchies" id="idm140203538199616"></a>Google SRE has experienced only limited success with complex
+dependency hierarchies. We seldom use rules such as, “If I know the
+database is slow, alert for a slow database; otherwise, alert for the
+website being generally slow.” Dependency-reliant rules usually
+pertain to very stable parts of our system, such as our system for
+draining user traffic away from a datacenter. For example, “If a datacenter is drained, then don’t
+alert me on its latency” is one common datacenter alerting rule. Few teams at Google maintain complex
+dependency hierarchies because our infrastructure has a steady rate of
+continuous refactoring.</p>
+
+<p>Some of the ideas described in this chapter are still
+aspirational: there is always room to move more rapidly from symptom
+to root cause(s), especially in ever-changing systems. So while this
+chapter sets out some goals for monitoring systems, and some ways to
+achieve these goals, it’s important that monitoring systems—especially the
+critical path from the onset of a production problem, through a page
+to a human, through basic triage and deep debugging—be kept simple and
+comprehensible by everyone on the team.</p>
+
+<p>Similarly, to keep noise low and signal high, the elements of your
+monitoring system that direct to a pager need to be very simple and
+robust. Rules that generate alerts for humans should be simple to
+understand and represent a clear failure.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Symptoms Versus Causes"><div class="sect1" id="idm140203538196208">
+<h1>Symptoms Versus Causes</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="symptoms vs. causes" id="idm140203538195072"></a>Your monitoring system should address two questions: what’s broken,
+and why?</p>
+
+<p>The “what’s broken” indicates the symptom; the “why” indicates a
+(possibly intermediate) cause. <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#table_monitoring_symptoms">Table&nbsp;6-1</a> lists
+some hypothetical symptoms and corresponding causes.</p>
+<table id="table_monitoring_symptoms" class="pagebreak-before">
+<caption><span class="label">Table 6-1. </span>Example symptoms and causes</caption>
+<thead>
+<tr>
+<th><strong>Symptom</strong></th>
+<th><strong>Cause</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><strong>I’m serving HTTP 500s or 404s</strong></p></td>
+<td><p>Database servers are refusing connections</p></td>
+</tr>
+<tr>
+<td><p><strong>My responses are slow</strong></p></td>
+<td><p>CPUs are overloaded by a bogosort, or an Ethernet cable is crimped under a rack, visible as partial packet loss</p></td>
+</tr>
+<tr>
+<td><p><strong>Users in Antarctica aren’t receiving animated cat GIFs</strong></p></td>
+<td><p>Your Content Distribution Network hates scientists and felines, and thus blacklisted some client IPs</p></td>
+</tr>
+<tr>
+<td><p><strong>Private content is world-readable</strong></p></td>
+<td><p>A new software push caused ACLs to be forgotten and allowed all requests</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>“What” versus “why” is one of the most important distinctions in
+writing good monitoring with maximum signal and minimum noise.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Black-Box Versus White-Box"><div class="sect1" id="idm140203538180336">
+<h1>Black-Box Versus White-Box</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="blackbox vs. whitebox" id="idm140203538179184"></a><a data-type="indexterm" data-primary="white-box monitoring" id="idm140203538178224"></a><a data-type="indexterm" data-primary="black-box monitoring" id="idm140203538177552"></a>We combine heavy use of white-box monitoring
+with modest but critical uses of black-box monitoring. The simplest way to think about black-box monitoring
+versus white-box monitoring is that black-box monitoring is
+symptom-oriented and represents active—not predicted—problems: “The
+system isn’t working correctly, right now.”  White-box monitoring
+depends on the ability to inspect the innards of the system, such as
+logs or HTTP endpoints, with instrumentation. White-box monitoring
+therefore allows detection of imminent problems, failures masked by
+retries, and so forth.</p>
+
+<p>Note that in a multilayered system, one person’s symptom is another
+person’s cause. For example, suppose that a database’s performance is
+slow. Slow database reads are a symptom for the database SRE who
+detects them. However, for the frontend SRE observing a slow
+website, the same slow database reads are a cause. Therefore,
+white-box monitoring is sometimes symptom-oriented, and sometimes
+cause-oriented, depending on just how informative your white-box is.</p>
+
+<p>When collecting telemetry for debugging, white-box monitoring is essential. If web servers seem slow on database-heavy
+requests, you need to know both how fast the web server perceives the
+database to be, and how fast the database believes itself to
+be. Otherwise, you can’t distinguish an actually slow database server
+from a network problem between your web server and your database.</p>
+
+<p>For paging, black-box monitoring has the key benefit of forcing
+discipline to only nag a human when a problem is both already ongoing
+and contributing to real symptoms. On the other hand, for
+not-yet-occurring but imminent problems, black-box monitoring is
+fairly useless.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="The Four Golden Signals"><div class="sect1" id="xref_monitoring_golden-signals">
+<h1>The Four Golden Signals</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="four golden signals of" id="idm140203538172000"></a>The four golden signals of monitoring are latency,
+traffic, errors, and
+saturation. If you can only measure four metrics of
+your user-facing system, focus on these four.</p>
+<dl>
+<dt>Latency</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="service latency" data-secondary="monitoring for" id="idm140203538169408"></a><a data-type="indexterm" data-primary="latency" data-secondary="monitoring for" id="idm140203538168464"></a><a data-type="indexterm" data-primary="request latency" id="idm140203538167520"></a><a data-type="indexterm" data-primary="user requests" data-secondary="request latency monitoring" id="idm140203538166848"></a>The time it takes to service a request. It’s important to
+distinguish between the latency of successful requests and the latency
+of failed requests. For example, an HTTP 500 error triggered due to
+loss of connection to a database or other critical backend might be
+served very quickly; however, as an HTTP 500 error indicates a failed
+request, factoring 500s into your overall latency might result in
+misleading calculations. On the other hand, a slow error is even worse
+than a fast error! Therefore, it’s important to track error latency,
+as opposed to just filtering out errors.</p>
+</dd>
+<dt>Traffic</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="user requests" data-secondary="traffic analysis" id="idm140203538163968"></a><a data-type="indexterm" data-primary="traffic analysis" id="idm140203538163024"></a>A measure of how much demand is being placed on your
+system, measured in a high-level system-specific metric. For a web
+service, this measurement is usually HTTP requests per second, perhaps
+broken out by the nature of the requests (e.g., static versus dynamic
+content). For an audio streaming system, this measurement might focus
+on network I/O rate or concurrent sessions. For a key-value storage
+system, this measurement might be transactions and retrievals per
+<span class="keep-together">second</span>.</p>
+</dd>
+<dt>Errors</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="error rates" id="idm140203538159840"></a><a data-type="indexterm" data-primary="user requests" data-secondary="monitoring failures" id="idm140203538159168"></a>The rate of requests that fail, either explicitly (e.g., HTTP
+500s), implicitly (for example, an HTTP 200 success response, but coupled with the
+wrong content), or by policy (for example, “If you committed to one-second response times, any request over one second is an
+error”). Where protocol response codes are insufficient to express all
+failure conditions, secondary (internal) protocols may be necessary to
+track partial failure modes.  Monitoring these cases can be
+drastically different: catching HTTP 500s at your load balancer can do
+a decent job of catching all completely failed requests, while only
+end-to-end system tests can detect that you’re serving the wrong
+content.</p>
+</dd>
+<dt>Saturation</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="saturation" id="idm140203538156208"></a>How “full” your service is. A measure of your system
+fraction, emphasizing the resources that are most constrained (e.g., in
+a memory-constrained system, show memory; in an I/O-constrained
+system, show I/O). Note that many systems degrade in performance
+before they achieve 100% utilization, so having a utilization target
+is essential.</p>
+
+<p>In complex systems, saturation can be supplemented with higher-level
+load measurement: can your service properly handle double the traffic,
+handle only 10% more traffic, or handle even less traffic than it
+currently receives? For very simple services that have no parameters
+that alter the complexity of the request (e.g., “Give me a nonce” or “I
+need a globally unique monotonic integer”) that rarely change
+configuration, a static value from a load test might be adequate. As
+discussed in the previous paragraph, however, most services need to
+use indirect signals like CPU utilization or network bandwidth that have a known upper bound. Latency increases are often a leading
+indicator of saturation. Measuring your 99th percentile response time
+over some small window (e.g., one minute) can give a very early signal
+of saturation.</p>
+
+<p>Finally, saturation is also concerned with predictions of impending
+saturation, such as “It looks like your database will fill its hard
+drive in 4 hours.”</p>
+</dd>
+</dl>
+
+<p>If you measure all four golden signals and page a human when one
+signal is problematic (or, in the case of saturation, nearly
+problematic), your service will be at least decently covered by
+monitoring.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Worrying About Your Tail (or, Instrumentation and Performance)"><div class="sect1" id="idm140203538151904">
+<h1>Worrying About Your Tail (or, Instrumentation and Performance)</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="instrumentation and performance" id="idm140203538150720"></a><a data-type="indexterm" data-primary="performance" data-secondary="monitoring" id="idm140203538149744"></a>When building a monitoring system from scratch, it’s tempting
+to design a system based upon the mean of some quantity: the mean
+latency, the mean CPU usage of your nodes, or the mean fullness of
+your databases. The danger presented by the latter two cases is
+obvious: CPUs and databases can easily be utilized in a very
+imbalanced way. The same holds for latency. If you run a web service
+with an average latency of 100 ms at 1,000 requests per second, 1% of
+requests might easily take 5 seconds.<sup><a data-type="noteref" id="idm140203538148160-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538148160" class="totri-footnote">2</a></sup> If your users depend on several such
+web services to render their page, the 99th percentile of one backend
+can easily become the median response of your <span class="keep-together">frontend</span>.</p>
+
+<p>The simplest way to differentiate between a slow average and a very
+slow “tail” of requests is to collect request counts bucketed by latencies (suitable for rendering a histogram), rather than actual
+latencies: how many requests did I serve that took between 0 ms and 10 ms,
+between 10 ms and 30 ms, between 30 ms and 100 ms, between 100 ms and 300 ms, and so
+on? Distributing the histogram boundaries approximately exponentially
+(in this case by factors of roughly 3) is often an easy way to
+visualize the distribution of your requests.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Choosing an Appropriate Resolution for Measurements"><div class="sect1" id="idm140203538145040">
+<h1>Choosing an Appropriate Resolution for Measurements</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="resolution" id="idm140203538143872"></a>Different aspects of a system should be measured with different levels
+of granularity. For example:</p>
+
+<ul>
+<li>
+<p>Observing CPU load over the time span of a minute won’t reveal even
+quite long-lived spikes that drive high tail latencies.</p>
+</li>
+<li>
+<p>On the other hand, for a web service targeting no more than 9 hours
+aggregate downtime per year (99.9% annual uptime), probing for a
+200 (success) status more than once or twice a minute is probably
+unnecessarily frequent.</p>
+</li>
+<li>
+<p>Similarly, checking hard drive fullness for a service targeting
+99.9% availability more than once every 1–2 minutes is probably
+unnecessary.</p>
+</li>
+</ul>
+
+<p>Take care in how you structure the granularity of your measurements.
+Collecting per-second measurements of CPU load might yield interesting
+data, but such frequent measurements may be very expensive to collect,
+store, and analyze. If your monitoring goal calls for high resolution
+but doesn’t require extremely low latency, you can reduce these costs
+by performing internal sampling on the server, then configuring an
+external system to collect and aggregate that distribution over time
+or across servers. You might:</p>
+<ol>
+<li>
+<p>Record the current CPU utilization each second.</p>
+</li>
+<li>
+<p>Using buckets of 5% granularity, increment the appropriate CPU utilization bucket
+each second.</p>
+</li>
+<li>
+<p>Aggregate those values every minute.</p>
+</li>
+
+</ol>
+
+<p>This strategy allows you to observe brief CPU hotspots without
+incurring very high cost due to collection and retention.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="As Simple as Possible, No Simpler"><div class="sect1" id="idm140203538134000">
+<h1>As Simple as Possible, No Simpler</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="avoiding complexity in" id="idm140203538132848"></a>Piling all these requirements on top of each other can add up to a
+very complex monitoring system—your system might end up with the
+following levels of complexity:</p>
+
+<ul>
+<li>
+<p>Alerts on different latency thresholds, at different percentiles,
+on all kinds of different metrics</p>
+</li>
+<li>
+<p>Extra code to detect and expose possible causes</p>
+</li>
+<li>
+<p>Associated dashboards for each of these possible causes</p>
+</li>
+</ul>
+
+<p>The sources of potential complexity are never-ending. Like all
+software systems, monitoring can become so complex that it’s fragile,
+complicated to change, and a maintenance burden.</p>
+
+<p>Therefore, design your monitoring system with an eye toward
+simplicity. In choosing what to monitor, keep the following guidelines
+in mind:</p>
+
+<ul>
+<li>
+<p>The rules that catch real incidents most often should be as
+simple, predictable, and reliable as possible.</p>
+</li>
+<li>
+<p>Data collection, aggregation, and alerting configuration that is
+rarely exercised  (e.g., less than once a quarter for some SRE teams) should be up for removal.</p>
+</li>
+<li>
+<p>Signals that are collected, but not exposed in any prebaked
+dashboard nor used by any alert, are candidates for removal.</p>
+</li>
+</ul>
+
+<p>In Google’s experience, basic collection and aggregation of metrics,
+paired with alerting and dashboards, has worked well as a relatively
+standalone system. (In fact Google’s monitoring system is broken up
+into several binaries, but typically people learn about all aspects of
+these binaries.)  It can be tempting to combine monitoring with other aspects of
+inspecting complex systems, such as detailed system profiling,
+single-process debugging, tracking details about exceptions or
+crashes, load testing, log collection and analysis, or traffic
+inspection. While most of these subjects share commonalities with
+basic monitoring, blending together too many results in overly complex
+and fragile systems. As in many other aspects of software engineering,
+maintaining distinct systems with clear, simple, loosely coupled
+points of integration is a better strategy (for example, using web
+APIs for pulling summary data in a format that can remain constant
+over an extended period of time).</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Tying These Principles Together"><div class="sect1" id="idm140203538121888">
+<h1>Tying These Principles Together</h1>
+
+<p>The principles discussed in this chapter can be tied together into a
+philosophy on monitoring and alerting that’s widely endorsed and
+followed within Google SRE teams.  While this monitoring philosophy is
+a bit aspirational, it’s a good starting point for writing or
+reviewing a new alert, and it can help your organization ask the right
+questions, regardless of the size of your organization or the
+complexity of your service or system.</p>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="creating rules for" id="idm140203538119856"></a>When creating rules for monitoring and alerting, asking the following
+questions can help you avoid false positives and pager
+burnout:<sup><a data-type="noteref" id="idm140203538118624-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538118624" class="totri-footnote">3</a></sup></p>
+
+<ul>
+<li>
+<p>Does this rule detect <em>an otherwise undetected condition</em> that is
+urgent, actionable, and actively or imminently
+user-visible?<sup><a data-type="noteref" id="idm140203538115168-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538115168" class="totri-footnote">4</a></sup></p>
+</li>
+<li>
+<p>Will I ever be able to ignore this alert, knowing it’s benign? When
+and why will I be able to ignore this alert, and how can I avoid
+this scenario?</p>
+</li>
+<li>
+<p>Does this alert definitely indicate that users are being negatively
+affected? Are there detectable cases in which users aren’t being
+negatively impacted, such as drained traffic or test deployments,
+that should be filtered out?</p>
+</li>
+<li>
+<p>Can I take action in response to this alert? Is that action urgent,
+or could it wait until morning? Could the action be safely
+automated? Will that action be a long-term fix, or just a short-term workaround?</p>
+</li>
+<li>
+<p>Are other people getting paged for this issue, therefore rendering
+at least one of the pages unnecessary?</p>
+</li>
+</ul>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="monitoring philosophy" id="idm140203538108032"></a>These questions reflect a fundamental philosophy on pages and pagers:</p>
+
+<ul>
+<li>
+<p>Every time the pager goes off, I should be able to react with a
+sense of urgency. I can only react with a sense of urgency a few
+times a day before I become fatigued.</p>
+</li>
+<li>
+<p>Every page should be actionable.</p>
+</li>
+<li>
+<p>Every page response should require intelligence. If a page merely
+merits a robotic response, it shouldn’t be a page.</p>
+</li>
+<li>
+<p>Pages should be about a novel problem or an event that hasn’t been
+seen before.</p>
+</li>
+</ul>
+
+<p>Such a perspective dissipates certain distinctions: if a page
+satisfies the preceding four bullets, it’s irrelevant whether the page is
+triggered by white-box or black-box monitoring. This perspective also
+amplifies certain distinctions: it’s better to spend much more effort
+on catching symptoms than causes; when it comes to causes, only worry
+about very definite, very imminent causes.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Monitoring for the Long Term"><div class="sect1" id="idm140203538101360">
+<h1>Monitoring for the Long Term</h1>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="challenges of" id="idm140203538100208"></a>In modern production systems, monitoring systems track an
+ever-evolving system with changing software architecture, load
+characteristics, and performance targets. An alert that’s currently
+exceptionally rare and hard to automate might become frequent, perhaps
+even meriting a hacked-together script to resolve it. At this point,
+someone should find and eliminate the root causes of the problem; if
+such resolution isn’t possible, the alert response deserves to be fully
+automated.</p>
+
+<p>It’s important that decisions about monitoring be made with long-term
+goals in mind. Every page that happens today distracts a human from
+improving the system for tomorrow, so there is often a case for taking
+a short-term hit to availability or performance in order to improve
+the long-term outlook for the system. Let’s take a look at two case studies that
+illustrate this trade-off.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Bigtable SRE: A Tale of Over-Alerting"><div class="sect2" id="idm140203538097648">
+<h2>Bigtable SRE: A Tale of Over-Alerting</h2>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="case studies" id="MDSbig6"></a><a data-type="indexterm" data-primary="Bigtable" id="idm140203538095264"></a>Google’s internal infrastructure is typically offered and measured
+against a service level objective (SLO; see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch04.html#chapter_sli-slo-sla">Chapter&nbsp;4</a>).
+Many years ago, the Bigtable service’s SLO was based on a synthetic
+well-behaved client’s mean performance. Because of problems in
+Bigtable and lower layers of the storage stack, the mean performance
+was driven by a “large” tail: the worst 5% of requests were often
+significantly slower than the rest.</p>
+
+<p>Email alerts were triggered as the SLO approached, and paging alerts
+were triggered when the SLO was exceeded. Both types of alerts were
+firing voluminously, consuming unacceptable amounts of engineering
+time: the team spent significant amounts of time triaging the alerts
+to find the few that were really actionable, and we often missed the
+problems that actually affected users, because so few of them
+did. Many of the pages were non-urgent, due to well-understood
+problems in the infrastructure, and had either rote responses or
+received no response.</p>
+
+<p>To remedy the situation, the team used a three-pronged approach: while
+making great efforts to improve the performance of Bigtable, we also
+temporarily dialed back our SLO target, using the 75th percentile request latency. We
+also disabled email alerts, as there were so many that spending time
+diagnosing them was infeasible.</p>
+
+<p>This strategy gave us enough breathing room to actually fix the
+longer-term problems in Bigtable and the lower layers of the storage
+stack, rather than constantly fixing tactical problems. On-call
+engineers could actually accomplish work when they weren’t being kept
+up by pages at all hours. Ultimately, temporarily backing off on our
+alerts allowed us to make faster progress toward a better service.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Gmail: Predictable, Scriptable Responses from Humans"><div class="sect2" id="idm140203538090304">
+<h2>Gmail: Predictable, Scriptable Responses from Humans</h2>
+
+<p><a data-type="indexterm" data-primary="Gmail" id="idm140203538089136"></a>In the very early days of Gmail, the service was built on a
+retrofitted distributed process management system called Workqueue,
+which was originally created for batch processing of pieces of the search
+index.  Workqueue was “adapted” to long-lived processes and
+subsequently applied to Gmail, but certain bugs in the relatively
+opaque codebase in the scheduler proved hard to beat.</p>
+
+<p>At that time, the Gmail monitoring was structured such that alerts
+fired when individual tasks were “de-scheduled” by Workqueue. This
+setup was less than ideal because even at that time, Gmail had many,
+many thousands of tasks, each task representing a fraction of a
+percent of our users. We cared deeply about providing a good user
+experience for Gmail users, but such an alerting setup was
+unmaintainable.</p>
+
+<p>To address this problem, Gmail SRE built a tool that helped “poke” the
+scheduler in just the right way to minimize impact to users. The team
+had several discussions about whether or not we should simply automate
+the entire loop from detecting the problem to nudging the rescheduler,
+until a better long-term solution was achieved, but some worried this
+kind of workaround would delay a real fix.</p>
+
+<p>This kind of tension is common within a team, and often reflects an underlying mistrust of the team’s self-discipline: while some team members want to implement a “hack” to allow time for a proper fix, others worry that a hack will be forgotten or that the proper fix will be deprioritized indefinitely. This concern is credible, as it’s easy to build layers of unmaintainable technical debt by patching over problems instead of making real fixes. Managers and technical leaders play a key role in implementing true, long-term fixes by supporting and prioritizing potentially time-consuming long-term fixes even when the initial “pain” of paging subsides.</p>
+
+<p>Pages with rote, algorithmic responses should be a red flag.
+Unwillingness on the part of your team to automate such pages implies
+that the team lacks confidence that they can clean up their technical
+debt. This is a major problem worth escalating.<a data-type="indexterm" data-primary="" data-startref="MDSbig6" id="idm140203538084464"></a></p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="The Long Run"><div class="sect2" id="idm140203538083200">
+<h2>The Long Run</h2>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="short- vs. long-term availability" id="idm140203538082064"></a>A common theme connects the previous examples of Bigtable and Gmail: a
+tension between short-term and long-term availability. Often, sheer
+force of effort can help a rickety system achieve high availability,
+but this path is usually short-lived and fraught with burnout and
+dependence on a small number of heroic team members. Taking a
+controlled, short-term decrease in availability is often a painful, but strategic trade for the long-run stability of the
+system. It’s important not to think of every page as an event in
+isolation, but to consider whether the overall <em>level</em> of paging leads
+toward a healthy, appropriately available system with a healthy,
+viable team and long-term outlook. We review statistics
+about page frequency (usually expressed as incidents per shift, where
+an incident might be composed of a few related pages) in quarterly
+reports with management, ensuring that decision makers are kept up to
+date on the pager load and overall health of their teams.</p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Conclusion"><div class="sect1" id="idm140203538079056">
+<h1>Conclusion</h1>
+
+<p>A healthy monitoring and alerting pipeline is simple and easy to
+reason about. It focuses primarily on symptoms for paging, reserving
+cause-oriented heuristics to serve as aids to debugging
+problems. Monitoring symptoms is easier the further “up” your stack
+you monitor, though monitoring saturation and performance of
+subsystems such as databases often must be performed directly on the
+subsystem itself. Email alerts are of very limited value and tend to
+easily become overrun with noise; instead, you should favor a
+dashboard that monitors all ongoing subcritical problems for the sort
+of information that typically ends up in email alerts. A dashboard
+might also be paired with a log, in order to analyze historical
+correlations.</p>
+
+<p>Over the long haul, achieving a successful on-call rotation and product includes
+choosing to alert on symptoms or imminent real problems, adapting your
+targets to goals that are actually achievable, and making sure that
+your monitoring supports rapid diagnosis.</p>
+</div></section>
+
+
+
+
+
+
+
+<div data-type="footnotes"><p data-type="footnote" id="idm140203538232512"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538232512-marker" class="totri-footnote">1</a></sup> Sometimes known as “alert spam,” as they are rarely read or acted on.</p><p data-type="footnote" id="idm140203538148160"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538148160-marker" class="totri-footnote">2</a></sup> If 1% of your requests are 10x the average, it means that the rest of your requests are about twice as fast as the average. But if you’re not measuring your distribution, the idea that most of your requests are near the mean is just hopeful thinking.</p><p data-type="footnote" id="idm140203538118624"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538118624-marker" class="totri-footnote">3</a></sup> See <em>Applying Cardiac Alarm Management Techniques to Your On-Call</em> <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Hol14">[Hol14]</a> for an example of alert fatigue in another context.</p><p data-type="footnote" id="idm140203538115168"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#idm140203538115168-marker" class="totri-footnote">4</a></sup> Zero-redundancy (<em>N</em> + 0) situations count as imminent, as do “nearly full” parts of your service! For more details about the concept of redundancy, see <a href="https://en.wikipedia.org/wiki/N%2B1_redundancy"><em class="hyperlink">https://en.wikipedia.org/wiki/N%2B1_redundancy</em></a>.</p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch05.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">5. Eliminating Toil</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch07.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">7. The Evolution of Automation at Google</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch06.html" data-for-analytics="9781491929117:ch06.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="js-related-container related"></div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+    
+
+
+  
+
+<div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#">Reset</a>
+</div>
+</div><div class="annotator-notice"></div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

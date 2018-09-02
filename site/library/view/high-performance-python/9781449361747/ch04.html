@@ -1,0 +1,780 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/high-performance-python/9781449361747/ch04.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781449361747"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch04.html"
+  data-epub-title="High Performance Python" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/high-performance-python/9781449361747/ch04.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781449361747" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch04.html" data-epub-title="High Performance Python" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781449361747"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>4. Dictionaries and Sets - High Performance Python</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content h1,#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important}#sbo-rt-content h2{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content h3{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content h4{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content h5{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section.chapter div.titlepage,#sbo-rt-content section.appendix div.titlepage,#sbo-rt-content section.preface div.titlepage{page-break-inside:avoid;page-break-after:avoid}#sbo-rt-content section.chapter>div.titlepage,#sbo-rt-content section.preface>div.titlepage,#sbo-rt-content section.appendix>div.titlepage{margin-bottom:50px}#sbo-rt-content section.chapter>div.titlepage h2.title,#sbo-rt-content section.preface>div.titlepage h2.title,#sbo-rt-content section.appendix>div.titlepage h2.title{font-size:2em;line-height:1;margin-bottom:15px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div.toc-title{margin-bottom:30px !important}#sbo-rt-content div.part h1{font-size:2em;text-align:center;margin-top:0 !important;padding:50px 0 20px 0;border-bottom:1px solid #000}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:30px 0 30px 0 !important;max-height:100%;page-break-inside:avoid}#sbo-rt-content div.figure-title,#sbo-rt-content div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:30px 0 20px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure{border:none}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div.example{margin:10px 0 15px 0 !important}#sbo-rt-content div.example-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div.example-contents pre.programlisting,#sbo-rt-content div.example-contents pre.screen{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content div.book div.titlepage h1.title{font-size:3em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content div.book div.titlepage h2.subtitle{text-align:center;color:#000;margin:0 !important;font-style:italic;font-family:serif;font-size:1.5em}#sbo-rt-content div.book div.titlepage div.author h3{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div.footnote{font-size:90%}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:1em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content div.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content div.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.calloutlist>dl>dd>div.orderedlist{margin-top:25pt}#sbo-rt-content div.calloutlist>dl>dd>div.orderedlist>ol.orderedlist>li{margin-bottom:25pt}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.warning,#sbo-rt-content div.caution,#sbo-rt-content div.important{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.important{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div.caution{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3,#sbo-rt-content div.important h3{font:bold 90%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.important h3{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:20px 0 0 0 !important;text-align:center;padding:0}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold}#sbo-rt-content div.index dt{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}
+    </style><link rel="canonical" href="/Library/view/high-performance-python/9781449361747/ch04.html"><meta name="description" content="Chapter&nbsp;4.&nbsp;Dictionaries and Sets Questions you’ll be able to answer after this chapter What are dictionaries and sets good for? How are dictionaries and sets the same? What ... "><meta property="og:title" content="4. Dictionaries and Sets"><meta itemprop="isPartOf" content="/library/view/high-performance-python/9781449361747/"><meta itemprop="name" content="4. Dictionaries and Sets"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch04.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781449361747/"><meta property="og:description" itemprop="description" content="Chapter&nbsp;4.&nbsp;Dictionaries and Sets Questions you’ll be able to answer after this chapter What are dictionaries and sets good for? How are dictionaries and sets the same? What ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781449361594"><meta property="og:book:author" itemprop="author" content="Ian Ozsvald"><meta property="og:book:author" itemprop="author" content="Micha Gorelick"><meta property="og:book:tag" itemprop="about" content="Python"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      High Performance Python
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781449361747/chapter/ch04.html" data-for-analytics="9781449361747:ch04.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch04.html&amp;text=High%20Performance%20Python&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch04.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch04.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%204.%20Dictionaries%20and%20Sets&amp;body=https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/ch04.html%0D%0Afrom%20High%20Performance%20Python%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch03.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">3. Lists and Tuples</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch05.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">5. Iterators and Generators</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><section class="chapter" epub:type="chapter" id="section-dictionary-sets"><div class="titlepage"><div><div><h2 class="title">Chapter&nbsp;4.&nbsp;Dictionaries and Sets</h2></div></div></div><div class="sidebar"><div class="sidebar-title">Questions you’ll be able to answer after this chapter</div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+What are dictionaries and sets good for?
+</li><li class="listitem">
+How are dictionaries and sets the same?
+</li><li class="listitem">
+What is the overhead when using a dictionary?
+</li><li class="listitem">
+How can I optimize the performance of a dictionary?
+</li><li class="listitem">
+How does Python use dictionaries to keep track of namespaces?
+</li></ul></div></div><p>Sets and dictionaries are ideal data structures to be used when your data has no
+intrinsic order, but does have a unique object that can be used to reference it
+(the reference object is normally a string, but can be any <span class="emphasis"><em>hashable</em></span> type).
+This reference object is called the “key” while the data is the “value”.
+Furthermore, dictionaries and sets are almost identical except that sets do not
+actually contain data, they are simply a collection of unique keys.  As the name
+implies, this is very useful for doing set operations.</p><div class="note"><h3 class="title"><a id="note-hashable-type"></a>Note</h3><p>A hashable type is one that implements both the <code class="literal">__hash__</code> magic function and
+either <code class="literal">__eq__</code> or <code class="literal">__cmp__</code>.  All native types in python already implement
+these and any user classes have default values.  See
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#SEC-dict-set-hash-and-entropy">Hash functions and Entropy</a> for more details.</p></div><p>While before we were restricted to, at best, <code class="literal">O(log n)</code> lookup time on
+lists/tuples with no intrinsic order (through a search operation), dictionaries
+and sets give us <code class="literal">O(1)</code> lookups based on the arbitrary index.  In addition, like
+lists/tuples, dictionaries and sets have <code class="literal">O(1)</code> insertion time <sup>[<a id="id341283" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#ftn.id341283" epub:type="noteref" class="footnote totri-footnote">9</a>]</sup>.  As we will see later (in the
+<a class="link" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_how_work">next section</a>), this sort of speed is accomplished through
+the use of an open address hash table as the underlying data structure.</p><p>However, there is a cost in using dictionaries.  First, they generally take up a
+larger footprint in memory.  Also, although the complexity for
+insertions/lookups is <code class="literal">O(1)</code>, this depends greatly on the hashing function that
+is in use.  If the hash function is slow to evaluate, then any operations on
+dictionaries or sets will be similarly slow.</p><p>Let’s look at an example.  Say we want to store contact information for everyone
+in the phonebook.  We would like to store this in a form that will make it
+simple to answer the question “What is John Doe’s phone number?” in the future.
+With lists, we would store the phone numbers and names sequentially and scan
+through the entire list to find the phone number we required as shown in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_phonebook_list">Example&nbsp;4-1</a>.</p><div class="example"><a id="dict_set_phonebook_list"></a><div class="example-title">Example&nbsp;4-1.&nbsp;Phonebook lookup with a list</div><div class="example-contents"><pre class="programlisting"><code class="k">def</code> <code class="nf">find_phonenumber</code><code class="p">(</code><code class="n">phonebook</code><code class="p">,</code> <code class="n">name</code><code class="p">):</code>
+    <code class="k">for</code> <code class="n">n</code><code class="p">,</code> <code class="n">p</code> <code class="ow">in</code> <code class="n">phonebook</code><code class="p">:</code>
+        <code class="k">if</code> <code class="n">n</code> <code class="o">==</code> <code class="n">name</code><code class="p">:</code>
+            <code class="k">return</code> <code class="n">p</code>
+    <code class="k">return</code> <code class="bp">None</code>
+
+<code class="n">phonebook</code> <code class="o">=</code> <code class="p">[</code>
+    <code class="p">(</code><code class="s">"John Doe"</code><code class="p">,</code> <code class="s">"555-555-5555"</code><code class="p">),</code>
+    <code class="p">(</code><code class="s">"Albert Einstein"</code><code class="p">,</code> <code class="s">"212-555-5555"</code><code class="p">),</code>
+<code class="p">]</code>
+<code class="k">print</code> <code class="s">"John Doe's phone number is"</code><code class="p">,</code> <code class="n">find_phonenumber</code><code class="p">(</code><code class="n">phonebook</code><code class="p">,</code> <code class="s">"John Doe"</code><code class="p">)</code></pre></div></div><div class="note"><h3 class="title">Note</h3><p>This could also be done by sorting the list and using the <code class="literal">bisect</code> module in
+order to get <code class="literal">O(log n)</code> performance.</p></div><p>With a dictionary, however, we can simply have the “index” be the names and the
+“values” be the phone numbers as shown in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_phonebook_dict">Example&nbsp;4-2</a>.  This
+allows us to simply lookup the value we need and get a direct reference to it
+instead of having to read every value in our dataset.</p><div class="example"><a id="dict_set_phonebook_dict"></a><div class="example-title">Example&nbsp;4-2.&nbsp;Phonebook lookup with a dictionary</div><div class="example-contents"><pre class="programlisting"><code class="n">phonebook</code> <code class="o">=</code> <code class="p">{</code>
+    <code class="s">"John Doe"</code><code class="p">:</code> <code class="s">"555-555-5555"</code><code class="p">,</code>
+    <code class="s">"Albert Einstein"</code> <code class="p">:</code> <code class="s">"212-555-5555"</code><code class="p">,</code>
+<code class="p">}</code>
+<code class="k">print</code> <code class="s">"John Doe's phone number is"</code><code class="p">,</code> <code class="n">phonebook</code><code class="p">[</code><code class="s">"John Doe"</code><code class="p">]</code></pre></div></div><p>For large phonebooks, the difference between the <code class="literal">O(1)</code> lookup of the dictionary
+and the <code class="literal">O(n)</code> time for linear search over the list (or, at best, the <code class="literal">O(log n)</code>
+with the bisect module) is quite substantial.</p><div class="tip"><h3 class="title">Tip</h3><p>Create a script that times the performance of the list-bisect method vs a
+dictionary for finding a number in a phonebook.  How does the timing scale as
+the size of the phonebook grows?</p></div><p>If, on the other hand, we wanted to answer the question “How many unique first
+names are there in my phonebook” we could use the power of sets.  Recall that
+sets are simply a collection of <span class="strong"><strong>unique</strong></span> keys, which is exactly a property we
+would like to enforce in our data.  This is in stark difference to a list
+approach where that property needs to be enforced separately from the
+data structure by comparing all names with all other names.  Below is a
+comparison of both approaches:</p><div class="example"><a id="alt_dup_layout"></a><div class="example-title">Example&nbsp;4-3.&nbsp;Finding unique names with lists and sets</div><div class="example-contents"><pre class="programlisting"><code class="k">def</code> <code class="nf">list_unique_names</code><code class="p">(</code><code class="n">phonebook</code><code class="p">):</code>
+    <code class="n">unique_names</code> <code class="o">=</code> <code class="p">[]</code>
+    <code class="k">for</code> <code class="n">name</code><code class="p">,</code> <code class="n">phonenumber</code> <code class="ow">in</code> <code class="n">phonebook</code><code class="p">:</code>             <code class="c"># </code><a id="CO2-1"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/1.png">
+        <code class="n">first_name</code><code class="p">,</code> <code class="n">last_name</code> <code class="o">=</code> <code class="n">name</code><code class="o">.</code><code class="n">split</code><code class="p">(</code><code class="s">" "</code><code class="p">,</code> <code class="mi">1</code><code class="p">)</code>
+        <code class="k">for</code> <code class="n">unique</code> <code class="ow">in</code> <code class="n">unique_names</code><code class="p">:</code>                 <code class="c"># </code><a id="CO2-2"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/2.png">
+            <code class="k">if</code> <code class="n">unique</code> <code class="o">==</code> <code class="n">first_name</code><code class="p">:</code>
+                <code class="k">break</code>
+        <code class="k">else</code><code class="p">:</code>
+            <code class="n">unique_names</code><code class="o">.</code><code class="n">append</code><code class="p">(</code><code class="n">first_name</code><code class="p">)</code>
+    <code class="k">return</code> <code class="nb">len</code><code class="p">(</code><code class="n">unique_names</code><code class="p">)</code>
+
+<code class="k">def</code> <code class="nf">set_unique_names</code><code class="p">(</code><code class="n">phonebook</code><code class="p">):</code>
+    <code class="n">unique_names</code> <code class="o">=</code> <code class="nb">set</code><code class="p">()</code>
+    <code class="k">for</code> <code class="n">name</code><code class="p">,</code> <code class="n">phonenumber</code> <code class="ow">in</code> <code class="n">phonebook</code><code class="p">:</code>             <code class="c"># </code><a id="CO2-3"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/3.png">
+        <code class="n">first_name</code><code class="p">,</code> <code class="n">last_name</code> <code class="o">=</code> <code class="n">name</code><code class="o">.</code><code class="n">split</code><code class="p">(</code><code class="s">" "</code><code class="p">,</code> <code class="mi">1</code><code class="p">)</code>
+        <code class="n">unique_names</code><code class="o">.</code><code class="n">add</code><code class="p">(</code><code class="n">first_name</code><code class="p">)</code>                <code class="c"># </code><a id="CO2-4"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/4.png" alt="4" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/4.png">
+    <code class="k">return</code> <code class="nb">len</code><code class="p">(</code><code class="n">unique_names</code><code class="p">)</code>
+
+<code class="n">phonebook</code> <code class="o">=</code> <code class="p">[</code>
+    <code class="p">(</code><code class="s">"John Doe"</code><code class="p">,</code> <code class="s">"555-555-5555"</code><code class="p">),</code>
+    <code class="p">(</code><code class="s">"Albert Einstein"</code><code class="p">,</code> <code class="s">"212-555-5555"</code><code class="p">),</code>
+    <code class="p">(</code><code class="s">"John Murphey"</code><code class="p">,</code> <code class="s">"202-555-5555"</code><code class="p">),</code>
+    <code class="p">(</code><code class="s">"Albert Rutherford"</code><code class="p">,</code> <code class="s">"647-555-5555"</code><code class="p">),</code>
+    <code class="p">(</code><code class="s">"Elaine Bodian"</code><code class="p">,</code> <code class="s">"301-555-5555"</code><code class="p">),</code>
+<code class="p">]</code>
+
+<code class="k">print</code> <code class="s">"Number of unique names from set method:"</code><code class="p">,</code> <code class="n">set_unique_names</code><code class="p">(</code><code class="n">phonebook</code><code class="p">)</code>
+<code class="k">print</code> <code class="s">"Number of unique names from list method:"</code><code class="p">,</code> <code class="n">list_unique_names</code><code class="p">(</code><code class="n">phonebook</code><code class="p">)</code></pre></div></div><div class="calloutlist"><dl><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#CO2-1"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/1.png"></a> <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#CO2-3"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/3.png" alt="3" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/3.png"></a> </dt><dd><p>
+We must go over all items in our phonebook and thus this loop costs <code class="literal">O(n)</code>
+</p></dd><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#CO2-2"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/2.png" alt="2" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/2.png"></a> </dt><dd><p>
+Here we must check the current name with all unique names we have already seen.  If it is a new unique name, we must search the entire list.
+</p></dd><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#CO2-4"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/4.png" alt="4" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/4.png"></a> </dt><dd><p>
+For the set method, instead of iterating over all unique names we have already seen, we can simply add the current name to our set of unique names.  This is because sets guarantee uniqueness over the keys it contains.  Furthermore, this operation costs <code class="literal">O(1)</code>.
+</p></dd></dl></div><p>The list algorithm’s inner loop iterates over <code class="literal">unique_names</code>, which starts out
+as empty and then grows, in the worst case, when all names are unique, to be the
+size of <code class="literal">phonebook</code>.  This can be seen as performing a
+<a class="link" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch03.html#list_linear_search">linear search</a> for each name in the phonebook over a list
+that is constantly growing.  Thus, the complete algorithms performs as <code class="literal">O(n log
+n)</code> since the outer loop contributes the <code class="literal">O(n)</code> factor, while the inner loop
+contributes the <code class="literal">O(log n)</code> factor.</p><p>On the other hand, the set algorithm has no inner loop; the <code class="literal">set.add</code> operation
+is an <code class="literal">O(1)</code> process which completes in a fixed number of operations regardless
+of how large the phonebook is (there are some minor caveats to this which we
+will cover while discussing the implementation of dictionaries and sets).  Thus,
+the only non-constant contribution to the complexity of this algorithm is the
+loop over the phonebook, making this algorithm perform in <code class="literal">O(n)</code>.</p><p>When timing these two algorithms using a phonebook with 10,000 entries and 7,422
+unique first names, we see how drastic the difference between <code class="literal">O(n)</code> and <code class="literal">O(n
+log n)</code> can be.</p><pre class="programlisting"><code class="gp">&gt;&gt;&gt; </code><code class="o">%</code><code class="n">timeit</code> <code class="n">list_unique_names</code><code class="p">(</code><code class="n">large_phonebook</code><code class="p">)</code>
+<code class="go">1 loops, best of 3: 2.56 s per loop</code>
+
+<code class="gp">&gt;&gt;&gt; </code><code class="o">%</code><code class="n">timeit</code> <code class="n">set_unique_names</code><code class="p">(</code><code class="n">large_phonebook</code><code class="p">)</code>
+<code class="go">100 loops, best of 3: 9.57 ms per loop</code></pre><p>In other words, the set algorithm gave us a 267x speedup!  In addition, as the
+size of the phonebook grows the speed gains increase (we get a 557x speedup
+with a phonebook with 100,000 entries and 15,574 unique first names).</p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="dict_set_how_work">How do dictionaries and sets work?</h2></div></div></div><p>Dictionaries and sets use a hash table in order to achieve its <code class="literal">O(1)</code> lookup
+and insertions.  This efficiency is a result of a very clever usage of
+hash functions [Link to Come] in order to create list-like indexes
+for data.  By turning the data’s key into something that can be used like a list
+index, we can get the same the same performance as a list.  In addition, instead
+of having to refer to data by a numerical index, which itself implies some
+ordering to the data, we can refer to it by this arbitrary key.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_inserting_and_retrieving">Inserting and Retrieving</h3></div></div></div><p>In order to create a hash table from scratch, we start with some allocated
+memory, similar to what we started with for arrays.  For an array, if we wanted
+to insert data, we simply find the smallest unused bucket and insert our data
+there (and resize if necessary). For hash tables, we must first figure out the
+placement of the data in this contiguous chunk of memory.</p><p>The placement of the new data is contingent on two properties of the data you
+are inserting: the hashed value of the key and how the value compares to other
+objects.  This is because when we insert data, first the key is hashed and
+masked so that it turns into an effective index in an array.<sup>[<a id="id502563" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#ftn.id502563" epub:type="noteref" class="footnote">10</a>]</sup>  The mask makes sure that the hash value,
+which can take the value of any integer, fits within the allocated number of
+buckets.  So, if we have allocated 8 blocks of memory and our hash value is
+28975, we consider the bucket at index <code class="literal">28975 &amp; 0b111 = 7</code>.  If, however, our
+dictionary has grown to have 256 items then the mask becomes <code class="literal">0b11111111</code>.  Now
+we must check if this bucket is already in use.  If it is empty, we can insert
+the key and the value into this block of memory.  We store the key so that we
+can make sure we are retrieving the correct value on lookups.  If it is in use
+and the value of the bucket is equal to the value we wish to insert (a
+comparison done with the <code class="literal">cmp</code> builtin), then the key/value pair is already in
+the hash table and we can return.  However, if the values don’t match then we
+must find a new place to put the data.</p><p>In order to find a new index, we compute a new index using a simple linear
+function, a method called probing.  In addition, python’s probing mechanism adds
+a contribution from higher order bits of the original hash (recall that for a
+table of length 8 we only considered the last 3 bits of the hash for the initial
+index through the use of a mask value of <code class="literal">mask = 0b111 = bin(8 - 1)</code>).  Using
+these higher order bits gives each hash a different sequence of next possible
+hashes, which helps to avoid future collisions.  There is a lot of freedom when
+picking the algorithm to generate a new index, however it is quite important
+that the scheme visits every possible index in order to evenly distribute the
+data in the table.  How well distributed the data is throughout the hash table
+is called the “load factor” and is related to the
+<a class="link" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#SEC-dict-set-hash-and-entropy">entropy</a> of the hash function.  The following
+pseudo-code illustrates the calculation of hash indexes used in cpython2.7:</p><div class="example"><a id="dict_set_index_sequence"></a><div class="example-title">Example&nbsp;4-4.&nbsp;Dictionary lookup sequence</div><div class="example-contents"><pre class="programlisting"><code class="k">def</code> <code class="nf">index_sequence</code><code class="p">(</code><code class="n">key</code><code class="p">,</code> <code class="n">mask</code><code class="o">=</code><code class="mi">0</code><code class="n">b111</code><code class="p">,</code> <code class="n">PERTURB_SHIFT</code><code class="o">=</code><code class="mi">5</code><code class="p">):</code>
+    <code class="n">perturb</code> <code class="o">=</code> <code class="nb">hash</code><code class="p">(</code><code class="n">key</code><code class="p">)</code> <a id="CO3-1"></a><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/1.png">
+    <code class="n">i</code> <code class="o">=</code> <code class="n">perturb</code> <code class="o">&amp;</code> <code class="n">mask</code>
+    <code class="k">yield</code> <code class="n">i</code>
+    <code class="k">while</code> <code class="bp">True</code><code class="p">:</code>
+        <code class="n">i</code> <code class="o">=</code> <code class="p">((</code><code class="n">i</code> <code class="o">&lt;&lt;</code> <code class="mi">2</code><code class="p">)</code> <code class="o">+</code> <code class="n">i</code> <code class="o">+</code> <code class="n">perturb</code> <code class="o">+</code> <code class="mi">1</code><code class="p">)</code>
+        <code class="n">perturb</code> <code class="o">&gt;&gt;=</code> <code class="n">PERTURB_SHIFT</code>
+        <code class="k">yield</code> <code class="n">i</code> <code class="o">&amp;</code> <code class="n">mask</code></pre><div class="calloutlist"><dl><dt><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#CO3-1"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/callouts/1.png" alt="1" width="12" height="12" data-mfp-src="/library/view/high-performance-python/9781449361747/callouts/1.png"></a> </dt><dd><p>
+<code class="literal">hash</code> returns an integer while the actual C code in CPython uses an unsigned integer.  Because of this, the above pseudocode doesn’t 100% replicate the behaviour in CPython, however it is a good approximation.
+</p></dd></dl></div></div></div><p>This probing is a modification of the naive method of “linear probing”.  In
+linear probing, we simply yield the values <code class="literal">i = (5*i + 1) &amp; mask</code> where <code class="literal">i</code> is
+initialized to the hash value of the key and the value <code class="literal">5</code> is unimportant
+<sup>[<a id="id505567" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#ftn.id505567" epub:type="noteref" class="footnote">11</a>]</sup>.  An important thing
+to note is that linear probing only deals with the several bytes of the hash and
+disregards the rest (ie: for a dictionary with 8 elements, we only look at the
+last 3 bits).  This means that if two item’s hash have the same last 3 binary
+digits, we will not only have a collision, but the sequence of probed indexes
+will be the same.  The perturbed scheme that python uses will start taking into
+consideration more bits from the items hash in order to resolve this problem.</p><p>A similar procedure is done when we are performing lookups on a specific key:
+the given key is transformed into an index and that index is looked at.  If the
+key in that index matches (recall that we also store the original key when doing
+insert operations), then we can return that value.  If it doesn’t, we keep
+creating new indexes using the same scheme as above until we either find the
+data or hit an empty bucket.  If we hit an empty bucket, we can conclude that
+the data does not exist in the table.</p><p><a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#FIG-hash-set-theory-example1">Figure&nbsp;4-1</a>, illustrates the process of adding some data
+into a hash table.  Here, we chose the hashing function to be simply the ascii
+value of the first letter of the key using Python’s <code class="literal">ord</code> function which returns
+an integer ordinal for a single character string.  As we’ll see later in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#SEC-dict-set-hash-and-entropy">Hash functions and Entropy</a>, python provides hashing functions for most of
+its types so it is normally not necessary to provide one yourself except in
+extreme situations.  Insertion of the key “Barcelona” causes a collision and a
+new index is calculated using the scheme the scheme in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_index_sequence">Example&nbsp;4-4</a>.  This dictionary can also be created in python
+using the following code:</p><div class="example"><a id="dict_set_naive_dict"></a><div class="example-title">Example&nbsp;4-5.&nbsp;Custom hashing function</div><div class="example-contents"><pre class="programlisting"><code class="k">class</code> <code class="nc">City</code><code class="p">(</code><code class="nb">str</code><code class="p">):</code>
+    <code class="k">def</code> <code class="nf">__hash__</code><code class="p">(</code><code class="bp">self</code><code class="p">):</code>
+        <code class="k">return</code> <code class="nb">ord</code><code class="p">(</code><code class="bp">self</code><code class="p">[</code><code class="mi">0</code><code class="p">])</code>
+
+<code class="c"># We create a dictionary where we assign arbitrary values to cities.</code>
+<code class="n">data</code> <code class="o">=</code>  <code class="p">{</code>
+    <code class="n">City</code><code class="p">(</code><code class="s">"Rome"</code><code class="p">):</code> <code class="mi">4</code><code class="p">,</code>
+    <code class="n">City</code><code class="p">(</code><code class="s">"San Francisco"</code><code class="p">):</code> <code class="mi">3</code><code class="p">,</code>
+    <code class="n">City</code><code class="p">(</code><code class="s">"New York"</code><code class="p">):</code> <code class="mi">5</code><code class="p">,</code>
+    <code class="n">City</code><code class="p">(</code><code class="s">"Barcelona"</code><code class="p">):</code> <code class="mi">2</code><code class="p">,</code>
+<code class="p">}</code></pre></div></div><p>In this case “Barcelona” and “Rome” cause the hash collision
+(<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#FIG-hash-set-theory-example1">Figure&nbsp;4-1</a> shows the outcome of this insertion).  We see
+this because for a dictionary with 4 elements we have a mask value of <code class="literal">0b111</code>.
+As a result, “Barcelona” will try to use index <code class="literal">ord("B") &amp; 0b111 = 66 &amp; 0b111 =
+0b1000010 &amp; 0b111 = 0b010 = 2</code>. Similarly “Rome” will try to use the index
+<code class="literal">ord("R") &amp; 0b111 = 82 &amp; 0b111 = 0b1010010 &amp; 0b111 = 0b010 = 2</code>.</p><div class="tip"><h3 class="title">Dictionary Mechanics</h3><p><span class="title"><strong>Finding an element</strong></span>.&nbsp;Using the dictionary created in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_naive_dict">Example&nbsp;4-5</a>, what would a lookup
+on the key “Johannesburg” look like?  What indices would be checked?</p><p><span class="title"><strong>Deleting an element</strong></span>.&nbsp;Using the dictionary created in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_naive_dict">Example&nbsp;4-5</a>, how would you
+handle the deletion of the key “Rome”?  How would subsequent lookups for the key
+“Rome” or “Barcelona” be handled?</p><p><a id="question-dict-set-collision"></a><span class="title"><strong>Hash Collisions</strong></span>.&nbsp;Considering the dictionary created in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_naive_dict">Example&nbsp;4-5</a>, how many hash
+collisions could you expect if 500 cities, all starting with an upper-case
+letter, were added into a hash table?  How about 1000 cities?  Can you think of
+a way of lowering this number?</p><p><span class="title"><strong>Discussion</strong></span>.&nbsp;For 500 cities there would be approximately 474 dictionary elements which
+collided with a previous value (500 - 26) with each hash having 500 / 26 = 19.2
+cities associated with it.  For 1000 cities, 974 elements would collide and each
+hash would have 1000 / 26 = 38.4 cities associated with it.  This is because the
+hash is simply based on the numerical value of the first letter which can only
+take a value from A-Z allowing for only 26 independent hash values.  This means
+that a lookup in this table could require as many as 38 subsequent lookups to
+find the correct value.  In order to fix this, we must increase the number of
+possible hash values by considering other aspects of the city in the hash.  The
+default hash function on a string considers every character in order to maximize
+the number of possible values.  See <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#SEC-dict-set-hash-and-entropy">Hash functions and Entropy</a> for more
+explanation.</p></div><div class="figure"><a id="FIG-hash-set-theory-example1"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/figures/hash-set-theory-example1.png.jpg" alt="scaledheight=50%" width="509" height="490" data-mfp-src="/library/view/high-performance-python/9781449361747/figures/hash-set-theory-example1.png.jpg"></div></div><div class="figure-title">Figure&nbsp;4-1.&nbsp;The resulting hash table from inserting with collisions</div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_deletion">Deletion</h3></div></div></div><p>When a value is deleted from a hash table, we cannot simply write a “Null” to
+that bucket of memory.  This is because we have used Nulls as a sentinel value
+while probing for hash collisions.  As a result, we must write a special value
+which signifies that the bucket is empty, but there still may be values after it
+to consider when resolving a hash collision.  These empty slots can be written to
+in the future and are removed when the hash table is resized.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="_resizing">Resizing</h3></div></div></div><p>As more items are inserted into the hash table, the table itself must be resized
+to accommodate it.  It can be shown that a table that is 2/3 full or less will
+have optimal space savings while still have a good bound on the number of
+collisions to expect.  Thus, when a table reaches this critical point it is
+grown.  In order to do this, a larger table is allocated (ie: more buckets in
+memory reserved), the mask is adjusted to fit the new table and all elements of
+the old table are reinserted into the new one.  This requires re-computing
+indexes since the changed mask will change the resulting index.  As a result,
+resizing large hash tables can be quite expensive!  However, since we only do
+this resizing operation when the table is too small, as opposed to on every
+insert, the amortized cost of an insert is still <code class="literal">O(1)</code>.</p><p>By default, the smallest size of a dictionary or set is 8 (that is, if you are
+only storying 3 values, python will still allocate 8 elements).  On resize, the
+number of buckets increases by 4x until we reach 50,000 elements, after which
+the size is increased by 2x.  This gives the following possible sizes,</p><pre class="screen">16, 64, 256, 1024, 4096, 16384, 65536, 131072, 262144, ...</pre><p>It is important to note that resizing can happen to make a hash table larger OR
+smaller.  That is, if sufficiently many elements of a hash table are deleted,
+the table can be scaled down in size.  This is because the consideration for the
+table being 2/3rds full uses the total of inserted and deleted entries since the
+last resize.  However, resizing <span class="strong"><strong>only happens during an insert</strong></span>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title" id="SEC-dict-set-hash-and-entropy">Hash functions and Entropy</h3></div></div></div><p>Objects in python are generally hashable since they already have builtin
+<code class="literal">__hash__</code> and <code class="literal">__cmp__</code> functions associated with them.  For numerical types
+(<code class="literal">int</code> and <code class="literal">float</code>), the hash is simply based on the bit value of the number
+they represent.  Tuples and strings have a hash value that is based on their
+contents.  Lists, on the other hand, do not support hashing because their value
+can change.  Since their values can change, so could the hash that represents
+the list which would change the relative placement of that key in the hash
+table.
+<sup>[<a id="id494320" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#ftn.id494320" class="footnote">12</a>]</sup></p><p>In addition, user defined classes also have default hash and comparison
+functions.  The default <code class="literal">__hash__</code> function simply returns the objects placement
+in memory as given by the builtin <code class="literal">id</code> function.  Similarly, the <code class="literal">__cmp__</code>
+operator compares the numerical value of the object’s placement in memory.</p><p>This is generally acceptable since two instances of a class are generally
+different and should not collide in a hash table.  However, in some cases we
+would like to use <code class="literal">set</code> or <code class="literal">dict</code> objects to disambiguate between items.  Take
+the following class definition,</p><pre class="programlisting"><code class="k">class</code> <code class="nc">Point</code><code class="p">(</code><code class="nb">object</code><code class="p">):</code>
+    <code class="k">def</code> <code class="nf">__init__</code><code class="p">(</code><code class="bp">self</code><code class="p">,</code> <code class="n">x</code><code class="p">,</code> <code class="n">y</code><code class="p">):</code>
+        <code class="bp">self</code><code class="o">.</code><code class="n">x</code><code class="p">,</code> <code class="bp">self</code><code class="o">.</code><code class="n">y</code> <code class="o">=</code> <code class="n">x</code><code class="p">,</code> <code class="n">y</code></pre><p>If we were to instantiate multiple <code class="literal">Point</code> objects, with the same values for <code class="literal">x</code>
+and <code class="literal">y</code>, they would all be independent objects in memory and thus have different
+placements in memory which would give them all different hash values.  This
+means that putting them all into a <code class="literal">set</code> would result in all of them having
+individual entries.</p><pre class="programlisting"><code class="gp">&gt;&gt;&gt; </code><code class="n">p1</code> <code class="o">=</code> <code class="n">Point</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code><code class="mi">1</code><code class="p">)</code>
+<code class="gp">&gt;&gt;&gt; </code><code class="n">p2</code> <code class="o">=</code> <code class="n">Point</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code><code class="mi">1</code><code class="p">)</code>
+<code class="gp">&gt;&gt;&gt; </code><code class="nb">set</code><code class="p">([</code><code class="n">p1</code><code class="p">,</code> <code class="n">p2</code><code class="p">])</code>
+<code class="go">set([&lt;__main__.Point at 0x1099bfc90&gt;, &lt;__main__.Point at 0x1099bfbd0&gt;])</code>
+<code class="gp">&gt;&gt;&gt; </code><code class="n">Point</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code><code class="mi">1</code><code class="p">)</code> <code class="ow">in</code> <code class="nb">set</code><code class="p">([</code><code class="n">p1</code><code class="p">,</code> <code class="n">p2</code><code class="p">])</code>
+<code class="go">False</code></pre><p>This can be remedied by forming a custom hash function that is based on the
+actual contents of the object as opposed to the objects placement in memory.
+The hash function can be arbitrary as long as it constantly gives the same
+result for the same object.  Furthermore, there are considerations regarding
+the entropy of the hashing function which we will discuss later.  The following
+redefinition of the <code class="literal">Point</code> class will yield the results we expect,</p><pre class="programlisting"><code class="k">class</code> <code class="nc">Point</code><code class="p">(</code><code class="nb">object</code><code class="p">):</code>
+    <code class="k">def</code> <code class="nf">__init__</code><code class="p">(</code><code class="bp">self</code><code class="p">,</code> <code class="n">x</code><code class="p">,</code> <code class="n">y</code><code class="p">):</code>
+        <code class="bp">self</code><code class="o">.</code><code class="n">x</code><code class="p">,</code> <code class="bp">self</code><code class="o">.</code><code class="n">y</code> <code class="o">=</code> <code class="n">x</code><code class="p">,</code> <code class="n">y</code>
+
+    <code class="k">def</code> <code class="nf">__hash__</code><code class="p">(</code><code class="bp">self</code><code class="p">):</code>
+        <code class="k">return</code> <code class="nb">hash</code><code class="p">((</code><code class="bp">self</code><code class="o">.</code><code class="n">x</code><code class="p">,</code> <code class="bp">self</code><code class="o">.</code><code class="n">y</code><code class="p">))</code>
+
+    <code class="k">def</code> <code class="nf">__eq__</code><code class="p">(</code><code class="bp">self</code><code class="p">,</code> <code class="n">other</code><code class="p">):</code>
+        <code class="k">return</code> <code class="bp">self</code><code class="o">.</code><code class="n">x</code> <code class="o">==</code> <code class="n">other</code><code class="o">.</code><code class="n">x</code> <code class="ow">and</code> <code class="bp">self</code><code class="o">.</code><code class="n">y</code> <code class="o">==</code> <code class="n">other</code><code class="o">.</code><code class="n">y</code></pre><p>Which allows us to create entries in a set or dictionary indexed by the
+properties of the <code class="literal">Point</code> object as opposed to the memory address of the
+instantiated object,</p><pre class="programlisting"><code class="gp">&gt;&gt;&gt; </code><code class="n">p1</code> <code class="o">=</code> <code class="n">Point</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code><code class="mi">1</code><code class="p">)</code>
+<code class="gp">&gt;&gt;&gt; </code><code class="n">p2</code> <code class="o">=</code> <code class="n">Point</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code><code class="mi">1</code><code class="p">)</code>
+<code class="gp">&gt;&gt;&gt; </code><code class="nb">set</code><code class="p">([</code><code class="n">p1</code><code class="p">,</code> <code class="n">p2</code><code class="p">])</code>
+<code class="go">set([&lt;__main__.Point at 0x109b95910&gt;])</code>
+<code class="gp">&gt;&gt;&gt; </code><code class="n">Point</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code><code class="mi">1</code><code class="p">)</code> <code class="ow">in</code> <code class="nb">set</code><code class="p">([</code><code class="n">p1</code><code class="p">,</code> <code class="n">p2</code><code class="p">])</code>
+<code class="go">True</code></pre><p>As alluded to in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#question-dict-set-collision">Hash Collisions</a>, a custom selected hash
+function should be careful to evenly distribute hash values in order to avoid
+collisions.  Having many collisions will degrade the performance of a
+hash-table: if most keys have collisions then we need to constantly “probe” the
+other values, effectively walking a potentially large portion of the dictionary
+in order to find the key in question.  In the worst case, when all keys in a
+dictionary collide, the performance of lookups in the dictionary is <code class="literal">O(N)</code> and
+thus the same as if we were searching through a list.</p><p>If we know a priori that we are storing 5000 values into a dictionary and we need
+to create a hashing function for the object we wish to use as a key, we must be
+aware that the dictionary is sized 16384 and thus only the last 14 bits of our
+hash are being used to create an index (for a hash table of this size, the mask
+is <code class="literal">bin(16384-1) = 0b11111111111111</code>).</p><p>This idea of “how well distributed is my hash function” is called the entropy of
+the hash function.  Entropy, defined as <span class="inlinemediaobject"><img src="https://www.safaribooksonline.com/library/view/high-performance-python/9781449361747/inleq_0401.png" alt="" width="224" height="26" data-mfp-src="/library/view/high-performance-python/9781449361747/inleq_0401.png"></span> where <code class="literal">p(i)</code> is the probability that the hash function
+gives hash i.  It is maximized when every hash value has equal probability of
+being chosen.  A hash function that maximises this entropy is called an ideal
+hash function since it guarantees the minimal number of collisions.</p><p>For an infinitely large dictionary, the hash function used for integers is
+ideal.  This is because the hash value for an integer is simply the integer
+itself!  For an infinitely large dictionary, the mask value is infinite and thus
+we consider all bits in the hash value.  Thus, given any two numbers I can
+guarantee that their hash values will not be the same.</p><p>However, if we made this dictionary finite then we can no longer have this
+guarantee.  For example, for a dictionary with 4 elements, the mask we use is
+<code class="literal">0b111</code>.  Thus, the hash value for the number 5 is <code class="literal">5 &amp; 0b111 = 5</code> and the hash
+value for 501 is <code class="literal">501 &amp; 0b111 = 5</code>, and thus their entries will collide.</p><p>There is no single best hash function to use when using a finite dictionary.
+However, knowing a priori what range of values will be used and how large the
+dictionary will be gives helps in making a good selection.  For example, if we
+are storing all 676 combinations of two lower-case letters as keys in a
+dictionary (<span class="emphasis"><em>aa</em></span>, <span class="emphasis"><em>ab</em></span>, <span class="emphasis"><em>ac</em></span>, etc.) then a good hashing function would be,</p><div class="example"><a id="example_dict_set_twoletter_hash_function"></a><div class="example-title">Example&nbsp;4-6.&nbsp;Optimal 2-letter hashing function</div><div class="example-contents"><pre class="programlisting"><code class="k">def</code> <code class="nf">twoletter_hash</code><code class="p">(</code><code class="n">key</code><code class="p">):</code>
+    <code class="n">offset</code> <code class="o">=</code> <code class="nb">ord</code><code class="p">(</code><code class="s">'a'</code><code class="p">)</code>
+    <code class="n">k1</code><code class="p">,</code> <code class="n">k2</code> <code class="o">=</code> <code class="n">key</code>
+    <code class="k">return</code> <code class="p">(</code><code class="nb">ord</code><code class="p">(</code><code class="n">k2</code><code class="p">)</code> <code class="o">-</code> <code class="n">offset</code><code class="p">)</code> <code class="o">+</code> <code class="mi">26</code> <code class="o">*</code> <code class="p">(</code><code class="nb">ord</code><code class="p">(</code><code class="n">k1</code><code class="p">)</code> <code class="o">-</code> <code class="n">offset</code><code class="p">)</code></pre></div></div><p>which gives no hash collisions for any combination of two lower-case letters
+considering a mask of <code class="literal">0b1111111111</code> (a dictionary of 676 values will be held
+in a hash-table of length 1024 which has a mask of <code class="literal">bin(1024-1) =
+0b1111111111</code>).</p><p>We can see very explicitly below the ramifications of having a bad hashing
+function for a user-defined class where the cost of a bad hash function (in
+fact, it is the worst-possible hash function!) is a 21.8x slowdown of lookups.</p><div class="example"><a id="example_dict_set_twoletter_hash_objects"></a><div class="example-title">Example&nbsp;4-7.&nbsp;Timing differences between good and bad hashing functions</div><div class="example-contents"><pre class="programlisting"><code class="kn">import</code> <code class="nn">string</code>
+<code class="kn">import</code> <code class="nn">timeit</code>
+
+<code class="k">class</code> <code class="nc">BadHash</code><code class="p">(</code><code class="nb">str</code><code class="p">):</code>
+    <code class="k">def</code> <code class="nf">__hash__</code><code class="p">(</code><code class="bp">self</code><code class="p">):</code>
+        <code class="k">return</code> <code class="mi">42</code>
+
+<code class="k">class</code> <code class="nc">GoodHash</code><code class="p">(</code><code class="nb">str</code><code class="p">):</code>
+    <code class="k">def</code> <code class="nf">__hash__</code><code class="p">(</code><code class="bp">self</code><code class="p">):</code>
+        <code class="sd">"""</code>
+<code class="sd">        This is a slightly optimized version of twoletter_hash</code>
+<code class="sd">        """</code>
+        <code class="k">return</code> <code class="nb">ord</code><code class="p">(</code><code class="bp">self</code><code class="p">[</code><code class="mi">1</code><code class="p">])</code> <code class="o">+</code> <code class="mi">26</code> <code class="o">*</code> <code class="nb">ord</code><code class="p">(</code><code class="bp">self</code><code class="p">[</code><code class="mi">0</code><code class="p">])</code> <code class="o">-</code> <code class="mi">2619</code>
+
+<code class="n">baddict</code> <code class="o">=</code> <code class="nb">set</code><code class="p">()</code>
+<code class="n">gooddict</code> <code class="o">=</code> <code class="nb">set</code><code class="p">()</code>
+<code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="n">string</code><code class="o">.</code><code class="n">ascii_lowercase</code><code class="p">:</code>
+    <code class="k">for</code> <code class="n">j</code> <code class="ow">in</code> <code class="n">string</code><code class="o">.</code><code class="n">ascii_lowercase</code><code class="p">:</code>
+        <code class="n">key</code> <code class="o">=</code> <code class="n">i</code> <code class="o">+</code> <code class="n">j</code>
+        <code class="n">baddict</code><code class="o">.</code><code class="n">add</code><code class="p">(</code><code class="n">BadHash</code><code class="p">(</code><code class="n">key</code><code class="p">))</code>
+        <code class="n">gooddict</code><code class="o">.</code><code class="n">add</code><code class="p">(</code><code class="n">GoodHash</code><code class="p">(</code><code class="n">key</code><code class="p">))</code>
+
+<code class="n">badtime</code> <code class="o">=</code> <code class="n">timeit</code><code class="o">.</code><code class="n">repeat</code><code class="p">(</code>
+    <code class="s">"key in baddict"</code><code class="p">,</code>
+    <code class="n">setup</code> <code class="o">=</code> <code class="s">"from __main__ import baddict, BadHash; key = BadHash('zz')"</code><code class="p">,</code>
+    <code class="n">repeat</code> <code class="o">=</code> <code class="mi">3</code><code class="p">,</code>
+    <code class="n">number</code> <code class="o">=</code> <code class="mi">1000000</code><code class="p">,</code>
+<code class="p">)</code>
+<code class="n">goodtime</code> <code class="o">=</code> <code class="n">timeit</code><code class="o">.</code><code class="n">repeat</code><code class="p">(</code>
+    <code class="s">"key in gooddict"</code><code class="p">,</code>
+    <code class="n">setup</code> <code class="o">=</code> <code class="s">"from __main__ import gooddict, GoodHash; key = GoodHash('zz')"</code><code class="p">,</code>
+    <code class="n">repeat</code> <code class="o">=</code> <code class="mi">3</code><code class="p">,</code>
+    <code class="n">number</code> <code class="o">=</code> <code class="mi">1000000</code><code class="p">,</code>
+<code class="p">)</code>
+
+<code class="k">print</code> <code class="s">"Min lookup time for baddict: "</code><code class="p">,</code> <code class="nb">min</code><code class="p">(</code><code class="n">badtime</code><code class="p">)</code>
+<code class="k">print</code> <code class="s">"Min lookup time for gooddict: "</code><code class="p">,</code> <code class="nb">min</code><code class="p">(</code><code class="n">goodtime</code><code class="p">)</code>
+
+<code class="c"># Results:</code>
+<code class="c">#   Min lookup time for baddict:  16.3375990391</code>
+<code class="c">#   Min lookup time for gooddict:  0.748275995255</code></pre></div></div><div class="tip"><h3 class="title">Hashing Functions</h3><p>Show that for an infinite dictionary (and thus an infinite mask), using an
+integer’s value as its hash gives no collisions.</p><p>Show that the hashing function given in
+<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#example_dict_set_twoletter_hash_function">Example&nbsp;4-6</a> is ideal for a hash table of size
+1024.  Why is it not ideal for smaller hash tables?</p></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="dict_namespace">Dictionaries and Namespaces</h2></div></div></div><p>Doing a lookup on a dictionary is fast however unnecessarily doing it will slow
+down your code, just as any extraneous lines will.  One way this surfaces itself
+is in Python’s namespace management which heavily uses dictionaries to do its
+lookups.</p><p>Whenever a variable, function or module is being invoked in Python, there is a
+hierarchy where these objects are looked for.  First, Python looks inside of the
+<code class="literal">locals()</code> array which has entries for all local variables.  Python works hard
+to make local variable lookups fast and this is the only part of the chain that
+doesn’t require a dictionary lookup.  If it doesn’t exist there, then the
+<code class="literal">globals()</code> dictionary is searched.  Finally, if we don’t find it there, the
+<code class="literal">__builtin__</code> object is searched.  It is important to note that while <code class="literal">locals()</code>
+and <code class="literal">globals()</code> are explicitly dictionaries, while <code class="literal">__builtin__</code> is technically
+a module object, when searching <code class="literal">__builtin__</code> for a given property we are just
+doing a dictionary lookup inside of <span class="emphasis"><em>its</em></span> <code class="literal">locals()</code> map (this is the case for
+all module object and class objects!).</p><p>To make this clearer, let’s look at a simple example of calling functions
+that are defined in different scopes (<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_namespace_code">Example&nbsp;4-8</a>).  We can
+disassemble the functions with the <code class="literal">dis</code> module (<a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_namespace_dis">Example&nbsp;4-9</a>) to
+get a better understanding of how these namespace lookups are happening.</p><div class="example"><a id="dict_set_namespace_code"></a><div class="example-title">Example&nbsp;4-8.&nbsp;Namespace lookups</div><div class="example-contents"><pre class="programlisting"><code class="kn">import</code> <code class="nn">math</code>
+<code class="kn">from</code> <code class="nn">math</code> <code class="kn">import</code> <code class="n">sin</code>
+
+<code class="k">def</code> <code class="nf">test1</code><code class="p">(</code><code class="n">x</code><code class="p">):</code>
+    <code class="sd">"""</code>
+<code class="sd">    &gt;&gt;&gt; %timeit test1(123456)</code>
+<code class="sd">    1000000 loops, best of 3: 381 ns per loop</code>
+<code class="sd">    """</code>
+    <code class="k">return</code> <code class="n">math</code><code class="o">.</code><code class="n">sin</code><code class="p">(</code><code class="n">x</code><code class="p">)</code>
+
+<code class="k">def</code> <code class="nf">test2</code><code class="p">(</code><code class="n">x</code><code class="p">):</code>
+    <code class="sd">"""</code>
+<code class="sd">    &gt;&gt;&gt; %timeit test2(123456)</code>
+<code class="sd">    1000000 loops, best of 3: 311 ns per loop</code>
+<code class="sd">    """</code>
+    <code class="k">return</code> <code class="n">sin</code><code class="p">(</code><code class="n">x</code><code class="p">)</code>
+
+<code class="k">def</code> <code class="nf">test3</code><code class="p">(</code><code class="n">x</code><code class="p">,</code> <code class="n">sin</code><code class="o">=</code><code class="n">math</code><code class="o">.</code><code class="n">sin</code><code class="p">):</code>
+    <code class="sd">"""</code>
+<code class="sd">    &gt;&gt;&gt; %timeit test3(123456)</code>
+<code class="sd">    1000000 loops, best of 3: 306 ns per loop</code>
+<code class="sd">    """</code>
+    <code class="k">return</code> <code class="n">sin</code><code class="p">(</code><code class="n">x</code><code class="p">)</code></pre></div></div><div class="example"><a id="dict_set_namespace_dis"></a><div class="example-title">Example&nbsp;4-9.&nbsp;Namespace lookups disassembled</div><div class="example-contents"><pre class="programlisting"><code class="o">&gt;&gt;&gt;</code> <code class="n">dis</code><code class="o">.</code><code class="n">dis</code><code class="p">(</code><code class="n">test1</code><code class="p">)</code>
+  <code class="mi">9</code>           <code class="mi">0</code> <code class="n">LOAD_GLOBAL</code>              <code class="mi">0</code> <code class="p">(</code><code class="n">math</code><code class="p">)</code>  <code class="o">//</code> <code class="n">Dictionary</code> <code class="n">Lookup</code>
+              <code class="mi">3</code> <code class="n">LOAD_ATTR</code>                <code class="mi">1</code> <code class="p">(</code><code class="n">sin</code><code class="p">)</code>   <code class="o">//</code> <code class="n">Dictionary</code> <code class="n">Lookup</code>
+              <code class="mi">6</code> <code class="n">LOAD_FAST</code>                <code class="mi">0</code> <code class="p">(</code><code class="n">x</code><code class="p">)</code>     <code class="o">//</code> <code class="n">Local</code> <code class="n">Lookup</code>
+              <code class="mi">9</code> <code class="n">CALL_FUNCTION</code>            <code class="mi">1</code>
+             <code class="mi">12</code> <code class="n">RETURN_VALUE</code>
+
+<code class="o">&gt;&gt;&gt;</code> <code class="n">dis</code><code class="o">.</code><code class="n">dis</code><code class="p">(</code><code class="n">test2</code><code class="p">)</code>
+ <code class="mi">15</code>           <code class="mi">0</code> <code class="n">LOAD_GLOBAL</code>              <code class="mi">0</code> <code class="p">(</code><code class="n">sin</code><code class="p">)</code>  <code class="o">//</code> <code class="n">Dictionary</code> <code class="n">Lookup</code>
+              <code class="mi">3</code> <code class="n">LOAD_FAST</code>                <code class="mi">0</code> <code class="p">(</code><code class="n">x</code><code class="p">)</code>    <code class="o">//</code> <code class="n">Local</code> <code class="n">Lookup</code>
+              <code class="mi">6</code> <code class="n">CALL_FUNCTION</code>            <code class="mi">1</code>
+              <code class="mi">9</code> <code class="n">RETURN_VALUE</code>
+
+<code class="o">&gt;&gt;&gt;</code> <code class="n">dis</code><code class="o">.</code><code class="n">dis</code><code class="p">(</code><code class="n">test3</code><code class="p">)</code>
+ <code class="mi">21</code>           <code class="mi">0</code> <code class="n">LOAD_FAST</code>                <code class="mi">1</code> <code class="p">(</code><code class="n">sin</code><code class="p">)</code>  <code class="o">//</code> <code class="n">Local</code> <code class="n">Lookup</code>
+              <code class="mi">3</code> <code class="n">LOAD_FAST</code>                <code class="mi">0</code> <code class="p">(</code><code class="n">x</code><code class="p">)</code>    <code class="o">//</code> <code class="n">Local</code> <code class="n">Lookup</code>
+              <code class="mi">6</code> <code class="n">CALL_FUNCTION</code>            <code class="mi">1</code>
+              <code class="mi">9</code> <code class="n">RETURN_VALUE</code></pre></div></div><p>The first function, <code class="literal">test1</code>, makes the call to sin by explicitly looking at the
+math library.  This is also evident in the byte code that is produced, first a
+reference to the <code class="literal">math</code> module must be loaded, then we do an attribute lookup on
+this module until we finally have a reference to the sin function.  This is done
+through 2 dictionary lookups, one to find the math module and one to find the
+sin function within the module.</p><p>On the other hand, <code class="literal">test2</code> explicitly imports the sin function from the math
+module, then the function is directly accessible within the global namespace.
+This means we can avoid the lookup of the math module and the subsequent
+attribute lookup.  However, we still must find the sin function within the
+global namespace.  This is yet another reason to be explicit about what
+functions you are importing from a module.  This practice not only makes code
+more readable because the reader knows exactly what functionality is required
+from external sources, but it also speeds up code!</p><p>Finally, <code class="literal">test3</code> defines the sin function as a keyword argument with its
+default value being a reference to the sin function within the math module.
+While we still do need to find a reference to this function within the module,
+it only must happen when the <code class="literal">test3</code> function is first defined.  After this, the
+reference to the sin function is stored within the function definition as a
+local variable in the form of a default keyword argument.  As mentioned before,
+local variables do not need a dictionary lookup to be found, they are stored in
+a very slim array which has very fast lookup times.  Because of this, finding
+the function is quite fast!</p><p>While these effects are an interesting result of the way namespaces in python
+are managed, <code class="literal">test3</code> is definitely not “Pythonic”.  Luckily, these extra
+dictionary lookups only start to degrade performance when they are called a lot
+(in the innermost block of a very fast loop such as in the Julia set example).
+With this in mind, a more readable solution would be to set a local variable
+with the global reference before the loop is started.  This still means we must
+do the global lookup once whenever the function is called however all the calls
+to that function in the loop will be made faster.  This speaks to the fact that
+even minute slowdowns in code can be amplified if that code is being run
+millions of times.  Even though a dictionary lookup may only take a several
+hundred nanoseconds, if we are looping millions of times over this lookup it can
+quickly add up.  In fact, looking at <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#dict_set_namespace_timings">Example&nbsp;4-10</a>  we see a
+9.4% speedup simply by making the <code class="literal">sin</code> function local a tight loop which calls
+it.</p><div class="example"><a id="dict_set_namespace_timings"></a><div class="example-title">Example&nbsp;4-10.&nbsp;Effects of slow namespace lookups in loops</div><div class="example-contents"><pre class="programlisting"><code class="kn">from</code> <code class="nn">math</code> <code class="kn">import</code> <code class="n">sin</code>
+
+<code class="k">def</code> <code class="nf">tight_loop_slow</code><code class="p">(</code><code class="n">iterations</code><code class="p">):</code>
+    <code class="sd">"""</code>
+<code class="sd">    &gt;&gt;&gt; %timeit tight_loop_slow(10000000)</code>
+<code class="sd">    1 loops, best of 3: 2.21 s per loop</code>
+<code class="sd">    """</code>
+    <code class="n">result</code> <code class="o">=</code> <code class="mi">0</code>
+    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">xrange</code><code class="p">(</code><code class="n">iterations</code><code class="p">):</code>
+        <code class="c"># this call to sin requires a global lookup</code>
+        <code class="n">result</code> <code class="o">+=</code> <code class="n">sin</code><code class="p">(</code><code class="n">i</code><code class="p">)</code>
+
+<code class="k">def</code> <code class="nf">tight_loop_fast</code><code class="p">(</code><code class="n">iterations</code><code class="p">):</code>
+    <code class="sd">"""</code>
+<code class="sd">    &gt;&gt;&gt; %timeit tight_loop_fast(10000000)</code>
+<code class="sd">    1 loops, best of 3: 2.02 s per loop</code>
+<code class="sd">    """</code>
+    <code class="n">result</code> <code class="o">=</code> <code class="mi">0</code>
+    <code class="n">local_sin</code> <code class="o">=</code> <code class="n">sin</code>
+    <code class="k">for</code> <code class="n">i</code> <code class="ow">in</code> <code class="nb">xrange</code><code class="p">(</code><code class="n">iterations</code><code class="p">):</code>
+        <code class="c"># this call to local_sin requires a local lookup</code>
+        <code class="n">result</code> <code class="o">+=</code> <code class="n">local_sin</code><code class="p">(</code><code class="n">i</code><code class="p">)</code></pre></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="_wrap_up_2">Wrap Up</h2></div></div></div><p>Dictionaries and sets provide a fantastic way to store data that can be indexed
+by a key.  The way this key is used, through the hashing function, can greatly
+effect the resulting performance of the data structure.  Furthermore,
+understanding how dictionaries work not only gives you a better understanding of
+how to organize your data, but also how to organize your code since dictionaries
+are a very intrinsic part of python’s internal functionality.</p><p>In the next chapter, we will explore generators which allows us to provide data
+to code in any dynamic order we want and without necessarily storing it in
+memory beforehand.  This let’s us side-step many of the possible hurdles when
+using any of python’s intrinsic data structures.</p></div><div class="footnotes" epub:type="footnotes"><br><hr style="width: 100; align: left;"><div class="footnote" epub:type="footnote" id="ftn.id341283"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#id341283" class="simpara totri-footnote">9</a>] </sup>As we
+will discuss in <a class="xref" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#SEC-dict-set-hash-and-entropy">Hash functions and Entropy</a>, dictionaries and sets are
+very dependant on their hash function.  If the hash function for a particular
+data type is not <code class="literal">O(1)</code>, any dictionary or set containing that type will no
+longer have its <code class="literal">O(1)</code> guarentee</p></div><div class="footnote" epub:type="footnote" id="ftn.id502563"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#id502563" class="simpara">10</a>] </sup>A mask is
+a binary number that truncates the value of a number.  So, <code class="literal">0b1111101 &amp; 0b111 =
+0b101 = 5</code> represents the operation of <code class="literal">0b111</code> masking the number <code class="literal">0b1111101</code>. This
+operation can also be thought of as taking a certain number of the
+least-significant digits of a number</p></div><div class="footnote" epub:type="footnote" id="ftn.id505567"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#id505567" class="simpara">11</a>] </sup>The value of <code class="literal">5</code> comes from the properties of a linear congruential
+generator (LCG) which is used in generating random numbers</p></div><div class="footnote" id="ftn.id494320"><p><sup>[<a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#id494320" class="simpara">12</a>] </sup>More information about this at
+<a class="ulink" href="http://wiki.python.org/moin/DictionaryKeys" target="_top">http://wiki.python.org/moin/DictionaryKeys</a></p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch03.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">3. Lists and Tuples</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/high-performance-python/9781449361747/ch05.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">5. Iterators and Generators</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781449361747/chapter/ch04.html" data-for-analytics="9781449361747:ch04.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/high-performance-python/9781449361747/ch04.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

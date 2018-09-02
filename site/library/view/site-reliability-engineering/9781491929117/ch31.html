@@ -1,0 +1,1224 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/site-reliability-engineering/9781491929117/ch31.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781491929117"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch31.html"
+  data-epub-title="Site Reliability Engineering" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/site-reliability-engineering/9781491929117/ch31.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781491929117" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch31.html" data-epub-title="Site Reliability Engineering" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491929117"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>31. Communication and Collaboration in SRE - Site Reliability Engineering</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/c1c7ad294784.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content p.byline{text-align:left;margin:-33px auto 35px;font-style:italic;font-weight:bold}#sbo-rt-content div.preface p+p.byline{margin:1em 0 0}#sbo-rt-content div.preface p.byline+p.byline{margin:0}#sbo-rt-content div.sect1>p.byline{margin:-.25em 0 1em}#sbo-rt-content div.sect1>p.byline+p.byline{margin-top:-1em}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding-top:10px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure,#sbo-rt-content aside[data-type="sidebar"] figure{border:none}#sbo-rt-content aside[data-type="sidebar"] p.byline{font-family:sans-serif;font-size:90%;font-weight:bold;font-style:italic;text-align:center;text-indent:0;margin:5px auto 6px;page-break-after:avoid}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"] h2,#sbo-rt-content section[data-type="titlepage"] p.subtitle{font-size:1em;font-weight:normal;text-align:center}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"],#sbo-rt-content section[data-type="titlepage"] p.author{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content section[data-type="titlepage"] p.edition{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:normal;text-align:center;text-transform:uppercase;margin-top:2em}#sbo-rt-content section[data-type="titlepage"]:after{content:url(css_assets/titlepage_footer_ebook.png);position:absolute;bottom:0;max-width:100%}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div[data-type="footnotes"]{font-size:85%;border-top:2px solid black;padding-left:1.5em;margin-top:1.5em}#sbo-rt-content p[data-type="footnote"]{margin-top:-.5em}#sbo-rt-content p[data-type="footnote"] sup{left:-1em;top:1.2em;position:relative;display:block}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:.25em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{font-weight:bold;font-size:110%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:10px 0 10px 0 !important;text-align:center;padding:0;page-break-after:avoid}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold;text-indent:0}#sbo-rt-content div.index li{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content div.index ul{list-style-type:none;padding-left:0;margin-left:0}#sbo-rt-content div.index ul li{padding-left:0;margin-left:0}#sbo-rt-content div.index ul li ul li{margin-left:20px}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}#sbo-rt-content span.roman_text{font-style:normal !important}
+    </style><link rel="canonical" href="/Library/view/site-reliability-engineering/9781491929117/ch31.html"><meta name="description" content=" Chapter 31. Communication and Collaboration in SRE Written by Niall Murphy with Alex Rodriguez, Carl Crous, Dario Freni, Dylan Curley, Lorenzo Blanco, and Todd Underwood Edited by Betsy Beyer The ... "><meta property="og:title" content="31. Communication and Collaboration in SRE"><meta itemprop="isPartOf" content="/library/view/site-reliability-engineering/9781491929117/"><meta itemprop="name" content="31. Communication and Collaboration in SRE"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch31.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491929117/"><meta property="og:description" itemprop="description" content=" Chapter 31. Communication and Collaboration in SRE Written by Niall Murphy with Alex Rodriguez, Carl Crous, Dario Freni, Dylan Curley, Lorenzo Blanco, and Todd Underwood Edited by Betsy Beyer The ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781491929124"><meta property="og:book:author" itemprop="author" content="Niall Richard Murphy"><meta property="og:book:author" itemprop="author" content="Jennifer Petoff"><meta property="og:book:author" itemprop="author" content="Chris Jones"><meta property="og:book:author" itemprop="author" content="Betsy Beyer"><meta property="og:book:tag" itemprop="about" content="Engineering"><meta property="og:book:tag" itemprop="about" content="Networking"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--></head>
+
+
+<body class="reading sidenav nav-collapsed  js-show-related scalefonts" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Site Reliability Engineering
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch31.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch31.html&amp;text=Site%20Reliability%20Engineering&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch31.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch31.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%2031.%20Communication%20and%20Collaboration%20in%20SRE&amp;body=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch31.html%0D%0Afrom%20Site%20Reliability%20Engineering%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch30.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">30. Embedding an SRE to Recover from Operational Overload</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch32.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">32. The Evolving SRE Engagement Model</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 31. Communication and Collaboration in SRE"><div class="chapter" id="chapter_comms-collab">
+<h1><span class="label">Chapter 31. </span>Communication and Collaboration in SRE</h1>
+
+
+<p class="byline">Written by Niall Murphy with Alex Rodriguez, Carl Crous, Dario Freni, Dylan Curley, Lorenzo Blanco, and Todd Underwood</p>
+
+<p class="byline">Edited by Betsy Beyer</p>
+
+<p><a data-type="indexterm" data-primary="Site Reliability Engineering (SRE)" data-secondary="Google’s approach to management" id="idm140203535622096"></a><a data-type="indexterm" data-primary="communication and collaboration" data-secondary="position of SRE in Google" id="idm140203535621120"></a>The organizational position of SRE in Google is interesting, and has
+effects on how we communicate and collaborate.</p>
+
+<p>To begin with, there is a tremendous diversity in what SRE does, and
+how we do it.  We have infrastructural teams, service teams, and
+horizontal product teams. We have relationships with product
+development teams ranging from teams that are many times our size, to
+teams roughly the same size as their counterparts, and situations in
+which we <em>are</em> the product development team. SRE teams are made up of
+people with systems engineering or architectural skills (see
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Hix15b">[Hix15b]</a>), software engineering skills, project management skills,
+leadership instincts, backgrounds in all kinds of industries (see
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch33.html#chapter_other-reliability-efforts">Chapter&nbsp;33</a>), and so on.  We don’t have just
+one model, and we have found a variety of configurations that work;
+this flexibility suits our ultimately pragmatic nature.</p>
+
+<p>It’s also true that SRE is not a command-and-control
+organization. Generally, we owe allegiance to at least two masters:
+for service or infrastructure SRE teams, we work closely with the
+corresponding product development teams that work on those services or that
+infrastructure; we also obviously work in the context of SRE
+generally. The service relationship is very strong, since we are held
+accountable for the performance of those systems, but despite that
+relationship, our actual reporting lines are through SRE as a
+whole. Today, we spend more time supporting our individual services
+than on cross-production work, but our culture and our shared values
+produce strongly homogeneous approaches to problems. This is by
+design.<sup><a data-type="noteref" id="idm140203535615472-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535615472">1</a></sup></p>
+
+<p>The two preceding facts have steered the SRE organization in certain
+directions when it comes to two crucial dimensions of how our teams
+operate—communications and collaboration. Data flow would be an apt
+computing metaphor for our communications: just like data must flow
+around production, data also has to flow around an SRE team—data
+about projects, the state of the services, production, and the state
+of the individuals. For maximum effectiveness of a team, the data has
+to flow in reliable ways from one interested party to another. One way
+to think of this flow is to think of the interface that an SRE team
+must present to other teams, such as an API. Just like an API, a good
+design is crucial for effective operation, and if the API is
+wrong, it can be painful to correct later on.</p>
+
+<p>The API-as-contract metaphor is also relevant for collaboration, both among SRE teams, and between SRE and product development teams—all have to make progress in an environment of unrelenting change. To that extent, our
+collaboration looks quite like collaboration in any other fast-moving
+company. The difference is the mix of software engineering skills,
+systems engineering expertise, and the wisdom of production experience that SRE
+brings to bear on that collaboration.  The best designs and the best
+implementations result from the joint concerns of production and the
+product being met in an atmosphere of mutual respect. This is the
+promise of SRE: an organization charged with reliability, with the
+same skills as the product development teams, will improve things
+measurably. Our experience suggests that simply having someone in
+charge of reliability, without also having the complete skill set, is
+not enough.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Communications: Production Meetings"><div class="sect1" id="xref_comms-collab_production-meetings">
+<h1>Communications: Production Meetings</h1>
+
+<p><a data-type="indexterm" data-primary="communication and collaboration" data-secondary="production meetings" data-see="production meetings" id="idm140203535609840"></a><a data-type="indexterm" data-primary="production meetings" id="CCproduct31"></a>Although literature about running effective meetings abounds
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Kra08">[Kra08]</a>, it’s difficult to find someone who’s lucky enough to <em>only</em>
+have useful, effective meetings. This is equally true for SRE.</p>
+
+<p>However, there’s one kind of meeting that we have that is more useful
+than the average, called a <em>production meeting</em>. Production meetings
+are a special kind of meeting where an SRE team carefully articulates
+to itself—and to its invitees—the state of the service(s) in
+their charge, so as to increase general awareness among everyone who
+cares, and to improve the operation of the service(s). In
+general, these meetings are <em>service-oriented</em>; they are not directly
+about the status updates of individuals. The goal is for everyone to
+leave the meeting with an idea of what’s going on—the <em>same</em>
+idea. The other major goal of production meetings is to improve our
+services by bringing the wisdom of production to bear on our
+services. That means we talk in detail about the operational
+performance of the service, and relate that operational performance to
+design, configuration, or implementation, and make recommendations for
+how to fix the problems. Connecting the performance of the service
+with design decisions in a regular meeting is an immensely powerful
+feedback loop.</p>
+
+<p>Our production meetings usually happen weekly; given SRE’s antipathy
+to pointless meetings, this
+frequency seems to be just about right: time to allow enough relevant
+material to accumulate to make the meeting worthwhile, while not so
+frequent that people find excuses to not attend. They usually last
+somewhere between 30 and 60 minutes. Any less and you’re probably
+cutting something unnecessarily short, or you should probably be
+growing your service portfolio. Any more and you’re probably getting
+mired in the detail, or you’ve got too much to talk about and you
+should shard the team or service set.</p>
+
+<p>Just like any other meeting, the production meeting should have a
+chair. Many SRE teams rotate the chair through various team members,
+which has the advantage of making everyone feel they have a stake in
+the service and some notional ownership of the issues. It’s true that
+not everyone has equal levels of chairing skill, but the value of
+group ownership is so large that the trade-off of temporary
+suboptimality is worthwhile. Furthermore, this is a chance to instill
+chairing skills, which are very useful in the kind of incident
+coordination situations commonly faced by SRE.</p>
+
+<p>In cases where two SRE teams are meeting by video, and one of the teams
+is much larger than the other, we have noticed an interesting dynamic
+at play. We recommend placing your chair on the <em>smaller</em> side of the
+call by default. The larger side naturally tends to quiet down and
+some of the bad effects of imbalanced team sizes (made worse by the
+delays inherent in video conferencing) will improve.<sup><a data-type="noteref" id="idm140203535600000-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535600000">2</a></sup> We have no idea if this technique has any
+scientific basis, but it does tend to work.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Agenda"><div class="sect2" id="idm140203535598928">
+<h2>Agenda</h2>
+
+<p>There are many ways to run a production meeting, attesting to the
+diversity of what SRE looks after and how we do it. To that
+extent, it’s not appropriate to be prescriptive on how to run one of
+these meetings. However, a default agenda  (see
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/app06.html#appendix_effective-meetings">Appendix&nbsp;F</a> for an example) might look something like
+the following:</p>
+<dl>
+<dt>Upcoming production changes</dt>
+<dd>
+<p>Change-tracking meetings are well known throughout the industry, and
+indeed whole meetings have often been devoted to stopping
+change. However, in our production environment, we usually default to
+enabling change, which requires tracking the useful set of
+properties of that change: start time, duration, expected effect, and
+so on. This is near-term horizon visibility.</p>
+</dd>
+</dl>
+<dl class="pagebreak-before">
+<dt>Metrics</dt>
+<dd>
+<p>One of the major ways we conduct a service-oriented discussion is by
+talking about the core metrics of the systems in question; see
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch04.html#chapter_sli-slo-sla">Chapter&nbsp;4</a>. Even if the systems didn’t dramatically fail
+that week, it’s very common to be in a position where you’re looking
+at gradually (or sharply!) increasing load throughout the
+year. Keeping track of how your latency figures, CPU utilization
+figures, etc., change over time is incredibly valuable for developing a
+feeling for the performance envelope of a system.</p>
+
+<p>Some teams track resource usage and efficiency, which is also a useful
+indicator of slower, perhaps more insidious system changes.</p>
+</dd>
+<dt>Outages</dt>
+<dd>
+<p>This item addresses problems of approximately postmortem size, and is
+an indispensable opportunity for learning. A good postmortem analysis,
+as discussed in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch15.html#chapter_postmortem-culture">Chapter&nbsp;15</a>, should always set the
+juices flowing.</p>
+</dd>
+<dt>Paging events</dt>
+<dd>
+<p>These are pages from your monitoring system, relating to problems
+that <em>can</em> be postmortem worthy, but often aren’t. In any event,
+while the Outages portion looks at the larger picture of an outage,
+this section looks at the tactical view: the list of pages, who was
+paged, what happened then, and so on.  There are two implicit
+questions for this section: should that alert have paged in the way it
+did, and should it have paged at all? If the answer to the last
+question is no, remove those unactionable pages.</p>
+</dd>
+<dt>Nonpaging events</dt>
+<dd>
+<p>This bucket contains three items:</p>
+
+<ul>
+<li>
+<p><em>An issue that probably should have paged, but didn’t</em>. In these
+cases, you should probably fix the monitoring so that such events do
+trigger a page.  Often you encounter the issue while you’re trying to
+fix something else, or it’s related to a metric you’re tracking but
+for which you haven’t got an alert.</p>
+</li>
+<li>
+<p><em>An issue that is not pageable but requires attention</em>, such as
+low-impact data corruption or slowness in some non-user-facing
+dimension of the system.  Tracking reactive operational work is also
+appropriate here.</p>
+</li>
+<li>
+<p><em>An issue that is not pageable and does not require attention</em>. These
+alerts should be removed, because they create extra noise that distracts
+engineers from issues that do merit attention.</p>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="pagebreak-before">
+<dt>Prior action items</dt>
+<dd>
+<p>The preceding detailed discussions often lead to actions that SRE needs to
+take—fix this, monitor that, develop a subsystem to do the
+other. Track these improvements just as they would be tracked in any
+other meeting: assign action items to people and track their
+progress. It’s a good idea to have an explicit agenda item that acts as
+a catchall, if nothing else. Consistent delivery is also a wonderful
+credibility and trust builder. It doesn’t matter how such delivery
+is done, just that it <em>is</em> done.</p>
+</dd>
+</dl>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Attendance"><div class="sect2" id="idm140203535576544">
+<h2>Attendance</h2>
+
+<p>Attendance is compulsory for all the members of the SRE team in
+question. This is particularly true if your team is spread across
+multiple countries and/or time zones, because this is your major
+opportunity to interact as a group.</p>
+
+<p>The major stakeholders should also attend this meeting. Any partner
+product development teams you may have should also attend. Some SRE
+teams shard their meeting so SRE-only matters are kept to the first
+half; that practice is fine, as long as everyone, as stated previously,
+leaves with the same idea of what’s going on. From time to time
+representatives from other SRE teams might turn up, particularly if
+there’s some larger cross-team issue to discuss, but in general, the
+SRE team in question plus major other teams should attend. If your
+relationship is such that you cannot invite your product development
+partners, you need to fix that relationship: perhaps the first step is
+to invite a representative from that team, or to find a trusted
+intermediary to proxy communication or model healthy
+interactions. There are many reasons why teams don’t get along, and a
+wealth of writing on how to solve that problem: this information is
+also applicable to SRE teams, but it is important that the end goal of
+having a feedback loop from operations is fulfilled, or a large part
+of the value of having an SRE team is lost.</p>
+
+<p>Occasionally you’ll have too many teams or busy-yet-crucial attendees
+to invite. There are a number of techniques you can use to handle those
+situations:</p>
+
+<ul>
+<li>
+<p>Less active services might be attended by a single representative
+from the product development team, or only have commitment from the
+product development team to read and comment on the agenda minutes.</p>
+</li>
+<li>
+<p>If the production development team is quite large, nominate a
+subset of representatives.</p>
+</li>
+<li>
+<p>Busy-yet-crucial attendees can provide feedback and/or steering in
+advance to individuals, or using the prefilled agenda technique
+(described next).</p>
+</li>
+</ul>
+
+<p class="pagebreak-before">Most of the meeting strategies we’ve discussed are common sense, with a service-oriented twist. One
+unique spin on making meetings more efficient <em>and</em> more inclusive is
+to use the real-time collaborative features of Google Docs. Many SRE
+teams have such a doc, with a well-known address that anyone in
+engineering can access. Having such a doc enables two great practices:</p>
+
+<ul>
+<li>
+<p>Pre-populating the agenda with “bottom up” ideas, comments, and
+information.</p>
+</li>
+<li>
+<p>Preparing the agenda in parallel <em>and</em> in advance is really
+efficient.</p>
+</li>
+</ul>
+
+<p>Fully use the multiple-person collaboration features enabled by the
+   product.  There’s nothing quite like seeing a meeting chair type in
+   a sentence, then seeing someone else supply a link to the source
+   material in brackets after they have finished typing, and then
+   seeing yet another person tidy up the spelling and grammar in the
+   original sentence. Such collaboration gets stuff done faster, and
+   makes more people feel like they own a slice of what the team does.<a data-type="indexterm" data-primary="" data-startref="CCproduct31" id="idm140203535564144"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Collaboration within SRE"><div class="sect1" id="idm140203535562720">
+<h1>Collaboration within SRE</h1>
+
+<p><a data-type="indexterm" data-primary="communication and collaboration" data-secondary="within SRE team" id="idm140203535561568"></a>Obviously, Google is a multinational organization. Because of the emergency
+response and pager rotation component of our role, we have very good business
+reasons to be a distributed organization, separated by at least a few
+time zones. The practical impact of this distribution is that we have very fluid
+definitions for “team” compared to, for example, the average product
+development team. We have local teams, the team on the site, the
+cross-continental team, virtual teams of various sizes and coherence, and everything
+in between. This creates a cheerfully chaotic mix of responsibilities, skills,
+and opportunities. Much of the same dynamics could be expected to pertain to
+any sufficiently large company (although they might be particularly intense for
+tech companies). Given that most local collaboration faces no particular
+obstacle, the interesting case collaboration-wise is cross-team, cross-site,
+across a virtual team, and similar.</p>
+
+<p>This pattern of distribution also informs how SRE teams tend to be
+organized.  Because our <em>raison d’être</em> is bringing value through
+technical mastery, and technical mastery tends to be hard, we
+therefore try to find a way to have mastery over some related subset
+of systems or infrastructures, in order to decrease cognitive
+load. Specialization is one way of accomplishing this objective;
+i.e., team X works only on product Y. Specialization is good, because
+it leads to higher chances of improved technical mastery, but it’s
+also bad, because it leads to siloization and ignorance of the broader
+picture. We try to have a crisp team charter to define what a team
+will—and more importantly, won’t—support, but we don’t always succeed.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Team Composition"><div class="sect2" id="idm140203535557760">
+<h2>Team Composition</h2>
+
+<p>We have a wide array of skill sets in SRE, ranging from systems
+engineering through software engineering, and into organization and
+management. The one thing we can say about collaboration is that your
+chances of successful collaboration—and indeed just about anything
+else—are improved by having more diversity in your team. There’s a lot
+of evidence suggesting that diverse teams are simply better teams <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Nel14">[Nel14]</a>.
+Running a diverse team implies particular attention to
+communication, cognitive biases, and so on, which we can’t cover in
+detail here.</p>
+
+<p>Formally, SRE teams have the roles of “tech lead” (TL), “manager”
+(SRM), and “project manager” (also known as PM, TPM, PgM). Some people
+operate best when those roles have well-defined responsibilities: the
+major benefit of this being they can make in-scope decisions
+quickly and safely.  Others operate best in a more fluid environment,
+with shifting responsibilities depending on dynamic negotiation. In
+general, the more fluid the team is, the more developed it is in terms
+of the capabilities of the individuals, and the more able the team is
+to adapt to new situations—but at the cost of having to communicate
+more and more often, because less background can be assumed.</p>
+
+<p>Regardless of how well these roles are defined, at a base level the
+tech lead is responsible for technical direction in the team, and can
+lead in a variety of ways—everything from carefully commenting on
+everyone’s code, to holding quarterly direction presentations, to building
+consensus in the team. In Google, TLs can do almost all of a manager’s
+job, because our managers are highly technical, but the manager has
+two special responsibilities that a TL doesn’t have: the performance
+management function, and being a general catchall for everything
+that isn’t handled by someone else. Great TLs, SRMs, and TPMs have a
+complete set of skills and can cheerfully turn their hand to
+organizing a project, commenting on a design doc, or writing code as
+necessary.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Techniques for Working Effectively"><div class="sect2" id="idm140203535552464">
+<h2>Techniques for Working Effectively</h2>
+
+<p>There are a number of ways to engineer effectively in SRE.</p>
+
+<p>In general, singleton projects fail unless the person is particularly
+gifted or the problem is straightforward. To accomplish anything
+significant, you pretty much need multiple people. Therefore, you also
+need good collaboration skills.  Again, lots of material has been
+written on this topic, and much of this literature is applicable to
+SRE.</p>
+
+<p>In general, good SRE work calls for excellent communication skills
+when you’re working outside the boundary of your purely local
+team. For collaborations outside the building, effectively working
+across time zones implies either great written communication, or lots
+of travel to supply the in-person experience that is deferrable but
+ultimately necessary for a high-quality relationship.  Even if you’re
+a great writer, over time you decay into just being an email address
+until you turn up in the flesh again.</p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Case Study of Collaboration in SRE: Viceroy"><div class="sect1" id="idm140203535548896">
+<h1>Case Study of Collaboration in SRE: Viceroy</h1>
+
+<p><a data-type="indexterm" data-primary="communication and collaboration" data-secondary="case studies" id="CCviceroy31"></a><a data-type="indexterm" data-primary="Viceroy project" id="viceroy31"></a>One example of a successful cross-SRE collaboration is a project called
+Viceroy, which is a monitoring dashboard framework and service. The current
+organizational architecture of SRE can end up with teams producing multiple,
+slightly different copies of the same piece of work; for various reasons,
+monitoring dashboard frameworks were a particularly fertile ground for
+duplication of work.<sup><a data-type="noteref" id="idm140203535545024-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535545024">3</a></sup></p>
+
+<p>The incentives that led to the serious litter problem of many smoldering, abandoned hulks
+of monitoring frameworks lying around were pretty simple: each
+team was rewarded for developing its own solution, working outside of
+the team boundary was hard, and the infrastructure that tended to be
+provided SRE-wide was typically closer to a toolkit than a
+product. This environment encouraged individual engineers to use the
+toolkit to make another burning wreck rather than fix the problem for
+the largest number of people possible (an effort that would therefore
+take much longer).</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="The Coming of the Viceroy"><div class="sect2" id="idm140203535543232">
+<h2>The Coming of the Viceroy</h2>
+
+<p>Viceroy was different. It began in 2012 when a number of teams were
+considering how to move to Monarch, the new monitoring system at
+Google. SRE is deeply conservative with respect to monitoring systems,
+so Monarch somewhat ironically took a longer while to get traction
+within SRE than within non-SRE teams. But no one could argue that our
+legacy monitoring system, Borgmon (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#chapter_borgmon">Chapter&nbsp;10</a>), had no
+room for improvement. For example, our consoles were cumbersome
+because they used a custom HTML templating system that was
+special-cased, full of funky edge cases, and difficult to test. At
+that time, Monarch had matured enough to be accepted in principle as
+the replacement for the legacy system and was therefore being adopted
+by more and more teams across Google, but it turned out we still had a
+problem with consoles.</p>
+
+<p>Those of us who tried using Monarch for our services soon found that
+it fell short in its console support for two main reasons:</p>
+
+<ul>
+<li>
+<p>Consoles were easy to set up for a small service, but didn’t scale
+well to services with complex consoles.</p>
+</li>
+<li>
+<p>They also didn’t support the legacy monitoring system, making the
+transition to Monarch very difficult.</p>
+</li>
+</ul>
+
+<p>Because no viable alternative to deploying Monarch in this way existed at the time, a
+number of team-specific projects launched. Since there was little
+enough in the way of coordinated development solutions or even
+cross-group tracking at the time (a problem that has since been
+fixed), we ended up duplicating efforts yet again.  Multiple teams
+from Spanner, Ads Frontend, and a variety of other services spun up
+their own efforts (one notable example was called
+Consoles++) over the course of 12–18 months, and eventually
+sanity prevailed when engineers from all those teams woke up and
+discovered each other’s respective efforts. They decided to do the
+sensible thing and join forces in order to create a general solution
+for all of SRE. Thus, the Viceroy project was born in mid
+2012.</p>
+
+<p>By the beginning of 2013, Viceroy had started to gather interest from
+teams who had yet to move off the legacy system, but who were looking
+to put a toe in the water. Obviously, teams with larger existing
+monitoring projects had fewer incentives to move to the new system: it
+was hard for these teams to rationalize jettisoning the low
+maintenance cost for their existing solution that basically worked
+fine, for something relatively new and unproven that would require
+lots of effort to make work. The sheer diversity of requirements added
+to the reluctance of these teams, even though all monitoring console
+projects shared two main requirements, notably:</p>
+
+<ul>
+<li>
+<p>Support complex curated dashboards</p>
+</li>
+<li>
+<p>Support both Monarch and the legacy monitoring system</p>
+</li>
+</ul>
+
+<p>Each project <em>also</em> had its own set of technical requirements, which
+depended on the author’s preference or experience. For example:</p>
+
+<ul>
+<li>
+<p>Multiple data sources outside the core monitoring systems</p>
+</li>
+<li>
+<p>Definition of consoles using configuration versus explicit HTML layout</p>
+</li>
+<li>
+<p>No JavaScript versus full embrace of JavaScript with AJAX</p>
+</li>
+<li>
+<p>Sole use of static content, so the consoles can be cached in the
+browser</p>
+</li>
+</ul>
+
+<p>Although some of these requirements were stickier than others, overall
+they made merging efforts difficult. Indeed, although the
+Consoles++ team was interested in seeing how their project
+compared to Viceroy, their initial examination in the first half of
+2013 determined that the fundamental differences between the two
+projects were significant enough to prevent integration. The largest
+difficulty was that Viceroy by design did not use much JavaScript,
+while Consoles++ was mostly written in JavaScript. There was a
+glimmer of hope, however, in that the two systems did have a number of
+underlying similarities:</p>
+
+<ul class="pagebreak-before">
+<li>
+<p>They used similar syntaxes for HTML template rendering.</p>
+</li>
+<li>
+<p>They shared a number of long-term goals, which neither team had
+yet begun to address. For example, both systems wanted to cache
+monitoring data and support an offline pipeline to periodically
+produce data that the console can use, but was too computationally
+expensive to produce on demand.</p>
+</li>
+</ul>
+
+<p>We ended up parking the unified console discussion for a
+while. However, by the end of 2013, both Consoles++ and Viceroy
+had developed significantly. Their technical differences had narrowed,
+because Viceroy had started using JavaScript to render its monitoring
+graphs. The two teams met and figured out that integration was a lot
+easier, now that integration boiled down to serving the
+Consoles++ data out of the Viceroy server. The first integrated
+prototypes were completed in early 2014, and proved that the systems
+could work well together.  Both teams felt comfortable committing to a
+joint effort at that point, and because Viceroy had already established
+its brand as a common monitoring solution, the combined project
+retained the Viceroy name. Developing full functionality took a few
+quarters, but by the end of 2014, the combined system was complete.</p>
+
+<p>Joining forces reaped huge benefits:</p>
+
+<ul>
+<li>
+<p>Viceroy received a host of data sources and the JavaScript clients
+to access them.</p>
+</li>
+<li>
+<p>JavaScript compilation was rewritten to support separate modules
+that can be selectively included. This is essential to scale the
+system to any number of teams with their own JavaScript code.</p>
+</li>
+<li>
+<p>Consoles++ benefited from the many improvements actively
+being made to Viceroy, such as the addition of its cache and
+background data pipeline.</p>
+</li>
+<li>
+<p>Overall, the development velocity on <em>one</em> solution was much larger
+than the sum of all the development velocity of the duplicative
+projects.</p>
+</li>
+</ul>
+
+<p>Ultimately, the common future vision was the key factor in combining
+the projects. Both teams found value in expanding their development
+team and benefited from each other’s contributions. The momentum was
+such that, by the end of 2014, Viceroy was officially declared the
+general monitoring solution for all of SRE. Perhaps characteristically
+for Google, this declaration didn’t require that teams adopt Viceroy:
+rather, it recommended that teams should use Viceroy instead of
+writing another monitoring console.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Challenges"><div class="sect2" id="idm140203535515648">
+<h2>Challenges</h2>
+
+<p>While ultimately a success, Viceroy was not without difficulties, and
+many of those arose due to the cross-site nature of the project.</p>
+
+<p>Once the extended Viceroy team was established, initial coordination
+among remote team members proved difficult. When meeting people for
+the first time, subtle cues in writing and speaking can be
+misinterpreted, because communication styles vary substantially from person
+to person. At the start of the project, team members who weren’t
+located in Mountain View also missed out on the impromptu water cooler
+discussions that often happened shortly before and after meetings
+(although communication has since improved considerably).</p>
+
+<p>While the core Viceroy team remained fairly consistent, the extended
+team of contributors was fairly dynamic. Contributors had other
+responsibilities that changed over time, and therefore many were able
+to dedicate between one and three months to the project. Thus, the
+developer contributor pool, which was inherently larger than the core
+Viceroy team, was characterized by a significant amount of churn.</p>
+
+<p>Adding new people to the project required training each contributor on
+the overall design and structure of the system, which took some
+time. On the other hand, when an SRE contributed to the core
+functionality of Viceroy and later returned to their own team, they
+were a local expert on the system. That unanticipated dissemination of
+local Viceroy experts drove more usage and adoption.</p>
+
+<p>As people joined and left the team, we found that casual contributions
+were both useful and costly. The primary cost was the dilution of
+ownership: once features were delivered and the person left, the
+features became unsupported over time, and were generally dropped.</p>
+
+<p>Furthermore, the scope of the Viceroy project grew over time. It had
+ambitious goals at launch but the initial <em>scope</em> was limited. As the
+scope grew, however, we struggled to deliver core features on time,
+and had to improve project management and set clearer direction to
+ensure the project stayed on track.</p>
+
+<p>Finally, the Viceroy team found it difficult to completely own a
+component that had significant (determining) contributions from
+distributed sites. Even with the best will in the world, people
+generally default to the path of least resistance and discuss issues
+or make decisions locally without involving the remote owners, which
+can lead to conflict.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Recommendations"><div class="sect2" id="idm140203535508656">
+<h2>Recommendations</h2>
+
+<p>You should only develop projects cross-site when you have to, but often there are
+good reasons to have to. The cost of working across sites is higher
+latency for actions and more communication being required; the benefit
+is—if you get the mechanics right—much higher throughput. The
+single site project can also fall foul of no one outside of that site
+knowing what you’re doing, so there are costs to both
+approaches.</p>
+
+<p>Motivated contributors are valuable, but not all contributions are
+equally valuable. Make sure project contributors are actually
+committed, and aren’t just joining with some nebulous
+self-actualization goal (wanting to earn a notch on their belt
+attaching their name to a shiny project; wanting to code on a new
+exciting project without committing to maintaining that project).
+Contributors with a specific goal to achieve
+will generally be better motivated and will better maintain their
+contributions.</p>
+
+<p>As projects develop, they usually grow, and you’re not always in the
+lucky position of having people in your local team to contribute to
+the project.  Therefore, think carefully about the project
+structure. The project leaders are important: they provide long-term
+vision for the project and make sure all work aligns with that vision
+and is prioritized correctly. You also need to have an agreed way of
+making decisions, and should specifically optimize for making more
+decisions locally if there is a high level of agreement and trust.</p>
+
+<p>The standard “divide and conquer” strategy applies to cross-site
+projects; you reduce communication costs primarily by splitting the
+project into as many reasonably sized components as possible, and
+trying to make sure that each component can be assigned to a small
+group, preferably within one site. Divide these components among the
+project subteams, and establish clear deliverables and deadlines. (Try
+not to let Conway’s law distort the natural shape of the software too
+deeply.)<sup><a data-type="noteref" id="idm140203535504096-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535504096">4</a></sup></p>
+
+<p>A goal for a project team works best when it’s oriented toward
+providing some functionality or solving some problem. This approach
+ensures that the individuals working on a component know what is
+expected of them, and that their work is only complete once that
+component is fully integrated and used within the main project.</p>
+
+<p>Obviously, the usual engineering best practices apply to collaborative
+projects: each component should have design documents and reviews with
+the team. In this way, everyone in the team is given the opportunity
+to stay abreast of changes, in addition to the chance to influence and
+improve designs.  Writing things down is one of the major techniques
+you have to offset physical and/or logical distance—use it.</p>
+
+<p>Standards are important. Coding style guidelines are a good start, but
+they’re usually quite tactical and therefore only a starting point for
+establishing team norms. Every time there is a debate around which
+choice to make on an issue, argue it out fully with the team but with
+a strict time limit. Then pick a solution, document it, and move
+on. If you can’t agree, you need to pick some arbitrator that everyone
+respects, and again just move forward. Over time you’ll build up a
+collection of these best practices, which will help new people come up
+to speed.</p>
+
+<p>Ultimately, there’s no substitute for in-person interaction, although
+some portion of face-to-face interaction can be deferred by good use
+of VC and good written communication. If you can, have the leaders of
+the project meet the rest of the team in person. If time and budget
+allows, organize a team summit so that all members of the team can
+interact in person. A summit also provides a great opportunity to hash
+out designs and goals. For situations where neutrality is important,
+it’s advantageous to hold team summits at a neutral location so that no individual site
+has the “home advantage.”</p>
+
+<p>Finally, use the project management style that suits the project in
+its current state. Even projects with ambitious goals will start out
+small, so the overhead should be correspondingly low. As the project
+grows, it’s appropriate to adapt and change how the project is
+managed. Given sufficient growth, full project management will be
+<span class="keep-together">necessary</span>.<a data-type="indexterm" data-primary="" data-startref="viceroy31" id="idm140203535497104"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Collaboration Outside SRE"><div class="sect1" id="idm140203535495680">
+<h1>Collaboration Outside SRE</h1>
+
+<p><a data-type="indexterm" data-primary="communication and collaboration" data-secondary="outside SRE team" id="idm140203535494528"></a>As we suggested, and <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch32.html#chapter_engagement">Chapter&nbsp;32</a> discusses,
+collaboration between the product development organization and SRE is
+really at its best when it occurs early on in the design phase,
+ideally before any line of code has been committed. SREs are best
+placed to make recommendations about architecture and software
+behavior that can be quite difficult (if not impossible) to
+retrofit. Having that voice present in the room when a new system is
+being designed goes better for everyone. Broadly speaking, we use the Objectives &amp; Key Results (OKR) process <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Kla12">[Kla12]</a> to track such work. For some service teams, such
+collaboration is the mainstay of what they do—tracking new designs,
+making recommendations, helping to implement them, and seeing those
+through to production.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Case Study: Migrating DFP to F1"><div class="sect1" id="idm140203535490736">
+<h1>Case Study: Migrating DFP to F1</h1>
+
+<p><a data-type="indexterm" data-primary="DoubleClick for Publishers (DFP)" id="dfp31"></a><a data-type="indexterm" data-primary="MySQL" data-secondary="migrating" id="idm140203535488624"></a>Large migration projects of existing services are quite common at
+Google. Typical examples include porting service components to a new
+technology or updating components to support a new data format. With
+the recent introduction of database technologies that can scale to a
+global level such as Spanner <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Cor12">[Cor12]</a> and F1 <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Shu13">[Shu13]</a>, Google has
+undertaken a number of large-scale migration projects involving
+databases. One such project was the migration of the main database of
+DoubleClick for Publishers (DFP)<sup><a data-type="noteref" id="idm140203535485408-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535485408">5</a></sup> from MySQL to F1. In particular, some of this chapter’s
+authors were in charge of a portion of the serving system
+(shown in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#fig_comms-collab_ads-serving">Figure&nbsp;31-1</a>) that continually extracts
+and processes data from the database, in order to generate a set of
+indexed files that are then loaded and served around the world. This
+system was distributed over several datacenters and
+used about 1,000 CPUs and 8 TB of RAM to index 100 TB of data every day.</p>
+
+<figure><div id="fig_comms-collab_ads-serving" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_3101.png" alt="A generic ads serving system." width="1365" height="885">
+<h6><span class="label">Figure 31-1. </span>A generic ads serving system</h6>
+</div></figure>
+
+<p>The migration was nontrivial: in addition to migrating to a new
+technology, the database schema was significantly refactored and
+simplified thanks to the ability of F1 to store and index protocol
+buffer data in table columns. The goal was to migrate the processing
+system so that it could produce an output perfectly identical to the
+existing system. This allowed us to leave the serving system untouched
+and to perform, from the user’s perspective, a seamless migration. As
+an added restriction, the product required that we complete a live
+migration without any disruption of the service to our users at any
+time. In order to achieve this, the product
+development team and the SRE team started working closely, from the
+very beginning, to develop the new indexing service.</p>
+
+<p>As its main developers, product development teams are typically more
+familiar with the Business Logic (BL) of the software, and are also in
+closer contact with the Product Managers and the actual “business
+need” component of products. On the other hand, SRE teams usually have
+more expertise pertaining to the infrastructure components of the
+software (e.g., libraries to talk to distributed storage systems or
+databases), because SREs often reuse the same building blocks across
+different services, learning the many caveats and nuances that allow
+the software to run scalably and reliably over time.</p>
+
+<p>From the start of the migration project, product development and SRE
+knew they would have to collaborate even more closely, conducting
+weekly meetings to sync on the project’s progress. In this particular
+case the BL changes were partially dependent upon infrastructure
+changes. For this reason the project started with the design of the
+new infrastructure; the SREs, who had extensive knowledge about the
+domain of extracting and processing data at scale, drove the design of
+the infrastructure changes. This involved designing how to extract the
+various tables from F1, how to filter and join the data, how to
+extract only the data that changed (as opposed to the entire
+database), how to sustain the loss of some of the machines without
+impacting the service, how to ensure that the resource usage grows
+linearly with the amount of extracted data, the capacity planning, and
+many other similar aspects. The new proposed infrastructure was
+similar to other services that were already extracting and processing
+data from F1. Therefore, we could be sure of the soundness of the
+solution and reuse parts of the monitoring and tooling.</p>
+
+<p>Before proceeding with the development of this new infrastructure, two
+SREs produced a detailed design document. Then, both the product
+development and SRE teams thoroughly reviewed the document, tweaking
+the solution to handle some edge cases, and eventually agreed on a
+design plan. Such a plan clearly identified what kind of changes the new
+infrastructure would bring to the BL. For example, we designed the new
+infrastructure to extract only changed data, instead of
+repeatedly extracting the entire database; the BL had to take into
+account this new approach. Early on, we
+defined the new interfaces between infrastructure and BL, and
+doing so allowed the product development team
+to work independently on the BL changes. Similarly, the product
+development team kept SRE informed of BL changes. Where they
+interacted (e.g., BL changes dependent on infrastructure), this
+coordination structure allowed us to know changes were happening,
+and to handle them quickly and correctly.</p>
+
+<p>In later phases of the project, SREs began deploying the new service
+in a testing environment that resembled the project’s eventual
+finished production environment. This step was essential to measure
+the expected behavior of the service—in particular, performance and
+resource utilization—while the development of BL was still
+underway. The product development team used this testing environment
+to perform validation of the new service: the index of the ads
+produced by the old service (running in production) had to match
+perfectly the index produced by the new service (running in the
+testing environment). As suspected, the validation process highlighted
+discrepancies between the old and new services (due to some edge
+cases in the new data format), which the product development team was
+able to resolve iteratively: for each ad they debugged the
+cause of the difference and fixed the BL that produced the bad output.
+In the meantime, the SRE team began preparing the production
+environment: allocating the necessary resources in a different
+datacenter, setting up processes and monitoring rules, and training
+the engineers designated to be on-call for the service. The SRE
+team also set up a basic release process that included validation, a
+task usually completed by the product development
+team or by Release Engineers but in this specific case was completed
+by SREs to speed up the migration.</p>
+
+<p>When the service was ready the SREs prepared a rollout plan in
+collaboration with the product development team and launched the new
+service. The launch was very successful and proceeded smoothly,
+without any visible user impact.<a data-type="indexterm" data-primary="" data-startref="CCviceroy31" id="idm140203535473520"></a><a data-type="indexterm" data-primary="" data-startref="dfp31" id="idm140203535472576"></a></p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Conclusion"><div class="sect1" id="idm140203535471312">
+<h1>Conclusion</h1>
+
+<p><a data-type="indexterm" data-primary="communication and collaboration" data-secondary="importance of" id="idm140203535470176"></a>Given the globally distributed nature of SRE teams, effective communication
+has always been a high priority in SRE. This chapter has discussed the tools
+and techniques that SRE teams use to maintain effective relationships among
+their team and with their various partner teams.</p>
+
+<p>Collaboration between SRE teams has its challenges, but potentially great
+rewards, including common approaches to platforms for solving problems,
+letting us focus on solving more difficult problems.</p>
+</div></section>
+
+
+
+
+
+
+
+<div data-type="footnotes"><p data-type="footnote" id="idm140203535615472"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535615472-marker">1</a></sup> And, as we all know, culture beats strategy every time: <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mer11">[Mer11]</a>.</p><p data-type="footnote" id="idm140203535600000"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535600000-marker">2</a></sup> The larger team generally tends to unintentionally talk over the smaller team, it’s more difficult to control distracting side conversations, etc.</p><p data-type="footnote" id="idm140203535545024"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535545024-marker">3</a></sup> In this particular case, the road to hell was indeed paved with JavaScript.</p><p data-type="footnote" id="idm140203535504096"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535504096-marker">4</a></sup> That is, software has the same structure as the communications structure of the organization that produces the software—see <a href="https://en.wikipedia.org/wiki/Conway%27s_law"><em class="hyperlink">https://en.wikipedia.org/wiki/Conway%27s_law</em></a>.</p><p data-type="footnote" id="idm140203535485408"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#idm140203535485408-marker">5</a></sup> DoubleClick for Publishers is a tool for publishers to manage ads served on their websites and in their apps.</p></div></div></section></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch30.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">30. Embedding an SRE to Recover from Operational Overload</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch32.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">32. The Evolving SRE Engagement Model</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch31.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="js-related-container related"></div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+    
+
+
+  
+
+<div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch31.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

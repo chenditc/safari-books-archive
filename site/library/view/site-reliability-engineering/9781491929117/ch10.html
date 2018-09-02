@@ -1,0 +1,1193 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/site-reliability-engineering/9781491929117/ch10.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9781491929117"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch10.html"
+  data-epub-title="Site Reliability Engineering" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/site-reliability-engineering/9781491929117/ch10.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9781491929117" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch10.html" data-epub-title="Site Reliability Engineering" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491929117"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>10. Practical Alerting from Time-Series Data - Site Reliability Engineering</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/c1c7ad294784.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%;text-align:left}#sbo-rt-content p.byline{text-align:left;margin:-33px auto 35px;font-style:italic;font-weight:bold}#sbo-rt-content div.preface p+p.byline{margin:1em 0 0}#sbo-rt-content div.preface p.byline+p.byline{margin:0}#sbo-rt-content div.sect1>p.byline{margin:-.25em 0 1em}#sbo-rt-content div.sect1>p.byline+p.byline{margin-top:-1em}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding-top:10px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure,#sbo-rt-content aside[data-type="sidebar"] figure{border:none}#sbo-rt-content aside[data-type="sidebar"] p.byline{font-family:sans-serif;font-size:90%;font-weight:bold;font-style:italic;text-align:center;text-indent:0;margin:5px auto 6px;page-break-after:avoid}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"] h2,#sbo-rt-content section[data-type="titlepage"] p.subtitle{font-size:1em;font-weight:normal;text-align:center}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"],#sbo-rt-content section[data-type="titlepage"] p.author{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content section[data-type="titlepage"] p.edition{font-size:1em;font-family:serif,"DejaVuSerif";font-weight:normal;text-align:center;text-transform:uppercase;margin-top:2em}#sbo-rt-content section[data-type="titlepage"]:after{content:url(css_assets/titlepage_footer_ebook.png);position:absolute;bottom:0;max-width:100%}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div[data-type="footnotes"]{font-size:85%;border-top:2px solid black;padding-left:1.5em;margin-top:1.5em}#sbo-rt-content p[data-type="footnote"]{margin-top:-.5em}#sbo-rt-content p[data-type="footnote"] sup{left:-1em;top:1.2em;position:relative;display:block}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:.25em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{font-weight:bold;font-size:110%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:10px 0 10px 0 !important;text-align:center;padding:0;page-break-after:avoid}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold;text-indent:0}#sbo-rt-content div.index li{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content div.index ul{list-style-type:none;padding-left:0;margin-left:0}#sbo-rt-content div.index ul li{padding-left:0;margin-left:0}#sbo-rt-content div.index ul li ul li{margin-left:20px}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif";text-align:left}#sbo-rt-content span.roman_text{font-style:normal !important}
+    </style><link rel="canonical" href="/Library/view/site-reliability-engineering/9781491929117/ch10.html"><meta name="description" content=" Chapter 10. Practical Alerting from Time-Series Data Written by Jamie Wilkinson Edited by Kavita Guliani May the queries flow, and the pager stay silent. Traditional SRE blessing Monitoring, the bottom ... "><meta property="og:title" content="10. Practical Alerting from Time-Series Data"><meta itemprop="isPartOf" content="/library/view/site-reliability-engineering/9781491929117/"><meta itemprop="name" content="10. Practical Alerting from Time-Series Data"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch10.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491929117/"><meta property="og:description" itemprop="description" content=" Chapter 10. Practical Alerting from Time-Series Data Written by Jamie Wilkinson Edited by Kavita Guliani May the queries flow, and the pager stay silent. Traditional SRE blessing Monitoring, the bottom ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781491929124"><meta property="og:book:author" itemprop="author" content="Niall Richard Murphy"><meta property="og:book:author" itemprop="author" content="Jennifer Petoff"><meta property="og:book:author" itemprop="author" content="Chris Jones"><meta property="og:book:author" itemprop="author" content="Betsy Beyer"><meta property="og:book:tag" itemprop="about" content="Engineering"><meta property="og:book:tag" itemprop="about" content="Networking"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--></head>
+
+
+<body class="reading sidenav nav-collapsed  js-show-related scalefonts" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Site Reliability Engineering
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch10.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch10.html&amp;text=Site%20Reliability%20Engineering&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch10.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch10.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%2010.%20Practical%20Alerting%20from%20Time-Series%20Data&amp;body=https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/ch10.html%0D%0Afrom%20Site%20Reliability%20Engineering%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/part03.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">III. Practices</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch11.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">11. Being On-Call</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 10. Practical Alerting from Time-Series Data"><div class="chapter" id="chapter_borgmon">
+<h1><span class="label">Chapter 10. </span>Practical Alerting from Time-Series Data</h1>
+
+
+<p class="byline">Written by Jamie Wilkinson</p>
+
+<p class="byline">Edited by Kavita Guliani</p>
+<blockquote data-type="epigraph" epub:type="epigraph">
+<p>May the queries flow, and the pager stay silent.</p>
+<p data-type="attribution">Traditional SRE blessing</p>
+</blockquote>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="benefits of monitoring" id="idm140203537577872"></a>Monitoring, the
+bottom layer of the <em>Hierarchy of Production Needs</em>, is fundamental to
+running a stable service. Monitoring enables service owners to make
+rational decisions about the impact of changes to the service, apply
+the scientific method to incident response, and of course ensure their
+reason for existence: to measure the service’s alignment with business
+goals (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#chapter_monitoring">Chapter&nbsp;6</a>).</p>
+
+<p>Regardless of whether or not a service enjoys SRE support, it should
+be run in a symbiotic relationship with its monitoring.  But having
+been tasked with ultimate responsibility for Google Production, SREs
+develop a particularly intimate knowledge of the monitoring
+infrastructure that supports their service.</p>
+
+<p><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="challenges of" id="idm140203537574112"></a>Monitoring a very large system is challenging for a couple of reasons:</p>
+
+<ul>
+<li>
+<p>The sheer number of components being analyzed</p>
+</li>
+<li>
+<p>The need to maintain a reasonably low maintenance burden on the
+engineers responsible for the system</p>
+</li>
+</ul>
+
+<p>Google’s monitoring systems don’t just measure simple metrics, such as
+the average response time of an unladen European web server; we also
+need to understand the distribution of those response times across all
+web servers in that region. This knowledge enables us to identify the
+factors contributing to the latency tail.</p>
+
+<p class="pagebreak-before"><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="practical approach to" id="idm140203537569280"></a>At the scale our systems operate, being alerted for single-machine
+failures is unacceptable because such data is too noisy to be actionable.
+Instead we try to build systems that are robust against failures in
+the systems they depend on.  Rather than requiring management of many
+individual components, a large system should be designed to aggregate
+signals and prune outliers. We need monitoring systems that allow us
+to alert for high-level service objectives, but retain the granularity
+to inspect individual components as needed.</p>
+
+<p>Google’s monitoring systems evolved over the course of 10 years from
+the traditional model of custom scripts that check responses and
+alert, wholly separated from visual display of trends, to a new
+paradigm. This new model made the collection of time-series a first-class role of the monitoring system, and replaced those check scripts
+with a rich language for manipulating time-series into charts and
+alerts.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="The Rise of Borgmon"><div class="sect1" id="idm140203537566656">
+<h1>The Rise of Borgmon</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="Borgmon monitoring system" id="idm140203537565520"></a><a data-type="indexterm" data-primary="Borgmon" data-seealso="time-series monitoring" id="brgmn10"></a>Shortly after the job scheduling infrastructure Borg <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Ver15">[Ver15]</a> was
+created in 2003, a new monitoring system—Borgmon—was built to
+complement it.</p>
+<aside data-type="sidebar" epub:type="sidebar"><div class="sidebar" id="idm140203537562096">
+<h5>Time-Series Monitoring Outside of Google</h5>
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="tools for" id="idm140203537560928"></a>This chapter describes the architecture and programming interface of
+an internal monitoring tool that was foundational for the growth and
+reliability of Google for almost 10 years…but how does that help
+you, our dear reader?</p>
+
+<p>In recent years, monitoring has undergone a Cambrian Explosion:
+Riemann, Heka, Bosun, and Prometheus have emerged as open source tools
+that are very similar to Borgmon’s time-series–based alerting. In
+particular, Prometheus<sup><a data-type="noteref" id="idm140203537558960-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537558960">1</a></sup> shares many similarities with Borgmon,
+especially when you compare the two rule languages. The principles of
+variable collection and rule evaluation remain the same across all
+these tools and provide an environment with which you can experiment,
+and hopefully launch into production, the ideas inspired by this
+chapter.</p>
+</div></aside>
+
+<p><a data-type="indexterm" data-primary="white-box monitoring" id="idm140203537556304"></a>Instead of executing custom scripts to detect system failures, Borgmon
+relies on a common data exposition format; this enables mass data
+collection with low overheads and avoids the costs of subprocess
+execution and network connection setup.  We call this <em>white-box
+monitoring</em> (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#chapter_monitoring">Chapter&nbsp;6</a> for a comparison of white-box
+and black-box monitoring).</p>
+
+<p>The data is used both for rendering charts and creating alerts, which
+are accomplished using simple arithmetic.  Because collection is no longer
+in a short-lived process, the history of the collected data can be
+used for that alert computation as well.</p>
+
+<p>These features help to meet the goal of simplicity described in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#chapter_monitoring">Chapter&nbsp;6</a>. They allow the system overhead to be kept low
+so that the people running the services can remain agile and respond
+to continuous change in the system as it grows.</p>
+
+<p>To facilitate mass collection, the metrics format had to be
+standardized. An older method of exporting the internal state (known
+as <em>varz</em>)<sup><a data-type="noteref" id="idm140203537550736-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537550736">2</a></sup> was formalized to allow the collection of all metrics
+from a single target in one HTTP fetch.  For example, to view a page
+of metrics manually, you could use the following command:</p>
+<pre data-type="programlisting">% <strong>curl http://webserver:80/varz</strong>
+http_requests 37
+errors_total 12
+</pre>
+
+<p>A Borgmon can collect from other Borgmon,<sup><a data-type="noteref" id="idm140203537547856-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537547856">3</a></sup> so we can build hierarchies
+that follow the topology of the service, aggregating and summarizing
+information and discarding some strategically at each level.
+Typically, a team runs a single Borgmon per cluster, and a pair at the
+global level.  Some very large services shard below the cluster level
+into many <em>scraper</em> Borgmon, which in turn feed to the cluster-level
+Borgmon.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Instrumentation of Applications"><div class="sect1" id="idm140203537546000">
+<h1>Instrumentation of Applications</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="instrumentation of applications" id="idm140203537544848"></a><a data-type="indexterm" data-primary="/varz HTTP handler" id="idm140203537543888"></a>The <code>/varz</code> HTTP handler simply lists all the exported variables in
+plain text, as space-separated keys and values, one per line. A later
+extension added a mapped variable, which allows the exporter to define
+several labels on a variable name, and then export a table of values
+or a histogram.  An example <em>map-valued</em> variable looks like the
+following, showing 25 HTTP 200 responses and 12 HTTP 500s:</p>
+
+<pre data-type="programlisting">http_responses map:code 200:25 404:0 500:12</pre>
+
+<p>Adding a metric to a program only requires a single declaration in the
+code where the metric is needed.</p>
+
+<p>In hindsight, it’s apparent that this schemaless textual interface
+makes the barrier to adding new instrumentation very low, which is a
+positive for both the software engineering and SRE teams.  However,
+this has a trade-off against ongoing maintenance; the decoupling of the
+variable definition from its use in Borgmon rules requires careful
+change management. In practice, this trade-off has been satisfactory because
+tools to validate and generate rules have been written as
+well.<sup><a data-type="noteref" id="idm140203537539632-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537539632">4</a></sup></p>
+<aside data-type="sidebar" epub:type="sidebar"><div class="sidebar" id="idm140203537538736">
+<h5>Exporting Variables</h5>
+<p>Google’s web roots run deep: each of the major languages used at
+Google has an implementation of the exported variable interface that
+automagically registers with the HTTP server built into every Google
+binary by default.<sup><a data-type="noteref" id="idm140203537537232-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537537232">5</a></sup> The
+instances of the variable to be exported allow the server author to
+perform obvious operations like adding an amount to the current value,
+setting a key to a specific value, and so forth. The Go <code>expvar</code>
+library<sup><a data-type="noteref" id="idm140203537534384-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537534384">6</a></sup> and its
+JSON output form have a variant of this API.</p>
+</div></aside>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Collection of Exported Data"><div class="sect1" id="idm140203537532320">
+<h1>Collection of Exported Data</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="collection of exported data" id="idm140203537531168"></a>To find its targets, a Borgmon instance is configured with a list of
+targets using one of many name resolution methods.<sup><a data-type="noteref" id="idm140203537529952-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537529952">7</a></sup> The target list is often dynamic,
+so using service discovery reduces the cost of maintaining it and
+allows the monitoring to scale.</p>
+
+<p>At predefined intervals, Borgmon fetches the <code>/varz</code> URI on each
+target, decodes the results, and stores the values in memory. Borgmon
+also spreads the collection from each instance in the target list over
+the whole interval, so that collection from each target is not in lockstep with its peers.</p>
+
+<p>Borgmon also records “synthetic” variables for each target in order to
+identify:</p>
+
+<ul>
+<li>
+<p>If the name was resolved to a host and port</p>
+</li>
+<li>
+<p>If the target responded to a collection</p>
+</li>
+<li>
+<p>If the target responded to a health check</p>
+</li>
+<li>
+<p>What time the collection finished</p>
+</li>
+</ul>
+
+<p>These synthetic variables make it easy to write rules to detect if the
+monitored tasks are unavailable.</p>
+
+<p><a data-type="indexterm" data-primary="SNMP (Simple Networking Monitoring Protocol)" id="idm140203537521632"></a>It’s interesting that varz is quite dissimilar to SNMP (Simple Networking Monitoring Protocol), which “is
+designed […] to have minimal transport requirements and to continue
+working when most other network applications fail” <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/bibliography01.html#Mic03">[Mic03]</a>.
+Scraping targets over HTTP seems to be at odds with this design
+principle; however, experience shows that this is rarely an
+issue.<sup><a data-type="noteref" id="idm140203537519600-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537519600">8</a></sup>  The system itself is
+already designed to be robust against network and machine failures,
+and Borgmon allows engineers to write smarter alerting rules by using
+the collection failure itself as a signal.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Storage in the Time-Series Arena"><div class="sect1" id="idm140203537517488">
+<h1>Storage in the Time-Series Arena</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="time-series data storage" id="TSMdata10"></a><a data-type="indexterm" data-primary="Borgmon" data-secondary="timeseries arena" id="idm140203537515104"></a>A service is typically made up of many binaries running as many tasks,
+on many machines, in many clusters.  Borgmon needs to keep all that
+data organized, while allowing flexible querying and slicing of that
+data.</p>
+
+<p>Borgmon stores all the data in an in-memory database, regularly
+checkpointed to disk.  The data points have the form <code>(timestamp,
+value)</code>, and are stored in chronological lists called <em>time-series</em>,
+and each time-series is named by a unique set of <em>labels</em>, of
+the form <code>name=value</code>.</p>
+
+<p>As presented in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#fig_structure_of_timeseries">Figure&nbsp;10-1</a>, a time-series is conceptually a one-dimensional matrix of numbers, progressing through time.  As you add permutations of labels to this
+time-series, the matrix becomes multidimensional.</p>
+
+<figure><div id="fig_structure_of_timeseries" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_1001.png" alt=".A time-series for errors labeled by the original host each was collected from." width="1032" height="487">
+<h6><span class="label">Figure 10-1. </span>A time-series for errors labeled by the original host each was collected from</h6>
+</div></figure>
+<!--Change the label from "errors" to "http_requests" to match the other examples</remark>-->
+
+<p>In practice, the structure is a fixed-sized block of memory, known as
+the <em>time-series arena</em>, with a garbage collector that expires the
+oldest entries once the arena is full.  The time interval between the
+most recent and oldest entries in the arena is the <em>horizon</em>,
+which indicates how much queryable data is kept in RAM.  Typically,
+datacenter and global Borgmon are sized to hold about 12 hours of
+data<sup><a data-type="noteref" id="idm140203537505664-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537505664">9</a></sup> for rendering
+consoles, and much less time if they are the lowest-level collector
+shards.  The memory requirement for a single data point is about 24
+bytes, so we can fit 1 million unique time-series for 12 hours at 1-minute intervals in under 17 GB of RAM.</p>
+
+<p><a data-type="indexterm" data-primary="Time-Series Database (TSDB)" id="idm140203537503840"></a>Periodically, the in-memory state is archived to an external system
+known as the Time-Series Database (TSDB).  Borgmon can query TSDB for
+older data and, while slower, TSDB is cheaper and larger than a
+Borgmon’s RAM.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Labels and Vectors"><div class="sect2" id="idm140203537502624">
+<h2>Labels and Vectors</h2>
+
+<p><a data-type="indexterm" data-primary="multidimensional matrices" id="idm140203537501488"></a><a data-type="indexterm" data-primary="vectors" id="idm140203537500800"></a><a data-type="indexterm" data-primary="Borgmon" data-secondary="vectors" id="Bvect10"></a>As shown in the example time-series in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#fig_timestamp">Figure&nbsp;10-2</a>, time-series are stored as sequences of numbers and timestamps, which
+are referred to as <em>vectors</em>.  Like vectors in linear algebra, these
+vectors are slices and cross-sections of the multidimensional matrix
+of data points in the arena.  Conceptually the timestamps can be
+ignored, because the values are inserted in the vector at regular
+intervals in time—for example, 1 or 10 seconds or 1 minute apart.</p>
+
+<figure><div id="fig_timestamp" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_1002.png" alt="An example time-series." width="1476" height="193">
+<h6><span class="label">Figure 10-2. </span>An example time-series</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="labelsets" id="idm140203537494736"></a>The name of a time-series is a <em>labelset</em>, because it’s implemented as a set of labels expressed as <code>key=value</code> pairs. One of these labels is the
+variable name itself, the key that appears on the varz page.</p>
+
+<p>A few label names are declared as important. For the
+time-series in the time-series database to be identifiable, it must at minimum
+have the following labels:</p>
+<dl>
+<dt><code>var</code></dt>
+<dd>
+<p>The name of the variable</p>
+</dd>
+<dt><code>job</code></dt>
+<dd>
+<p>The name given to the type of server being monitored</p>
+</dd>
+<dt><code>service</code></dt>
+<dd>
+<p>A loosely defined collection of jobs that provide a
+service to users, either internal or external</p>
+</dd>
+<dt><code>zone</code></dt>
+<dd>
+<p>A Google convention that refers to the location (typically
+the datacenter) of the Borgmon that performed the collection of
+this variable</p>
+</dd>
+</dl>
+
+<p><a data-type="indexterm" data-primary="variable expressions" id="idm140203537485392"></a>Together, these variables appear something like the following, called
+the <em>variable expression</em>:</p>
+
+<pre data-type="programlisting">{var=http_requests,job=webserver,instance=host0:80,service=web,zone=us-west}</pre>
+
+<p>A query for a time-series does not require specification of all these
+labels, and a search for a <em>labelset</em> returns all matching time-series in
+a vector.  So we could return a vector of results by removing the
+<code>instance</code> label in the preceding query, if there were more than one
+instance in the cluster. For example:</p>
+
+<pre data-type="programlisting">{var=http_requests,job=webserver,service=web,zone=us-west}</pre>
+
+<p>might have a result of five rows in a vector, with the most recent
+value in the time-series like so:</p>
+
+<pre data-type="programlisting">{var=http_requests,job=webserver,instance=host0:80,service=web,zone=us-west} 10
+{var=http_requests,job=webserver,instance=host1:80,service=web,zone=us-west} 9
+{var=http_requests,job=webserver,instance=host2:80,service=web,zone=us-west} 11
+{var=http_requests,job=webserver,instance=host3:80,service=web,zone=us-west} 0
+{var=http_requests,job=webserver,instance=host4:80,service=web,zone=us-west} 10</pre>
+
+<p>Labels can be added to a time-series from:</p>
+
+<ul>
+<li>
+<p>The target’s name, e.g., the job and instance</p>
+</li>
+<li>
+<p>The target itself, e.g., via map-valued variables</p>
+</li>
+<li>
+<p>The Borgmon configuration, e.g., annotations about location or
+relabeling</p>
+</li>
+<li>
+<p>The Borgmon rules being evaluated</p>
+</li>
+</ul>
+
+<p><a data-type="indexterm" data-primary="" data-startref="TSMdata10" id="idm140203537474336"></a>We can also query time-series in time, by specifying a duration to
+the variable expression:</p>
+
+<pre id="historical_variable_expression" data-type="programlisting">{var=http_requests,job=webserver,service=web,zone=us-west}[10m]</pre>
+
+<p>This returns the last 10 minutes of history of the time-series that
+matched the expression.  If we were collecting data points once per
+minute, we would expect to return 10 data points in a 10-minute
+window, like so:<sup><a data-type="noteref" id="idm140203537471440-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537471440">10</a></sup><a data-type="indexterm" data-primary="" data-startref="Bvect10" id="idm140203537469920"></a></p>
+
+<pre data-type="programlisting">{var=http_requests,job=webserver,instance=host0:80, ...} 0 1 2 3 4 5 6 7 8 9 10
+{var=http_requests,job=webserver,instance=host1:80, ...} 0 1 2 3 4 4 5 6 7 8 9
+{var=http_requests,job=webserver,instance=host2:80, ...} 0 1 2 3 5 6 7 8 9 9 11
+{var=http_requests,job=webserver,instance=host3:80, ...} 0 0 0 0 0 0 0 0 0 0 0
+{var=http_requests,job=webserver,instance=host4:80, ...} 0 1 2 3 4 5 6 7 8 9 10</pre>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Rule Evaluation"><div class="sect1" id="idm140203537467392">
+<h1>Rule Evaluation</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="rule evaluation" id="TSMrule10"></a><a data-type="indexterm" data-primary="rule evaluation, in monitoring systems" id="rule10"></a>Borgmon is really just a programmable calculator, with some syntactic
+sugar that enables it to generate alerts.  The data collection and
+storage components already described are just necessary evils to make
+that programmable calculator ultimately fit for purpose here as a
+monitoring system. :)</p>
+<div data-type="note" epub:type="note"><h6>Note</h6>
+<p>Centralizing the rule evaluation in a monitoring system, rather than
+delegating it to forked subprocesses, means that computations can run
+in parallel against many similar targets.  This practice keeps the
+configuration relatively small in size (for example, by removing
+duplication of code) yet more powerful through its expressiveness.</p>
+</div>
+
+<p><a data-type="indexterm" data-primary="Borgmon" data-secondary="rules" id="Brule10"></a>The Borgmon program code, also known as <em>Borgmon rules</em>, consists of simple
+algebraic expressions that compute time-series from other time-series. These rules can be quite powerful because they can query
+the history of a single time-series (i.e., the time axis), query
+different subsets of labels from many time-series at once (i.e., the
+space axis), and apply many mathematical operations.</p>
+
+<p>Rules run in a parallel threadpool where possible, but are dependent
+on ordering when using previously defined rules as input.  The size of
+the vectors returned by their query expressions also determines the
+overall runtime of a rule.  Thus, it is typically the case that one
+can add CPU resources to a Borgmon task in response to it running
+slow.  To assist more detailed analysis, internal metrics on the
+runtime of rules are exported for performance debugging and for
+monitoring the monitoring.</p>
+
+<p><a data-type="indexterm" data-primary="aggregation" id="idm140203537458480"></a>Aggregation is the cornerstone of rule evaluation in a distributed
+environment. Aggregation entails taking the sum of a set of time-series
+from the tasks in a job in order to treat the job as a whole. From
+those sums, overall rates can be computed. For example, the total
+queries-per-second rate of a job in a datacenter is the sum of all the
+rates of change<sup><a data-type="noteref" id="idm140203537457312-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537457312">11</a></sup> of all the
+query counters.<sup><a data-type="noteref" id="idm140203537456416-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537456416">12</a></sup></p>
+<div data-type="tip"><h6>Tip</h6>
+<p>A counter is any nonmonotonically decreasing variable—which is to
+say, counters only increase in value.  Gauges, on the other hand, may
+take any value they like.  Counters measure increasing values, such as
+the total number of kilometers driven, while gauges show current
+state, such as the amount of fuel remaining or current speed.  When
+collecting Borgmon-style data, it’s better to use counters, because they
+don’t lose meaning when events occur between sampling
+intervals. Should any activity or changes occur between sampling
+intervals, a gauge collection is likely to miss that activity.</p>
+</div>
+
+<p>For an example web server, we might want to alert when our web server
+cluster starts to serve more errors as a percent of requests than we
+think is normal—or more technically, when the sum of the rates of
+non-HTTP-200 return codes on all tasks in the cluster, divided by the
+sum of the rates of requests to all tasks in that cluster, is greater
+than some value.</p>
+
+<p>This is accomplished by:</p>
+<ol>
+<li>
+<p>Aggregating the rates of response codes across all tasks,
+outputting a vector of rates at that point in time, one for each
+code.</p>
+</li>
+<li>
+<p>Computing the total error rate as the sum of that vector,
+outputting a single value for the cluster at that point in time.
+This total error rate excludes the 200 code from the sum, because it
+is not an error.</p>
+</li>
+<li>
+<p>Computing the cluster-wide ratio of errors to requests, dividing
+the total error rate by the rate of requests that arrived, and
+again outputting a single value for the cluster at that point in
+time.</p>
+</li>
+
+</ol>
+
+<p>Each of these outputs at a point in time gets appended to its named
+variable expression, which creates the new time-series.  As a result,
+we will be able to inspect the history of error rates and error ratios
+some other time.</p>
+
+<p>The rate of requests rules would be written in Borgmon’s rule language
+as the <span class="keep-together">following</span>:</p>
+
+<pre data-type="programlisting">rules &lt;&lt;&lt;
+  # Compute the rate of requests for each task from the count of requests
+  {var=task:http_requests:rate10m,job=webserver} =
+    rate({var=http_requests,job=webserver}[10m]);
+
+  # Sum the rates to get the aggregate rate of queries for the cluster;
+  # ‘without instance’ instructs Borgmon to remove the instance label
+  # from the right hand side.
+  {var=dc:http_requests:rate10m,job=webserver} =
+    sum without instance({var=task:http_requests:rate10m,job=webserver})
+&gt;&gt;&gt;</pre>
+
+<p><a data-type="indexterm" data-primary="Borgmon" data-secondary="rate() function" id="idm140203537445728"></a>The <code>rate()</code> function takes the enclosed expression and
+returns the total delta divided by the total time between the earliest
+and latest values.</p>
+
+<p>With the example time-series data from the query before, the results
+for the <code>task:http_requests:rate10m</code> rule would look like:<sup><a data-type="noteref" id="idm140203537443088-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537443088">13</a></sup></p>
+
+<pre data-type="programlisting">{var=task:http_requests:rate10m,job=webserver,instance=host0:80, ...} 1
+{var=task:http_requests:rate10m,job=webserver,instance=host2:80, ...} 0.9
+{var=task:http_requests:rate10m,job=webserver,instance=host3:80, ...} 1.1
+{var=task:http_requests:rate10m,job=webserver,instance=host4:80, ...} 0
+{var=task:http_requests:rate10m,job=webserver,instance=host5:80, ...} 1</pre>
+
+<p>and the results for the <code>dc:http_requests:rate10m</code> rule would be:</p>
+
+<pre data-type="programlisting">{var=dc:http_requests:rate10m,job=webserver,service=web,zone=us-west} 4</pre>
+
+<p>because the second rule uses the first one as input.</p>
+<div data-type="note" epub:type="note"><h6>Note</h6>
+<p>The <code>instance</code> label is missing in the output now, discarded by the
+aggregation rule.  If it had remained in the rule, then Borgmon would
+not have been able to sum the five rows together.</p>
+</div>
+
+<p>In these examples, we use a time window because we’re dealing with
+discrete points in the time-series, as opposed to continuous functions.
+Doing so makes the rate calculation easier than performing calculus,
+but means that to compute a rate, we need to select a sufficient
+number of data points. We also have to deal with the possibility that
+some recent collections have failed. Recall that the historical
+variable expression notation uses the range <code>[10m]</code> to avoid
+missing data points caused by collection errors.</p>
+
+<p>The example also uses a Google convention that helps readability. Each
+computed variable name contains a colon-separated triplet indicating the
+aggregation level, <span class="keep-together">the variable name,</span> and the operation that created
+that name. In this example, the lefthand variables are “task HTTP requests 10-minute rate” and “datacenter HTTP requests 10-minute rate.”</p>
+
+<p>Now that we know how to create a rate of queries, we can build on that to
+also compute a rate of errors, and then we can calculate the ratio of
+responses to requests to understand how much useful work the service
+is doing. We can compare the ratio rate of errors to our service level
+objective (see <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch04.html#chapter_sli-slo-sla">Chapter&nbsp;4</a>) and alert if this objective is
+missed or in danger of being missed:</p>
+
+<pre data-type="programlisting" class="pagebreak-before">rules &lt;&lt;&lt;
+  # Compute a rate pertask and per ‘code’ label
+  {var=task:http_responses:rate10m,job=webserver} =
+    rate by code({var=http_responses,job=webserver}[10m]);
+
+  # Compute a cluster level response rate per ‘code’ label
+  {var=dc:http_responses:rate10m,job=webserver} =
+    sum without instance({var=task:http_responses:rate10m,job=webserver});
+
+  # Compute a new cluster level rate summing all non 200 codes
+  {var=dc:http_errors:rate10m,job=webserver} = sum without code(
+    {var=dc:http_responses:rate10m,jobwebserver,code=!/200/};
+
+  # Compute the ratio of the rate of errors to the rate of requests
+  {var=dc:http_errors:ratio_rate10m,job=webserver} =
+    {var=dc:http_errors:rate10m,job=webserver}
+      /
+    {var=dc:http_requests:rate10m,job=webserver};
+&gt;&gt;&gt;</pre>
+
+<p>Again, this calculation demonstrates the convention of suffixing the
+new time-series variable name with the operation that created it. This
+result is read as “datacenter HTTP errors 10 minute ratio of rates.”</p>
+
+<p>The output of these rules might look like:<sup><a data-type="noteref" id="idm140203537429248-marker" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537429248">14</a></sup></p>
+
+<p><code>{var=task:http_responses:rate10m,job=webserver}</code></p>
+
+<pre data-type="programlisting">{var=task:http_responses:rate10m,job=webserver,code=200,instance=host0:80, ...} 1
+{var=task:http_responses:rate10m,job=webserver,code=500,instance=host0:80, ...} 0
+{var=task:http_responses:rate10m,job=webserver,code=200,instance=host1:80, ...} 0.5
+{var=task:http_responses:rate10m,job=webserver,code=500,instance=host1:80, ...} 0.4
+{var=task:http_responses:rate10m,job=webserver,code=200,instance=host2:80, ...} 1
+{var=task:http_responses:rate10m,job=webserver,code=500,instance=host2:80, ...} 0.1
+{var=task:http_responses:rate10m,job=webserver,code=200,instance=host3:80, ...} 0
+{var=task:http_responses:rate10m,job=webserver,code=500,instance=host3:80, ...} 0
+{var=task:http_responses:rate10m,job=webserver,code=200,instance=host4:80, ...} 0.9
+{var=task:http_responses:rate10m,job=webserver,code=500,instance=host4:80, ...} 0.1</pre>
+
+<p><code>{var=dc:http_responses:rate10m,job=webserver}</code></p>
+
+<pre data-type="programlisting">{var=dc:http_responses:rate10m,job=webserver,code=200, ...} 3.4
+{var=dc:http_responses:rate10m,job=webserver,code=500, ...} 0.6</pre>
+
+<p><code>{var=dc:http_responses:rate10m,jobwebserver,code=!/200/}</code></p>
+
+<pre data-type="programlisting">{var=dc:http_responses:rate10m,job=webserver,code=500, ...} 0.6</pre>
+
+<p><code>{var=dc:http_errors:rate10m,job=webserver}</code></p>
+
+<pre data-type="programlisting">{var=dc:http_errors:rate10m,job=webserver, ...} 0.6</pre>
+
+<p><code>{var=dc:http_errors:ratio_rate10m,job=webserver}</code></p>
+
+<pre data-type="programlisting">{var=dc:http_errors:ratio_rate10m,job=webserver} 0.15</pre>
+<div data-type="note" epub:type="note"><h6>Note</h6>
+<p>The preceding output shows the intermediate query in the
+<code>dc:http_errors:rate10m</code> rule that filters the non-200 error codes.
+Though the value of the expressions are the same, observe that the
+code label is retained in one but removed from the other.<a data-type="indexterm" data-primary="" data-startref="Brule10" id="idm140203537418416"></a></p>
+</div>
+
+<p>As mentioned previously, Borgmon rules create new time-series, so the
+results of the computations are kept in the time-series arena and can
+be inspected just as the source time-series are. The ability to do so
+allows for ad hoc querying, evaluation, and exploration as tables or
+charts.  This is a useful feature for debugging while on-call, and if
+these ad hoc queries prove useful, they can be made permanent
+visualizations on a service console.<a data-type="indexterm" data-primary="" data-startref="TSMrule10" id="idm140203537416432"></a><a data-type="indexterm" data-primary="" data-startref="rule10" id="idm140203537415488"></a></p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Alerting"><div class="sect1" id="idm140203537414224">
+<h1>Alerting</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="alerting" id="idm140203537413088"></a><a data-type="indexterm" data-primary="Borgmon" data-secondary="alerting" id="idm140203537412144"></a>When an alerting rule is evaluated by a Borgmon, the result is either
+true, in which case the alert is triggered, or false. Experience shows
+that alerts can “flap” (toggle their state quickly); therefore,
+the rules allow a minimum duration for which the alerting rule must be
+true before the alert is sent. Typically, this duration is set to at
+least two rule evaluation cycles to ensure no missed collections cause
+a false alert.</p>
+
+<p>The following example creates an alert when the error ratio over 10 minutes exceeds 1%
+and the total number of errors exceeds 1:</p>
+<pre data-type="programlisting">rules &lt;&lt;&lt;
+  {var=dc:http_errors:ratio_rate10m,job=webserver} &gt; 0.01
+    and by job, error
+  {var=dc:http_errors:rate10m,job=webserver} &gt; 1
+    for 2m
+    =&gt; ErrorRatioTooHigh
+      details "webserver error ratio at [[trigger_value]]"
+      labels {severity=page};
+&gt;&gt;&gt;
+</pre>
+
+<p>Our example holds the ratio rate at 0.15, which is well over the
+threshold of 0.01 in the alerting rule.  However, the number of errors
+is not greater than 1 at this moment, so the alert won’t be active.
+Once the number of errors exceeds 1, the alert will go <em>pending</em> for
+two minutes to ensure it isn’t a transient state, and only then
+will it <em>fire</em>.</p>
+
+<p>The alert rule contains a small template for filling out a message
+containing contextual information: which job the alert is for, the
+name of the alert, the numerical value of the triggering rule, and so
+on. The contextual information is filled out by Borgmon when the alert
+fires and is sent in the Alert RPC.</p>
+
+<p><a data-type="indexterm" data-primary="Alertmanager service" id="idm140203537406416"></a>Borgmon is connected to a centrally run service, known as the
+Alertmanager, which receives Alert RPCs when the rule first triggers,
+and then again when the alert is considered to be “firing.” The
+Alertmanager is responsible for routing the alert notification to the
+correct destination. Alertmanager can be configured to do the
+following:</p>
+
+<ul>
+<li>
+<p>Inhibit certain alerts when others are active</p>
+</li>
+<li>
+<p>Deduplicate alerts from multiple Borgmon that have the same
+labelsets</p>
+</li>
+<li>
+<p>Fan-in or fan-out alerts based on their labelsets when multiple
+alerts with similar labelsets fire</p>
+</li>
+</ul>
+
+<p>As described in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#chapter_monitoring">Chapter&nbsp;6</a>, teams send their page-worthy alerts to their on-call rotation
+and their important but subcritical alerts to their ticket queues. All
+other alerts should be retained as informational data for status
+dashboards.</p>
+
+<p>A more comprehensive guide to alert design can be found in
+<a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch04.html#chapter_sli-slo-sla">Chapter&nbsp;4</a>.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Sharding the Monitoring Topology"><div class="sect1" id="idm140203537398848">
+<h1>Sharding the Monitoring Topology</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="monitoring topology" id="idm140203537397696"></a><a data-type="indexterm" data-primary="Borgmon" data-secondary="sharding" id="idm140203537396752"></a>A Borgmon can import time-series data from other Borgmon, as well.
+While one could attempt to collect from all tasks in a service
+globally, doing so quickly becomes a scaling bottleneck and introduces
+a single point of failure into the design. Instead, a streaming
+protocol is used to transmit time-series data between Borgmon, saving
+CPU time and network bytes compared to the text-based varz format. A
+typical such deployment uses two or more global Borgmon for top-level
+aggregation and one Borgmon in each datacenter to monitor all the jobs
+running at that location. (Google divides the production network into
+zones for production changes, so having two or more global replicas
+provides diversity in the face of maintenance and outages for this
+otherwise single point of failure.)</p>
+
+<p>As shown in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#fig_borgmon_dataflow">Figure&nbsp;10-3</a>, more complicated deployments
+shard the datacenter Borgmon further into a purely scraping-only layer
+(often due to RAM and CPU constraints in a single Borgmon for very
+large services) and a DC aggregation layer that performs mostly rule
+evaluation for aggregation. Sometimes the global layer is split
+between rule evaluation and dashboarding. Upper-tier Borgmon can
+filter the data they want to stream from the lower-tier Borgmon, so
+that the global Borgmon does not fill its arena with all the per-task
+time-series from the lower tiers. Thus, the aggregation hierarchy
+builds local caches of relevant time-series that can be drilled down
+into when required.</p>
+
+<figure><div id="fig_borgmon_dataflow" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/site-reliability-engineering/9781491929117/assets/srle_1003.png" alt="A data flow model of a hierarchy of Borgmon in three clusters." width="1528" height="878">
+<h6><span class="label">Figure 10-3. </span>A data flow model of a hierarchy of Borgmon in three clusters</h6>
+</div></figure>
+<!-- Notes to production:
+Feedback: "Figure 14.2
+Put Cluster A, B, C at the top of each rectangle"
+More feedback: The "more complicated" example in the data flow diagram is extremely busy and hard to follow. DC scraping Borgmon doesn’t help the simplicity here. It would be better to show a diagram of a simpler setup. And better separate out (perhaps color code) the different data flows so there are very few overlapping arrows.
+-->
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Black-Box Monitoring"><div class="sect1" id="idm140203537389744">
+<h1>Black-Box Monitoring</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="black-box monitoring" id="idm140203537388608"></a><a data-type="indexterm" data-primary="black-box monitoring" id="idm140203537387664"></a><a data-type="indexterm" data-primary="monitoring distributed systems" data-secondary="blackbox vs. whitebox" id="idm140203537386992"></a>Borgmon is a white-box monitoring system—it inspects the internal
+state of the target service, and the rules are written with knowledge
+of the internals in mind. The transparent nature of this model
+provides great power to identify quickly what components are failing,
+which queues are full, and where bottlenecks occur, both when
+responding to an incident and when testing a new feature deployment.</p>
+
+<p>However, white-box monitoring does not provide a full picture of the
+system being monitored; relying solely upon white-box monitoring means
+that you aren’t aware of what the users see. You only see the queries
+that arrive at the target; the queries that never make it due to a DNS
+error are invisible, while queries lost due to a server crash never
+make a sound. You can only alert on the failures that you expected.</p>
+
+<p>Teams at Google solve this coverage issue with Prober, which runs a
+protocol check against a target and reports success or failure. The
+prober can send alerts directly to Alertmanager, or its own varz can
+be collected by a Borgmon. Prober can validate the response payload of
+the protocol (e.g., the HTML contents of an HTTP response) and validate
+that the contents are expected, and even extract and export values as
+time-series. Teams often use Prober to export histograms of response
+times by operation type and payload size so that they can slice and
+dice the user-visible performance.  Prober is a hybrid of the
+check-and-test model with some richer variable extraction to create
+time-series.</p>
+
+<p>Prober can be pointed at either the frontend domain or behind the
+load balancer. By using both targets, we can detect localized failures
+and suppress alerts. For example, we might monitor both the
+load balanced <em>www.google.com</em> and the web servers in each datacenter
+behind the load balancer. This setup allows us to either know that
+traffic is still served when a datacenter fails, or to quickly isolate
+an edge in the traffic flow graph where a failure has occurred.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Maintaining the Configuration"><div class="sect1" id="idm140203537381872">
+<h1>Maintaining the Configuration</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="maintaining Borgmon configuration" id="idm140203537380720"></a><a data-type="indexterm" data-primary="Borgmon" data-secondary="configuration" id="idm140203537379760"></a>Borgmon configuration separates the definition of the rules from the
+targets being monitored. This means the same sets of rules can be
+applied to many targets at once, instead of writing nearly identical
+configuration over and over.  This separation of concerns might seem
+incidental, but it greatly reduces the cost of maintaining the
+monitoring by avoiding lots of repetition in describing the target
+systems.</p>
+
+<p>Borgmon also supports language templates. This macro-like system
+enables engineers to construct libraries of rules that can be
+reused. This functionality again reduces repetition, thus reducing the
+likelihood of bugs in the configuration.</p>
+
+<p>Of course, any high-level programming environment creates the
+opportunity for complexity, so Borgmon provides a way to build
+extensive unit and regression tests by synthesizing time-series data,
+in order to ensure that the rules behave as the author thinks
+they do. The Production Monitoring team runs a continuous integration
+service that executes a suite of these tests, packages the
+configuration, and ships the configuration to all the Borgmon in
+production, which then validate the configuration before accepting it.</p>
+
+<p>In the vast library of common templates that have been created, two
+classes of monitoring configuration have emerged. The first class
+simply codifies the emergent schema of variables exported from a given
+library of code, such that any user of the library can reuse the
+template of its varz. Such templates exist for the HTTP server
+library, memory allocation, the storage client library, and generic
+RPC services, among others. (While the varz interface declares no
+schema, the rule library associated with the code library ends up
+declaring a schema.)</p>
+
+<p>The second class of library emerged as we built templates to manage
+the aggregation of data from a single-server task to the global
+service footprint. These libraries contain generic aggregation rules
+for exported variables that engineers can use to model the topology of
+their service.</p>
+
+<p class="pagebreak-before">For example, a service may provide a single global API, but be homed
+in many datacenters. Within each datacenter, the service is composed
+of several shards, and each shard is composed of several jobs with
+various numbers of tasks.  An engineer can model this breakdown
+with Borgmon rules so that when debugging, subcomponents can be
+isolated from the rest of the system.  These groupings typically
+follow the shared fate of components; e.g., individual tasks share fate
+due to configuration files, jobs in a shard share fate because they’re
+homed in the same datacenter, and physical sites share fate due to
+networking.</p>
+
+<p>Labeling conventions make such division possible: a Borgmon adds
+labels indicating the target’s instance name and the shard and
+datacenter it occupies, which can be used to group and aggregate those
+time-series together.</p>
+
+<p>Thus, we have multiple uses for labels on a time-series, though all are
+interchangeable:</p>
+
+<ul>
+<li>
+<p>Labels that define breakdowns of the data itself (e.g., our HTTP
+response code on the <code>http_responses</code> variable)</p>
+</li>
+<li>
+<p>Labels that define the source of the data (e.g., the instance or job
+name)</p>
+</li>
+<li>
+<p>Labels that indicate the locality or aggregation of the data within
+the service as a whole (e.g., the zone label describing a physical
+location, a shard label describing a logical grouping of tasks)</p>
+</li>
+</ul>
+
+<p>The templated nature of these libraries allows flexibility in their
+use.  The same template can be used to aggregate from each tier.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Ten Years On…"><div class="sect1" id="idm140203537367632">
+<h1>Ten Years On…</h1>
+
+<p><a data-type="indexterm" data-primary="time-series monitoring" data-secondary="scaling" id="idm140203537366496"></a>Borgmon transposed the model of check-and-alert per target into mass
+variable collection and a centralized rule evaluation across the
+time-series for alerting and <span class="keep-together">diagnostics</span>.</p>
+
+<p>This decoupling allows the size of the system being monitored to scale
+independently of the size of alerting rules. These rules cost less to
+maintain because they’re abstracted over a common time-series
+format. New applications come ready with metric exports in all
+components and libraries to which they link, and well-traveled
+aggregation and console templates, which further reduces the burden of
+implementation.</p>
+
+<p>Ensuring that the cost of maintenance scales sublinearly with the size
+of the service is key to making monitoring (and all sustaining
+operations work) maintainable. This theme recurs in all SRE work, as
+SREs work to scale all aspects of their work to the global scale.</p>
+
+<p>Ten years is a long time, though, and of course today the shape of the
+monitoring landscape within Google has evolved with experiments and
+changes, striving for continual improvement as the company grows.</p>
+
+<p>Even though Borgmon remains internal to Google, the idea of treating
+time-series data as a data source for generating alerts is now
+accessible to everyone through those open source tools like
+Prometheus, Riemann, Heka, and Bosun, and probably others by the time
+you read this.<a data-type="indexterm" data-primary="" data-startref="brgmn10" id="idm140203537361632"></a></p>
+</div></section>
+
+
+
+
+
+
+
+<div data-type="footnotes"><p data-type="footnote" id="idm140203537558960"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537558960-marker">1</a></sup> Prometheus is an open source monitoring and time-series database system available at <a href="http://prometheus.io/"><em class="hyperlink">http://prometheus.io</em></a>.</p><p data-type="footnote" id="idm140203537550736"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537550736-marker">2</a></sup> Google was born in the USA, so we pronounce this <em>“var-zee.”</em></p><p data-type="footnote" id="idm140203537547856"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537547856-marker">3</a></sup> The plural of Borgmon is Borgmon, like sheep.</p><p data-type="footnote" id="idm140203537539632"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537539632-marker">4</a></sup> Many non-SRE teams use a generator to stamp out the initial boilerplate and ongoing updates, and find the generator much easier to use (though less powerful) than directly editing the rules.</p><p data-type="footnote" id="idm140203537537232"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537537232-marker">5</a></sup> Many other applications use their service protocol to export their internal state, as well.  OpenLDAP exports it through the <code>cn=Monitor</code> subtree; MySQL can report state with a <code>SHOW VARIABLES</code> query; Apache has its <code>mod_status</code> handler.</p><p data-type="footnote" id="idm140203537534384"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537534384-marker">6</a></sup> <a href="https://golang.org/pkg/expvar/"><em class="hyperlink">https://golang.org/pkg/expvar/</em></a></p><p data-type="footnote" id="idm140203537529952"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537529952-marker">7</a></sup> The Borg Name System (BNS) is described in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch02.html#chapter_production-environment">Chapter&nbsp;2</a>.</p><p data-type="footnote" id="idm140203537519600"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537519600-marker">8</a></sup> Recall in <a data-type="xref" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch06.html#chapter_monitoring">Chapter&nbsp;6</a> the distinction between alerting on symptoms and on causes.</p><p data-type="footnote" id="idm140203537505664"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537505664-marker">9</a></sup> This 12-hour horizon is a magic number that aims to have enough information for debugging an incident in RAM for fast queries without costing <em>too much</em> RAM.</p><p data-type="footnote" id="idm140203537471440"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537471440-marker">10</a></sup> The <code>service</code> and <code>zone</code> labels are elided here for space, but are present in the returned expression.</p><p data-type="footnote" id="idm140203537457312"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537457312-marker">11</a></sup> Computing the sum of rates instead of the rate of sums defends the result against counter resets or missing data, perhaps due to a task restart or failed collection of data.</p><p data-type="footnote" id="idm140203537456416"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537456416-marker">12</a></sup> Despite being untyped, the majority of varz are simple counters. Borgmon’s rate function handles all the corner cases of counter resets.</p><p data-type="footnote" id="idm140203537443088"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537443088-marker">13</a></sup> The <code>service</code> and <code>zone</code> labels are elided for space.</p><p data-type="footnote" id="idm140203537429248"><sup><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#idm140203537429248-marker">14</a></sup> The <code>service</code> and <code>zone</code> labels are elided for space.</p></div></div></section></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/part03.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">III. Practices</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/site-reliability-engineering/9781491929117/ch11.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">11. Being On-Call</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9781491929117/chapter/ch10.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="js-related-container related"></div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+    
+
+
+  
+
+<div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/site-reliability-engineering/9781491929117/ch10.html#">Reset</a>
+</div>
+</div></body></html>
