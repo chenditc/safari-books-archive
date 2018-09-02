@@ -1,0 +1,686 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/clean-code/9780136083238/ch05.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9780136083238"
+  data-publishers="Prentice Hall"
+
+
+
+  data-htmlfile-name="ch05.html"
+  data-epub-title="Clean Code" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/clean-code/9780136083238/ch05.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9780136083238" data-publishers="Prentice Hall" data-htmlfile-name="ch05.html" data-epub-title="Clean Code" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780136083238"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>5. Formatting - Clean Code</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book"></style><link rel="canonical" href="/Library/view/clean-code/9780136083238/ch05.html"><meta name="description" content="Chapter&nbsp;5.&nbsp;Formatting When people look under the hood, we want them to be impressed with the neatness, consistency, and attention to detail that they perceive. We want them to ... "><meta property="og:title" content="5. Formatting"><meta itemprop="isPartOf" content="/library/view/clean-code/9780136083238/"><meta itemprop="name" content="5. Formatting"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch05.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780136083238/"><meta property="og:description" itemprop="description" content="Chapter&nbsp;5.&nbsp;Formatting When people look under the hood, we want them to be impressed with the neatness, consistency, and attention to detail that they perceive. We want them to ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Prentice Hall"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780136083238"><meta property="og:book:author" itemprop="author" content="Robert C. Martin"><meta property="og:book:tag" itemprop="about" content="Agile"><meta property="og:book:tag" itemprop="about" content="Core Programming"><meta property="og:book:tag" itemprop="about" content="Lean"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Clean Code
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/ch05.html" data-for-analytics="9780136083238:ch05.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch05.html&amp;text=Clean%20Code&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch05.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch05.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%205.%20Formatting&amp;body=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch05.html%0D%0Afrom%20Clean%20Code%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch04.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">4. Comments</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch06.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">6. Objects and Data Structures</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="ch05"></a>Chapter&nbsp;5.&nbsp;Formatting</h1></div></div></div><div class="mediaobject"><a id="f075fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/5_1fig_martin.jpg" width="300" alt="Formatting" height="276" data-mfp-src="/library/view/clean-code/9780136083238/graphics/5_1fig_martin.jpg"></div><p>When people look under the hood, we want them to be impressed with the neatness, consistency, and attention to detail that they perceive. We want them to be struck by the orderliness. We want their eyebrows to rise as they scroll through the modules. We want them to perceive that professionals have been at work. If instead they see a scrambled mass of code that looks like it was written by a bevy of drunken sailors, then they are likely to conclude that the same inattention to detail pervades every other aspect of the project.</p><p><a id="iddle1040" class="indexterm"></a><a id="iddle1216" class="indexterm"></a><a id="iddle1555" class="indexterm"></a><a id="iddle1560" class="indexterm"></a><a id="iddle1569" class="indexterm"></a><a id="iddle1571" class="indexterm"></a><a id="iddle1738" class="indexterm"></a><a id="iddle1748" class="indexterm"></a><a id="iddle1758" class="indexterm"></a><a id="iddle2040" class="indexterm"></a><a id="iddle2287" class="indexterm"></a><a id="iddle2351" class="indexterm"></a><a id="iddle2359" class="indexterm"></a><a id="iddle2411" class="indexterm"></a>You should take care that your code is nicely formatted. You should choose a set of simple rules that govern the format of your code, and then you should consistently apply those rules. If you are working on a team, then the team should agree to a single set of formatting rules and all members should comply. It helps to have an automated tool that can apply those formatting rules for you.</p><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch05lev1sec1"></a>The Purpose of Formatting</h1></div></div></div><p>First of all, let’s be clear. Code formatting is <span class="emphasis"><em>important</em></span>. It is too important to ignore and it is too important to treat religiously. Code formatting is about communication, and communication is the professional developer’s first order of business.</p><p>Perhaps you thought that “getting it working” was the first order of business for a professional developer. I hope by now, however, that this book has disabused you of that idea. The functionality that you create today has a good chance of changing in the next release, but the readability of your code will have a profound effect on all the changes that will ever be made. The coding style and readability set precedents that continue to affect maintainability and extensibility long after the original code has been changed beyond recognition. Your style and discipline survives, even though your code does not.</p><p>So what are the formatting issues that help us to communicate best?</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch05lev1sec2"></a>Vertical Formatting</h1></div></div></div><p>Let’s start with vertical size. How big should a source file be? In Java, file size is closely related to class size. We’ll talk about class size when we talk about classes. For the moment let’s just consider file size.</p><p>How big are most Java source files? It turns out that there is a huge range of sizes and some remarkable differences in style. <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05fig01">Figure 5-1</a> shows some of those differences.</p><div class="figure-float" style="float: left;"><div class="figure"><a id="ch05fig01"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/5_2fig_martin.gif" height="278" alt="File length distributions LOG scale (box height = sigma)" width="500" data-mfp-src="/library/view/clean-code/9780136083238/graphics/5_2fig_martin.gif"></div></div><p class="title"><strong>Figure&nbsp;5-1.&nbsp;File length distributions LOG scale (box height = sigma)</strong></p></div></div><p>Seven different projects are depicted. Junit, FitNesse, testNG, Time and Money, JDepend, Ant, and Tomcat. The lines through the boxes show the minimum and maximum file lengths in each project. The box shows approximately one-third (one standard deviation<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ftn.ch05fn01" class="footnote" id="ch05fn01"><sup class="footnote">[1]</sup></a>) of the files. The middle of the box is the mean. So the average file size in the FitNesse project is about 65 lines, and about one-third of the files are between 40 and 100+ lines. The largest file in FitNesse is about 400 lines and the smallest is 6 lines. Note that this is a log scale, so the small difference in vertical position implies a very large difference in absolute size.</p><p><a id="iddle1041" class="indexterm"></a><a id="iddle1561" class="indexterm"></a><a id="iddle1749" class="indexterm"></a><a id="iddle1759" class="indexterm"></a><a id="iddle1890" class="indexterm"></a><a id="iddle2170" class="indexterm"></a><a id="iddle2177" class="indexterm"></a><a id="iddle2237" class="indexterm"></a><a id="iddle2238" class="indexterm"></a><a id="iddle2288" class="indexterm"></a><a id="iddle2352" class="indexterm"></a><a id="iddle2360" class="indexterm"></a>Junit, FitNesse, and Time and Money are composed of relatively small files. None are over 500 lines and most of those files are less than 200 lines. Tomcat and Ant, on the other hand, have some files that are several thousand lines long and close to half are over 200 lines.</p><p>What does that mean to us? It appears to be possible to build significant systems (FitNesse is close to 50,000 lines) out of files that are typically 200 lines long, with an upper limit of 500. Although this should not be a hard and fast rule, it should be considered very desirable. Small files are usually easier to understand than large files are.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec1"></a>The Newspaper Metaphor</h2></div></div></div><p>Think of a well-written newspaper article. You read it vertically. At the top you expect a headline that will tell you what the story is about and allows you to decide whether it is something you want to read. The first paragraph gives you a synopsis of the whole story, hiding all the details while giving you the broad-brush concepts. As you continue downward, the details increase until you have all the dates, names, quotes, claims, and other minutia.</p><p>We would like a source file to be like a newspaper article. The name should be simple but explanatory. The name, by itself, should be sufficient to tell us whether we are in the right module or not. The topmost parts of the source file should provide the high-level <a id="iddle1113" class="indexterm"></a><a id="iddle1294" class="indexterm"></a><a id="iddle2387" class="indexterm"></a><a id="iddle2412" class="indexterm"></a>concepts and algorithms. Detail should increase as we move downward, until at the end we find the lowest level functions and details in the source file.</p><p>A newspaper is composed of many articles; most are very small. Some are a bit larger. Very few contain as much text as a page can hold. This makes the newspaper <span class="emphasis"><em>usable</em></span>. If the newspaper were just one long story containing a disorganized agglomeration of facts, dates, and names, then we simply would not read it.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec2"></a>Vertical Openness Between Concepts</h2></div></div></div><p>Nearly all code is read left to right and top to bottom. Each line represents an expression or a clause, and each group of lines represents a complete thought. Those thoughts should be separated from each other with blank lines.</p><p>Consider, for example, <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex01">Listing 5-1</a>. There are blank lines that separate the package declaration, the import(s), and each of the functions. This extremely simple rule has a profound effect on the visual layout of the code. Each blank line is a visual cue that identifies a new and separate concept. As you scan down the listing, your eye is drawn to the first line that follows a blank line.</p><div class="example"><a id="ch05ex01"></a><p class="title"><strong>Example&nbsp;5-1.&nbsp;<code class="literal">BoldWidget.java</code></strong></p><div class="example-contents"><pre class="programlisting">package fitnesse.wikitext.widgets;
+
+import java.util.regex.*;
+
+public class BoldWidget extends ParentWidget {
+  public static final String REGEXP = "'''.+?'''";
+  private static final Pattern pattern = Pattern.compile("'''(.+?)'''",
+    Pattern.MULTILINE + Pattern.DOTALL
+  );
+
+  public BoldWidget(ParentWidget parent, String text) throws Exception {
+    super(parent);
+    Matcher match = pattern.matcher(text);
+    match.find();
+    addChildWidgets(match.group(1));
+  }
+
+  public String render() throws Exception {
+    StringBuffer html = new StringBuffer("&lt;b&gt;");
+    html.append(childHtml()).append("&lt;/b&gt;");
+    return html.toString();
+  }
+}</pre></div></div><p>Taking those blank lines out, as in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex02">Listing 5-2</a>, has a remarkably obscuring effect on the readability of the code.</p><p></p><div class="example"><a id="ch05ex02"></a><p class="title"><strong>Example&nbsp;5-2.&nbsp;<code class="literal">BoldWidget.java</code></strong></p><div class="example-contents"><pre class="programlisting">package fitnesse.wikitext.widgets;
+import java.util.regex.*;
+public class BoldWidget extends ParentWidget {
+  public static final String REGEXP = "'''.+?'''";
+  private static final Pattern pattern = Pattern.compile("'''(.+?)'''",
+    Pattern.MULTILINE + Pattern.DOTALL);
+  public BoldWidget(ParentWidget parent, String text) throws Exception {
+    super(parent);
+    Matcher match = pattern.matcher(text);
+    match.find();
+    addChildWidgets(match.group(1));}
+  public String render() throws Exception {
+    StringBuffer html = new StringBuffer("&lt;b&gt;");
+    html.append(childHtml()).append("&lt;/b&gt;");
+    return html.toString();
+  }
+}</pre></div></div><p><a id="iddle1414" class="indexterm"></a><a id="iddle1542" class="indexterm"></a><a id="iddle2409" class="indexterm"></a>This effect is even more pronounced when you unfocus your eyes. In the first example the different groupings of lines pop out at you, whereas the second example looks like a muddle. The difference between these two listings is a bit of vertical openness.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec3"></a>Vertical Density</h2></div></div></div><p>If openness separates concepts, then vertical density implies close association. So lines of code that are tightly related should appear vertically dense. Notice how the useless comments in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex03">Listing 5-3</a> break the close association of the two instance variables.</p><div class="example"><a id="ch05ex03"></a><p class="title"><strong>Example&nbsp;5-3.&nbsp;</strong></p><div class="example-contents"><pre class="programlisting">public class ReporterConfig {
+
+  /**
+   * The class name of the reporter listener
+   */
+  private String m_className;
+
+  /**
+   * The properties of the reporter listener
+   */
+  private List&lt;Property&gt; m_properties = new ArrayList&lt;Property&gt;();
+
+  public void addProperty(Property property) {
+    m_properties.add(property);
+  }</pre></div></div><p><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex04">Listing 5-4</a> is much easier to read. It fits in an “eye-full,” or at least it does for me. I can look at it and see that this is a class with two variables and a method, without having to move my head or eyes much. The previous listing forces me to use much more eye and head motion to achieve the same level of comprehension.</p><p></p><div class="example"><a id="ch05ex04"></a><p class="title"><strong>Example&nbsp;5-4.&nbsp;</strong></p><div class="example-contents"><pre class="programlisting">public class ReporterConfig {
+  private String m_className;
+  private List&lt;Property&gt; m_properties = new ArrayList&lt;Property&gt;();
+
+  public void addProperty(Property property) {
+    m_properties.add(property);
+  }</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec4"></a>Vertical Distance</h2></div></div></div><p><a id="iddle1289" class="indexterm"></a><a id="iddle1353" class="indexterm"></a><a id="iddle1451" class="indexterm"></a><a id="iddle1796" class="indexterm"></a><a id="iddle2031" class="indexterm"></a><a id="iddle2393" class="indexterm"></a><a id="iddle2410" class="indexterm"></a>Have you ever chased your tail through a class, hopping from one function to the next, scrolling up and down the source file, trying to divine how the functions relate and operate, only to get lost in a rat’s nest of confusion? Have you ever hunted up the chain of inheritance for the definition of a variable or function? This is frustrating because you are trying to understand <span class="emphasis"><em>what</em></span> the system does, but you are spending your time and mental energy on trying to locate and remember <span class="emphasis"><em>where</em></span> the pieces are.</p><p>Concepts that are closely related should be kept vertically close to each other [G10]. Clearly this rule doesn’t work for concepts that belong in separate files. But then closely related concepts should not be separated into different files unless you have a very good reason. Indeed, this is one of the reasons that protected variables should be avoided.</p><p>For those concepts that are so closely related that they belong in the same source file, their vertical separation should be a measure of how important each is to the understandability of the other. We want to avoid forcing our readers to hop around through our source files and classes.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ch05lev3sec1"></a>Variable Declarations</h3></div></div></div><p>Variables should be declared as close to their usage as possible. Because our functions are very short, local variables should appear a the top of each function, as in this longish function from Junit4.3.1.</p><div class="informalexample"><pre class="programlisting">  private static void readPreferences() {
+    <span class="strong"><strong>InputStream is= null;</strong></span>
+    try {
+      is= new FileInputStream(getPreferencesFile());
+      setPreferences(new Properties(getPreferences()));
+      getPreferences().load(is);
+    } catch (IOException e) {
+      try {
+        if (is != null)
+          is.close();
+      } catch (IOException e1) {
+      }
+    }
+  }</pre></div><p>Control variables for loops should usually be declared within the loop statement, as in this cute little function from the same source.</p><div class="informalexample"><pre class="programlisting">  public int countTestCases() {
+    int count= 0;
+    for (<span class="strong"><strong>Test each</strong></span> : tests)
+      count += each.countTestCases();
+    return count;
+  }</pre></div><p><a id="iddle1168" class="indexterm"></a><a id="iddle1694" class="indexterm"></a><a id="iddle1695" class="indexterm"></a><a id="iddle2094" class="indexterm"></a><a id="iddle2394" class="indexterm"></a>In rare cases a variable might be declared at the top of a block or just before a loop in a long-ish function. You can see such a variable in this snippet from the midst of a very long function in TestNG.</p><div class="informalexample"><pre class="programlisting">...
+for (XmlTest test : m_suite.getTests()) {
+      <span class="strong"><strong>TestRunner tr = m_runnerFactory.newTestRunner(this, test);</strong></span>
+      tr.addListener(m_textReporter);
+      m_testRunners.add(tr);
+
+      invoker = tr.getInvoker();
+
+      for (ITestNGMethod m : tr.getBeforeSuiteMethods()) {
+        beforeSuiteMethods.put(m.getMethod(), m);
+      }
+
+      for (ITestNGMethod m : tr.getAfterSuiteMethods()) {
+        afterSuiteMethods.put(m.getMethod(), m);
+      }
+    }
+...</pre></div><p><span class="strong"><strong>Instance variables</strong></span>, on the other hand, should be declared at the top of the class. This should not increase the vertical distance of these variables, because in a well-designed class, they are used by many, if not all, of the methods of the class.</p><p>There have been many debates over where instance variables should go. In C++ we commonly practiced the so-called <span class="emphasis"><em>scissors rule</em></span>, which put all the instance variables at the bottom. The common convention in Java, however, is to put them all at the top of the class. I see no reason to follow any other convention. The important thing is for the instance variables to be declared in one well-known place. Everybody should know where to go to see the declarations.</p><p>Consider, for example, the strange case of the <code class="literal">TestSuite</code> class in JUnit 4.3.1. I have greatly attenuated this class to make the point. If you look about halfway down the listing, you will see two instance variables declared there. It would be hard to hide them in a better place. Someone reading this code would have to stumble across the declarations by accident (as I did).</p><div class="informalexample"><pre class="programlisting">public class TestSuite implements Test {
+  static public Test createTest(Class&lt;? extends TestCase&gt; theClass,
+                                String name) {
+    ...
+  }
+  public static Constructor&lt;? extends TestCase&gt;
+  getTestConstructor(Class&lt;? extends TestCase&gt; theClass)
+  throws NoSuchMethodException {
+    ...
+  }
+
+  public static Test warning(final String message) {
+    ...
+  }
+
+  private static String exceptionToString(Throwable t) {
+    ...
+  }
+
+  <span class="strong"><strong>private String fName;</strong></span>
+
+  <span class="strong"><strong>private Vector&lt;Test&gt; fTests= new Vector&lt;Test&gt;(10);</strong></span>
+
+  public TestSuite() {
+  }
+
+   public TestSuite(final Class&lt;? extends TestCase&gt; theClass) {
+     ...
+  }
+
+  public TestSuite(Class&lt;? extends TestCase&gt; theClass, String name) {
+    ...
+  }
+  ... ... ... ... ...
+}</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ch05lev3sec2"></a>Dependent Functions</h3></div></div></div><p><a id="iddle1425" class="indexterm"></a><a id="iddle1592" class="indexterm"></a>If one function calls another, they should be vertically close, and the caller should be above the callee, if at all possible. This gives the program a natural flow. If the convention is followed reliably, readers will be able to trust that function definitions will follow shortly after their use. Consider, for example, the snippet from FitNesse in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex05">Listing 5-5</a>. Notice how the topmost function calls those below it and how they in turn call those below them. This makes it easy to find the called functions and greatly enhances the readability of the whole module.</p><div class="example"><a id="ch05ex05"></a><p class="title"><strong>Example&nbsp;5-5.&nbsp;<code class="literal">WikiPageResponder.java</code></strong></p><div class="example-contents"><pre class="programlisting">public class WikiPageResponder implements SecureResponder {
+  protected WikiPage page;
+  protected PageData pageData;
+  protected String pageTitle;
+  protected Request request;
+  protected PageCrawler crawler;
+
+  public Response makeResponse(FitNesseContext context, Request request)
+    throws Exception {
+    String pageName = getPageNameOrDefault(request, "FrontPage");
+    loadPage(pageName, context);
+    if (page == null)
+      return notFoundResponse(context, request);
+    else
+      return makePageResponse(context);
+  }
+
+  private String getPageNameOrDefault(Request request, String defaultPageName)
+  {
+    String pageName = request.getResource();
+    if (StringUtil.isBlank(pageName))
+      pageName = defaultPageName;
+
+    return pageName;
+  }
+
+  protected void loadPage(String resource, FitNesseContext context)
+    throws Exception {
+    WikiPagePath path = PathParser.parse(resource);
+    crawler = context.root.getPageCrawler();
+    crawler.setDeadEndStrategy(new VirtualEnabledPageCrawler());
+    page = crawler.getPage(context.root, path);
+    if (page != null)
+      pageData = page.getData();
+  }
+
+  private Response notFoundResponse(FitNesseContext context, Request request)
+    throws Exception {
+    return new NotFoundResponder().makeResponse(context, request);
+  }
+
+  private SimpleResponse makePageResponse(FitNesseContext context)
+    throws Exception {
+    pageTitle = PathParser.render(crawler.getFullPath(page));
+    String html = makeHtml(context);
+
+    SimpleResponse response = new SimpleResponse();
+    response.setMaxAge(0);
+    response.setContent(html);
+    return response;
+  }
+...</pre></div></div><p><a id="iddle1335" class="indexterm"></a>As an aside, this snippet provides a nice example of keeping constants at the appropriate level [G35]. The <code class="literal">"FrontPage"</code> constant could have been buried in the <code class="literal">getPageNameOrDefault</code> function, but that would have hidden a well-known and expected constant in an inappropriately low-level function. It was better to pass that constant down from the place where it makes sense to know it to the place that actually uses it.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ch05lev3sec3"></a>Conceptual Affinity</h3></div></div></div><p><a id="iddle1030" class="indexterm"></a><a id="iddle1295" class="indexterm"></a><a id="iddle1578" class="indexterm"></a><a id="iddle2413" class="indexterm"></a>Certain bits of code <span class="emphasis"><em>want</em></span> to be near other bits. They have a certain conceptual affinity. The stronger that affinity, the less vertical distance there should be between them.</p><div class="mediaobject"><a id="f084fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/5_3fig_martin.jpg" width="145" alt="Conceptual Affinity" height="159" data-mfp-src="/library/view/clean-code/9780136083238/graphics/5_3fig_martin.jpg"></div><p>As we have seen, this affinity might be based on a direct dependence, such as one function calling another, or a function using a variable. But there are other possible causes of affinity. Affinity might be caused because a group of functions perform a similar operation. Consider this snippet of code from Junit 4.3.1:</p><div class="informalexample"><pre class="programlisting">public class Assert {
+  static public void assertTrue(String message, boolean condition) {
+    if (!condition)
+      fail(message);
+  }
+
+  static public void assertTrue(boolean condition) {
+    assertTrue(null, condition);
+  }
+
+  static public void assertFalse(String message, boolean condition) {
+    assertTrue(message, !condition);
+  }
+
+  static public void assertFalse(boolean condition) {
+    assertFalse(null, condition);
+  }
+...</pre></div><p>These functions have a strong conceptual affinity because they share a common naming scheme and perform variations of the same basic task. The fact that they call each other is secondary. Even if they didn’t, they would still want to be close together.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec5"></a>Vertical Ordering</h2></div></div></div><p>In general we want function call dependencies to point in the downward direction. That is, a function that is called should be below a function that does the calling.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ftn.ch05fn02" class="footnote" id="ch05fn02"><sup class="footnote">[2]</sup></a> This creates a nice flow down the source code module from high level to low level.</p><p>As in newspaper articles, we expect the most important concepts to come first, and we expect them to be expressed with the least amount of polluting detail. We expect the low-level details to come last. This allows us to skim source files, getting the gist from the <a id="iddle1228" class="indexterm"></a><a id="iddle1568" class="indexterm"></a><a id="iddle1650" class="indexterm"></a><a id="iddle1784" class="indexterm"></a>first few functions, without having to immerse ourselves in the details. <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex05">Listing 5-5</a> is organized this way. Perhaps even better examples are <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch15.html#ch15ex05">Listing 15-5</a> on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch15.html#ch15ex05">263</a>, and <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex07">Listing 3-7</a> on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex07">50</a>.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch05lev1sec3"></a>Horizontal Formatting</h1></div></div></div><p>How wide should a line be? To answer that, let’s look at how wide lines are in typical programs. Again, we examine the seven different projects. <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05fig02">Figure 5-2</a> shows the distribution of line lengths of all seven projects. The regularity is impressive, especially right around 45 characters. Indeed, every size from 20 to 60 represents about 1 percent of the total number of lines. That’s 40 percent! Perhaps another 30 percent are less than 10 characters wide. Remember this is a log scale, so the linear appearance of the drop-off above 80 characters is really very significant. Programmers clearly prefer short lines.</p><div class="figure-float" style="float: left;"><div class="figure"><a id="ch05fig02"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/5_4fig_martin.gif" height="297" alt="Java line width distribution" width="500" data-mfp-src="/library/view/clean-code/9780136083238/graphics/5_4fig_martin.gif"></div></div><p class="title"><strong>Figure&nbsp;5-2.&nbsp;Java line width distribution</strong></p></div></div><p>This suggests that we should strive to keep our lines short. The old Hollerith limit of 80 is a bit arbitrary, and I’m not opposed to lines edging out to 100 or even 120. But beyond that is probably just careless.</p><p>I used to follow the rule that you should never have to scroll to the right. But monitors are too wide for that nowadays, and younger programmers can shrink the font so small <a id="iddle1651" class="indexterm"></a><a id="iddle1939" class="indexterm"></a><a id="iddle2418" class="indexterm"></a>that they can get 200 characters across the screen. Don’t do that. I personally set my limit at 120.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec6"></a>Horizontal Openness and Density</h2></div></div></div><p>We use horizontal white space to associate things that are strongly related and disassociate things that are more weakly related. Consider the following function:</p><div class="informalexample"><pre class="programlisting">  private void measureLine(String line) {
+    lineCount++;
+    int lineSize = line.length();
+    totalChars += lineSize;
+    lineWidthHistogram.addLine(lineSize, lineCount);
+    recordWidestLine(lineSize);
+  }</pre></div><p>I surrounded the assignment operators with white space to accentuate them. Assignment statements have two distinct and major elements: the left side and the right side. The spaces make that separation obvious.</p><p>On the other hand, I didn’t put spaces between the function names and the opening parenthesis. This is because the function and its arguments are closely related. Separating them makes them appear disjoined instead of conjoined. I separate arguments within the function call parenthesis to accentuate the comma and show that the arguments are separate.</p><p>Another use for white space is to accentuate the precedence of operators.</p><div class="informalexample"><pre class="programlisting">public class Quadratic {
+  public static double root1(double a, double b, double c) {
+    double determinant = determinant(a, b, c);
+    return (-b + Math.sqrt(determinant)) / (2*a);
+  }
+
+  public static double root2(int a, int b, int c) {
+    double determinant = determinant(a, b, c);
+    return (-b - Math.sqrt(determinant)) / (2*a);
+  }
+
+  private static double determinant(double a, double b, double c) {
+    return b*b - 4*a*c;
+  }
+}</pre></div><p>Notice how nicely the equations read. The factors have no white space between them because they are high precedence. The terms are separated by white space because addition and subtraction are lower precedence.</p><p>Unfortunately, most tools for reformatting code are blind to the precedence of operators and impose the same spacing throughout. So subtle spacings like those shown above tend to get lost after you reformat the code.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec7"></a>Horizontal Alignment</h2></div></div></div><p><a id="iddle1084" class="indexterm"></a><a id="iddle1405" class="indexterm"></a><a id="iddle1649" class="indexterm"></a>When I was an assembly language programmer,<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ftn.ch05fn03" class="footnote" id="ch05fn03"><sup class="footnote">[3]</sup></a> I used horizontal alignment to accentuate certain structures. When I started coding in C, C++, and eventually Java, I continued to try to line up all the variable names in a set of declarations, or all the rvalues in a set of assignment statements. My code might have looked like this:</p><div class="informalexample"><pre class="programlisting">public class FitNesseExpediter implements ResponseSender
+{
+  private   Socket          socket;
+  private   InputStream     input;
+  private   OutputStream    output;
+  private   Request         request;
+  private   Response        response;
+  private   FitNesseContext context;
+  protected long            requestParsingTimeLimit;
+  private   long            requestProgress;
+  private   long            requestParsingDeadline;
+  private   boolean         hasError;
+
+  public FitNesseExpediter(Socket          s,
+                           FitNesseContext context) throws Exception
+  {
+    this.context =            context;
+    socket =                  s;
+    input =                   s.getInputStream();
+    output =                  s.getOutputStream();
+    requestParsingTimeLimit = 10000;
+  }</pre></div><p>I have found, however, that this kind of alignment is not useful. The alignment seems to emphasize the wrong things and leads my eye away from the true intent. For example, in the list of declarations above you are tempted to read down the list of variable names without looking at their types. Likewise, in the list of assignment statements you are tempted to look down the list of rvalues without ever seeing the assignment operator. To make matters worse, automatic reformatting tools usually eliminate this kind of alignment.</p><p>So, in the end, I don’t do this kind of thing anymore. Nowadays I prefer unaligned declarations and assignments, as shown below, because they point out an important deficiency. If I have long lists that need to be aligned, <span class="emphasis"><em>the problem is the length of the lists</em></span>, not the lack of alignment. The length of the list of declarations in <code class="literal">FitNesseExpediter</code> below suggests that this class should be split up.</p><div class="informalexample"><pre class="programlisting">public class FitNesseExpediter implements ResponseSender
+{
+  private Socket socket;
+  private InputStream input;
+  private OutputStream output;
+  private Request request;
+  private Response response;
+  private FitNesseContext context;
+  protected long requestParsingTimeLimit;
+  private long requestProgress;
+  private long requestParsingDeadline;
+  private boolean hasError;
+
+  public FitNesseExpediter(Socket s, FitNesseContext context) throws Exception
+  {
+    this.context = context;
+    socket = s;
+    input = s.getInputStream();
+    output = s.getOutputStream();
+    requestParsingTimeLimit = 10000;
+  }</pre></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec8"></a>Indentation</h2></div></div></div><p><a id="iddle1647" class="indexterm"></a><a id="iddle1683" class="indexterm"></a><a id="iddle2099" class="indexterm"></a>A source file is a hierarchy rather like an outline. There is information that pertains to the file as a whole, to the individual classes within the file, to the methods within the classes, to the blocks within the methods, and recursively to the blocks within the blocks. Each level of this hierarchy is a scope into which names can be declared and in which declarations and executable statements are interpreted.</p><p>To make this hierarchy of scopes visible, we indent the lines of source code in proportion to their position in the hiearchy. Statements at the level of the file, such as most class declarations, are not indented at all. Methods within a class are indented one level to the right of the class. Implementations of those methods are implemented one level to the right of the method declaration. Block implementations are implemented one level to the right of their containing block, and so on.</p><p>Programmers rely heavily on this indentation scheme. They visually line up lines on the left to see what scope they appear in. This allows them to quickly hop over scopes, such as implementations of <code class="literal">if</code> or <code class="literal">while</code> statements, that are not relevant to their current situation. They scan the left for new method declarations, new variables, and even new classes. Without indentation, programs would be virtually unreadable by humans.</p><p>Consider the following programs that are syntactically and semantically identical:</p><div class="informalexample"><pre class="programlisting">public class FitNesseServer implements SocketServer { private FitNesseContext
+context; public FitNesseServer(FitNesseContext context) { this.context =
+context; } public void serve(Socket s) { serve(s, 10000); } public void
+serve(Socket s, long requestTimeout) { try { FitNesseExpediter sender = new
+FitNesseExpediter(s, context);
+sender.setRequestParsingTimeLimit(requestTimeout); sender.start(); }
+catch(Exception e) { e.printStackTrace(); } } }
+
+-----
+
+
+public class FitNesseServer implements SocketServer {
+  private FitNesseContext context;
+
+  public FitNesseServer(FitNesseContext context) {
+    this.context = context;
+  }
+
+  public void serve(Socket s) {
+    serve(s, 10000);
+  }
+
+  public void serve(Socket s, long requestTimeout) {
+    try {
+      FitNesseExpediter sender = new FitNesseExpediter(s, context);
+      sender.setRequestParsingTimeLimit(requestTimeout);
+      sender.start();
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}</pre></div><p><a id="iddle1684" class="indexterm"></a><a id="iddle2098" class="indexterm"></a>Your eye can rapidly discern the structure of the indented file. You can almost instantly spot the variables, constructors, accessors, and methods. It takes just a few seconds to realize that this is some kind of simple front end to a socket, with a time-out. The unindented version, however, is virtually impenetrable without intense study.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ch05lev3sec4"></a>Breaking Indentation</h3></div></div></div><p>It is sometimes tempting to break the indentation rule for short <code class="literal">if</code> statements, short <code class="literal">while</code> loops, or short functions. Whenever I have succumbed to this temptation, I have almost always gone back and put the indentation back in. So I avoid collapsing scopes down to one line like this:</p><div class="informalexample"><pre class="programlisting">public class CommentWidget extends TextWidget
+{
+  public static final String REGEXP = "^#[^\r\n]*(?:(?:\r\n)|\n|\r)?";
+
+  public CommentWidget(ParentWidget parent, String text){super(parent, text);}
+  public String render() throws Exception {return ""; }
+}</pre></div><p>I prefer to expand and indent the scopes instead, like this:</p><div class="informalexample"><pre class="programlisting">public class CommentWidget extends TextWidget {
+  public static final String REGEXP = "^#[^\r\n]*(?:(?:\r\n)|\n|\r)?";
+
+  public CommentWidget(ParentWidget parent, String text) {
+    super(parent, text);
+  }
+
+  public String render() throws Exception {
+    return "";
+  }
+}</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch05lev2sec9"></a>Dummy Scopes</h2></div></div></div><p><a id="iddle1460" class="indexterm"></a><a id="iddle1559" class="indexterm"></a><a id="iddle1570" class="indexterm"></a><a id="iddle1572" class="indexterm"></a><a id="iddle2096" class="indexterm"></a><a id="iddle2110" class="indexterm"></a><a id="iddle2252" class="indexterm"></a>Sometimes the body of a <code class="literal">while</code> or <code class="literal">for</code> statement is a dummy, as shown below. I don’t like these kinds of structures and try to avoid them. When I can’t avoid them, I make sure that the dummy body is properly indented and surrounded by braces. I can’t tell you how many times I’ve been fooled by a semicolon silently sitting at the end of a <code class="literal">while</code> loop on the same line. Unless you make that semicolon <span class="emphasis"><em>visible</em></span> by indenting it on it’s own line, it’s just too hard to see.</p><div class="informalexample"><pre class="programlisting">while (dis.read(buf, 0, readBufferSize) != -1)
+  ;</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch05lev1sec4"></a>Team Rules</h1></div></div></div><p>The title of this section is a play on words. Every programmer has his own favorite formatting rules, but if he works in a team, then the team rules.</p><div class="mediaobject"><a id="f090fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/5_5fig_martin.jpg" height="118" alt="Team Rules" width="200" data-mfp-src="/library/view/clean-code/9780136083238/graphics/5_5fig_martin.jpg"></div><p>A team of developers should agree upon a single formatting style, and then every member of that team should use that style. We want the software to have a consistent style. We don’t want it to appear to have been written by a bunch of disagreeing individuals.</p><p>When I started the FitNesse project back in 2002, I sat down with the team to work out a coding style. This took about 10 minutes. We decided where we’d put our braces, what our indent size would be, how we would name classes, variables, and methods, and so forth. Then we encoded those rules into the code formatter of our IDE and have stuck with them ever since. These were not the rules that I prefer; they were rules decided by the team. As a member of that team I followed them when writing code in the FitNesse project.</p><p>Remember, a good software system is composed of a set of documents that read nicely. They need to have a consistent and smooth style. The reader needs to be able to trust that the formatting gestures he or she has seen in one source file will mean the same thing in others. The last thing we want to do is add more complexity to the source code by writing it in a jumble of different individual styles.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch05lev1sec5"></a>Uncle Bob’s Formatting Rules</h1></div></div></div><p>The rules I use personally are very simple and are illustrated by the code in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05ex06">Listing 5-6</a>. Consider this an example of how code makes the best coding standard document.</p><p></p><div class="example"><a id="ch05ex06"></a><p class="title"><strong>Example&nbsp;5-6.&nbsp;<code class="literal">CodeAnalyzer.java</code></strong></p><div class="example-contents"><pre class="programlisting">public class CodeAnalyzer implements JavaFileAnalysis {
+  private int lineCount;
+  private int maxLineWidth;
+  private int widestLineNumber;
+  private LineWidthHistogram lineWidthHistogram;
+  private int totalChars;
+
+  public CodeAnalyzer() {
+    lineWidthHistogram = new LineWidthHistogram();
+  }
+
+  public static List&lt;File&gt; findJavaFiles(File parentDirectory) {
+    List&lt;File&gt; files = new ArrayList&lt;File&gt;();
+    findJavaFiles(parentDirectory, files);
+    return files;
+  }
+
+  private static void findJavaFiles(File parentDirectory, List&lt;File&gt; files) {
+    for (File file : parentDirectory.listFiles()) {
+      if (file.getName().endsWith(".java"))
+        files.add(file);
+      else if (file.isDirectory())
+        findJavaFiles(file, files);
+    }
+  }
+
+  public void analyzeFile(File javaFile) throws Exception {
+    BufferedReader br = new BufferedReader(new FileReader(javaFile));
+    String line;
+    while ((line = br.readLine()) != null)
+      measureLine(line);
+  }
+
+  private void measureLine(String line) {
+    lineCount++;
+    int lineSize = line.length();
+    totalChars += lineSize;
+    lineWidthHistogram.addLine(lineSize, lineCount);
+    recordWidestLine(lineSize);
+  }
+
+  private void recordWidestLine(int lineSize) {
+    if (lineSize &gt; maxLineWidth) {
+      maxLineWidth = lineSize;
+      widestLineNumber = lineCount;
+    }
+  }
+
+  public int getLineCount() {
+    return lineCount;
+  }
+
+  public int getMaxLineWidth() {
+    return maxLineWidth;
+  }
+
+  public int getWidestLineNumber() {
+    return widestLineNumber;
+  }
+
+  public LineWidthHistogram getLineWidthHistogram() {
+    return lineWidthHistogram;
+  }
+
+  public double getMeanLineWidth() {
+    return (double)totalChars/lineCount;
+  }
+
+  public int getMedianLineWidth() {
+    Integer[] sortedWidths = getSortedWidths();
+    int cumulativeLineCount = 0;
+    for (int width : sortedWidths) {
+      cumulativeLineCount += lineCountForWidth(width);
+      if (cumulativeLineCount &gt; lineCount/2)
+        return width;
+    }
+    throw new Error("Cannot get here");
+  }
+
+  private int lineCountForWidth(int width) {
+    return lineWidthHistogram.getLinesforWidth(width).size();
+  }
+
+  private Integer[] getSortedWidths() {
+    Set&lt;Integer&gt; widths = lineWidthHistogram.getWidths();
+    Integer[] sortedWidths = (widths.toArray(new Integer[0]));
+    Arrays.sort(sortedWidths);
+    return sortedWidths;
+  }
+}</pre></div></div></div><div class="footnotes"><br><hr><div id="ftn.ch05fn01" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05fn01" class="para"><sup class="para">[1] </sup></a>The box shows sigma/2 above and below the mean. Yes, I know that the file length distribution is not normal, and so the standard deviation is not mathematically precise. But we’re not trying for precision here. We’re just trying to get a feel.</p></div><div id="ftn.ch05fn02" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05fn02" class="para"><sup class="para">[2] </sup></a>This is the exact opposite of languages like Pascal, C, and C++ that enforce functions to be defined, or at least declared, <span class="emphasis"><em>before</em></span> they are used.</p></div><div id="ftn.ch05fn03" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#ch05fn03" class="para"><sup class="para">[3] </sup></a>Who am I kidding? I still am an assembly language programmer. You can take the boy away from the metal, but you can’t take the metal out of the boy!</p></div></div></div><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch04.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">4. Comments</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch06.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">6. Objects and Data Structures</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/ch05.html" data-for-analytics="9780136083238:ch05.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch05.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

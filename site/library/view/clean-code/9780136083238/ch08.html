@@ -1,0 +1,352 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/clean-code/9780136083238/ch08.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9780136083238"
+  data-publishers="Prentice Hall"
+
+
+
+  data-htmlfile-name="ch08.html"
+  data-epub-title="Clean Code" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/clean-code/9780136083238/ch08.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9780136083238" data-publishers="Prentice Hall" data-htmlfile-name="ch08.html" data-epub-title="Clean Code" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780136083238"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>8. Boundaries - Clean Code</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book"></style><link rel="canonical" href="/Library/view/clean-code/9780136083238/ch08.html"><meta name="description" content="Chapter&nbsp;8.&nbsp;Boundaries <authorgroup>by James Grenning</authorgroup> We seldom control all the software in our systems. Sometimes we buy third-party packages or use open source. Other times we depend on ... "><meta property="og:title" content="8. Boundaries"><meta itemprop="isPartOf" content="/library/view/clean-code/9780136083238/"><meta itemprop="name" content="8. Boundaries"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch08.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780136083238/"><meta property="og:description" itemprop="description" content="Chapter&nbsp;8.&nbsp;Boundaries <authorgroup>by James Grenning</authorgroup> We seldom control all the software in our systems. Sometimes we buy third-party packages or use open source. Other times we depend on ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Prentice Hall"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780136083238"><meta property="og:book:author" itemprop="author" content="Robert C. Martin"><meta property="og:book:tag" itemprop="about" content="Agile"><meta property="og:book:tag" itemprop="about" content="Core Programming"><meta property="og:book:tag" itemprop="about" content="Lean"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Clean Code
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/ch08.html" data-for-analytics="9780136083238:ch08.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch08.html&amp;text=Clean%20Code&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch08.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch08.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%208.%20Boundaries&amp;body=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch08.html%0D%0Afrom%20Clean%20Code%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch07.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">7. Error Handling</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch09.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">9. Unit Tests</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="ch08"></a>Chapter&nbsp;8.&nbsp;Boundaries</h1></div></div></div><span style="color: red">&lt;authorgroup&gt;by James Grenning&lt;/authorgroup&gt;</span><div class="mediaobject"><a id="f113fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/8_1fig_martin.jpg" width="350" alt="Boundaries" height="273" data-mfp-src="/library/view/clean-code/9780136083238/graphics/8_1fig_martin.jpg"></div><p>We seldom control all the software in our systems. Sometimes we buy third-party packages or use open source. Other times we depend on teams in our own company to produce components or subsystems for us. Somehow we must cleanly integrate this foreign code <a id="iddle1227" class="indexterm"></a><a id="iddle1815" class="indexterm"></a><a id="iddle2318" class="indexterm"></a>with our own. In this chapter we look at practices and techniques to keep the boundaries of our software clean.</p><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec1"></a>Using Third-Party Code</h1></div></div></div><p>There is a natural tension between the provider of an interface and the user of an interface. Providers of third-party packages and frameworks strive for broad applicability so they can work in many environments and appeal to a wide audience. Users, on the other hand, want an interface that is focused on their particular needs. This tension can cause problems at the boundaries of our systems.</p><p>Let’s look at <code class="literal">java.util.Map</code> as an example. As you can see by examining <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ch08tab01">Figure 8-1</a>, <code class="literal">Map</code>s have a very broad interface with plenty of capabilities. Certainly this power and flexibility is useful, but it can also be a liability. For instance, our application might build up a <code class="literal">Map</code> and pass it around. Our intention might be that none of the recipients of our <code class="literal">Map</code> delete anything in the map. But right there at the top of the list is the <code class="literal">clear()</code> method. Any user of the <code class="literal">Map</code> has the power to clear it. Or maybe our design convention is that only particular types of objects can be stored in the <code class="literal">Map</code>, but <code class="literal">Map</code>s do not reliably constrain the types of objects placed within them. Any determined user can add items of any type to any <code class="literal">Map</code>.</p><div class="table-float" style="float: left;"><div class="table"><a id="ch08tab01"></a><p class="title"><strong>Table&nbsp;8-1.&nbsp;The methods of <code class="literal">Map</code></strong></p><div class="table-contents"><table summary="The methods of Map" style="border: none;"><colgroup><col width="550" style="text-align: left" class="c1"></colgroup><tbody><tr><td style="text-align: left" valign="top"><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="literal">clear() void – Map</code></p></li><li class="listitem"><p><code class="literal">containsKey(Object key) boolean – Map</code></p></li><li class="listitem"><p><code class="literal">containsValue(Object value) boolean – Map</code></p></li><li class="listitem"><p><code class="literal">entrySet() Set – Map</code></p></li><li class="listitem"><p><code class="literal">equals(Object o) boolean – Map</code></p></li><li class="listitem"><p><code class="literal">get(Object key) Object – Map</code></p></li><li class="listitem"><p><code class="literal">getClass() Class&lt;? extends Object&gt; – Object</code></p></li><li class="listitem"><p><code class="literal">hashCode() int – Map</code></p></li><li class="listitem"><p><code class="literal">isEmpty() boolean – Map</code></p></li><li class="listitem"><p><code class="literal">keySet() Set – Map</code></p></li><li class="listitem"><p><code class="literal">notify() void – Object</code></p></li><li class="listitem"><p><code class="literal">notifyAll() void – Object</code></p></li><li class="listitem"><p><code class="literal">put(Object key, Object value) Object – Map</code></p></li><li class="listitem"><p><code class="literal">putAll(Map t) void – Map</code></p></li><li class="listitem"><p><code class="literal">remove(Object key) Object – Map</code></p></li><li class="listitem"><p><code class="literal">size() int – Map</code></p></li><li class="listitem"><p><code class="literal">toString() String – Object</code></p></li><li class="listitem"><p><code class="literal">values() Collection – Map</code></p></li><li class="listitem"><p><code class="literal">wait() void – Object</code></p></li><li class="listitem"><p><code class="literal">wait(long timeout) void – Object</code></p></li><li class="listitem"><p><code class="literal">wait(long timeout, int nanos) void – Object</code></p></li></ul></div>
+</td></tr></tbody></table></div></div></div><p>If our application needs a <code class="literal">Map</code> of <code class="literal">Sensor</code>s, you might find the sensors set up like this:</p><div class="informalexample"><pre class="programlisting">Map sensors = new HashMap();</pre></div><p><a id="iddle1169" class="indexterm"></a><a id="iddle1616" class="indexterm"></a><a id="iddle2042" class="indexterm"></a>Then, when some other part of the code needs to access the sensor, you see this code:</p><div class="informalexample"><pre class="programlisting">Sensor s = (Sensor)sensors.get(sensorId );</pre></div><p>We don’t just see it once, but over and over again throughout the code. The client of this code carries the responsibility of getting an <code class="literal">Object</code> from the <code class="literal">Map</code> and casting it to the right type. This works, but it’s not clean code. Also, this code does not tell its story as well as it could. The readability of this code can be greatly improved by using generics, as shown below:</p><div class="informalexample"><pre class="programlisting">    Map&lt;Sensor&gt; sensors = new HashMap&lt;Sensor&gt;();
+...
+    Sensor s = sensors.get(sensorId );</pre></div><p>However, this doesn’t solve the problem that <code class="literal">Map&lt;Sensor&gt;</code> provides more capability than we need or want.</p><p>Passing an instance of <code class="literal">Map&lt;Sensor&gt;</code> liberally around the system means that there will be a lot of places to fix if the interface to <code class="literal">Map</code> ever changes. You might think such a change to be unlikely, but remember that it changed when generics support was added in Java 5. Indeed, we’ve seen systems that are inhibited from using generics because of the sheer magnitude of changes needed to make up for the liberal use of <code class="literal">Map</code>s.</p><p>A cleaner way to use <code class="literal">Map</code> might look like the following. No user of <code class="literal">Sensors</code> would care one bit if generics were used or not. That choice has become (and always should be) an implementation detail.</p><div class="informalexample"><pre class="programlisting">public class Sensors {
+  private Map sensors = new HashMap();
+
+  public Sensor getById(String id) {
+    return (Sensor) sensors.get(id);
+  }
+
+  //snip
+}</pre></div><p>The interface at the boundary (<code class="literal">Map</code>) is hidden. It is able to evolve with very little impact on the rest of the application. The use of generics is no longer a big issue because the casting and type management is handled inside the <code class="literal">Sensors</code> class.</p><p>This interface is also tailored and constrained to meet the needs of the application. It results in code that is easier to understand and harder to misuse. The <code class="literal">Sensors</code> class can enforce design and business rules.</p><p>We are not suggesting that every use of <code class="literal">Map</code> be encapsulated in this form. Rather, we are advising you not to pass <code class="literal">Map</code>s (or any other interface at a boundary) around your system. If you use a boundary interface like <code class="literal">Map</code>, keep it inside the class, or close family of classes, where it is used. Avoid returning it from, or accepting it as an argument to, public APIs.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec2"></a>Exploring and Learning Boundaries</h1></div></div></div><p><a id="iddle1124" class="indexterm"></a><a id="iddle1567" class="indexterm"></a><a id="iddle1775" class="indexterm"></a><a id="iddle1800" class="indexterm"></a><a id="iddle1889" class="indexterm"></a><a id="iddle2315" class="indexterm"></a><a id="iddle2316" class="indexterm"></a><a id="iddle2317" class="indexterm"></a><a id="iddle2319" class="indexterm"></a>Third-party code helps us get more functionality delivered in less time. Where do we start when we want to utilize some third-party package? It’s not our job to test the third-party code, but it may be in our best interest to write tests for the third-party code we use.</p><p>Suppose it is not clear how to use our third-party library. We might spend a day or two (or more) reading the documentation and deciding how we are going to use it. Then we might write our code to use the third-party code and see whether it does what we think. We would not be surprised to find ourselves bogged down in long debugging sessions trying to figure out whether the bugs we are experiencing are in our code or theirs.</p><p>Learning the third-party code is hard. Integrating the third-party code is hard too. Doing both at the same time is doubly hard. What if we took a different approach? Instead of experimenting and trying out the new stuff in our production code, we could write some tests to explore our understanding of the third-party code. Jim Newkirk calls such tests <span class="emphasis"><em>learning tests.</em></span><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ftn.ch08fn01" class="footnote" id="ch08fn01"><sup class="footnote">[1]</sup></a></p><p>In learning tests we call the third-party API, as we expect to use it in our application. We’re essentially doing controlled experiments that check our understanding of that API. The tests focus on what we want out of the API.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec3"></a>Learning <code class="literal">log4j</code></h1></div></div></div><p>Let’s say we want to use the apache <code class="literal">log4j</code> package rather than our own custom-built logger. We download it and open the introductory documentation page. Without too much reading we write our first test case, expecting it to write “hello” to the console.</p><div class="informalexample"><pre class="programlisting">@Test
+public void testLogCreate() {
+  Logger logger = Logger.getLogger("MyLogger");
+  logger.info("hello");
+}</pre></div><p>When we run it, the logger produces an error that tells us we need something called an <code class="literal">Appender</code>. After a little more reading we find that there is a <code class="literal">ConsoleAppender</code>. So we create a <code class="literal">ConsoleAppender</code> and see whether we have unlocked the secrets of logging to the console.</p><div class="informalexample"><pre class="programlisting">@Test
+public void testLogAddAppender() {
+  Logger logger = Logger.getLogger("MyLogger");
+  ConsoleAppender appender = new ConsoleAppender();
+  logger.addAppender(appender);
+  logger.info("hello");
+}</pre></div><p>This time we find that the <code class="literal">Appender</code> has no output stream. Odd—it seems logical that it’d have one. After a little help from Google, we try the following:</p><div class="informalexample"><pre class="programlisting">@Test
+public void testLogAddAppender() {
+  Logger logger = Logger.getLogger("MyLogger");
+  logger.removeAllAppenders();
+  logger.addAppender(new ConsoleAppender(
+       new PatternLayout("%p %t %m%n"),
+       ConsoleAppender.SYSTEM_OUT));
+  logger.info("hello");
+}</pre></div><p>That worked; a log message that includes “hello” came out on the console! It seems odd that we have to tell the <code class="literal">ConsoleAppender</code> that it writes to the console.</p><p>Interestingly enough, when we remove the <code class="literal">ConsoleAppender.SystemOut</code> argument, we see that “hello” is still printed. But when we take out the <code class="literal">PatternLayout</code>, it once again complains about the lack of an output stream. This is very strange behavior.</p><p>Looking a little more carefully at the documentation, we see that the default <code class="literal">ConsoleAppender</code> constructor is “unconfigured,” which does not seem too obvious or useful. This feels like a bug, or at least an inconsistency, in <code class="literal">log4j</code>.</p><p>A bit more googling, reading, and testing, and we eventually wind up with <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ch08ex01">Listing 8-1</a>. We’ve discovered a great deal about the way that <code class="literal">log4j</code> works, and we’ve encoded that knowledge into a set of simple unit tests.</p><div class="example"><a id="ch08ex01"></a><p class="title"><strong>Example&nbsp;8-1.&nbsp;<code class="literal">LogTest.java</code></strong></p><div class="example-contents"><pre class="programlisting">public class LogTest {
+    private Logger logger;
+
+    @Before
+    public void initialize() {
+        logger = Logger.getLogger("logger");
+        logger.removeAllAppenders();
+        Logger.getRootLogger().removeAllAppenders();
+    }
+    @Test
+    public void basicLogger() {
+        BasicConfigurator.configure();
+        logger.info("basicLogger");
+    }
+
+    @Test
+    public void addAppenderWithStream() {
+     logger.addAppender(new ConsoleAppender(
+          new PatternLayout("%p %t %m%n"),
+          ConsoleAppender.SYSTEM_OUT));
+         logger.info("addAppenderWithStream");
+    }
+
+    @Test
+    public void addAppenderWithoutStream() {
+     logger.addAppender(new ConsoleAppender(
+          new PatternLayout("%p %t %m%n")));
+         logger.info("addAppenderWithoutStream");
+
+    }
+}</pre></div></div><p><a id="iddle1126" class="indexterm"></a><a id="iddle1130" class="indexterm"></a><a id="iddle1776" class="indexterm"></a><a id="iddle1947" class="indexterm"></a>Now we know how to get a simple console logger initialized, and we can encapsulate that knowledge into our own logger class so that the rest of our application is isolated from the <code class="literal">log4j</code> boundary interface.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec4"></a>Learning Tests Are Better Than Free</h1></div></div></div><p>The learning tests end up costing nothing. We had to learn the API anyway, and writing those tests was an easy and isolated way to get that knowledge. The learning tests were precise experiments that helped increase our understanding.</p><p>Not only are learning tests free, they have a positive return on investment. When there are new releases of the third-party package, we run the learning tests to see whether there are behavioral differences.</p><p>Learning tests verify that the third-party packages we are using work the way we expect them to. Once integrated, there are no guarantees that the third-party code will stay compatible with our needs. The original authors will have pressures to change their code to meet new needs of their own. They will fix bugs and add new capabilities. With each release comes new risk. If the third-party package changes in some way incompatible with our tests, we will find out right away.</p><p>Whether you need the learning provided by the learning tests or not, a clean boundary should be supported by a set of outbound tests that exercise the interface the same way the production code does. Without these <span class="emphasis"><em>boundary tests</em></span> to ease the migration, we might be tempted to stay with the old version longer than we should.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec5"></a>Using Code That Does Not Yet Exist</h1></div></div></div><p>There is another kind of boundary, one that separates the known from the unknown. There are often places in the code where our knowledge seems to drop off the edge. Sometimes what is on the other side of the boundary is unknowable (at least right now). Sometimes we choose to look no farther than the boundary.</p><p>A number of years back I was part of a team developing software for a radio communications system. There was a subsystem, the “Transmitter,” that we knew little about, and the people responsible for the subsystem had not gotten to the point of defining their interface. We did not want to be blocked, so we started our work far away from the unknown part of the code.</p><p><a id="iddle1717" class="indexterm"></a>We had a pretty good idea of where our world ended and the new world began. As we worked, we sometimes bumped up against this boundary. Though mists and clouds of ignorance obscured our view beyond the boundary, our work made us aware of what we <span class="emphasis"><em>wanted</em></span> the boundary interface to be. We wanted to tell the transmitter something like this:</p><div class="blockquote"><blockquote class="blockquote"><p><span class="italic">Key the transmitter on the provided frequency and emit an analog representation of the data coming from this stream.</span></p></blockquote></div><p>We had no idea how that would be done because the API had not been designed yet. So we decided to work out the details later.</p><p>To keep from being blocked, we defined our own interface. We called it something catchy, like <code class="literal">Transmitter</code>. We gave it a method called <code class="literal">transmit</code> that took a frequency and a data stream. This was the interface we <span class="emphasis"><em>wished</em></span> we had.</p><p>One good thing about writing the interface we wish we had is that it’s under our control. This helps keep client code more readable and focused on what it is trying to accomplish.</p><p>In <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ch08fig01">Figure 8-2</a>, you can see that we insulated the <code class="literal">CommunicationsController</code> classes from the transmitter API (which was out of our control and undefined). By using our own application specific interface, we kept our <code class="literal">CommunicationsController</code> code clean and expressive. Once the transmitter API was defined, we wrote the <code class="literal">TransmitterAdapter</code> to bridge the gap. The A<span class="smaller">DAPTER</span><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ftn.ch08fn02" class="footnote" id="ch08fn02"><sup class="footnote">[2]</sup></a> encapsulated the interaction with the API and provides a single place to change when the API evolves.</p><div class="figure-float" style="float: left;"><div class="figure"><a id="ch08fig01"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/8_2fig_martin.gif" height="172" alt="Predicting the transmitter" width="500" data-mfp-src="/library/view/clean-code/9780136083238/graphics/8_2fig_martin.gif"></div></div><p class="title"><strong>Figure&nbsp;8-2.&nbsp;Predicting the transmitter</strong></p></div></div><p>This design also gives us a very convenient seam<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ftn.ch08fn03" class="footnote" id="ch08fn03"><sup class="footnote">[3]</sup></a> in the code for testing. Using a suitable <code class="literal">FakeTransmitter</code>, we can test the <code class="literal">CommunicationsController</code> classes. We can also create boundary tests once we have the <code class="literal">TransmitterAPI</code> that make sure we are using the API correctly.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec6"></a>Clean Boundaries</h1></div></div></div><p><a id="iddle1123" class="indexterm"></a><a id="iddle1183" class="indexterm"></a>Interesting things happen at boundaries. Change is one of those things. Good software designs accommodate change without huge investments and rework. When we use code that is out of our control, special care must be taken to protect our investment and make sure future change is not too costly.</p><p>Code at the boundaries needs clear separation and tests that define expectations. We should avoid letting too much of our code know about the third-party particulars. It’s better to depend on something <span class="emphasis"><em>you</em></span> control than on something you don’t control, lest it end up controlling you.</p><p>We manage third-party boundaries by having very few places in the code that refer to them. We may wrap them as we did with <code class="literal">Map</code>, or we may use an A<span class="smaller">DAPTER</span> to convert from our perfect interface to the provided interface. Either way our code speaks to us better, promotes internally consistent usage across the boundary, and has fewer maintenance points when the third-party code changes.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch08lev1sec7"></a>Bibliography</h1></div></div></div></div><div class="footnotes"><br><hr><div id="ftn.ch08fn01" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ch08fn01" class="para"><sup class="para">[1] </sup></a><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi04.html#bib08_01">[BeckTDD]</a>, pp. 136–137.</p></div><div id="ftn.ch08fn02" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ch08fn02" class="para"><sup class="para">[2] </sup></a>See the Adapter pattern in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi04.html#bib08_02">[GOF]</a>.</p></div><div id="ftn.ch08fn03" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#ch08fn03" class="para"><sup class="para">[3] </sup></a>See more about seams in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi04.html#bib08_03">[WELC]</a>.</p></div></div></div><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch07.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">7. Error Handling</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch09.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">9. Unit Tests</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/ch08.html" data-for-analytics="9780136083238:ch08.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch08.html#">Reset</a>
+</div>
+</div></body></html>

@@ -1,0 +1,581 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/clean-code/9780136083238/ch03.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9780136083238"
+  data-publishers="Prentice Hall"
+
+
+
+  data-htmlfile-name="ch03.html"
+  data-epub-title="Clean Code" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/clean-code/9780136083238/ch03.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9780136083238" data-publishers="Prentice Hall" data-htmlfile-name="ch03.html" data-epub-title="Clean Code" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780136083238"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>3. Functions - Clean Code</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book"></style><link rel="canonical" href="/Library/view/clean-code/9780136083238/ch03.html"><meta name="description" content="Chapter&nbsp;3.&nbsp;Functions In the early days of programming we composed our systems of routines and subroutines. Then, in the era of Fortran and PL/1 we composed our systems ... "><meta property="og:title" content="3. Functions"><meta itemprop="isPartOf" content="/library/view/clean-code/9780136083238/"><meta itemprop="name" content="3. Functions"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch03.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780136083238/"><meta property="og:description" itemprop="description" content="Chapter&nbsp;3.&nbsp;Functions In the early days of programming we composed our systems of routines and subroutines. Then, in the era of Fortran and PL/1 we composed our systems ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Prentice Hall"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780136083238"><meta property="og:book:author" itemprop="author" content="Robert C. Martin"><meta property="og:book:tag" itemprop="about" content="Agile"><meta property="og:book:tag" itemprop="about" content="Core Programming"><meta property="og:book:tag" itemprop="about" content="Lean"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Clean Code
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/ch03.html" data-for-analytics="9780136083238:ch03.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch03.html&amp;text=Clean%20Code&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch03.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch03.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%203.%20Functions&amp;body=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/ch03.html%0D%0Afrom%20Clean%20Code%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch02.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">2. Meaningful Names</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch04.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">4. Comments</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="ch03"></a>Chapter&nbsp;3.&nbsp;Functions</h1></div></div></div><div class="mediaobject"><a id="f030fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/3_1fig_martin.jpg" width="275" alt="Functions" height="324" data-mfp-src="/library/view/clean-code/9780136083238/graphics/3_1fig_martin.jpg"></div><p>In the early days of programming we composed our systems of routines and subroutines. Then, in the era of Fortran and PL/1 we composed our systems of programs, subprograms, and functions. Nowadays only the function survives from those early days. Functions are the first line of organization in any program. Writing them well is the topic of this chapter.</p><p><a id="iddle1562" class="indexterm"></a>Consider the code in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a>. It’s hard to find a long function in FitNesse,<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn01" class="footnote" id="ch03fn01"><sup class="footnote">[1]</sup></a> but after a bit of searching I came across this one. Not only is it long, but it’s got duplicated code, lots of odd strings, and many strange and inobvious data types and APIs. See how much sense you can make of it in the next three minutes.</p><div class="example"><a id="ch03ex01"></a><p class="title"><strong>Example&nbsp;3-1.&nbsp;<code class="literal">HtmlUtil.java (FitNesse 20070619)</code></strong></p><div class="example-contents"><pre class="programlisting"> public static String testableHtml(
+   PageData pageData,
+   boolean includeSuiteSetup
+ ) throws Exception {
+   WikiPage wikiPage = pageData.getWikiPage();
+   StringBuffer buffer = new StringBuffer();
+   if (pageData.hasAttribute("Test")) {
+     if (includeSuiteSetup) {
+       WikiPage suiteSetup =
+         PageCrawlerImpl.getInheritedPage(
+                 SuiteResponder.SUITE_SETUP_NAME, wikiPage
+         );
+       if (suiteSetup != null) {
+         WikiPagePath pagePath =
+           suiteSetup.getPageCrawler().getFullPath(suiteSetup);
+         String pagePathName = PathParser.render(pagePath);
+         buffer.append("!include -setup .")
+               .append(pagePathName)
+               .append("\n");
+       }
+     }
+     WikiPage setup =
+       PageCrawlerImpl.getInheritedPage("SetUp", wikiPage);
+     if (setup != null) {
+       WikiPagePath setupPath =
+         wikiPage.getPageCrawler().getFullPath(setup);
+       String setupPathName = PathParser.render(setupPath);
+       buffer.append("!include -setup .")
+             .append(setupPathName)
+             .append("\n");
+     }
+   }
+   buffer.append(pageData.getContent());
+   if (pageData.hasAttribute("Test")) {
+     WikiPage teardown =
+       PageCrawlerImpl.getInheritedPage("TearDown", wikiPage);
+     if (teardown != null) {
+       WikiPagePath tearDownPath =
+         wikiPage.getPageCrawler().getFullPath(teardown);
+       String tearDownPathName = PathParser.render(tearDownPath);
+       buffer.append("\n")
+             .append("!include -teardown .")
+             .append(tearDownPathName)
+             .append("\n");
+     }
+     if (includeSuiteSetup) {
+       WikiPage suiteTeardown =
+         PageCrawlerImpl.getInheritedPage(
+                 SuiteResponder.SUITE_TEARDOWN_NAME,
+                 wikiPage
+         );
+       if (suiteTeardown != null) {
+         WikiPagePath pagePath =
+           suiteTeardown.getPageCrawler().getFullPath (suiteTeardown);
+         String pagePathName = PathParser.render(pagePath);
+         buffer.append("!include -teardown .")
+               .append(pagePathName)
+               .append("\n");
+       }
+    }
+  }
+  pageData.setContent(buffer.toString());
+  return pageData.getHtml();
+ }</pre></div></div><p>Do you understand the function after three minutes of study? Probably not. There’s too much going on in there at too many different levels of abstraction. There are strange strings and odd function calls mixed in with doubly nested <code class="literal">if</code> statements controlled by flags.</p><p>However, with just a few simple method extractions, some renaming, and a little restructuring, I was able to capture the intent of the function in the nine lines of <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex02">Listing 3-2</a>. See whether you can understand <span class="emphasis"><em>that</em></span> in the next 3 minutes.</p><div class="example"><a id="ch03ex02"></a><p class="title"><strong>Example&nbsp;3-2.&nbsp;<code class="literal">HtmlUtil.java (refactored)</code></strong></p><div class="example-contents"><pre class="programlisting"> public static String renderPageWithSetupsAndTeardowns(
+   PageData pageData, boolean isSuite
+ ) throws Exception {
+   boolean isTestPage = pageData.hasAttribute("Test");
+   if (isTestPage) {
+     WikiPage testPage = pageData.getWikiPage();
+     StringBuffer newPageContent = new StringBuffer();
+     includeSetupPages(testPage, newPageContent, isSuite);
+     newPageContent.append(pageData.getContent());
+     includeTeardownPages(testPage, newPageContent, isSuite);
+     pageData.setContent(newPageContent.toString());
+   }
+
+   return pageData.getHtml();
+ }</pre></div></div><p><a id="iddle1105" class="indexterm"></a><a id="iddle1597" class="indexterm"></a><a id="iddle1607" class="indexterm"></a><a id="iddle1756" class="indexterm"></a><a id="iddle2179" class="indexterm"></a>Unless you are a student of FitNesse, you probably don’t understand all the details. Still, you probably understand that this function performs the inclusion of some setup and teardown pages into a test page and then renders that page into HTML. If you are familiar with JUnit,<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn02" class="footnote" id="ch03fn02"><sup class="footnote">[2]</sup></a> you probably realize that this function belongs to some kind of Web-based testing framework. And, of course, that is correct. Divining that information from <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex02">Listing 3-2</a> is pretty easy, but it’s pretty well obscured by <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a>.</p><p>So what is it that makes a function like <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex02">Listing 3-2</a> easy to read and understand? How can we make a function communicate its intent? What attributes can we give our functions that will allow a casual reader to intuit the kind of program they live inside?</p><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec1"></a>Small!</h1></div></div></div><p>The first rule of functions is that they should be small. The second rule of functions is that <span class="emphasis"><em>they should be smaller than that</em></span>. This is not an assertion that I can justify. I can’t provide any references to research that shows that very small functions are better. What I can tell you is that for nearly four decades I have written functions of all different sizes. I’ve written several nasty 3,000-line abominations. I’ve written scads of functions in the 100 to 300 line range. And I’ve written functions that were 20 to 30 lines long. What this experience has taught me, through long trial and error, is that functions should be very small.</p><p>In the eighties we used to say that a function should be no bigger than a screen-full. Of course we said that at a time when VT100 screens were 24 lines by 80 columns, and our editors used 4 lines for administrative purposes. Nowadays with a cranked-down font and a nice big monitor, you can fit 150 characters on a line and a 100 lines or more on a screen. Lines should not be 150 characters long. Functions should not be 100 lines long. Functions should hardly ever be 20 lines long.</p><p>How short should a function be? In 1999 I went to visit Kent Beck at his home in Oregon. We sat down and did some programming together. At one point he showed me a cute little Java/Swing program that he called <span class="emphasis"><em>Sparkle</em></span>. It produced a visual effect on the screen very similar to the magic wand of the fairy godmother in the movie Cinderella. As you moved the mouse, the sparkles would drip from the cursor with a satisfying scintillation, falling to the bottom of the window through a simulated gravitational field. When Kent showed me the code, I was struck by how small all the functions were. I was used to functions in Swing programs that took up miles of vertical space. Every function in <span class="emphasis"><em>this</em></span> program was just two, or three, or four lines long. Each was transparently obvious. Each told a story. And each led you to the next in a compelling order. <span class="emphasis"><em>That’s</em></span> how short your functions should be!<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn03" class="footnote" id="ch03fn03"><sup class="footnote">[3]</sup></a></p><p><a id="iddle1114" class="indexterm"></a><a id="iddle1583" class="indexterm"></a><a id="iddle1587" class="indexterm"></a><a id="iddle1682" class="indexterm"></a><a id="iddle1926" class="indexterm"></a>How short should your functions be? They should usually be shorter than <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex02">Listing 3-2</a>! Indeed, <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex02">Listing 3-2</a> should really be shortened to <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex03">Listing 3-3</a>.</p><div class="example"><a id="ch03ex03"></a><p class="title"><strong>Example&nbsp;3-3.&nbsp;<code class="literal">HtmlUtil.java (re-refactored)</code></strong></p><div class="example-contents"><pre class="programlisting"> public static String renderPageWithSetupsAndTeardowns(
+   PageData pageData, boolean isSuite) throws Exception {
+   if (isTestPage(pageData))
+     includeSetupAndTeardownPages(pageData, isSuite);
+   return pageData.getHtml();
+ }</pre></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec1"></a>Blocks and Indenting</h2></div></div></div><p>This implies that the blocks within <code class="literal">if</code> statements, <code class="literal">else</code> statements, <code class="literal">while</code> statements, and so on should be one line long. Probably that line should be a function call. Not only does this keep the enclosing function small, but it also adds documentary value because the function called within the block can have a nicely descriptive name.</p><p>This also implies that functions should not be large enough to hold nested structures. Therefore, the indent level of a function should not be greater than one or two. This, of course, makes the functions easier to read and understand.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec2"></a>Do One Thing</h1></div></div></div><p>It should be very clear that <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a> is doing lots more than one thing. It’s creating buffers, fetching pages, searching for inherited pages, rendering paths, appending arcane strings, and generating HTML, among other things. <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a> is very busy doing lots of different things. On the other hand, <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex03">Listing 3-3</a> is doing one simple thing. It’s including setups and teardowns into test pages.</p><div class="mediaobject"><a id="f035fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/3_2fig_martin.jpg" width="500" alt="Do One Thing" height="451" data-mfp-src="/library/view/clean-code/9780136083238/graphics/3_2fig_martin.jpg"></div><p>The following advice has appeared in one form or another for 30 years or more.</p><div class="blockquote"><blockquote class="blockquote"><p><span class="bolditalic">F<span class="smaller">UNCTIONS SHOULD DO ONE THING</span>. T<span class="smaller">HEY SHOULD DO IT WELL</span>. T<span class="smaller">HEY SHOULD DO IT ONLY</span>.</span></p></blockquote></div><p>The problem with this statement is that it is hard to know what “one thing” is. Does <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex03">Listing 3-3</a> do one thing? It’s easy to make the case that it’s doing three things:</p><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>Determining whether the page is a test page.</p></li><li class="listitem"><p>If so, including setups and teardowns.</p></li><li class="listitem"><p>Rendering the page in HTML.</p></li></ol></div><p><a id="iddle1020" class="indexterm"></a><a id="iddle1602" class="indexterm"></a><a id="iddle1606" class="indexterm"></a><a id="iddle1780" class="indexterm"></a><a id="iddle1803" class="indexterm"></a><a id="iddle2106" class="indexterm"></a><a id="iddle2355" class="indexterm"></a>So which is it? Is the function doing one thing or three things? Notice that the three steps of the function are one level of abstraction below the stated name of the function. We can describe the function by describing it as a brief <span class="emphasis"><em>TO</em></span><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn04" class="footnote" id="ch03fn04"><sup class="footnote">[4]</sup></a> paragraph:</p><div class="blockquote"><blockquote class="blockquote"><p><span class="italic">TO RenderPageWithSetupsAndTeardowns, we check to see whether the page is a test page and if so, we include the setups and teardowns. In either case we render the page in HTML.</span></p></blockquote></div><p>If a function does only those steps that are one level below the stated name of the function, then the function is doing one thing. After all, the reason we write functions is to decompose a larger concept (in other words, the name of the function) into a set of steps at the next level of abstraction.</p><p>It should be very clear that <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a> contains steps at many different levels of abstraction. So it is clearly doing more than one thing. Even <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex02">Listing 3-2</a> has two levels of abstraction, as proved by our ability to shrink it down. But it would be very hard to meaningfully shrink <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex03">Listing 3-3</a>. We could extract the <code class="literal">if</code> statement into a function named <code class="literal">includeSetupsAndTeardownsIfTestPage</code>, but that simply restates the code without changing the level of abstraction.</p><p>So, another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation [G34].</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec2"></a>Sections within Functions</h2></div></div></div><p>Look at <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch04.html#ch04ex07">Listing 4-7</a> on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch04.html#ch04ex07">71</a>. Notice that the <code class="literal">generatePrimes</code> function is divided into sections such as <span class="emphasis"><em>declarations</em></span>, <span class="emphasis"><em>initializations</em></span>, and <span class="emphasis"><em>sieve</em></span>. This is an obvious symptom of doing more than one thing. Functions that do one thing cannot be reasonably divided into sections.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec3"></a>One Level of Abstraction per Function</h1></div></div></div><p>In order to make sure our functions are doing “one thing,” we need to make sure that the statements within our function are all at the same level of abstraction. It is easy to see how <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a> violates this rule. There are concepts in there that are at a very high level of abstraction, such as <code class="literal">getHtml()</code>; others that are at an intermediate level of abstraction, such as: <code class="literal">String pagePathName = PathParser.render(pagePath)</code>; and still others that are remarkably low level, such as: <code class="literal">.append("\n")</code>.</p><p>Mixing levels of abstraction within a function is always confusing. Readers may not be able to tell whether a particular expression is an essential concept or a detail. Worse, <a id="iddle1018" class="indexterm"></a><a id="iddle1223" class="indexterm"></a><a id="iddle1987" class="indexterm"></a><a id="iddle2048" class="indexterm"></a><a id="iddle2205" class="indexterm"></a><a id="iddle2222" class="indexterm"></a><a id="iddle2356" class="indexterm"></a>like broken windows, once details are mixed with essential concepts, more and more details tend to accrete within the function.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec3"></a>Reading Code from Top to Bottom: <span class="emphasis"><em>The Stepdown Rule</em></span></h2></div></div></div><p>We want the code to read like a top-down narrative.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn05" class="footnote" id="ch03fn05"><sup class="footnote">[5]</sup></a> We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions. I call this <span class="emphasis"><em>The Stepdown Rule</em></span>.</p><p>To say this differently, we want to be able to read the program as though it were a set of <span class="emphasis"><em>TO</em></span> paragraphs, each of which is describing the current level of abstraction and referencing subsequent <span class="emphasis"><em>TO</em></span> paragraphs at the next level down.</p><div class="blockquote"><blockquote class="blockquote"><p><span class="italic">To include the setups and teardowns, we include setups, then we include the test page content, and then we include the teardowns.</span></p><p><span class="italic">To include the setups, we include the suite setup if this is a suite, then we include the regular setup.</span></p><p><span class="italic">To include the suite setup, we search the parent hierarchy for the “SuiteSetUp” page and add an include statement with the path of that page.</span></p><p><span class="italic">To search the parent. . .</span></p></blockquote></div><p>It turns out to be very difficult for programmers to learn to follow this rule and write functions that stay at a single level of abstraction. But learning this trick is also very important. It is the key to keeping functions short and making sure they do “one thing.” Making the code read like a top-down set of <span class="emphasis"><em>TO</em></span> paragraphs is an effective technique for keeping the abstraction level consistent.</p><p>Take a look at <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex07">Listing 3-7</a> at the end of this chapter. It shows the whole <code class="literal">testableHtml</code> function refactored according to the principles described here. Notice how each function introduces the next, and each function remains at a consistent level of abstraction.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec4"></a>Switch Statements</h1></div></div></div><p>It’s hard to make a small <code class="literal">switch</code> statement.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn06" class="footnote" id="ch03fn06"><sup class="footnote">[6]</sup></a> Even a <code class="literal">switch</code> statement with only two cases is larger than I’d like a single block or function to be. It’s also hard to make a <code class="literal">switch</code> statement that does one thing. By their nature, <code class="literal">switch</code> statements always do <span class="emphasis"><em>N</em></span> things. Unfortunately we can’t always avoid <code class="literal">switch</code> statements, but we <span class="emphasis"><em>can</em></span> make sure that each <code class="literal">switch</code> statement is buried in a low-level class and is never repeated. We do this, of course, with polymorphism.</p><p><a id="iddle1008" class="indexterm"></a><a id="iddle1934" class="indexterm"></a><a id="iddle2160" class="indexterm"></a><a id="iddle2223" class="indexterm"></a><a id="iddle2225" class="indexterm"></a>Consider <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex04">Listing 3-4</a>. It shows just one of the operations that might depend on the type of employee.</p><div class="example"><a id="ch03ex04"></a><p class="title"><strong>Example&nbsp;3-4.&nbsp;<code class="literal">Payroll.java</code></strong></p><div class="example-contents"><pre class="programlisting">public Money calculatePay(Employee e)
+throws InvalidEmployeeType {
+    switch (e.type) {
+      case COMMISSIONED:
+        return calculateCommissionedPay(e);
+      case HOURLY:
+        return calculateHourlyPay(e);
+      case SALARIED:
+        return calculateSalariedPay(e);
+      default:
+        throw new InvalidEmployeeType(e.type);
+    }
+}</pre></div></div><p>There are several problems with this function. First, it’s large, and when new employee types are added, it will grow. Second, it very clearly does more than one thing. Third, it violates the Single Responsibility Principle<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn07" class="footnote" id="ch03fn07"><sup class="footnote">[7]</sup></a> (SRP) because there is more than one reason for it to change. Fourth, it violates the Open Closed Principle<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn08" class="footnote" id="ch03fn08"><sup class="footnote">[8]</sup></a> (OCP) because it must change whenever new types are added. But possibly the worst problem with this function is that there are an unlimited number of other functions that will have the same structure. For example we could have</p><div class="informalexample"><pre class="programlisting">isPayday(Employee e, Date date),</pre></div><p>or</p><div class="informalexample"><pre class="programlisting">deliverPay(Employee e, Money pay),</pre></div><p class="continued">or a host of others. All of which would have the same deleterious structure.</p><p>The solution to this problem (see <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex05">Listing 3-5</a>) is to bury the <code class="literal">switch</code> statement in the basement of an A<span class="smaller">BSTRACT</span> F<span class="smaller">ACTORY</span>,<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn09" class="footnote" id="ch03fn09"><sup class="footnote">[9]</sup></a> and never let anyone see it. The factory will use the <code class="literal">switch</code> statement to create appropriate instances of the derivatives of <code class="literal">Employee</code>, and the various functions, such as <code class="literal">calculatePay</code>, <code class="literal">isPayday</code>, and <code class="literal">deliverPay</code>, will be dispatched polymorphically through the <code class="literal">Employee</code> interface.</p><p>My general rule for <code class="literal">switch</code> statements is that they can be tolerated if they appear only once, are used to create polymorphic objects, and are hidden behind an inheritance <a id="iddle1435" class="indexterm"></a><a id="iddle1599" class="indexterm"></a><a id="iddle1804" class="indexterm"></a><a id="iddle1865" class="indexterm"></a>relationship so that the rest of the system can’t see them [G23]. Of course every circumstance is unique, and there are times when I violate one or more parts of that rule.</p><div class="example"><a id="ch03ex05"></a><p class="title"><strong>Example&nbsp;3-5.&nbsp;<code class="literal">Employee and Factory</code></strong></p><div class="example-contents"><pre class="programlisting">public abstract class Employee {
+  public abstract boolean isPayday();
+  public abstract Money calculatePay();
+  public abstract void deliverPay(Money pay);
+}
+-----------------
+public interface EmployeeFactory {
+  public Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType;
+}
+-----------------
+public class EmployeeFactoryImpl implements EmployeeFactory {
+  public Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType {
+    switch (r.type) {
+      case COMMISSIONED:
+        return new CommissionedEmployee(r) ;
+      case HOURLY:
+        return new HourlyEmployee(r);
+      case SALARIED:
+        return new SalariedEmploye(r);
+      default:
+        throw new InvalidEmployeeType(r.type);
+    }
+  }
+}</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec5"></a>Use Descriptive Names</h1></div></div></div><p>In <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex07">Listing 3-7</a> I changed the name of our example function from <code class="literal">testableHtml</code> to <code class="literal">SetupTeardownIncluder.render</code>. This is a far better name because it better describes what the function does. I also gave each of the private methods an equally descriptive name such as <code class="literal">isTestable</code> or <code class="literal">includeSetupAndTeardownPages</code>. It is hard to overestimate the value of good names. Remember Ward’s principle: “<span class="emphasis"><em>You know you are working on clean code when each routine turns out to be pretty much what you expected.</em></span>” Half the battle to achieving that principle is choosing good names for small functions that do one thing. The smaller and more focused a function is, the easier it is to choose a descriptive name.</p><p>Don’t be afraid to make a name long. A long descriptive name is better than a short enigmatic name. A long descriptive name is better than a long descriptive comment. Use a naming convention that allows multiple words to be easily read in the function names, and then make use of those multiple words to give the function a name that says what it does.</p><p><a id="iddle1061" class="indexterm"></a><a id="iddle1329" class="indexterm"></a><a id="iddle1470" class="indexterm"></a><a id="iddle1577" class="indexterm"></a><a id="iddle1842" class="indexterm"></a><a id="iddle1860" class="indexterm"></a><a id="iddle1891" class="indexterm"></a><a id="iddle1971" class="indexterm"></a><a id="iddle1984" class="indexterm"></a><a id="iddle2284" class="indexterm"></a><a id="iddle2369" class="indexterm"></a>Don’t be afraid to spend time choosing a name. Indeed, you should try several different names and read the code with each in place. Modern IDEs like Eclipse or IntelliJ make it trivial to change names. Use one of those IDEs and experiment with different names until you find one that is as descriptive as you can make it.</p><p>Choosing descriptive names will clarify the design of the module in your mind and help you to improve it. It is not at all uncommon that hunting for a good name results in a favorable restructuring of the code.</p><p>Be consistent in your names. Use the same phrases, nouns, and verbs in the function names you choose for your modules. Consider, for example, the names <code class="literal">includeSetup-AndTeardownPages</code>, <code class="literal">includeSetupPages</code>, <code class="literal">includeSuiteSetupPage</code>, and <code class="literal">includeSetupPage</code>. The similar phraseology in those names allows the sequence to tell a story. Indeed, if I showed you just the sequence above, you’d ask yourself: “What happened to <code class="literal">includeTeardownPages</code>, <code class="literal">includeSuiteTeardownPage</code>, and <code class="literal">includeTeardownPage</code>?” How’s that for being “. . . <span class="emphasis"><em>pretty much what you expected</em></span>.”</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec6"></a>Function Arguments</h1></div></div></div><p>The ideal number of arguments for a function is zero (niladic). Next comes one (monadic), followed closely by two (dyadic). Three arguments (triadic) should be avoided where possible. More than three (polyadic) requires very special justification—and then shouldn’t be used anyway.</p><p>Arguments are hard. They take a lot of conceptual power. That’s why I got rid of almost all of them from the example. Consider, for instance, the <code class="literal">StringBuffer</code> in the example. We could have passed it around as an argument rather than making it an instance variable, but then our readers would have had to interpret it each time they saw it. When you are reading the story told by the module, <code class="literal">includeSetupPage()</code> is easier to understand than <code class="literal">includeSetupPageInto(newPage-Content)</code>. The argument is at a different level of abstraction than the function name and forces you to know a detail (in other words, <code class="literal">StringBuffer</code>) that isn’t particularly important at that point.</p><div class="mediaobject"><a id="f040fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/3_3fig_martin.jpg" width="300" alt="Function Arguments" height="405" data-mfp-src="/library/view/clean-code/9780136083238/graphics/3_3fig_martin.jpg"></div><p>Arguments are even harder from a testing point of view. Imagine the difficulty of writing all the test cases to ensure that all the various combinations of arguments work properly. If there are no arguments, this is trivial. If there’s one argument, it’s not too hard. With two arguments the problem gets a bit more challenging. With more than two arguments, testing every combination of appropriate values can be daunting.</p><p><a id="iddle1060" class="indexterm"></a><a id="iddle1063" class="indexterm"></a><a id="iddle1116" class="indexterm"></a><a id="iddle1517" class="indexterm"></a><a id="iddle1564" class="indexterm"></a><a id="iddle1692" class="indexterm"></a><a id="iddle1843" class="indexterm"></a><a id="iddle1948" class="indexterm"></a><a id="iddle2367" class="indexterm"></a>Output arguments are harder to understand than input arguments. When we read a function, we are used to the idea of information going <span class="emphasis"><em>in</em></span> to the function through arguments and <span class="emphasis"><em>out</em></span> through the return value. We don’t usually expect information to be going out through the arguments. So output arguments often cause us to do a double-take.</p><p>One input argument is the next best thing to no arguments. <code class="literal">SetupTeardownIncluder.render(pageData)</code> is pretty easy to understand. Clearly we are going to <span class="emphasis"><em>render</em></span> the data in the <code class="literal">pageData</code> object.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec4"></a>Common Monadic Forms</h2></div></div></div><p>There are two very common reasons to pass a single argument into a function. You may be asking a question about that argument, as in <code class="literal">boolean fileExists("MyFile")</code>. Or you may be operating on that argument, transforming it into something else and <span class="emphasis"><em>returning it</em></span>. For example, <code class="literal">InputStream fileOpen("MyFile")</code> transforms a file name <code class="literal">String</code> into an <code class="literal">InputStream</code> return value. These two uses are what readers expect when they see a function. You should choose names that make the distinction clear, and always use the two forms in a consistent context. (See Command Query Separation below.)</p><p>A somewhat less common, but still very useful form for a single argument function, is an <span class="emphasis"><em>event</em></span>. In this form there is an input argument but no output argument. The overall program is meant to interpret the function call as an event and use the argument to alter the state of the system, for example, <code class="literal">void passwordAttemptFailedNtimes(int attempts)</code>. Use this form with care. It should be very clear to the reader that this is an event. Choose names and contexts carefully.</p><p>Try to avoid any monadic functions that don’t follow these forms, for example, <code class="literal">void includeSetupPageInto(StringBuffer pageText)</code>. Using an output argument instead of a return value for a transformation is confusing. If a function is going to transform its input argument, the transformation should appear as the return value. Indeed, <code class="literal">StringBuffer transform(StringBuffer in)</code> is better than <code class="literal">void transform-(StringBuffer out)</code>, even if the implementation in the first case simply returns the input argument. At least it still follows the form of a transformation.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec5"></a>Flag Arguments</h2></div></div></div><p>Flag arguments are ugly. Passing a boolean into a function is a truly terrible practice. It immediately complicates the signature of the method, loudly proclaiming that this function does more than one thing. It does one thing if the flag is true and another if the flag is false!</p><p>In <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex07">Listing 3-7</a> we had no choice because the callers were already passing that flag in, and I wanted to limit the scope of refactoring to the function and below. Still, the method call <code class="literal">render(true)</code> is just plain confusing to a poor reader. Mousing over the call and seeing <code class="literal">render(boolean isSuite)</code> helps a little, but not that much. We should have split the function into two: <code class="literal">renderForSuite()</code> and <code class="literal">renderForSingleTest()</code>.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec6"></a>Dyadic Functions</h2></div></div></div><p><a id="iddle1082" class="indexterm"></a><a id="iddle1152" class="indexterm"></a><a id="iddle1471" class="indexterm"></a><a id="iddle1589" class="indexterm"></a><a id="iddle1844" class="indexterm"></a><a id="iddle2161" class="indexterm"></a><a id="iddle2370" class="indexterm"></a>A function with two arguments is harder to understand than a monadic function. For example, <code class="literal">writeField(name)</code> is easier to understand than <code class="literal">writeField(output-Stream, name)</code>.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn10" class="footnote" id="ch03fn10"><sup class="footnote">[10]</sup></a> Though the meaning of both is clear, the first glides past the eye, easily depositing its meaning. The second requires a short pause until we learn to ignore the first parameter. And <span class="emphasis"><em>that</em></span>, of course, eventually results in problems because we should never ignore any part of code. The parts we ignore are where the bugs will hide.</p><p>There are times, of course, where two arguments are appropriate. For example, <code class="literal">Point p = new Point(0,0);</code> is perfectly reasonable. Cartesian points naturally take two arguments. Indeed, we’d be very surprised to see <code class="literal">new Point(0)</code>. However, the two arguments in this case <span class="emphasis"><em>are ordered components of a single value!</em></span> Whereas <code class="literal">output-Stream</code> and <code class="literal">name</code> have neither a natural cohesion, nor a natural ordering.</p><p>Even obvious dyadic functions like <code class="literal">assertEquals(expected, actual)</code> are problematic. How many times have you put the <code class="literal">actual</code> where the <code class="literal">expected</code> should be? The two arguments have no natural ordering. The <code class="literal">expected</code>, <code class="literal">actual</code> ordering is a convention that requires practice to learn.</p><p>Dyads aren’t evil, and you will certainly have to write them. However, you should be aware that they come at a cost and should take advantage of what mechanims may be available to you to convert them into monads. For example, you might make the <code class="literal">writeField</code> method a member of <code class="literal">outputStream</code> so that you can say <code class="literal">outputStream. writeField(name)</code>. Or you might make the <code class="literal">outputStream</code> a member variable of the current class so that you don’t have to pass it. Or you might extract a new class like <code class="literal">FieldWriter</code> that takes the <code class="literal">outputStream</code> in its constructor and has a <code class="literal">write</code> method.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec7"></a>Triads</h2></div></div></div><p>Functions that take three arguments are significantly harder to understand than dyads. The issues of ordering, pausing, and ignoring are more than doubled. I suggest you think very carefully before creating a triad.</p><p>For example, consider the common overload of <code class="literal">assertEquals</code> that takes three arguments: <code class="literal">assertEquals(message, expected, actual)</code>. How many times have you read the <code class="literal">message</code> and thought it was the <code class="literal">expected</code>? I have stumbled and paused over that particular triad many times. In fact, <span class="emphasis"><em>every time I see it</em></span>, I do a double-take and then learn to ignore the message.</p><p>On the other hand, here is a triad that is not quite so insidious: <code class="literal">assertEquals(1.0, amount, .001)</code>. Although this still requires a double-take, it’s one that’s worth taking. It’s always good to be reminded that equality of floating point values is a relative thing.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec8"></a>Argument Objects</h2></div></div></div><p><a id="iddle1064" class="indexterm"></a><a id="iddle1065" class="indexterm"></a><a id="iddle1066" class="indexterm"></a><a id="iddle1761" class="indexterm"></a><a id="iddle1785" class="indexterm"></a><a id="iddle2406" class="indexterm"></a>When a function seems to need more than two or three arguments, it is likely that some of those arguments ought to be wrapped into a class of their own. Consider, for example, the difference between the two following declarations:</p><div class="informalexample"><pre class="programlisting">Circle makeCircle(double x, double y, double radius);
+Circle makeCircle(Point center, double radius);</pre></div><p>Reducing the number of arguments by creating objects out of them may seem like cheating, but it’s not. When groups of variables are passed together, the way <code class="literal">x</code> and <code class="literal">y</code> are in the example above, they are likely part of a concept that deserves a name of its own.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec9"></a>Argument Lists</h2></div></div></div><p>Sometimes we want to pass a variable number of arguments into a function. Consider, for example, the <code class="literal">String.format</code> method:</p><div class="informalexample"><pre class="programlisting">String.format("%s worked %.2f hours.", name, hours);</pre></div><p>If the variable arguments are all treated identically, as they are in the example above, then they are equivalent to a single argument of type <code class="literal">List</code>. By that reasoning, <code class="literal">String.format</code> is actually dyadic. Indeed, the declaration of <code class="literal">String.format</code> as shown below is clearly dyadic.</p><div class="informalexample"><pre class="programlisting">public String format(String format, Object... args)</pre></div><p>So all the same rules apply. Functions that take variable arguments can be monads, dyads, or even triads. But it would be a mistake to give them more arguments than that.</p><div class="informalexample"><pre class="programlisting">void monad(Integer... args);
+void dyad(String name, Integer... args);
+void triad(String name, int count, Integer... args);</pre></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec10"></a>Verbs and Keywords</h2></div></div></div><p>Choosing good names for a function can go a long way toward explaining the intent of the function and the order and intent of the arguments. In the case of a monad, the function and argument should form a very nice verb/noun pair. For example, <code class="literal">write(name)</code> is very evocative. Whatever this “name” thing is, it is being “written.” An even better name might be <code class="literal">writeField(name)</code>, which tells us that the “name” thing is a “field.”</p><p>This last is an example of the <span class="emphasis"><em>keyword</em></span> form of a function name. Using this form we encode the names of the arguments into the function name. For example, <code class="literal">assertEquals</code> might be better written as <code class="literal">assertExpectedEqualsActual(expected, actual)</code>. This strongly mitigates the problem of having to remember the ordering of the arguments.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec7"></a>Have No Side Effects</h1></div></div></div><p><a id="iddle1644" class="indexterm"></a><a id="iddle2140" class="indexterm"></a><a id="iddle2263" class="indexterm"></a>Side effects are lies. Your function promises to do one thing, but it also does other <span class="emphasis"><em>hidden</em></span> things. Sometimes it will make unexpected changes to the variables of its own class. Sometimes it will make them to the parameters passed into the function or to system globals. In either case they are devious and damaging mistruths that often result in strange temporal couplings and order dependencies.</p><p>Consider, for example, the seemingly innocuous function in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex06">Listing 3-6</a>. This function uses a standard algorithm to match a <code class="literal">userName</code> to a <code class="literal">password</code>. It returns <code class="literal">true</code> if they match and <code class="literal">false</code> if anything goes wrong. But it also has a side effect. Can you spot it?</p><div class="example"><a id="ch03ex06"></a><p class="title"><strong>Example&nbsp;3-6.&nbsp;<code class="literal">UserValidator.java</code></strong></p><div class="example-contents"><pre class="programlisting">public class UserValidator {
+  private Cryptographer cryptographer;
+
+  public boolean checkPassword(String userName, String password) {
+    User user = UserGateway.findByName(userName);
+    if (user != User.NULL) {
+      String codedPhrase = user.getPhraseEncodedByPassword();
+      String phrase = cryptographer.decrypt(codedPhrase, password);
+      if ("Valid Password".equals(phrase)) {
+        Session.initialize();
+        return true;
+      }
+    }
+    return false;
+  }
+}</pre></div></div><p>The side effect is the call to <code class="literal">Session.initialize()</code>, of course. The <code class="literal">checkPassword</code> function, by its name, says that it checks the password. The name does not imply that it initializes the session. So a caller who believes what the name of the function says runs the risk of erasing the existing session data when he or she decides to check the validity of the user.</p><p>This side effect creates a temporal coupling. That is, <code class="literal">checkPassword</code> can only be called at certain times (in other words, when it is safe to initialize the session). If it is called out of order, session data may be inadvertently lost. Temporal couplings are confusing, especially when hidden as a side effect. If you must have a temporal coupling, you should make it clear in the name of the function. In this case we might rename the function <code class="literal">checkPasswordAndInitializeSession</code>, though that certainly violates “Do one thing.”</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec11"></a>Output Arguments</h2></div></div></div><p><a id="iddle1242" class="indexterm"></a><a id="iddle1580" class="indexterm"></a><a id="iddle1950" class="indexterm"></a><a id="iddle1951" class="indexterm"></a><a id="iddle1952" class="indexterm"></a><a id="iddle2036" class="indexterm"></a>Arguments are most naturally interpreted as <span class="emphasis"><em>inputs</em></span> to a function. If you have been programming for more than a few years, I’m sure you’ve done a double-take on an argument that was actually an <span class="emphasis"><em>output</em></span> rather than an input. For example:</p><div class="informalexample"><pre class="programlisting">appendFooter(s);</pre></div><p>Does this function append <code class="literal">s</code> as the footer to something? Or does it append some footer to <code class="literal">s</code>? Is <code class="literal">s</code> an input or an output? It doesn’t take long to look at the function signature and see:</p><div class="informalexample"><pre class="programlisting">public void appendFooter(StringBuffer report)</pre></div><p>This clarifies the issue, but only at the expense of checking the declaration of the function. Anything that forces you to check the function signature is equivalent to a double-take. It’s a cognitive break and should be avoided.</p><p>In the days before object oriented programming it was sometimes necessary to have output arguments. However, much of the need for output arguments disappears in OO languages because <code class="literal">this</code> is <span class="emphasis"><em>intended</em></span> to act as an output argument. In other words, it would be better for <code class="literal">appendFooter</code> to be invoked as</p><div class="informalexample"><pre class="programlisting">report.appendFooter();</pre></div><p>In general output arguments should be avoided. If your function must change the state of something, have it change the state of its owning object.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec8"></a>Command Query Separation</h1></div></div></div><p>Functions should either do something or answer something, but not both. Either your function should change the state of an object, or it should return some information about that object. Doing both often leads to confusion. Consider, for example, the following function:</p><div class="informalexample"><pre class="programlisting">public boolean set(String attribute, String value);</pre></div><p>This function sets the value of a named attribute and returns <code class="literal">true</code> if it is successful and <code class="literal">false</code> if no such attribute exists. This leads to odd statements like this:</p><div class="informalexample"><pre class="programlisting">if (set("username", "unclebob"))...</pre></div><p>Imagine this from the point of view of the reader. What does it mean? Is it asking whether the “<code class="literal">username</code>” attribute was previously set to “<code class="literal">unclebob</code>”? Or is it asking whether the “<code class="literal">username</code>” attribute was successfully set to “<code class="literal">unclebob</code>”? It’s hard to infer the meaning from the call because it’s not clear whether the word “<code class="literal">set</code>” is a verb or an adjective.</p><p>The author intended <code class="literal">set</code> to be a verb, but in the context of the <code class="literal">if</code> statement it <span class="emphasis"><em>feels</em></span> like an adjective. So the statement reads as “If the <code class="literal">username</code> attribute was previously set to <code class="literal">unclebob</code>” and not “set the <code class="literal">username</code> attribute to <code class="literal">unclebob</code> and if that worked then. . . .” We <a id="iddle1500" class="indexterm"></a><a id="iddle1523" class="indexterm"></a><a id="iddle1888" class="indexterm"></a><a id="iddle2372" class="indexterm"></a>could try to resolve this by renaming the <code class="literal">set</code> function to <code class="literal">setAndCheckIfExists</code>, but that doesn’t much help the readability of the <code class="literal">if</code> statement. The real solution is to separate the command from the query so that the ambiguity cannot occur.</p><div class="informalexample"><pre class="programlisting">if (attributeExists("username")) {
+  setAttribute("username", "unclebob");
+  ...
+}</pre></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec9"></a>Prefer Exceptions to Returning Error Codes</h1></div></div></div><p>Returning error codes from command functions is a subtle violation of command query separation. It promotes commands being used as expressions in the predicates of <code class="literal">if</code> statements.</p><div class="informalexample"><pre class="programlisting">if (deletePage(page) == E_OK)</pre></div><p>This does not suffer from verb/adjective confusion but does lead to deeply nested structures. When you return an error code, you create the problem that the caller must deal with the error immediately.</p><div class="informalexample"><pre class="programlisting">if (deletePage(page) == E_OK) {
+  if (registry.deleteReference(page.name) == E_OK) {
+    if (configKeys.deleteKey(page.name.makeKey()) == E_OK){
+      logger.log("page deleted");
+    } else {
+      logger.log("configKey not deleted");
+    }
+  } else {
+    logger.log("deleteReference from registry failed");
+  }
+} else {
+  logger.log("delete failed");
+  return E_ERROR;
+}</pre></div><p>On the other hand, if you use exceptions instead of returned error codes, then the error processing code can be separated from the happy path code and can be simplified:</p><div class="informalexample"><pre class="programlisting">try {
+  deletePage(page);
+  registry.deleteReference(page.name);
+  configKeys.deleteKey(page.name.makeKey());
+}
+catch (Exception e) {
+  logger.log(e.getMessage());
+}</pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec12"></a>Extract Try/Catch Blocks</h2></div></div></div><p><code class="literal">Try/catch</code> blocks are ugly in their own right. They confuse the structure of the code and mix error processing with normal processing. So it is better to extract the bodies of the <code class="literal">try</code> and <code class="literal">catch</code> blocks out into functions of their own.</p><div class="informalexample"><pre class="programlisting">  public void delete(Page page) {
+    try {
+      deletePageAndAllReferences(page);
+    }
+    catch (Exception e) {
+      logError(e);
+    }
+  }
+
+  private void deletePageAndAllReferences(Page page) throws Exception {
+    deletePage(page);
+    registry.deleteReference(page.name);
+    configKeys.deleteKey(page.name.makeKey());
+  }
+
+  private void logError(Exception e) {
+    logger.log(e.getMessage());
+  }</pre></div><p><a id="iddle1424" class="indexterm"></a><a id="iddle1497" class="indexterm"></a><a id="iddle1499" class="indexterm"></a><a id="iddle1507" class="indexterm"></a>In the above, the <code class="literal">delete</code> function is all about error processing. It is easy to understand and then ignore. The <code class="literal">deletePageAndAllReferences</code> function is all about the processes of fully deleting a <code class="literal">page</code>. Error handling can be ignored. This provides a nice separation that makes the code easier to understand and modify.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec13"></a>Error Handling Is One Thing</h2></div></div></div><p>Functions should do one thing. Error handing is one thing. Thus, a function that handles errors should do nothing else. This implies (as in the example above) that if the keyword <code class="literal">try</code> exists in a function, it should be the very first word in the function and that there should be nothing after the <code class="literal">catch/finally</code> blocks.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="ch03lev2sec14"></a>The <code class="literal">Error.java</code> Dependency Magnet</h2></div></div></div><p>Returning error codes usually implies that there is some class or enum in which all the error codes are defined.</p><div class="informalexample"><pre class="programlisting">public enum Error {
+  OK,
+  INVALID,
+  NO_SUCH,
+  LOCKED,
+  OUT_OF_RESOURCES,
+  WAITING_FOR_EVENT;
+}</pre></div><p>Classes like this are a <span class="emphasis"><em>dependency magnet;</em></span> many other classes must import and use them. Thus, when the <code class="literal">Error enum</code> changes, all those other classes need to be recompiled and redeployed.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn11" class="footnote" id="ch03fn11"><sup class="footnote">[11]</sup></a> This puts a negative pressure on the <code class="literal">Error</code> class. Programmers don’t want <a id="iddle1033" class="indexterm"></a><a id="iddle1391" class="indexterm"></a><a id="iddle1428" class="indexterm"></a><a id="iddle1442" class="indexterm"></a><a id="iddle1462" class="indexterm"></a><a id="iddle1468" class="indexterm"></a><a id="iddle1469" class="indexterm"></a><a id="iddle1502" class="indexterm"></a><a id="iddle1630" class="indexterm"></a><a id="iddle1678" class="indexterm"></a><a id="iddle2028" class="indexterm"></a><a id="iddle2219" class="indexterm"></a>to add new errors because then they have to rebuild and redeploy everything. So they reuse old error codes instead of adding new ones.</p><p>When you use exceptions rather than error codes, then new exceptions are <span class="emphasis"><em>derivatives</em></span> of the exception class. They can be added without forcing any recompilation or redeployment.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn12" class="footnote" id="ch03fn12"><sup class="footnote">[12]</sup></a></p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec10"></a>Don’t Repeat Yourself<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn13" class="footnote" id="ch03fn13"><sup class="footnote">[13]</sup></a></h1></div></div></div><p>Look back at <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex01">Listing 3-1</a> carefully and you will notice that there is an algorithm that gets repeated four times, once for each of the <code class="literal">SetUp</code>, <code class="literal">SuiteSetUp</code>, <code class="literal">TearDown</code>, and <code class="literal">SuiteTearDown</code> cases. It’s not easy to spot this duplication because the four instances are intermixed with other code and aren’t uniformly duplicated. Still, the duplication is a problem because it bloats the code and will require four-fold modification should the algorithm ever have to change. It is also a four-fold opportunity for an error of omission.</p><div class="mediaobject"><a id="f048fig01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/3_4fig_martin.jpg" width="180" alt="Don’t Repeat YourselfThe DRY principle. [PRAG]." height="124" data-mfp-src="/library/view/clean-code/9780136083238/graphics/3_4fig_martin.jpg"></div><p>This duplication was remedied by the <code class="literal">include</code> method in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03ex07">Listing 3-7</a>. Read through that code again and notice how the readability of the whole module is enhanced by the reduction of that duplication.</p><p>Duplication may be the root of all evil in software. Many principles and practices have been created for the purpose of controlling or eliminating it. Consider, for example, that all of Codd’s database normal forms serve to eliminate duplication in data. Consider also how object-oriented programming serves to concentrate code into base classes that would otherwise be redundant. Structured programming, Aspect Oriented Programming, Component Oriented Programming, are all, in part, strategies for eliminating duplication. It would appear that since the invention of the subroutine, innovations in software development have been an ongoing attempt to eliminate duplication from our source code.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec11"></a>Structured Programming</h1></div></div></div><p>Some programmers follow Edsger Dijkstra’s rules of structured programming.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ftn.ch03fn14" class="footnote" id="ch03fn14"><sup class="footnote">[14]</sup></a> Dijkstra said that every function, and every block within a function, should have one entry and one exit. Following these rules means that there should only be one <code class="literal">return</code> statement in a function, no <code class="literal">break</code> or <code class="literal">continue</code> statements in a loop, and never, <span class="emphasis"><em>ever</em></span>, any <code class="literal">goto</code> statements.</p><p><a id="iddle1178" class="indexterm"></a><a id="iddle1608" class="indexterm"></a><a id="iddle1610" class="indexterm"></a><a id="iddle1611" class="indexterm"></a><a id="iddle1631" class="indexterm"></a><a id="iddle1763" class="indexterm"></a>While we are sympathetic to the goals and disciplines of structured programming, those rules serve little benefit when functions are very small. It is only in larger functions that such rules provide significant benefit.</p><p>So if you keep your functions small, then the occasional multiple <code class="literal">return</code>, <code class="literal">break</code>, or <code class="literal">continue</code> statement does no harm and can sometimes even be more expressive than the single-entry, single-exit rule. On the other hand, <code class="literal">goto</code> only makes sense in large functions, so it should be avoided.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec12"></a>How Do You Write Functions Like This?</h1></div></div></div><p>Writing software is like any other kind of writing. When you write a paper or an article, you get your thoughts down first, then you massage it until it reads well. The first draft might be clumsy and disorganized, so you wordsmith it and restructure it and refine it until it reads the way you want it to read.</p><p>When I write functions, they come out long and complicated. They have lots of indenting and nested loops. They have long argument lists. The names are arbitrary, and there is duplicated code. But I also have a suite of unit tests that cover every one of those clumsy lines of code.</p><p>So then I massage and refine that code, splitting out functions, changing names, eliminating duplication. I shrink the methods and reorder them. Sometimes I break out whole classes, all the while keeping the tests passing.</p><p>In the end, I wind up with functions that follow the rules I’ve laid down in this chapter. I don’t write them that way to start. I don’t think anyone could.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec13"></a>Conclusion</h1></div></div></div><p>Every system is built from a domain-specific language designed by the programmers to describe that system. Functions are the verbs of that language, and classes are the nouns. This is not some throwback to the hideous old notion that the nouns and verbs in a requirements document are the first guess of the classes and functions of a system. Rather, this is a much older truth. The art of programming is, and has always been, the art of language design.</p><p>Master programmers think of systems as stories to be told rather than programs to be written. They use the facilities of their chosen programming language to construct a much richer and more expressive language that can be used to tell that story. Part of that domain-specific language is the hierarchy of functions that describe all the actions that take place within that system. In an artful act of recursion those actions are written to use the very domain-specific language they define to tell their own small part of the story.</p><p>This chapter has been about the mechanics of writing functions well. If you follow the rules herein, your functions will be short, well named, and nicely organized. But <a id="iddle2132" class="indexterm"></a>never forget that your real goal is to tell the story of the system, and that the functions you write need to fit cleanly together into a clear and precise language to help you with that telling.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec14"></a><code class="literal">SetupTeardownIncluder</code></h1></div></div></div><div class="example"><a id="ch03ex07"></a><p class="title"><strong>Example&nbsp;3-7.&nbsp;<code class="literal">SetupTeardownIncluder.java</code></strong></p><div class="example-contents"><pre class="programlisting">package fitnesse.html;
+
+import fitnesse.responders.run.SuiteResponder;
+import fitnesse.wiki.*;
+
+public class SetupTeardownIncluder {
+  private PageData pageData;
+  private boolean isSuite;
+  private WikiPage testPage;
+  private StringBuffer newPageContent;
+  private PageCrawler pageCrawler;
+
+  public static String render(PageData pageData) throws Exception {
+    return render(pageData, false);
+  }
+
+  public static String render(PageData pageData, boolean isSuite)
+    throws Exception {
+    return new SetupTeardownIncluder(pageData).render(isSuite);
+  }
+
+  private SetupTeardownIncluder(PageData pageData) {
+    this.pageData = pageData;
+    testPage = pageData.getWikiPage();
+    pageCrawler = testPage.getPageCrawler();
+    newPageContent = new StringBuffer();
+  }
+
+  private String render(boolean isSuite) throws Exception {
+    this.isSuite = isSuite;
+    if (isTestPage())
+      includeSetupAndTeardownPages();
+    return pageData.getHtml();
+  }
+
+  private boolean isTestPage() throws Exception {
+    return pageData.hasAttribute("Test");
+  }
+
+  private void includeSetupAndTeardownPages() throws Exception {
+    includeSetupPages();
+    includePageContent();
+    includeTeardownPages();
+    updatePageContent();
+  }
+  private void includeSetupPages() throws Exception {
+    if (isSuite)
+      includeSuiteSetupPage();
+    includeSetupPage();
+  }
+
+  private void includeSuiteSetupPage() throws Exception {
+    include(SuiteResponder.SUITE_SETUP_NAME, "-setup");
+  }
+
+  private void includeSetupPage() throws Exception {
+    include("SetUp", "-setup");
+  }
+
+  private void includePageContent() throws Exception {
+    newPageContent.append(pageData.getContent());
+  }
+
+  private void includeTeardownPages() throws Exception {
+    includeTeardownPage();
+    if (isSuite)
+      includeSuiteTeardownPage();
+  }
+
+  private void includeTeardownPage() throws Exception {
+    include("TearDown", "-teardown");
+  }
+
+  private void includeSuiteTeardownPage() throws Exception {
+    include(SuiteResponder.SUITE_TEARDOWN_NAME, "-teardown");
+  }
+
+  private void updatePageContent() throws Exception {
+    pageData.setContent(newPageContent.toString());
+  }
+
+  private void include(String pageName, String arg) throws Exception {
+    WikiPage inheritedPage = findInheritedPage(pageName);
+    if (inheritedPage != null) {
+      String pagePathName = getPathNameForPage(inheritedPage);
+      buildIncludeDirective(pagePathName, arg);
+    }
+  }
+
+  private WikiPage findInheritedPage(String pageName) throws Exception {
+    return PageCrawlerImpl.getInheritedPage(pageName, testPage);
+  }
+
+  private String getPathNameForPage(WikiPage page) throws Exception {
+    WikiPagePath pagePath = pageCrawler.getFullPath(page);
+    return PathParser.render(pagePath);
+  }
+
+  private void buildIncludeDirective(String pagePathName, String arg) {
+    newPageContent
+      .append("\n!include ")
+      .append(arg)
+      .append(" .")
+      .append(pagePathName)
+      .append("\n");
+  }
+}</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="ch03lev1sec15"></a>Bibliography</h1></div></div></div></div><div class="footnotes"><br><hr><div id="ftn.ch03fn01" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn01" class="para"><sup class="para">[1] </sup></a>An open-source testing tool. <a class="ulink" href="http://www.fitnese.org/">www.fitnese.org</a></p></div><div id="ftn.ch03fn02" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn02" class="para"><sup class="para">[2] </sup></a>An open-source unit-testing tool for Java. <a class="ulink" href="http://www.junit.org/">www.junit.org</a></p></div><div id="ftn.ch03fn03" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn03" class="para"><sup class="para">[3] </sup></a>I asked Kent whether he still had a copy, but he was unable to find one. I searched all my old computers too, but to no avail. All that is left now is my memory of that program.</p></div><div id="ftn.ch03fn04" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn04" class="para"><sup class="para">[4] </sup></a>The LOGO language used the keyword “TO” in the same way that Ruby and Python use “def.” So every function began with the word “TO.” This had an interesting effect on the way functions were designed.</p></div><div id="ftn.ch03fn05" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn05" class="para"><sup class="para">[5] </sup></a><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi01.html#bib03_01">[KP78]</a>, p. 37.</p></div><div id="ftn.ch03fn06" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn06" class="para"><sup class="para">[6] </sup></a>And, of course, I include if/else chains in this.</p></div><div id="ftn.ch03fn07" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn07" class="para"><sup class="para">[7] </sup></a>a. <a class="ulink" href="http://en.wikipedia.org/wiki/Single_responsibility_principle">http://en.wikipedia.org/wiki/Single_responsibility_principle</a> b. <a class="ulink" href="http://www.objectmentor.com/resources/articles/srp.pdf">http://www.objectmentor.com/resources/articles/srp.pdf</a></p></div><div id="ftn.ch03fn08" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn08" class="para"><sup class="para">[8] </sup></a>a. <a class="ulink" href="http://en.wikipedia.org/wiki/Open/closed_principle">http://en.wikipedia.org/wiki/Open/closed_principle</a> b. <a class="ulink" href="http://www.objectmentor.com/resources/articles/ocp.pdf">http://www.objectmentor.com/resources/articles/ocp.pdf</a></p></div><div id="ftn.ch03fn09" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn09" class="para"><sup class="para">[9] </sup></a><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi01.html#bib03_03">[GOF]</a>.</p></div><div id="ftn.ch03fn10" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn10" class="para"><sup class="para">[10] </sup></a>I just finished refactoring a module that used the dyadic form. I was able to make the <code class="literal">outputStream</code> a field of the class and convert all the <code class="literal">writeField</code> calls to the monadic form. The result was much cleaner.</p></div><div id="ftn.ch03fn11" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn11" class="para"><sup class="para">[11] </sup></a>Those who felt that they could get away without recompiling and redeploying have been found—and dealt with.</p></div><div id="ftn.ch03fn12" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn12" class="para"><sup class="para">[12] </sup></a>This is an example of the Open Closed Principle (OCP) <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi01.html#bib03_02">[PPP02]</a>.</p></div><div id="ftn.ch03fn13" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn13" class="para"><sup class="para">[13] </sup></a>The DRY principle. <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi01.html#bib03_04">[PRAG]</a>.</p></div><div id="ftn.ch03fn14" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#ch03fn14" class="para"><sup class="para">[14] </sup></a><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/bi01.html#bib03_05">[SP72]</a>.</p></div></div></div><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch02.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">2. Meaningful Names</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch04.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">4. Comments</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/ch03.html" data-for-analytics="9780136083238:ch03.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch03.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

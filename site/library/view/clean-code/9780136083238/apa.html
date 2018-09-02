@@ -1,0 +1,785 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage"" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/clean-code/9780136083238/apa.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="859452"
+  data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36"
+  data-username="dchen267"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/25/2016"
+
+
+  data-archive="9780136083238"
+  data-publishers="Prentice Hall"
+
+
+
+  data-htmlfile-name="apa.html"
+  data-epub-title="Clean Code" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" "="" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/clean-code/9780136083238/apa.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="859452" data-user-uuid="4d373bec-fada-4717-9823-769db3ed3a36" data-username="dchen267" data-account-type="B2B" data-activated-trial-date="04/25/2016" data-archive="9780136083238" data-publishers="Prentice Hall" data-htmlfile-name="apa.html" data-epub-title="Clean Code" data-debug="0" data-testing="0"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780136083238"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.8cc2fd27400e.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>A. Concurrency II - Clean Code</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/e4b0fef39b55.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.min.fd58f69f4908.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book"></style><link rel="canonical" href="/Library/view/clean-code/9780136083238/apa.html"><meta name="description" content="Appendix&nbsp;A.&nbsp;Concurrency II <authorgroup>by Brett L. Schuchert</authorgroup>This appendix supports and amplifies the Concurrency chapter on page 177. It is written as a series of independent topics and ... "><meta property="og:title" content="A. Concurrency II"><meta itemprop="isPartOf" content="/library/view/clean-code/9780136083238/"><meta itemprop="name" content="A. Concurrency II"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/apa.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780136083238/"><meta property="og:description" itemprop="description" content="Appendix&nbsp;A.&nbsp;Concurrency II <authorgroup>by Brett L. Schuchert</authorgroup>This appendix supports and amplifies the Concurrency chapter on page 177. It is written as a series of independent topics and ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Prentice Hall"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780136083238"><meta property="og:book:author" itemprop="author" content="Robert C. Martin"><meta property="og:book:tag" itemprop="about" content="Agile"><meta property="og:book:tag" itemprop="about" content="Core Programming"><meta property="og:book:tag" itemprop="about" content="Lean"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><!--[if lt IE 9]><script src="/static/js/src/respond.min.cf5c9b7980e5.js"></script><![endif]--><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts library" data-gr-c-s-loaded="true">
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z" fill="currentColor"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/s/" class="t-queue-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>queue icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z" fill="currentColor"></path></g></svg><span>Queue</span></a></li><li class="search"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z" fill="currentColor"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z" fill="currentColor"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z" fill="currentColor"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z" fill="currentColor"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" version="1.1" fill="#4A3C31"><desc>offers icon</desc><path d="M10.8 43.7L0 39 0 10.2 13.6 4.6 23.3 8.7 11.5 13.5C11 13.6 10.8 13.9 10.8 14.3L10.8 43.7 10.8 43.7Z"></path><polygon points="12.3 44.4 25 50 38 44.3 38 14.7 25.2 9.4 12.3 14.7 12.3 44.4"></polygon><path d="M36.6 4.7L50 10.2 50 39 39.5 43.6 39.5 14.3C39.5 13.8 39.2 13.6 38.8 13.5L27 8.7 36.6 4.7 36.6 4.7Z"></path><polygon points="34.8 4 25 0 15.4 3.9 25.2 7.9 34.8 4"></polygon></svg><span>Offers</span></a><ul class="flyout"><li><a href="https://www.safaribooksonline.com/oreilly-conferences/" class="l2 nav-icn"><span>Conferences</span></a></li><li><a href="https://www.safaribooksonline.com/oreilly-newsletters/" class="l2 nav-icn"><span>Newsletter</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/003o000000t5q9fAAA/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z" fill="currentColor"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l1 no-icon">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z" fill="currentColor"></path></g></svg><span>Settings</span></a></li><li><a href="https://community.safaribooksonline.com/" class="l2">Feedback</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Clean Code
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/apa.html" data-for-analytics="9780136083238:apa.html"><span>Add to Queue</span></button></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/apa.html&amp;text=Clean%20Code&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/apa.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/apa.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20A.%20Concurrency%20II&amp;body=https://www.safaribooksonline.com/library/view/clean-code/9780136083238/apa.html%0D%0Afrom%20Clean%20Code%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+      
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch17.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">17. Smells and Heuristics</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/apb.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">B. org.jfree.date.SerialDate</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="app01"></a>Appendix&nbsp;A.&nbsp;Concurrency II</h1></div></div></div><span style="color: red">&lt;authorgroup&gt;by Brett L. Schuchert&lt;/authorgroup&gt;</span><p><a id="iddle1198" class="indexterm"></a><a id="iddle2118" class="indexterm"></a>This appendix supports and amplifies the <span class="emphasis"><em><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch13.html">Concurrency</a></em></span> chapter on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/ch13.html">177</a>. It is written as a series of independent topics and you can generally read them in any order. There is some duplication between sections to allow for such reading.</p><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec1"></a>Client/Server Example</h1></div></div></div><p>Imagine a simple client/server application. A server sits and waits listening on a socket for a client to connect. A client connects and sends a request.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec1"></a>The Server</h2></div></div></div><p>Here is a simplified version of a server application. Full source for this example is available starting on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01lev2sec24">343</a>, <span class="emphasis"><em><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01lev2sec24">Client/Server Nonthreaded</a></em></span>.</p><div class="informalexample"><pre class="programlisting">ServerSocket serverSocket = new ServerSocket(8009);
+
+while (keepProcessing) {
+    try {
+        Socket socket = serverSocket.accept();
+        process(socket);
+    } catch (Exception e) {
+        handle(e);
+    }
+}</pre></div><p><a id="iddle1193" class="indexterm"></a><a id="iddle1201" class="indexterm"></a><a id="iddle1724" class="indexterm"></a><a id="iddle1964" class="indexterm"></a><a id="iddle2016" class="indexterm"></a><a id="iddle2346" class="indexterm"></a><a id="iddle2390" class="indexterm"></a>This simple application waits for a connection, processes an incoming message, and then again waits for the next client request to come in. Here’s client code that connects to this server:</p><div class="informalexample"><pre class="programlisting">private void connectSendReceive(int i) {
+    try {
+        Socket socket = new Socket("localhost", PORT);
+        MessageUtils.sendMessage(socket, Integer.toString(i));
+        MessageUtils.getMessage(socket);
+        socket.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+
+    }
+
+}</pre></div><p>How well does this client/server pair perform? How can we formally describe that performance? Here’s a test that asserts that the performance is “acceptable”:</p><div class="informalexample"><pre class="programlisting">@Test(timeout = 10000)
+public void shouldRunInUnder10Seconds() throws Exception {
+    Thread[] threads = createThreads();
+    startAllThreadsw(threads);
+    waitForAllThreadsToFinish(threads);
+}</pre></div><p>The setup is left out to keep the example simple (see “<code class="literal"><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex04">ClientTest.java</a></code>” on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex04">344</a>). This test asserts that it should complete within 10,000 milliseconds.</p><p>This is a classic example of validating the throughput of a system. This system should complete a series of client requests in ten seconds. So long as the server can process each individual client request in time, the test will pass.</p><p>What happens if the test fails? Short of developing some kind of event polling loop, there is not much to do within a single thread that will make this code any faster. Will using multiple threads solve the problem? It might, but we need to know where the time is being spent. There are two possibilities:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>I/O—using a socket, connecting to a database, waiting for virtual memory swapping, and so on.</p></li><li class="listitem"><p>Processor—numerical calculations, regular expression processing, garbage collection, and so on.</p></li></ul></div><p>Systems typically have some of each, but for a given operation one tends to dominate. If the code is processor bound, more processing hardware can improve throughput, making our test pass. But there are only so many CPU cycles available, so adding threads to a processor-bound problem will not make it go faster.</p><p>On the other hand, if the process is I/O bound, then concurrency can increase efficiency. When one part of the system is waiting for I/O, another part can use that wait time to process something else, making more effective use of the available CPU.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec2"></a>Adding Threading</h2></div></div></div><p><a id="iddle2013" class="indexterm"></a><a id="iddle2014" class="indexterm"></a><a id="iddle2117" class="indexterm"></a><a id="iddle2120" class="indexterm"></a><a id="iddle2338" class="indexterm"></a><a id="iddle2344" class="indexterm"></a>Assume for the moment that the performance test fails. How can we improve the throughput so that the performance test passes? If the <code class="literal">process</code> method of the server is I/O bound, then here is one way to make the server use threads (just change the <code class="literal">processMessage</code>):</p><div class="informalexample"><pre class="programlisting">void process(final Socket socket) {
+    if (socket == null)
+        return;
+
+    Runnable clientHandler = new Runnable() {
+        public void run() {
+            try {
+                String message = MessageUtils.getMessage(socket);
+                MessageUtils.sendMessage(socket, "Processed: " + message);
+                closeIgnoringException(socket);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    Thread clientConnection = new Thread(clientHandler);
+    clientConnection.start();
+}</pre></div><p>Assume that this change causes the test to pass;<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn01" class="footnote" id="app01fn01"><sup class="footnote">[1]</sup></a> the code is complete, correct?</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec3"></a>Server Observations</h2></div></div></div><p>The updated server completes the test successfully in just over one second. Unfortunately, this solution is a bit naive and introduces some new problems.</p><p>How many threads might our server create? The code sets no limit, so the we could feasibly hit the limit imposed by the Java Virtual Machine (JVM). For many simple systems this may suffice. But what if the system is meant to support many users on the public net? If too many users connect at the same time, the system might grind to a halt.</p><p>But set the behavioral problem aside for the moment. The solution shown has problems of cleanliness and structure. How many responsibilities does the server code have?</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Socket connection management</p></li><li class="listitem"><p>Client processing</p></li><li class="listitem"><p>Threading policy</p></li><li class="listitem"><p>Server shutdown policy</p></li></ul></div><p>Unfortunately, all these responsibilities live in the <code class="literal">process</code> function. In addition, the code crosses many different levels of abstraction. So, small as the process function is, it needs to be repartitioned.</p><p><a id="iddle1197" class="indexterm"></a><a id="iddle1733" class="indexterm"></a><a id="iddle2156" class="indexterm"></a><a id="iddle2330" class="indexterm"></a>The server has several reasons to change; therefore it violates the Single Responsibility Principle. To keep concurrent systems clean, thread management should be kept to a few, well-controlled places. What’s more, any code that manages threads should do nothing other than thread management. Why? If for no other reason than that tracking down concurrency issues is hard enough without having to unwind other nonconcurrency issues at the same time.</p><p>If we create a separate class for each of the responsibilities listed above, including the thread management responsibility, then when we change the thread management strategy, the change will impact less overall code and will not pollute the other responsibilities. This also makes it much easier to test all the other responsibilities without having to worry about threading. Here is an updated version that does just that:</p><div class="informalexample"><pre class="programlisting">public void run() {
+  while (keepProcessing) {
+   try {
+    ClientConnection clientConnection = connectionManager.awaitClient();
+    ClientRequestProcessor requestProcessor
+      = new ClientRequestProcessor(clientConnection);
+    clientScheduler.schedule(requestProcessor);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+  }
+  connectionManager.shutdown();
+
+}</pre></div><p>This now focuses all things thread-related into one place, <code class="literal">clientScheduler</code>. If there are concurrency problems, there is just one place to look:</p><div class="informalexample"><pre class="programlisting">public interface ClientScheduler {
+    void schedule(ClientRequestProcessor requestProcessor);
+}</pre></div><p>The current policy is easy to implement:</p><div class="informalexample"><pre class="programlisting">public class ThreadPerRequestScheduler implements ClientScheduler {
+    public void schedule(final ClientRequestProcessor requestProcessor) {
+        Runnable runnable = new Runnable() {
+            public void run() {
+                requestProcessor.process();
+            }
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+
+    }
+}</pre></div><p>Having isolated all the thread management into a single place, it is much easier to change the way we control threads. For example, moving to the Java 5 Executor framework involves writing a new class and plugging it in (<a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex01">Listing A-1</a>).</p><p></p><div class="example"><a id="app01ex01"></a><p class="title"><strong>Example&nbsp;A-1.&nbsp;<code class="literal">ExecutorClientScheduler.java</code></strong></p><div class="example-contents"><pre class="programlisting">import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+public class ExecutorClientScheduler implements ClientScheduler {
+    Executor executor;
+
+    public ExecutorClientScheduler(int availableThreads) {
+        executor = Executors.newFixedThreadPool(availableThreads);
+    }
+
+    public void schedule(final ClientRequestProcessor requestProcessor) {
+        Runnable runnable = new Runnable() {
+            public void run() {
+                requestProcessor.process();
+            }
+        };
+        executor.execute(runnable);
+    }
+}</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec4"></a>Conclusion</h2></div></div></div><p><a id="iddle1309" class="indexterm"></a><a id="iddle1529" class="indexterm"></a><a id="iddle1532" class="indexterm"></a><a id="iddle1959" class="indexterm"></a><a id="iddle2152" class="indexterm"></a>Introducing concurrency in this particular example demonstrates a way to improve the throughput of a system and one way of validating that throughput through a testing framework. Focusing all concurrency code into a small number of classes is an example of applying the Single Responsibility Principle. In the case of concurrent programming, this becomes especially important because of its complexity.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec2"></a>Possible Paths of Execution</h1></div></div></div><p>Review the method <code class="literal">incrementValue</code>, a one-line Java method with no looping or branching:</p><div class="informalexample"><pre class="programlisting">public class IdGenerator {
+  int lastIdUsed;
+
+  public int incrementValue() {
+    return ++lastIdUsed;
+  }
+}</pre></div><p>Ignore integer overflow and assume that only one thread has access to a single instance of <code class="literal">IdGenerator</code>. In this case there is a single path of execution and a single guaranteed result:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The value returned is equal to the value of <code class="literal">lastIdUsed</code>, both of which are one greater than just before calling the method.</p></li></ul></div><p><a id="iddle1943" class="indexterm"></a><a id="iddle2324" class="indexterm"></a>What happens if we use two threads and leave the method unchanged? What are the possible outcomes if each thread calls <code class="literal">incrementValue</code> once? How many possible paths of execution are there? First, the outcomes (assume <code class="literal">lastIdUsed</code> starts with a value of 93):</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Thread 1 gets the value of 94, thread 2 gets the value of 95, and <code class="literal">lastIdUsed</code> is now 95.</p></li><li class="listitem"><p>Thread 1 gets the value of 95, thread 2 gets the value of 94, and <code class="literal">lastIdUsed</code> is now 95.</p></li><li class="listitem"><p>Thread 1 gets the value of 94, thread 2 gets the value of 94, and <code class="literal">lastIdUsed</code> is now 94.</p></li></ul></div><p>The final result, while surprising, is possible. To see how these different results are possible, we need to understand the number of possible paths of execution and how the Java Virtual Machine executes them.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec5"></a>Number of Paths</h2></div></div></div><p>To calculate the number of possible execution paths, we’ll start with the generated byte-code. The one line of java (<code class="literal">return ++lastIdUsed;</code>) becomes eight byte-code instructions. It is possible for the two threads to interleave the execution of these eight instructions the way a card dealer interleaves cards as he shuffles a deck.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn02" class="footnote" id="app01fn02"><sup class="footnote">[2]</sup></a> Even with only eight cards in each hand, there are a remarkable number of shuffled outcomes.</p><p>For this simple case of <span class="emphasis"><em>N</em></span> instructions in a sequence, no looping or conditionals, and <span class="emphasis"><em>T</em></span> threads, the total number of possible execution paths is equal to</p><div class="informalequation"><div class="mediaobject"><a id="f322equ01"></a><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/322equ01.gif" width="35" alt="Number of Paths" height="35" data-mfp-src="/library/view/clean-code/9780136083238/graphics/322equ01.gif"></div></div><div class="sidebar"><a id="ch01sb01"></a><div class="titlepage"><div><div><p class="title"><strong>Calculating the Possible Orderings</strong></p></div></div></div><p>This comes from an email from Uncle Bob to Brett:</p><p>With <span class="emphasis"><em>N</em></span> steps and <span class="emphasis"><em>T</em></span> threads there are <span class="emphasis"><em>T</em></span> * <span class="emphasis"><em>N</em></span> total steps. Prior to each step there is a context switch that chooses between the <span class="emphasis"><em>T</em></span> threads. Each path can thus be represented as a string of digits denoting the context switches. Given steps A and B and threads 1 and 2, the six possible paths are 1122, 1212, 1221, 2112, 2121, and 2211. Or, in terms of steps it is A1B1A2B2, A1A2B1B2, A1A2B2B1, A2A1B1B2, A2A1B2B1, and A2B2A1B1. For three threads the sequence is 112233, 112323, 113223, 113232, 112233, 121233, 121323, 121332, 123132, 123123, . . . .</p><p>One characteristic of these strings is that there must always be <span class="emphasis"><em>N</em></span> instances of each <span class="emphasis"><em>T</em></span>. So the string 111111 is invalid because it has six instances of 1 and zero instances of 2 and 3.</p><p>So we want the permutations of <span class="emphasis"><em>N</em></span> 1’s, <span class="emphasis"><em>N</em></span> 2’s, . . . and <span class="emphasis"><em>N T’</em></span>s. This is really just the permutations of <span class="emphasis"><em>N</em></span> * <span class="emphasis"><em>T</em></span> things taken <span class="emphasis"><em>N</em></span> * <span class="emphasis"><em>T</em></span> at a time, which is (<span class="emphasis"><em>N</em></span> * <span class="emphasis"><em>T</em></span>)!, but with all the duplicates removed. So the trick is to count the duplicates and subtract that from (<span class="emphasis"><em>N</em></span> * <span class="emphasis"><em>T</em></span>)!.</p><p>Given two steps and two threads, how many duplicates are there? Each four-digit string has two 1s and two 2s. Each of those pairs could be swapped without changing the sense of the string. You could swap the 1s or the 2s both, or neither. So there are four isomorphs for each string, which means that there are three duplicates. So three out of four of the options are duplicates; alternatively one of four of the permutations are NOT duplicates. 4! * .25 = 6. So this reasoning seems to work.</p><p>How many duplicates are there? In the case where <span class="emphasis"><em>N</em></span> = 2 and <span class="emphasis"><em>T</em></span> = 2, I could swap the 1s, the 2s, or both. In the case where <span class="emphasis"><em>N</em></span> = 2 and <span class="emphasis"><em>T</em></span> = 3, I could swap the 1s, the 2s, the 3s, 1s and 2s, 1s and 3s, or 2s and 3s. Swapping is just the permutations of <span class="emphasis"><em>N</em></span>. Let’s say there are <span class="emphasis"><em>P</em></span> permutations of <span class="emphasis"><em>N</em></span>. The number of different ways to arrange those permutations are <span class="emphasis"><em>P</em></span>**<span class="emphasis"><em>T</em></span>.</p><p>So the number of possible isomorphs is <span class="emphasis"><em>N</em></span>!**<span class="emphasis"><em>T</em></span>. And so the number of paths is (<span class="emphasis"><em>T</em></span>*<span class="emphasis"><em>N</em></span>)!/(<span class="emphasis"><em>N</em></span>!**<span class="emphasis"><em>T</em></span>). Again, in our <span class="emphasis"><em>T</em></span> = 2, <span class="emphasis"><em>N</em></span> = 2 case we get 6 (24/4).</p><p>For <span class="emphasis"><em>N</em></span> = 2 and <span class="emphasis"><em>T</em></span> = 3 we get 720/8 = 90.</p><p>For <span class="emphasis"><em>N</em></span> = 3 and <span class="emphasis"><em>T</em></span> = 3 we get 9!/6^3 = 1680.</p></div><p><a id="iddle1085" class="indexterm"></a><a id="iddle1967" class="indexterm"></a><a id="iddle2221" class="indexterm"></a><a id="iddle2230" class="indexterm"></a>For our simple case of one line of Java code, which equates to eight lines of byte-code and two threads, the total number of possible paths of execution is 12,870. If the type of <code class="literal">lastIdUsed</code> is a <code class="literal">long</code>, then every read/write becomes two operations instead of one, and the number of possible orderings becomes 2,704,156.</p><p>What happens if we make one change to this method?</p><div class="informalexample"><pre class="programlisting">public <span class="strong"><strong>synchronized</strong></span> void incrementValue() {
+    ++lastIdUsed;
+}</pre></div><p>The number of possible execution pathways becomes two for two threads and N! in the general case.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec6"></a>Digging Deeper</h2></div></div></div><p>What about the surprising result that two threads could both call the method once (before we added <code class="literal">synchronized</code>) and get the same numeric result? How is that possible? First things first.</p><p>What is an atomic operation? We can define an atomic operation as any operation that is uninterruptable. For example, in the following code, line 5, where 0 is assigned to <code class="literal">lastid</code>, is atomic because according to the Java Memory model, assignment to a 32-bit value is uninterruptable.</p><div class="informalexample"><pre class="programlisting">01: public class Example {
+02:    int lastId;
+03:
+04:    public void resetId() {
+05:        value = 0;
+06:    }
+07:
+08:    public int getNextId() {
+09:        ++value;
+10:    }
+11:}</pre></div><p><a id="iddle1146" class="indexterm"></a><a id="iddle1576" class="indexterm"></a><a id="iddle1768" class="indexterm"></a><a id="iddle1794" class="indexterm"></a><a id="iddle1826" class="indexterm"></a><a id="iddle1937" class="indexterm"></a><a id="iddle1956" class="indexterm"></a><a id="iddle1998" class="indexterm"></a><a id="iddle2070" class="indexterm"></a><a id="iddle2320" class="indexterm"></a><a id="iddle2400" class="indexterm"></a>What happens if we change type of <code class="literal">lastId</code> from <code class="literal">int</code> to <code class="literal">long</code>? Is line 5 still atomic? Not according to the JVM specification. It could be atomic on a particular processor, but according to the JVM specification, assignment to any 64-bit value requires two 32-bit assignments. This means that between the first 32-bit assignment and the second 32-bit assignment, some other thread could sneak in and change one of the values.</p><p>What about the pre-increment operator, ++, on line 9? The pre-increment operator can be interrupted, so it is not atomic. To understand, let’s review the byte-code of both of these methods in detail.</p><p>Before we go any further, here are three definitions that will be important:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><strong><span class="roman">Frame—</span>.&nbsp;</strong>Every method invocation requires a frame. The frame includes the return address, any parameters passed into the method and the local variables defined in the method. This is a standard technique used to define a call stack, which is used by modern languages to allow for basic function/method invocation and to allow for recursive invocation.</p></li><li class="listitem"><p><strong><span class="roman">Local variable—</span>.&nbsp;</strong>Any variables defined in the scope of the method. All nonstatic methods have at least one variable, <span class="strong"><strong><code class="literal">this</code></strong></span>, which represents the current object, the object that received the most recent message (in the current thread), which caused the method invocation.</p></li><li class="listitem"><p><strong><span class="roman">Operand stack—</span>.&nbsp;</strong>Many of the instructions in the Java Virtual Machine take parameters. The operand stack is where those parameters are put. The stack is a standard last-in, first-out (LIFO) data structure.</p><p>Here is the byte-code generated for <code class="literal">resetId()</code>:</p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col width="100" style="text-align: left" class="c1"><col width="350" style="text-align: left" class="c2"><col width="100" style="text-align: left" class="c3"></colgroup><thead><tr><th style="text-align: left" valign="top"><p>Mnemonic</p></th><th style="text-align: left" valign="top"><p>Description</p></th><th style="text-align: left" valign="top"><p>Operand Stack After</p></th></tr></thead><tbody><tr><td style="text-align: left" valign="top"><p><code class="literal">ALOAD 0</code></p></td><td style="text-align: left" valign="top"><p>Load the 0th variable onto the operand stack. What is the 0th variable? It is <span class="strong"><strong><code class="literal">this</code></strong></span>., the current object. When the method was called, the receiver of the message, an instance of <code class="literal">Example</code>, was pushed into the local variable array of the frame created for method invocation. This is always the first variable put in every instance method.</p></td><td style="text-align: left" valign="top"><p><code class="literal">this</code></p></td></tr><tr><td style="text-align: left" valign="top"><p><a id="iddle1002" class="indexterm"></a><a id="iddle1619" class="indexterm"></a><a id="iddle1999" class="indexterm"></a><a id="iddle2035" class="indexterm"></a><code class="literal">ICONST_0</code></p></td><td style="text-align: left" valign="top"><p>Put the constant value 0 onto the operand stack.</p></td><td style="text-align: left" valign="top"><p><code class="literal">this, 0</code></p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">PUTFIELD lastId</code></p></td><td style="text-align: left" valign="top"><p>Store the top value on the stack (which is 0) into the field value of the object referred to by the object reference one away from the top of the stack, <span class="strong"><strong><code class="literal">this</code></strong></span>.</p></td><td style="text-align: left" valign="top"><p>&lt;empty&gt;</p></td></tr></tbody></table></div></li></ul></div><p>These three instructions are guaranteed to be atomic because, although the thread executing them could be interrupted after any one of them, the information for the PUTFIELD instruction (the constant value 0 on the top of the stack and the reference to <code class="literal">this</code> one below the top, along with the field value) cannot be touched by another thread. So when the assignment occurs, we are guaranteed that the value 0 will be stored in the field value. The operation is atomic. The operands all deal with information local to the method, so there is no interference between multiple threads.</p><p>So if these three instructions are executed by ten threads, there are 4.38679733629e+24 possible orderings. However, there is only one possible outcome, so the different orderings are irrelevant. It just so happens that the same outcome is guaranteed for longs in this case as well. Why? All ten threads are assigning a constant value. Even if they interleave with each other, the end result is the same.</p><p>With the <code class="literal">++</code> operation in the <code class="literal">getNextId</code> method, there are going to be problems. Assume that <code class="literal">lastId</code> holds 42 at the beginning of this method. Here is the byte-code for this new method:</p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col width="100" style="text-align: left" class="c1"><col width="350" style="text-align: left" class="c2"><col width="100" style="text-align: left" class="c3"></colgroup><thead><tr><th style="text-align: left" valign="top"><p>Mnemonic</p></th><th style="text-align: left" valign="top"><p>Description</p></th><th style="text-align: left" valign="top"><p>Operand Stack After</p></th></tr></thead><tbody><tr><td style="text-align: left" valign="top"><p><code class="literal">ALOAD 0</code></p></td><td style="text-align: left" valign="top"><p>Load <code class="literal">this</code> onto the operand stack</p></td><td style="text-align: left" valign="top"><p><code class="literal">this</code></p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">DUP</code></p></td><td style="text-align: left" valign="top"><p>Copy the top of the stack. We now have two copies of <code class="literal">this</code> on the operand stack.</p></td><td style="text-align: left" valign="top"><p><code class="literal">this</code>, <code class="literal">this</code></p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">GETFIELD lastId</code></p></td><td style="text-align: left" valign="top"><p>Retrieve the value of the field <code class="literal">lastId</code> from the object pointed to on the top of the stack (<code class="literal">this</code>) and store that value back on to the stack.</p></td><td style="text-align: left" valign="top"><p><code class="literal">this</code>, 42</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">ICONST_1</code></p></td><td style="text-align: left" valign="top"><p>Push the integer constant 1 on the stack.</p></td><td style="text-align: left" valign="top"><p><code class="literal">this</code>, 42, 1</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">IADD</code></p></td><td style="text-align: left" valign="top"><p>Integer add the top two values on the operand stack and store the result back on to the operand stack.</p></td><td style="text-align: left" valign="top"><p><code class="literal">this</code>, 43</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">DUP_X1</code></p></td><td style="text-align: left" valign="top"><p>Duplicate the value 43 and put it before <code class="literal">this</code>.</p></td><td style="text-align: left" valign="top"><p>43, <code class="literal">this</code>, 43</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">PUTFIELD value</code></p></td><td style="text-align: left" valign="top"><p>Store the top value on the operand stack, 43, into the field value of the current object, represented by the next-to-top value on the operand stack, <code class="literal">this</code>.</p></td><td style="text-align: left" valign="top"><p>43</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">IRETURN</code></p></td><td style="text-align: left" valign="top"><p>return the top (and only) value on the stack.</p></td><td style="text-align: left" valign="top"><p>&lt;empty&gt;</p></td></tr></tbody></table></div><p><a id="iddle1003" class="indexterm"></a><a id="iddle1147" class="indexterm"></a><a id="iddle1531" class="indexterm"></a><a id="iddle1612" class="indexterm"></a><a id="iddle1620" class="indexterm"></a><a id="iddle1621" class="indexterm"></a><a id="iddle2000" class="indexterm"></a><a id="iddle2085" class="indexterm"></a><a id="iddle2328" class="indexterm"></a><a id="iddle2331" class="indexterm"></a>Imagine the case where the first thread completes the first three instructions, up to and including GETFIELD, and then it is interrupted. A second thread takes over and performs the entire method, incrementing <code class="literal">lastId</code> by one; it gets 43 back. Then the first thread picks up where it left off; 42 is still on the operand stack because that was the value of <code class="literal">lastId</code> when it executed GETFIELD. It adds one to get 43 again and stores the result. The value 43 is returned to the first thread as well. The result is that one of the increments is lost because the first thread stepped on the second thread after the second thread interrupted the first thread.</p><p>Making the <code class="literal">getNexId()</code> method synchronized fixes this problem.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec7"></a>Conclusion</h2></div></div></div><p>An intimate understanding of byte-code is not necessary to understand how threads can step on each other. If you can understand this one example, it should demonstrate the possibility of multiple threads stepping on each other, which is enough knowledge.</p><p>That being said, what this trivial example demonstrates is a need to understand the memory model enough to know what is and is not safe. It is a common misconception that the ++ (pre- or post-increment) operator is atomic, and it clearly is not. This means you need to know:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Where there are shared objects/values</p></li><li class="listitem"><p>The code that can cause concurrent read/update issues</p></li><li class="listitem"><p>How to guard such concurrent issues from happening</p></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec3"></a>Knowing Your Library</h1></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec8"></a>Executor Framework</h2></div></div></div><p>As demonstrated in the <code class="literal"><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex01">ExecutorClientScheduler.java</a></code> on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex01">321</a>, the <code class="literal">Executor</code> framework introduced in Java 5 allows for sophisticated execution using thread pools. This is a class in the <code class="literal">java.util.concurrent</code> package.</p><p>If you are creating threads and are not using a thread pool or <span class="emphasis"><em>are</em></span> using a hand-written one, you should consider using the <code class="literal">Executor</code>. It will make your code cleaner, easier to follow, and smaller.</p><p>The <code class="literal">Executor</code> framework will pool threads, resize automatically, and recreate threads if necessary. It also supports <span class="emphasis"><em>futures</em></span>, a common concurrent programming construct. The <code class="literal">Executor</code> framework works with classes that implement <code class="literal">Runnable</code> and also works with classes that implement the <code class="literal">Callable</code> interface. A <code class="literal">Callable</code> looks like a <code class="literal">Runnable</code>, but it can return a result, which is a common need in multithreaded solutions.</p><p>A <span class="emphasis"><em>future</em></span> is handy when code needs to execute multiple, independent operations and wait for both to finish:</p><div class="informalexample"><pre class="programlisting">public String processRequest(String message) throws Exception {
+    Callable&lt;String&gt; makeExternalCall = new Callable&lt;String&gt;() {
+        public String call() throws Exception {
+            String result = "";
+            // make external request
+            return result;
+        }
+    };
+
+    Future&lt;String&gt; result = executorService.submit(makeExternalCall);
+    String partialResult = doSomeLocalProcessing();
+    return result.get() + partialResult;
+}</pre></div><p><a id="iddle1279" class="indexterm"></a><a id="iddle1734" class="indexterm"></a><a id="iddle1897" class="indexterm"></a><a id="iddle1940" class="indexterm"></a><a id="iddle1970" class="indexterm"></a>In this example, the method starts executing the <code class="literal">makeExternalCall</code> object. The method continues other processing. The final line calls <code class="literal">result.get()</code>, which blocks until the future completes.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec9"></a>Nonblocking Solutions</h2></div></div></div><p>The Java 5 VM takes advantage of modern processor design, which supports reliable, nonblocking updates. Consider, for example, a class that uses synchronization (and therefore blocking) to provide a thread-safe update of a value:</p><div class="informalexample"><pre class="programlisting">public class ObjectWithValue {
+    private int value;
+    public void synchronized incrementValue() { ++value; }
+    public int getValue() { return value; }
+}</pre></div><p>Java 5 has a series of new classes for situations like this: <code class="literal">AtomicBoolean</code>, <code class="literal">AtomicInteger</code>, and <code class="literal">AtomicReference</code> are three examples; there are several more. We can rewrite the above code to use a nonblocking approach as follows:</p><div class="informalexample"><pre class="programlisting">public class ObjectWithValue {
+    private AtomicInteger value = new AtomicInteger(0);
+
+    public void incrementValue() {
+        value.incrementAndGet();
+    }
+    public int getValue() {
+        return value.get();
+    }
+}</pre></div><p>Even though this uses an object instead of a primitive and sends messages like <code class="literal">incrementAndGet()</code> instead of ++, the performance of this class will nearly always beat the previous version. In some cases it will only be slightly faster, but the cases where it will be slower are virtually nonexistent.</p><p>How is this possible? Modern processors have an operation typically called <span class="emphasis"><em>Compare and Swap (CAS)</em></span>. This operation is analogous to optimistic locking in databases, whereas the synchronized version is analogous to pessimistic locking.</p><p><a id="iddle1153" class="indexterm"></a><a id="iddle1177" class="indexterm"></a><a id="iddle1635" class="indexterm"></a><a id="iddle1904" class="indexterm"></a><a id="iddle2135" class="indexterm"></a><a id="iddle2231" class="indexterm"></a>The <code class="literal">synchronized</code> keyword always acquires a lock, even when a second thread is not trying to update the same value. Even though the performance of intrinsic locks has improved from version to version, they are still costly.</p><p>The nonblocking version starts with the assumption that multiple threads generally do not modify the same value often enough that a problem will arise. Instead, it efficiently detects whether such a situation has occurred and retries until the update happens successfully. This detection is almost always less costly than acquiring a lock, even in moderate to high contention situations.</p><p>How does the Virtual Machine accomplish this? The CAS operation is atomic. Logically, the CAS operation looks something like the following:</p><div class="informalexample"><pre class="programlisting">int variableBeingSet;
+
+void simulateNonBlockingSet(int newValue) {
+    int currentValue;
+    do {
+        currentValue = variableBeingSet
+    } while(currentValue != compareAndSwap(currentValue, newValue));
+}
+
+int synchronized compareAndSwap(int currentValue, int newValue) {
+    if(variableBeingSet == currentValue) {
+        variableBeingSet = newValue;
+        return currentValue;
+    }
+    return variableBeingSet;
+}</pre></div><p>When a method attempts to update a shared variable, the CAS operation verifies that the variable getting set still has the last known value. If so, then the variable is changed. If not, then the variable is not set because another thread managed to get in the way. The method making the attempt (using the CAS operation) sees that the change was not made and retries.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec10"></a>Nonthread-Safe Classes</h2></div></div></div><p>There are some classes that are inherently not thread safe. Here are a few examples:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="literal">SimpleDateFormat</code></p></li><li class="listitem"><p>Database Connections</p></li><li class="listitem"><p>Containers in <code class="literal">java.util</code></p></li><li class="listitem"><p>Servlets</p></li></ul></div><p>Note that some collection classes have individual methods that are thread-safe. However, any operation that involves calling more than one method is not. For example, if you do not want to replace something in a <code class="literal">HashTable</code> because it is already there, you might write the following code:</p><div class="informalexample"><pre class="programlisting">if(!hashTable.containsKey(someKey)) {
+    hashTable.put(someKey, new SomeValue());
+}</pre></div><p><a id="iddle1195" class="indexterm"></a><a id="iddle1312" class="indexterm"></a><a id="iddle1419" class="indexterm"></a><a id="iddle1832" class="indexterm"></a><a id="iddle2121" class="indexterm"></a><a id="iddle2342" class="indexterm"></a>Each individual method is thread-safe. However, another thread might add a value in between the <code class="literal">containsKey</code> and <code class="literal">put</code> calls. There are several options to fix this problem.</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Lock the <code class="literal">HashTable</code> first, and make sure all other users of the <code class="literal">HashTable</code> do the same—client-based locking:</p><div class="informalexample"><pre class="programlisting">synchronized(map) {
+if(!map.conainsKey(key))
+    map.put(key,value);
+}</pre></div></li><li class="listitem"><p>Wrap the <code class="literal">HashTable</code> in its own object and use a different API—server-based locking using an A<span class="smaller">DAPTER</span>:</p><div class="informalexample"><pre class="programlisting">public class WrappedHashtable&lt;K, V&gt; {
+    private Map&lt;K, V&gt; map = new Hashtable&lt;K, V&gt;();
+
+    public synchronized void putIfAbsent(K key, V value) {
+        if (map.containsKey(key))
+            map.put(key, value);
+    }
+}</pre></div></li><li class="listitem"><p>Use the thread-safe collections:</p><div class="informalexample"><pre class="programlisting">ConcurrentHashMap&lt;Integer, String&gt; map = new ConcurrentHashMap&lt;Integer,
+String&gt;();
+map.putIfAbsent(key, value);</pre></div></li></ul></div><p>The collections in <code class="literal">java.util.concurrent</code> have operations like <code class="literal">putIfAbsent()</code> to accommodate such operations.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec4"></a>Dependencies Between Methods Can Break Concurrent Code</h1></div></div></div><p>Here is a trivial example of a way to introduce dependencies between methods:</p><div class="informalexample"><pre class="programlisting">public class IntegerIterator implements Iterator&lt;Integer&gt;
+    private Integer nextValue = 0;
+
+    public synchronized boolean hasNext() {
+        return nextValue &lt; 100000;
+    }
+    public synchronized Integer next() {
+        if (nextValue == 100000)
+            throw new IteratorPastEndException();
+        return nextValue++;
+    }
+    public synchronized Integer getNextValue() {
+        return nextValue;
+    }
+}</pre></div><p>Here is some code to use this <code class="literal">IntegerIterator</code>:</p><div class="informalexample"><pre class="programlisting">IntegerIterator iterator = new IntegerIterator();
+while(iterator.hasNext()) {
+
+    int nextValue = iterator.next();
+    // do something with nextValue
+}</pre></div><p><a id="iddle1192" class="indexterm"></a><a id="iddle1196" class="indexterm"></a><a id="iddle1547" class="indexterm"></a><a id="iddle2325" class="indexterm"></a>If one thread executes this code, there will be no problem. But what happens if two threads attempt to share a single instance of <code class="literal">IngeterIterator</code> with the intent that each thread will process the values it gets, but that each element of the list is processed only once? Most of the time, nothing bad happens; the threads happily share the list, processing the elements they are given by the iterator and stopping when the iterator is complete. However, there is a small chance that, at the end of the iteration, the two threads will interfere with each other and cause one thread to go beyond the end of the iterator and throw an exception.</p><p>Here’s the problem: Thread 1 asks the question <code class="literal">hasNext()</code>, which returns <code class="literal">true</code>. Thread 1 gets preempted and then Thread 2 asks the same question, which is still <code class="literal">true</code>. Thread 2 then calls <code class="literal">next()</code>, which returns a value as expected but has a side effect of making <code class="literal">hasNext()</code> return <code class="literal">false</code>. Thread 1 starts up again, thinking <code class="literal">hasNext()</code> is still <code class="literal">true</code>, and then calls <code class="literal">next()</code>. Even though the individual methods are synchronized, the client uses <span class="bolditalic">two</span> methods.</p><p>This is a real problem and an example of the kinds of problems that crop up in concurrent code. In this particular situation this problem is especially subtle because the only time where this causes a fault is when it happens during the final iteration of the iterator. If the threads happen to break just right, then one of the threads could go beyond the end of the iterator. This is the kind of bug that happens long after a system has been in production, and it is hard to track down.</p><p>You have three options:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Tolerate the failure.</p></li><li class="listitem"><p>Solve the problem by changing the client: client-based locking</p></li><li class="listitem"><p>Solve the problem by changing the server, which additionally changes the client: server-based locking</p></li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec11"></a>Tolerate the Failure</h2></div></div></div><p>Sometimes you can set things up such that the failure causes no harm. For example, the above client could catch the exception and clean up. Frankly, this is a bit sloppy. It’s rather like cleaning up memory leaks by rebooting at midnight.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec12"></a>Client-Based Locking</h2></div></div></div><p>To make <code class="literal">IntegerIterator</code> work correctly with multiple threads, change this client (and every other client) as follows:</p><div class="informalexample"><pre class="programlisting">IntegerIterator iterator = new IntegerIterator();
+
+    while (true) {
+      int nextValue;
+      synchronized (iterator) {
+        if (!iterator.hasNext())
+          break;
+        nextValue = iterator.next();
+      }
+      doSometingWith(nextValue);
+    }</pre></div><p><a id="iddle2050" class="indexterm"></a><a id="iddle2232" class="indexterm"></a>Each client introduces a lock via the <code class="literal">synchronized</code> keyword. This duplication violates the DRY principle, but it might be necessary if the code uses non-thread-safe third-party tools.</p><p>This strategy is risky because all programmers who use the server must remember to lock it before using it and unlock it when done. Many (many!) years ago I worked on a system that employed client-based locking on a shared resource. The resource was used in hundreds of different places throughout the code. One poor programmer forgot to lock the resource in one of those places.</p><p>The system was a multi-terminal time-sharing system running accounting software for Local 705 of the trucker’s union. The computer was in a raised-floor, environment-controlled room 50 miles north of the Local 705 headquarters. At the headquarters they had dozens of data entry clerks typing union dues postings into the terminals. The terminals were connected to the computer using dedicated phone lines and 600bps half-duplex modems. (This was a very, <span class="emphasis"><em>very</em></span> long time ago.)</p><p>About once per day, one of the terminals would “lock up.” There was no rhyme or reason to it. The lock up showed no preference for particular terminals or particular times. It was as though there were someone rolling dice choosing the time and terminal to lock up. Sometimes more than one terminal would lock up. Sometimes days would go by without any lock-ups.</p><p>At first the only solution was a reboot. But reboots were tough to coordinate. We had to call the headquarters and get everyone to finish what they were doing on all the terminals. Then we could shut down and restart. If someone was doing something important that took an hour or two, the locked up terminal simply had to stay locked up.</p><p>After a few weeks of debugging we found that the cause was a ring-buffer counter that had gotten out of sync with its pointer. This buffer controlled output to the terminal. The pointer value indicated that the buffer was empty, but the counter said it was full. Because it was empty, there was nothing to display; but because it was also full, nothing could be added to the buffer to be displayed on the screen.</p><p>So we knew why the terminals were locking, but we didn’t know why the ring buffer was getting out of sync. So we added a hack to work around the problem. It was possible to read the front panel switches on the computer. (This was a very, very, <span class="emphasis"><em>very</em></span> long time ago.) We wrote a little trap function that detected when one of these switches was thrown and then looked for a ring buffer that was both empty and full. If one was found, it reset that buffer to empty. <span class="emphasis"><em>Voila!</em></span> The locked-up terminal(s) started displaying again.</p><p>So now we didn’t have to reboot the system when a terminal locked up. The Local would simply call us and tell us we had a lock-up, and then we just walked into the computer room and flicked a switch.</p><p><a id="iddle1848" class="indexterm"></a><a id="iddle2122" class="indexterm"></a>Of course sometimes they worked on the weekends, and we didn’t. So we added a function to the scheduler that checked all the ring buffers once per minute and reset any that were both empty and full. This caused the displays to unclog before the Local could even get on the phone.</p><p>It was several more weeks of poring over page after page of monolithic assembly language code before we found the culprit. We had done the math and calculated that the frequency of the lock-ups was consistent with a single unprotected use of the ring buffer. So all we had to do was find that one faulty usage. Unfortunately, this was so very long ago that we didn’t have search tools or cross references or any other kind of automated help. We simply had to pore over listings.</p><p>I learned an important lesson that cold Chicago winter of 1971. Client-based locking really blows.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec13"></a>Server-Based Locking</h2></div></div></div><p>The duplication can be removed by making the following changes to <code class="literal">IntegerIterator</code>:</p><div class="informalexample"><pre class="programlisting">public class IntegerIteratorServerLocked {
+    private Integer nextValue = 0;
+    public synchronized Integer getNextOrNull() {
+        if (nextValue &lt; 100000)
+            return nextValue++;
+        else
+            return null;
+    }
+}</pre></div><p>And the client code changes as well:</p><div class="informalexample"><pre class="programlisting">while (true) {
+    Integer nextValue = iterator.getNextOrNull();
+    if (next == null)
+        break;
+    // do something with nextValue
+}</pre></div><p>In this case we actually change the API of our class to be multithread aware.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn03" class="footnote" id="app01fn03"><sup class="footnote">[3]</sup></a> The client needs to perform a <code class="literal">null</code> check instead of checking <code class="literal">hasNext()</code>.</p><p>In general you should prefer server-based locking for these reasons:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><strong><span class="roman">It reduces repeated code—</span>.&nbsp;</strong>Client-based locking forces each client to lock the server properly. By putting the locking code into the server, clients are free to use the object and not worry about writing additional locking code.</p></li><li class="listitem"><p><strong><span class="roman">It allows for better performance—</span>.&nbsp;</strong><a id="iddle1966" class="indexterm"></a><a id="iddle2103" class="indexterm"></a><a id="iddle2136" class="indexterm"></a><a id="iddle2345" class="indexterm"></a>You can swap out a thread-safe server for a non-thread safe one in the case of single-threaded deployment, thereby avoiding all overhead.</p></li><li class="listitem"><p><strong><span class="roman">It reduces the possibility of error—</span>.&nbsp;</strong>All it takes is for one programmer to forget to lock properly.</p></li><li class="listitem"><p><strong><span class="roman">It enforces a single policy—</span>.&nbsp;</strong>The policy is in one place, the server, rather than many places, each client.</p></li><li class="listitem"><p><strong><span class="roman">It reduces the scope of the shared variables—</span>.&nbsp;</strong>The client is not aware of them or how they are locked. All of that is hidden in the server. When things break, the number of places to look is smaller.</p><p>What if you do not own the server code?</p></li><li class="listitem"><p>Use an A<span class="smaller">DAPTER</span> to change the API and add locking</p><div class="informalexample"><pre class="programlisting">public class ThreadSafeIntegerIterator {
+    private IntegerIterator iterator = new IntegerIterator();
+
+    public synchronized Integer getNextOrNull() {
+        if(iterator.hasNext())
+            return iterator.next();
+        return null;
+    }
+}</pre></div></li><li class="listitem"><p>OR better yet, use the thread-safe collections with extended interfaces</p></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec5"></a>Increasing Throughput</h1></div></div></div><p>Let’s assume that we want to go out on the net and read the contents of a set of pages from a list of URLs. As each page is read, we will parse it to accumulate some statistics. Once all the pages are read, we will print a summary report.</p><p>The following class returns the contents of one page, given a URL.</p><div class="informalexample"><pre class="programlisting">public class PageReader {
+  //...
+  public String getPageFor(String url) {
+    HttpMethod method = new GetMethod(url);
+
+    try {
+      httpClient.executeMethod(method);
+      String response = method.getResponseBodyAsString();
+      return response;
+    } catch (Exception e) {
+      handle(e);
+    } finally {
+      method.releaseConnection();
+    }
+  }
+}</pre></div><p><a id="iddle2164" class="indexterm"></a><a id="iddle2228" class="indexterm"></a>The next class is the iterator that provides the contents of the pages based on an iterator of URLs:</p><div class="informalexample"><pre class="programlisting">public class PageIterator {
+  private PageReader reader;
+  private URLIterator urls;
+
+  public PageIterator(PageReader reader, URLIterator urls) {
+    this.urls = urls;
+    this.reader = reader;
+  }
+
+  public synchronized String getNextPageOrNull() {
+    if (urls.hasNext())
+      getPageFor(urls.next());
+    else
+      return null;
+  }
+
+  public String getPageFor(String url) {
+    return reader.getPageFor(url);
+  }
+}</pre></div><p>An instance of the <code class="literal">PageIterator</code> can be shared between many different threads, each one using it’s own instance of the <code class="literal">PageReader</code> to read and parse the pages it gets from the iterator.</p><p>Notice that we’ve kept the <code class="literal">synchronized</code> block very small. It contains just the critical section deep inside the <code class="literal">PageIterator</code>. It is always better to synchronize as little as possible as opposed to synchronizing as much as possible.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec14"></a>Single-Thread Calculation of Throughput</h2></div></div></div><p>Now lets do some simple calculations. For the purpose of argument, assume the following:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>I/O time to retrieve a page (average): 1 second</p></li><li class="listitem"><p>Processing time to parse page (average): .5 seconds</p></li><li class="listitem"><p>I/O requires 0 percent of the CPU while processing requires 100 percent.</p></li></ul></div><p>For <span class="emphasis"><em>N</em></span> pages being processed by a single thread, the total execution time is 1.5 seconds * <span class="emphasis"><em>N</em></span>. <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fig01">Figure A-1</a> shows a snapshot of 13 pages or about 19.5 seconds.</p><div class="figure-float" style="float: left;"><div class="figure"><a id="app01fig01"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/x01-1single_thread.gif" height="74" alt="Single thread" width="475" data-mfp-src="/library/view/clean-code/9780136083238/graphics/x01-1single_thread.gif"></div></div><p class="title"><strong>Figure&nbsp;A-1.&nbsp;Single thread</strong></p></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec15"></a>Multithread Calculation of Throughput</h2></div></div></div><p><a id="iddle1400" class="indexterm"></a><a id="iddle1849" class="indexterm"></a>If it is possible to retrieve pages in any order and process the pages independently, then it is possible to use multiple threads to increase throughput. What happens if we use three threads? How many pages can we acquire in the same time?</p><p>As you can see in <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fig02">Figure A-2</a>, the multithreaded solution allows the process-bound parsing of the pages to overlap with the I/O-bound reading of the pages. In an idealized world this means that the processor is fully utilized. Each one-second page read is overlapped with two parses. Thus, we can process two pages per second, which is three times the throughput of the single-threaded solution.</p><div class="figure-float" style="float: left;"><div class="figure"><a id="app01fig02"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/x01-2multi_thread.gif" height="253" alt="Three concurrent threads" width="475" data-mfp-src="/library/view/clean-code/9780136083238/graphics/x01-2multi_thread.gif"></div></div><p class="title"><strong>Figure&nbsp;A-2.&nbsp;Three concurrent threads</strong></p></div></div></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec6"></a>Deadlock</h1></div></div></div><p>Imagine a Web application with two shared resource pools of some finite size:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A pool of database connections for local work in process storage</p></li><li class="listitem"><p>A pool of MQ connections to a master repository</p></li></ul></div><p>Assume there are two operations in this application, create and update:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Create—Acquire connection to master repository and database. Talk to service master repository and then store work in local work in process database.</p></li><li class="listitem"><p><a id="iddle1402" class="indexterm"></a><a id="iddle1855" class="indexterm"></a>Update—Acquire connection to database and then master repository. Read from work in process database and then send to the master repository</p></li></ul></div><p>What happens when there are more users than the pool sizes? Consider each pool has a size of ten.</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Ten users attempt to use create, so all ten database connections are acquired, and each thread is interrupted after acquiring a database connection but before acquiring a connection to the master repository.</p></li><li class="listitem"><p>Ten users attempt to use update, so all ten master repository connections are acquired, and each thread is interrupted after acquiring the master repository but before acquiring a database connection.</p></li><li class="listitem"><p>Now the ten “create” threads must wait to acquire a master repository connection, but the ten “update” threads must wait to acquire a database connection.</p></li><li class="listitem"><p>Deadlock. The system never recovers.</p></li></ul></div><p>This might sound like an unlikely situation, but who wants a system that freezes solid every other week? Who wants to debug a system with symptoms that are so difficult to reproduce? This is the kind of problem that happens in the field, then takes weeks to solve.</p><p>A typical “solution” is to introduce debugging statements to find out what is happening. Of course, the debug statements change the code enough so that the deadlock happens in a different situation and takes months to again occur.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn04" class="footnote" id="app01fn04"><sup class="footnote">[4]</sup></a></p><p>To really solve the problem of deadlock, we need to understand what causes it. There are four conditions required for deadlock to occur:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01lev2sec16">Mutual exclusion</a></p></li><li class="listitem"><p><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01lev2sec17">Lock &amp; wait</a></p></li><li class="listitem"><p><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01lev2sec18">No preemption</a></p></li><li class="listitem"><p><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01lev2sec19">Circular wait</a></p></li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec16"></a>Mutual Exclusion</h2></div></div></div><p>Mutual exclusion occurs when multiple threads need to use the same resources and those resources</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Cannot be used by multiple threads at the same time.</p></li><li class="listitem"><p>Are limited in number.</p></li></ul></div><p>A common example of such a resource is a database connection, a file open for write, a record lock, or a semaphore.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec17"></a>Lock &amp; Wait</h2></div></div></div><p><a id="iddle1160" class="indexterm"></a><a id="iddle1401" class="indexterm"></a><a id="iddle1797" class="indexterm"></a><a id="iddle1856" class="indexterm"></a><a id="iddle1892" class="indexterm"></a>Once a thread acquires a resource, it will not release the resource until it has acquired all of the other resources it requires and has completed its work.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec18"></a>No Preemption</h2></div></div></div><p>One thread cannot take resources away from another thread. Once a thread holds a resource, the only way for another thread to get it is for the holding thread to release it.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec19"></a>Circular Wait</h2></div></div></div><p>This is also referred to as the deadly embrace. Imagine two threads, T1 and T2, and two resources, R1 and R2. T1 has R1, T2 has R2. T1 also requires R2, and T2 also requires R1. This gives something like <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fig03">Figure A-3</a>:</p><div class="figure-float" style="float: left;"><div class="figure"><a id="app01fig03"></a><div class="figure-contents"><div class="mediaobject"><img src="https://www.safaribooksonline.com/library/view/clean-code/9780136083238/graphics/x01-3breaking_cycle.gif" width="203" alt="" height="144" data-mfp-src="/library/view/clean-code/9780136083238/graphics/x01-3breaking_cycle.gif"></div></div><p class="title"><strong>Figure&nbsp;A-3.&nbsp;</strong></p></div></div><p>All four of these conditions must hold for deadlock to be possible. Break any one of these conditions and deadlock is not possible.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec20"></a>Breaking Mutual Exclusion</h2></div></div></div><p>One strategy for avoiding deadlock is to sidestep the mutual exclusion condition. You might be able to do this by</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Using resources that allow simultaneous use, for example, <code class="literal">AtomicInteger</code>.</p></li><li class="listitem"><p>Increasing the number of resources such that it equals or exceeds the number of competing threads.</p></li><li class="listitem"><p>Checking that all your resources are free before seizing any.</p></li></ul></div><p>Unfortunately, most resources are limited in number and don’t allow simultaneous use. And it’s not uncommon for the identity of the second resource to be predicated on the results of operating on the first. But don’t be discouraged; there are three conditions left.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec21"></a>Breaking Lock &amp; Wait</h2></div></div></div><p><a id="iddle1161" class="indexterm"></a><a id="iddle1792" class="indexterm"></a><a id="iddle1798" class="indexterm"></a><a id="iddle1995" class="indexterm"></a><a id="iddle2073" class="indexterm"></a><a id="iddle2201" class="indexterm"></a><a id="iddle2329" class="indexterm"></a>You can also eliminate deadlock if you refuse to wait. Check each resource before you seize it, and release all resources and start over if you run into one that’s busy.</p><p>This approach introduces several potential problems:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><strong><span class="roman">Starvation—</span>.&nbsp;</strong>One thread keeps being unable to acquire the resources it needs (maybe it has a unique combination of resources that seldom all become available).</p></li><li class="listitem"><p><strong><span class="roman">Livelock—</span>.&nbsp;</strong>Several threads might get into lockstep and all acquire one resource and then release one resource, over and over again. This is especially likely with simplistic CPU scheduling algorithms (think embedded devices or simplistic hand-written thread balancing algorithms).</p></li></ul></div><p>Both of these can cause poor throughput. The first results in low CPU utilization, whereas the second results in high and useless CPU utilization.</p><p>As inefficient as this strategy sounds, it’s better than nothing. It has the benefit that it can almost always be implemented if all else fails.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec22"></a>Breaking Preemption</h2></div></div></div><p>Another strategy for avoiding deadlock is to allow threads to take resources away from other threads. This is usually done through a simple request mechanism. When a thread discovers that a resource is busy, it asks the owner to release it. If the owner is also waiting for some other resource, it releases them all and starts over.</p><p>This is similar to the previous approach but has the benefit that a thread is allowed to wait for a resource. This decreases the number of startovers. Be warned, however, that managing all those requests can be tricky.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec23"></a>Breaking Circular Wait</h2></div></div></div><p>This is the most common approach to preventing deadlock. For most systems it requires no more than a simple convention agreed to by all parties.</p><p>In the example above with Thread 1 wanting both Resource 1 and Resource 2 and Thread 2 wanting both Resource 2 and then Resource 1, simply forcing both Thread 1 and Thread 2 to allocate resources in the same order makes circular wait impossible.</p><p>More generally, if all threads can agree on a global ordering of resources and if they all allocate resources in that order, then deadlock is impossible. Like all the other strategies, this can cause problems:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The order of acquisition might not correspond to the order of use; thus a resource acquired at the start might not be used until the end. This can cause resources to be locked longer than strictly necessary.</p></li><li class="listitem"><p><a id="iddle1851" class="indexterm"></a><a id="iddle2311" class="indexterm"></a>Sometimes you cannot impose an order on the acquisition of resources. If the ID of the second resource comes from an operation performed on the first, then ordering is not feasible.</p></li></ul></div><p>So there are many ways to avoid deadlock. Some lead to starvation, whereas others make heavy use of the CPU and reduce responsiveness. TANSTAAFL!<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn05" class="footnote" id="app01fn05"><sup class="footnote">[5]</sup></a></p><p>Isolating the thread-related part of your solution to allow for tuning and experimentation is a powerful way to gain the insights needed to determine the best strategies.</p></div></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec7"></a>Testing Multithreaded Code</h1></div></div></div><p>How can we write a test to demonstrate the following code is broken?</p><div class="informalexample"><pre class="programlisting">01: public class ClassWithThreadingProblem {
+02:    int nextId;
+03:
+04:    public int takeNextId() {
+05:        return nextId++;
+06:    }
+07:}</pre></div><p>Here’s a description of a test that will prove the code is broken:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Remember the current value of <code class="literal">nextId</code>.</p></li><li class="listitem"><p>Create two threads, both of which call <code class="literal">takeNextId()</code> once.</p></li><li class="listitem"><p>Verify that <code class="literal">nextId</code> is two more than what we started with.</p></li><li class="listitem"><p>Run this until we demonstrate that <code class="literal">nextId</code> was only incremented by one instead of two.</p></li></ul></div><p><a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex02">Listing A-2</a> shows such a test:</p><div class="example"><a id="app01ex02"></a><p class="title"><strong>Example&nbsp;A-2.&nbsp;<code class="literal">ClassWithThreadingProblemTest.java</code></strong></p><div class="example-contents"><pre class="programlisting">01: package example;
+02:
+03: import static org.junit.Assert.fail;
+04:
+05: import org.junit.Test;
+06:
+07: public class ClassWithThreadingProblemTest {
+08:     @Test
+09:     public void twoThreadsShouldFailEventually() throws Exception  {
+10:         final ClassWithThreadingProblem classWithThreadingProblem
+                = new ClassWithThreadingProblem();
+11:
+12:         Runnable runnable = new Runnable() {
+13:             public void run() {
+14:                 classWithThreadingProblem.takeNextId();
+15:             }
+16:         };
+17:
+18:         for (int i = 0; i &lt; 50000; ++i) {
+19:             int startingId = classWithThreadingProblem.lastId;
+20:             int expectedResult = 2 + startingId;
+21:
+22:             Thread t1 = new Thread(runnable);
+23:             Thread t2 = new Thread(runnable);
+24:             t1.start();
+25:             t2.start();
+26:             t1.join();
+27:             t2.join();
+28:
+29:             int endingId = classWithThreadingProblem.lastId;
+30:
+31:             if (endingId != expectedResult)
+32:                 return;
+33:         }
+34:
+35:         fail("Should have exposed a threading issue but it did not.");
+36:     }
+37: }</pre></div></div><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col width="100" style="text-align: left" class="c1"><col width="450" style="text-align: left" class="c2"></colgroup><thead><tr><th style="text-align: left" valign="top"><p>Line</p></th><th style="text-align: left" valign="top"><p>Description</p></th></tr></thead><tbody><tr><td style="text-align: left" valign="top"><p><code class="literal">10</code></p></td><td style="text-align: left" valign="top"><p>Create a single instance of <code class="literal">ClassWithThreadingProblem</code>. Note, we must use the final keyword because we use it below in an anonymous inner class.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">12–16</code></p></td><td style="text-align: left" valign="top"><p>Create an anonymous inner class that uses the single instance of <code class="literal">ClassWithThreadingProblem</code>.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">18</code></p></td><td style="text-align: left" valign="top"><p>Run this code “enough” times to demonstrate that the code failed, but not so much that the test “takes too long.” This is a balancing act; we don’t want to wait too long to demonstrate failure. Picking this number is hard—although later we’ll see that we can greatly reduce this number.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">19</code></p></td><td style="text-align: left" valign="top"><p>Remember the starting value. This test is trying to prove that the code in <code class="literal">ClassWithThreadingProblem</code> is broken. If this test passes, it proved that the code was broken. If this test fails, the test was unable to prove that the code is broken.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">20</code></p></td><td style="text-align: left" valign="top"><p>We expect the final value to be two more than the current value.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">22–23</code></p></td><td style="text-align: left" valign="top"><p>Create two threads, both of which use the object we created in lines 12–16. This gives us the potential of two threads trying to use our single instance of <code class="literal">ClassWithThreadingProblem</code> and interfering with each other.</p></td></tr><tr><td style="text-align: left" valign="top"><p><a id="iddle1286" class="indexterm"></a><a id="iddle1319" class="indexterm"></a><a id="iddle1845" class="indexterm"></a><a id="iddle2246" class="indexterm"></a><a id="iddle2306" class="indexterm"></a><code class="literal">24–25</code></p></td><td style="text-align: left" valign="top"><p>Make our two threads eligible to run.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">26–27</code></p></td><td style="text-align: left" valign="top"><p>Wait for both threads to finish before we check the results.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">29</code></p></td><td style="text-align: left" valign="top"><p>Record the actual final value.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">31–32</code></p></td><td style="text-align: left" valign="top"><p>Did our <code class="literal">endingId</code> differ from what we expected? If so, return end the test—we’ve proven that the code is broken. If not, try again.</p></td></tr><tr><td style="text-align: left" valign="top"><p><code class="literal">35</code></p></td><td style="text-align: left" valign="top"><p>If we got to here, our test was unable to prove the production code was broken in a “reasonable” amount of time; our code has failed. Either the code is not broken or we didn’t run enough iterations to get the failure condition to occur.</p></td></tr></tbody></table></div><p>This test certainly sets up the conditions for a concurrent update problem. However, the problem occurs so infrequently that the vast majority of times this test won’t detect it.</p><p>Indeed, to truly detect the problem we need to set the number of iterations to over one million. Even then, in ten executions with a loop count of 1,000,000, the problem occurred only once. That means we probably ought to set the iteration count to well over one hundred million to get reliable failures. How long are we prepared to wait?</p><p>Even if we tuned the test to get reliable failures on one machine, we’ll probably have to retune the test with different values to demonstrate the failure on another machine, operating system, or version of the JVM.</p><p>And this is a <span class="emphasis"><em>simple</em></span> problem. If we cannot demonstrate broken code easily with this problem, how will we ever detect truly complex problems?</p><p>So what approaches can we take to demonstrate this simple failure? And, more importantly, how can we write tests that will demonstrate failures in more complex code? How will we be able to discover if our code has failures when we do not know where to look?</p><p>Here are a few ideas:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="strong"><strong>Monte Carlo Testing.</strong></span> Make tests flexible, so they can be tuned. Then run the test over and over—say on a test server—randomly changing the tuning values. If the tests ever fail, the code is broken. Make sure to start writing those tests early so a continuous integration server starts running them soon. By the way, make sure you carefully log the conditions under which the test failed.</p></li><li class="listitem"><p>Run the test on every one of the target deployment platforms. Repeatedly. Continuously. The longer the tests run without failure, the more likely that</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The production code is correct or</p></li><li class="listitem"><p>The tests aren’t adequate to expose problems.</p></li></ul></div></li><li class="listitem"><p>Run the tests on a machine with varying loads. If you can simulate loads close to a production environment, do so.</p></li></ul></div><p><a id="iddle1171" class="indexterm"></a><a id="iddle1219" class="indexterm"></a><a id="iddle1317" class="indexterm"></a><a id="iddle1348" class="indexterm"></a><a id="iddle1698" class="indexterm"></a><a id="iddle1774" class="indexterm"></a><a id="iddle2332" class="indexterm"></a><a id="iddle2340" class="indexterm"></a><a id="iddle2362" class="indexterm"></a><a id="iddle2365" class="indexterm"></a>Yet, even if you do all of these things, you still don’t stand a very good chance of finding threading problems with your code. The most insidious problems are the ones that have such a small cross section that they only occur once in a billion opportunities. Such problems are the terror of complex systems.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec8"></a>Tool Support for Testing Thread-Based Code</h1></div></div></div><p>IBM has created a tool called ConTest.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn06" class="footnote" id="app01fn06"><sup class="footnote">[6]</sup></a> It instruments classes to make it more likely that non-thread-safe code fails.</p><p>We do not have any direct relationship with IBM or the team that developed ConTest. A colleague of ours pointed us to it. We noticed vast improvement in our ability to find threading issues after a few minutes of using it.</p><p>Here’s an outline of how to use ConTest:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Write tests and production code, making sure there are tests specifically designed to simulate multiple users under varying loads, as mentioned above.</p></li><li class="listitem"><p>Instrument test and production code with ConTest.</p></li><li class="listitem"><p>Run the tests.</p></li></ul></div><p>When we instrumented code with ConTest, our success rate went from roughly one failure in ten million iterations to roughly one failure in <span class="emphasis"><em>thirty</em></span> iterations. Here are the loop values for several runs of the test after instrumentation: 13, 23, 0, 54, 16, 14, 6, 69, 107, 49, 2. So clearly the instrumented classes failed much earlier and with much greater reliability.</p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec9"></a>Conclusion</h1></div></div></div><p>This chapter has been a very brief sojourn through the large and treacherous territory of concurrent programming. We barely scratched the surface. Our emphasis here was on disciplines to help keep concurrent code clean, but there is much more you should learn if you are going to be writing concurrent systems. We recommend you start with Doug Lea’s wonderful book <span class="emphasis"><em>Concurrent Programming in Java: Design Principles and Patterns</em></span>.<a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#ftn.app01fn07" class="footnote" id="app01fn07"><sup class="footnote">[7]</sup></a></p><p>In this chapter we talked about concurrent update, and the disciplines of clean synchronization and locking that can prevent it. We talked about how threads can enhance the throughput of an I/O-bound system and showed the clean techniques for achieving such improvements. We talked about deadlock and the disciplines for preventing it in a clean <a id="iddle1199" class="indexterm"></a><a id="iddle2119" class="indexterm"></a>way. Finally, we talked about strategies for exposing concurrent problems by instrumenting your code.<a id="iddle1202" class="indexterm"></a></p></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="app01lev1sec10"></a>Tutorial: Full Code Examples</h1></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec24"></a>Client/Server Nonthreaded</h2></div></div></div><div class="example"><a id="app01ex03"></a><p class="title"><strong>Example&nbsp;A-3.&nbsp;<code class="literal">Server.java</code></strong></p><div class="example-contents"><pre class="programlisting">package com.objectmentor.clientserver.nonthreaded;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+
+import common.MessageUtils;
+
+public class Server implements Runnable {
+    ServerSocket serverSocket;
+    volatile boolean keepProcessing = true;
+
+    public Server(int port, int millisecondsTimeout) throws IOException {
+        serverSocket = new ServerSocket(port);
+        serverSocket.setSoTimeout(millisecondsTimeout);
+
+    }
+
+    public void run() {
+        System.out.printf("Server Starting\n");
+
+        while (keepProcessing) {
+            try {
+                System.out.printf("accepting client\n");
+                Socket socket = serverSocket.accept();
+                System.out.printf("got client\n");
+                process(socket);
+            } catch (Exception e) {
+                handle(e);
+            }
+        }
+
+    }
+
+    private void handle(Exception e) {
+        if (!(e instanceof SocketException)) {
+            e.printStackTrace();
+        }
+    }
+
+    public void stopProcessing() {
+        keepProcessing = false;
+        closeIgnoringException(serverSocket);
+    }
+    void process(Socket socket) {
+        if (socket == null)
+            return;
+
+        try {
+            System.out.printf("Server: getting message\n");
+            String message = MessageUtils.getMessage(socket);
+            System.out.printf("Server: got message: %s\n", message);
+            Thread.sleep(1000);
+            System.out.printf("Server: sending reply: %s\n", message);
+            MessageUtils.sendMessage(socket, "Processed: " + message);
+            System.out.printf("Server: sent\n");
+            closeIgnoringException(socket);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void closeIgnoringException(Socket socket) {
+        if (socket != null)
+            try {
+                socket.close();
+            } catch (IOException ignore) {
+            }
+
+    }
+
+    private void closeIgnoringException(ServerSocket serverSocket) {
+        if (serverSocket != null)
+            try {
+                serverSocket.close();
+            } catch (IOException ignore) {
+            }
+
+    }
+}</pre></div></div><p></p><div class="example"><a id="app01ex04"></a><p class="title"><strong>Example&nbsp;A-4.&nbsp;<code class="literal">ClientTest.java</code></strong></p><div class="example-contents"><pre class="programlisting">package com.objectmentor.clientserver.nonthreaded;
+
+import java.io.IOException;
+import java.net.Socket;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import common.MessageUtils;
+
+public class ClientTest {
+    private static final int PORT = 8009;
+    private static final int TIMEOUT = 2000;
+
+    Server server;
+    Thread serverThread;
+
+    @Before
+    public void createServer() throws Exception {
+        try {
+            server = new Server(PORT, TIMEOUT);
+            serverThread = new Thread(server);
+            serverThread.start();
+        } catch (Exception e) {
+            e.printStackTrace(System.err);
+            throw e;
+        }
+    }
+
+    @After
+    public void shutdownServer() throws InterruptedException {
+        if (server != null) {
+            server.stopProcessing();
+            serverThread.join();
+        }
+    }
+
+    class TrivialClient implements Runnable {
+        int clientNumber;
+
+        TrivialClient(int clientNumber) {
+            this.clientNumber = clientNumber;
+        }
+
+        public void run() {
+            try {
+                connectSendReceive(clientNumber);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Test(timeout = 10000)
+    public void shouldRunInUnder10Seconds() throws Exception {
+        Thread[] threads = new Thread[10];
+        for (int i = 0; i &lt; threads.length; ++i) {
+            threads[i] = new Thread(new TrivialClient(i));
+            threads[i].start();
+        }
+
+        for (int i = 0; i &lt; threads.length; ++i) {
+            threads[i].join();
+        }
+    }
+
+    private void connectSendReceive(int i) throws IOException {
+        System.out.printf("Client %2d: connecting\n", i);
+        Socket socket = new Socket("localhost", PORT);
+        System.out.printf("Client %2d: sending message\n", i);
+        MessageUtils.sendMessage(socket, Integer.toString(i));
+        System.out.printf("Client %2d: getting reply\n", i);
+        MessageUtils.getMessage(socket);
+        System.out.printf("Client %2d: finished\n", i);
+        socket.close();
+    }
+}</pre></div></div><p></p><div class="example"><a id="app01ex05"></a><p class="title"><strong>Example&nbsp;A-5.&nbsp;<code class="literal">MessageUtils.java</code></strong></p><div class="example-contents"><pre class="programlisting">package common;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
+public class MessageUtils {
+    public static void sendMessage(Socket socket, String message)
+            throws IOException {
+        OutputStream stream = socket.getOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(stream);
+        oos.writeUTF(message);
+        oos.flush();
+    }
+
+    public static String getMessage(Socket socket) throws IOException {
+        InputStream stream = socket.getInputStream();
+        ObjectInputStream ois = new ObjectInputStream(stream);
+        return ois.readUTF();
+    }
+}</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="app01lev2sec25"></a>Client/Server Using Threads</h2></div></div></div><p><a id="iddle1200" class="indexterm"></a><a id="iddle2339" class="indexterm"></a>Changing the server to use threads simply requires a change to the process message (new lines are emphasized to stand out):</p><div class="informalexample"><pre class="programlisting">void process(final Socket socket) {
+    if (socket == null)
+        return;
+
+    <span class="strong"><strong>Runnable clientHandler = new Runnable() {</strong></span>
+        public void run() {
+            try {
+                System.out.printf("Server: getting message\n");
+                String message = MessageUtils.getMessage(socket);
+                System.out.printf("Server: got message: %s\n", message);
+                Thread.sleep(1000);
+                System.out.printf("Server: sending reply: %s\n", message);
+                MessageUtils.sendMessage(socket, "Processed: " + message);
+                System.out.printf("Server: sent\n");
+                closeIgnoringException(socket);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    <span class="strong"><strong>Thread clientConnection = new Thread(clientHandler);</strong></span>
+    <span class="strong"><strong>clientConnection.start();</strong></span>
+}</pre></div><p>&nbsp;</p></div></div><div class="footnotes"><br><hr><div id="ftn.app01fn01" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn01" class="para"><sup class="para">[1] </sup></a>You can verify that for yourself by trying out the before and after code. Review the nonthreaded code starting on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex03">343</a>. Review the threaded code starting on page <a class="link" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01ex03">346</a>.</p></div><div id="ftn.app01fn02" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn02" class="para"><sup class="para">[2] </sup></a>This is a bit of a simplification. However, for the purpose of this discussion, we can use this simplifying model.</p></div><div id="ftn.app01fn03" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn03" class="para"><sup class="para">[3] </sup></a>In fact, the <code class="literal">Iterator</code> interface is inherently not thread-safe. It was never designed to be used by multiple threads, so this should come as no surprise.</p></div><div id="ftn.app01fn04" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn04" class="para"><sup class="para">[4] </sup></a>For example, someone adds some debugging output and the problem “disappears.” The debugging code “fixes” the problem so it remains in the system.</p></div><div id="ftn.app01fn05" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn05" class="para"><sup class="para">[5] </sup></a>There ain’t no such thing as a free lunch.</p></div><div id="ftn.app01fn06" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn06" class="para"><sup class="para">[6] </sup></a><a class="ulink" href="http://www.haifa.ibm.com/projects/verification/contest/index.html">http://www.haifa.ibm.com/projects/verification/contest/index.html</a></p></div><div id="ftn.app01fn07" class="footnote"><p><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#app01fn07" class="para"><sup class="para">[7] </sup></a>See [Lea99] p. 191.</p></div></div></div><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#">
+			
+				Add Note
+			
+		</a></li>
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/ch17.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">17. Smells and Heuristics</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/Library/view/clean-code/9780136083238/apb.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">B. org.jfree.date.SerialDate</div>
+        </a>
+    
+  
+  </div>
+
+
+      
+    </section>
+    <div class="reading-controls-bottom">
+      <ul class="interface-controls js-bitlist">
+        <li class="queue-control">
+            <button type="button" class="rec-fav ss-queue js-queue js-current-chapter-queue" data-queue-endpoint="/api/v1/book/9780136083238/chapter/apa.html" data-for-analytics="9780136083238:apa.html">
+      <span>Add to Queue</span>
+  </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+  <footer class="pagefoot t-pagefoot">
+    <a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li><a class="t-queue-footer" href="https://www.safaribooksonline.com/s/">Queue</a></li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li><a href="https://www.safaribooksonline.com/blog/">Blog</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://community.safaribooksonline.com/">Feedback</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2016 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com//library/view/clean-code/9780136083238/apa.html#">Reset</a>
+</div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
