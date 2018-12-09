@@ -8,7 +8,6 @@ then
     exit 1
 fi
 
-#target_url="http://dev.chendi.me/library/view/data-mining-practical/9780123748560/xhtml/big.html"
 target_url=$1
 
 file_name=$(basename $target_url | cut -f 1 -d '.').mobi
