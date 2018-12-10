@@ -25,7 +25,9 @@ def save_part(part):
     content = part.get_payload(decode=True)
     try:
         temp_content = content.decode("utf-8")
-        content = re.sub(r'href="https\:\/\/www.safaribooksonline.com\/library\/view', 'href="/library/view', temp_content).encode("utf-8")
+        content = re.sub(r'href="https\:\/\/www.safaribooksonline.com\/library\/view', 'href="/safari-books-archive/site/library/view', temp_content)
+        content = re.sub(r'class="topbar t-topbar"', 'class="topbar t-topbar" style="display:None"', content)
+        content = content.encode("utf-8")
     except:
         pass 
     open(path, "wb").write(content)
