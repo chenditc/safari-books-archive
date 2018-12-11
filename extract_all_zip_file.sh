@@ -7,3 +7,4 @@ do
     ./extract_zip_file.sh zip_files/$zip_file
 done
 
+./build_index.sh 
