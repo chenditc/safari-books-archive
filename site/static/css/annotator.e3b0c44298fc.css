@@ -40,7 +40,7 @@
 
 .annotator-viewer .annotator-item ol, .annotator-viewer .annotator-item ul { padding: 4px 16px; }
 
-.annotator-hide.annotator-viewer .annotator-controls { position: relative; top: 5px; right: 5px; padding-left: 5px; opacity: 0; transition: opacity 0.2s ease-in; float: right; }
+.annotator-hide.annotator-viewer .annotator-controls { position: relative; top: 5px; right: 5px; padding-left: 5px; opacity: 0; transition: opacity 0.2s ease-in 0s; float: right; }
 
 .annotator-viewer li:hover .annotator-controls, .annotator-viewer li .annotator-controls.annotator-visible { opacity: 1; }
 
@@ -80,7 +80,7 @@
 
 .annotator-invert-y.annotator-invert-x .annotator-resize { background-position: 0px -180px; }
 
-.annotator-notice { color: rgb(255, 255, 255); position: fixed; top: -54px; left: 0px; width: 100%; font-size: 14px; line-height: 50px; text-align: center; background: rgba(0, 0, 0, 0.9); border-bottom: 4px solid rgb(212, 212, 212); transition: top 0.4s ease-out; }
+.annotator-notice { color: rgb(255, 255, 255); position: fixed; top: -54px; left: 0px; width: 100%; font-size: 14px; line-height: 50px; text-align: center; background: rgba(0, 0, 0, 0.9); border-bottom: 4px solid rgb(212, 212, 212); transition: top 0.4s ease-out 0s; }
 
 .ie6 .annotator-notice { position: absolute; }
 

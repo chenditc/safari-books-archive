@@ -1,0 +1,1641 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/designing-data-intensive-applications/9781491903063/ch01.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="3905629"
+  data-user-uuid="f04af719-1c84-4fc3-9be3-1f1b4622ab99"
+  data-username="safaribooksonline122"
+  data-account-type="Trial"
+  
+  data-activated-trial-date="12/09/2018"
+
+
+  data-archive="9781491903063"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch01.html"
+  data-epub-title="Designing Data-Intensive Applications" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class="js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/designing-data-intensive-applications/9781491903063/ch01.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="3905629" data-user-uuid="f04af719-1c84-4fc3-9be3-1f1b4622ab99" data-username="safaribooksonline122" data-account-type="Trial" data-activated-trial-date="12/09/2018" data-archive="9781491903063" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch01.html" data-epub-title="Designing Data-Intensive Applications" data-debug="0" data-testing="0" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491903063"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.0c29511d2d72.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>1. Reliable, Scalable, and Maintainable Applications - Designing Data-Intensive Applications</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/5e586a47a3b7.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.e3b0c44298fc.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td,#sbo-rt-content article,#sbo-rt-content aside,#sbo-rt-content canvas,#sbo-rt-content details,#sbo-rt-content embed,#sbo-rt-content figure,#sbo-rt-content figcaption,#sbo-rt-content footer,#sbo-rt-content header,#sbo-rt-content hgroup,#sbo-rt-content menu,#sbo-rt-content nav,#sbo-rt-content output,#sbo-rt-content ruby,#sbo-rt-content section,#sbo-rt-content summary,#sbo-rt-content time,#sbo-rt-content mark,#sbo-rt-content audio,#sbo-rt-content video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}#sbo-rt-content article,#sbo-rt-content aside,#sbo-rt-content details,#sbo-rt-content figcaption,#sbo-rt-content figure,#sbo-rt-content footer,#sbo-rt-content header,#sbo-rt-content hgroup,#sbo-rt-content menu,#sbo-rt-content nav,#sbo-rt-content section{display:block}#sbo-rt-content div{line-height:1}#sbo-rt-content ol,#sbo-rt-content ul{list-style:none}#sbo-rt-content blockquote,#sbo-rt-content q{quotes:none}#sbo-rt-content blockquote:before,#sbo-rt-content blockquote:after,#sbo-rt-content q:before,#sbo-rt-content q:after{content:none}#sbo-rt-content table{border-collapse:collapse;border-spacing:0}@page{margin:5px !important}#sbo-rt-content p{margin:10px 0 0;line-height:125%;text-align:left}#sbo-rt-content p.byline{text-align:left;margin:-33px auto 35px;font-style:italic;font-weight:bold}#sbo-rt-content div.preface p+p.byline{margin:1em 0 0 !important}#sbo-rt-content div.preface p.byline+p.byline{margin:0 !important}#sbo-rt-content div.sect1>p.byline{margin:-.25em 0 1em}#sbo-rt-content div.sect1>p.byline+p.byline{margin-top:-1em}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content span.lineannotation{font-style:italic;color:#a62a2a;font-family:serif}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#fff}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content span.label,#sbo-rt-content span.keep-together{font-size:inherit;font-weight:inherit}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6,#sbo-rt-content figure h6,#sbo-rt-content figure figcaption{font-size:.9rem !important;text-align:center;font-weight:normal !important;font-style:italic;font-family:serif !important;text-transform:none !important;letter-spacing:normal !important;color:#000 !important;padding-top:10px !important;page-break-before:avoid}#sbo-rt-content div.informalfigure{text-align:center !important;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;border:1px solid #DCDCDC;background-color:#F7F7F7;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content div.sidebar ul,#sbo-rt-content aside[data-type="sidebar"] ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:1.25em !important}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif !important;color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div[data-type="tip"],#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div[data-type="note"],#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div[data-type="warning"],#sbo-rt-content div.sidebar div[data-type="caution"],#sbo-rt-content div.sidebar div[data-type="important"]{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content aside[data-type="sidebar"] p.byline{font-size:90%;font-weight:bold;font-style:italic;text-align:center;text-indent:0;margin:5px auto 6px;page-break-after:avoid}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;overflow-wrap:break-word}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;overflow-wrap:break-word}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;text-align:left !important;text-transform:none !important;font-family:serif !important;margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:2em;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"] h2,#sbo-rt-content section[data-type="titlepage"] p.subtitle,#sbo-rt-content section[data-type="titlepage"] p[data-type="subtitle"]{font-size:1.3em;font-weight:normal;text-align:center;margin-top:.5em;color:#555}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"],#sbo-rt-content section[data-type="titlepage"] p.author{font-size:1.3em;font-family:serif !important;font-weight:bold;margin:50px 0 !important;text-align:center}#sbo-rt-content section[data-type="titlepage"] p.edition{text-align:center;text-transform:uppercase;margin-top:2em}#sbo-rt-content section[data-type="titlepage"]{text-align:center}#sbo-rt-content section[data-type="titlepage"]:after{content:url(css_assets/titlepage_footer_ebook.png);margin:0 auto;max-width:80%}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content ul.stafflist{margin:15px 0 15px 20px !important}#sbo-rt-content ul.stafflist li{list-style-type:none;padding:5px 0}#sbo-rt-content ul.printings li{list-style-type:none}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif !important;font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif !important;font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif !important;margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif !important;font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10px}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif !important}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-style:italic;margin:.75em 0 0 !important}#sbo-rt-content blockquote div.attribution,#sbo-rt-content blockquote p[data-type="attribution"]{margin:5px 0 10px 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p,#sbo-rt-content blockquote p[data-type="attribution"]{font-style:normal;margin-top:5px}#sbo-rt-content blockquote div.attribution p:before,#sbo-rt-content blockquote p[data-type="attribution"]:before{font-style:normal;content:"—";-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div[data-type="footnotes"]{border-top:1px solid black;margin-top:1.5em}#sbo-rt-content sub,#sbo-rt-content sup{font-size:75%;line-height:0;position:relative}#sbo-rt-content sup{top:-.5em}#sbo-rt-content sub{bottom:-.25em}#sbo-rt-content div.refentry p.refname{font-size:1em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin-bottom:5px;overflow:auto;width:100%}#sbo-rt-content div.refentry{width:100%;display:block;margin-top:2em}#sbo-rt-content div.refsynopsisdiv{display:block;clear:both}#sbo-rt-content div.refentry header{page-break-inside:avoid !important;display:block;break-inside:avoid !important;padding-top:0;border-bottom:1px solid #000}#sbo-rt-content div.refsect1 h6{font-size:.9em;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content div.refsect1{margin-top:3em}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dd{margin-left:1.5em !important;margin-bottom:.25em}#sbo-rt-content dd ol,#sbo-rt-content dd ul{padding-left:1em}#sbo-rt-content dd li{margin-top:0;margin-bottom:0}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ul,#sbo-rt-content ul>li,#sbo-rt-content ol ul,#sbo-rt-content ol ul>li,#sbo-rt-content ul ol ul,#sbo-rt-content ul ol ul>li{list-style-type:disc}#sbo-rt-content ul ul,#sbo-rt-content ul ul>li{list-style-type:square}#sbo-rt-content ul ul ul,#sbo-rt-content ul ul ul>li{list-style-type:circle}#sbo-rt-content ol,#sbo-rt-content ol>li,#sbo-rt-content ol ul ol,#sbo-rt-content ol ul ol>li,#sbo-rt-content ul ol,#sbo-rt-content ul ol>li{list-style-type:decimal}#sbo-rt-content ol ol,#sbo-rt-content ol ol>li{list-style-type:lower-alpha}#sbo-rt-content ol ol ol,#sbo-rt-content ol ol ol>li{list-style-type:lower-roman}#sbo-rt-content ol,#sbo-rt-content ul{list-style-position:outside;margin:15px 0 15px 1.25em;padding-left:2.25em}#sbo-rt-content ol li,#sbo-rt-content ul li{margin:.5em 0 .65em;line-height:125%}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist,#sbo-rt-content ul.simplelist{margin:15px 0 15px 20px !important}#sbo-rt-content ul.simplelist li{list-style-type:none;padding:5px 0}#sbo-rt-content table.simplelist td{border:none}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img,#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip ol,#sbo-rt-content div.tip ul,#sbo-rt-content div[data-type="tip"] ol,#sbo-rt-content div[data-type="tip"] ul,#sbo-rt-content div.note ol,#sbo-rt-content div.note ul,#sbo-rt-content div[data-type="note"] ol,#sbo-rt-content div[data-type="note"] ul,#sbo-rt-content div.warning ol,#sbo-rt-content div.warning ul,#sbo-rt-content div[data-type="warning"] ol,#sbo-rt-content div[data-type="warning"] ul,#sbo-rt-content div[data-type="caution"] ol,#sbo-rt-content div[data-type="caution"] ul,#sbo-rt-content div[data-type="important"] ol,#sbo-rt-content div[data-type="important"] ul{margin-left:1.5em !important}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1,#sbo-rt-content div[data-type="important"] h6{font-weight:bold;font-size:110%;font-family:sans-serif !important;text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div[data-type="tip"] figure h6,#sbo-rt-content div[data-type="note"] figure h6,#sbo-rt-content div[data-type="warning"] figure h6,#sbo-rt-content div[data-type="caution"] figure h6,#sbo-rt-content div[data-type="important"] figure h6{font-family:serif !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div[data-type="note"] h1{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3,#sbo-rt-content div.safarienabled h6{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px 0 30px 0 !important;max-width:95%;border:none !important;background:none;display:table !important}#sbo-rt-content div.table,#sbo-rt-content div.informaltable,#sbo-rt-content table{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{display:table-cell;padding:.3em;text-align:left;vertical-align:middle;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif;font-size:1em;margin:10px 0 10px 0 !important;padding:0;page-break-after:avoid;text-align:left !important}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation,#sbo-rt-content div[data-type="equation"]{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title,#sbo-rt-content div[data-type="equation"] h5{font-style:italic;font-weight:normal;font-family:serif !important;font-size:90%;margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content div[data-type="equation"] math{font-size:calc(.35em + 1vw)}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{text-indent:0}#sbo-rt-content div.index h3{padding:.25em;margin-top:1em !important;background-color:#F0F0F0}#sbo-rt-content div.index li{line-height:130%;list-style-type:none}#sbo-rt-content div.index a.indexterm{color:#8e0012 !important}#sbo-rt-content div.index ul{margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.index ul ul{margin-left:1em !important;margin-top:0 !important}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif;text-align:left}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content div.map-ebook{page-break-after:always}
+    </style><link rel="canonical" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html"><meta name="description" content=" Chapter 1. Reliable, Scalable, and Maintainable Applications The Internet was done so well that most people think of it as a natural resource like the Pacific Ocean, rather than something ... "><meta property="og:title" content="1. Reliable, Scalable, and Maintainable Applications"><meta itemprop="isPartOf" content="/library/view/designing-data-intensive-applications/9781491903063/"><meta itemprop="name" content="1. Reliable, Scalable, and Maintainable Applications"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/ch01.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491903063/"><meta property="og:description" itemprop="description" content=" Chapter 1. Reliable, Scalable, and Maintainable Applications The Internet was done so well that most people think of it as a natural resource like the Pacific Ocean, rather than something ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781449373320"><meta property="og:book:author" itemprop="author" content="Martin Kleppmann"><meta property="og:book:tag" itemprop="about" content="Core Programming"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library" data-gr-c-s-loaded="true">
+
+    
+  
+  
+  
+
+
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#container" class="skip">Skip to content</a><header class="topbar t-topbar" style="display:None"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/playlists/" class="t-queue-nav l0 nav-icn None"><!--?xml version="1.0" encoding="UTF-8"?--><svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch --><title>icon_Playlist_sml</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_Playlist_sml" fill-rule="nonzero" fill="#000000"><g id="playlist-icon"><g id="Group-6"><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle></g><g id="Group-5" transform="translate(0.000000, 7.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g><g id="Group-5-Copy" transform="translate(0.000000, 14.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g></g></g></g></svg><span>
+               Playlists
+            </span></a></li><li class="search"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://get.oreilly.com/email-signup.html" target="_blank" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/f04af719-1c84-4fc3-9be3-1f1b4622ab99/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/preferences/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.oreilly.com/online-learning/support/" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/preferences/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.oreilly.com/online-learning/support/" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Designing Data-Intensive Applications
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><div class="js-content-uri" data-content-uri="/api/v1/book/9781491903063/chapter/ch01.html"><div class="js-collections-dropdown collections-dropdown menu-bit-cards"></div></div></li><li class="js-font-control-panel font-control-activator"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/ch01.html&amp;text=Designing%20Data-Intensive%20Applications&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/ch01.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/ch01.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%201.%20Reliable%2C%20Scalable%2C%20and%20Maintainable%20Applications&amp;body=https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/ch01.html%0D%0Afrom%20Designing%20Data-Intensive%20Applications%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/part01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">I. Foundations of Data Systems</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch02.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">2. Data Models and Query Languages</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 1. Reliable, Scalable, and Maintainable Applications"><div class="chapter" id="ch_introduction">
+<h1><span class="label">Chapter 1. </span>Reliable, Scalable, and <span class="keep-together">Maintainable Applications</span></h1>
+
+<blockquote data-type="epigraph" epub:type="epigraph">
+  <p><em>The Internet was done so well that most people think of it as a natural resource like the Pacific
+Ocean, rather than something that was man-made. When was the last time a technology with a scale
+like that was so error-free?</em></p>
+  <p data-type="attribution"><a href="http://www.drdobbs.com/architecture-and-design/interview-with-alan-kay/240003442">Alan Kay</a>,
+  in interview with <em>Dr Dobb’s Journal</em> (2012)</p>
+</blockquote>
+
+<div class="map-ebook">
+ <img id="c266" src="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/assets/ch01-map-alt.png" width="2100" height="2756" data-mfp-src="/library/view/designing-data-intensive-applications/9781491903063/assets/ch01-map-alt.png">
+</div>
+
+<p><a data-type="indexterm" data-primary="compute-intensive applications" id="idm140417577388224"></a>
+Many applications today are <em>data-intensive</em>, as opposed to <em>compute-intensive</em>. Raw CPU power is
+rarely a limiting factor for these applications—bigger problems are usually the amount of data,
+the complexity of data, and the speed at which it is changing.</p>
+
+<p><a data-type="indexterm" data-primary="data-intensive applications" id="idm140417577386016"></a>
+A data-intensive application is typically built from standard building blocks that provide commonly
+needed functionality. For example, many applications need to:</p>
+
+<ul>
+<li>
+<p>Store data so that they, or another application, can find it again later (<em>databases</em>)</p>
+</li>
+<li>
+<p>Remember the result of an expensive operation, to speed up reads (<em>caches</em>)</p>
+</li>
+<li>
+<p>Allow users to search data by keyword or filter it in various ways (<em>search indexes</em>)</p>
+</li>
+<li>
+<p>Send a message to another process, to be handled asynchronously (<em>stream processing</em>)</p>
+</li>
+<li>
+<p>Periodically crunch a large amount of accumulated data (<em>batch processing</em>)</p>
+</li>
+</ul>
+
+<p><a data-type="indexterm" data-primary="data systems" id="idm140417577113360"></a>
+If that sounds painfully obvious, that’s just because these <em>data systems</em> are such a successful
+abstraction: we use them all the time without thinking too much. When building an application, most
+engineers wouldn’t dream of writing a new data storage engine from scratch, because databases are a
+perfectly good tool for the job.</p>
+
+<p>But reality is not that simple. There are many database systems with different characteristics,
+because different applications have different requirements. There are various approaches to caching,
+several ways of building search indexes, and so on. When building an application, we still need to
+figure out which tools and which approaches are the most appropriate for the task at hand. And it
+can be hard to combine tools when you need to do something that a single tool cannot do alone.</p>
+
+<p>This book is a journey through both the principles and the practicalities of data systems, and how
+you can use them to build data-intensive applications. We will explore what different tools have in
+common, what distinguishes them, and how they achieve their characteristics.</p>
+
+<p>In this chapter, we will start by exploring the fundamentals of what we are trying to
+achieve: reliable, scalable, and maintainable data systems. We’ll clarify what those things mean,
+outline some ways of thinking about them, and go over the basics that we will need for later
+chapters. In the following chapters we will continue layer by layer, looking at different design
+decisions that need to be considered when working on a data-intensive application.</p>
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Thinking About Data Systems"><div class="sect1" id="idm140417577109136">
+<h1>Thinking About Data Systems</h1>
+
+<p><a data-type="indexterm" data-primary="data systems" data-secondary="about" id="idm140417577107568"></a>
+We typically think of databases, queues, caches, etc. as being very different categories of tools.
+Although a database and a message queue have some superficial similarity—both store data for some
+time—they have very different access patterns, which means different performance characteristics,
+and thus very different implementations.</p>
+
+<p>So why should we lump them all together under an umbrella term like <em>data systems</em>?</p>
+
+<p>Many new tools for data storage and processing have emerged in recent years. They are optimized for
+a variety of different use cases, and they no longer neatly fit into traditional categories
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Stonebraker2005ux-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Stonebraker2005ux" class="totri-footnote">1</a>].
+<a data-type="indexterm" data-primary="Redis (database)" data-secondary="usage example" id="idm140417577102464"></a>
+<a data-type="indexterm" data-primary="Kafka (messaging)" data-secondary="usage example" id="idm140417577101360"></a>
+<a data-type="indexterm" data-primary="Apache Kafka" data-see="Kafka" id="idm140417577100256"></a>
+For example, there are datastores that are also used as message queues (Redis), and there are
+message queues with database-like durability guarantees (Apache Kafka). The boundaries between the
+categories are becoming blurred.</p>
+
+<p>Secondly, increasingly many applications now have such demanding or wide-ranging requirements that a
+single tool can no longer meet all of its data processing and storage needs. Instead, the work is
+broken down into tasks that <em>can</em> be performed efficiently on a single tool, and those different
+tools are stitched together using application code.</p>
+
+<p><a data-type="indexterm" data-primary="Memcached (caching server)" id="idm140417577097456"></a>
+<a data-type="indexterm" data-primary="Elasticsearch (search server)" data-secondary="usage example" id="idm140417577096560"></a>
+<a data-type="indexterm" data-primary="Solr (search server)" data-secondary="usage example" id="idm140417577095440"></a><a data-type="indexterm" data-primary="Apache Solr" data-see="Solr" id="idm140417577094464"></a>
+For example, if you have an application-managed caching layer (using Memcached or similar), or a
+full-text search server (such as Elasticsearch or Solr) separate from your main database, it is
+normally the application code’s responsibility to keep those caches and indexes in sync with the
+main database. <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_introduction_composite">Figure&nbsp;1-1</a> gives a glimpse of what this may look like (we will
+go into detail in later chapters).</p>
+
+<figure><div id="fig_introduction_composite" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0101.png" alt="ddia 0101" width="2880" height="2049" data-mfp-src="/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0101.png">
+<h6><span class="label">Figure 1-1. </span>One possible architecture for a data system that combines several <span class="keep-together">components</span>.</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="Application Programming Interfaces (APIs)" id="idm140417577089216"></a>
+When you combine several tools in order to provide a service, the service’s interface or application
+programming interface (API) usually hides those implementation details from clients. Now you have
+essentially created a new, special-purpose data system from smaller, general-purpose components.
+Your composite data system may provide certain guarantees: e.g., that the cache will be correctly
+invalidated or updated on writes so that outside clients see consistent results. You are now not
+only an application developer, but also a data system designer.</p>
+
+<p>If you are designing a data system or service, a lot of tricky questions arise. How do you ensure
+that the data remains correct and complete, even when things go wrong internally? How do you provide
+consistently good performance to clients, even when parts of your system are degraded? How do you
+scale to handle an increase in load? What does a good API for the service look like?</p>
+
+<p><a data-type="indexterm" data-primary="data systems" data-secondary="concerns when designing" id="idm140417577086640"></a>
+There are many factors that may influence the design of a data system, including the skills and
+experience of the people involved, legacy system dependencies, the timescale for delivery, your
+organization’s tolerance of different kinds of risk, regulatory constraints, etc. Those factors
+depend very much on the situation.</p>
+
+<p class="pagebreak-before">In this book, we focus on three concerns that are important in most software systems:</p>
+<dl>
+<dt>Reliability</dt>
+<dd>
+<p><a data-type="indexterm" data-primary="correctness" id="idm140417577082944"></a>
+<a data-type="indexterm" data-primary="reliability" data-secondary="defined" id="idm140417577082112"></a>
+The system should continue to work <em>correctly</em> (performing the correct function at the desired
+level of performance) even in the face of <em>adversity</em> (hardware or software faults, and even human
+error). See <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#sec_introduction_reliability">“Reliability”</a>.</p>
+</dd>
+<dt>Scalability</dt>
+<dd>
+<p>As the system <em>grows</em> (in data volume, traffic volume, or complexity), there should be reasonable
+ways of dealing with that growth. See <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#sec_introduction_scalability">“Scalability”</a>.</p>
+</dd>
+<dt>Maintainability</dt>
+<dd>
+<p>Over time, many different people will work on the system (engineering and operations, both
+maintaining current behavior and adapting the system to new use cases), and they should all be
+able to work on it <em>productively</em>. See <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#sec_introduction_maintainability">“Maintainability”</a>.</p>
+</dd>
+</dl>
+
+<p>These words are often cast around without a clear understanding of what they mean. In the interest
+of thoughtful engineering, we will spend the rest of this chapter exploring ways of thinking about
+reliability, scalability, and maintainability. Then, in the following chapters, we will look at
+various techniques, architectures, and algorithms that are used in order to achieve those goals.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Reliability"><div class="sect1" id="sec_introduction_reliability">
+<h1>Reliability</h1>
+
+<p><a data-type="indexterm" data-primary="reliability" id="ix_reliable"></a>
+<a data-type="indexterm" data-primary="data systems" data-secondary="reliability" id="ix_DSreliable"></a>
+<a data-type="indexterm" data-primary="fault tolerance" id="ix_faulttolintro"></a>
+<a data-type="indexterm" data-primary="resilient systems" data-seealso="fault tolerance" id="idm140417577067168"></a>
+<a data-type="indexterm" data-primary="faults" data-secondary="tolerating" data-see="fault tolerance" id="idm140417577066064"></a>
+Everybody has an intuitive idea of what it means for something to be reliable or unreliable. For
+software, typical expectations include:</p>
+
+<ul>
+<li>
+<p>The application performs the function that the user expected.</p>
+</li>
+<li>
+<p>It can tolerate the user making mistakes or using the software in unexpected ways.</p>
+</li>
+<li>
+<p>Its performance is good enough for the required use case, under the expected load and data volume.</p>
+</li>
+<li>
+<p>The system prevents any unauthorized access and abuse.</p>
+</li>
+</ul>
+
+<p>If all those things together mean “working correctly,” then we can understand <em>reliability</em> as
+meaning, roughly, “continuing to work correctly, even when things go wrong.”</p>
+
+<p><a data-type="indexterm" data-primary="faults" id="idm140417577059248"></a>
+The things that can go wrong are called <em>faults</em>, and systems that anticipate faults and can cope
+with them are called <em>fault-tolerant</em> or <em>resilient</em>. The former term is slightly misleading: it
+suggests that we could make a system tolerant of every possible kind of fault, which in reality is
+not feasible. <a data-type="indexterm" data-primary="aerospace systems" id="idm140417577056688"></a> If the entire planet Earth (and all servers on it) were
+swallowed by a black hole, tolerance of that fault would require web hosting in space—good luck
+getting that budget item approved. So it only makes sense to talk about tolerating <em>certain types</em>
+of faults.</p>
+
+<p><a data-type="indexterm" data-primary="faults" data-secondary="failures versus" id="idm140417577055024"></a><a data-type="indexterm" data-primary="failures" data-secondary="faults versus" id="idm140417577054048"></a>
+Note that a fault is not the same as a failure
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Heimerdinger1992vn-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Heimerdinger1992vn" class="totri-footnote">2</a>]. A fault is usually defined as one component of the system
+deviating from its spec, whereas a <em>failure</em> is when the system as a whole stops providing the
+required service to the user. It is impossible to reduce the probability of a fault to zero;
+therefore it is usually best to design fault-tolerance mechanisms that prevent faults from causing
+failures. In this book we cover several techniques for building reliable systems from unreliable
+parts.</p>
+
+<p><a data-type="indexterm" data-primary="Chaos Monkey" id="idm140417577049696"></a><a data-type="indexterm" data-primary="Netflix Chaos Monkey" id="idm140417577048768"></a>
+<a data-type="indexterm" data-primary="faults" data-secondary="introducing deliberately" id="idm140417577047968"></a>
+Counterintuitively, in such fault-tolerant systems, it can make sense to <em>increase</em> the rate of
+faults by triggering them deliberately—for example, by randomly killing individual processes
+without warning. Many critical bugs are actually due to poor error handling
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Yuan2014va-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Yuan2014va" class="totri-footnote">3</a>]; by deliberately inducing faults, you ensure
+that the fault-tolerance machinery is continually exercised and tested, which can increase your
+confidence that faults will be handled correctly when they occur naturally. The Netflix <em>Chaos
+Monkey</em> [<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="netflix-simian-army-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#netflix-simian-army" class="totri-footnote">4</a>] is an example of this approach.</p>
+
+<p>Although we generally prefer tolerating faults over preventing faults, there are cases where
+prevention is better than cure (e.g., because no cure exists). This is the case with security
+matters, for example: if an attacker has compromised a system and gained access to sensitive data,
+that event cannot be undone. However, this book mostly deals with the kinds of faults that can be
+cured, as described in the following sections.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Hardware Faults"><div class="sect2" id="idm140417577040160">
+<h2>Hardware Faults</h2>
+
+<p><a data-type="indexterm" data-primary="reliability" data-secondary="hardware faults" id="idm140417577038720"></a>
+<a data-type="indexterm" data-primary="data systems" data-secondary="reliability" data-tertiary="hardware faults" id="idm140417577037392"></a>
+<a data-type="indexterm" data-primary="hardware faults" id="idm140417577035984"></a>
+<a data-type="indexterm" data-primary="faults" data-secondary="hardware" id="idm140417577035152"></a>
+<a data-type="indexterm" data-primary="hard disks" data-secondary="faults in" id="idm140417577034048"></a>
+When we think of causes of system failure, hardware faults quickly come to mind. Hard disks crash,
+RAM becomes faulty, the power grid has a blackout, someone unplugs the wrong network cable. Anyone
+who has worked with large datacenters can tell you that these things happen <em>all the time</em> when you
+have a lot of machines.</p>
+
+<p>Hard disks are reported as having a mean time to failure (MTTF) of about 10 to 50 years
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Ford2010vv-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Ford2010vv" class="totri-footnote">5</a>, <a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Beach2014ui-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Beach2014ui" class="totri-footnote">6</a>].
+Thus, on a storage cluster with 10,000 disks, we should expect on average one disk to die per day.</p>
+
+<p><a data-type="indexterm" data-primary="redundancy" data-secondary="hardware components" id="idm140417577026832"></a>
+<a data-type="indexterm" data-primary="RAID (Redundant Array of Independent Disks)" id="idm140417577025728"></a>
+Our first response is usually to add redundancy to the individual hardware components in order to
+reduce the failure rate of the system. Disks may be set up in a RAID configuration, servers may have
+dual power supplies and hot-swappable CPUs, and datacenters may have batteries and diesel
+generators for backup power. When one component dies, the redundant component can take its place
+while the broken component is replaced. This approach cannot completely prevent hardware problems
+from causing failures, but it is well understood and can often keep a machine running uninterrupted
+for years.</p>
+
+<p><a data-type="indexterm" data-primary="availability" data-seealso="fault tolerance" id="idm140417577023936"></a>
+<a data-type="indexterm" data-primary="high availability" data-see="fault tolerance" id="idm140417577022832"></a>
+Until recently, redundancy of hardware components was sufficient for most applications, since it
+makes total failure of a single machine fairly rare. As long as you can restore a backup onto a new
+machine fairly quickly, the downtime in case of failure is not catastrophic in most applications.
+Thus, multi-machine redundancy was only required by a small number of applications for which high
+availability was absolutely essential.</p>
+
+<p><a data-type="indexterm" data-primary="cloud computing" data-secondary="single-machine reliability" id="idm140417577021024"></a>
+<a data-type="indexterm" data-primary="virtual machines" data-secondary="reliability in cloud services" id="idm140417577019728"></a>
+<a data-type="indexterm" data-primary="Amazon Web Services (AWS)" id="idm140417577018656"></a><a data-type="indexterm" data-primary="AWS" data-see="Amazon Web Services" id="idm140417577017984"></a>
+However, as data volumes and applications’ computing demands have increased, more applications have begun using
+larger numbers of machines, which proportionally increases the rate of hardware faults. Moreover, in
+some cloud platforms such as Amazon Web Services (AWS) it is fairly common for virtual machine instances
+to become unavailable without warning [<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Voss2012tc-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Voss2012tc" class="totri-footnote">7</a>], as the platforms are designed to
+prioritize flexibility and elasticity<sup xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook"><a data-type="noteref" id="idm140417577014368-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#idm140417577014368" class="totri-footnote">i</a></sup>
+over single-machine reliability.</p>
+
+<p><a data-type="indexterm" data-primary="rolling upgrades" id="idm140417577012256"></a>
+Hence there is a move toward systems that can tolerate the loss of entire machines, by using
+software fault-tolerance techniques in preference or in addition to hardware redundancy. Such
+systems also have operational advantages: a single-server system requires planned downtime if you
+need to reboot the machine (to apply operating system security patches, for example), whereas a
+system that can tolerate machine failure can be patched one node at a time, without downtime of the
+entire system (a <em>rolling upgrade</em>; see <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch04.html#ch_encoding">Chapter&nbsp;4</a>).</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Software Errors"><div class="sect2" id="idm140417577009536">
+<h2>Software Errors</h2>
+
+<p><a data-type="indexterm" data-primary="data systems" data-secondary="reliability" data-tertiary="software errors" id="idm140417577008096"></a>
+<a data-type="indexterm" data-primary="reliability" data-secondary="software errors" id="idm140417577006720"></a>
+<a data-type="indexterm" data-primary="faults" data-secondary="software errors" id="idm140417577005616"></a>
+<a data-type="indexterm" data-primary="software bugs" id="idm140417577004512"></a>
+We usually think of hardware faults as being random and independent from each other: one machine’s
+disk failing does not imply that another machine’s disk is going to fail. There may be weak
+correlations (for example due to a common cause, such as the temperature in the server rack), but
+otherwise it is unlikely that a large number of hardware components will fail at the same time.</p>
+
+<p>Another class of fault is a systematic error within the system
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Gunawi2014gn-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Gunawi2014gn" class="totri-footnote">8</a>].
+Such faults are harder to anticipate, and because they are correlated across nodes, they tend to
+cause many more system failures than uncorrelated hardware faults
+[<a data-type="noteref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Ford2010vv" class="totri-footnote">5</a>]. Examples include:</p>
+
+<ul>
+<li>
+<p><a data-type="indexterm" data-primary="Linux, leap second bug" id="idm140417576998176"></a>
+<a data-type="indexterm" data-primary="leap seconds" id="idm140417576997344"></a>
+A software bug that causes every instance of an application server to crash when given a
+particular bad input. For example, consider the leap second on June 30, 2012, that caused many
+applications to hang simultaneously due to a bug in the Linux kernel
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Minar2012vh_ch1-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Minar2012vh_ch1" class="totri-footnote">9</a>].</p>
+</li>
+<li>
+<p>A runaway process that uses up some shared resource—CPU time, memory, disk space, or network
+bandwidth.</p>
+</li>
+<li>
+<p>A service that the system depends on that slows down, becomes unresponsive, or starts returning
+corrupted responses.</p>
+</li>
+<li>
+<p><a data-type="indexterm" data-primary="incidents" data-secondary="cascading failures" id="idm140417576990960"></a>
+<a data-type="indexterm" data-primary="Amazon Web Services (AWS)" data-secondary="postmortems" id="idm140417576989856"></a>
+<a data-type="indexterm" data-primary="cascading failures" id="idm140417576988688"></a>
+Cascading failures, where a small fault in one component triggers a fault in another component,
+which in turn triggers further faults
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="AmazonWebServices2011tj-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#AmazonWebServices2011tj">10</a>].</p>
+</li>
+</ul>
+
+<p>The bugs that cause these kinds of software faults often lie dormant for a long time until they are
+triggered by an unusual set of circumstances. In those circumstances, it is revealed that the
+software is making some kind of assumption about its environment—and while that assumption is
+usually true, it eventually stops being true for some reason
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Cook2000wo-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Cook2000wo">11</a>].</p>
+
+<p>There is no quick solution to the problem of systematic faults in software. Lots of small things can
+help: carefully thinking about assumptions and interactions in the system; thorough testing; process
+isolation; allowing processes to crash and restart; measuring, monitoring, and analyzing system
+behavior in production. If a system is expected to provide some guarantee (for example, in a message
+queue, that the number of incoming messages equals the number of outgoing messages), it can
+constantly check itself while it is running and raise an alert if a discrepancy is found
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Kreps2012td_ch1-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Kreps2012td_ch1">12</a>].</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Human Errors"><div class="sect2" id="idm140417576979424">
+<h2>Human Errors</h2>
+
+<p><a data-type="indexterm" data-primary="human errors" id="idm140417576978304"></a>
+<a data-type="indexterm" data-primary="reliability" data-secondary="human errors" id="idm140417576977472"></a>
+<a data-type="indexterm" data-primary="data systems" data-secondary="reliability" data-tertiary="human errors" id="idm140417576976368"></a>
+Humans design and build software systems, and the operators who keep the systems running are also
+human. Even when they have the best intentions, humans are known to be unreliable. For example, one
+study of large internet services found that configuration errors by operators were the leading cause
+of outages, whereas hardware faults (servers or network) played a role in only 10–25% of outages
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Oppenheimer2003vc-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Oppenheimer2003vc">13</a>].</p>
+
+<p>How do we make our systems reliable, in spite of unreliable humans? The best systems combine several
+approaches:</p>
+
+<ul>
+<li>
+<p>Design systems in a way that minimizes opportunities for error. For example, well-designed
+abstractions, APIs, and admin interfaces make it easy to do “the right thing” and discourage “the
+wrong thing.” However, if the interfaces are too restrictive people will work around them,
+negating their benefit, so this is a tricky balance to get right.</p>
+</li>
+<li>
+<p>Decouple the places where people make the most mistakes from the places where they can cause
+failures.<a data-type="indexterm" data-primary="sandboxes" id="idm140417576969056"></a> In particular, provide fully featured non-production <em>sandbox</em> environments where
+people can explore and experiment safely, using real data, without affecting real users.</p>
+</li>
+<li>
+<p>Test thoroughly at all levels, from unit tests to whole-system integration tests and manual tests
+[<a data-type="noteref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Yuan2014va" class="totri-footnote">3</a>].
+Automated testing is widely used, well understood, and especially valuable for covering corner
+cases that rarely arise in normal operation.</p>
+</li>
+<li>
+<p>Allow quick and easy recovery from human errors, to minimize the impact in the case of a failure.
+For example, make it fast to roll back configuration changes, roll out new code gradually (so that
+any unexpected bugs affect only a small subset of users), and provide tools to recompute data (in
+case it turns out that the old computation was incorrect).</p>
+</li>
+<li>
+<p><a data-type="indexterm" data-primary="monitoring" id="idm140417576963744"></a><a data-type="indexterm" data-primary="telemetry" data-see="monitoring" id="idm140417576963040"></a><a data-type="indexterm" data-primary="rockets" id="idm140417576962096"></a><a data-type="indexterm" data-primary="aerospace systems" id="idm140417576961424"></a>
+Set up detailed and clear monitoring, such as performance metrics and error rates.
+In other engineering disciplines this is referred to as <em>telemetry</em>. (Once a rocket has left the
+ground, telemetry is essential for tracking what is happening, and for understanding failures
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Marz2013wq-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Marz2013wq">14</a>].)
+Monitoring can show us early warning signals and allow us to check whether any assumptions or
+constraints are being violated. When a problem occurs, metrics can be invaluable in diagnosing the
+issue.</p>
+</li>
+<li>
+<p>Implement good management practices and training—a complex and important aspect, and beyond the scope of
+this book.</p>
+</li>
+</ul>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="How Important Is Reliability?"><div class="sect2" id="idm140417576956016">
+<h2>How Important Is Reliability?</h2>
+
+<p><a data-type="indexterm" data-primary="reliability" data-secondary="importance of" id="idm140417576954848"></a>
+<a data-type="indexterm" data-primary="data systems" data-secondary="reliability" data-tertiary="importance of" id="idm140417576953744"></a>
+Reliability is not just for nuclear power stations and air traffic control software—more mundane
+applications are also expected to work reliably. Bugs in business applications cause lost
+productivity (and legal risks if figures are reported incorrectly), and outages of ecommerce sites
+can have huge costs in terms of lost revenue and damage to reputation.</p>
+
+<p>Even in “noncritical” applications we have a responsibility to our users. Consider a parent who
+stores all their pictures and videos of their children in your photo application
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="bugs-impact-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#bugs-impact">15</a>]. How would they feel if that database was suddenly corrupted?
+Would they know how to restore it from a backup?</p>
+
+<p>There are situations in which we may choose to sacrifice reliability in order to reduce development
+cost (e.g., when developing a prototype product for an unproven market) or operational cost (e.g., for
+a service with a very narrow profit margin)—but we should be very conscious of when we are
+cutting corners.
+<a data-type="indexterm" data-primary="reliability" data-startref="ix_reliable" id="idm140417576948304"></a>
+<a data-type="indexterm" data-primary="data systems" data-secondary="reliability" data-startref="ix_DSreliable" id="idm140417576947200"></a>
+<a data-type="indexterm" data-primary="fault tolerance" data-startref="ix_faulttolintro" id="idm140417576945824"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Scalability"><div class="sect1" id="sec_introduction_scalability">
+<h1>Scalability</h1>
+
+<p><a data-type="indexterm" data-primary="data systems" data-secondary="scalability" id="ix_DSscale"></a>
+<a data-type="indexterm" data-primary="scalability" id="ix_scale"></a>
+Even if a system is working reliably today, that doesn’t mean it will necessarily work reliably in
+the future. One common reason for degradation is increased load: perhaps the system has grown from 10,000
+concurrent users to 100,000 concurrent users, or from 1 million to 10 million. Perhaps it is
+processing much larger volumes of data than it did before.</p>
+
+<p><em>Scalability</em> is the term we use to describe a system’s ability to cope with increased load. Note,
+however, that it is not a one-dimensional label that we can attach to a system: it is meaningless to
+say “X is scalable” or “Y doesn’t scale.” Rather, discussing scalability means considering questions
+like “If the system grows in a particular way, what are our options for coping with the growth?” and
+“How can we add computing resources to handle the additional load?”</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Describing Load"><div class="sect2" id="sec_introduction_scalability_load">
+<h2>Describing Load</h2>
+
+<p><a data-type="indexterm" data-primary="load" data-secondary="describing" id="idm140417576936944"></a>
+<a data-type="indexterm" data-primary="scalability" data-secondary="describing load" id="idm140417576935840"></a>
+First, we need to succinctly describe the current load on the system; only then can we discuss
+growth questions (what happens if our load doubles?). Load can be described with a few numbers which
+we call <em>load parameters</em>. The best choice of parameters depends on the architecture of your
+system: it may be requests per second to a web server, the ratio of reads to writes in a database, the
+number of simultaneously active users in a chat room, the hit rate on a cache, or something else.
+Perhaps the average case is what matters for you, or perhaps your bottleneck is dominated by a small
+number of extreme cases.</p>
+
+<p><a data-type="indexterm" data-primary="Twitter" data-secondary="constructing home timelines (example)" id="idm140417576933424"></a>
+To make this idea more concrete, let’s consider Twitter as an example, using data published in
+November 2012 [<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Krikorian2012-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Krikorian2012">16</a>].
+Two of Twitter’s main operations are:</p>
+<dl>
+<dt>Post tweet</dt>
+<dd>
+<p>A user can publish a new message to their followers (4.6k requests/sec on average, over
+12k requests/sec at peak).</p>
+</dd>
+<dt>Home timeline</dt>
+<dd>
+<p>A user can view tweets posted by the people they follow (300k requests/sec).</p>
+</dd>
+</dl>
+
+<p><a data-type="indexterm" data-primary="consumers (message streams)" data-secondary="fan-out" id="idm140417576926624"></a>
+<a data-type="indexterm" data-primary="fan-out (messaging systems)" id="idm140417576925504"></a>
+Simply handling 12,000 writes per second (the peak rate for posting tweets) would be fairly easy.
+However, Twitter’s scaling challenge is not primarily due to tweet volume, but due to
+<em>fan-out</em><sup xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook"><a data-type="noteref" id="idm140417576924192-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#idm140417576924192">ii</a></sup>—each user follows many people, and each user
+is followed by many people. There are broadly two ways of implementing these two operations:</p>
+<ol>
+<li>
+<p>Posting a tweet simply inserts the new tweet into a global collection of tweets. When a user
+requests their home timeline, look up all the people they follow, find all the tweets for each of
+those users, and merge them (sorted by time). In a relational database like in
+<a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_twitter_relational">Figure&nbsp;1-2</a>, you could write a query such as:</p>
+
+<pre data-type="programlisting" data-code-language="sql"><code class="k">SELECT</code> <code class="n">tweets</code><code class="p">.</code><code class="o">*</code><code class="p">,</code> <code class="n">users</code><code class="p">.</code><code class="o">*</code> <code class="k">FROM</code> <code class="n">tweets</code>
+  <code class="k">JOIN</code> <code class="n">users</code>   <code class="k">ON</code> <code class="n">tweets</code><code class="p">.</code><code class="n">sender_id</code>    <code class="o">=</code> <code class="n">users</code><code class="p">.</code><code class="n">id</code>
+  <code class="k">JOIN</code> <code class="n">follows</code> <code class="k">ON</code> <code class="n">follows</code><code class="p">.</code><code class="n">followee_id</code> <code class="o">=</code> <code class="n">users</code><code class="p">.</code><code class="n">id</code>
+  <code class="k">WHERE</code> <code class="n">follows</code><code class="p">.</code><code class="n">follower_id</code> <code class="o">=</code> <code class="k">current_user</code></pre>
+</li>
+<li>
+<p>Maintain a cache for each user’s home timeline—like a mailbox of tweets for each recipient
+user (see <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_twitter_timelines">Figure&nbsp;1-3</a>). When a user <em>posts a tweet</em>, look up all the people who
+follow that user, and insert the new tweet into each of their home timeline caches. The request to
+read the home timeline is then cheap, because its result has been computed ahead of time.</p>
+</li>
+
+</ol>
+
+<figure><div id="fig_twitter_relational" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0102.png" alt="ddia 0102" width="2880" height="1037" data-mfp-src="/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0102.png">
+<h6><span class="label">Figure 1-2. </span>Simple relational schema for implementing a Twitter home timeline.</h6>
+</div></figure>
+
+<figure><div id="fig_twitter_timelines" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0103.png" alt="ddia 0103" width="2880" height="1037" data-mfp-src="/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0103.png">
+<h6><span class="label">Figure 1-3. </span>Twitter’s data pipeline for delivering tweets to followers, with load parameters as of November 2012 [<a data-type="noteref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Krikorian2012">16</a>].</h6>
+</div></figure>
+
+<p>The first version of Twitter used approach 1, but the systems struggled to keep up with the load of
+home timeline queries, so the company switched to approach 2. This works better because the average
+rate of published tweets is almost two orders of magnitude lower than the rate of home timeline
+reads, and so in this case it’s preferable to do more work at write time and less at read time.</p>
+
+<p>However, the downside of approach 2 is that posting a tweet now requires a lot of extra work. On
+average, a tweet is delivered to about 75 followers, so 4.6k tweets per second become
+345k writes per second to the home timeline caches. But this average hides the fact that the
+number of followers per user varies wildly, and some users have over 30 million followers. This
+means that a single tweet may result in over 30 million writes to home timelines! Doing this in a
+timely manner—Twitter tries to deliver tweets to followers within five seconds—is a significant
+challenge.</p>
+
+<p>In the example of Twitter, the distribution of followers per user (maybe weighted by how often those
+users tweet) is a key load parameter for discussing scalability, since it determines the fan-out
+load. Your application may have very different characteristics, but you can apply similar principles
+to reasoning about its load.</p>
+
+<p>The final twist of the Twitter anecdote: now that approach 2 is robustly implemented, Twitter is
+moving to a hybrid of both approaches. Most users’ tweets continue to be fanned out to home
+timelines at the time when they are posted, but a small number of users with a very large number of
+followers (i.e., celebrities) are excepted from this fan-out. Tweets from any celebrities that a
+user may follow are fetched separately and merged with that user’s home timeline when it is read,
+like in approach 1. This hybrid approach is able to deliver consistently good performance. We will
+revisit this example in <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch12.html#ch_future">Chapter&nbsp;12</a> after we have covered some more technical ground.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Describing Performance"><div class="sect2" id="sec_introduction_percentiles">
+<h2>Describing Performance</h2>
+
+<p><a data-type="indexterm" data-primary="scalability" data-secondary="describing performance" id="idm140417566192512"></a>
+<a data-type="indexterm" data-primary="performance" data-secondary="describing" id="idm140417566191408"></a>
+Once you have described the load on your system, you can investigate what happens when the load
+increases. You can look at it in two ways:</p>
+
+<ul>
+<li>
+<p>When you increase a load parameter and keep the system resources (CPU, memory, network bandwidth,
+etc.) unchanged, how is the performance of your system affected?</p>
+</li>
+<li>
+<p>When you increase a load parameter, how much do you need to increase the resources if you want to
+keep performance unchanged?</p>
+</li>
+</ul>
+
+<p>Both questions require performance numbers, so let’s look briefly at describing the performance of a
+system.</p>
+
+<p><a data-type="indexterm" data-primary="throughput" id="idm140417566222416"></a>
+<a data-type="indexterm" data-primary="response time" data-secondary="as performance metric for services" id="idm140417566221360"></a>
+<a data-type="indexterm" data-primary="batch processing" data-secondary="measuring performance" id="idm140417566220288"></a>
+In a batch processing system such as Hadoop, we usually care about <em>throughput</em>—the number of
+records we can process per second, or the total time it takes to run a job on a dataset of a certain
+size.<sup xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook"><a data-type="noteref" id="idm140417566218656-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#idm140417566218656">iii</a></sup> In online systems, what’s usually more important is the service’s
+<em>response time</em>—that is, the time between a client sending a request and receiving a response.</p>
+<div data-type="note" epub:type="note" class="note1"><h1>Latency and response time</h1>
+<p><a data-type="indexterm" data-primary="latency" data-secondary="response time versus" id="idm140417566198672"></a>
+<a data-type="indexterm" data-primary="response time" data-secondary="latency versus" id="idm140417566197344"></a>
+<a data-type="indexterm" data-primary="queueing delays (networks)" data-secondary="latency and response time" id="idm140417566196240"></a>
+<em>Latency</em> and <em>response time</em> are often used synonymously, but they are not the same. The response
+time is what the client sees: besides the actual time to process the request (the <em>service time</em>),
+it includes network delays and queueing delays. Latency is the duration that a request is waiting to
+be handled—during which it is <em>latent</em>, awaiting service
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Fowler2002wd-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Fowler2002wd">17</a>].</p>
+</div>
+
+<p>Even if you only make the same request over and over again, you’ll get a slightly different response
+time on every try. In practice, in a system handling a variety of requests, the response time can
+vary a lot. We therefore need to think of response time not as a single number, but as a
+<em>distribution</em> of values that you can measure.</p>
+
+<p><a data-type="indexterm" data-primary="outliers (response time)" id="idm140417576908048"></a>
+<a data-type="indexterm" data-primary="response time" data-secondary="mean and percentiles" id="idm140417576907056"></a>
+<a data-type="indexterm" data-primary="incidents" data-secondary="vibrations in server rack" id="idm140417566215024"></a>
+<a data-type="indexterm" data-primary="context switches" id="idm140417566213952"></a>
+<a data-type="indexterm" data-primary="garbage collection" data-secondary="process pauses for" id="idm140417566213120"></a>
+<a data-type="indexterm" data-primary="virtual memory" data-secondary="process pauses due to page faults" id="idm140417566212016"></a>
+In <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_lognormal">Figure&nbsp;1-4</a>, each gray bar represents a request to a service, and its height shows how long
+that request took. Most requests are reasonably fast, but there are occasional <em>outliers</em> that take
+much longer. Perhaps the slow requests are intrinsically more expensive, e.g., because they process
+more data. But even in a scenario where you’d think all requests should take the same time, you get
+variation: random additional latency could be introduced by a context switch to a background
+process, the loss of a network packet and TCP retransmission, a garbage collection pause, a page
+fault forcing a read from disk, mechanical vibrations in the server rack
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Sommers2014va-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Sommers2014va">18</a>],
+or many other causes.</p>
+
+<figure><div id="fig_lognormal" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0104.png" alt="ddia 0104" width="2880" height="805" data-mfp-src="/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0104.png">
+<h6><span class="label">Figure 1-4. </span>Illustrating mean and percentiles: response times for a sample of 100 requests to a service.</h6>
+</div></figure>
+
+<p><a data-type="indexterm" data-primary="arithmetic mean" id="idm140417566300960"></a><a data-type="indexterm" data-primary="mean" id="idm140417566300032"></a>
+It’s common to see the <em>average</em> response time of a service reported. (Strictly speaking, the term
+“average” doesn’t refer to any particular formula, but in practice it is usually understood as the
+<em>arithmetic mean</em>: given <em>n</em> values, add up all the values, and divide by <em>n</em>.) However,
+the mean is not a very good metric if you want to know your “typical” response time, because it
+doesn’t tell you how many users actually experienced that delay.</p>
+
+<p><a data-type="indexterm" data-primary="percentiles" id="idm140417566297024"></a><a data-type="indexterm" data-primary="median" id="idm140417566296320"></a>
+Usually it is better to use <em>percentiles</em>. If you take your list of response times and sort it from
+fastest to slowest, then the <em>median</em> is the halfway point: for example, if your median response
+time is 200&nbsp;ms, that means half your requests return in less than 200&nbsp;ms, and half your
+requests take longer than that.</p>
+
+<p>This makes the median a good metric if you want to know how long users typically have to wait: half
+of user requests are served in less than the median response time, and the other half take longer
+than the median. The median is also known as the <em>50th percentile</em>, and sometimes abbreviated as <em>p50</em>.
+Note that the median refers to a single request; if the user makes several requests
+(over the course of a session, or because several resources are included in a single page), the
+probability that at least one of them is slower than the median is much greater than 50%.</p>
+
+<p>In order to figure out how bad your outliers are, you can look at higher percentiles: the <em>95th</em>,
+<em>99th</em>, and <em>99.9th</em> percentiles are common (abbreviated <em>p95</em>, <em>p99</em>, and <em>p999</em>). They are the
+response time thresholds at which 95%, 99%, or 99.9% of requests are faster than that particular
+threshold. For example, if the 95th percentile response time is 1.5 seconds, that means 95 out of
+100 requests take less than 1.5 seconds, and 5 out of 100 requests take 1.5 seconds or more. This is
+illustrated in <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_lognormal">Figure&nbsp;1-4</a>.</p>
+
+<p><a data-type="indexterm" data-primary="latency" data-secondary="tail latency" id="idm140417566287920"></a>
+<a data-type="indexterm" data-primary="response time" data-secondary="user experience" id="idm140417566286656"></a>
+High percentiles of response times, also known as <em>tail latencies</em>, are important because they
+directly affect users’ experience of the service. For example, Amazon describes response time
+requirements for internal services in terms of the 99.9th percentile, even though it only affects 1
+in 1,000 requests. This is because the customers with the slowest requests are often those who have
+the most data on their accounts because they have made many purchases—that is, they’re the most
+valuable customers
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="DeCandia2007ui_ch1-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#DeCandia2007ui_ch1">19</a>].
+It’s important to keep those customers happy by ensuring the website is fast for them: Amazon has
+also observed that a 100&nbsp;ms increase in response time reduces sales by 1%
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="MakeDataUseful2006td-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#MakeDataUseful2006td">20</a>],
+and others report that a 1-second slowdown reduces a customer satisfaction metric by 16%
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Everts2014vm-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Everts2014vm">21</a>,
+<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Brutlag2009ut-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Brutlag2009ut">22</a>].</p>
+
+<p>On the other hand, optimizing the 99.99th percentile (the slowest 1 in 10,000 requests) was deemed
+too expensive and to not yield enough benefit for Amazon’s purposes. Reducing response times at very
+high percentiles is difficult because they are easily affected by random events outside of your
+control, and the benefits are diminishing.</p>
+
+<p><a data-type="indexterm" data-primary="availability" data-secondary="in service level agreements (SLAs)" id="idm140417566275488"></a>
+<a data-type="indexterm" data-primary="service level agreements (SLAs)" id="idm140417566274368"></a>
+<a data-type="indexterm" data-primary="percentiles" data-secondary="use in service level agreements (SLAs)" id="idm140417566273520"></a>
+For example, percentiles are often used in <em>service level objectives</em> (SLOs) and <em>service level
+agreements</em> (SLAs), contracts that define the expected performance and availability of a service.
+An SLA may state that the service is considered to be up if it has a median response time of less than
+200&nbsp;ms and a 99th percentile under 1&nbsp;s (if the response time is longer, it might as well
+be down), and the service may be required to be up at least 99.9% of the time. These metrics set
+expectations for clients of the service and allow customers to demand a refund if the SLA is not
+met.</p>
+
+<p><a data-type="indexterm" data-primary="queueing delays (networks)" data-secondary="head-of-line blocking" id="idm140417566270800"></a>
+<a data-type="indexterm" data-primary="head-of-line blocking" id="idm140417566269632"></a>
+Queueing delays often account for a large part of the response time at high percentiles. As a server can
+only process a small number of things in parallel (limited, for example, by its number of CPU cores),
+it only takes a small number of slow requests to hold up the processing of subsequent requests—an
+effect sometimes known as <em>head-of-line blocking</em>. Even if those subsequent requests are fast to
+process on the server, the client will see a slow overall response time due to the time waiting for
+the prior request to complete. Due to this effect, it is important to measure response times on the
+client side.</p>
+
+<p><a data-type="indexterm" data-primary="load" data-secondary="load testing" id="idm140417566170496"></a>
+When generating load artificially in order to test the scalability of a system, the load-generating
+client needs to keep sending requests independently of the response time. If the client waits for
+the previous request to complete before sending the next one, that behavior has the effect of
+artificially keeping the queues shorter in the test than they would be in reality, which skews the
+measurements [<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Treat2015vd-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Treat2015vd">23</a>].</p>
+<aside data-type="sidebar" epub:type="sidebar"><div class="sidebar" id="sidebar_percentiles">
+<h5>Percentiles in Practice</h5>
+<p><a data-type="indexterm" data-primary="percentiles" data-secondary="importance of high percentiles" id="idm140417566165136"></a>
+<a data-type="indexterm" data-primary="amplification" data-secondary="of tail latency" id="idm140417566164016"></a>
+High percentiles become especially important in backend services that are called multiple times as
+part of serving a single end-user request. Even if you make the calls in parallel, the end-user
+request still needs to wait for the slowest of the parallel calls to complete. It takes just one
+slow call to make the entire end-user request slow, as illustrated in <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_tail_amplification">Figure&nbsp;1-5</a>.
+Even if only a small percentage of backend calls are slow, the chance of getting a slow call
+increases if an end-user request requires multiple backend calls, and so a higher proportion of
+end-user requests end up being slow (an effect known as <em>tail latency amplification</em>
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="tail-at-scale-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#tail-at-scale">24</a>]).</p>
+
+<p><a data-type="indexterm" data-primary="percentiles" data-secondary="calculating efficiently" id="idm140417566158176"></a>
+<a data-type="indexterm" data-primary="histograms" id="idm140417566157072"></a>
+If you want to add response time percentiles to the monitoring dashboards for your services, you
+need to efficiently calculate them on an ongoing basis. For example, you may want to keep a rolling
+window of response times of requests in the last 10 minutes. Every minute, you calculate the median
+and various percentiles over the values in that window and plot those metrics on a graph.</p>
+
+<p><a data-type="indexterm" data-primary="probabilistic algorithms" id="idm140417566155584"></a>
+<a data-type="indexterm" data-primary="forward decay (algorithm)" id="idm140417566154688"></a>
+<a data-type="indexterm" data-primary="t-digest (algorithm)" id="idm140417566153840"></a>
+<a data-type="indexterm" data-primary="HdrHistogram (numerical library)" id="idm140417566153008"></a>
+The naïve implementation is to keep a list of response times for all requests within the time
+window and to sort that list every minute. If that is too inefficient for you, there are algorithms
+that can calculate a good approximation of percentiles at minimal CPU and memory cost, such as
+forward decay [<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Cormode2009vz-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Cormode2009vz">25</a>], t-digest
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Dunning2014wm-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Dunning2014wm">26</a>], or HdrHistogram
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="HdrHistogram-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#HdrHistogram">27</a>].
+Beware that averaging percentiles, e.g., to reduce the time resolution or to combine data from
+several machines, is mathematically meaningless—the right way of aggregating response time data
+is to add the histograms [<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Schwartz2015tg-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Schwartz2015tg">28</a>].</p>
+</div></aside>
+
+<figure><div id="fig_tail_amplification" class="figure">
+<img src="https://www.safaribooksonline.com/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0105.png" alt="ddia 0105" width="2880" height="1304" data-mfp-src="/library/view/designing-data-intensive-applications/9781491903063/assets/ddia_0105.png">
+<h6><span class="label">Figure 1-5. </span>When several backend calls are needed to serve a request, it takes just a single slow backend request to slow down the entire end-user request.</h6>
+</div></figure>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Approaches for Coping with Load"><div class="sect2" id="sec_introduction_load">
+<h2>Approaches for Coping with Load</h2>
+
+<p><a data-type="indexterm" data-primary="load" data-secondary="approaches to coping with" id="idm140417566139728"></a>
+<a data-type="indexterm" data-primary="scalability" data-secondary="approaches for coping with load" id="idm140417566138656"></a>
+Now that we have discussed the parameters for describing load and metrics for measuring
+performance, we can start discussing scalability in earnest: how do we maintain good performance
+even when our load parameters increase by some amount?</p>
+
+<p>An architecture that is appropriate for one level of load is unlikely to cope with 10 times that
+load. If you are working on a fast-growing service, it is therefore likely that you will need to
+rethink your architecture on every order of magnitude load increase—or perhaps even more often than
+that.</p>
+
+<p><a data-type="indexterm" data-primary="scaling up" id="idm140417566136288"></a>
+<a data-type="indexterm" data-primary="vertical scaling" data-see="scaling up" id="idm140417566135296"></a>
+<a data-type="indexterm" data-primary="scaling out" data-seealso="shared-nothing architecture" id="idm140417566134192"></a>
+<a data-type="indexterm" data-primary="horizontal scaling" data-see="scaling out" id="idm140417566133120"></a>
+<a data-type="indexterm" data-primary="shared-nothing architecture" id="idm140417566132016"></a>
+People often talk of a dichotomy between <em>scaling up</em> (<em>vertical scaling</em>, moving to a more powerful
+machine) and <em>scaling out</em> (<em>horizontal scaling</em>, distributing the load across multiple smaller
+machines). Distributing load across multiple machines is also known as a <em>shared-nothing</em>
+architecture. A system that can run on a single machine is often simpler, but high-end machines can
+become very expensive, so very intensive workloads often can’t avoid scaling out. In reality, good
+architectures usually involve a pragmatic mixture of approaches: for example, using several fairly
+powerful machines can still be simpler and cheaper than a large number of small virtual machines.</p>
+
+<p><a data-type="indexterm" data-primary="elastic systems" id="idm140417566128336"></a>
+Some systems are <em>elastic</em>, meaning that they can automatically add computing resources when they
+detect a load increase, whereas other systems are scaled manually (a human analyzes the capacity and
+decides to add more machines to the system). An elastic system can be useful if load is highly
+unpredictable, but manually scaled systems are simpler and may have fewer operational surprises
+(see <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch06.html#sec_partitioning_rebalancing">“Rebalancing Partitions”</a>).</p>
+
+<p>While distributing stateless services across multiple machines is fairly straightforward, taking
+stateful data systems from a single node to a distributed setup can introduce a lot of additional
+complexity. For this reason, common wisdom until recently was to keep your database on a single
+node (scale up) until scaling cost or high-availability requirements forced you to make it
+distributed.</p>
+
+<p>As the tools and abstractions for distributed systems get better, this common wisdom may change, at
+least for some kinds of applications. It is conceivable that distributed data systems will become the
+default in the future, even for use cases that don’t handle large volumes of data or traffic. Over the
+course of the rest of this book we will cover many kinds of distributed data systems, and discuss how
+they fare not just in terms of scalability, but also ease of use and maintainability.</p>
+
+<p><a data-type="indexterm" data-primary="magic scaling sauce" id="idm140417566123856"></a>
+The architecture of systems that operate at large scale is usually highly specific to the
+application—there is no such thing as a generic, one-size-fits-all scalable architecture
+(informally known as <em>magic scaling sauce</em>). The problem may be the volume of reads, the volume of
+writes, the volume of data to store, the complexity of the data, the response time requirements, the
+access patterns, or (usually) some mixture of all of these plus many more issues.</p>
+
+<p>For example, a system that is designed to handle 100,000 requests per second, each 1&nbsp;kB in
+size, looks very different from a system that is designed for 3 requests per minute, each
+2&nbsp;GB in size—even though the two systems have the same data throughput.</p>
+
+<p>An architecture that scales well for a particular application is built around assumptions of which
+operations will be common and which will be rare—the load parameters. If those assumptions turn
+out to be wrong, the engineering effort for scaling is at best wasted, and at worst
+counterproductive. In an early-stage startup or an unproven product it’s usually more important to
+be able to iterate quickly on product features than it is to scale to some hypothetical future
+load.</p>
+
+<p>Even though they are specific to a particular application, scalable architectures are nevertheless
+usually built from general-purpose building blocks, arranged in familiar patterns. In this book we
+discuss those building blocks and patterns.
+<a data-type="indexterm" data-primary="data systems" data-secondary="scalability" data-startref="ix_DSscale" id="idm140417566119888"></a>
+<a data-type="indexterm" data-primary="scalability" data-startref="ix_scale" id="idm140417566118512"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Maintainability"><div class="sect1" id="sec_introduction_maintainability">
+<h1>Maintainability</h1>
+
+<p><a data-type="indexterm" data-primary="data systems" data-secondary="maintainability" id="ix_DSmaintain"></a>
+<a data-type="indexterm" data-primary="maintainability" id="ix_maintain"></a>
+It is well known that the majority of the cost of software is not in its initial development, but in
+its ongoing maintenance—fixing bugs, keeping its systems operational, investigating failures,
+adapting it to new platforms, modifying it for new use cases, repaying technical debt, and adding
+new features.</p>
+
+<p><a data-type="indexterm" data-primary="legacy systems, maintenance of" id="idm140417566112672"></a>
+Yet, unfortunately, many people working on software systems dislike maintenance of so-called
+<em>legacy</em> systems—perhaps it involves fixing other people’s mistakes, or working with platforms
+that are now outdated, or systems that were forced to do things they were never intended for. Every
+legacy system is unpleasant in its own way, and so it is difficult to give general recommendations
+for dealing with them.</p>
+
+<p><a data-type="indexterm" data-primary="maintainability" data-secondary="design principles for software systems" id="idm140417566110704"></a>
+However, we can and should design software in such a way that it will hopefully minimize pain during
+maintenance, and thus avoid creating legacy software ourselves. To this end, we will pay particular
+attention to three design principles for software <span class="keep-together">systems:</span></p>
+<dl>
+<dt>Operability</dt>
+<dd>
+<p>Make it easy for operations teams to keep the system running smoothly.</p>
+</dd>
+<dt>Simplicity</dt>
+<dd>
+<p>Make it easy for new engineers to understand the system, by removing as much complexity as
+possible from the system. (Note this is not the same as simplicity of the user interface.)</p>
+</dd>
+<dt>Evolvability</dt>
+<dd>
+<p>Make it easy for engineers to make changes to the system in the future, adapting it for unanticipated
+use cases as requirements change. Also known as <em>extensibility</em>, <em>modifiability</em>, or
+<em>plasticity</em>.</p>
+</dd>
+</dl>
+
+<p>As previously with reliability and scalability, there are no easy solutions for achieving these goals.
+Rather, we will try to think about systems with operability, simplicity, and evolvability in mind.</p>
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Operability: Making Life Easy for Operations"><div class="sect2" id="idm140417566101840">
+<h2>Operability: Making Life Easy for Operations</h2>
+
+<p><a data-type="indexterm" data-primary="maintainability" data-secondary="operability" id="idm140417566100432"></a><a data-type="indexterm" data-primary="operability" id="idm140417566099456"></a>
+It has been suggested that “good operations can often work around the limitations of bad (or
+incomplete) software, but good software cannot run reliably with bad operations”
+[<a data-type="noteref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Kreps2012td_ch1">12</a>]. While some aspects of operations can
+and should be automated, it is still up to humans to set up that automation in the first place and
+to make sure it’s working correctly.</p>
+
+<p>Operations teams are vital to keeping a software system running smoothly. A good operations team
+typically is responsible for the following, and more
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Hamilton2007ve-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Hamilton2007ve">29</a>]:</p>
+
+<ul>
+<li>
+<p><a data-type="indexterm" data-primary="monitoring" id="idm140417566093552"></a>
+Monitoring the health of the system and quickly restoring service if it goes into a bad state</p>
+</li>
+<li>
+<p>Tracking down the cause of problems, such as system failures or degraded performance</p>
+</li>
+<li>
+<p>Keeping software and platforms up to date, including security patches</p>
+</li>
+<li>
+<p>Keeping tabs on how different systems affect each other, so that a problematic change can be
+avoided before it causes damage</p>
+</li>
+<li>
+<p>Anticipating future problems and solving them before they occur (e.g., capacity planning)</p>
+</li>
+<li>
+<p>Establishing good practices and tools for deployment, configuration management, and more</p>
+</li>
+<li>
+<p>Performing complex maintenance tasks, such as moving an application from one platform to another</p>
+</li>
+<li>
+<p>Maintaining the security of the system as configuration changes are made</p>
+</li>
+<li>
+<p>Defining processes that make operations predictable and help keep the production environment
+stable</p>
+</li>
+<li>
+<p>Preserving the organization’s knowledge about the system, even as individual people come and go</p>
+</li>
+</ul>
+
+<p>Good operability means making routine tasks easy, allowing the operations team to focus their efforts
+on high-value activities. Data systems can do various things to make routine tasks easy, including:</p>
+
+<ul>
+<li>
+<p>Providing visibility into the runtime behavior and internals of the system, with good monitoring</p>
+</li>
+<li>
+<p>Providing good support for automation and integration with standard tools</p>
+</li>
+<li>
+<p>Avoiding dependency on individual machines (allowing machines to be taken down for maintenance
+while the system as a whole continues running uninterrupted)</p>
+</li>
+<li>
+<p>Providing good documentation and an easy-to-understand operational model (“If I do X, Y will happen”)</p>
+</li>
+<li>
+<p>Providing good default behavior, but also giving administrators the freedom to override defaults when needed</p>
+</li>
+<li>
+<p>Self-healing where appropriate, but also giving administrators manual control over the system state when needed</p>
+</li>
+<li>
+<p>Exhibiting predictable behavior, minimizing surprises</p>
+</li>
+</ul>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Simplicity: Managing Complexity"><div class="sect2" id="idm140417566076160">
+<h2>Simplicity: Managing Complexity</h2>
+
+<p><a data-type="indexterm" data-primary="maintainability" data-secondary="simplicity and managing complexity" id="idm140417566074912"></a>
+<a data-type="indexterm" data-primary="complexity" data-secondary="of software systems, managing" id="idm140417566073840"></a>
+<a data-type="indexterm" data-primary="big ball of mud" id="idm140417566072720"></a>
+Small software projects can have delightfully simple and expressive code, but as projects get
+larger, they often become very complex and difficult to understand. This complexity slows down
+everyone who needs to work on the system, further increasing the cost of maintenance. A software
+project mired in complexity is sometimes described as a <em>big ball of mud</em>
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Foote1997ti-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Foote1997ti">30</a>].</p>
+
+<p>There are various possible symptoms of complexity: explosion of the state space, tight coupling of
+modules, tangled dependencies, inconsistent naming and terminology, hacks aimed at solving
+performance problems, special-casing to work around issues elsewhere, and many more.
+Much has been said on this topic already
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Brooks1995wu-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Brooks1995wu">31</a>,
+<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="MoseleyHo10rPt5-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#MoseleyHo10rPt5">32</a>,
+<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Hickey2011up-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Hickey2011up">33</a>].</p>
+
+<p>When complexity makes maintenance hard, budgets and schedules are often overrun. In complex
+software, there is also a greater risk of introducing bugs when making a change: when the system is
+harder for developers to understand and reason about, hidden assumptions, unintended consequences,
+and unexpected interactions are more easily overlooked. Conversely, reducing complexity greatly
+improves the maintainability of software, and thus simplicity should be a key goal for the systems
+we build.</p>
+
+<p><a data-type="indexterm" data-primary="accidental complexity, removing" id="idm140417566048800"></a>
+Making a system simpler does not necessarily mean reducing its functionality; it can also mean
+removing <em>accidental</em> complexity. Moseley and Marks
+[<a data-type="noteref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#MoseleyHo10rPt5">32</a>] define complexity as accidental if
+it is not inherent in the problem that the software solves (as seen by the users) but arises only
+from the implementation.</p>
+
+<p><a data-type="indexterm" data-primary="abstraction" id="idm140417566046128"></a>
+One of the best tools we have for removing accidental complexity is <em>abstraction</em>. A good
+abstraction can hide a great deal of implementation detail behind a clean, simple-to-understand
+façade. A good abstraction can also be used for a wide range of different applications. Not only is
+this reuse more efficient than reimplementing a similar thing multiple times, but it also leads to
+higher-quality software, as quality improvements in the abstracted component benefit all
+applications that use it.</p>
+
+<p><a data-type="indexterm" data-primary="SQL (Structured Query Language)" id="idm140417566044192"></a>
+For example, high-level programming languages are abstractions that hide machine code, CPU registers,
+and syscalls. SQL is an abstraction that hides complex on-disk and in-memory data structures,
+concurrent requests from other clients, and inconsistencies after crashes. Of course, when
+programming in a high-level language, we are still using machine code; we are just not using it
+<em>directly</em>, because the programming language abstraction saves us from having to think about it.</p>
+
+<p>However, finding good abstractions is very hard. In the field of distributed systems, although there
+are many good algorithms, it is much less clear how we should be packaging them into abstractions
+that help us keep the complexity of the system at a manageable level.</p>
+
+<p>Throughout this book, we will keep our eyes open for good abstractions that allow us to extract
+parts of a large system into well-defined, reusable components.</p>
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect2" data-pdf-bookmark="Evolvability: Making Change Easy"><div class="sect2" id="sec_introduction_evolvability">
+<h2>Evolvability: Making Change Easy</h2>
+
+<p><a data-type="indexterm" data-primary="maintainability" data-secondary="evolvability" data-see="evolvability" id="idm140417566039440"></a>
+<a data-type="indexterm" data-primary="evolvability" id="idm140417566038064"></a>
+It’s extremely unlikely that your system’s requirements will remain unchanged forever. They are much more
+likely to be in constant flux: you learn new facts, previously unanticipated use cases emerge,
+business priorities change, users request new features, new platforms replace old platforms, legal
+or regulatory requirements change, growth of the system forces architectural changes, etc.</p>
+
+<p><a data-type="indexterm" data-primary="Agile" id="idm140417566036560"></a>
+In terms of organizational processes, <em>Agile</em> working patterns provide a framework for adapting to
+change. The Agile community has also developed technical tools and patterns that are helpful when
+developing software in a frequently changing environment, such as test-driven development (TDD) and
+refactoring.</p>
+
+<p><a data-type="indexterm" data-primary="refactoring" data-seealso="evolvability" id="idm140417566034720"></a>
+Most discussions of these Agile techniques focus on a fairly small, local scale (a couple of source
+code files within the same application). In this book, we search for ways of increasing agility on
+the level of a larger data system, perhaps consisting of several different applications or services
+with different characteristics. For example, how would you “refactor” Twitter’s architecture for
+assembling home timelines (<a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#sec_introduction_scalability_load">“Describing Load”</a>) from approach 1 to approach 2?</p>
+
+<p>The ease with which you can modify a data system, and adapt it to changing requirements, is closely
+linked to its simplicity and its abstractions: simple and easy-to-understand systems are usually
+easier to modify than complex ones. But since this is such an important idea, we will use a
+different word to refer to agility on a data system level: <em>evolvability</em>
+[<a xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="noteref" id="Breivold2008dm-marker" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Breivold2008dm">34</a>].
+<a data-type="indexterm" data-primary="maintainability" data-startref="ix_maintain" id="idm140417566028384"></a>
+<a data-type="indexterm" data-primary="data systems" data-secondary="maintainability" data-startref="ix_DSmaintain" id="idm140417566027312"></a></p>
+</div></section>
+
+
+
+
+
+</div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-type="sect1" data-pdf-bookmark="Summary"><div class="sect1" id="sec_introduction_summary">
+<h1>Summary</h1>
+
+<p>In this chapter, we have explored some fundamental ways of thinking about data-intensive
+applications. These principles will guide us through the rest of the book, where we dive into deep
+technical detail.</p>
+
+<p><a data-type="indexterm" data-primary="functional requirements" id="idm140417566023728"></a><a data-type="indexterm" data-primary="nonfunctional requirements" id="idm140417566023024"></a>
+An application has to meet various requirements in order to be useful. There are <em>functional
+requirements</em> (what it should do, such as allowing data to be stored, retrieved, searched, and processed in
+various ways), and some <em>nonfunctional requirements</em> (general properties like security,
+reliability, compliance, scalability, compatibility, and maintainability). In this chapter we
+discussed reliability, scalability, and maintainability in detail.</p>
+
+<p><a data-type="indexterm" data-primary="reliability" data-secondary="defined" id="idm140417566020816"></a>
+<em>Reliability</em> means making systems work correctly, even when faults occur. Faults can be in hardware
+(typically random and uncorrelated), software (bugs are typically systematic and hard to deal with),
+and humans (who inevitably make mistakes from time to time). Fault-tolerance techniques can hide
+certain types of faults from the end user.</p>
+
+<p><a data-type="indexterm" data-primary="scalability" data-secondary="defined" id="idm140417566018656"></a>
+<em>Scalability</em> means having strategies for keeping performance good, even when load increases. In
+order to discuss scalability, we first need ways of describing load and performance quantitatively.
+We briefly looked at Twitter’s home timelines as an example of describing load, and response time
+percentiles as a way of measuring performance. In a scalable system, you can add processing capacity
+in order to remain reliable under high load.</p>
+
+<p><a data-type="indexterm" data-primary="maintainability" data-secondary="defined" id="idm140417566016400"></a>
+<em>Maintainability</em> has many facets, but in essence it’s about making life better for the engineering
+and operations teams who need to work with the system. Good abstractions can help reduce complexity
+and make the system easier to modify and adapt for new use cases. Good operability means having good
+visibility into the system’s health, and having effective ways of managing it.</p>
+
+<p>There is unfortunately no easy fix for making applications reliable, scalable, or maintainable.
+However, there are certain patterns and techniques that keep reappearing in different kinds of
+applications. In the next few chapters we will take a look at some examples of data systems and
+analyze how they work toward those goals.</p>
+
+<p>Later in the book, in <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/part03.html#part_systems">Part&nbsp;III</a>, we will look at patterns for systems that consist of
+several components working together, such as the one in <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#fig_introduction_composite">Figure&nbsp;1-1</a>.</p>
+</div></section>
+
+
+
+
+
+
+
+<div data-type="footnotes"><h5>Footnotes</h5><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="idm140417577014368"><sup><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#idm140417577014368-marker" class="totri-footnote">i</a></sup> Defined
+in <a data-type="xref" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#sec_introduction_load">“Approaches for Coping with Load”</a>.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="idm140417576924192"><sup><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#idm140417576924192-marker">ii</a></sup> A term borrowed from electronic
+engineering, where it describes the number of logic gate inputs that are attached to another gate’s
+output. The output needs to supply enough current to drive all the attached inputs. In transaction
+processing systems, we use it to describe the number of requests to other services that we need to
+make in order to serve one incoming request.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="idm140417566218656"><sup><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#idm140417566218656-marker">iii</a></sup> In an ideal world, the running time of a
+batch job is the size of the dataset divided by the throughput. In practice, the running time is often
+longer, due to skew (data not being spread evenly across worker processes) and needing to wait for the
+slowest task to complete.</p></div><div data-type="footnotes"><h5>References</h5><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Stonebraker2005ux">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Stonebraker2005ux-marker" class="totri-footnote">1</a>] Michael Stonebraker and Uğur Çetintemel:
+“<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.68.9136&amp;rep=rep1&amp;type=pdf">‘One Size
+Fits All’: An Idea Whose Time Has Come and Gone</a>,” at <em>21st International Conference
+on Data Engineering</em> (ICDE), April 2005.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Heimerdinger1992vn">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Heimerdinger1992vn-marker" class="totri-footnote">2</a>] Walter L. Heimerdinger and Charles B. Weinstock:
+“<a href="http://www.sei.cmu.edu/reports/92tr033.pdf">A Conceptual Framework for System Fault
+Tolerance</a>,” Technical Report CMU/SEI-92-TR-033, Software Engineering Institute, Carnegie
+Mellon University, October 1992.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Yuan2014va">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Yuan2014va-marker" class="totri-footnote">3</a>] Ding Yuan, Yu Luo, Xin Zhuang, et al.:
+“<a href="https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-yuan.pdf">Simple
+Testing Can Prevent Most Critical Failures: An Analysis of Production Failures in Distributed
+Data-Intensive Systems</a>,” at <em>11th USENIX Symposium on Operating Systems Design
+and Implementation</em> (OSDI), October 2014.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="netflix-simian-army">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#netflix-simian-army-marker" class="totri-footnote">4</a>] Yury Izrailevsky and Ariel Tseitlin:
+“<a href="http://techblog.netflix.com/2011/07/netflix-simian-army.html">The Netflix Simian Army</a>,”
+<em>techblog.netflix.com</em>, July 19, 2011.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Ford2010vv">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Ford2010vv-marker" class="totri-footnote">5</a>] Daniel Ford, François Labelle, Florentina I. Popovici, et al.:
+“<a href="http://research.google.com/pubs/archive/36737.pdf">Availability in Globally Distributed Storage Systems</a>,”
+at <em>9th USENIX Symposium on Operating Systems Design and Implementation</em> (OSDI),
+October 2010.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Beach2014ui">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Beach2014ui-marker" class="totri-footnote">6</a>] Brian Beach:
+“<a href="https://www.backblaze.com/blog/hard-drive-reliability-update-september-2014/">Hard
+Drive Reliability Update – Sep 2014</a>,” <em>backblaze.com</em>, September 23, 2014.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Voss2012tc">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Voss2012tc-marker" class="totri-footnote">7</a>] Laurie Voss:
+“<a href="https://web.archive.org/web/20160429075023/http://blog.awe.sm/2012/12/18/aws-the-good-the-bad-and-the-ugly/">AWS: The Good, the
+Bad and the Ugly</a>,” <em>blog.awe.sm</em>, December 18, 2012.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Gunawi2014gn">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Gunawi2014gn-marker" class="totri-footnote">8</a>] Haryadi S. Gunawi, Mingzhe Hao, Tanakorn
+Leesatapornwongsa, et al.: “<a href="http://ucare.cs.uchicago.edu/pdf/socc14-cbs.pdf">What Bugs Live
+in the Cloud?</a>,” at <em>5th ACM Symposium on Cloud Computing</em> (SoCC), November 2014.
+<a href="http://dx.doi.org/10.1145/2670979.2670986">doi:10.1145/2670979.2670986</a></p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Minar2012vh_ch1">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Minar2012vh_ch1-marker" class="totri-footnote">9</a>] Nelson Minar:
+“<a href="http://www.somebits.com/weblog/tech/bad/leap-second-2012.html">Leap Second Crashes Half
+the Internet</a>,” <em>somebits.com</em>, July 3, 2012.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="AmazonWebServices2011tj">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#AmazonWebServices2011tj-marker">10</a>] Amazon Web Services:
+“<a href="http://aws.amazon.com/message/65648/">Summary of the Amazon EC2 and Amazon RDS Service
+Disruption in the US East Region</a>,” <em>aws.amazon.com</em>, April 29, 2011.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Cook2000wo">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Cook2000wo-marker">11</a>] Richard I. Cook:
+“<a href="http://web.mit.edu/2.75/resources/random/How%20Complex%20Systems%20Fail.pdf">How Complex
+Systems Fail</a>,” Cognitive Technologies Laboratory, April 2000.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Kreps2012td_ch1">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Kreps2012td_ch1-marker">12</a>] Jay Kreps:
+“<a href="http://blog.empathybox.com/post/19574936361/getting-real-about-distributed-system-reliability">Getting
+Real About Distributed System Reliability</a>,” <em>blog.empathybox.com</em>, March 19, 2012.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Oppenheimer2003vc">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Oppenheimer2003vc-marker">13</a>] David Oppenheimer, Archana Ganapathi, and David A. Patterson:
+“<a href="http://static.usenix.org/legacy/events/usits03/tech/full_papers/oppenheimer/oppenheimer.pdf">Why
+Do Internet Services Fail, and What Can Be Done About It?</a>,” at <em>4th USENIX Symposium on
+Internet Technologies and Systems</em> (USITS), March 2003.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Marz2013wq">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Marz2013wq-marker">14</a>] Nathan Marz:
+“<a href="http://nathanmarz.com/blog/principles-of-software-engineering-part-1.html">Principles
+of Software Engineering, Part 1</a>,” <em>nathanmarz.com</em>, April 2, 2013.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="bugs-impact">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#bugs-impact-marker">15</a>] Michael Jurewitz:
+“<a href="http://jury.me/blog/2013/3/14/the-human-impact-of-bugs">The Human Impact of Bugs</a>,”
+<em>jury.me</em>, March 15, 2013.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Krikorian2012">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Krikorian2012-marker">16</a>] Raffi Krikorian:
+“<a href="http://www.infoq.com/presentations/Twitter-Timeline-Scalability">Timelines at Scale</a>,”
+at <em>QCon San Francisco</em>, November 2012.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Fowler2002wd">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Fowler2002wd-marker">17</a>] Martin Fowler:
+<em>Patterns of Enterprise Application Architecture</em>. Addison Wesley, 2002.
+ISBN: 978-0-321-12742-6</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Sommers2014va">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Sommers2014va-marker">18</a>] Kelly Sommers:
+“<a href="https://twitter.com/kellabyte/status/532930540777635840">After all that run around,
+what caused 500ms disk latency even when we replaced physical server?</a>” <em>twitter.com</em>, November 13, 2014.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="DeCandia2007ui_ch1">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#DeCandia2007ui_ch1-marker">19</a>] Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, et al.:
+“<a href="http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo:
+Amazon’s Highly Available Key-Value Store</a>,” at <em>21st ACM Symposium on Operating
+Systems Principles</em> (SOSP), October 2007.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="MakeDataUseful2006td">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#MakeDataUseful2006td-marker">20</a>] Greg Linden:
+“<a href="http://glinden.blogspot.co.uk/2006/12/slides-from-my-talk-at-stanford.html">Make Data
+Useful</a>,” slides from presentation at Stanford University Data Mining class (CS345), December 2006.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Everts2014vm">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Everts2014vm-marker">21</a>] Tammy Everts:
+“<a href="http://www.webperformancetoday.com/2014/11/12/real-cost-slow-time-vs-downtime-slides/">The
+Real Cost of Slow Time vs Downtime</a>,” <em>webperformancetoday.com</em>, November 12, 2014.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Brutlag2009ut">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Brutlag2009ut-marker">22</a>] Jake Brutlag:
+“<a href="http://googleresearch.blogspot.co.uk/2009/06/speed-matters.html">Speed Matters for
+Google Web Search</a>,” <em>googleresearch.blogspot.co.uk</em>, June 22, 2009.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Treat2015vd">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Treat2015vd-marker">23</a>] Tyler Treat:
+“<a href="http://bravenewgeek.com/everything-you-know-about-latency-is-wrong/">Everything You Know
+About Latency Is Wrong</a>,” <em>bravenewgeek.com</em>, December 12, 2015.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="tail-at-scale">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#tail-at-scale-marker">24</a>] Jeffrey Dean and Luiz André Barroso:
+“<a href="http://cacm.acm.org/magazines/2013/2/160173-the-tail-at-scale/fulltext">The Tail at Scale</a>,”
+<em>Communications of the ACM</em>, volume 56, number 2, pages 74–80, February 2013.
+<a href="http://dx.doi.org/10.1145/2408776.2408794">doi:10.1145/2408776.2408794</a></p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Cormode2009vz">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Cormode2009vz-marker">25</a>] Graham Cormode, Vladislav
+Shkapenyuk, Divesh Srivastava, and Bojian Xu:
+“<a href="http://dimacs.rutgers.edu/~graham/pubs/papers/fwddecay.pdf">Forward Decay: A Practical
+Time Decay Model for Streaming Systems</a>,” at <em>25th IEEE International Conference on Data
+Engineering</em> (ICDE), March 2009.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Dunning2014wm">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Dunning2014wm-marker">26</a>] Ted Dunning and Otmar Ertl:
+“<a href="https://github.com/tdunning/t-digest">Computing Extremely Accurate Quantiles Using
+t-Digests</a>,” <em>github.com</em>, March 2014.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="HdrHistogram">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#HdrHistogram-marker">27</a>] Gil Tene:
+“<a href="http://www.hdrhistogram.org/">HdrHistogram</a>,” <em>hdrhistogram.org</em>.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Schwartz2015tg">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Schwartz2015tg-marker">28</a>] Baron Schwartz:
+“<a href="https://www.vividcortex.com/blog/why-percentiles-dont-work-the-way-you-think">Why
+Percentiles Don’t Work the Way You Think</a>,” <em>vividcortex.com</em>, December 7, 2015.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Hamilton2007ve">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Hamilton2007ve-marker">29</a>] James Hamilton:
+“<a href="https://www.usenix.org/legacy/events/lisa07/tech/full_papers/hamilton/hamilton.pdf">On
+Designing and Deploying Internet-Scale Services</a>,” at <em>21st Large Installation
+System Administration Conference</em> (LISA), November 2007.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Foote1997ti">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Foote1997ti-marker">30</a>] Brian Foote and Joseph Yoder:
+“<a href="http://www.laputan.org/pub/foote/mud.pdf">Big Ball of Mud</a>,” at
+<em>4th Conference on Pattern Languages of Programs</em> (PLoP),
+September 1997.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Brooks1995wu">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Brooks1995wu-marker">31</a>] Frederick P Brooks: “No Silver Bullet – Essence and
+Accident in Software Engineering,” in <em>The Mythical Man-Month</em>, Anniversary
+edition, Addison-Wesley, 1995. ISBN: 978-0-201-83595-3</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="MoseleyHo10rPt5">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#MoseleyHo10rPt5-marker">32</a>] Ben Moseley and Peter Marks:
+“<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.93.8928">Out of the Tar Pit</a>,”
+at <em>BCS Software Practice Advancement</em> (SPA), 2006.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Hickey2011up">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Hickey2011up-marker">33</a>] Rich Hickey:
+“<a href="http://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a>,”
+at <em>Strange Loop</em>, September 2011.</p><p xmlns:htmlbook="https://github.com/oreillymedia/HTMLBook" data-type="footnote" id="Breivold2008dm">[<a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#Breivold2008dm-marker">34</a>] Hongyu Pei Breivold, Ivica Crnkovic, and Peter J. Eriksson:
+“<a href="http://www.mrtc.mdh.se/publications/1478.pdf">Analyzing Software Evolvability</a>,”
+at <em>32nd Annual IEEE International Computer Software and Applications Conference</em>
+(COMPSAC), July 2008.
+<a href="http://dx.doi.org/10.1109/COMPSAC.2008.50">doi:10.1109/COMPSAC.2008.50</a></p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/part01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">I. Foundations of Data Systems</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch02.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">2. Data Models and Query Languages</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel t-subscribe-nag collapsed slideUp">
+        
+        
+          
+          
+            <p class="usage-data">Find answers on the fly, or master something new. Subscribe today. <a href="https://www.safaribooksonline.com/subscribe/" class="ga-active-trial-subscribe-nag">See pricing options.</a></p>
+          
+
+          
+        
+        
+
+      </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li>
+      <a class="t-queue-footer" href="https://www.safaribooksonline.com/playlists/">Playlists</a>
+      </li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/preferences/">Settings</a></li>
+      <li class="full-support"><a href="https://www.oreilly.com/online-learning/support/">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2018 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+    
+      <img src="https://www.oreilly.com/library/view/oreilly_set_cookie/" alt="" style="display:none;">
+    
+    
+    
+  
+
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="/safari-books-archive/site/library/view/designing-data-intensive-applications/9781491903063/ch01.html#">Reset</a>
+</div>
+</div><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.6226334916062715"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.10788695797446013" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5794699&amp;Ver=2&amp;mid=fdfe436b-e2c1-97e6-af97-810fbdb1e55d&amp;pi=1200101525&amp;lg=en-US&amp;sw=1440&amp;sh=900&amp;sc=24&amp;tl=1.%20Reliable,%20Scalable,%20and%20Maintainable%20Applications%20-%20Designing%20Data-Intensive%20Applications&amp;p=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fdesigning-data-intensive-applications%2F9781491903063%2Fch01.html&amp;r=&amp;lt=13078&amp;evt=pageLoad&amp;msclkid=N&amp;rn=364516"></div></body></html>

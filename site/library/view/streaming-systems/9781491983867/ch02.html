@@ -1,0 +1,1141 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/streaming-systems/9781491983867/ch02.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="3905629"
+  data-user-uuid="f04af719-1c84-4fc3-9be3-1f1b4622ab99"
+  data-username="safaribooksonline122"
+  data-account-type="Trial"
+  
+  data-activated-trial-date="12/09/2018"
+
+
+  data-archive="9781491983867"
+  data-publishers="O&#39;Reilly Media, Inc."
+
+
+
+  data-htmlfile-name="ch02.html"
+  data-epub-title="Streaming Systems" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class="js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/streaming-systems/9781491983867/ch02.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="3905629" data-user-uuid="f04af719-1c84-4fc3-9be3-1f1b4622ab99" data-username="safaribooksonline122" data-account-type="Trial" data-activated-trial-date="12/09/2018" data-archive="9781491983867" data-publishers="O'Reilly Media, Inc." data-htmlfile-name="ch02.html" data-epub-title="Streaming Systems" data-debug="0" data-testing="0" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491983867"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.0c29511d2d72.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>2. The What, Where, When, and How of Data Processing - Streaming Systems</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/5e586a47a3b7.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.e3b0c44298fc.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    @charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td,#sbo-rt-content article,#sbo-rt-content aside,#sbo-rt-content canvas,#sbo-rt-content details,#sbo-rt-content embed,#sbo-rt-content figure,#sbo-rt-content figcaption,#sbo-rt-content footer,#sbo-rt-content header,#sbo-rt-content hgroup,#sbo-rt-content menu,#sbo-rt-content nav,#sbo-rt-content output,#sbo-rt-content ruby,#sbo-rt-content section,#sbo-rt-content summary,#sbo-rt-content time,#sbo-rt-content mark,#sbo-rt-content audio,#sbo-rt-content video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}#sbo-rt-content article,#sbo-rt-content aside,#sbo-rt-content details,#sbo-rt-content figcaption,#sbo-rt-content figure,#sbo-rt-content footer,#sbo-rt-content header,#sbo-rt-content hgroup,#sbo-rt-content menu,#sbo-rt-content nav,#sbo-rt-content section{display:block}#sbo-rt-content div{line-height:1}#sbo-rt-content ol,#sbo-rt-content ul{list-style:none}#sbo-rt-content blockquote,#sbo-rt-content q{quotes:none}#sbo-rt-content blockquote:before,#sbo-rt-content blockquote:after,#sbo-rt-content q:before,#sbo-rt-content q:after{content:none}#sbo-rt-content table{border-collapse:collapse;border-spacing:0}@page{margin:5px !important}#sbo-rt-content p{margin:10px 0 0;line-height:125%;text-align:left}#sbo-rt-content p.byline{text-align:left;margin:-33px auto 35px;font-style:italic;font-weight:bold}#sbo-rt-content div.preface p+p.byline{margin:1em 0 0 !important}#sbo-rt-content div.preface p.byline+p.byline{margin:0 !important}#sbo-rt-content div.sect1>p.byline{margin:-.25em 0 1em}#sbo-rt-content div.sect1>p.byline+p.byline{margin-top:-1em}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link,#sbo-rt-content a{text-decoration:none;color:#8e0012}#sbo-rt-content span.lineannotation{font-style:italic;color:#a62a2a;font-family:serif}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#fff}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content h1,#sbo-rt-content div.toc-title,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;font-weight:bold;text-align:left;page-break-after:avoid !important;font-family:sans-serif,"DejaVuSans"}#sbo-rt-content div.toc-title{font-size:1.5em;margin-top:20px !important;margin-bottom:30px !important}#sbo-rt-content section[data-type="sect1"] h1{font-size:1.3em;color:#8e0012;margin:40px 0 8px 0}#sbo-rt-content section[data-type="sect2"] h2{font-size:1.1em;margin:30px 0 8px 0 !important}#sbo-rt-content section[data-type="sect3"] h3{font-size:1em;color:#555;margin:20px 0 8px 0 !important}#sbo-rt-content section[data-type="sect4"] h4{font-size:1em;font-weight:normal;font-style:italic;margin:15px 0 6px 0 !important}#sbo-rt-content section[data-type="chapter"]>div>h1,#sbo-rt-content section[data-type="preface"]>div>h1,#sbo-rt-content section[data-type="appendix"]>div>h1,#sbo-rt-content section[data-type="glossary"]>div>h1,#sbo-rt-content section[data-type="bibliography"]>div>h1,#sbo-rt-content section[data-type="index"]>div>h1{font-size:2em;line-height:1;margin-bottom:50px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content span.label,#sbo-rt-content span.keep-together{font-size:inherit;font-weight:inherit}#sbo-rt-content div[data-type="part"] h1{font-size:2em;text-align:center;margin-top:0 !important;margin-bottom:50px;padding:50px 0 10px 0;border-bottom:1px solid #000}#sbo-rt-content img.width-ninety{width:90%}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center !important;margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content figure{margin:15px 0 15px 0 !important;page-break-inside:avoid}#sbo-rt-content div.figure h6,#sbo-rt-content figure h6,#sbo-rt-content figure figcaption{font-size:.9rem !important;text-align:center;font-weight:normal !important;font-style:italic;font-family:serif !important;text-transform:none !important;letter-spacing:normal !important;color:#000 !important;padding-top:10px !important;page-break-before:avoid}#sbo-rt-content div.informalfigure{text-align:center !important;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:15px 0 10px 0 !important;border:1px solid #DCDCDC;background-color:#F7F7F7;padding:15px !important;page-break-inside:avoid}#sbo-rt-content aside[data-type="sidebar"]{margin:15px 0 10px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title,#sbo-rt-content aside[data-type="sidebar"] h5{font-weight:bold;font-size:1em;font-family:sans-serif;text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar ol,#sbo-rt-content div.sidebar ul,#sbo-rt-content aside[data-type="sidebar"] ol,#sbo-rt-content aside[data-type="sidebar"] ul{margin-left:1.25em !important}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content aside[data-type="sidebar"] figcaption,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif !important;color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div[data-type="tip"],#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div[data-type="note"],#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div[data-type="warning"],#sbo-rt-content div.sidebar div[data-type="caution"],#sbo-rt-content div.sidebar div[data-type="important"]{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content aside[data-type="sidebar"] p.byline{font-size:90%;font-weight:bold;font-style:italic;text-align:center;text-indent:0;margin:5px auto 6px;page-break-after:avoid}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;overflow-wrap:break-word}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;overflow-wrap:break-word}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div[data-type="example"]{margin:10px 0 15px 0 !important}#sbo-rt-content div[data-type="example"] h1,#sbo-rt-content div[data-type="example"] h2,#sbo-rt-content div[data-type="example"] h3,#sbo-rt-content div[data-type="example"] h4,#sbo-rt-content div[data-type="example"] h5,#sbo-rt-content div[data-type="example"] h6{font-style:italic;font-weight:normal;text-align:left !important;text-transform:none !important;font-family:serif !important;margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div[data-type="example"] pre[data-type="programlisting"],#sbo-rt-content div[data-type="example"] pre[data-type="screen"]{margin:0}#sbo-rt-content section[data-type="titlepage"]>div>h1{font-size:2em;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content section[data-type="titlepage"] h2,#sbo-rt-content section[data-type="titlepage"] p.subtitle,#sbo-rt-content section[data-type="titlepage"] p[data-type="subtitle"]{font-size:1.3em;font-weight:normal;text-align:center;margin-top:.5em;color:#555}#sbo-rt-content section[data-type="titlepage"]>div>h2[data-type="author"],#sbo-rt-content section[data-type="titlepage"] p.author{font-size:1.3em;font-family:serif !important;font-weight:bold;margin:50px 0 !important;text-align:center}#sbo-rt-content section[data-type="titlepage"] p.edition{text-align:center;text-transform:uppercase;margin-top:2em}#sbo-rt-content section[data-type="titlepage"]{text-align:center}#sbo-rt-content section[data-type="titlepage"]:after{content:url(css_assets/titlepage_footer_ebook.png);margin:0 auto;max-width:80%}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content ul.stafflist{margin:15px 0 15px 20px !important}#sbo-rt-content ul.stafflist li{list-style-type:none;padding:5px 0}#sbo-rt-content ul.printings li{list-style-type:none}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif !important;font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif !important;font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif !important;margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif !important;font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10px}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif !important}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-style:italic;margin:.75em 0 0 !important}#sbo-rt-content blockquote div.attribution,#sbo-rt-content blockquote p[data-type="attribution"]{margin:5px 0 10px 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p,#sbo-rt-content blockquote p[data-type="attribution"]{font-style:normal;margin-top:5px}#sbo-rt-content blockquote div.attribution p:before,#sbo-rt-content blockquote p[data-type="attribution"]:before{font-style:normal;content:"—";-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div[data-type="footnotes"]{border-top:1px solid black;margin-top:1.5em}#sbo-rt-content sub,#sbo-rt-content sup{font-size:75%;line-height:0;position:relative}#sbo-rt-content sup{top:-.5em}#sbo-rt-content sub{bottom:-.25em}#sbo-rt-content div.refentry p.refname{font-size:1em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin-bottom:5px;overflow:auto;width:100%}#sbo-rt-content div.refentry{width:100%;display:block;margin-top:2em}#sbo-rt-content div.refsynopsisdiv{display:block;clear:both}#sbo-rt-content div.refentry header{page-break-inside:avoid !important;display:block;break-inside:avoid !important;padding-top:0;border-bottom:1px solid #000}#sbo-rt-content div.refsect1 h6{font-size:.9em;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content div.refsect1{margin-top:3em}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dd{margin-left:1.5em !important;margin-bottom:.25em}#sbo-rt-content dd ol,#sbo-rt-content dd ul{padding-left:1em}#sbo-rt-content dd li{margin-top:0;margin-bottom:0}#sbo-rt-content dd,#sbo-rt-content li{text-align:left}#sbo-rt-content ul,#sbo-rt-content ul>li,#sbo-rt-content ol ul,#sbo-rt-content ol ul>li,#sbo-rt-content ul ol ul,#sbo-rt-content ul ol ul>li{list-style-type:disc}#sbo-rt-content ul ul,#sbo-rt-content ul ul>li{list-style-type:square}#sbo-rt-content ul ul ul,#sbo-rt-content ul ul ul>li{list-style-type:circle}#sbo-rt-content ol,#sbo-rt-content ol>li,#sbo-rt-content ol ul ol,#sbo-rt-content ol ul ol>li,#sbo-rt-content ul ol,#sbo-rt-content ul ol>li{list-style-type:decimal}#sbo-rt-content ol ol,#sbo-rt-content ol ol>li{list-style-type:lower-alpha}#sbo-rt-content ol ol ol,#sbo-rt-content ol ol ol>li{list-style-type:lower-roman}#sbo-rt-content ol,#sbo-rt-content ul{list-style-position:outside;margin:15px 0 15px 1.25em;padding-left:2.25em}#sbo-rt-content ol li,#sbo-rt-content ul li{margin:.5em 0 .65em;line-height:125%}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist,#sbo-rt-content ul.simplelist{margin:15px 0 15px 20px !important}#sbo-rt-content ul.simplelist li{list-style-type:none;padding:5px 0}#sbo-rt-content table.simplelist td{border:none}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content dl.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content dl.calloutlist dd{padding-left:0;margin-top:-25px}#sbo-rt-content dl.calloutlist img,#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"],#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{margin:30px !important;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip ol,#sbo-rt-content div.tip ul,#sbo-rt-content div[data-type="tip"] ol,#sbo-rt-content div[data-type="tip"] ul,#sbo-rt-content div.note ol,#sbo-rt-content div.note ul,#sbo-rt-content div[data-type="note"] ol,#sbo-rt-content div[data-type="note"] ul,#sbo-rt-content div.warning ol,#sbo-rt-content div.warning ul,#sbo-rt-content div[data-type="warning"] ol,#sbo-rt-content div[data-type="warning"] ul,#sbo-rt-content div[data-type="caution"] ol,#sbo-rt-content div[data-type="caution"] ul,#sbo-rt-content div[data-type="important"] ol,#sbo-rt-content div[data-type="important"] ul{margin-left:1.5em !important}#sbo-rt-content div.tip,#sbo-rt-content div[data-type="tip"],#sbo-rt-content div.note,#sbo-rt-content div[data-type="note"]{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div[data-type="warning"],#sbo-rt-content div[data-type="caution"],#sbo-rt-content div[data-type="important"]{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="note"] h1,#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1,#sbo-rt-content div[data-type="important"] h6{font-weight:bold;font-size:110%;font-family:sans-serif !important;text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div[data-type="tip"] figure h6,#sbo-rt-content div[data-type="note"] figure h6,#sbo-rt-content div[data-type="warning"] figure h6,#sbo-rt-content div[data-type="caution"] figure h6,#sbo-rt-content div[data-type="important"] figure h6{font-family:serif !important}#sbo-rt-content div.tip h3,#sbo-rt-content div[data-type="tip"] h6,#sbo-rt-content div.note h3,#sbo-rt-content div[data-type="note"] h6,#sbo-rt-content div[data-type="tip"] h1,#sbo-rt-content div[data-type="note"] h1{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div[data-type="warning"] h6,#sbo-rt-content div[data-type="caution"] h6,#sbo-rt-content div[data-type="important"] h6,#sbo-rt-content div[data-type="warning"] h1,#sbo-rt-content div[data-type="caution"] h1,#sbo-rt-content div[data-type="important"] h1{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note,#sbo-rt-content div.safarienabled{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3,#sbo-rt-content div.safarienabled h6{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px 0 30px 0 !important;max-width:95%;border:none !important;background:none;display:table !important}#sbo-rt-content div.table,#sbo-rt-content div.informaltable,#sbo-rt-content table{page-break-inside:avoid}#sbo-rt-content tr,#sbo-rt-content tr td{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td,#sbo-rt-content thead th{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif;font-weight:bold}#sbo-rt-content td,#sbo-rt-content th{display:table-cell;padding:.3em;text-align:left;vertical-align:middle;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title,#sbo-rt-content table caption{font-weight:normal;font-style:italic;font-family:serif;font-size:1em;margin:10px 0 10px 0 !important;padding:0;page-break-after:avoid;text-align:left !important}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation,#sbo-rt-content div[data-type="equation"]{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title,#sbo-rt-content div[data-type="equation"] h5{font-style:italic;font-weight:normal;font-family:serif !important;font-size:90%;margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content div[data-type="equation"] math{font-size:calc(.35em + 1vw)}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{text-indent:0}#sbo-rt-content div.index h3{padding:.25em;margin-top:1em !important;background-color:#F0F0F0}#sbo-rt-content div.index li{line-height:130%;list-style-type:none}#sbo-rt-content div.index a.indexterm{color:#8e0012 !important}#sbo-rt-content div.index ul{margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.index ul ul{margin-left:1em !important;margin-top:0 !important}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif;text-align:left}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content .what_lt{color:#c90;}#sbo-rt-content .where_lt{color:#26c}#sbo-rt-content .when_lt{color:#6a5;}#sbo-rt-content .how_lt{color:#c00}#sbo-rt-content .what_dk{color:#ffd040}#sbo-rt-content .where_dk{color:#6af}#sbo-rt-content .when_dk{color:#8ac86f}#sbo-rt-content .how_dk{color:#d77}#sbo-rt-content .grey_bg{background-color:#ff0}#sbo-rt-content .yellow_bg{background-color:#ff0}#sbo-rt-content .green_bg{background-color:#00FF7F}#sbo-rt-content .red_bg{background-color:#FFA07A}#sbo-rt-content .blue_bg{background-color:#87CEEB}#sbo-rt-content .code_blue{color:#00f}#sbo-rt-content .code_grey{color:#777}#sbo-rt-content .code_orange{color:#d83}#sbo-rt-content .code_purple{color:#87c}#sbo-rt-content .code_lightgrey{color:#C0C0C0}#sbo-rt-content .strikethrough{text-decoration:line-through}#sbo-rt-content .table_white{color:white}#sbo-rt-content .table_black{color:black}#sbo-rt-content .table_red{color:#d77}#sbo-rt-content .table_green{color:#8ac86f}#sbo-rt-content .table_blue{color:#00f}#sbo-rt-content .table_mediumgrey{background-color:#404040}#sbo-rt-content .table_lightgrey{background-color:#606060}#sbo-rt-content .table_darkgrey{background-color:#202020}
+    </style><link rel="canonical" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html"><meta name="description" content=" Chapter 2. The What, Where, When, and How of Data Processing Okay party people, it’s time to get concrete! Chapter&nbsp;1 focused on three main areas: terminology, defining precisely ... "><meta property="og:title" content="2. The What, Where, When, and How of Data Processing"><meta itemprop="isPartOf" content="/library/view/streaming-systems/9781491983867/"><meta itemprop="name" content="2. The What, Where, When, and How of Data Processing"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/ch02.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491983867/"><meta property="og:description" itemprop="description" content=" Chapter 2. The What, Where, When, and How of Data Processing Okay party people, it’s time to get concrete! Chapter&nbsp;1 focused on three main areas: terminology, defining precisely ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O'Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781491983874"><meta property="og:book:author" itemprop="author" content="Reuven Lax"><meta property="og:book:author" itemprop="author" content="Slava Chernyak"><meta property="og:book:author" itemprop="author" content="Tyler Akidau"><meta property="og:book:tag" itemprop="about" content="Databases"><meta property="og:book:tag" itemprop="about" content="Engineering"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library" data-gr-c-s-loaded="true">
+
+    
+  
+  
+  
+
+
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#container" class="skip">Skip to content</a><header class="topbar t-topbar" style="display:None"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/playlists/" class="t-queue-nav l0 nav-icn None"><!--?xml version="1.0" encoding="UTF-8"?--><svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch --><title>icon_Playlist_sml</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_Playlist_sml" fill-rule="nonzero" fill="#000000"><g id="playlist-icon"><g id="Group-6"><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle></g><g id="Group-5" transform="translate(0.000000, 7.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g><g id="Group-5-Copy" transform="translate(0.000000, 14.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g></g></g></g></svg><span>
+               Playlists
+            </span></a></li><li class="search"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://get.oreilly.com/email-signup.html" target="_blank" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/f04af719-1c84-4fc3-9be3-1f1b4622ab99/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/preferences/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.oreilly.com/online-learning/support/" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/preferences/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.oreilly.com/online-learning/support/" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Streaming Systems
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><div class="js-content-uri" data-content-uri="/api/v1/book/9781491983867/chapter/ch02.html"><div class="js-collections-dropdown collections-dropdown menu-bit-cards"><div data-reactroot="" class="menu-dropdown-wrapper js-menu-dropdown-wrapper align-right"><img class="hidden" src="https://www.safaribooksonline.com/static/images/ajax-transp.gif" alt="loading spinner"><div class="menu-control"><div class="control "><div class="js-playlists-menu"><button class="js-playlist-icon"><svg class="icon-add-to-playlist-sml" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#000000"><g transform="translate(-1.000000, 0.000000)"><rect x="5" y="0" width="12" height="2"></rect><title>Playlists</title><path d="M4.5,14 C6.43299662,14 8,12.4329966 8,10.5 C8,8.56700338 6.43299662,7 4.5,7 C2.56700338,7 1,8.56700338 1,10.5 C1,12.4329966 2.56700338,14 4.5,14 Z M2.5,10 L4,10 L4,8.5 L5,8.5 L5,10 L6.5,10 L6.5,11 L5,11 L5,12.5 L4,12.5 L4,11 L2.5,11 L2.5,10 Z"></path><circle cx="2" cy="5" r="1"></circle><circle cx="1.94117647" cy="1" r="1"></circle><rect x="5" y="4" width="12" height="2"></rect><rect x="9" y="8" width="8" height="2"></rect><rect x="9" y="12" width="8" height="2"></rect></g></g></g></svg><div class="js-playlist-addto-label">Add&nbsp;To</div></button></div></div></div></div></div></div></li><li class="js-font-control-panel font-control-activator"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/ch02.html&amp;text=Streaming%20Systems&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/ch02.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/ch02.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%202.%20The%20What%2C%20Where%2C%20When%2C%20and%20How%20of%20Data%20Processing&amp;body=https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/ch02.html%0D%0Afrom%20Streaming%20Systems%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">1. Streaming 101</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch03.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">3. Watermarks</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><section data-type="chapter" epub:type="chapter" data-pdf-bookmark="Chapter 2. The What, Where, When, and How of Data Processing"><div class="chapter" id="the_what_where_when_and_how">
+<h1><span class="label">Chapter 2. </span>The <em><span class="what_lt">What</span></em>, <em><span class="where_lt">Where</span></em>, <em><span class="when_lt">When</span></em>, and <em><span class="how_lt">How</span></em> <span class="keep-together">of Data Processing</span></h1>
+
+<p>Okay party people, it’s time to get concrete!</p>
+
+<p><a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a> focused on three main areas: <em>terminology</em>, defining precisely what I mean when<a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-type="indexterm" id="ix_dpquest"></a> I use overloaded terms like “streaming”; <em>batch versus streaming</em>, comparing the theoretical capabilities of the two types of systems, and postulating that only two things are necessary to take streaming systems beyond their batch counterparts: correctness and tools for reasoning about time; and <em>data processing patterns</em>, looking at the conceptual approaches taken with both batch and streaming systems when processing bounded and unbounded data.</p>
+
+<p>In this chapter, we’re now going to focus further on the data processing patterns from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>, but in more detail, and within the context of concrete examples. By the time we’re finished, we’ll have covered what I consider to be the core set of principles and concepts required for robust out-of-order data processing; these are the tools for reasoning about time that truly get you beyond classic batch processing.<a contenteditable="false" data-primary="Apache Beam" data-secondary="code snippets for" data-type="indexterm" id="idm140176526213888"></a></p>
+
+<p>To give you a sense of what things look like in action, I use snippets of <a href="https://beam.apache.org/">Apache Beam</a> code, coupled with time-lapse diagrams<sup><a data-type="noteref" id="idm140176526211392-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176526211392" class="totri-footnote">1</a></sup> to provide a visual representation of the concepts. <a contenteditable="false" data-primary="Cloud Dataflow" data-type="indexterm" id="idm140176526209680"></a><a contenteditable="false" data-primary="Google Cloud Dataflow" data-see="Cloud Dataflow; Dataflow Model" data-type="indexterm" id="idm140176526208608"></a>Apache Beam is a unified programming model and portability layer for batch and stream processing, with a set of concrete SDKs in various languages (e.g., Java and Python). Pipelines written with Apache Beam can then be portably run on any of the supported execution engines (Apache Apex, Apache Flink, Apache Spark, Cloud Dataflow, etc.).</p>
+
+<p>I use Apache Beam here for examples not because this is a Beam book (it’s not), but because it most completely embodies the concepts described in this book.<a contenteditable="false" data-primary="Dataflow Model" data-type="indexterm" id="idm140176526206096"></a> Back when <a href="http://oreil.ly/1TV7YGU">“Streaming 102”</a> was originally written (back when it was still the Dataflow Model from Google Cloud Dataflow and not the Beam Model from Apache Beam), it was literally the only system in existence that provided the amount of expressiveness necessary for all the examples we’ll cover here. <a contenteditable="false" data-primary="Beam Model" data-seealso="Apache Beam" data-type="indexterm" id="idm140176526203856"></a>A year and a half later, I’m happy to say much has changed, and most of the major systems out there have moved or are moving toward supporting a model that looks a lot like the one described in this book. So rest assured that the concepts we cover here, though informed through the Beam lens, as it were, will apply equally across most other systems you’ll come across.</p>
+
+<section data-type="sect1" data-pdf-bookmark="Roadmap"><div class="sect1" id="idm140176526201840">
+<h1>Roadmap</h1>
+
+<p>To help set the stage for this chapter, I want to lay out the five main concepts that will underpin all of the discussions therein, and really, for most of the rest of <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/part01.html#part_one">Part&nbsp;I</a>. We’ve already covered two of them.</p>
+
+<p>In <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>, I first established the critical distinction between event time (the time that events happen) and processing time (the time they are observed during processing). This provides the foundation for one of the main theses put forth in this book: if you care about both correctness and the context within which events actually occurred, you must analyze data relative to their inherent event times, not the processing time at which they are encountered during the analysis itself.</p>
+
+<p>I then introduced the concept of <em>windowing</em> (i.e., partitioning a dataset along temporal boundaries), which is a common approach used to cope with the fact that unbounded data sources technically might never end. Some simpler examples of windowing strategies are <em>fixed</em> and <em>sliding</em> windows, but more sophisticated types of windowing, such as <em>sessions</em> (in which the windows are defined by features of the data themselves; for example, capturing a session of activity per user followed by a gap of inactivity) also see broad usage.</p>
+
+<p>In addition to these two concepts, we’re now going to look closely at three more:</p>
+
+<dl>
+	<dt>Triggers</dt>
+	<dd>
+	<p>A trigger is a mechanism for declaring when the output for a window should be materialized relative to some external signal. <a contenteditable="false" data-primary="windowing" data-secondary="triggers for output" data-type="indexterm" id="idm140176526192256"></a><a contenteditable="false" data-primary="triggers" data-type="indexterm" id="idm140176526190880"></a>Triggers provide flexibility in choosing when outputs should be emitted. In some sense, you can think of them as a flow control mechanism for dictating when results should be materialized. Another way of looking at it is that triggers are like the shutter-release on a camera, allowing you to declare when to take a snapshots in time of the results being computed.</p>
+
+	<p>Triggers also make it possible to observe the output for a window multiple times as it evolves. This in turn opens up the door to refining results over time, which allows for providing speculative results as data arrive, as well as dealing with changes in upstream data (revisions) over time or data that arrive late (e.g., mobile scenarios, in which someone’s phone records various actions and their event times while the person is offline and then proceeds to upload those events for processing upon regaining connectivity).</p>
+	</dd>
+	<dt>Watermarks</dt>
+	<dd>
+	<p>A watermark is a notion of input completeness with <a contenteditable="false" data-primary="event time" data-secondary="watermarks" data-type="indexterm" id="idm140176526186768"></a>respect to event times. A watermark with<a contenteditable="false" data-primary="watermarks" data-type="indexterm" id="idm140176526185200"></a> value of time <em>X</em> makes the statement: “all input data with event times less than <em>X</em> have been observed.” As such, watermarks act as a metric of progress when observing an unbounded data source with no known end. We touch upon the basics of watermarks in this chapter, and then Slava goes super deep on the subject in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch03.html#watermarks_chapter">Chapter&nbsp;3</a>.</p>
+	</dd>
+	<dt>Accumulation</dt>
+	<dd>
+	<p>An accumulation mode specifies the relationship between multiple results that are observed for the <a contenteditable="false" data-primary="windowing" data-secondary="accumulation modes for a window" data-type="indexterm" id="idm140176526180480"></a>same window.<a contenteditable="false" data-primary="accumulation" data-type="indexterm" id="idm140176526178960"></a> Those results might be completely disjointed; that is, representing independent deltas over time, or there might be overlap between them. Different accumulation modes have different semantics and costs associated with them and thus find applicability across a variety of use cases.</p>
+	</dd>
+</dl>
+
+<p>Also, because I think it makes it easier to understand the relationships between all of these concepts, we revisit the old and explore the new within the structure of answering four questions, all of which I propose are critical to every unbounded data processing problem:</p>
+
+<ul>
+	<li>
+	<p><em><span class="what_lt">What</span></em> results are calculated? This question is answered by the types of transformations within the pipeline. This includes things like computing sums, building histograms, training machine learning models, and so on. It’s also essentially the question answered by classic batch processing</p>
+	</li>
+	<li>
+	<p><em><span class="where_lt">Where</span></em> in event time are results calculated? This question is answered by the use of event-time windowing within the pipeline. This includes the common examples of windowing from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a> (fixed, sliding, and sessions); use cases that seem to have no notion of windowing (e.g., time-agnostic processing; classic batch processing also generally falls into this category); and other, more complex types of windowing, such as time-limited auctions. Also note that it can include processing-time windowing, as well, if you assign ingress times as event times for records as they arrive at the system.</p>
+	</li>
+	<li>
+	<p><em><span class="when_lt">When</span></em> in processing time are results materialized? This question is answered by the use of triggers and (optionally) watermarks. There are infinite variations on this theme, but the most common patterns are those involving repeated updates (i.e., materialized view semantics), those that utilize a watermark to provide a single output per window only after the corresponding input is believed to be complete (i.e., classic batch processing semantics applied on a per-window basis), or some combination of the two.</p>
+	</li>
+	<li>
+	<p><em><span class="how_lt">How</span></em> do refinements of results relate? This question is answered by the type of accumulation used: discarding (in which results are all independent and distinct), accumulating (in which later results build upon prior ones), or accumulating and retracting (in which both the accumulating value plus a retraction for the previously triggered value(s) are emitted).</p>
+	</li>
+</ul>
+
+<p>We look at each of these questions in much more detail throughout the rest of the book. And, yes, I’m going to run this color scheme thing into the ground in an attempt to make it abundantly clear which concepts relate to which question in the <em><span class="what_lt">What</span></em>/<em><span class="where_lt">Where</span></em>/<em><span class="when_lt">When</span></em>/<em><span class="how_lt">How</span></em> idiom. You’re welcome &lt;winky-smiley/&gt;.<sup><a data-type="noteref" id="idm140176526162896-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176526162896" class="totri-footnote">2</a></sup></p>
+</div></section>
+
+<section data-type="sect1" data-pdf-bookmark="Batch Foundations: What and Where"><div class="sect1" id="idm140176526161792">
+<h1>Batch Foundations: <em><span class="what_lt">What</span></em> and <em><span class="where_lt">Where</span></em></h1>
+
+<p>Okay, let’s get this party started. First stop: batch processing.</p>
+
+<section data-type="sect2" data-pdf-bookmark="What: Transformations"><div class="sect2" id="idm140176526158832">
+<h2><em><span class="what_lt">What</span></em>: Transformations</h2>
+
+<p>The transformations applied in classic batch processing answer the question: “<em><span class="what_lt">What</span></em> results are calculated?” Even<a contenteditable="false" data-primary="transformations" data-type="indexterm" id="ix_trnsf"></a> though<a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-tertiary="what, transformations" data-type="indexterm" id="ix_dpquestwhat"></a> you are likely already familiar with classic batch processing, we’re going to start there anyway because it’s the foundation on top of which we add all of the other concepts.</p>
+
+<p>In the rest of this chapter (and indeed, through much of the book), we look at a single example: computing keyed integer sums over a simple dataset consisting of nine values. Let’s imagine that we’ve written a team-based mobile game and we want to build a pipeline that calculates team scores by summing up the individual scores reported by users’ phones. If we were to capture our nine example scores in a SQL table named “UserScores,” it might look something like this:</p>
+
+<pre data-type="programlisting"><strong><em>&gt; SELECT * FROM UserScores ORDER BY EventTime;</em></strong>
+------------------------------------------------
+| Name  | Team  | Score | EventTime | ProcTime |
+------------------------------------------------
+| Julie | TeamX |     5 |  12:00:26 | 12:05:19 |
+| Frank | TeamX |     9 |  12:01:26 | 12:08:19 |
+| Ed    | TeamX |     7 |  12:02:26 | 12:05:39 |
+| Julie | TeamX |     8 |  12:03:06 | 12:07:06 |
+| Amy   | TeamX |     3 |  12:03:39 | 12:06:13 |
+| Fred  | TeamX |     4 |  12:04:19 | 12:06:39 |
+| Naomi | TeamX |     3 |  12:06:39 | 12:07:19 |
+| Becky | TeamX |     8 |  12:07:26 | 12:08:39 |
+| Naomi | TeamX |     1 |  12:07:46 | 12:09:00 |
+------------------------------------------------
+</pre>
+
+<p>Note that all the scores in this example are from users on the same team; this is to keep the example simple, given that we have a limited number of dimensions in our diagrams that follow. And because we’re grouping by team, we really just care about the last three columns:</p>
+
+<dl>
+	<dt><code>Score</code></dt>
+	<dd>
+	<p>The individual user score associated with this event</p>
+	</dd>
+	<dt><code>EventTime</code></dt>
+	<dd>
+	<p>The event time for the score; <a contenteditable="false" data-primary="event time" data-secondary="in SQL table UserScores (example)" data-type="indexterm" id="idm140176526144592"></a>that is, the time at which the score occurred</p>
+	</dd>
+	<dt><code>ProcTime</code></dt>
+	<dd>
+	<p>The processing for the score;<a contenteditable="false" data-primary="processing time" data-secondary="in SQL table UserScores (example)" data-type="indexterm" id="idm140176526141568"></a> that is, the time at which the score was observed by the pipeline</p>
+	</dd>
+</dl>
+
+<p>For each example pipeline, we’ll look at a time-lapse diagram that highlights how the data evolves over time. Those diagrams plot our nine scores in the two dimensions of time we care about: event time in the x-axis, and processing time in the y-axis. <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#nine_input_records_plotted_in_both_event_time_and_processing_time">Figure&nbsp;2-1</a> illustrates what a static plot of the input data looks like.</p>
+
+<figure class="smallereighty"><div id="nine_input_records_plotted_in_both_event_time_and_processing_time" class="figure"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0201.png" width="600" height="360" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0201.png">
+<h6><span class="label">Figure 2-1. </span>Nine input records, plotted in both event time and processing time</h6>
+</div></figure>
+
+<p>Subsequent time-lapse diagrams are either animations (Safari) or a sequence of frames (print and all other digital formats), allowing you to see how the data are processed over time (more on this shortly after we get to the first time-lapse diagram).</p>
+
+<p>Preceding each example is a short snippet of Apache Beam Java SDK pseudocode to make the definition of the pipeline more concrete.<a contenteditable="false" data-primary="Apache Beam" data-secondary="code snippets for" data-tertiary="Java SDK pseudo-code" data-type="indexterm" id="idm140176526134784"></a><a contenteditable="false" data-primary="Java pseudo-code in Apache Beam examples" data-type="indexterm" id="idm140176526133136"></a> It is pseudocode in the sense that I sometime bend the rules to make the examples clearer, elide details (like the use of concrete I/O sources), or simplify names (the trigger names in Beam Java 2.x and earlier are painfully verbose; I use simpler names for clarity). Beyond minor things like those, it’s otherwise real-world Beam code (and real code is available on <a href="http://bit.ly/2KMsDwR">GitHub</a> for all examples in this chapter).</p>
+
+<p>If you’re already familiar with something like Spark or Flink, you should have a relatively easy time understanding what the Beam code is doing. But to give you a crash course in things, there are two basic primitives in Beam:</p>
+
+<dl>
+	<dt><code>PCollections</code></dt>
+	<dd>
+	<p>These represent datasets (possibly massive ones) across which parallel transformations can be performed (hence the “P” at the beginning of the name).</p>
+	</dd>
+	<dt><code>PTransforms</code></dt>
+	<dd>
+	<p>These are applied to <code>PCollections</code> to create new <code>PCollections</code>. <code>PTransforms</code> may perform element-wise transformations, they may group/aggregate multiple elements together, or they may be a composite combination of other <code>PTransforms</code>, as depicted in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#types_of_transformations">Figure&nbsp;2-2</a>.</p>
+	</dd>
+</dl>
+
+	<figure><div id="types_of_transformations" class="figure"><img alt="" class="iimagesch02fig_0202_transformationtypespng" src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0202.png" width="600" height="214" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0202.png">
+	<h6><span class="label">Figure 2-2. </span>Types of transformations</h6>
+	</div></figure>
+	
+<p>For the purposes of our examples, we typically assume that we start out with a pre-loaded <code>PCollection&lt;KV&lt;Team, Integer&gt;&gt;</code> named “input” (that is, a <code>PCollection</code> composed of key/value pairs of <code>Teams</code> and <code>Integers</code>, where the <code>Teams</code> are just something like <code>Strings</code> representing team names, and the <code>Integers</code> are scores from any individual on the corresponding team). In a real-world pipeline, we would’ve acquired input by reading in a <code>PCollection&lt;String&gt;</code> of raw data (e.g., log records) from an I/O source and then transforming it into a <code>PCollection&lt;KV&lt;Team, Integer&gt;&gt;</code> by parsing the log records into appropriate key/value pairs. For the sake of clarity in this first example, I include pseudocode for all of those steps, but in subsequent examples, I elide the I/O and parsing.</p>
+
+<p>Thus, for a pipeline that simply reads in data from an I/O source, parses team/score pairs, and calculates per-team sums of scores, we’d have something like that shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#summation_pipeline_key_value_data_are_read_from_an_io_source_with_a_team_eg">Example&nbsp;2-1</a>.</p>
+
+<div data-type="example" id="summation_pipeline_key_value_data_are_read_from_an_io_source_with_a_team_eg">
+<h5><span class="label">Example 2-1. </span>Summation pipeline</h5>
+
+<pre data-type="programlisting">PCollection&lt;String&gt; raw = IO.read(...);
+PCollection&lt;KV&lt;Team, Integer&gt;&gt; input = raw.apply(<span class="what_lt">new ParseFn()</span>);
+PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals =
+  input.apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<p>Key/value data are read from an I/O source, with a <code>Team</code> (e.g., <code>String</code> of the team name) as the key and an <code>Integer</code> (e.g., individual team member scores) as the value. The values for each key are then summed together to generate per-key sums (e.g., total team score) in the output collection.</p>
+
+<p>For all the examples to come, after seeing a code snippet describing the pipeline that we’re analyzing, we’ll then look at a time-lapse diagram showing the execution of that pipeline over our concrete dataset for a single key. In a real pipeline, you can imagine that similar operations would be happening in parallel across multiple machines, but for the sake of our examples, it will be clearer to keep things simple.</p>
+
+<p>As noted previously, Safari editions present the complete execution as an animated movie, whereas print and all other digital formats use a static sequence of key frames that provide a sense of how the pipeline progresses over time. In both cases, we also provide a URL to a fully animated version on <a class="orm:hideurl" href="http://www.streamingbook.net/"><em>www.streamingbook.net</em></a>.</p>
+
+<p>Each diagram plots the inputs and outputs across two dimensions: event time (on the x-axis) and processing time (on the y-axis). Thus, real time as observed by the pipeline progresses from bottom to top, as indicated by the thick horizontal black line that ascends in the processing-time axis as time progresses. Inputs are circles, with the number inside the circle representing the value of that specific record. They start out light gray, and darken as the pipeline observes them.</p>
+
+<p>As the pipeline observes values, it accumulates them in its intermediate state and eventually<a contenteditable="false" data-primary="batch systems" data-secondary="processing state and output in example mobile game with user scores" data-type="indexterm" id="idm140176526104784"></a> materializes the aggregate results as output. State and output are represented by rectangles (gray for state, blue for output), with the aggregate value near the top, and with the area covered by the rectangle representing the portions of event time and processing time accumulated into the result. For the pipeline in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#summation_pipeline_key_value_data_are_read_from_an_io_source_with_a_team_eg">Example&nbsp;2-1</a>, it would look something like that shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#classic_batch_processing">Figure&nbsp;2-3</a> when executed on a classic batch engine.</p>
+
+<figure><div id="classic_batch_processing" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0203.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0203.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0203.png" alt="Classic batch processing" width="600" height="366" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0203.png">
+</video>
+<h6><span class="label">Figure 2-3. </span>Classic batch processing</h6>
+</div></figure>
+
+<p>Because this is a batch pipeline, it accumulates state until it’s seen all of the inputs (represented by the dashed green line at the top), at which point it produces its single output of 48. In this example, we’re calculating a sum over all of event time because we haven’t applied any specific windowing transformations; hence the rectangles for state and output cover the entirety of the x-axis. If we want to process an unbounded data source, however, classic batch processing won’t be sufficient; we can’t wait for the input to end, because it effectively never will. One of the concepts we want is windowing, which we introduced in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>. Thus, within the context of our second question—“<em><span class="where_lt">Where</span></em> in event time are results calculated?”—we’ll now briefly revisit windowing.<a contenteditable="false" data-primary="transformations" data-startref="ix_trnsf" data-type="indexterm" id="idm140176526093232"></a><a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-startref="ix_dpquestwhat" data-tertiary="what, transformations" data-type="indexterm" id="idm140176526091888"></a></p>
+</div></section>
+
+<section data-type="sect2" data-pdf-bookmark="Where: Windowing"><div class="sect2" id="idm140176526157888">
+<h2><em><span class="where_lt">Where</span></em>: Windowing</h2>
+
+<p>As discussed in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>, windowing is <a contenteditable="false" data-primary="windowing" data-type="indexterm" id="ix_wind"></a>the process of slicing up a data source along temporal boundaries.<a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-tertiary="where, windowing" data-type="indexterm" id="ix_dpquestwhere"></a> Common windowing strategies include fixed windows, sliding windows, and sessions windows, as demonstrated in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#example_windowing_strategies_each_examples_is_shown_for_three">Figure&nbsp;2-4</a>.</p>
+
+<figure><div id="example_windowing_strategies_each_examples_is_shown_for_three" class="figure"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0204.png" width="600" height="255" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0204.png">
+<h6><span class="label">Figure 2-4. </span>Example windowing strategies. Each example is shown for three different keys, highlighting the difference between aligned windows (which apply across all the data) and unaligned windows (which apply across a subset of the data).</h6>
+</div></figure>
+
+<p>To get a better sense of what windowing looks like in practice, let’s take our integer summation pipeline and window it into fixed, two-minute windows. <a contenteditable="false" data-primary="windowing" data-secondary="summation code example" data-type="indexterm" id="idm140176526079632"></a>With Beam, the change is a simple addition of a <code>Window.into</code> transform, which you can see highlighted in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_code">Example&nbsp;2-2</a>.</p>
+
+<div data-type="example" id="windowed_summation_code">
+<h5><span class="label">Example 2-2. </span>Windowed summation code</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="yellow_bg where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>)
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<p>Recall that Beam provides a unified model that works in both batch and streaming because semantically batch is really just a subset of streaming. <a contenteditable="false" data-primary="windowing" data-secondary="summation on a batch engine" data-type="indexterm" id="idm140176526072416"></a>As such, let’s first execute this pipeline on a batch engine; the mechanics are more straightforward, and it will give us something to directly compare against when we switch to a streaming engine. <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_batch_engine">Figure&nbsp;2-5</a> presents the result.</p>
+
+<figure><div id="windowed_summation_on_a_batch_engine" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0205.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0205.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0205.png" alt="Windowed summation on a batch engine" width="600" height="366" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0205.png">
+</video>
+<h6><span class="label">Figure 2-5. </span>Windowed summation on a batch engine</h6>
+</div></figure>
+
+<p>As before, inputs are accumulated in state until they are entirely consumed, after which output is produced. In this case, however, instead of one output, we get four: a single output, for each of the four relevant two-minute event-time windows.</p>
+
+<p>At this point we’ve revisited the two main concepts that I introduced in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>: the relationship between the event-time and processing-time domains, and windowing. If we want to go any further, we’ll need to start adding the new concepts mentioned at the beginning of this section: triggers, watermarks, and accumulation.<a contenteditable="false" data-primary="windowing" data-startref="ix_wind" data-type="indexterm" id="idm140176526062800"></a><a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-startref="ix_dpquestwhere" data-tertiary="where, windowing" data-type="indexterm" id="idm140176526061424"></a></p>
+</div></section>
+</div></section>
+
+<section data-type="sect1" data-pdf-bookmark="Going Streaming: When and How"><div class="sect1" id="idm140176526059184">
+<h1>Going Streaming: <em><span class="when_lt">When</span></em> and <em><span class="how_lt">How</span></em></h1>
+
+<p>We just observed the execution of a windowed pipeline on a batch engine. But, ideally, <a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-type="indexterm" id="ix_strmwhhow"></a>we’d like to <a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-tertiary="when and how in streaming systems" data-type="indexterm" id="ix_dpquestwhhow"></a>have lower latency for our results, and we’d also like to natively handle unbounded data sources. Switching to a streaming engine is a step in the right direction, but our previous strategy of waiting until our input has been consumed in its entirety to generate output is no longer feasible. Enter triggers and watermarks.</p>
+
+<section data-type="sect2" data-pdf-bookmark="When: The Wonderful Thing About Triggers Is Triggers Are Wonderful Things!"><div class="sect2" id="idm140176526051712">
+<h2><em><span class="when_lt">When</span></em>: The Wonderful Thing About Triggers Is Triggers Are Wonderful Things!</h2>
+
+<p>Triggers provide the answer to the question: “<em><span class="when_lt">When</span></em> in processing time are results materialized?” Triggers <a contenteditable="false" data-primary="triggers" data-type="indexterm" id="ix_trig"></a>declare <a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-tertiary="when, triggers" data-type="indexterm" id="ix_strmwhhowtrg"></a>when output for a window should happen in processing time (though the triggers themselves might make those decisions based on things that happen in other time domains, such as watermarks progressing in the event-time domain, as we’ll see in a few moments). Each specific output for a window is referred to as a <em>pane</em> of the window.</p>
+
+<p>Though it’s possible to imagine quite a breadth of possible triggering semantics,<sup><a data-type="noteref" id="idm140176526043136-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176526043136" class="totri-footnote">3</a></sup> conceptually there are only two generally useful types of triggers, and practical applications almost always boil down using either one or a combination of both:</p>
+
+<dl>
+	<dt>Repeated update triggers</dt>
+	<dd>
+	<p>These periodically generate updated<a contenteditable="false" data-primary="triggers" data-secondary="repeated update" data-type="indexterm" id="idm140176526040144"></a> panes for a window<a contenteditable="false" data-primary="repeated update triggers" data-type="indexterm" id="idm140176526038544"></a> as its contents evolve. These updates can be materialized with every new record, or they can happen after some processing-time delay, such as once a minute. The choice of period for a repeated update trigger is primarily an exercise in balancing latency and cost.</p>
+	</dd>
+	<dt>Completeness triggers</dt>
+	<dd>
+	<p>These materialize a pane for a window only after the input for that window is believed to be complete to some threshold.<a contenteditable="false" data-primary="triggers" data-secondary="completeness" data-type="indexterm" id="idm140176526035472"></a><a contenteditable="false" data-primary="completeness triggers" data-type="indexterm" id="idm140176526034096"></a> This type of trigger is most analogous to what we’re familiar with in batch processing: only after the input is complete do we provide a result. The difference in the trigger-based approach is that the notion of completeness is scoped to the context of a single window, rather than always being bound to the completeness of the entire input.</p>
+	</dd>
+</dl>
+
+<p>Repeated update triggers are the most common type of trigger encountered in streaming systems. They are simple to implement and simple to understand, and they provide useful semantics for a specific type of use case: repeated (and eventually consistent) updates to a materialized dataset, analogous to the semantics you get with materialized views in the database world.</p>
+
+<p>Completeness triggers are less frequently encountered, but provide streaming semantics that more closely align with those from the classic batch processing world. They also provide tools for reasoning about things like missing data and late data, both of which we discuss shortly (and in the next chapter) as we explore the underlying primitive that drives completeness triggers: watermarks.</p>
+
+<p>But first, let’s start simple and look at some basic repeated update triggers in action. To make the notion<a contenteditable="false" data-primary="repeated update triggers" data-secondary="firing with every new record" data-type="indexterm" id="idm140176526030080"></a> of triggers a bit more concrete, let’s go ahead and add the most straightforward type of trigger to our example pipeline: a trigger that fires with every new record, as shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#triggering_repeatedly_with_every_record">Example&nbsp;2-3</a>.</p>
+
+<div data-type="example" id="triggering_repeatedly_with_every_record">
+<h5><span class="label">Example 2-3. </span>Triggering repeatedly with every record</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+                <span class="when_lt yellow_bg">.triggering(Repeatedly(AfterCount(1)))</span>);
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<p>If we were to run this new pipeline on a streaming engine, the results would look something like that shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#per_record_triggering_on_a_streaming_engine">Figure&nbsp;2-6</a>.</p>
+
+<figure><div id="per_record_triggering_on_a_streaming_engine" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0206.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0206.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0206.png" alt="Per-record triggering on a streaming engine" width="600" height="366" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0206.png">
+</video>
+<h6><span class="label">Figure 2-6. </span>Per-record triggering on a streaming engine</h6>
+</div></figure>
+
+<p>You can see how we now get multiple outputs (panes) for each window: once per corresponding input. This sort of triggering pattern works well when the output stream is being written to some sort of table that you can simply poll for results. Any time you look in the table, you’ll see the most up-to-date value for a given window, and those values will converge toward correctness over time.</p>
+
+<p>One downside of per-record triggering is that it’s quite chatty. When processing large-scale data, aggregations like summation provide a nice opportunity to reduce the cardinality of the stream without losing information. <a contenteditable="false" data-primary="cardinality" data-secondary="reducing for a stream" data-type="indexterm" id="idm140176525837184"></a>This is particularly noticeable for cases in which you have high-volume keys; for our example, massive teams with lots of active players. Imagine a massively multiplayer game in which players are split into one of two factions, and you want to tally stats on a per-faction basis. It’s probably unnecessary to update your tallies with every new input record for every player in a given faction. Instead, you might be happy updating them after some processing-time delay, say every second, or every minute. The nice side effect of using processing-time delays is that it has an equalizing effect across high-volume keys or windows: the resulting stream ends up being more uniform cardinality-wise.</p>
+
+<p>There are two different approaches<a contenteditable="false" data-primary="processing time" data-secondary="delays in triggers" data-type="indexterm" id="idm140176525834320"></a> to processing-time <a contenteditable="false" data-primary="triggers" data-secondary="processing-time delays in" data-tertiary="aligned delays" data-type="indexterm" id="idm140176525832816"></a>delays in triggers: <em>aligned delays</em> (where the delay slices up processing time into fixed regions<a contenteditable="false" data-primary="aligned delays (processing time in triggers)" data-type="indexterm" id="idm140176525830544"></a> that align across keys and windows) and <em>unaligned delays</em> (where the delay is relative to the data observed within a given window). A pipeline with unaligned delays might look like <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#triggering_on_aligned_two_minute_processing_time_boundaries">Example&nbsp;2-4</a>, the results of which are shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_aligned_delay_triggers">Figure&nbsp;2-7</a>.</p>
+
+<div data-type="example" id="triggering_on_aligned_two_minute_processing_time_boundaries">
+<h5><span class="label">Example 2-4. </span>Triggering on aligned two-minute processing-time boundaries</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(Repeatedly(<span class="yellow_bg">AlignedDelay(TWO_MINUTES)</span></span><span class="when_lt">)</span>)
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<figure><div id="two_minute_aligned_delay_triggers" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0207.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0207.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0207.png" alt="Two-minute aligned delay triggers (i.e., microbatching)" width="600" height="366" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0207.png">
+</video>
+<h6><span class="label">Figure 2-7. </span>Two-minute aligned delay triggers (i.e., microbatching)</h6>
+</div></figure>
+
+<p>This sort of aligned delay trigger is effectively what you get from a microbatch streaming system like Spark Streaming. The nice thing about it is predictability; you get regular updates across all modified windows at the same time.<a contenteditable="false" data-primary="triggers" data-secondary="processing-time delays in" data-tertiary="unaligned delays" data-type="indexterm" id="idm140176525815744"></a><a contenteditable="false" data-primary="unaligned delays (processing time in triggers)" data-type="indexterm" id="idm140176525814080"></a> That’s also the downside: all updates happen at once, which results in bursty workloads that often require greater peak provisioning to properly handle the load. The alternative is to use an unaligned delay. That would look something <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#triggering_on_unaligned_two_minute_processing_time_boundaries">Example&nbsp;2-5</a> in Beam. <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_unaligned_delay_triggers">Figure&nbsp;2-8</a> presents the results.</p>
+
+<div data-type="example" id="triggering_on_unaligned_two_minute_processing_time_boundaries">
+<h5><span class="label">Example 2-5. </span>Triggering on unaligned two-minute processing-time boundaries</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(Repeatedly(<span class="yellow_bg">UnalignedDelay</span>(TWO_MINUTES))</span>
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+
+<figure><div id="two_minute_unaligned_delay_triggers" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0208.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0208.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0208.png" alt="Two-minute unaligned delay triggers" width="600" height="423" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0208.png">
+</video>
+<h6><span class="label">Figure 2-8. </span>Two-minute unaligned delay triggers</h6>
+</div></figure>
+
+<p>Contrasting the unaligned delays in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_unaligned_delay_triggers">Figure&nbsp;2-8</a> to the aligned delays in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#per_record_triggering_on_a_streaming_engine">Figure&nbsp;2-6</a>, it’s easy to see how the unaligned delays spread the load out more evenly across time. The actual latencies involved for any given window differ between the two, sometimes more and sometimes less, but in the end the average latency will remain essentially the same. From that perspective, unaligned delays are typically the better choice for large-scale processing because they result in a more even load distribution over time.</p>
+
+<p>Repeated update triggers are great for use cases in which we simply want periodic updates to our results over time and are fine with those updates converging toward correctness with no clear indication of when correctness is achieved. However, as we discussed in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>, the vagaries of distributed systems often lead to a varying level of skew between the time an event happens and the time it’s actually observed by your pipeline, which means it can be difficult to reason about when your output presents an accurate and complete view of your input data. For cases in which input completeness matters, it’s important to have some way of reasoning about completeness rather than blindly trusting the results calculated by whichever subset of data happen to have found their way to your pipeline. Enter watermarks.<a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-startref="ix_strmwhhowtrg" data-tertiary="when, triggers" data-type="indexterm" id="idm140176525795552"></a><a contenteditable="false" data-primary="triggers" data-startref="ix_trig" data-type="indexterm" id="idm140176525793568"></a></p>
+</div></section>
+
+<section data-type="sect2" data-pdf-bookmark="When: Watermarks"><div class="sect2" id="idm140176526050768">
+<h2><em><span class="when_lt">When</span></em>: Watermarks</h2>
+
+<p>Watermarks are a supporting aspect of the answer<a contenteditable="false" data-primary="watermarks" data-type="indexterm" id="ix_watermk"></a> to the<a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-tertiary="when, watermarks" data-type="indexterm" id="ix_strmwhhowwtr"></a> question: “<em><span class="when_lt">When</span></em> in processing time are results materialized?” Watermarks are temporal notions of input completeness in the event-time domain. Worded differently, they are the way the system measures progress and completeness relative to the event times of the records being processed in a stream of events (either bounded or unbounded, though their usefulness is more apparent in the unbounded case).</p>
+
+<p>Recall this diagram from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>, slightly modified in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#event_time_progress_skew_and_watermarks">Figure&nbsp;2-9</a>, in which I described<a contenteditable="false" data-primary="event time" data-secondary="skew and watermarks" data-type="indexterm" id="idm140176525782768"></a> the skew between event time and <a contenteditable="false" data-primary="processing time" data-type="indexterm" id="idm140176525781216"></a>processing time as an ever-changing function of time for most real-world distributed data processing systems.</p>
+
+<figure><div id="event_time_progress_skew_and_watermarks" class="figure"><img alt="" class="width_60" src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0209.png" width="600" height="647" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0209.png">
+<h6><span class="label">Figure 2-9. </span>Event-time progress, skew, and watermarks</h6>
+</div></figure>
+
+<p>That meandering red line that I claimed represented reality is essentially the watermark; it captures the progress of event-time completeness as processing time progresses.<a contenteditable="false" data-primary="watermarks" data-secondary="function, converting processing time to event time" data-type="indexterm" id="idm140176525776816"></a> Conceptually, you can think of the watermark as a function, <em>F</em>(<em>P</em>) → <em>E</em>, which takes a point in <a contenteditable="false" data-primary="processing time" data-secondary="conversion to event time in watermarks" data-type="indexterm" id="idm140176525773824"></a>processing time and returns a point in event time.<sup><a data-type="noteref" id="idm140176525772304-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525772304" class="totri-footnote">4</a></sup> That point in event time, <em>E</em>, is the point up to which the system believes all inputs with event times less than <em>E</em> have been observed. In other words, it’s an assertion that no more data with event times less than <em>E</em> will ever be seen again. Depending upon the type of watermark, perfect or heuristic, that assertion can be a strict guarantee or an educated guess, respectively:</p>
+
+<dl>
+	<dt>Perfect watermarks</dt>
+	<dd>
+	<p>For the case in which we have perfect knowledge of all of the input data, it’s possible to construct a perfect watermark.<a contenteditable="false" data-primary="perfect watermarks" data-type="indexterm" id="idm140176525767824"></a><a contenteditable="false" data-primary="watermarks" data-secondary="perfect" data-type="indexterm" id="idm140176525766720"></a> In such a case, there is no such thing as late data; all data are early or on time.</p>
+	</dd>
+	<dt>Heuristic watermarks</dt>
+	<dd>
+	<p>For many distributed input sources, perfect knowledge of the input data is impractical, in which case the next best option is to provide a heuristic watermark.<a contenteditable="false" data-primary="watermarks" data-secondary="heuristic" data-type="indexterm" id="idm140176525763728"></a><a contenteditable="false" data-primary="heuristic watermarks" data-type="indexterm" id="idm140176525762256"></a> Heuristic watermarks use whatever information is available about the inputs (partitions, ordering within partitions if any, growth rates of files, etc.) to provide an estimate of progress that is as accurate as possible. In many cases, such watermarks can be remarkably accurate in their predictions. Even so, the use of a heuristic watermark means that it might sometimes be wrong, which will lead to late data. We show you about ways to deal with late data soon.</p>
+	</dd>
+</dl>
+
+<p>Because they provide a notion of completeness relative to our inputs, watermarks form the<a contenteditable="false" data-primary="triggers" data-secondary="completeness" data-tertiary="watermark completeness trigger" data-type="indexterm" id="idm140176525759536"></a> foundation for the second <a contenteditable="false" data-primary="completeness triggers" data-secondary="watermarks" data-type="indexterm" id="idm140176525757792"></a>type of trigger mentioned previously: <em>completeness triggers</em>. Watermarks themselves are a fascinating and complex topic, as you’ll see when you get to Slava’s watermarks deep dive in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch03.html#watermarks_chapter">Chapter&nbsp;3</a>. But for now, let’s look at them in action by updating our example pipeline to utilize a completeness trigger built upon watermarks, as demonstrated in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#watermark_completeness_trigger">Example&nbsp;2-6</a>.</p>
+
+<div data-type="example" id="watermark_completeness_trigger">
+<h5><span class="label">Example 2-6. </span>Watermark completeness trigger</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(<span class="yellow_bg">AfterWatermark()</span>)</span>)
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<p>Now, an interesting quality of watermarks is that they are a class of functions, meaning there are multiple different functions <em>F</em>(<em>P</em>) → <em>E</em> that satisfy the properties of a watermark, to varying degrees of success.<a contenteditable="false" data-primary="watermarks" data-secondary="as class of functions" data-type="indexterm" id="idm140176525746272"></a> As I noted earlier, for situations in which you have perfect knowledge of your input data, it might be possible to build a perfect watermark, which is the ideal situation. But for cases in which you lack perfect knowledge of the inputs or for which it’s simply too computationally expensive to calculate the perfect watermark, you might instead choose to utilize a heuristic for defining your watermark. The point I want to make here is that the given watermark algorithm in use is independent from the pipeline itself. We’re not going to discuss in detail what it means to implement a watermark here (Slava does that in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch03.html#watermarks_chapter">Chapter&nbsp;3</a>). For now, to help drive home this idea that a given input set can have different watermarks applied to it, let’s take a look at our pipeline in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#watermark_completeness_trigger">Example&nbsp;2-6</a> when <a contenteditable="false" data-primary="perfect watermarks" data-secondary="applying to same dataset with a heuristic watermark" data-type="indexterm" id="idm140176525741984"></a>executed<a contenteditable="false" data-primary="heuristic watermarks" data-secondary="applying to same dataset with a perfect watermark" data-type="indexterm" id="idm140176525740448"></a> on<a contenteditable="false" data-primary="watermarks" data-secondary="applying perfect and heuristic watermarks to same dataset" data-type="indexterm" id="idm140176525738880"></a> the same<a contenteditable="false" data-primary="windowing" data-secondary="summation on streaming dataset with perfect and heuristic watermarks" data-type="indexterm" id="idm140176525737296"></a> dataset but using two distinct watermark implementations (<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_perfect">Figure&nbsp;2-10</a>): on the left, a perfect watermark; on the right, a heuristic watermark.</p>
+
+<p>In both cases, windows are materialized as the watermark passes the end of the window. The perfect watermark, as you might expect, perfectly captures the event-time completeness of the pipeline as time progresses. In contrast, the specific algorithm used for the heuristic watermark on the right fails to take the value of 9 into account,<sup><a data-type="noteref" id="idm140176525734160-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525734160" class="totri-footnote">5</a></sup> which drastically changes the shape of the materialized outputs, both in terms of output latency and correctness (as seen by the incorrect answer of 5 that’s provided for the [12:00, 12:02) window).</p>
+
+<p>The big difference between the watermark triggers from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#event_time_progress_skew_and_watermarks">Figure&nbsp;2-9</a> and the repeated update triggers we saw in Figures <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_batch_engine">2-5</a> through <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_aligned_delay_triggers">2-7</a> is that the <em>watermarks give us a way to reason about the completeness of our input</em>. Until the system<a contenteditable="false" data-primary="completeness" data-secondary="watermarks giving notion of" data-type="indexterm" id="idm140176525726704"></a> materializes an output for a given window, we know that the system does not yet believe the inputs to be complete. This is especially important for use cases in which you want to reason about a <em>lack of data</em> in the input, or <em>missing data</em>.</p>
+
+<figure><div id="windowed_summation_on_a_streaming_engine_with_perfect" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0210.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0210.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0210.png" alt="Windowed summation on a streaming engine with perfect (left) and heuristic (right) watermarks" width="540" height="800" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0210.png">
+</video>
+<h6><span class="label">Figure 2-10. </span>Windowed summation on a streaming engine with perfect (left) and heuristic (right) watermarks</h6>
+</div></figure>
+
+<p>A great example of a missing-data use case is outer joins. <a contenteditable="false" data-primary="outer joins" data-type="indexterm" id="idm140176525718960"></a>Without a notion of completeness like watermarks, how do you know when to give up and emit a partial join rather than continue to wait for that join to complete? You don’t. And basing that decision on a processing-time delay, which is the common approach in streaming systems that lack true watermark support, is not a safe way to go, because of the variable nature of event-time skew we spoke about in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>: as long as skew remains smaller than the chosen processing-time delay, your missing-data results will be correct, but any time skew grows beyond that delay, they will suddenly become <em>in</em>correct. From this perspective, event-time watermarks are a critical piece of the puzzle for many real-world streaming use cases which must reason about a lack of data in the input, such as outer joins, anomaly detection, and so on.</p>
+
+<p>Now, with that said, these watermark examples also highlight two <em>shortcomings</em> of watermarks (and any other notion of completeness), specifically that they can be one of the following:</p>
+
+<dl>
+	<dt>Too slow</dt>
+	<dd>
+	<p>When a watermark of any<a contenteditable="false" data-primary="watermarks" data-secondary="too slow" data-type="indexterm" id="idm140176525712848"></a> type is correctly delayed due to known unprocessed data (e.g., slowly growing input logs due to network bandwidth constraints), that translates directly into delays in output if advancement of the watermark is the only thing you depend on for stimulating results.</p>
+
+	<p>This is most obvious in the left diagram of <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_perfect">Figure&nbsp;2-10</a>, for which the late arriving 9 holds back the watermark for all the subsequent windows, even though the input data for those windows become complete earlier. This is particularly apparent for the second window, [12:02, 12:04), for which it takes nearly seven minutes from the time the first value in the window occurs until we see any results for the window whatsoever. The heuristic watermark in this example doesn’t suffer the same issue quite so badly (five minutes until output), but don’t take that to mean heuristic watermarks never suffer from watermark lag; that’s really just a consequence of the record I chose to omit from the heuristic watermark in this specific example.</p>
+
+	<p>The important point here is the following: Although watermarks provide a very useful notion of completeness, depending upon completeness for producing output is often not ideal from a latency perspective. Imagine a dashboard that contains valuable metrics, windowed by hour or day. It’s unlikely you’d want to wait a full hour or day to begin seeing results for the current window; that’s one of the pain points of using classic batch systems to power such systems. Instead, it would be much nicer to see the results for those windows refine over time as the inputs evolve and eventually become complete.</p>
+	</dd>
+	<dt>Too fast</dt>
+	<dd>
+	<p>When a heuristic watermark is incorrectly advanced earlier than it should be, it’s possible for data with event times before the watermark to arrive some time later, creating late data.<a contenteditable="false" data-primary="watermarks" data-secondary="too fast" data-type="indexterm" id="idm140176525706224"></a> This is what happened in the example on the right: the watermark advanced past the end of the first window before all the input data for that window had been observed, resulting in an incorrect output value of 5 instead of 14. This shortcoming is strictly a problem with heuristic watermarks; their heuristic nature implies they will sometimes be wrong. As a result, relying on them alone for determining when to materialize output is insufficient if you care about correctness.</p>
+	</dd>
+</dl>
+
+<p>In <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html#streaming_one_oh_one">Chapter&nbsp;1</a>, I made some rather emphatic statements about notions of completeness being insufficient for most use cases requiring robust out-of-order processing of unbounded data streams. These two shortcomings—watermarks being too slow or too fast—are the foundations for those arguments. You simply cannot get both low latency and correctness out of a system that relies solely on notions of completeness.<sup><a data-type="noteref" id="idm140176525702144-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525702144" class="totri-footnote">6</a></sup> So, for cases for which you do want the best of both worlds, what’s a person to do? Well, if repeated update triggers provide low-latency updates but no way to reason about completeness, and watermarks provide a notion of completeness but variable and possible high latency, why not combine their powers together?<a contenteditable="false" data-primary="watermarks" data-startref="ix_watermk" data-type="indexterm" id="idm140176525700864"></a><a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-startref="ix_strmwhhowwtr" data-tertiary="when, watermarks" data-type="indexterm" id="idm140176525699520"></a></p>
+</div></section>
+
+<section data-type="sect2" data-pdf-bookmark="When: Early/On-Time/Late Triggers FTW!"><div class="sect2" id="idm140176525791936">
+<h2><em><span class="when_lt">When</span></em>: Early/On-Time/Late Triggers FTW!</h2>
+
+<p>We’ve now looked at the two main types of triggers: repeated update triggers and completeness/watermark triggers.<a contenteditable="false" data-primary="early/on-time/late triggers" data-type="indexterm" id="ix_eoltrig"></a><a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-tertiary="when, early/on-time/late triggers" data-type="indexterm" id="ix_strmwhhoweol"></a><a contenteditable="false" data-primary="triggers" data-secondary="early/on-time/late" data-type="indexterm" id="ix_trigeol"></a> In many case, neither of them alone is sufficient, but the combination of them together is. Beam recognizes this fact by providing an extension of the standard watermark trigger that also supports repeated update triggering on either side of the watermark. This is known as the early/on-time/late trigger because it partitions the panes that are materialized by the compound trigger into three categories:</p>
+
+<ul>
+	<li>
+	<p>Zero or more <em>early panes</em>, which are the result of a repeated update trigger that periodically fires up until the watermark passes the end of the window.<a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="early panes" data-type="indexterm" id="idm140176525687920"></a> The panes generated by these firings contain speculative results, but allow us to observe the evolution of the window over time as new input data arrive. This compensates for the shortcoming of watermarks sometimes being <em>too slow</em>.</p>
+	</li>
+	<li>
+	<p>A single <em>on-time pane</em>, which is the result of the completeness/watermark trigger <a contenteditable="false" data-primary="on-time pane" data-type="indexterm" id="idm140176525684176"></a>firing <a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="on-time pane" data-type="indexterm" id="idm140176525682864"></a>after the watermark passes the end of the window. This firing is special because it provides an assertion that the system now believes the input for this window to be complete.<sup><a data-type="noteref" id="idm140176525681168-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525681168" class="totri-footnote">7</a></sup> This means that it is now safe to reason about <em>missing data</em>; for example, to emit a partial join when performing an outer join.</p>
+	</li>
+	<li>
+	<p>Zero or more <em>late panes</em>, which are the result of another (possibly different) repeated <a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="late panes" data-type="indexterm" id="idm140176525678368"></a><a contenteditable="false" data-primary="late panes" data-type="indexterm" id="idm140176525676944"></a>update trigger that periodically fires any time late data arrive after the watermark has passed the end of the window. In the case of a perfect watermark, there will always be zero late panes. But in the case of a heuristic watermark, any data the watermark failed to properly account for will result in a late firing. This compensates for the shortcoming of watermarks being <em>too fast</em>.</p>
+	</li>
+</ul>
+
+<p>Let’s see how this looks in action. We’ll update our pipeline to use a periodic processing-time trigger with an aligned delay of one minute for the early firings, and a per-record trigger for the late firings. That way, the early firings will give us some amount of batching for high-volume windows (thanks to the fact that the trigger will fire only once per minute, regardless of the throughput into the window), but we won’t introduce unnecessary latency for the late firings, which are hopefully somewhat rare if we’re using a reasonably accurate heuristic watermark. In Beam, that looks <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#early_one_time_and_late_firings_via_the_early_on_time_late_api">Example&nbsp;2-7</a> (<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a> shows the results).</p>
+
+<div data-type="example" id="early_one_time_and_late_firings_via_the_early_on_time_late_api">
+<h5><span class="label">Example 2-7. </span>Early, on-time, and late firings via the early/on-time/late API</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(AfterWatermark()</span>
+			     <span class="when_lt yellow_bg">.withEarlyFirings(AlignedDelay(ONE_MINUTE))</span>
+			     <span class="when_lt"><span class="yellow_bg">.withLateFirings(AfterCount(1))</span>)</span>)
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<figure><div id="windowed_summation_on_a_streaming_engine_with_early_on_time" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0211.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0211.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0211.png" alt="Windowed summation on a streaming engine with early, on-time, and late firings" width="540" height="800" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0211.png">
+</video>
+<h6><span class="label">Figure 2-11. </span>Windowed summation on a streaming engine with early, on-time, and late firings</h6>
+</div></figure>
+
+<p>This version has two clear improvements over <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#event_time_progress_skew_and_watermarks">Figure&nbsp;2-9</a>:</p>
+
+<ul>
+	<li>
+	<p>For the “watermarks too slow” case in the second window, [12:02, 12:04): we now provide periodic early updates once per minute. The difference is most stark in the perfect watermark case, for which time-to-first-output is reduced from almost seven minutes down to three and a half; but it’s also clearly improved in the heuristic case, as well. Both versions now provide steady refinements over time (panes with values 7, 10, then 18), with relatively minimal latency between the input becoming complete and materialization of the final output pane for the window.</p>
+	</li>
+	<li>
+	<p>For the “heuristic watermarks too fast” case in the first window, [12:00, 12:02): when the value of 9 shows up late, we immediately incorporate it into a new, corrected pane with value of 14.</p>
+	</li>
+</ul>
+
+<p>One interesting side effect of these new triggers is that they effectively normalize the output pattern between the perfect and <a contenteditable="false" data-primary="heuristic watermarks" data-secondary="early/on-time/late triggers and" data-type="indexterm" id="idm140176525654960"></a>heuristic watermark versions. <a contenteditable="false" data-primary="perfect watermarks" data-secondary="early/on-time/late triggers and" data-type="indexterm" id="idm140176525653488"></a>Whereas the two versions in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_perfect">Figure&nbsp;2-10</a> were starkly different, the two versions here look quite similar. They also look much more similar to the various repeated update version from Figures <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#per_record_triggering_on_a_streaming_engine">2-6</a> through <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_unaligned_delay_triggers">2-8</a>, with one important difference: thanks to the use of the watermark trigger, we can also reason about input completeness in the results we generate with the early/on-time/late trigger. This allows us to better handle use cases that care about <em>missing data</em>, like outer joins, anomaly detection, and so on.</p>
+
+<p>The biggest remaining difference between the perfect and heuristic early/on-time/late versions at this point is window lifetime bounds. In the perfect watermark case, we know we’ll never see any more data for a window after the watermark has passed the end of it, hence we can drop all of our state for the window at that time. In the heuristic watermark case, we still need to hold on to the state for a window for some amount of time to account for late data. But as of yet, our system doesn’t have any good way of knowing just how long state needs to be kept around for each window. That’s where <em>allowed lateness</em> comes in.<a contenteditable="false" data-primary="early/on-time/late triggers" data-startref="ix_eoltrig" data-type="indexterm" id="idm140176525646064"></a><a contenteditable="false" data-primary="triggers" data-secondary="early/on-time/late" data-startref="ix_trigeol" data-type="indexterm" id="idm140176525644640"></a><a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-startref="ix_strmwhhoweol" data-tertiary="when, early/on-time/late triggers" data-type="indexterm" id="idm140176525642992"></a></p>
+</div></section>
+
+<section data-type="sect2" data-pdf-bookmark="When: Allowed Lateness (i.e., Garbage Collection)"><div class="sect2" id="idm140176525696992">
+<h2><em><span class="when_lt">When</span></em>: Allowed Lateness (i.e., Garbage Collection)</h2>
+
+<p>Before moving on to our last question (“<em><span class="how_lt">How</span></em> do refinements of results relate?”), I’d like to touch<a contenteditable="false" data-primary="allowed lateness" data-type="indexterm" id="ix_alllate"></a> on<a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="with allowed lateness" data-type="indexterm" id="ix_eoltrigallla"></a> a practical<a contenteditable="false" data-primary="triggers" data-secondary="early/on-time/late" data-tertiary="with allowed lateness" data-type="indexterm" id="ix_trigeollate"></a> necessity <a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-tertiary="when, allowed lateness" data-type="indexterm" id="ix_strmwhhowlate"></a>within long-lived, <a contenteditable="false" data-primary="lateness (allowed)" data-type="indexterm" id="ix_late"></a>out-of-order stream processing systems: garbage collection. In the heuristic watermarks example in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a>, the persistent state for each window lingers around for the entire lifetime of the example; this is necessary to allow us to appropriately deal with late data when/if they arrive.<a contenteditable="false" data-primary="windowing" data-secondary="lifetime of windows" data-type="indexterm" id="idm140176525627248"></a> But while it would be great to be able to keep around all of our persistent state until the end of time, in reality, when dealing with an unbounded data source, it’s often not practical to keep state (including metadata) for a given window indefinitely; we’ll eventually run out of disk space (or at the very least tire of paying for it, as the value for older data diminishes over time).</p>
+
+<p>As a result, any real-world out-of-order processing system needs to provide some way to bound the lifetimes of the windows it’s processing. A clean and concise way of doing this is by defining a horizon on the allowed lateness within the system; that is, placing a bound on how late any given <em>record</em> may be (relative to the watermark) for the system to bother processing it; any data that arrives after this horizon are simply dropped. After you’ve bounded how late individual data may be, you’ve also established precisely how long the state for windows must be kept around: until the watermark exceeds the lateness horizon for the end of the window. But in addition, you’ve also given the system the liberty to immediately drop any data later than the horizon as soon as they’re observed, which means the system doesn’t waste resources processing data that no one cares about.</p>
+
+<aside data-type="sidebar" epub:type="sidebar"><div class="sidebar" id="idm140176525623536">
+ <h5>Measuring Lateness</h5>
+ <p>It might seem a little odd to be specifying a horizon for handling late data using the very metric that resulted in the late data in the first place (i.e., the heuristic watermark). And in some sense it is. But of the options available, it’s arguably the best. The only other practical option would be to specify the horizon in processing time (e.g., keep windows around for 10 minutes of processing time after the watermark passes the end of the window), but using processing time would leave the garbage collection policy vulnerable to issues within the pipeline itself (e.g., workers crashing, causing the pipeline to stall for a few minutes), which could lead to windows that didn’t actually have a chance to handle late data that they otherwise should have. By specifying the horizon in the event-time domain, garbage collection is directly tied to the actual progress of the pipeline, which decreases the likelihood that a window will miss its opportunity to handle late data appropriately.</p>
+
+<p>Note however, that not all watermarks are created equal. When we speak of watermarks in this book, we generally refer to <em>low</em> watermarks, which pessimistically attempt to capture the event time of the <em>oldest</em> unprocessed record the system is aware of. The nice thing about dealing with lateness via low watermarks is that they are resilient to changes in event-time skew; no matter how large the skew in a pipeline may grow, the low watermark will always track the oldest outstanding event known to the system, providing the best guarantee of correctness possible.</p>
+
+<p>In contrast, some systems may use the term “watermark” to mean other things. For example, <a href="http://bit.ly/2yhCHMm">watermarks in Spark Structured Streaming</a> are <em>high</em> watermarks, which optimistically track the event time of the <em>newest</em> record the system is aware of. When dealing with lateness, the system is free to garbage collect any window older than the high watermark adjusted by some user-specified lateness threshold. In other words, the system allows you to specify the maximum amount of event-time skew you expect to see in your pipeline, and then throws away any data outside of that skew window. This can work well if skew within your pipeline remains within some constant delta, but is more prone to incorrectly discarding data than low watermarking schemes.</p>
+</div></aside>
+
+<p>Because the interaction between<a contenteditable="false" data-primary="watermarks" data-secondary="allowed lateness and" data-type="indexterm" id="idm140176525616032"></a> allowed lateness and the watermark is a little subtle, it’s worth looking at an example. Let’s take the heuristic watermark pipeline from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#early_one_time_and_late_firings_via_the_early_on_time_late_api">Example&nbsp;2-7</a>/<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a> and add in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#early_on_time_late_firings_with_allowed_lateness">Example&nbsp;2-8</a> a lateness horizon of one minute (note that this particular horizon has been chosen strictly because it fits nicely into the diagram; for real-world use cases, a larger horizon would likely be much more practical):</p>
+
+<div data-type="example" id="early_on_time_late_firings_with_allowed_lateness">
+<h5><span class="label">Example 2-8. </span>Early/on-time/late firings with allowed lateness</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(</span>
+                 <span class="when_lt">AfterWatermark()</span>
+                   <span class="when_lt">.withEarlyFirings(AlignedDelay(ONE_MINUTE))</span>
+                   <span class="when_lt">.withLateFirings(AfterCount(1)))</span>
+               <span class="when_lt yellow_bg">.withAllowedLateness(ONE_MINUTE)</span>)
+ .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<p>The execution of this pipeline would look something like <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#allowed_lateness_with_early_on_time_late_firings">Figure&nbsp;2-12</a>, in which I’ve added the following features to highlight the effects of allowed lateness:</p>
+
+<ul>
+	<li>
+	<p>The thick black line denoting the current position in processing time is now annotated with ticks indicating the lateness horizon (in event time) for all active windows.</p>
+	</li>
+	<li>
+	<p>When the watermark passes the lateness horizon for a window, that window is closed, which means that all state for the window is discarded. I leave around a dotted rectangle showing the extent of time (in both domains) that the window covered when it was closed, with a little tail extending to the right to denote the lateness horizon for the window (for contrasting against the watermark).</p>
+	</li>
+	<li>
+	<p>For this diagram only, I’ve added an additional late datum for the first window with value 6. The 6 is late, but still within the allowed lateness horizon and thus is incorporated into an updated result with value 11. The 9, however, arrives beyond the lateness horizon, so it is simply dropped.</p>
+	</li>
+</ul>
+
+<figure><div id="allowed_lateness_with_early_on_time_late_firings" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0212.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0212.mp4" type="video/mp4"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0212.png" alt="Windowed summation on a streaming engine with early, on-time, and late firings" width="600" height="399" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0212.png">
+</video>
+<h6><span class="label">Figure 2-12. </span>Allowed lateness with early/on-time/late firings</h6>
+</div></figure>
+
+<p>Two final side notes about lateness horizons:</p>
+
+<ul>
+	<li>
+	<p>To be absolutely clear, if you happen to be consuming data from sources for which perfect <a contenteditable="false" data-primary="perfect watermarks" data-secondary="allowed lateness and" data-type="indexterm" id="idm140176525591680"></a>watermarks are available, there’s no need to deal with late data, and an allowed lateness horizon of zero seconds will be optimal. This is what we saw in the perfect watermark portion of <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_perfect">Figure&nbsp;2-10</a>.</p>
+	</li>
+	<li>
+	<p>One noteworthy exception to the rule of needing to specify lateness horizons, even when heuristic watermarks are in use, <a contenteditable="false" data-primary="heuristic watermarks" data-secondary="allowed lateness and" data-type="indexterm" id="idm140176525587808"></a>would be something like computing global aggregates over all time for a tractably finite number of keys (e.g., computing the total number of visits to your site over all time, grouped by web browser family). In this case, the number of active windows in the system is bounded by the limited keyspace in use. As long as the number of keys remains manageably low, there’s no need to worry about limiting the lifetime of windows via allowed lateness.<a contenteditable="false" data-primary="lateness (allowed)" data-startref="ix_late" data-type="indexterm" id="idm140176525585840"></a></p>
+	</li>
+</ul>
+
+<p>Practicality sated, let’s<a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-startref="ix_strmwhhowlate" data-tertiary="when, allowed lateness" data-type="indexterm" id="idm140176525583792"></a> move on<a contenteditable="false" data-primary="triggers" data-secondary="early/on-time/late" data-startref="ix_trigeollate" data-tertiary="with allowed lateness" data-type="indexterm" id="idm140176525581680"></a> to our<a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="with allowed lateness" data-startref="ix_eoltrigallla" data-type="indexterm" id="idm140176525579600"></a> fourth <a contenteditable="false" data-primary="allowed lateness" data-startref="ix_alllate" data-type="indexterm" id="idm140176525577776"></a>and final question.</p>
+</div></section>
+
+<section data-type="sect2" data-pdf-bookmark="How: Accumulation"><div class="sect2" id="idm140176525640448">
+<h2><em><span class="how_lt">How</span></em>: Accumulation</h2>
+
+<p>When triggers are used to produce multiple panes for a single window over time, we find ourselves <a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-tertiary="how, accumulation" data-type="indexterm" id="ix_strmwhhowacc"></a>confronted <a contenteditable="false" data-primary="accumulation" data-type="indexterm" id="ix_accumu"></a>with the last question: “<em><span class="how_lt">How</span></em> do refinements of results relate?” In the examples we’ve seen so far, each successive pane is built upon the one immediately preceding it. However, there are actually three<sup><a data-type="noteref" id="idm140176522881232-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176522881232" class="totri-footnote">8</a></sup> different modes of accumulation:<sup><a data-type="noteref" id="idm140176522880336-marker" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176522880336" class="totri-footnote">9</a></sup></p>
+
+<dl>
+	<dt>Discarding</dt>
+	<dd>
+	<p>Every time a pane is materialized, any stored state is discarded.<a contenteditable="false" data-primary="accumulation" data-secondary="discarding mode" data-type="indexterm" id="idm140176522875600"></a><a contenteditable="false" data-primary="discarding mode (accumulation)" data-type="indexterm" id="idm140176522874224"></a> This means that each successive pane is independent from any that came before. Discarding mode is useful when the downstream consumer is performing some sort of accumulation itself; for example, when sending integers into a system that expects to receive deltas that it will sum together to produce a final count.</p>
+	</dd>
+	<dt>Accumulating</dt>
+	<dd>
+	<p>As in Figures <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#per_record_triggering_on_a_streaming_engine">2-6</a> through <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">2-11</a>, every time a pane is materialized, <a contenteditable="false" data-primary="accumulating mode (accumulation)" data-type="indexterm" id="idm140176522868752"></a>any <a contenteditable="false" data-primary="accumulation" data-secondary="accumulating mode" data-type="indexterm" id="idm140176522867408"></a>stored state is retained, and future inputs are accumulated into the existing state. This means that each successive pane builds upon the previous panes. Accumulating mode is useful when later results can simply overwrite previous results, such as when storing output in a key/value store like HBase or Bigtable.</p>
+	</dd>
+	<dt>Accumulating and retracting</dt>
+	<dd>
+	<p>This is like accumulating mode, but when producing a new pane, it also produces independent retractions for the previous pane(s).<a contenteditable="false" data-primary="accumulation" data-secondary="accumulating and retracting mode" data-type="indexterm" id="idm140176522863888"></a><a contenteditable="false" data-primary="accumulating and retracting mode" data-type="indexterm" id="idm140176522862496"></a><a contenteditable="false" data-primary="retractions (accumulating and retracting mode)" data-type="indexterm" id="idm140176522861376"></a> Retractions (combined with the new accumulated result) are essentially an explicit way of saying “I previously told you the result was <em>X</em>, but I was wrong. Get rid of the <em>X</em> I told you last time, and replace it with <em>Y</em>.” There are two cases for which retractions are particularly helpful:</p>
+
+	<ul>
+		<li>
+		<p>When consumers downstream are <em>regrouping data by a different dimension</em>, it’s entirely possible the new value may end up keyed differently from the previous value and thus end up in a different group. In that case, the new value can’t just overwrite the old value; you instead need the retraction to remove the old value</p>
+		</li>
+		<li>
+		<p>When <em>dynamic windows</em> (e.g., sessions, which we look at more closely in a few moments) are <a contenteditable="false" data-primary="sessions" data-secondary="retractions and" data-type="indexterm" id="idm140176522855264"></a>in use, the new<a contenteditable="false" data-primary="dynamic windows" data-seealso="sessions" data-type="indexterm" id="idm140176522853680"></a> value might be replacing more than one previous window, due to window merging.<a contenteditable="false" data-primary="windowing" data-secondary="dynamic windows and retractions" data-type="indexterm" id="idm140176522852144"></a> In this case, it can be difficult to determine from the new window alone which old windows are being replaced. Having explicit retractions for the old windows makes the task straightforward. We see an example of this in detail in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch08.html#streaming_sql">Chapter&nbsp;8</a>.</p>
+		</li>
+	</ul>
+	</dd>
+</dl>
+
+<p>The different semantics for each group are somewhat clearer when seen side-by-side. Consider the two panes for the second window (the one with event-time range [12:06, 12:08)) in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a> (the one with early/on-time/late triggers). <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#comparing_accumulation_modes_using_the_second_window_from">Table&nbsp;2-1</a> shows what the values for each pane would look like across the three accumulation modes (with <em>accumulating</em> mode being the specific mode used in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a> itself).</p>
+
+<table class="table_white" id="comparing_accumulation_modes_using_the_second_window_from">
+	<caption class="table_black"><span class="label">Table 2-1. </span>Comparing accumulation modes using the second window from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a></caption>
+	<tbody>
+		<tr class="table_mediumgrey">
+			<td class="table_mediumgrey">&nbsp;</td>
+			<td class="table_mediumgrey">
+			<p><strong>Discarding</strong></p>
+			</td>
+			<td class="table_mediumgrey">
+			<p><strong>Accumulating</strong></p>
+			</td>
+			<td class="table_mediumgrey">
+			<p><strong>Accumulating &amp; Retracting</strong></p>
+			</td>
+		</tr>
+		<tr class="table_mediumgrey">
+			<td class="table_mediumgrey">
+			<p><strong>Pane 1: inputs=[3]</strong></p>
+			</td>
+			<td class="table_lightgrey">
+			<p>3</p>
+			</td>
+			<td class="table_lightgrey">
+			<p>3</p>
+			</td>
+			<td class="table_lightgrey">
+			<p>3</p>
+			</td>
+		</tr>
+		<tr class="table_mediumgrey">
+			<td class="table_mediumgrey">
+			<p><strong>Pane 2: inputs=[8, 1]</strong></p>
+			</td>
+			<td class="table_lightgrey">
+			<p>9</p>
+			</td>
+			<td class="table_lightgrey">
+			<p>12</p>
+			</td>
+			<td class="table_lightgrey">
+			<p>12, –3</p>
+			</td>
+		</tr>
+		<tr class="table_darkgrey">
+			<td class="table_darkgrey">
+			<p><strong>Value of final normal pane</strong></p>
+			</td>
+			<td class="table_darkgrey table_red">
+			<p>9</p>
+			</td>
+			<td class="table_darkgrey">
+			<p>12</p>
+			</td>
+			<td class="table_darkgrey">
+			<p>12</p>
+			</td>
+		</tr>
+		<tr class="table_darkgrey">
+			<td class="table_darkgrey">
+			<p><strong>Sum of all panes</strong></p>
+			</td>
+			<td class="table_darkgrey">
+			<p>12</p>
+			</td>
+			<td class="table_darkgrey table_red">
+			<p>15</p>
+			</td>
+			<td class="table_darkgrey">
+			<p>12</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Let’s take a closer look at what’s happening:</p>
+
+<dl>
+	<dt>Discarding</dt>
+	<dd>
+	<p>Each pane incorporates only the values that arrived during that specific pane. As such, the final value observed does not fully capture the total sum. However, if you were to sum all of the independent panes themselves, you would arrive at a correct answer of 12. This is why discarding mode is useful when the downstream consumer itself is performing some sort of aggregation on the materialized panes.</p>
+	</dd>
+	<dt>Accumulating</dt>
+	<dd>
+	<p>As in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a>, each pane incorporates the values that arrived during that specific pane, plus all of the values from previous panes. As such, the final value observed correctly captures the total sum of 12. If you were to sum up the individual panes themselves, however, you’d effectively be double-counting the inputs from pane 1, giving you an incorrect total sum of 15. This is why accumulating mode is most useful when you can simply overwrite previous values with new values: the new value already incorporates all of the data seen thus far.</p>
+	</dd>
+	<dt>Accumulating and retracting</dt>
+	<dd>
+	<p>Each pane includes both a new accumulating mode value as well as a retraction of the previous pane’s value. As such, both the last value observed (excluding retractions) as well as the total sum of all materialized panes (including retractions) provide you with the correct answer of 12. This is why retractions are so powerful.</p>
+	</dd>
+</dl>
+
+<p><a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#discarding_mode_version_of_early_on_time_late_firings">Example&nbsp;2-9</a> demonstrates discarding mode in action, illustrating the<a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="discarding mode version" data-type="indexterm" id="idm140176522805312"></a> changes<a contenteditable="false" data-primary="discarding mode (accumulation)" data-secondary="early/on-time/late triggers" data-type="indexterm" id="idm140176522803744"></a> we would make to <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#early_one_time_and_late_firings_via_the_early_on_time_late_api">Example&nbsp;2-7</a>:</p>
+
+<div data-type="example" id="discarding_mode_version_of_early_on_time_late_firings">
+<h5><span class="label">Example 2-9. </span>Discarding mode version of early/on-time/late firings</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(</span>
+                 <span class="when_lt">AfterWatermark()</span>
+                   <span class="when_lt">.withEarlyFirings(AlignedDelay(ONE_MINUTE))</span>
+                   <span class="when_lt">.withLateFirings(AtCount(1))</span>)
+               <span class="how_lt yellow_bg">.discardingFiredPanes()</span>)
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<p>Running again on a streaming engine with a heuristic watermark would produce output like that shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#discarding_mode_version_of_early_on_time_late_firings_figure_chap_two">Figure&nbsp;2-13</a>.</p>
+
+<figure><div id="discarding_mode_version_of_early_on_time_late_firings_figure_chap_two" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0213.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0213.mp4" type="video/mp4">
+<img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0213.png" alt="Discarding mode version of early/on-time/late firings on a streaming engine" width="600" height="417" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0213.png">
+</video>
+<h6><span class="label">Figure 2-13. </span>Discarding mode version of early/on-time/late firings on a streaming engine</h6>
+</div></figure>
+
+<p>Even though the overall shape of the output is similar to the accumulating mode version from <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a>, note how none of the panes in this discarding version overlap. As a result, each output is independent from the others.</p>
+
+<p>If we want to look at retractions in<a contenteditable="false" data-primary="accumulating and retracting mode" data-secondary="early/on-time/late triggers" data-type="indexterm" id="idm140176522785264"></a> action, the change<a contenteditable="false" data-primary="early/on-time/late triggers" data-secondary="accumulating and retracting mode version" data-type="indexterm" id="idm140176522783680"></a> would be similar, as shown in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#accumulating_and_retracting_mode_version_of_early_on_time_late_firings">Example&nbsp;2-10</a>. <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#accumulating_and_retracting_mode_versions_of_early_late_firings">Figure&nbsp;2-14</a> depicts the results.</p>
+
+<div data-type="example" id="accumulating_and_retracting_mode_version_of_early_on_time_late_firings">
+<h5><span class="label">Example 2-10. </span>Accumulating and retracting mode version of early/on-time/late firings</h5>
+
+<pre data-type="programlisting">PCollection&lt;KV&lt;Team, Integer&gt;&gt; totals = input
+  .apply(<span class="where_lt">Window.into(FixedWindows.of(TWO_MINUTES))</span>
+               <span class="when_lt">.triggering(</span>
+                 <span class="when_lt">AfterWatermark()</span>
+                   <span class="when_lt">.withEarlyFirings(AlignedDelay(ONE_MINUTE))</span>
+                   <span class="when_lt">.withLateFirings(AtCount(1))</span>)
+               <span class="how_lt yellow_bg">.accumulatingAndRetractingFiredPanes()</span>)
+  .apply(<span class="what_lt">Sum.integersPerKey()</span>);
+</pre>
+</div>
+
+<figure><div id="accumulating_and_retracting_mode_versions_of_early_late_firings" class="figure">
+<video style="margin: 0 auto; max-width: 100%;" controls="controls" poster="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0214.png" autoplay="autoplay" loop="loop">
+<source src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0214.mp4" type="video/mp4">
+<img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0214.png" alt="Accumulating and retracting mode version of early/late firings on a streaming engine" width="600" height="417" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0214.png">
+</video>
+<h6><span class="label">Figure 2-14. </span>Accumulating and retracting mode version of early/late firings on a streaming engine</h6>
+</div></figure>
+
+<p>Because the panes for each window all overlap, it’s a little tricky to see the retractions clearly. <a contenteditable="false" data-primary="accumulation" data-secondary="side-by-side comparison of modes" data-type="indexterm" id="idm140176522767264"></a>The retractions are indicated in red, which combines with the overlapping blue panes to yield a slightly purplish color. I’ve also horizontally shifted the values of the two outputs within a given pane slightly (and separated them with a comma) to make them easier to differentiate.</p>
+
+<p><a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#side_by_side_comparison_of_accumulation_modes">Figure&nbsp;2-15</a> combines the final frames of Figures <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#discarding_mode_version_of_early_on_time_late_firings">2-9</a>, <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">2-11</a> (heuristic only), and <a data-type="xref" data-xrefstyle="select:labelnumber" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#accumulating_and_retracting_mode_versions_of_early_late_firings">2-14</a> side-by-side, providing a nice visual contrast of the three modes.</p>
+
+<figure><div id="side_by_side_comparison_of_accumulation_modes" class="figure"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_0215.png" width="600" height="132" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_0215.png">
+<h6><span class="label">Figure 2-15. </span>Side-by-side comparison of accumulation modes</h6>
+</div></figure>
+
+<p>As you can imagine, the modes in the order presented (discarding, accumulating, accumulating and retracting) are each successively more expensive in terms of storage and computation costs. To that end, choice of accumulation mode provides yet another dimension for making trade-offs along the axes of correctness, latency, and cost.<a contenteditable="false" data-primary="accumulation" data-startref="ix_accumu" data-type="indexterm" id="idm140176522757632"></a><a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-startref="ix_strmwhhowacc" data-tertiary="how, accumulation" data-type="indexterm" id="idm140176522756256"></a><a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-startref="ix_dpquestwhhow" data-tertiary="when and how in streaming systems" data-type="indexterm" id="idm140176522754272"></a><a contenteditable="false" data-primary="streaming systems" data-secondary="when and how of data processing" data-startref="ix_strmwhhow" data-type="indexterm" id="idm140176522752320"></a></p>
+</div></section>
+</div></section>
+
+<section data-type="sect1" data-pdf-bookmark="Summary"><div class="sect1" id="idm140176522887760">
+<h1>Summary</h1>
+
+<p>With this chapter complete, you now understand the basics of robust stream processing and are ready to go forth into the world and do amazing things. Of course, there are eight more chapters anxiously waiting for your attention, so hopefully you won’t go forth like right now, this very minute. But regardless, let’s recap what we’ve just covered, lest you forget any of it in your haste to amble forward. First, the major concepts we touched upon:</p>
+
+<dl>
+	<dt>Event time versus processing time</dt>
+	<dd>
+	<p>The all-important distinction between when events occurred and when they are observed by your data processing system.</p>
+	</dd>
+	<dt>Windowing</dt>
+	<dd>
+	<p>The commonly utilized approach to managing unbounded data by slicing it along temporal<a contenteditable="false" data-primary="windowing" data-type="indexterm" id="idm140176522745360"></a> boundaries (in either processing time or event time, though we narrow the definition of windowing <a contenteditable="false" data-primary="Beam Model" data-secondary="windowing in" data-type="indexterm" id="idm140176522743824"></a>in the Beam Model to mean only within event time).</p>
+	</dd>
+	<dt>Triggers</dt>
+	<dd>
+	<p>The declarative mechanism for specifying precisely when materialization of output makes sense for your particular use case.</p>
+	</dd>
+	<dt>Watermarks</dt>
+	<dd>
+	<p>The powerful notion of progress in event time that provides a means of reasoning about completeness (and thus missing data) in an out-of-order processing system operating on unbounded data.</p>
+	</dd>
+	<dt>Accumulation</dt>
+	<dd>
+	<p>The relationship between refinements of results for a single window for cases in which it’s materialized multiple times as it evolves.</p>
+	</dd>
+</dl>
+
+<p>Second, the four questions we used to frame our exploration:</p>
+
+<ul>
+	<li>
+	<p><em><span class="what_lt">What</span></em> results are calculated? = transformations.</p>
+	</li>
+	<li>
+	<p><em><span class="where_lt">Where</span></em> in event time are results calculated? = windowing.</p>
+	</li>
+	<li>
+	<p><em><span class="when_lt">When</span></em> in processing time are results materialized? = triggers plus watermarks.</p>
+	</li>
+	<li>
+	<p><em><span class="how_lt">How</span></em> do refinements of results relate? = accumulation.</p>
+	</li>
+</ul>
+
+<p>Third, to drive home the flexibility afforded by this model of stream processing (because in the end, that’s really what this is all about: balancing competing tensions like correctness, latency, and cost), a recap of the major variations in output we were able to achieve over the same dataset with only a minimal amount of code change:</p>
+
+<table>
+	<tbody><!-- Row 1 -->
+		<tr>
+			<td>&nbsp;</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in01.png" width="600" height="360" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in01.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#summation_pipeline_key_value_data_are_read_from_an_io_source_with_a_team_eg">Example&nbsp;2-1</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#classic_batch_processing">Figure&nbsp;2-3</a></p>
+			</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in02.png" width="600" height="360" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in02.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows batch</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_code">Example&nbsp;2-2</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_batch_engine">Figure&nbsp;2-5</a></p>
+			</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in03.png" width="600" height="359" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in03.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Repeated per-record trigger</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#triggering_repeatedly_with_every_record">Example&nbsp;2-3</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#per_record_triggering_on_a_streaming_engine">Figure&nbsp;2-6</a></p>
+			</td>
+		</tr>
+		<!-- Row 2 -->
+		<tr>
+			<td>&nbsp;</td>
+			<td class="width_30" style="text-align:center"><img class="image" src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in04.png" width="600" height="359" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in04.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Repeated aligned-delay trigger</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#triggering_on_aligned_two_minute_processing_time_boundaries">Example&nbsp;2-4</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_aligned_delay_triggers">Figure&nbsp;2-7</a></p>
+			</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in05.png" width="600" height="416" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in05.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Repeated unaligned-delay trigger</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#triggering_on_unaligned_two_minute_processing_time_boundaries">Example&nbsp;2-5</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#two_minute_unaligned_delay_triggers">Figure&nbsp;2-8</a></p>
+			</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in06.png" width="600" height="412" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in06.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Heuristic watermark trigger</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#watermark_completeness_trigger">Example&nbsp;2-6</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_perfect">Figure&nbsp;2-10</a></p>
+			</td>
+		</tr>
+		<!-- Row 3 -->
+		<tr>
+			<td>&nbsp;</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in07.png" width="600" height="412" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in07.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Early/on-time/late trigger</span><br>
+			<span class="how_lt">Discarding</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#discarding_mode_version_of_early_on_time_late_firings">Example&nbsp;2-9</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#discarding_mode_version_of_early_on_time_late_firings_figure_chap_two">Figure&nbsp;2-13</a></p>
+			</td>
+			<td class="width_30" style="text-align:center"><img class="image" src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in08.png" width="600" height="412" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in08.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Early/on-time/late trigger</span><br>
+			<span class="how_lt">Accumulating</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#early_one_time_and_late_firings_via_the_early_on_time_late_api">Example&nbsp;2-7</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#windowed_summation_on_a_streaming_engine_with_early_on_time">Figure&nbsp;2-11</a></p>
+			</td>
+			<td class="width_30" style="text-align:center"><img src="https://www.safaribooksonline.com/library/view/streaming-systems/9781491983867/assets/stsy_02in09.png" width="600" height="412" data-mfp-src="/library/view/streaming-systems/9781491983867/assets/stsy_02in09.png">
+			<p><span class="what_lt">Integer summation</span><br>
+			<span class="where_lt">Fixed windows streaming</span><br>
+			<span class="when_lt">Early/on-time/late trigger</span><br>
+			<span class="how_lt">Accumulating and Retracting</span><br>
+			<a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#accumulating_and_retracting_mode_version_of_early_on_time_late_firings">Example&nbsp;2-10</a> / <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#accumulating_and_retracting_mode_versions_of_early_late_firings">Figure&nbsp;2-14</a></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>All that said, at this point, we’ve really looked at only one type of windowing: fixed windowing in event time. As we know, there are a number of dimensions to windowing, and I’d like to touch upon at least two more of those before we call it day with the Beam Model. First, however, we’re going to take a slight detour to dive deeper into the world of watermarks, as this knowledge will help frame future discussions (and be fascinating in and of itself).<a contenteditable="false" data-primary="data processing" data-secondary="what, where, when, and how of" data-startref="ix_dpquest" data-type="indexterm" id="idm140176522667872"></a> Enter Slava, stage right...</p>
+</div></section>
+<div data-type="footnotes"><p data-type="footnote" id="idm140176526211392"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176526211392-marker" class="totri-footnote">1</a></sup> If you’re fortunate enough to be reading the Safari version of the book, you have full-blown time-lapse animations just like in <a href="http://oreil.ly/1TV7YGU">“Streaming 102”</a>. For print, Kindle, and other ebook versions, there are static images with a link to animated versions on the web.</p><p data-type="footnote" id="idm140176526162896"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176526162896-marker" class="totri-footnote">2</a></sup> Bear with me here. Fine-grained emotional expressions via composite punctuation (i.e., emoticons) are strictly forbidden in O’Reilly publications &lt;​winky-smiley/&gt;.</p><p data-type="footnote" id="idm140176526043136"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176526043136-marker" class="totri-footnote">3</a></sup> And indeed, we did just that with the original triggers feature in Beam. In retrospect, we went a bit overboard. Future iterations will be simpler and easier to use, and in this book I focus only on the pieces that are likely to remain in some form or another.</p><p data-type="footnote" id="idm140176525772304"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525772304-marker" class="totri-footnote">4</a></sup> More accurately, the input to the function is really the state at time <em>P</em> of everything upstream of the point in the pipeline where the watermark is being observed: the input source, buffered data, data actively being processed, and so on; but conceptually it’s simpler to think of it as a mapping from processing time to event time.</p><p data-type="footnote" id="idm140176525734160"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525734160-marker" class="totri-footnote">5</a></sup> Note that I specifically chose to omit the value of 9 from the heuristic watermark because it will help me to make some important points about late data and watermark lag. In reality, a heuristic watermark might be just as likely to omit some other value(s) instead, which in turn could have significantly less drastic effect on the watermark. If winnowing late-arriving data from the watermark is your goal (which is very valid in some cases, such as abuse detection, for which you just want to see a significant majority of the data as quickly as possible), you don’t necessarily want a heuristic watermark rather than a perfect watermark. What you really want is a percentile watermark, which explicitly drops some percentile of late-arriving data from its calculations. See <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch03.html#watermarks_chapter">Chapter&nbsp;3</a>.</p><p data-type="footnote" id="idm140176525702144"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525702144-marker" class="totri-footnote">6</a></sup> Which isn’t to say there aren’t use cases that care primarily about correctness and not so much about latency; in those cases, using an accurate watermark​ as the sole driver of output from a pipeline is a reasonable approach.</p><p data-type="footnote" id="idm140176525681168"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176525681168-marker" class="totri-footnote">7</a></sup> And, as we know from before, this assertion is either guaranteed, in the case of a perfect watermark being used, or an educated guess, in the case of a heuristic watermark.</p><p data-type="footnote" id="idm140176522881232"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176522881232-marker" class="totri-footnote">8</a></sup> You might note that there should logically be a fourth mode: discarding and retracting. That mode isn’t terribly useful in most cases, so I don’t discuss it further here.</p><p data-type="footnote" id="idm140176522880336"><sup><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#idm140176522880336-marker" class="totri-footnote">9</a></sup> In retrospect, it probably would have been clearer to choose a different set of names that are more oriented toward the observed nature of data in the materialized stream (e.g., “output modes”) rather than names describing the state management semantics that yield those data. Perhaps: discarding mode → delta mode, accumulating mode → value mode, accumulating and retracting mode → value and retraction mode? However, the discarding/accumulating/accumulating and retracting names are enshrined in the 1.x and 2.x lineages of the Beam Model, so I don’t want to introduce potential confusion in the book by deviating. Also, it’s very likely accumulating modes will blend into the background more with Beam 3.0 and the introduction of <a href="https://s.apache.org/beam-sink-triggers">sink triggers</a>; more on this when we discuss SQL in <a data-type="xref" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch08.html#streaming_sql">Chapter&nbsp;8</a>.</p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">1. Streaming 101</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch03.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">3. Watermarks</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel t-subscribe-nag collapsed slideUp">
+        
+        
+          
+          
+            <p class="usage-data">Find answers on the fly, or master something new. Subscribe today. <a href="https://www.safaribooksonline.com/subscribe/" class="ga-active-trial-subscribe-nag">See pricing options.</a></p>
+          
+
+          
+        
+        
+
+      </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li>
+      <a class="t-queue-footer" href="https://www.safaribooksonline.com/playlists/">Playlists</a>
+      </li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/preferences/">Settings</a></li>
+      <li class="full-support"><a href="https://www.oreilly.com/online-learning/support/">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2018 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+    
+      <img src="https://www.oreilly.com/library/view/oreilly_set_cookie/" alt="" style="display:none;">
+    
+    
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout" style="top: 151px; left: 1356px;"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="/safari-books-archive/site/library/view/streaming-systems/9781491983867/ch02.html#">Reset</a>
+</div>
+</div>
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.1653314188551367"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.0992346314148751" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5794699&amp;Ver=2&amp;mid=fe48a88c-3219-3dfc-c48c-50f8c87a7c0f&amp;pi=1200101525&amp;lg=en-US&amp;sw=1440&amp;sh=900&amp;sc=24&amp;tl=2.%20The%20What,%20Where,%20When,%20and%20How%20of%20Data%20Processing%20-%20Streaming%20Systems&amp;p=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fstreaming-systems%2F9781491983867%2Fch02.html&amp;r=&amp;lt=10715&amp;evt=pageLoad&amp;msclkid=N&amp;rn=669117"></div><iframe src="cid:frame-F82256517D6DB7D6A54131CB9AC26EAF@mhtml.blink" style="display: none;"></iframe></body></html>
