@@ -2,6 +2,13 @@
 rm *.html
 rm ./site/*.html
 
+# combine book 
+find ./site -name '*.html' | sort | while read path
+do
+    bookname=$(echo $path | sed 's/\.\///g' | cut -d "/" -f 4) 
+    cat ${path} >> ./fullBook/${bookname}.html
+done
+
 # Create per book index
 find ./site -name '*.html' | sort | while read path
 do
