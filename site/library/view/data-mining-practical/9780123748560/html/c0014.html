@@ -1,0 +1,515 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/data-mining-practical/9780123748560/html/c0014.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="3283993"
+  data-user-uuid="ff49cd60-92d4-4bee-94ce-69a00f89e9c5"
+  data-username="safaribooksonline113"
+  data-account-type="Trial"
+  
+  data-activated-trial-date="08/25/2018"
+
+
+  data-archive="9780123748560"
+  data-publishers="Morgan Kaufmann"
+
+
+
+  data-htmlfile-name="c0014.html"
+  data-epub-title="Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class="js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/data-mining-practical/9780123748560/html/c0014.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="3283993" data-user-uuid="ff49cd60-92d4-4bee-94ce-69a00f89e9c5" data-username="safaribooksonline113" data-account-type="Trial" data-activated-trial-date="08/25/2018" data-archive="9780123748560" data-publishers="Morgan Kaufmann" data-htmlfile-name="c0014.html" data-epub-title="Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition" data-debug="0" data-testing="0" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780123748560"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.0c29511d2d72.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>Chapter 14. The Command-Line Interface - Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/5e586a47a3b7.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.e3b0c44298fc.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    #sbo-rt-content div{margin-left:2em;margin-right:2em;font-family:"Charis"}#sbo-rt-content div.itr{padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content .fm_title_document{font-size:x-large;text-align:center;font-weight:bold;line-height:1.5em;margin-top:2em;color:#241a26;background-color:#a6abee}#sbo-rt-content div.ded{text-align:center;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em;margin-top:4em}#sbo-rt-content .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content div.ded .para_indented{font-size:100%;text-align:center;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.ctr{text-align:left;font-weight:bold;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content div.idx{text-align:left;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content div.ctr .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content div.ctr .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.ctr .author{font-size:100%;text-align:left;margin-bottom:.5em;margin-top:1em;color:#39293b;font-weight:bold}#sbo-rt-content div.ctr .affiliation{text-align:left;font-size:100%;font-style:italic;color:#5e4462}#sbo-rt-content div.pre{text-align:left;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content div.pre .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content div.pre .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.chp{line-height:1.5em;margin-top:2em}#sbo-rt-content .document_number{display:block;font-size:100%;text-align:right;padding-bottom:10px;padding-top:10px;padding-right:10px;font-weight:bold;border-top:solid 2px #0000A0;border-right:solid 8px #0000A0;margin-bottom:.25em;background-color:#a6abee;color:#0000A0}#sbo-rt-content .subtitle_document{font-weight:bold;font-size:large;text-align:center;margin-bottom:2em;margin-top:.5em;padding-top:.5em}#sbo-rt-content .subtitle{font-weight:bold;font-size:large;text-align:center;margin-bottom:1em}#sbo-rt-content a{color:#3152a9;text-decoration:none}#sbo-rt-content .affiliation{font-size:100%;font-style:italic;color:#5e4462}#sbo-rt-content .extract_fl{text-align:justify;font-size:100%;margin-bottom:1em;margin-top:2em;margin-left:1.5em;margin-right:1.5em}#sbo-rt-content .poem_title{text-align:center;font-size:110%;margin-top:1em;font-weight:bold}#sbo-rt-content .stanza{text-align:center;font-size:100%}#sbo-rt-content .poem_source{text-align:center;font-size:100%;font-style:italic}#sbo-rt-content .list_para{font-size:100%;margin-top:0;margin-bottom:.25em}#sbo-rt-content .objectset{font-size:90%;margin-bottom:1.5em;margin-top:1.5em;border-top:solid 3px #e88f1c;border-bottom:solid 1.5px #e88f1c;background-color:#f8d9b5;color:#4f2d02}#sbo-rt-content .objectset_title{margin-top:0;padding-top:5px;padding-left:5px;padding-right:5px;padding-bottom:5px;background-color:#efab5b;font-weight:bold;font-size:110%;color:#88520b;border-bottom:solid 1.5px #e88f1c}#sbo-rt-content .nomenclature{font-size:90%;margin-bottom:1.5em;padding-bottom:15px;border-top:solid 3px #644484;border-bottom:solid 1.5px #644484}#sbo-rt-content .nomenclature_head{margin-top:0;padding-top:5px;padding-left:5px;padding-bottom:5px;background-color:#b29bca;font-weight:bold;font-size:110%;color:#644484;border-bottom:solid 1.5px #644484}#sbo-rt-content .list_def_entry{font-size:100%;margin-top:.5em;margin-bottom:.5em}#sbo-rt-content div.chp .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content .scx{font-size:100%;font-weight:bold;text-align:left;margin-bottom:0;margin-top:0;padding-bottom:5px;padding-top:5px;padding-left:5px;padding-right:5px}#sbo-rt-content p{font-size:100%;text-align:justify;margin-bottom:0;margin-top:0}#sbo-rt-content div.chp .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content .head1{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .head12{page-break-before:always;font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .sec_num{color:#0000A0}#sbo-rt-content .head2{font-size:115%;font-weight:bold;text-align:left;margin-bottom:.5em;margin-top:1em;color:#ae3f58;border-bottom:solid 3px #dfd8cb}#sbo-rt-content .head3{font-size:110%;margin-bottom:.5em;margin-top:1em;text-align:left;font-weight:bold;color:#6f2c90}#sbo-rt-content .head4{font-weight:bold;font-size:105%;text-align:left;margin-bottom:.5em;margin-top:1em;color:#53a6df}#sbo-rt-content .bibliography_title{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .tch{text-align:center;border-bottom:solid 1px black;border-top:solid 1px black;border-right:solid 1px black;border-left:solid 1px black;margin-top:1.5em;margin-bottom:1.5em;font-weight:bold}#sbo-rt-content table{display:table;margin-bottom:1em}#sbo-rt-content tr{display:table-row}#sbo-rt-content td ul{display:table-cell}#sbo-rt-content .tb{margin-top:1.5em;margin-bottom:1.5em;vertical-align:top;padding-left:1em}#sbo-rt-content .table_source{font-size:75%;margin-bottom:1em;font-style:italic;color:#0000A0;text-align:left;padding-bottom:5px;padding-top:5px;border-bottom:solid 2px black;border-top:solid 1px black}#sbo-rt-content .figure{margin-top:1.5em;margin-bottom:1.5em;padding-right:5px;padding-left:5px;padding-bottom:5px;padding-top:5px;text-align:center}#sbo-rt-content .figure_legend{font-size:90%;margin-top:0;margin-bottom:1em;vertical-align:top;border-top:solid 1px #0000A0;line-height:1.5em}#sbo-rt-content .figure_source{font-size:75%;margin-top:.5em;margin-bottom:1em;font-style:italic;color:#0000A0;text-align:left}#sbo-rt-content .fig_num{font-size:110%;font-weight:bold;color:white;padding-right:10px;background-color:#0000A0}#sbo-rt-content .table_caption{font-size:90%;margin-top:2em;margin-bottom:.5em;vertical-align:top}#sbo-rt-content .tab_num{font-size:90%;font-weight:bold;color:#00f;padding-right:4px}#sbo-rt-content .tablecdt{font-size:75%;margin-bottom:1em;font-style:italic;color:#00f;text-align:left;padding-bottom:5px;padding-top:5px;border-bottom:solid 2px black;border-top:solid 1px black}#sbo-rt-content table.numbered{font-size:85%;border-top:solid 2px black;border-bottom:solid 2px black;margin-top:1.5em;margin-bottom:1em;background-color:#a6abee}#sbo-rt-content table.unnumbered{font-size:85%;border-top:solid 2px black;border-bottom:solid 2px black;margin-top:1.5em;margin-bottom:1em;background-color:#a6abee}#sbo-rt-content .ack{font-size:90%;margin-top:1.5em;margin-bottom:1.5em}#sbo-rt-content .boxg{font-size:90%;padding-left:.5em;padding-right:.5em;margin-bottom:1em;margin-top:1em;border-top:solid 1px red;border-bottom:solid 1px red;border-left:solid 1px red;border-right:solid 1px red;background-color:#ffda6b}#sbo-rt-content .box_title{padding-top:5px;padding-left:5px;padding-bottom:5px;padding-right:5px;background-color:#67582b;font-weight:bold;font-size:110%;color:white;margin-top:.25em}#sbo-rt-content .box_source{padding-top:.5px;padding-left:.5px;padding-bottom:5px;padding-right:.5px;font-size:100%;color:#67582b;margin-top:.25em;margin-left:2.5em;margin-right:2.5em;font-style:italic}#sbo-rt-content .box_no{margin-top:0;padding-left:5px;padding-right:5px;font-weight:bold;font-size:100%;color:#ffda6b}#sbo-rt-content .headx{margin-top:.5em;padding-bottom:.25em;font-weight:bold;font-size:110%}#sbo-rt-content .heady{margin-top:1.5em;padding-bottom:.25em;font-weight:bold;font-size:110%;color:#00f}#sbo-rt-content .headz{margin-top:1.5em;padding-bottom:.25em;font-weight:bold;font-size:110%;color:red}#sbo-rt-content div.subdoc{font-weight:bold;font-size:large;text-align:center;color:#00f}#sbo-rt-content div.subdoc .document_number{display:block;font-size:100%;text-align:right;padding-bottom:10px;padding-top:10px;padding-right:10px;font-weight:bold;border-top:solid 2px #00f;border-right:solid 8px #00f;margin-bottom:.25em;background-color:#2b73b0;color:#00f}#sbo-rt-content ul.none{list-style:none;margin-top:.25em;margin-bottom:1em}#sbo-rt-content ul.bull{list-style:disc;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ul.squf{list-style:square;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ul.circ{list-style:circle;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.lower_a{list-style:lower-alpha;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.upper_a{list-style:upper-alpha;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.upper_i{list-style:upper-roman;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.lower_i{list-style:lower-roman;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content div.chp .list_para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content .book_title_page{margin-top:.5em;margin-left:.5em;margin-right:.5em;border-top:solid 6px #55390e;border-left:solid 6px #55390e;border-right:solid 6px #55390e;padding-left:0;padding-top:10px;background-color:#a6abee}#sbo-rt-content p.pagebreak{page-break-before:always}#sbo-rt-content .book_series_editor{margin-top:.5em;margin-left:.5em;margin-right:.5em;border-top:solid 6px #55390e;border-left:solid 6px #55390e;border-right:solid 6px #55390e;border-bottom:solid 6px #55390e;padding-left:5px;padding-right:5px;padding-top:10px;background-color:#a6abee}#sbo-rt-content .book_title{text-align:center;font-weight:bold;font-size:250%;color:#55390e;margin-top:70px}#sbo-rt-content .book_subtitle{text-align:center;margin-top:.25em;font-weight:bold;font-size:150%;color:#00f;border-top:solid 1px #55390e;border-bottom:solid 1px #55390e;padding-bottom:7px}#sbo-rt-content .edition{text-align:right;margin-top:1.5em;margin-right:5em;font-weight:bold;font-size:90%;color:red}#sbo-rt-content .author_group{padding-left:10px;padding-right:10px;padding-top:2px;padding-bottom:2px;background-color:#ffac29;margin-left:70px;margin-right:70px;margin-top:20px;margin-bottom:20px}#sbo-rt-content .editors{text-align:left;font-weight:bold;font-size:100%;color:#241a26}#sbo-rt-content .title_author{text-align:center;font-weight:bold;font-size:80%;color:#241a26}#sbo-rt-content .title_affiliation{text-align:center;font-size:80%;color:#241a26;margin-bottom:.5em;font-style:italic}#sbo-rt-content .publisher{text-align:center;font-size:100%;margin-bottom:.5em;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;background-color:#55390e;color:#a6abee}#sbo-rt-content div.qa h1.head1{font-size:110%;font-weight:bold;margin-bottom:1em;margin-top:1em;color:#6883b5;border-bottom:solid 8px #fee7ca}#sbo-rt-content div.outline{border-left:2px solid #007ec6;border-right:2px solid #007ec6;border-bottom:2px solid #007ec6;border-top:26px solid #007ec6;padding:3px;margin-bottom:1em}#sbo-rt-content div.outline .list_head{background-color:#007ec6;color:white;padding:.2em 1em .2em;margin:-.4em -.3em -.4em -.3em;margin-bottom:.5em;font-size:medium;font-weight:bold;margin-top:-1.5em}#sbo-rt-content div.fm .author{text-align:center;margin-bottom:1.5em;color:#39293b}#sbo-rt-content td p{text-align:left}#sbo-rt-content div.htu .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.htu .para_fl{font-size:100%;margin-bottom:.5em;margin-top:0;text-align:justify}#sbo-rt-content .headx{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content div.book_section{text-align:center;margin-top:8em}#sbo-rt-content div.book_part{text-align:center;margin-top:6em}#sbo-rt-content p.section_label{display:block;font-size:200%;text-align:center;padding-right:10px;font-weight:bold;border-top:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content p.section_title{display:block;font-size:200%;text-align:center;padding-right:10px;margin-bottom:2em;border-top:solid 2px #00f;font-weight:bold;border-bottom:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content p.part_label{display:block;font-size:250%;text-align:center;margin-top:6em;padding-right:10px;font-weight:bold;border-top:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content p.part_title{display:block;font-size:250%;text-align:center;padding-right:10px;margin-bottom:2em;font-weight:bold;border-bottom:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content div.idx li{margin-top:-.3em}#sbo-rt-content p.ueqn{text-align:center}#sbo-rt-content p.eqn{text-align:center}#sbo-rt-content p.extract_indented{margin-left:3em;margin-right:3em;margin-bottom:.5em;text-indent:1em}#sbo-rt-content td p.para_fl{font-size:90%;margin-bottom:.5em;margin-top:0;text-align:left}#sbo-rt-content .small{font-size:small}#sbo-rt-content div.abs{font-size:90%;margin-bottom:2em;margin-top:2em;margin-left:1em;margin-right:1em}#sbo-rt-content p.abstract_title{font-size:110%;margin-bottom:1em;font-weight:bold}#sbo-rt-content sup{vertical-align:4px}#sbo-rt-content sub{vertical-align:-2px}#sbo-rt-content img{max-width:100%;max-height:100%}#sbo-rt-content p.toc1{margin-left:1em;margin-bottom:.5em;font-weight:bold;text-align:left}#sbo-rt-content p.toc2{margin-left:2em;margin-bottom:.5em;font-weight:bold;text-align:left}#sbo-rt-content p.toc3{margin-left:3em;margin-bottom:.5em;text-align:left}#sbo-rt-content .head5{font-weight:bold;font-size:100%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content img.inline{vertical-align:middle}#sbo-rt-content .head6{font-weight:bold;font-size:90%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .underline{text-decoration:underline}#sbo-rt-content .center{text-align:center}#sbo-rt-content span.big{font-size:2em}#sbo-rt-content p.para_indented{text-indent:2em}#sbo-rt-content p.para_indented1{text-indent:0;page-break-before:always}#sbo-rt-content p.right{text-align:right}#sbo-rt-content p.endnote{margin-left:1em;margin-right:1em;margin-bottom:.5em;text-indent:-1em}#sbo-rt-content div.block{margin-left:3em;margin-bottom:.5em;text-indent:-1em}#sbo-rt-content p.bl_para{font-size:100%;text-indent:0;text-align:justify}#sbo-rt-content div.poem{text-align:center;font-size:100%}#sbo-rt-content .acknowledge_head{font-size:150%;margin-bottom:.25em;font-weight:bold}#sbo-rt-content .intro{font-size:130%;margin-top:1.5em;margin-bottom:1em;font-weight:bold}#sbo-rt-content .exam{font-size:90%;margin-top:1em;margin-bottom:1em}#sbo-rt-content div.exam_head{font-size:130%;margin-top:1.5em;margin-bottom:1em;font-weight:bold}#sbo-rt-content p.table_footnotes{font-size:80%;margin-top:.5em;margin-bottom:.5em;vertical-align:top;text-indent:.01em}#sbo-rt-content div.table_foot{font-size:80%;margin-top:.5em;margin-bottom:1em;text-indent:.01em}#sbo-rt-content p.table_legend{font-size:80%;margin-top:.5em;margin-bottom:.5em;vertical-align:top;text-indent:.01em}#sbo-rt-content .bib_entry{font-size:90%;text-align:left;margin-left:20px;margin-bottom:.25em;margin-top:0;text-indent:-30px}#sbo-rt-content .ref_entry{font-size:90%;text-align:left;margin-left:20px;margin-bottom:.25em;margin-top:0;text-indent:-20px}#sbo-rt-content div.ind1{margin-left:.1em;margin-top:.5em}#sbo-rt-content div.ind2{margin-left:1em}#sbo-rt-content div.ind3{margin-left:1.5em}#sbo-rt-content div.ind4{margin-left:2em}#sbo-rt-content div.ind5{margin-left:2.5em}#sbo-rt-content div.ind6{margin-left:3em}#sbo-rt-content .title_document{font-size:x-large;text-align:center;font-weight:bold;line-height:1.5em;margin-top:2em;margin-bottom:2em;color:#0000A0}#sbo-rt-content .sc1{margin-left:0}#sbo-rt-content .sc2{margin-left:0}#sbo-rt-content .sc3{margin-left:0}#sbo-rt-content .sc4{margin-left:0}#sbo-rt-content .sc5{margin-left:0}#sbo-rt-content .sc6{margin-left:0}#sbo-rt-content .sc7{margin-left:0}#sbo-rt-content .sc8{margin-left:0}#sbo-rt-content .sc9{margin-left:0}#sbo-rt-content .sc10{margin-left:0}#sbo-rt-content .sc11{margin-left:0}#sbo-rt-content .sc12{margin-left:0}#sbo-rt-content .sc13{margin-left:0}#sbo-rt-content .sc14{margin-left:0}#sbo-rt-content .sc15{margin-left:0}#sbo-rt-content .sc16{margin-left:0}#sbo-rt-content .sc17{margin-left:0}#sbo-rt-content .sc18{margin-left:0}#sbo-rt-content .sc19{margin-left:0}#sbo-rt-content .sc20{margin-left:0}#sbo-rt-content .sc0{margin-left:0}#sbo-rt-content .source{font-size:11px;margin-top:.5em;margin-bottom:0;font-style:italic;color:#0000A0;text-align:left}#sbo-rt-content div.footnote{font-size:small;border-style:solid;border-width:1px 0 0 0;margin-top:2em;margin-bottom:1em}#sbo-rt-content table.numbered{font-size:small}#sbo-rt-content div.hang{margin-left:.3em;margin-top:1em;text-align:left}#sbo-rt-content div.p_hang{margin-left:1.5em;text-align:left}#sbo-rt-content div.p_hang1{margin-left:2em;text-align:left}#sbo-rt-content div.p_hang2{margin-left:2.5em;text-align:left}#sbo-rt-content div.p_hang3{margin-left:3em;text-align:left}#sbo-rt-content .bibliography{text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .biblio_sec{font-size:90%;text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .gls{text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .glossary_sec{font-size:90%;font-style:italic;text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .head7{font-weight:bold;font-size:86%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .head8{font-weight:bold;font-style:italic;font-size:81%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .box_subtitle{padding-top:5px;padding-left:5px;padding-bottom:5px;padding-right:5px;font-weight:bold;font-size:105%;margin-top:.25em}#sbo-rt-content div.for{text-align:left;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content span.strike{text-decoration:line-through}#sbo-rt-content .head9{font-style:italic;font-size:80%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .bib_note{font-size:85%;text-align:left;margin-left:25px;margin-bottom:.25em;margin-top:0;text-indent:-30px}#sbo-rt-content .glossary_title{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .collaboration{padding-left:10px;padding-right:10px;padding-top:2px;padding-bottom:2px;background-color:#ffac29;margin-left:70px;margin-right:70px;margin-top:20px;margin-bottom:20px}#sbo-rt-content .title_collab{text-align:center;font-weight:bold;font-size:85%;color:#241a26}#sbo-rt-content .head0{font-size:105%;font-weight:bold;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .copyright{font-size:80%;text-align:left;margin-bottom:0;margin-top:0;text-indent:0}#sbo-rt-content .copyright-top{font-size:80%;text-align:left;margin-bottom:0;margin-top:1em;text-indent:0}#sbo-rt-content .idxtitle{font-size:x-large;text-align:center;font-weight:bold;line-height:1.5em;margin-top:2em;margin-bottom:2em;color:#0000A0}#sbo-rt-content .idxletter{font-size:100%;text-align:left;margin-bottom:0;margin-top:1em;text-indent:0;font-weight:bold}#sbo-rt-content h1.chaptertitle{margin-top:.5em;margin-bottom:1em;font-size:200%;font-weight:bold;text-indent:0;line-height:1em}#sbo-rt-content h1.chapterlabel{margin-top:0;margin-bottom:0;font-size:150%;font-weight:bold;text-indent:0}#sbo-rt-content p.noindent{text-align:justify;text-indent:0;margin-top:10px;margin-bottom:2px}#sbo-rt-content span.monospace{font-family:consolas,courier,monospace;margin-top:0;margin-bottom:0;white-space:pre;font-size:85%}#sbo-rt-content p.hang{text-indent:-1.1em;margin-left:1em}#sbo-rt-content p.hang1{text-indent:-1.1em;margin-left:2em}#sbo-rt-content p.hang2{text-indent:-1.6em;margin-left:2em}#sbo-rt-content p.hang3{text-indent:-1.1em;margin-left:3em}#sbo-rt-content p.hang4{text-indent:-1.6em;margin-left:4.3em}#sbo-rt-content p.hang5{text-indent:-1.1em;margin-left:5em}#sbo-rt-content p.none{text-align:justify;display:list-item;list-style-type:none;text-indent:-3.2em;margin-left:3.2em;margin-top:2px;margin-bottom:2px}#sbo-rt-content p.blockquote{font-size:90%;margin-left:2.5em;margin-right:2em;margin-top:1em;margin-bottom:1em;line-height:1.3em}#sbo-rt-content p.none1{text-align:justify;display:list-item;list-style-type:none;text-indent:-3.2em;margin-left:2.8em;margin-top:2px;margin-bottom:2px}#sbo-rt-content .listparasub1{list-style:lower-roman;margin-top:.25em;margin-bottom:.25em;margin-left:3.2em}#sbo-rt-content .listparasub2{list-style:lower-roman;margin-top:.25em;margin-bottom:.25em;margin-left:5.5em;text-indent:-3.2em}#sbo-rt-content div.none{list-style:none;margin-top:.25em;margin-bottom:1em}#sbo-rt-content div.bm{line-height:1.5em;margin-top:2em}#sbo-rt-content div.fm{line-height:1.5em;margin-top:2em}#sbo-rt-content span.sup{vertical-align:4px;font-size:75%}#sbo-rt-content span.sub{font-size:75%;vertical-align:-2px}#sbo-rt-content .box_titleC{text-align:center;padding-top:5px;padding-left:5px;padding-bottom:5px;padding-right:5px;background-color:#67582b;font-weight:bold;font-size:110%;color:white;margin-top:.25em}
+    </style><link rel="canonical" href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html"><meta name="description" content=" CHAPTER 14 The Command-Line Interface Lurking behind Weka’s interactive interfaces—the Explorer, the Knowledge Flow, and the Experimenter—lies its basic functionality. This can be accessed more directly through ... "><meta property="og:title" content="Chapter 14. The Command-Line Interface"><meta itemprop="isPartOf" content="/library/view/data-mining-practical/9780123748560/"><meta itemprop="name" content="Chapter 14. The Command-Line Interface"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0014.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780123748560/"><meta property="og:description" itemprop="description" content=" CHAPTER 14 The Command-Line Interface Lurking behind Weka’s interactive interfaces—the Explorer, the Knowledge Flow, and the Experimenter—lies its basic functionality. This can be accessed more directly through ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Morgan Kaufmann"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780080890364"><meta property="og:book:author" itemprop="author" content="Mark A. Hall"><meta property="og:book:author" itemprop="author" content="Eibe Frank"><meta property="og:book:author" itemprop="author" content="Ian H. Witten"><meta property="og:book:tag" itemprop="about" content="Big Data"><meta property="og:book:tag" itemprop="about" content="Databases"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style><style type="text/css" id="kampyleStyle">.noOutline{outline: none !important;}.wcagOutline:focus{outline: 1px dashed #595959 !important;outline-offset: 2px !important;transition: none !important;}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library" data-gr-c-s-loaded="true">
+
+    
+  
+  
+  
+
+
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#container" class="skip">Skip to content</a><header class="topbar t-topbar" style="display:None"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/playlists/" class="t-queue-nav l0 nav-icn None"><!--?xml version="1.0" encoding="UTF-8"?--><svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch --><title>icon_Playlist_sml</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_Playlist_sml" fill-rule="nonzero" fill="#000000"><g id="playlist-icon"><g id="Group-6"><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle></g><g id="Group-5" transform="translate(0.000000, 7.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g><g id="Group-5-Copy" transform="translate(0.000000, 14.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g></g></g></g></svg><span>
+               Playlists
+            </span></a></li><li class="search"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://get.oreilly.com/email-signup.html" target="_blank" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/ff49cd60-92d4-4bee-94ce-69a00f89e9c5/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><div class="js-content-uri" data-content-uri="/api/v1/book/9780123748560/chapter/html/c0014.html"><div class="js-collections-dropdown collections-dropdown menu-bit-cards"></div></div></li><li class="js-font-control-panel font-control-activator"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0014.html&amp;text=Data%20Mining%3A%20Practical%20Machine%20Learning%20Tools%20and%20Techniques%2C%203rd%20Edition&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0014.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0014.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20Chapter%2014.%20The%20Command-Line%20Interface&amp;body=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0014.html%0D%0Afrom%20Data%20Mining%3A%20Practical%20Machine%20Learning%20Tools%20and%20Techniques%2C%203rd%20Edition%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/c0013.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Chapter 13. The Experimenter</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/c0015.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">Chapter 15. Embedded Machine Learning</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><div class="chp"><a id="c0014"></a><h1 class="chapterlabel" id="c0014tit1">
+<strong>CHAPTER</strong> 14</h1>
+<h1 class="chaptertitle" id="c0014tit">The Command-Line Interface</h1>
+<p id="p0010" class="noindent"><a id="p519"></a>Lurking behind Weka’s interactive interfaces—the Explorer, the Knowledge Flow, and the Experimenter—lies its basic functionality. This can be accessed more directly through a command-line interface. Select <em>Simple CLI</em> from the interface choices at the right of <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0100">Figure 11.3(a)</a> to bring up a plain textual panel with a line at the bottom on which you enter commands. Alternatively, use the operating system’s command-line interface to run the classes in <em>weka.jar</em>, in which case you must first set the <em>CLASSPATH</em> environment variable as explained in Weka’s <em>README</em> file.</p>
+<div id="s0010">
+<h2 id="st0010">14.1 Getting started</h2>
+<p id="p0015" class="noindent">At the beginning of <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0010">Section 11.1</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p410">page 410</a>) we used the Explorer to invoke the J4.8 learner on the weather data. To do the same thing in the command-line interface, type the following into the line at the bottom of the text panel:</p>
+<p id="p0020" class="noindent"><span class="monospace">java weka.classifiers.trees.J48 -t data/weather.arff</span></p>
+<p id="p0025" class="noindent">This incantation calls the Java virtual machine (in the Simple CLI, Java is already loaded) and instructs it to execute J4.8. Weka is organized in <em>packages</em> that correspond to a directory hierarchy. The program to be executed is called <em>J48</em> and resides in the <em>trees</em> package, which is a subpackage of <em>classifiers</em>, which is part of the overall <em>weka</em> package. The next section gives more details on the package structure. The <em>–t</em> option signals that the next argument is the name of the training file: We are assuming that the weather data resides in a <em>data</em> subdirectory of the directory from which you fired up Weka. The result resembles the text shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0030">Figure 11.5</a>. In the Simple CLI it appears in the panel above the line where you typed the command.</p>
+</div>
+<div id="s0015">
+<h2 id="st0015">14.2 The structure of weka</h2>
+<p id="p0030" class="noindent">We have explained how to invoke filtering and learning schemes with the Explorer interface and connect them together with the Knowledge Flow interface. To go further, it is necessary to learn something about how Weka is put together. Detailed, up-to-date information can be found in the online documentation included in the distribution. <a id="p520"></a>This is more technical than the descriptions of the learning and filtering schemes given by the <em>More</em> button in the Explorer and Knowledge Flow’s object editors. It is generated directly from comments in the source code using Sun’s Javadoc utility. To understand its structure, you need to know how Java programs are organized.</p>
+<div id="s0020">
+<h3 id="st0020">Classes, Instances, and Packages</h3>
+<p id="p0035" class="noindent">Every Java program is implemented as a class or collection of classes. In object-oriented programming, a <em>class</em> is a collection of variables along with some <em>methods</em> that operate on them. Together, they define the behavior of an object belonging to the class. An <em>object</em> is simply an instantiation of the class that has values assigned to all the class’s variables. In Java, an object is also called an <em>instance</em> of the class. Unfortunately, this conflicts with the terminology used in this book, where the terms <em>class</em> and <em>instance</em> appear in the quite different context of machine learning. From now on, you will have to infer the intended meaning of these terms from their context. This is not difficult—and sometimes we’ll use the word <em>object</em> instead of Java’s <em>instance</em> to make things clear.</p>
+<p id="p0040" class="para_indented">In Weka, the implementation of a particular learning algorithm is encapsulated in a class, and it may depend on other classes for some of its functionality. For example, the <em>J48</em> class described previously builds a C4.5 decision tree. Each time the Java virtual machine executes <em>J48</em>, it creates an instance of this class by allocating memory for building and storing a decision tree classifier. The algorithm, the classifier it builds, and a procedure for outputting the classifier are all part of that instantiation of the <em>J48</em> class.</p>
+<p id="p0045" class="para_indented">Larger programs are usually split into more than one class. The <em>J48</em> class, for example, does not actually contain any code for building a decision tree. It includes references to instances of other classes that do most of the work. When there are a lot of classes—as in Weka—they become difficult to comprehend and navigate. Java allows classes to be organized into packages. A <em>package</em> is just a directory containing a collection of related classes; for example, the <em>trees</em> package mentioned previously contains the classes that implement decision trees. Packages are organized in a hierarchy that corresponds to the directory hierarchy: <em>trees</em> is a subpackage of the <em>classifiers</em> package, which is itself a subpackage of the overall <em>weka</em> package.</p>
+<p id="p0050" class="para_indented">When you consult the online documentation generated by Javadoc from your web browser, the first thing you see is an alphabetical list of all the packages in Weka, as shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#f0010">Figure 14.1(a)</a>. (If you view the Javadoc with frames, you will see more than this. Click on <em>NO FRAMES</em> to remove the extra information.) Here we introduce a few of them in order of importance.</p><a id="p522"></a>
+<p id="f0010" class="figure"><img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/f000146f014-001a-9780123748560.jpg" alt="image" width="406" height="545" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/f000146f014-001a-9780123748560.jpg">
+<img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/f000146f014-001b-9780123748560.jpg" alt="image" width="326" height="685" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/f000146f014-001b-9780123748560.jpg"></p>
+<p class="figure_legend"><span class="fig_num">FIGURE 14.1</span> Using Javadoc: (a) the front page and (b) the <em>weka.core</em> package (see next page).</p>
+</div>
+<div id="s0025">
+<h3 id="st0025">The <em>weka.core</em> Package</h3>
+<p id="p0055" class="noindent">The <em>core</em> package is central to the Weka system, and its classes are accessed from almost every other class. You can determine what they are by clicking on the <em>weka.core</em> hyperlink, which brings up the web page shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#f0010">Figure 14.1(b)</a>.</p>
+<p id="p0060" class="para_indented"><a id="p521"></a>This web page is divided into several parts, the main ones being the <em>interface summary</em> and the <em>class summary</em>. The latter is a list of classes contained within the package, and the former lists the interfaces it provides. An interface is similar to a class, the only difference being that it doesn’t actually do anything by itself—it is merely a list of methods without actual implementations. Other classes can declare <a id="p523"></a>that they “implement” a particular interface and then provide code for its methods. For example, the <em>OptionHandler</em> interface defines those methods that are implemented by all classes that can process command-line options, including all classifiers.</p>
+<p id="p0065" class="para_indented">The key classes in the <em>core</em> package are <em>Attribute</em>, <em>Instance</em>, and <em>Instances</em>. An object of class <em>Attribute</em> represents an attribute. It contains the attribute’s name, its type, and, in the case of a nominal or string attribute, its possible values. An object of class <em>Instance</em> contains the attribute values of a particular instance; an object of class <em>Instances</em> holds an ordered set of instances—in other words, a dataset. You can learn more about these classes by clicking their hyperlinks; we return to them in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0015.html#c0015">Chapter 15</a>
+<a href="/site/library/view/data-mining-practical/9780123748560/html/c0015.html#p536">page 536</a> and <a href="/site/library/view/data-mining-practical/9780123748560/html/c0015.html#p538">538</a>) when we show how to invoke machine learning schemes from other Java code. However, you can use Weka from the command-line interface without knowing the details.</p>
+<p id="p0070" class="para_indented">Clicking the <em>Overview</em> hyperlink in the upper left corner of any documentation page returns you to the listing of all the packages in Weka, shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#f0010">Figure 14.1(a)</a>.</p>
+</div>
+<div id="s0030">
+<h3 id="st0030">The <em>weka.classifiers</em> Package</h3>
+<p id="p0075" class="noindent">The <em>classifiers</em> package contains implementations of most of the algorithms for classification and numeric prediction described in this book. (Numeric prediction is included in <em>classifiers</em>: It is interpreted as prediction of a continuous class.) The most important class in this package is <em>Classifier</em>, which defines the general structure of any scheme for classification or numeric prediction. <em>Classifier</em> contains three methods: <em>buildClassifier</em>(), <em>classifyInstance</em>(), and <em>distributionForInstance</em>(). In the terminology of object-oriented programming, the learning algorithms are represented by subclasses of <em>Classifier</em> and therefore automatically inherit these three methods. Every scheme redefines them according to how it builds a classifier and how it classifies instances. This gives a uniform interface for building and using classifiers from other Java code. Thus, for example, the same evaluation module can be used to evaluate the performance of any classifier in Weka.</p>
+<p id="p0080" class="para_indented">To see an example, click on <em>weka.classifiers.trees</em> and then on <em>DecisionStump</em>, which is a class for building a simple one-level binary decision tree (with an extra branch for missing values). Its documentation page, shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#f0015">Figure 14.2</a>, shows the fully qualified name of this class, <em>weka.classifiers.trees.DecisionStump</em>, near the top. You have to use this rather lengthy name whenever you build a decision stump from the command line. The class name is sited in a small tree structure showing the relevant part of the class hierarchy. As you can see, <em>DecisionStump</em> is a subclass of <em>weka.classifiers.Classifier</em>, which is itself a subclass of <em>java.lang.Object</em>. The <em>Object</em> class is the most general one in Java: All classes are automatically subclasses of it.</p>
+<p id="f0015" class="figure"><img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/f000146f014-002ab-9780123748560.jpg" alt="image" width="568" height="380" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/f000146f014-002ab-9780123748560.jpg"></p>
+<p class="figure_legend"><span class="fig_num">FIGURE 14.2</span> <em>DecisionStump</em>, a class of the <em>weka.classifiers.trees</em> package.</p>
+<p id="p0085" class="para_indented">After some generic information about the class—brief documentation, its version, and the author—<a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#f0015">Figure 14.2</a> gives an index of the constructors and methods of this class. A <em>constructor</em> is a special kind of method that is called whenever an object of that class is created, usually initializing the variables that collectively define its state. The index of methods lists the name of each one, the type of parameters it takes, <a id="p524"></a>and a short description of its functionality. Beneath those indexes, the web page gives more details about the constructors and methods. We return to these details later.</p>
+<p id="p0090" class="para_indented">As you can see, <em>DecisionStump</em> overwrites the <em>distributionForInstance</em>() method from <em>Classifier</em>; the default implementation of <em>classifyInstance</em>() in <em>Classifier</em> then uses this method to produce its classifications. In addition, it contains the methods <em>getCapabilities</em>(), <em>getRevision</em>(), <em>globalInfo</em>(), <em>toSource</em>(), <em>toString</em>(), and <em>main</em>(). We discuss <em>getCapabilities</em>() shortly. The <em>getRevision</em>() method simply returns the revision number of the classifier. There is a utility class in the <em>weka.core</em> package that prints it to the screen; it is used by Weka maintainers when diagnosing and debugging problems reported by users. The <em>globalInfo</em>() method returns a string describing the classifier, which, along with the scheme’s options, is displayed by the <em>More</em> button in the generic object editor (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0040">Figure 11.7(b)</a>). The <em>toString</em>() method returns a textual representation of the classifier, used whenever it is printed on the screen, while the <em>toSource</em>() method is used to obtain a source code representation of the learned classifier. The <em>main</em>() method is called when you ask for a decision stump from the command line—in other words, every time you enter a command beginning with</p>
+<p id="p0095" class="noindent"><span class="monospace">java weka.classifiers.trees.DecisionStump</span></p>
+<p id="p0100" class="para_indented"><a id="p525"></a>The presence of a <em>main</em>() method in a class indicates that it can be run from the command line: All learning methods and filter algorithms implement it.</p>
+<p id="p0105" class="para_indented">The <em>getCapabilities</em>() method is called by the generic object editor to provide information about the capabilities of a learning scheme (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0050">Figure 11.9(d)</a>). The training data is checked against the learning scheme’s capabilities when the <em>buildClassifier</em>() method is called, and an error is raised when the classifier’s stated capabilities do not match the data’s characteristics. The <em>getCapabilities</em>() method is present in the <em>Classifier</em> class and, by default, enables all capabilities (i.e., imposes no constraints). This makes it easier for new Weka programmers to get started because they need not learn about and specify capabilities initially. Capabilities are covered in more detail in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0016.html#c0016">Chapter 16</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0016.html#p555">page 555</a>).</p>
+</div>
+<div id="s0035">
+<h3 id="st0035">Other Packages</h3>
+<p id="p0110" class="noindent">Several other packages listed earlier in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#f0010">Figure 14.1(a)</a> are worth mentioning: <em>weka.associations</em>, <em>weka.clusterers</em>, <em>weka.datagenerators</em>, <em>weka.estimators</em>, <em>weka.filters</em>, and <em>weka.attributeSelection</em>. The <em>weka.associations</em> package contains association-rule learners. These learners have been placed in a separate package because association rules are fundamentally different from classifiers. The <em>weka.clusterers</em> package contains methods for unsupervised learning. Artificial data can be generated using the classes in <em>weka.datagenerators</em>. The <em>weka.estimators</em> package contains subclasses of a generic <em>Estimator</em> class, which computes different types of probability distribution. These subclasses are used by the Naïve Bayes algorithm (among others).</p>
+<p id="p0115" class="para_indented">In the <em>weka.filters</em> package, the <em>Filter</em> class defines the general structure of classes containing filter algorithms, which are all implemented as subclasses of <em>Filter</em>. Like classifiers, filters can be used from the command line—we will see how shortly. The <em>weka.attributeSelection</em> package contains several classes for attribute selection. The classes are used by the <em>AttributeSelectionFilter</em> in <em>weka.filters.supervised.attribute</em>, but can also be invoked separately.</p>
+</div>
+<div id="s0040">
+<h3 id="st0040">Javadoc Indexes</h3>
+<p id="p0120" class="noindent">As mentioned previously, all classes are automatically subclasses of <em>Object</em>. To examine the tree that corresponds to Weka’s hierarchy of classes, select the <em>Overview</em> link from the top of any page of the online documentation. Click <em>Tree</em> to display the overview as a tree that shows which classes are subclasses or superclasses of a particular class—for example, which classes inherit from <em>Classifier</em>.</p>
+<p id="p0125" class="para_indented">The online documentation contains an index of all of the classes, packages, publicly accessible variables (called <em>fields</em>), and methods in Weka—in other words, all fields and methods that you can access from your own Java code. To view it, click <em>Overview</em> and then <em>Index</em>.</p>
+<p id="p0130" class="para_indented"><a id="p526"></a>Suppose you want to check which Weka classifiers and filters are capable of operating incrementally. Searching for the word <em>incremental</em> in the index would soon lead you to the keyword <em>UpdateableClassifier</em>. In fact, this is a Java interface; interfaces are listed after the classes in the overview tree. You are looking for all classes that implement this interface. Clicking any occurrence of it in the documentation brings up a page that describes the interface and lists the classifiers that implement it. To find the filters is a little trickier unless you know the keyword <em>StreamableFilter</em>, which is the name of the interface that streams data through a filter; again, its page lists the filters that implement it. You would stumble across that keyword if you knew any example of a filter that could operate incrementally.</p>
+</div>
+</div>
+<div id="s0045">
+<h2 id="st0045">14.3 Command-line options</h2>
+<p id="p0135" class="noindent">In the preceding example, the <em>–t</em> option was used on the command line to communicate the name of the training file to the learning algorithm. There are many other options that can be used with any learning scheme and also scheme-specific ones that apply only to particular schemes. If you invoke a scheme with the <em>–h</em> or <em>–help</em> option, or without any command-line options at all, it displays the applicable options: first the general options, then the scheme-specific ones. In the command-line interface, type</p>
+<p id="p0140" class="noindent"><span class="monospace">java weka.classifiers.trees.J48 –h</span></p>
+<p id="p0145" class="noindent">You’ll see a list of the options common to all learning schemes, shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#t0010">Table 14.1</a>, followed by those that apply only to <em>J48</em>, shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#t0015">Table 14.2</a>. A notable one is <em>–info</em>, which outputs a very brief description of the scheme. We will explain the generic options and then briefly review the scheme-specific ones.</p><a id="p527"></a><p class="table_caption"><span class="tab_num">Table 14.1. </span> Generic Options for Learning Schemes in Weka</p>
+<table id="t0010" frame="box" rules="all">
+<thead>
+<tr><td class="tch">Option</td>
+<td class="tch">Function</td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb"><span class="monospace">h or –help</span></td>
+<td class="tb">Print help information</td></tr>
+<tr><td class="tb"><span class="monospace">–synopsis or –info</span></td>
+<td class="tb">In combination with –h or –help, prints the information from the “More” button in a classifier’s generic object editor</td></tr>
+<tr><td class="tb"><span class="monospace">–t &lt;training file&gt;</span></td>
+<td class="tb">Specify training file</td></tr>
+<tr><td class="tb"><span class="monospace">–T &lt;test file&gt;</span></td>
+<td class="tb">Specify test file. If none, a cross-validation is performed on the training data.</td></tr>
+<tr><td class="tb"><span class="monospace">–c &lt;class index&gt;</span></td>
+<td class="tb">Specify index of class attribute</td></tr>
+<tr><td class="tb"><span class="monospace">–x &lt;number of folds&gt;</span></td>
+<td class="tb">Specify number of folds for cross-validation</td></tr>
+<tr><td class="tb"><span class="monospace">–s &lt;random number seed&gt;</span></td>
+<td class="tb">Specify random-number seed for cross-validation</td></tr>
+<tr><td class="tb"><span class="monospace">–no-cv</span></td>
+<td class="tb">Don’t perform cross-validation</td></tr>
+<tr><td class="tb"><span class="monospace">–split-percentage &lt;training percentage&gt;</span></td>
+<td class="tb">Specify percentage of the data to use for the training set in a train-test split</td></tr>
+<tr><td class="tb"><span class="monospace">–preserve-order</span></td>
+<td class="tb">Preserve original order of the data when performing a train-test split</td></tr>
+<tr><td class="tb"><span class="monospace">–m &lt;cost matrix file&gt;</span></td>
+<td class="tb">Specify file containing cost matrix</td></tr>
+<tr><td class="tb"><span class="monospace">–l &lt;input file&gt;</span></td>
+<td class="tb">Specify input file for model</td></tr>
+<tr><td class="tb"><span class="monospace">–d &lt;output file&gt;</span></td>
+<td class="tb">Specify output file for model</td></tr>
+<tr><td class="tb"><span class="monospace">–v</span></td>
+<td class="tb">Output no statistics for training data</td></tr>
+<tr><td class="tb"><span class="monospace">–o</span></td>
+<td class="tb">Output statistics only, not the classifier</td></tr>
+<tr><td class="tb"><span class="monospace">–i</span></td>
+<td class="tb">Output information retrieval statistics for two-class problems</td></tr>
+<tr><td class="tb"><span class="monospace">–k</span></td>
+<td class="tb">Output information-theoretic statistics</td></tr>
+<tr><td class="tb"><span class="monospace">–p &lt;attribute range&gt;</span></td>
+<td class="tb">Output predictions for test instances</td></tr>
+<tr><td class="tb"><span class="monospace">–distribution</span></td>
+<td class="tb">In combination with <em>–p</em>, output the full probability distribution for discrete class data instead of just the predicted label</td></tr>
+<tr><td class="tb"><span class="monospace">–r</span></td>
+<td class="tb">Output cumulative margin distribution</td></tr>
+<tr><td class="tb"><span class="monospace">–z &lt;class name&gt;</span></td>
+<td class="tb">Output the source representation of the classifier</td></tr>
+<tr><td class="tb"><span class="monospace">–g</span></td>
+<td class="tb">Output the graph representation of the classifier</td></tr>
+<tr><td class="tb"><span class="monospace">–xml &lt;filename&gt; | &lt;xml string&gt;</span></td>
+<td class="tb">Set scheme-specific options from XML-encoded options stored in a file or in a supplied string</td></tr>
+<tr><td class="tb"><span class="monospace">–threshold-file &lt;file&gt;</span></td>
+<td class="tb">Save threshold data (for ROC curves, etc.) to a file</td></tr>
+<tr><td class="tb"><span class="monospace">–threshold-label &lt;label&gt;</span></td>
+<td class="tb">Class label for the threshold data</td></tr>
+</tbody>
+</table>
+<p class="table_caption"><span class="tab_num">Table 14.2. </span> Scheme-Specific Options for the <em>J48</em> Decision Tree Learner</p>
+<table id="t0015" frame="box" rules="all">
+<thead>
+<tr><td class="tch">Option</td>
+<td class="tch">Function</td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb"><span class="monospace">-U</span></td>
+<td class="tb">Use unpruned tree</td></tr>
+<tr><td class="tb"><span class="monospace">-C &lt;pruning confidence&gt;</span></td>
+<td class="tb">Specify confidence threshold for pruning</td></tr>
+<tr><td class="tb"><span class="monospace">-M &lt;number of instances&gt;</span></td>
+<td class="tb">Specify minimum number of instances in any leaf</td></tr>
+<tr><td class="tb"><span class="monospace">-R</span></td>
+<td class="tb">Use reduced-error pruning</td></tr>
+<tr><td class="tb"><span class="monospace">-N &lt;number of folds&gt;</span></td>
+<td class="tb">Specify number of folds for reduced-error pruning; one fold is used as pruning set</td></tr>
+<tr><td class="tb"><span class="monospace">-B</span></td>
+<td class="tb">Use binary splits only</td></tr>
+<tr><td class="tb"><span class="monospace">-S</span></td>
+<td class="tb">Don’t perform subtree raising</td></tr>
+<tr><td class="tb"><span class="monospace">-L</span></td>
+<td class="tb">Retain instance information</td></tr>
+<tr><td class="tb"><span class="monospace">-A</span></td>
+<td class="tb">Smooth probability estimates using Laplace smoothing</td></tr>
+<tr><td class="tb"><span class="monospace">-Q</span></td>
+<td class="tb">Seed for shuffling data</td></tr>
+</tbody>
+</table>
+<div id="s0050">
+<h3 id="st0050">Generic Options</h3>
+<p id="p0150" class="noindent">The options in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#t0010">Table 14.1</a> determine which data is used for training and testing, how the classifier is evaluated, and what kind of statistics are displayed. For example, the <em>–T</em> option is used to provide the name of the test file when evaluating a learning scheme on an independent test set. By default, the class is the last attribute in an ARFF file, but you can declare another one to be the class using <em>–c</em> followed by the position of the desired attribute—1 for the first, 2 for the second, and so on.</p>
+<p id="p0155" class="para_indented">When cross-validation is performed (the default if a test file is not provided), the data is randomly shuffled first. To repeat the cross-validation several times, each time reshuffling the data in a different way, set the random number seed with <em>–s</em> (default value 1). With a large dataset you may want to reduce the number of folds for the cross-validation from the default value of 10 using <em>–x</em>. If performance on the training data alone is required, <em>–no-cv</em> can be used to suppress cross-validation; <em>−v</em> suppresses output of performance on the training data. As an alternative to cross-validation, a train-test split of the data specified with the <em>–t</em> option can be performed <a id="p528"></a>by supplying a percentage to use as the new training set with <em>–split-percentage</em> (the remaining data is used as the test set). Randomization of the data can be suppressed when performing a train-test split by specifying <em>–preserve-order</em>.</p>
+<p id="p0160" class="para_indented">In the Explorer interface, cost-sensitive evaluation is invoked as described in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0010">Section 11.1</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0010.html#p403">page 403</a>). To achieve the same effect from the command line, use the <em>–m</em> option to provide the name of a file containing the cost matrix. Here is a cost matrix for the weather data:</p>
+<p id="p0165" class="noindent"><span class="monospace">2 2 % Number of rows and columns in the matrix</span></p>
+<p id="p0170" class="noindent"><span class="monospace">0 10 % If true class yes and prediction no, penalty is 10</span></p>
+<p id="p0175" class="noindent"><span class="monospace">1 0 % If true class no and prediction yes, penalty is 1</span></p>
+<p id="p0180" class="noindent">The first line gives the number of rows and columns—that is, the number of class values. Then comes the matrix of penalties. Comments introduced by % can be appended to the end of any line.</p>
+<p id="p0185" class="para_indented">It is also possible to save and load models. If you provide the name of an output file using <em>–d</em>, Weka saves the classifier generated from the training data. To evaluate the same classifier on a new batch of test data, you load it back using <em>–l</em> instead of rebuilding it. If the classifier can be updated incrementally, you can provide both a training file and an input file, and Weka will load the classifier and update it with the given training instances.</p>
+<p id="p0190" class="para_indented">If you wish only to assess the performance of a learning scheme, use <em>–o</em> to suppress output of the model. Use <em>–i</em> to see the performance measures of precision, recall, <em>F</em>-measure, and area under the ROC curve (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#s0065">Section 5.7</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#p172">page 172</a>). Use <em>–k</em> to compute information-theoretic measures from the probabilities derived by a learning scheme (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#s0045">Section 5.6</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#p161">page 161</a>).</p>
+<p id="p0195" class="para_indented">People often want to know which class values the learning scheme actually predicts for each test instance. The <em>–p</em> option prints each test instance’s number, the <a id="p529"></a>index of its class value and the actual value, the index of the predicted class value and the predicted value, a “+” if the class was misclassified, and the probability of the predicted class value. The probability predicted for each of the possible class labels of an instance can be output by using the <em>–distribution</em> flag in conjunction with <em>–p</em>. In this case, “*” is placed beside the probability in the distribution that corresponds to the predicted class value. The <em>–p</em> option also outputs attribute values for each instance and must be followed by a specification of the range (e.g., 1–2)—use 0 if you don’t want any attribute values. You can also output the <em>cumulative margin distribution</em> for the training data, which shows the distribution of the margin measure (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0008.html#s0045">Section 8.4</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0008.html#p361">page 361</a>). Finally, you can output the classifier’s source representation, and a graphical representation if the classifier can produce one.</p>
+<p id="p0200" class="para_indented">Data relating to performance graphs such as ROC and recall–precision curves can be sent to a file using the <em>–threshold-file</em> option. The class label to treat as the positive class for generating the data can be specified with <em>–threshold-label</em>. The next section discusses how scheme-specific options are supplied on the command line; they can also be set from an XML file or string using the <em>–xml</em> option.</p>
+</div>
+<div id="s0055">
+<h3 id="st0055">Scheme-Specific Options</h3>
+<p id="p0205" class="noindent"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#t0015">Table 14.2</a> shows the options specific to <em>J48</em>. You can force the algorithm to use the unpruned tree instead of the pruned one. You can suppress subtree raising, which increases efficiency. You can set the confidence threshold for pruning and the minimum number of instances permissible at any leaf—both parameters were described in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0006.html#s0010">Section 6.1</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0006.html#p201">page 201</a>). As well as C4.5’s standard pruning procedure, reduced-error pruning (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0006.html#s0060">Section 6.2</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0006.html#p206">page 206</a>) can be performed. The <em>–N</em> option governs the size of the holdout set: The dataset is divided equally into that number of parts and the last is held out (default value 3). You can smooth the probability estimates using the Laplace technique, set the random number seed for shuffling the data when selecting a pruning set, and store the instance information for future visualization. Finally, to build a binary tree instead of one with multiway branches for nominal attributes, use <em>–B</em>.<a id="p530"></a></p>
+</div>
+</div>
+</div>
+<div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/c0013.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Chapter 13. The Experimenter</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/c0015.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">Chapter 15. Embedded Machine Learning</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel t-subscribe-nag collapsed">
+        
+        
+          
+          
+            <p class="usage-data">Find answers on the fly, or master something new. Subscribe today. <a href="https://www.safaribooksonline.com/subscribe/" class="ga-active-trial-subscribe-nag">See pricing options.</a></p>
+          
+
+          
+        
+        
+
+      </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 68.0057px;">
+    <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li>
+      <a class="t-queue-footer" href="https://www.safaribooksonline.com/playlists/">Playlists</a>
+      </li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2018 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8115864461861599"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.1494735538730425" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5794699&amp;Ver=2&amp;mid=924413e8-fee3-69ed-6124-f48241fd9c3e&amp;pi=-371479882&amp;lg=en-US&amp;sw=1280&amp;sh=800&amp;sc=24&amp;tl=Chapter%2014.%20The%20Command-Line%20Interface%20-%20Data%20Mining%3A%20Practical%20Machine%20Learning%20Tools%20and%20Techniques,%203rd%20Edition&amp;p=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fdata-mining-practical%2F9780123748560%2Fhtml%2Fc0014.html&amp;r=&amp;evt=pageLoad&amp;msclkid=N&amp;rn=894497"></div>
+
+
+
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#">Reset</a>
+</div>
+</div><span><div id="KampyleAnimationContainer" style="z-index: 2147483000; border: 0px; position: fixed; display: block; width: 0px; height: 0px;"></div></span></body></html>

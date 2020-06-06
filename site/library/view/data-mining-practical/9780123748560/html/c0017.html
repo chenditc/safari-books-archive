@@ -1,0 +1,846 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/data-mining-practical/9780123748560/html/c0017.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="3283993"
+  data-user-uuid="ff49cd60-92d4-4bee-94ce-69a00f89e9c5"
+  data-username="safaribooksonline113"
+  data-account-type="Trial"
+  
+  data-activated-trial-date="08/25/2018"
+
+
+  data-archive="9780123748560"
+  data-publishers="Morgan Kaufmann"
+
+
+
+  data-htmlfile-name="c0017.html"
+  data-epub-title="Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class="js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom gr__safaribooksonline_com" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/data-mining-practical/9780123748560/html/c0017.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="3283993" data-user-uuid="ff49cd60-92d4-4bee-94ce-69a00f89e9c5" data-username="safaribooksonline113" data-account-type="Trial" data-activated-trial-date="08/25/2018" data-archive="9780123748560" data-publishers="Morgan Kaufmann" data-htmlfile-name="c0017.html" data-epub-title="Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition" data-debug="0" data-testing="0" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9780123748560"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.0c29511d2d72.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"><title>Chapter 17. Tutorial Exercises for the Weka Explorer - Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition</title><link rel="stylesheet" href="https://www.safaribooksonline.com/static/CACHE/css/5e586a47a3b7.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://www.safaribooksonline.com/static/css/annotator.e3b0c44298fc.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style type="text/css" title="ibis-book">
+    #sbo-rt-content div{margin-left:2em;margin-right:2em;font-family:"Charis"}#sbo-rt-content div.itr{padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content .fm_title_document{font-size:x-large;text-align:center;font-weight:bold;line-height:1.5em;margin-top:2em;color:#241a26;background-color:#a6abee}#sbo-rt-content div.ded{text-align:center;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em;margin-top:4em}#sbo-rt-content .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content div.ded .para_indented{font-size:100%;text-align:center;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.ctr{text-align:left;font-weight:bold;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content div.idx{text-align:left;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content div.ctr .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content div.ctr .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.ctr .author{font-size:100%;text-align:left;margin-bottom:.5em;margin-top:1em;color:#39293b;font-weight:bold}#sbo-rt-content div.ctr .affiliation{text-align:left;font-size:100%;font-style:italic;color:#5e4462}#sbo-rt-content div.pre{text-align:left;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content div.pre .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content div.pre .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.chp{line-height:1.5em;margin-top:2em}#sbo-rt-content .document_number{display:block;font-size:100%;text-align:right;padding-bottom:10px;padding-top:10px;padding-right:10px;font-weight:bold;border-top:solid 2px #0000A0;border-right:solid 8px #0000A0;margin-bottom:.25em;background-color:#a6abee;color:#0000A0}#sbo-rt-content .subtitle_document{font-weight:bold;font-size:large;text-align:center;margin-bottom:2em;margin-top:.5em;padding-top:.5em}#sbo-rt-content .subtitle{font-weight:bold;font-size:large;text-align:center;margin-bottom:1em}#sbo-rt-content a{color:#3152a9;text-decoration:none}#sbo-rt-content .affiliation{font-size:100%;font-style:italic;color:#5e4462}#sbo-rt-content .extract_fl{text-align:justify;font-size:100%;margin-bottom:1em;margin-top:2em;margin-left:1.5em;margin-right:1.5em}#sbo-rt-content .poem_title{text-align:center;font-size:110%;margin-top:1em;font-weight:bold}#sbo-rt-content .stanza{text-align:center;font-size:100%}#sbo-rt-content .poem_source{text-align:center;font-size:100%;font-style:italic}#sbo-rt-content .list_para{font-size:100%;margin-top:0;margin-bottom:.25em}#sbo-rt-content .objectset{font-size:90%;margin-bottom:1.5em;margin-top:1.5em;border-top:solid 3px #e88f1c;border-bottom:solid 1.5px #e88f1c;background-color:#f8d9b5;color:#4f2d02}#sbo-rt-content .objectset_title{margin-top:0;padding-top:5px;padding-left:5px;padding-right:5px;padding-bottom:5px;background-color:#efab5b;font-weight:bold;font-size:110%;color:#88520b;border-bottom:solid 1.5px #e88f1c}#sbo-rt-content .nomenclature{font-size:90%;margin-bottom:1.5em;padding-bottom:15px;border-top:solid 3px #644484;border-bottom:solid 1.5px #644484}#sbo-rt-content .nomenclature_head{margin-top:0;padding-top:5px;padding-left:5px;padding-bottom:5px;background-color:#b29bca;font-weight:bold;font-size:110%;color:#644484;border-bottom:solid 1.5px #644484}#sbo-rt-content .list_def_entry{font-size:100%;margin-top:.5em;margin-bottom:.5em}#sbo-rt-content div.chp .para_fl{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0}#sbo-rt-content .scx{font-size:100%;font-weight:bold;text-align:left;margin-bottom:0;margin-top:0;padding-bottom:5px;padding-top:5px;padding-left:5px;padding-right:5px}#sbo-rt-content p{font-size:100%;text-align:justify;margin-bottom:0;margin-top:0}#sbo-rt-content div.chp .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content .head1{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .head12{page-break-before:always;font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .sec_num{color:#0000A0}#sbo-rt-content .head2{font-size:115%;font-weight:bold;text-align:left;margin-bottom:.5em;margin-top:1em;color:#ae3f58;border-bottom:solid 3px #dfd8cb}#sbo-rt-content .head3{font-size:110%;margin-bottom:.5em;margin-top:1em;text-align:left;font-weight:bold;color:#6f2c90}#sbo-rt-content .head4{font-weight:bold;font-size:105%;text-align:left;margin-bottom:.5em;margin-top:1em;color:#53a6df}#sbo-rt-content .bibliography_title{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .tch{text-align:center;border-bottom:solid 1px black;border-top:solid 1px black;border-right:solid 1px black;border-left:solid 1px black;margin-top:1.5em;margin-bottom:1.5em;font-weight:bold}#sbo-rt-content table{display:table;margin-bottom:1em}#sbo-rt-content tr{display:table-row}#sbo-rt-content td ul{display:table-cell}#sbo-rt-content .tb{margin-top:1.5em;margin-bottom:1.5em;vertical-align:top;padding-left:1em}#sbo-rt-content .table_source{font-size:75%;margin-bottom:1em;font-style:italic;color:#0000A0;text-align:left;padding-bottom:5px;padding-top:5px;border-bottom:solid 2px black;border-top:solid 1px black}#sbo-rt-content .figure{margin-top:1.5em;margin-bottom:1.5em;padding-right:5px;padding-left:5px;padding-bottom:5px;padding-top:5px;text-align:center}#sbo-rt-content .figure_legend{font-size:90%;margin-top:0;margin-bottom:1em;vertical-align:top;border-top:solid 1px #0000A0;line-height:1.5em}#sbo-rt-content .figure_source{font-size:75%;margin-top:.5em;margin-bottom:1em;font-style:italic;color:#0000A0;text-align:left}#sbo-rt-content .fig_num{font-size:110%;font-weight:bold;color:white;padding-right:10px;background-color:#0000A0}#sbo-rt-content .table_caption{font-size:90%;margin-top:2em;margin-bottom:.5em;vertical-align:top}#sbo-rt-content .tab_num{font-size:90%;font-weight:bold;color:#00f;padding-right:4px}#sbo-rt-content .tablecdt{font-size:75%;margin-bottom:1em;font-style:italic;color:#00f;text-align:left;padding-bottom:5px;padding-top:5px;border-bottom:solid 2px black;border-top:solid 1px black}#sbo-rt-content table.numbered{font-size:85%;border-top:solid 2px black;border-bottom:solid 2px black;margin-top:1.5em;margin-bottom:1em;background-color:#a6abee}#sbo-rt-content table.unnumbered{font-size:85%;border-top:solid 2px black;border-bottom:solid 2px black;margin-top:1.5em;margin-bottom:1em;background-color:#a6abee}#sbo-rt-content .ack{font-size:90%;margin-top:1.5em;margin-bottom:1.5em}#sbo-rt-content .boxg{font-size:90%;padding-left:.5em;padding-right:.5em;margin-bottom:1em;margin-top:1em;border-top:solid 1px red;border-bottom:solid 1px red;border-left:solid 1px red;border-right:solid 1px red;background-color:#ffda6b}#sbo-rt-content .box_title{padding-top:5px;padding-left:5px;padding-bottom:5px;padding-right:5px;background-color:#67582b;font-weight:bold;font-size:110%;color:white;margin-top:.25em}#sbo-rt-content .box_source{padding-top:.5px;padding-left:.5px;padding-bottom:5px;padding-right:.5px;font-size:100%;color:#67582b;margin-top:.25em;margin-left:2.5em;margin-right:2.5em;font-style:italic}#sbo-rt-content .box_no{margin-top:0;padding-left:5px;padding-right:5px;font-weight:bold;font-size:100%;color:#ffda6b}#sbo-rt-content .headx{margin-top:.5em;padding-bottom:.25em;font-weight:bold;font-size:110%}#sbo-rt-content .heady{margin-top:1.5em;padding-bottom:.25em;font-weight:bold;font-size:110%;color:#00f}#sbo-rt-content .headz{margin-top:1.5em;padding-bottom:.25em;font-weight:bold;font-size:110%;color:red}#sbo-rt-content div.subdoc{font-weight:bold;font-size:large;text-align:center;color:#00f}#sbo-rt-content div.subdoc .document_number{display:block;font-size:100%;text-align:right;padding-bottom:10px;padding-top:10px;padding-right:10px;font-weight:bold;border-top:solid 2px #00f;border-right:solid 8px #00f;margin-bottom:.25em;background-color:#2b73b0;color:#00f}#sbo-rt-content ul.none{list-style:none;margin-top:.25em;margin-bottom:1em}#sbo-rt-content ul.bull{list-style:disc;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ul.squf{list-style:square;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ul.circ{list-style:circle;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.lower_a{list-style:lower-alpha;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.upper_a{list-style:upper-alpha;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.upper_i{list-style:upper-roman;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content ol.lower_i{list-style:lower-roman;margin-top:.25em;margin-bottom:.25em}#sbo-rt-content div.chp .list_para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content .book_title_page{margin-top:.5em;margin-left:.5em;margin-right:.5em;border-top:solid 6px #55390e;border-left:solid 6px #55390e;border-right:solid 6px #55390e;padding-left:0;padding-top:10px;background-color:#a6abee}#sbo-rt-content p.pagebreak{page-break-before:always}#sbo-rt-content .book_series_editor{margin-top:.5em;margin-left:.5em;margin-right:.5em;border-top:solid 6px #55390e;border-left:solid 6px #55390e;border-right:solid 6px #55390e;border-bottom:solid 6px #55390e;padding-left:5px;padding-right:5px;padding-top:10px;background-color:#a6abee}#sbo-rt-content .book_title{text-align:center;font-weight:bold;font-size:250%;color:#55390e;margin-top:70px}#sbo-rt-content .book_subtitle{text-align:center;margin-top:.25em;font-weight:bold;font-size:150%;color:#00f;border-top:solid 1px #55390e;border-bottom:solid 1px #55390e;padding-bottom:7px}#sbo-rt-content .edition{text-align:right;margin-top:1.5em;margin-right:5em;font-weight:bold;font-size:90%;color:red}#sbo-rt-content .author_group{padding-left:10px;padding-right:10px;padding-top:2px;padding-bottom:2px;background-color:#ffac29;margin-left:70px;margin-right:70px;margin-top:20px;margin-bottom:20px}#sbo-rt-content .editors{text-align:left;font-weight:bold;font-size:100%;color:#241a26}#sbo-rt-content .title_author{text-align:center;font-weight:bold;font-size:80%;color:#241a26}#sbo-rt-content .title_affiliation{text-align:center;font-size:80%;color:#241a26;margin-bottom:.5em;font-style:italic}#sbo-rt-content .publisher{text-align:center;font-size:100%;margin-bottom:.5em;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;background-color:#55390e;color:#a6abee}#sbo-rt-content div.qa h1.head1{font-size:110%;font-weight:bold;margin-bottom:1em;margin-top:1em;color:#6883b5;border-bottom:solid 8px #fee7ca}#sbo-rt-content div.outline{border-left:2px solid #007ec6;border-right:2px solid #007ec6;border-bottom:2px solid #007ec6;border-top:26px solid #007ec6;padding:3px;margin-bottom:1em}#sbo-rt-content div.outline .list_head{background-color:#007ec6;color:white;padding:.2em 1em .2em;margin:-.4em -.3em -.4em -.3em;margin-bottom:.5em;font-size:medium;font-weight:bold;margin-top:-1.5em}#sbo-rt-content div.fm .author{text-align:center;margin-bottom:1.5em;color:#39293b}#sbo-rt-content td p{text-align:left}#sbo-rt-content div.htu .para_indented{font-size:100%;text-align:justify;margin-bottom:.5em;margin-top:0;text-indent:1em}#sbo-rt-content div.htu .para_fl{font-size:100%;margin-bottom:.5em;margin-top:0;text-align:justify}#sbo-rt-content .headx{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content div.book_section{text-align:center;margin-top:8em}#sbo-rt-content div.book_part{text-align:center;margin-top:6em}#sbo-rt-content p.section_label{display:block;font-size:200%;text-align:center;padding-right:10px;font-weight:bold;border-top:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content p.section_title{display:block;font-size:200%;text-align:center;padding-right:10px;margin-bottom:2em;border-top:solid 2px #00f;font-weight:bold;border-bottom:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content p.part_label{display:block;font-size:250%;text-align:center;margin-top:6em;padding-right:10px;font-weight:bold;border-top:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content p.part_title{display:block;font-size:250%;text-align:center;padding-right:10px;margin-bottom:2em;font-weight:bold;border-bottom:solid 2px #00f;background-color:#a6abee;color:#00f}#sbo-rt-content div.idx li{margin-top:-.3em}#sbo-rt-content p.ueqn{text-align:center}#sbo-rt-content p.eqn{text-align:center}#sbo-rt-content p.extract_indented{margin-left:3em;margin-right:3em;margin-bottom:.5em;text-indent:1em}#sbo-rt-content td p.para_fl{font-size:90%;margin-bottom:.5em;margin-top:0;text-align:left}#sbo-rt-content .small{font-size:small}#sbo-rt-content div.abs{font-size:90%;margin-bottom:2em;margin-top:2em;margin-left:1em;margin-right:1em}#sbo-rt-content p.abstract_title{font-size:110%;margin-bottom:1em;font-weight:bold}#sbo-rt-content sup{vertical-align:4px}#sbo-rt-content sub{vertical-align:-2px}#sbo-rt-content img{max-width:100%;max-height:100%}#sbo-rt-content p.toc1{margin-left:1em;margin-bottom:.5em;font-weight:bold;text-align:left}#sbo-rt-content p.toc2{margin-left:2em;margin-bottom:.5em;font-weight:bold;text-align:left}#sbo-rt-content p.toc3{margin-left:3em;margin-bottom:.5em;text-align:left}#sbo-rt-content .head5{font-weight:bold;font-size:100%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content img.inline{vertical-align:middle}#sbo-rt-content .head6{font-weight:bold;font-size:90%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .underline{text-decoration:underline}#sbo-rt-content .center{text-align:center}#sbo-rt-content span.big{font-size:2em}#sbo-rt-content p.para_indented{text-indent:2em}#sbo-rt-content p.para_indented1{text-indent:0;page-break-before:always}#sbo-rt-content p.right{text-align:right}#sbo-rt-content p.endnote{margin-left:1em;margin-right:1em;margin-bottom:.5em;text-indent:-1em}#sbo-rt-content div.block{margin-left:3em;margin-bottom:.5em;text-indent:-1em}#sbo-rt-content p.bl_para{font-size:100%;text-indent:0;text-align:justify}#sbo-rt-content div.poem{text-align:center;font-size:100%}#sbo-rt-content .acknowledge_head{font-size:150%;margin-bottom:.25em;font-weight:bold}#sbo-rt-content .intro{font-size:130%;margin-top:1.5em;margin-bottom:1em;font-weight:bold}#sbo-rt-content .exam{font-size:90%;margin-top:1em;margin-bottom:1em}#sbo-rt-content div.exam_head{font-size:130%;margin-top:1.5em;margin-bottom:1em;font-weight:bold}#sbo-rt-content p.table_footnotes{font-size:80%;margin-top:.5em;margin-bottom:.5em;vertical-align:top;text-indent:.01em}#sbo-rt-content div.table_foot{font-size:80%;margin-top:.5em;margin-bottom:1em;text-indent:.01em}#sbo-rt-content p.table_legend{font-size:80%;margin-top:.5em;margin-bottom:.5em;vertical-align:top;text-indent:.01em}#sbo-rt-content .bib_entry{font-size:90%;text-align:left;margin-left:20px;margin-bottom:.25em;margin-top:0;text-indent:-30px}#sbo-rt-content .ref_entry{font-size:90%;text-align:left;margin-left:20px;margin-bottom:.25em;margin-top:0;text-indent:-20px}#sbo-rt-content div.ind1{margin-left:.1em;margin-top:.5em}#sbo-rt-content div.ind2{margin-left:1em}#sbo-rt-content div.ind3{margin-left:1.5em}#sbo-rt-content div.ind4{margin-left:2em}#sbo-rt-content div.ind5{margin-left:2.5em}#sbo-rt-content div.ind6{margin-left:3em}#sbo-rt-content .title_document{font-size:x-large;text-align:center;font-weight:bold;line-height:1.5em;margin-top:2em;margin-bottom:2em;color:#0000A0}#sbo-rt-content .sc1{margin-left:0}#sbo-rt-content .sc2{margin-left:0}#sbo-rt-content .sc3{margin-left:0}#sbo-rt-content .sc4{margin-left:0}#sbo-rt-content .sc5{margin-left:0}#sbo-rt-content .sc6{margin-left:0}#sbo-rt-content .sc7{margin-left:0}#sbo-rt-content .sc8{margin-left:0}#sbo-rt-content .sc9{margin-left:0}#sbo-rt-content .sc10{margin-left:0}#sbo-rt-content .sc11{margin-left:0}#sbo-rt-content .sc12{margin-left:0}#sbo-rt-content .sc13{margin-left:0}#sbo-rt-content .sc14{margin-left:0}#sbo-rt-content .sc15{margin-left:0}#sbo-rt-content .sc16{margin-left:0}#sbo-rt-content .sc17{margin-left:0}#sbo-rt-content .sc18{margin-left:0}#sbo-rt-content .sc19{margin-left:0}#sbo-rt-content .sc20{margin-left:0}#sbo-rt-content .sc0{margin-left:0}#sbo-rt-content .source{font-size:11px;margin-top:.5em;margin-bottom:0;font-style:italic;color:#0000A0;text-align:left}#sbo-rt-content div.footnote{font-size:small;border-style:solid;border-width:1px 0 0 0;margin-top:2em;margin-bottom:1em}#sbo-rt-content table.numbered{font-size:small}#sbo-rt-content div.hang{margin-left:.3em;margin-top:1em;text-align:left}#sbo-rt-content div.p_hang{margin-left:1.5em;text-align:left}#sbo-rt-content div.p_hang1{margin-left:2em;text-align:left}#sbo-rt-content div.p_hang2{margin-left:2.5em;text-align:left}#sbo-rt-content div.p_hang3{margin-left:3em;text-align:left}#sbo-rt-content .bibliography{text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .biblio_sec{font-size:90%;text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .gls{text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .glossary_sec{font-size:90%;font-style:italic;text-align:left;margin-bottom:1em;margin-top:1em}#sbo-rt-content .head7{font-weight:bold;font-size:86%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .head8{font-weight:bold;font-style:italic;font-size:81%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .box_subtitle{padding-top:5px;padding-left:5px;padding-bottom:5px;padding-right:5px;font-weight:bold;font-size:105%;margin-top:.25em}#sbo-rt-content div.for{text-align:left;font-size:medium;padding-top:.2em;padding-bottom:.25em;padding-left:.2em;padding-right:.2em}#sbo-rt-content span.strike{text-decoration:line-through}#sbo-rt-content .head9{font-style:italic;font-size:80%;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .bib_note{font-size:85%;text-align:left;margin-left:25px;margin-bottom:.25em;margin-top:0;text-indent:-30px}#sbo-rt-content .glossary_title{font-size:110%;font-weight:bold;text-align:left;margin-bottom:1em;margin-top:1em;color:#005aaa;border-bottom:solid 3px #7f9fd3}#sbo-rt-content .collaboration{padding-left:10px;padding-right:10px;padding-top:2px;padding-bottom:2px;background-color:#ffac29;margin-left:70px;margin-right:70px;margin-top:20px;margin-bottom:20px}#sbo-rt-content .title_collab{text-align:center;font-weight:bold;font-size:85%;color:#241a26}#sbo-rt-content .head0{font-size:105%;font-weight:bold;text-align:left;margin-bottom:.5em;margin-top:1em}#sbo-rt-content .copyright{font-size:80%;text-align:left;margin-bottom:0;margin-top:0;text-indent:0}#sbo-rt-content .copyright-top{font-size:80%;text-align:left;margin-bottom:0;margin-top:1em;text-indent:0}#sbo-rt-content .idxtitle{font-size:x-large;text-align:center;font-weight:bold;line-height:1.5em;margin-top:2em;margin-bottom:2em;color:#0000A0}#sbo-rt-content .idxletter{font-size:100%;text-align:left;margin-bottom:0;margin-top:1em;text-indent:0;font-weight:bold}#sbo-rt-content h1.chaptertitle{margin-top:.5em;margin-bottom:1em;font-size:200%;font-weight:bold;text-indent:0;line-height:1em}#sbo-rt-content h1.chapterlabel{margin-top:0;margin-bottom:0;font-size:150%;font-weight:bold;text-indent:0}#sbo-rt-content p.noindent{text-align:justify;text-indent:0;margin-top:10px;margin-bottom:2px}#sbo-rt-content span.monospace{font-family:consolas,courier,monospace;margin-top:0;margin-bottom:0;white-space:pre;font-size:85%}#sbo-rt-content p.hang{text-indent:-1.1em;margin-left:1em}#sbo-rt-content p.hang1{text-indent:-1.1em;margin-left:2em}#sbo-rt-content p.hang2{text-indent:-1.6em;margin-left:2em}#sbo-rt-content p.hang3{text-indent:-1.1em;margin-left:3em}#sbo-rt-content p.hang4{text-indent:-1.6em;margin-left:4.3em}#sbo-rt-content p.hang5{text-indent:-1.1em;margin-left:5em}#sbo-rt-content p.none{text-align:justify;display:list-item;list-style-type:none;text-indent:-3.2em;margin-left:3.2em;margin-top:2px;margin-bottom:2px}#sbo-rt-content p.blockquote{font-size:90%;margin-left:2.5em;margin-right:2em;margin-top:1em;margin-bottom:1em;line-height:1.3em}#sbo-rt-content p.none1{text-align:justify;display:list-item;list-style-type:none;text-indent:-3.2em;margin-left:2.8em;margin-top:2px;margin-bottom:2px}#sbo-rt-content .listparasub1{list-style:lower-roman;margin-top:.25em;margin-bottom:.25em;margin-left:3.2em}#sbo-rt-content .listparasub2{list-style:lower-roman;margin-top:.25em;margin-bottom:.25em;margin-left:5.5em;text-indent:-3.2em}#sbo-rt-content div.none{list-style:none;margin-top:.25em;margin-bottom:1em}#sbo-rt-content div.bm{line-height:1.5em;margin-top:2em}#sbo-rt-content div.fm{line-height:1.5em;margin-top:2em}#sbo-rt-content span.sup{vertical-align:4px;font-size:75%}#sbo-rt-content span.sub{font-size:75%;vertical-align:-2px}#sbo-rt-content .box_titleC{text-align:center;padding-top:5px;padding-left:5px;padding-bottom:5px;padding-right:5px;background-color:#67582b;font-weight:bold;font-size:110%;color:white;margin-top:.25em}
+    </style><link rel="canonical" href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html"><meta name="description" content=" CHAPTER 17 Tutorial Exercises for the Weka Explorer The best way to learn about the Explorer interface is simply to use it. This chapter presents a series of tutorial exercises ... "><meta property="og:title" content="Chapter 17. Tutorial Exercises for the Weka Explorer"><meta itemprop="isPartOf" content="/library/view/data-mining-practical/9780123748560/"><meta itemprop="name" content="Chapter 17. Tutorial Exercises for the Weka Explorer"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0017.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9780123748560/"><meta property="og:description" itemprop="description" content=" CHAPTER 17 Tutorial Exercises for the Weka Explorer The best way to learn about the Explorer interface is simply to use it. This chapter presents a series of tutorial exercises ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="Morgan Kaufmann"><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9780080890364"><meta property="og:book:author" itemprop="author" content="Mark A. Hall"><meta property="og:book:author" itemprop="author" content="Eibe Frank"><meta property="og:book:author" itemprop="author" content="Ian H. Witten"><meta property="og:book:tag" itemprop="about" content="Big Data"><meta property="og:book:tag" itemprop="about" content="Databases"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: <%= font_size %> !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: <%= font_family %> !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: <%= column_width %>% !important; margin: 0 auto !important; }"></style><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 100019;
+}
+.annotator-filter {
+  z-index: 100009;
+}</style><style type="text/css" id="kampyleStyle">.noOutline{outline: none !important;}.wcagOutline:focus{outline: 1px dashed #595959 !important;outline-offset: 2px !important;transition: none !important;}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library" data-gr-c-s-loaded="true">
+
+    
+  
+  
+  
+
+
+
+    
+      <div class="hide working" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#container" class="skip">Skip to content</a><header class="topbar t-topbar" style="display:None"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/playlists/" class="t-queue-nav l0 nav-icn None"><!--?xml version="1.0" encoding="UTF-8"?--><svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch --><title>icon_Playlist_sml</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_Playlist_sml" fill-rule="nonzero" fill="#000000"><g id="playlist-icon"><g id="Group-6"><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle></g><g id="Group-5" transform="translate(0.000000, 7.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g><g id="Group-5-Copy" transform="translate(0.000000, 14.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g></g></g></g></svg><span>
+               Playlists
+            </span></a></li><li class="search"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://get.oreilly.com/email-signup.html" target="_blank" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/ff49cd60-92d4-4bee-94ce-69a00f89e9c5/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Data Mining: Practical Machine Learning Tools and Techniques, 3rd Edition
+      
+    </h1></span></a><div class="toc-contents"></div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><div class="js-content-uri" data-content-uri="/api/v1/book/9780123748560/chapter/html/c0017.html"><div class="js-collections-dropdown collections-dropdown menu-bit-cards"></div></div></li><li class="js-font-control-panel font-control-activator"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0017.html&amp;text=Data%20Mining%3A%20Practical%20Machine%20Learning%20Tools%20and%20Techniques%2C%203rd%20Edition&amp;via=safari"><span>Twitter</span></a></li><li><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0017.html"><span>Facebook</span></a></li><li><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0017.html"><span>Google Plus</span></a></li><li><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20Chapter%2017.%20Tutorial%20Exercises%20for%20the%20Weka%20Explorer&amp;body=https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/html/c0017.html%0D%0Afrom%20Data%20Mining%3A%20Practical%20Machine%20Learning%20Tools%20and%20Techniques%2C%203rd%20Edition%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+        
+        
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  
+
+
+        
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/c0016.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Chapter 16. Writing New Learning Schemes</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/bib00023.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">Data Mining</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content" style="transform: none;"><div class="annotator-wrapper"><div class="chp"><a id="c0017"></a><h1 class="chapterlabel" id="c0017tit1">
+<strong>CHAPTER</strong> 17</h1>
+<h1 class="chaptertitle" id="c0017tit">Tutorial Exercises for the Weka Explorer</h1>
+<p id="p0010" class="noindent"><a id="p559"></a>The best way to learn about the Explorer interface is simply to use it. This chapter presents a series of tutorial exercises that will help you learn about Explorer and also about practical data mining in general. The first section is introductory, but we think you will find the exercises in the later sections quite thought-provoking.</p>
+<p id="p0015" class="para_indented">We begin with a quick, guided tour of the Explorer interface, examining each of the panels and what they can do, which largely parallels the introduction given in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#c0011">Chapter 11</a>. Our screenshots are from Weka 3.6, although almost everything is the same with other versions.</p>
+<div id="s0010">
+<h2 id="st0010">17.1 Introduction to the explorer interface</h2>
+<p id="p0020" class="noindent">Invoke Weka from the Windows Start menu (on Linux or the Mac, double-click <em>weka.jar</em> or <em>weka.app</em>, respectively). This starts up the Weka GUI Chooser (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0020">Figure 11.3(a)</a>). Click the <em>Explorer</em> button to enter the Weka Explorer. The Preprocess panel (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0020">Figure 11.3(b)</a>) opens up when the Explorer interface is started.</p>
+<div id="s0015">
+<h3 id="st0015">Loading a Dataset</h3>
+<p id="p0025" class="noindent">Load a dataset by clicking the <em>Open file</em> button in the top left corner of the panel. Inside the <em>data</em> folder, which is supplied when Weka is installed, you will find a file named <em>weather.nominal.arff</em>. This contains the nominal version of the standard “weather” dataset in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0001.html#t0015">Table 1.2</a>. Open this file (the screen will look like <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0020">Figure 11.3(b)</a>).</p>
+<p id="p0030" class="para_indented">As the result shows, the weather data has 14 instances, and 5 attributes called <em>outlook</em>, <em>temperature</em>, <em>humidity</em>, <em>windy</em>, and <em>play</em>. Click on the name of an attribute in the left subpanel to see information about the selected attribute on the right, such as its values and how many times an instance in the dataset has a particular value. This information is also shown in the form of a histogram. All attributes in this dataset are “nominal”—that is, they have a predefined finite set of values. The last attribute, <em>play</em>, is the “class” attribute; its value can be <em>yes</em> or <em>no</em>.</p>
+<p id="p0035" class="para_indented"><a id="p560"></a>Familiarize yourself with the Preprocess panel by doing the following exercises. The solutions to these and other exercises in this section are given at the end of the section.</p><a id="p0040"></a><div class="none">
+<p class="hang1" id="u0010"><a id="p0045"></a><strong>Exercise 17.1.1.</strong> What are the values that the attribute <em>temperature</em> can have?</p>
+<p class="hang1" id="u0015"><a id="p0050"></a><strong>Exercise 17.1.2.</strong> Load a new dataset. Click the <em>Open file</em> button and select the file <em>iris.arff</em>, which corresponds to the iris dataset in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0001.html#t0025">Table 1.4</a>. How many instances does this dataset have? How many attributes? What is the range of possible values of the attribute <em>petallength</em>?</p>
+</div>
+</div>
+<div id="s0020">
+<h3 id="st0020">The Dataset Editor</h3>
+<p id="p0055" class="noindent">It is possible to view and edit an entire dataset from within Weka. To do this, load the <em>weather.nominal.arff</em> file again. Click the <em>Edit</em> button from the row of buttons at the top of the Preprocess panel. This opens a new window called Viewer, which lists all instances of the weather data (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#f0010">Figure 17.1</a>).</p>
+<p id="f0010" class="figure"><img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/f000171f017-001-9780123748560.jpg" alt="image" width="750" height="723" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/f000171f017-001-9780123748560.jpg"></p>
+<p class="figure_legend"><span class="fig_num">FIGURE 17.1</span> The data viewer.</p><a id="p0060"></a><div class="none">
+<p class="hang1" id="u0020"><a id="p0065"></a><strong>Exercise 17.1.3.</strong> What is the function of the first column in the Viewer window?</p>
+<p class="hang1" id="u0025"><a id="p0070"></a><strong>Exercise 17.1.4.</strong> What is the class value of instance number 8 in the weather data?</p>
+<p class="hang1" id="u0030"><a id="p0075"></a><strong>Exercise 17.1.5.</strong> Load the iris data and open it in the editor. How many numeric and how many nominal attributes does this dataset have?</p>
+</div>
+</div>
+<div id="s0025">
+<h3 id="st0025"><a id="p561"></a>Applying a Filter</h3>
+<p id="p0080" class="noindent">As you know, Weka “filters” can be used to modify datasets in a systematic fashion—that is, they are data preprocessing tools. Reload the <em>weather.nominal</em> dataset, and let’s remove an attribute from it. The appropriate filter is called <em>Remove</em>; its full name is</p>
+<p id="p0085" class="noindent"><span class="monospace">weka.filters.unsupervised.attribute.Remove</span></p>
+<p id="p0090" class="noindent">Examine this name carefully. Filters are organized into a hierarchical structure of which the root is <em>weka</em>. Those in the <em>unsupervised</em> category don’t require a class attribute to be set; those in the <em>supervised</em> category do. Filters are further divided into ones that operate primarily on attributes (the <em>attribute</em> category) and ones that operate primarily on instances (the <em>instance</em> category).</p>
+<p id="p0095" class="para_indented">Click the <em>Choose</em> button in the Preprocess panel to open a hierarchical menu (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0050">Figure 11.9(a)</a>) from which you select a filter by following the path corresponding to its full name. Use the path given in the full name above to select the <em>Remove</em> filter. The text “Remove” will appear in the field next to the <em>Choose</em> button.</p>
+<p id="p0100" class="para_indented">Click on the field containing this text. The Generic Object Editor window, which is used throughout Weka to set parameter values for all of the tools, opens. In this case it contains a short explanation of the <em>Remove</em> filter (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0050">Figure 11.9(b)</a>)—click <em>More</em> to get a fuller description (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0050">Figure 11.9(c)</a>). Enter <em>3</em> into the <em>attributeIndices</em> field and click the <em>OK</em> button. The window with the filter options closes. Now click the <em>Apply</em> button on the right, which runs the data through the filter. The filter removes the attribute with index 3 from the dataset, and you can see that this has happened. This change does not affect the dataset in the file; it only applies to the data held in memory. The changed dataset can be saved to a new ARFF file by pressing the <em>Save</em> button and entering a file name. The action of the filter can be undone by pressing the <em>Undo</em> button. Again, this applies to the version of the data held in memory.</p>
+<p id="p0105" class="para_indented">What we have described illustrates how filters are applied to data. However, in the particular case of <em>Remove</em>, there is a simpler way of achieving the same effect. Instead of invoking a filter, attributes can be selected using the small boxes in the Attributes subpanel and removed using the <em>Remove</em> button that appears at the bottom, below the list of attributes.</p><a id="p0110"></a><div class="none">
+<p class="hang1" id="u0035"><a id="p0115"></a><strong>Exercise 17.1.6.</strong> Load the <em>weather.nominal</em> dataset. Use the filter <em>weka.unsupervised.instance.RemoveWithValues</em> to remove all instances in which the <em>humidity</em> attribute has the value <em>high</em>. To do this, first make the field next to the <em>Choose</em> button show the text <em>RemoveWithValues</em>. Then click on it to get the Generic Object Editor window, and figure out how to change the filter settings appropriately.</p>
+<p class="hang1" id="u0040"><a id="p0120"></a><strong>Exercise 17.1.7.</strong> Undo the change to the dataset that you just performed, and verify that the data has reverted to its original state.</p>
+</div>
+</div>
+<div id="s0030">
+<h3 id="st0030"><a id="p562"></a>The Visualize Panel</h3>
+<p id="p0125" class="noindent">Now take a look at Weka’s data visualization facilities. These work best with numeric data, so we use the iris data. Load <em>iris.arff</em>, which contains the iris dataset of <a href="/site/library/view/data-mining-practical/9780123748560/html/c0001.html#t0025">Table 1.4</a> containing 50 examples of three types of Iris: <em>Iris setosa</em>, <em>Iris versicolor</em>, and <em>Iris virginica</em>.</p>
+<p id="p0130" class="para_indented">Click the <em>Visualize</em> tab to bring up the Visualize panel (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0090">Figure 11.17</a>). Click the first plot in the second row to open up a window showing an enlarged plot using the selected axes. Instances are shown as little crosses, the color of which depends on the instance’s class. The <em>x</em>-axis shows the <em>sepallength</em> attribute, and the <em>y</em>-axis shows <em>petalwidth</em>.</p>
+<p id="p0135" class="para_indented">Clicking on one of the crosses opens up an Instance Info window, which lists the values of all attributes for the selected instance. Close the Instance Info window again.</p>
+<p id="p0140" class="para_indented">The selection fields at the top of the window containing the scatter plot determine which attributes are used for the <em>x</em>- and <em>y</em>-axes. Change the <em>x</em>-axis to <em>petalwidth</em> and the <em>y</em>-axis to <em>petallength</em>. The field showing <em>Color: class (Num)</em> can be used to change the color coding.</p>
+<p id="p0145" class="para_indented">Each of the barlike plots to the right of the scatter plot window represents a single attribute. In each bar, instances are placed at the appropriate horizontal position and scattered randomly in the vertical direction. Clicking a bar uses that attribute for the <em>x</em>-axis of the scatter plot. Right-clicking a bar does the same for the <em>y</em>-axis. Use these bars to change the <em>x</em>- and <em>y</em>-axes back to <em>sepallength</em> and <em>petalwidth</em>.</p>
+<p id="p0150" class="para_indented">The <em>Jitter</em> slider displaces the cross for each instance randomly from its true position, and can reveal situations where instances lie on top of one another. Experiment a little by moving the slider.</p>
+<p id="p0155" class="para_indented">The <em>Select Instance</em> button and the <em>Reset</em>, <em>Clear</em>, and <em>Save</em> buttons let you modify the dataset. Certain instances can be selected and the others removed. Try the Rectangle option: Select an area by left-clicking and dragging the mouse. The <em>Reset</em> button changes into a <em>Submit</em> button. Click it, and all instances outside the rectangle are deleted. You could use <em>Save</em> to save the modified dataset to a file. <em>Reset</em> restores the original dataset.</p>
+</div>
+<div id="s0035">
+<h3 id="st0035">The Classify Panel</h3>
+<p id="p0160" class="noindent">Now we apply a classifier to the weather data. Load the weather data again. Go to the Preprocess panel, click the <em>Open file</em> button, and select <em>weather.nominal.arff</em> from the data directory. Then switch to the Classify panel (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0025">Figure 11.4(b)</a>) by clicking the <em>Classify</em> tab at the top of the window.</p>
+<div id="s0040">
+<h4 class="h4" id="st0040">Using the C4.5 Classifier</h4>
+<p id="p0165" class="noindent">As you learned in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#c0011">Chapter 11</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p410">page 410</a>), the C4.5 algorithm for building decision trees is implemented in Weka as a classifier called <em>J48</em>. Select it by clicking the <em>Choose</em><a id="p563"></a> button near the top of the <em>Classify</em> tab. A dialog window appears showing various types of classifier. Click the <em>trees</em> entry to reveal its subentries, and click <em>J48</em> to choose that classifier. Classifiers, like filters, are organized in a hierarchy: <em>J48</em> has the full name <em>weka.classifiers.trees.J48</em>.</p>
+<p id="p0170" class="para_indented">The classifier is shown in the text box next to the <em>Choose</em> button: It now reads <em>J48 –C 0.25 –M 2</em>. This text gives the default parameter settings for this classifier, which in this case rarely require changing to obtain good performance.</p>
+<p id="p0175" class="para_indented">For illustrative purposes we evaluate the performance using the training data, which has been loaded in the Preprocess panel—this is <em>not</em> generally a good idea because it leads to unrealistically optimistic performance estimates. Choose <em>Use training set</em> from the <em>Test options</em> part of the Classify panel. Once the test strategy has been set, the classifier is built and evaluated by pressing the <em>Start</em> button. This processes the training set using the currently selected learning algorithm, C4.5 in this case. Then it classifies all the instances in the training data and outputs performance statistics. These are shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#f0015">Figure 17.2(a)</a>.</p>
+<p id="f0015" class="figure"><img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/f000171f017-002ab-9780123748560.jpg" alt="image" width="513" height="578" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/f000171f017-002ab-9780123748560.jpg"></p>
+<p class="figure_legend"><span class="fig_num">FIGURE 17.2</span> Output after building and testing the classifier: (a) screenshot and (b) decision tree.</p>
+</div>
+<div id="s0045">
+<h4 class="h4" id="st0045">Interpreting the Output</h4>
+<p id="p0180" class="noindent">The outcome of training and testing appears in the Classifier Output box on the right. Scroll through the text and examine it. First, look at the part that describes the decision tree, reproduced in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#f0015">Figure 17.2(b)</a>. This represents the decision tree that was built, including the number of instances that fall under each leaf. The textual representation is clumsy to interpret, but Weka can generate an equivalent graphical version.</p>
+<p id="p0185" class="para_indented">Here’s how to get the graphical tree. Each time the <em>Start</em> button is pressed and a new classifier is built and evaluated, a new entry appears in the Result List panel in the lower left corner of <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#f0015">Figure 17.2(a)</a>. To see the tree, right-click on the entry <em>trees.J48</em> that has just been added to the result list and choose <em>Visualize tree</em>. A window pops up that shows the decision tree in the form illustrated in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#f0020">Figure 17.3</a>. Right-click a blank spot in this window to bring up a new menu enabling you to auto-scale the view. You can pan around by dragging the mouse.</p>
+<p id="f0020" class="figure"><img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/f000171f017-003-9780123748560.jpg" alt="image" width="750" height="599" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/f000171f017-003-9780123748560.jpg"></p>
+<p class="figure_legend"><span class="fig_num">FIGURE 17.3</span> The decision tree that has been built.</p>
+<p id="p0190" class="para_indented">Now look at the rest of the information in the Classifier Output area. The next two parts of the output report on the quality of the classification model based on the chosen test option.</p>
+<p id="p0195" class="para_indented">This text states how many and what proportion of test instances have been correctly classified:</p>
+<p id="p0200" class="noindent"><span class="monospace">Correctly Classified Instances 14 100%</span></p>
+<p id="p0205" class="noindent">This is the accuracy of the model on the data used for testing. In this case it is completely accurate (100%), which is often the case when the training set is used for testing.</p>
+<p id="p0210" class="para_indented">At the bottom of the output is the confusion matrix:</p>
+<p id="p0215" class="noindent"><span class="monospace">=== Confusion Matrix ===</span></p>
+<p id="p0220" class="para_indented"><span class="monospace">a b &lt;– classified as</span></p>
+<p id="p0225" class="para_indented"><span class="monospace">9 0 | a = yes</span></p>
+<p id="p0230" class="para_indented"><span class="monospace">0 5 | b = no</span></p>
+<p id="p0235" class="para_indented"><a id="p564"></a>Each element in the matrix is a count of instances. Rows represent the true classes, and columns represent the predicted classes. As you can see, all 9 <em>yes</em> instances have been predicted as <em>yes</em>, and all 5 <em>no</em> instances as <em>no</em>.</p><a id="p0240"></a><div class="none">
+<p class="hang1" id="u0045"><a id="p0245"></a><strong>Exercise 17.1.8.</strong> How would this instance be classified using the decision tree?</p>
+<div class="none">
+<p class="hang2" id="u0050"><a id="p0250"></a>outlook = sunny, temperature = cool, humidity = high, windy = TRUE</p>
+</div>
+</div>
+</div>
+<div id="s0050">
+<h4 class="h4" id="st0050"><a id="p565"></a>Setting the Test Method</h4>
+<p id="p0255" class="noindent">When the <em>Start</em> button is pressed, the selected learning algorithm is run and the dataset that was loaded in the Preprocess panel is used with the selected test protocol. For example, in the case of tenfold cross-validation this involves running the learning algorithm 10 times to build and evaluate 10 classifiers. A model built from the <em>full</em> training set is then printed into the Classifier Output area: This may involve running the learning algorithm one final time. The remainder of the output depends on the test protocol that was chosen using test options; these options were discussed in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0010">Section 11.1</a>.</p><a id="p0260"></a><div class="none">
+<p class="hang1" id="u0055"><a id="p0265"></a><strong>Exercise 17.1.9.</strong> Load the iris data using the Preprocess panel. Evaluate C4.5 on this data using (a) the training set and (b) cross-validation. What is the estimated percentage of correct classifications for (a) and (b)? Which estimate is more realistic?</p>
+</div>
+</div>
+<div id="s0055">
+<h4 class="h4" id="st0055">Visualizing Classification Errors</h4>
+<p id="p0270" class="noindent">Right-click the <em>trees.J48</em> entry in the result list and choose <em>Visualize classifier errors</em>. A scatter plot window pops up. Instances that have been classified correctly are marked by little crosses; ones that are incorrect are marked by little squares.</p><a id="p0275"></a><div class="none">
+<p class="hang1" id="u0060"><a id="p0280"></a><strong>Exercise 17.1.10.</strong> Use the <em>Visualize classifier errors</em> function to find the wrongly classified test instances for the cross-validation performed in Exercise 17.1.9. What can you say about the location of the errors?</p>
+</div>
+</div>
+</div>
+</div>
+<div id="s0065">
+<h2 id="st0065">17.2 <a id="p566"></a>Nearest-neighbor learning and decision trees</h2>
+<p id="p0340" class="noindent">In this section you will experiment with nearest-neighbor classification and decision tree learning. For most of it, a real-world forensic glass classification dataset is used.</p>
+<p id="p0345" class="para_indented">We begin by taking a preliminary look at the dataset. Then we examine the effect of selecting different attributes for nearest-neighbor classification. Next we study class noise and its impact on predictive performance for the nearest-neighbor method. Following that we vary the training set size, both for nearest-neighbor classification and for decision tree learning. Finally, you are asked to interactively construct a decision tree for an image segmentation dataset.</p>
+<p id="p0350" class="para_indented">Before continuing you should review in your mind some aspects of the classification task:</p><a id="p0355"></a><div class="none">
+<p class="hang" id="u0065">• <a id="p0360"></a>How is the accuracy of a classifier measured?</p>
+<p class="hang" id="u0070">• <a id="p0365"></a>To make a good classifier, are all the attributes necessary?</p>
+<p class="hang" id="u0075">• <a id="p0370"></a>What is class noise, and how would you measure its effect on learning?</p>
+<p class="hang" id="u0080">• <a id="p0375"></a>What is a learning curve?</p>
+<p class="hang" id="u0085">• <a id="p0380"></a>If you, personally, had to invent a decision tree classifier for a particular dataset, how would you go about it?</p>
+</div>
+<div id="s0070">
+<h3 id="st0070">The Glass Dataset</h3>
+<p id="p0385" class="noindent">The glass dataset <em>glass.arff</em> from the U.S. Forensic Science Service contains data on six types of glass. Glass is described by its refractive index and the chemical elements that it contains; the the aim is to classify different types of glass based on these features. This dataset is taken from the UCI datasets, which have been collected by the University of California at Irvine and are freely available on the Web. They are often used as a benchmark for comparing data mining algorithms.</p>
+<p id="p0390" class="para_indented">Find the dataset <em>glass.arff</em> and load it into the Explorer interface. For your own information, answer the following exercises, which review material covered in the previous section.</p><a id="p0395"></a><div class="none">
+<p class="hang" id="u0090"><a id="p0400"></a><strong>Exercise 17.2.1.</strong> How many attributes are there in the dataset? What are their names? What is the class attribute? Run the classification algorithm <em>IBk</em> (<em>weka.classifiers.lazy.IBk</em>). Use cross-validation to test its performance, leaving the number of folds at the default value of 10. Recall that you can examine the classifier options in the Generic Object Editor window that pops up when you click the text beside the <em>Choose</em> button. The default value of the KNN field is 1: This sets the number of neighboring instances to use when classifying.</p>
+<p class="hang" id="u0095"><a id="p0405"></a><a id="p567"></a><strong>Exercise 17.2.2.</strong> What is the accuracy of <em>IBk</em> (given in the Classifier Output box)? Run <em>IBk</em> again, but increase the number of neighboring instances to <em>k</em> = 5 by entering this value in the KNN field. Here and throughout this section, continue to use cross-validation as the evaluation method.</p>
+<p class="hang" id="u0100"><a id="p0410"></a><strong>Exercise 17.2.3</strong>. What is the accuracy of <em>IBk</em> with five neighboring instances (<em>k</em> = 5)?</p>
+</div>
+</div>
+<div id="s0075">
+<h3 id="st0075">Attribute Selection</h3>
+<p id="p0415" class="noindent">Now we investigate which subset of attributes produces the best cross-validated classification accuracy for the <em>IBk</em> algorithm on the glass dataset. Weka contains automated attribute selection facilities, which are examined in a later section, but it is instructive to do this manually.</p>
+<p id="p0420" class="para_indented">Performing an exhaustive search over all possible subsets of the attributes is infeasible (why?), so we apply the backward elimination procedure described in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0007.html#s0010">Section 7.1</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0007.html#p311">page 311</a>). To do this, first consider dropping each attribute individually from the full dataset, and run a cross-validation for each reduced version. Once you have determined the best eight-attribute dataset, repeat the procedure with this reduced dataset to find the best seven-attribute dataset, and so on.</p><a id="p0425"></a><div class="none">
+<p class="hang" id="u0105"><a id="p0430"></a><strong>Exercise 17.2.4.</strong> Record in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0010">Table 17.1</a> the best attribute set and the greatest accuracy obtained in each iteration. The best accuracy obtained in this process is quite a bit higher than the accuracy obtained on the full dataset.</p>
+<p class="hang" id="u0110"><a id="p0435"></a><strong>Exercise 17.2.5.</strong> Is this best accuracy an unbiased estimate of accuracy on future data? Be sure to explain your answer. (<em>Hint:</em> To obtain an unbiased estimate of accuracy on future data, we must not look at the test data <em>at all</em><a id="p568"></a> when producing the classification model for which the estimate is being obtained.)</p>
+</div>
+<p class="table_caption"><span class="tab_num">Table 17.1. </span> Accuracy Obtained Using <em>IBk</em>, for Different Attribute Subsets</p>
+<table id="t0010" frame="box" rules="all">
+<thead>
+<tr><td class="tch">Subset Size<br>(No. of Attributes)</td>
+<td class="tch">Attributes in “Best” Subset</td>
+<td class="tch">Classification Accuracy</td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb">9</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">8</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">7</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">6</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">5</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">4</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">3</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">2</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">1</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">0</td>
+<td class="tb"></td><td class="tb"></td></tr>
+</tbody>
+</table>
+</div>
+<div id="s0080">
+<h3 id="st0080">Class Noise and Nearest-Neighbor Learning</h3>
+<p id="p0440" class="noindent">Nearest-neighbor learning, like other techniques, is sensitive to noise in the training data. In this section we inject varying amounts of class noise into the data and observe the effect on classification performance.</p>
+<p id="p0445" class="para_indented">You can flip a certain percentage of class labels in the data to a randomly chosen other value using an unsupervised attribute filter called <em>AddNoise</em>, in <em>weka.filters.unsupervised.attribute</em>. However, for this experiment it is important that the test data remains unaffected by class noise. Filtering the training data without filtering the test data is a common requirement, and is achieved using a metalearner called <em>FilteredClassifier</em>, in <em>weka.classifiers.meta</em>, as described near the end of <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0100">Section 11.3</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p444">page 444</a>). This metalearner should be configured to use <em>IBk</em> as the classifier and <em>AddNoise</em> as the filter. <em>FilteredClassifier</em> applies the filter to the data before running the learning algorithm. This is done in two batches: first the training data and then the test data. The <em>AddNoise</em> filter only adds noise to the first batch of data it encounters, which means that the test data passes through unchanged.</p><a id="p0450"></a><div class="none">
+<p class="hang" id="u0115"><a id="p0455"></a><strong>Exercise 17.2.6.</strong> Record in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0015">Table 17.2</a> the cross-validated accuracy estimate of <em>IBk</em> for 10 different percentages of class noise and neighborhood sizes <em>k</em> = 1, <em>k</em> = 3, <em>k</em> = 5 (determined by the value of <em>k</em> in the <em>k</em>-nearest-neighbor classifier).</p>
+<p class="hang" id="u0120"><a id="p0460"></a><strong>Exercise 17.2.7.</strong> What is the effect of increasing the amount of class noise?</p>
+<p class="hang" id="u0125"><a id="p0465"></a><strong>Exercise 17.2.8.</strong> What is the effect of altering the value of <em>k</em>?</p>
+</div>
+<p class="table_caption"><span class="tab_num">Table 17.2. </span> Effect of Class Noise on <em>IBk</em>, for Different Neighborhood Sizes</p>
+<p id="t0015" class="figure"><img src="https://www.safaribooksonline.com/library/view/data-mining-practical/9780123748560/images/t000171tabt0015.jpg" alt="Image" width="449" height="207" data-mfp-src="/library/view/data-mining-practical/9780123748560/images/t000171tabt0015.jpg"></p>
+</div>
+<div id="s0085">
+<h3 id="st0085"><a id="p569"></a>Varying the Amount of Training Data</h3>
+<p id="p0470" class="noindent">This section examines learning curves, which show the effect of gradually increasing the amount of training data. Again, we use the glass data, but this time with both <em>IBk</em> and the C4.5 decision tree learners, implemented in Weka as <em>J48</em>.</p>
+<p id="p0475" class="para_indented">To obtain learning curves, use <em>FilteredClassifier</em> again, this time in conjunction with <em>weka.filters.unsupervised.instance.Resample</em>, which extracts a certain specified percentage of a given dataset and returns the reduced dataset.<sup><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#fn0010" id="cc000171fn0010" class="totri-footnote">1</a></sup> Again, this is done only for the first batch to which the filter is applied, so the test data passes unmodified through the <em>FilteredClassifier</em> before it reaches the classifier.</p><a id="p0480"></a><div class="none">
+<p class="hang" id="u0130"><a id="p0485"></a><strong>Exercise 17.2.9.</strong> Record in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0020">Table 17.3</a> the data for learning curves for both the one-nearest-neighbor classifier (i.e., <em>IBk</em> with <em>k</em> = 1) and <em>J48</em>.</p>
+<p class="hang" id="u0135"><a id="p0490"></a><strong>Exercise 17.2.10.</strong> What is the effect of increasing the amount of training data?</p>
+<p class="hang" id="u0140"><a id="p0495"></a><strong>Exercise 17.2.11.</strong> Is this effect more pronounced for <em>IBk</em> or <em>J48</em>?</p>
+</div>
+<p class="table_caption"><span class="tab_num">Table 17.3. </span> Effect of Training Set Size on <em>IBk</em> and <em>J48</em></p>
+<table id="t0020" frame="box" rules="all">
+<thead>
+<tr><td class="tch">Percentage of Training Set</td>
+<td class="tch"><em>IBk</em></td>
+<td class="tch"><em>J48</em></td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb">10%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">20%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">30%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">40%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">50%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">60%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">70%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">80%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">90%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+<tr><td class="tb">100%</td>
+<td class="tb"></td><td class="tb"></td></tr>
+</tbody>
+</table>
+</div>
+<div id="s0090">
+<h3 id="st0090">Interactive Decision Tree Construction</h3>
+<p id="p0500" class="noindent">One of Weka’s classifiers is interactive: It lets the user—you!—construct your own classifier. Here’s a competition: Who can build a classifier with the highest predictive accuracy?</p>
+<p id="p0505" class="para_indented">Follow the procedure described in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0050">Section 11.2</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p424">page 424</a>). Load the file <em>segment-challenge.arff</em> (in the data folder that comes with the Weka distribution). This dataset <a id="p570"></a>has 20 attributes and 7 classes. It is an image segmentation problem, and the task is to classify images into seven different groups based on properties of the pixels.</p>
+<p id="p0510" class="para_indented">Set the classifier to <em>UserClassifier</em>, in the <em>weka.classifiers.trees</em> package. We use a separate test set (performing cross-validation with <em>UserClassifier</em> is incredibly tedious!), so in the <em>Test options</em> box choose the <em>Supplied test set</em> option and click the <em>Set</em> button. A small window appears in which you choose the test set. Click <em>Open file</em> and browse to the file <em>segment-test.arff</em> (also in the Weka distribution’s data folder). On clicking <em>Open</em>, the small window updates to show the number of attributes (20) in the data. The number of instances is not displayed because test instances are read incrementally (so that the Explorer interface can process larger test files than can be accommodated in main memory).</p>
+<p id="p0515" class="para_indented">Click <em>Start</em>. <em>UserClassifier</em> differs from all other classifiers: It opens a special window and waits for you to build your own classifier in it. The tabs at the top of the window switch between two views of the classifier. The <em>Tree visualizer</em> shows the current state of your tree, and the nodes give the number of class values there. The aim is to come up with a tree of which the leaf nodes are as pure as possible. To begin with, the tree has just one node—the root node—containing all the data. More nodes will appear when you proceed to split the data in the <em>Data visualizer</em>.</p>
+<p id="p0520" class="para_indented">Click the <em>Data visualizer</em> tab to see a two-dimensional plot in which the data points are color-coded by class, with the same facilities as the Visualize panel discussed in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#s0010">Section 17.1</a>. Try different combinations of <em>x</em>- and <em>y</em>-axes to get the clearest separation you can find between the colors. Having found a good separation, you then need to select a region in the plot: This will create a branch in the tree. Here’s a hint to get you started: Plot <em>region-centroid-row</em> on the <em>x</em>-axis and <em>intensity-mean</em> on the <em>y</em>-axis (the display is shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0075">Figure 11.14(a)</a>); you can see that the red class (<em>sky</em>) is nicely separated from the rest of the classes at the top of the plot.</p>
+<p id="p0525" class="para_indented">There are four tools for selecting regions in the graph, chosen using the dropdown menu below the <em>y</em>-axis selector. <em>Select Instance</em> identifies a particular instance. <em>Rectangle</em> (shown in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0075">Figure 11.14(a)</a>) allows you to drag out a rectangle on the graph. With <em>Polygon</em> and <em>Polyline</em> you build a free-form polygon or draw a free-form polyline (left-click to add a vertex and right-click to complete the operation).</p>
+<p id="p0530" class="para_indented">When you have selected an area using any of these tools, it turns gray. (In <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0075">Figure 11.14(a)</a> the user has defined a rectangle.) Clicking the <em>Clear</em> button cancels the selection without affecting the classifier. When you are happy with the selection, click <em>Submit</em>. This creates two new nodes in the tree, one holding all the instances covered by the selection and the other holding all remaining instances. These nodes correspond to a binary split that performs the chosen geometric test.</p>
+<p id="p0535" class="para_indented">Switch back to the <em>Tree visualizer</em> view to examine the change in the tree. Clicking on different nodes alters the subset of data that is shown in the <em>Data visualizer</em> section. Continue adding nodes until you obtain a good separation of the classes—that is, the leaf nodes in the tree are mostly pure. Remember, however, that you should not overfit the data because your tree will be evaluated on a separate test set.</p>
+<p id="p0540" class="para_indented"><a id="p571"></a>When you are satisfied with the tree, right-click any blank space in the <em>Tree visualizer</em> view and choose <em>Accept The Tree</em>. Weka evaluates the tree against the test set and outputs statistics that show how well you did.</p><a id="p0545"></a><div class="none">
+<p class="hang" id="u0145"><a id="p0550"></a><strong>Exercise 17.2.12.</strong> You are competing for the best accuracy score of a hand-built <em>UserClassifier</em> produced on the <em>segment-challenge</em> dataset and tested on the <em>segment-test</em> set. Try as many times as you like. When you have a good score (anything close to 90% correct or better), right-click the corresponding entry in the Result list, save the output using <em>Save result buffer</em>, and copy it into your answer for this exercise. Then run <em>J48</em> on the data to see how well an automatic decision tree learner performs on the task.</p>
+</div>
+</div>
+</div>
+<div id="s0095">
+<h2 id="st0095">17.3 Classification boundaries</h2>
+<p id="p0555" class="noindent">In this section we examine the classification boundaries that are produced by different types of models. To do this, we use Weka’s <em>Boundary Visualizer</em>, which is not part of the Explorer interface. To find it, start up the Weka GUI Chooser as usual from the Windows Start menu (on Linux or the Mac, double-click <em>weka.jar</em> or <em>weka.app</em>, respectively) and select <em>BoundaryVisualizer</em> from the <em>Visualization</em> menu at the top.</p>
+<p id="p0560" class="para_indented">The boundary visualizer shows a two-dimensional plot of the data and is most appropriate for datasets with two numeric attributes. We will use a version of the iris data without the first two attributes. To create this, start up the Explorer interface, load <em>iris.arff</em> using the <em>Open file</em> button, and remove the first two attributes (<em>sepallength</em> and <em>sepalwidth</em>) by selecting them and clicking the <em>Remove</em> button that appears at the bottom. Then save the modified dataset to a file (using <em>Save</em>) called, say, <em>iris.2D.arff</em>.</p>
+<p id="p0565" class="para_indented">Now leave the Explorer interface and open this file for visualization using the boundary visualizer’s <em>Open file</em> button. Initially, the plot just shows the data in the dataset.</p>
+<div id="s0100">
+<h3 id="st0100">Visualizing 1R</h3>
+<p id="p0570" class="noindent">The purpose of the boundary visualizer is to show the predictions of a given model for every possible combination of attribute values—that is, for every point in the two-dimensional space. The points are color-coded according to the prediction the model generates. We will use this to investigate the decision boundaries that different classifiers generate for the reduced iris dataset.</p>
+<p id="p0575" class="para_indented">Start with the 1R rule learner. Use the <em>Choose</em> button of the boundary visualizer to select <em>weka.classifiers.rules.OneR</em>. Make sure you tick <em>Plot training data</em>; otherwise, only the predictions will be plotted. Then click the <em>Start</em> button. The program starts plotting predictions in successive scan lines. Click the <em>Stop</em> button once the <a id="p572"></a>plot has stabilized—as soon as you like, in this case—and the training data will be superimposed on the boundary visualization.</p><a id="p0580"></a><div class="none">
+<p class="hang" id="u0150"><a id="p0585"></a><strong>Exercise 17.3.1.</strong> Explain the plot based on what you know about 1R. (<em>Hint:</em> Use the Explorer interface to look at the rule set that 1R generates for this data.)</p>
+<p class="hang" id="u0155"><a id="p0590"></a><strong>Exercise 17.3.2.</strong> Study the effect of the <em>minBucketSize</em> parameter on the classifier by regenerating the plot with values of 1, and then 20, and then some critical values in between. Describe what you see, and explain it. (<em>Hint:</em> You could speed things up by using the Explorer interface to look at the rule sets.)</p>
+</div>
+<p id="p0595" class="para_indented">Now answer the following questions by thinking about the internal workings of 1R. (<em>Hint:</em> It will probably be fastest to use the Explorer interface to look at the rule sets.)</p><a id="p0600"></a><div class="none">
+<p class="hang" id="u0160"><a id="p0605"></a><strong>Exercise 17.3.3.</strong> You saw earlier that when visualizing 1R the plot always has three regions. But why aren’t there more for small bucket sizes (e.g., 1)? Use what you know about 1R to explain this apparent anomaly.</p>
+<p class="hang" id="u0165"><a id="p0610"></a><strong>Exercise 17.3.4.</strong> Can you set <em>minBucketSize</em> to a value that results in less than three regions? What is the smallest possible number of regions? What is the smallest value for <em>minBucketSize</em> that gives this number of regions? Explain the result based on what you know about the iris data.</p>
+</div>
+</div>
+<div id="s0105">
+<h3 id="st0105">Visualizing Nearest-Neighbor Learning</h3>
+<p id="p0615" class="noindent">Now let’s examine the classification boundaries created by the nearest-neighbor method. Use the boundary visualizer’s <em>Choose</em> button to select the <em>IBk</em> classifier (<em>weka.classifiers.lazy.IBk</em>) and plot its decision boundaries for the reduced iris data.</p>
+<p id="p0620" class="para_indented"><em>OneR</em>’s predictions are categorical: For each instance, they predict one of the three classes. In contrast, <em>IBk</em> outputs probability estimates for each class, and the boundary visualizer uses them to mix the colors red, green, and blue that correspond to the three classes. <em>IBk</em> estimates class probabilities by looking at the set of <em>k</em>-nearest neighbors of a test instance and counting the number in each class.</p><a id="p0625"></a><div class="none">
+<p class="hang" id="u0170"><a id="p0630"></a><strong>Exercise 17.3.5.</strong> With <em>k</em> = 1, which is the default value, it seems that the set of <em>k</em>-nearest neighbors could have only one member and therefore the color will always be pure red, green, or blue. Looking at the plot, this is indeed almost always the case: There is no mixing of colors because one class gets a probability of 1 and the others a probability of 0. Nevertheless, there is a small area in the plot where two colors are in fact mixed. Explain this. (<em>Hint:</em> Examine the data carefully using the Explorer interface’s Visualize panel.)</p>
+<p class="hang" id="u0175"><a id="p0635"></a><strong>Exercise 17.3.6.</strong> Experiment with different values of <em>k</em>, say 5 and 10. Describe what happens as <em>k</em> increases.</p>
+</div>
+</div>
+<div id="s0110">
+<h3 id="st0110"><a id="p573"></a>Visualizing <em>NaïveBayes</em>
+</h3>
+<p id="p0640" class="noindent">Turn now to the <em>NaïveBayes</em> classifier. Its assumption that attributes are conditionally independent given a particular class value means that the overall class probability is obtained by simply multiplying the per-attribute conditional probabilities together (and taking into account the class prior probabilities as well). In other words, with two attributes, if you know the class probabilities along the <em>x</em>- and <em>y</em>-axes (and the class prior), you can calculate the value for any point in space by multiplying them together (and then normalizing). This is easy to understand if you visualize it as a boundary plot.</p>
+<p id="p0645" class="para_indented">Plot the predictions of <em>NaïveBayes</em>. But first discretize the attribute values. By default, Weka’s <em>NaiveBayes</em> classifier assumes that the attributes are normally distributed given the class. You should override this by setting <em>useSupervisedDiscretization</em> to <em>true</em> using the Generic Object Editor window. This will cause <em>NaïveBayes</em> to discretize the numeric attributes in the data with a supervised discretization technique. In most practical applications of <em>NaïveBayes</em>, supervised discretization works better than the default method. It also produces a more comprehensible visualization, which is why we use it here.</p><a id="p0650"></a><div class="none">
+<p class="hang" id="u0180"><a id="p0655"></a><strong>Exercise 17.3.7.</strong> The plot that is generated by visualizing the predicted class probabilities of <em>NaïveBayes</em> for each pixel location is quite different from anything we have seen so far. Explain the patterns in it.</p>
+</div>
+</div>
+<div id="s0115">
+<h3 id="st0115">Visualizing Decision Trees and Rule Sets</h3>
+<p id="p0660" class="noindent">Decision trees and rule sets are similar to nearest-neighbor learning in the sense that they are quasi-universal: In principle, they can approximate any decision boundary arbitrarily closely. In this section, we look at the boundaries generated by <em>JRip</em> and <em>J48</em>.</p>
+<p id="p0665" class="para_indented">Generate a plot for <em>JRip</em>, with default options.</p><a id="p0670"></a><div class="none">
+<p class="hang" id="u0185"><a id="p0675"></a><strong>Exercise 17.3.8.</strong> What do you see? Relate the plot to the output of the rules that you get by processing the data in the Explorer.</p>
+<p class="hang" id="u0190"><a id="p0680"></a><strong>Exercise 17.3.9.</strong> The <em>JRip</em> output assumes that the rules will be executed in the correct sequence. Write down an equivalent set of rules that achieves the same effect regardless of the order in which they are executed. Generate a plot for <em>J48</em>, with default options.</p>
+<p class="hang" id="u0195"><a id="p0685"></a><strong>Exercise 17.3.10.</strong> What do you see? Again, relate the plot to the output that you get by processing the data in the Explorer interface. One way to control how much pruning <em>J48</em> performs is to adjust the minimum number of instances required in a leaf, <em>minNumObj</em>.</p>
+<p class="hang" id="u0200"><a id="p0690"></a><strong>Exercise 17.3.11.</strong> Suppose you want to generate trees with 3, 2, and 1 leaf node, respectively. What are the exact ranges of values for <em>minNumObj</em> that achieve this, given default values for the other parameters?</p>
+</div>
+</div>
+<div id="s0120">
+<h3 id="st0120"><a id="p574"></a>Messing with the Data</h3>
+<p id="p0695" class="noindent">With the Boundary Visualizer you can modify the data by adding or removing points.</p><a id="p0700"></a><div class="none">
+<p class="hang" id="u0205"><a id="p0705"></a><strong>Exercise 17.3.12.</strong> Introduce some noise into the data and study the effect on the learning algorithms we looked at above. What kind of behavior do you observe for each algorithm as you introduce more noise?</p>
+</div>
+</div>
+</div>
+<div id="s0125">
+<h2 id="st0125">17.4 Preprocessing and parameter tuning</h2>
+<p id="p0710" class="noindent">Now we look at some useful preprocessing techniques, which are implemented as filters, as well as a method for automatic parameter tuning.</p>
+<div id="s0130">
+<h3 id="st0130">Discretization</h3>
+<p id="p0715" class="noindent">As we know, there are two types of discretization techniques: <em>unsupervised</em> ones, which are “class blind,” and <em>supervised</em> ones, which take the class value of the instances into account when creating intervals. Weka’s main unsupervised method for discretizing numeric attributes is <em>weka.filters.unsupervised.attribute.Discretize</em>. It implements these two methods: equal-width (the default) and equal-frequency discretization.</p>
+<p id="p0720" class="para_indented">Find the glass dataset <em>glass.arff</em> and load it into the Explorer interface. Apply the unsupervised discretization filter in the two different modes explained previously.</p><a id="p0725"></a><div class="none">
+<p class="hang" id="u0210"><a id="p0730"></a><strong>Exercise 17.4.1.</strong> What do you observe when you compare the histograms obtained? The one for equal-frequency discretization is quite skewed for some attributes. Why?</p>
+</div>
+<p id="p0735" class="para_indented">The main <em>supervised</em> technique for discretizing numeric attributes is <em>weka.filters.supervised.attribute.Discretize</em>. Locate the iris data, load it, apply the supervised discretization scheme, and look at the histograms obtained. Supervised discretization strives to create intervals within which the class distribution is consistent, although the distributions vary from one interval to the next.</p><a id="p0740"></a><div class="none">
+<p class="hang" id="u0215"><a id="p0745"></a><strong>Exercise 17.4.2.</strong> Based on the histograms obtained, which of the discretized attributes would you consider to be most predictive? Reload the glass data and apply supervised discretization to it.</p>
+<p class="hang" id="u0220"><a id="p0750"></a><strong>Exercise 17.4.3.</strong> For some attributes there is only a single bar in the histogram. What does that mean?</p>
+</div>
+<p id="p0755" class="para_indented">Discretized attributes are normally coded as nominal attributes, with one value per range. However, because the ranges are ordered, a discretized attribute is actually on an ordinal scale. Both filters have the ability to create binary attributes rather than multivalued ones, by setting the option <em>makeBinary</em> to <em>true</em>.</p><a id="p0760"></a><div class="none">
+<p class="hang" id="u0225"><a id="p0765"></a><a id="p575"></a><strong>Exercise 17.4.4.</strong> Choose one of the filters and use it to create binary attributes. Compare the result with the output generated when <em>makeBinary</em> is <em>false</em>. What do the binary attributes represent?</p>
+</div>
+</div>
+<div id="s0135">
+<h3 id="st0135">More on Discretization</h3>
+<p id="p0770" class="noindent">Here we examine the effect of discretization when building a <em>J48</em> decision tree for the data in <em>ionosphere.arff</em>. This dataset contains information about radar signals returned from the ionosphere. “Good” samples are those showing evidence of some type of structure in the ionosphere, while for “bad” ones the signals pass directly through the ionosphere. For more details, take a look at the comments in the ARFF file. Begin with unsupervised discretization.</p><a id="p0775"></a><div class="none">
+<p class="hang" id="u0230"><a id="p0780"></a><strong>Exercise 17.4.5.</strong> For <em>J48</em>, compare cross-validated accuracy and the size of the trees generated for (1) the raw data, (2) data discretized by the unsupervised discretization method in default mode, and (3) data discretized by the same method with binary attributes.</p>
+</div>
+<p id="p0785" class="para_indented">Now turn to supervised discretization. Here a subtle issue arises, discussed near the end of <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0100">Section 11.3</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p432">page 432</a>). If Exercise 17.4.5 were simply repeated using a supervised discretization method, the result would be overoptimistic. In effect, because cross-validation is used for evaluation, <em>the data in the test set has been taken into account when determining the discretization intervals</em>. This does not give a fair estimate of performance on fresh data.</p>
+<p id="p0790" class="para_indented">To evaluate supervised discretization fairly, use <em>FilteredClassifier</em> from Weka’s metalearners. This builds the filter using the training data only, and then evaluates it on the test data using the discretization intervals computed for the training data. After all, that is how you would have to process fresh data in practice.</p><a id="p0795"></a><div class="none">
+<p class="hang" id="u0235"><a id="p0800"></a><strong>Exercise 17.4.6.</strong> Using <em>FilteredClassifier</em> and <em>J48</em>, compare cross-validated accuracy and the size of the trees generated for (4) supervised discretization in default mode, and (5) supervised discretization with binary attributes.</p>
+<p class="hang" id="u0240"><a id="p0805"></a><strong>Exercise 17.4.7.</strong> Compare these with the results for the raw data from Exercise 17.4.5. How can decision trees generated from discretized data possibly be better predictors than ones built from raw numeric data?</p>
+</div>
+</div>
+<div id="s0140">
+<h3 id="st0140">Automatic Attribute Selection</h3>
+<p id="p0810" class="noindent">In most practical applications of supervised learning not all attributes are equally useful for predicting the target. For some learning schemes, redundant and/or irrelevant attributes can result in less accurate models. As you found in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#s0065">Section 17.2</a>, it is tedious to identify useful attributes in a dataset manually; automatic attribute selection methods are usually more appropriate.</p>
+<p id="p0815" class="para_indented"><a id="p576"></a>Attribute selection methods can be divided into filter and wrapper methods (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0007.html#s0010">Section 7.1</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0007.html#p308">page 308</a>). The former apply a computationally efficient heuristic to measure the quality of a subset of attributes; the latter measure the quality of an attribute subset by building and evaluating an actual classification model, which is more expensive but often delivers superior performance.</p>
+<p id="p0820" class="para_indented">The Explorer interface’s Select attributes panel applies attribute selection methods to datasets. The default is to use <em>CfsSubsetEval</em>, described in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0265">Section 11.8</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p488">page 488</a>), which evaluates subsets of attributes. An alternative is to evaluate attributes individually using an evaluator like <em>InfoGainAttributeEval</em> (see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0265">Section 11.8</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p491">page 491</a>) and then rank them by applying a special “search” method, namely the <em>Ranker</em>, as described <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0265">Section 11.8</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p490">page 490</a>).</p><a id="p0825"></a><div class="none">
+<p class="hang" id="u0245"><a id="p0830"></a><strong>Exercise 17.4.8.</strong> Apply the ranking technique to the labor negotiations data in <em>labor.arff</em> to determine the four most important attributes based on information gain.<sup><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#fn0015" id="cc000171fn0015" class="totri-footnote">2</a></sup></p>
+</div>
+<p id="p0835" class="para_indented"><em>CfsSubsetEval</em> aims to identify a subset of attributes that are highly correlated with the target while not being strongly correlated with one another. It searches through the space of possible attribute subsets for the “best” one using the <em>BestFirst</em> search method by default, although other methods can be chosen. In fact, choosing <em>GreedyStepwise</em> and setting <em>searchBackwards</em> to <em>true</em> gives backward elimination, the search method you used manually in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#s0065">Section 17.2</a>.</p>
+<p id="p0840" class="para_indented">To use the wrapper method rather than a filter method, such as <em>CfsSubsetEval</em>, first select <em>WrapperSubsetEval</em> and then configure it by choosing a learning algorithm to apply and setting the number of cross-validation folds to use when evaluating it on each attribute subset.</p><a id="p0845"></a><div class="none">
+<p class="hang" id="u0250"><a id="p0850"></a><strong>Exercise 17.4.9.</strong> On the same data, run <em>CfsSubsetEval</em> for correlation-based selection, using the <em>BestFirst</em> search. Then run the wrapper method with <em>J48</em> as the base learner, again using the <em>BestFirst</em> search. Examine the attribute subsets that are output. Which attributes are selected by both methods? How do they relate to the output generated by ranking using information gain?</p>
+</div>
+</div>
+<div id="s0145">
+<h3 id="st0145">More on Automatic Attribute Selection</h3>
+<p id="p0855" class="noindent">The <em>Select attributes</em> panel allows us to gain insight into a dataset by applying attribute selection methods to it. However, as with supervised discretization, using this information to reduce a dataset becomes problematic if some of the reduced data is used for testing the model (as in cross-validation). Again, the reason is that we have <a id="p577"></a>looked at the class labels in the test data while selecting attributes, and using the test data to influence the construction of a model biases the accuracy estimates obtained.</p>
+<p id="p0860" class="para_indented">This can be avoided by dividing the data into training and test sets and applying attribute selection to the training set only. However, it is usually more convenient to use <em>AttributeSelectedClassifer</em>, one of Weka’s metalearners, which allows an attribute selection method and a learning algorithm to be specified as part of a classification scheme. <em>AttributeSelectedClassifier</em> ensures that the chosen set of attributes is selected based on the training data only.</p>
+<p id="p0865" class="para_indented">Now we test the three attribute selection methods from above in conjunction with <em>NaïveBayes</em>. <em>NaïveBayes</em> assumes independence of attributes, so attribute selection can be very helpful. You can see the effect of redundant attributes by adding multiple copies of an attribute using the filter <em>weka.filters.unsupervised.attribute.Copy</em> in the Preprocess panel. Each copy is obviously perfectly correlated with the original.</p><a id="p0870"></a><div class="none">
+<p class="hang" id="u0255"><a id="p0875"></a><strong>Exercise 17.4.10.</strong> Load the diabetes classification data in <em>diabetes.arff</em> and add copies of the first attribute. Measure the performance of <em>NaïveBayes</em> (with <em>useSupervisedDiscretization</em> turned on) using cross-validation after you have added each one. What do you observe?</p>
+</div>
+<p id="p0880" class="para_indented">Do the above three attribute selection methods, used in conjunction with <em>AttributeSelectedClassifier</em> and <em>NaïveBayes</em>, successfully eliminate the redundant attributes? Run each method from within <em>AttributeSelectedClassifier</em> to see the effect on cross-validated accuracy and check the attribute subset selected by each method. Note that you need to specify the number of ranked attributes to use for the <em>Ranker</em> method. Set this to 8 because the original diabetes data contains 8 attributes (excluding the class). Specify <em>NaïveBayes</em> as the classifier to be used inside the wrapper method because this is the classifier for which we want to select a subset.</p><a id="p0885"></a><div class="none">
+<p class="hang" id="u0260"><a id="p0890"></a><strong>Exercise 17.4.11.</strong> What can you say regarding the performance of the three attribute selection methods? Do they succeed in eliminating redundant copies? If not, why?</p>
+</div>
+</div>
+<div id="s0150">
+<h3 id="st0150">Automatic Parameter Tuning</h3>
+<p id="p0895" class="noindent">Many learning algorithms have parameters that can affect the outcome of learning. For example, the decision tree learner C4.5 has two parameters that influence the amount of pruning (we saw one, the minimum number of instances required in a leaf, in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#s0095">Section 17.3</a>). The <em>k</em>-nearest-neighbor classifier <em>IBk</em> has a parameter (<em>k</em>) that sets the neighborhood size. But manually tweaking parameter settings is tedious, just like manually selecting attributes, and presents the same problem: The test data must not be used when selecting parameters; otherwise, the performance estimate will be biased.</p>
+<p id="p0900" class="para_indented"><a id="p578"></a>Weka’s metalearner <em>CVParameterSelection</em> searches for the best parameter settings by optimizing cross-validated accuracy on the training data. By default, each setting is evaluated using tenfold cross-validation. The parameters to optimize are specified using the <em>CVParameters</em> field in the Generic Object Editor window. For each parameter, three pieces of information must be supplied: (1) a string that names it using its letter code (which can be found in the Javadoc for the corresponding classifier—see <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#s0015">Section 14.2</a>, <a href="/site/library/view/data-mining-practical/9780123748560/html/c0014.html#p525">page 525</a>); (2) a numeric range of values to evaluate; and (3) the number of steps to try in this range (note that the parameter is assumed to be numeric). Click on the <em>More</em> button in the Generic Object Editor window for more information and an example.</p>
+<p id="p0905" class="para_indented">For the diabetes data used in the previous section, use <em>CVParameterSelection</em> in conjunction with <em>IBk</em> to select the best value for the neighborhood size, ranging from 1 to 10 in 10 steps. The letter code for the neighborhood size is <em>K</em>. The cross-validated accuracy of the parameter-tuned version of <em>IBk</em> is directly comparable with its accuracy using default settings because tuning is performed by applying inner cross-validation runs to find the best parameter value for each training set occurring in the outer cross-validation—and the latter yields the final performance estimate.</p><a id="p0910"></a><div class="none">
+<p class="hang" id="u0265"><a id="p0915"></a><strong>Exercise 17.4.12.</strong> What accuracy is obtained in each case? What value is selected for the parameter-tuned version based on cross-validation on the full data set? (<em>Note:</em> This value is output in the Classifier Output text area because, as mentioned earlier, the model that is output is the one built from the full dataset.)</p>
+</div>
+<p id="p0920" class="para_indented">Now consider parameter tuning for <em>J48</em>. If there is more than one parameter string in the <em>CVParameters</em> field, <em>CVParameterSelection</em> performs a grid search on the parameters simultaneously. The letter code for the pruning confidence parameter is <em>C</em>, and you should evaluate values from 0.1 to 0.5 in five steps. The letter code for the minimum leaf size parameter is <em>M</em>, and you should evaluate values from 1 to 10 in 10 steps.</p><a id="p0925"></a><div class="none">
+<p class="hang" id="u0270"><a id="p0930"></a><strong>Exercise 17.4.13.</strong> Run <em>CVParameterSelection</em> to find the best parameter value setting. Compare the output you get to that obtained from <em>J4</em>8 with default parameters. Has accuracy changed? What about tree size? What parameter values were selected by <em>CVParameterSelection</em> for the model built from the full training set?</p>
+</div>
+</div>
+</div>
+<div id="s0155">
+<h2 id="st0155">17.5 Document classification</h2>
+<p id="p0935" class="noindent">Next we perform some experiments in document classification. The raw data is text, and this is first converted into a form suitable for learning by creating a dictionary of terms from all the documents in the training corpus and making a numeric <a id="p579"></a>attribute for each term using Weka’s unsupervised attribute filter <em>StringToWordVector</em>. There is also the class attribute, which gives the document’s label.</p>
+<div id="s0160">
+<h3 id="st0160">Data with String Attributes</h3>
+<p id="p0940" class="noindent">The <em>StringToWordVector</em> filter assumes that the document text is stored in an attribute of type <em>String</em>—a nominal attribute without a prespecified set of values. In the filtered data, this is replaced by a fixed set of numeric attributes, and the class attribute is put at the beginning, as the first attribute.</p>
+<p id="p0945" class="para_indented">To perform document classification, first create an ARFF file with a string attribute that holds the document’s text—declared in the header of the ARFF file using <em>@attribute document string</em>, where <em>document</em> is the name of the attribute. A nominal attribute is also needed to hold the document’s classification.</p><a id="p0950"></a><div class="none">
+<p class="hang" id="u0275"><a id="p0955"></a><strong>Exercise 17.5.1.</strong> Make an ARFF file from the labeled mini-documents in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0025">Table 17.4</a> and run <em>StringToWordVector</em> with default options on this data. How many attributes are generated? Now change the value of the option <em>minTermFreq</em> to 2. What attributes are generated now?</p>
+<p class="hang" id="u0280"><a id="p0960"></a><strong>Exercise 17.5.2.</strong> Build a <em>J48</em> decision tree from the last version of the data you generated.</p>
+<p class="hang" id="u0285"><a id="p0965"></a><strong>Exercise 17.5.3.</strong> Classify the new documents in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0030">Table 17.5</a> based on the decision tree generated from the documents in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0025">Table 17.4</a>. To apply the same <a id="p580"></a>filter to both training and test documents, use <em>FilteredClassifier</em>, specifying the <em>StringToWordVector</em> filter and <em>J48</em> as the base classifier. Create an ARFF file from <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0030">Table 17.5</a>, using question marks for the missing class labels. Configure <em>FilteredClassifier</em> using default options for <em>StringToWordVector</em> and <em>J48</em>, and specify your new ARFF file as the test set. Make sure that you select <em>Output predictions</em> under <em>More options</em> in the Classify panel. Look at the model and the predictions it generates, and verify that they are consistent. What are the predictions?</p>
+</div>
+<p class="table_caption"><span class="tab_num">Table 17.4. </span> Training Documents</p>
+<table id="t0025" frame="box" rules="all">
+<thead>
+<tr><td class="tch">Document Text</td>
+<td class="tch">Classification</td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb">The price of crude oil has increased significantly</td>
+<td class="tb">yes</td></tr>
+<tr><td class="tb">Demand for crude oil outstrips supply</td>
+<td class="tb">yes</td></tr>
+<tr><td class="tb">Some people do not like the flavor of olive oil</td>
+<td class="tb">no</td></tr>
+<tr><td class="tb">The food was very oily</td>
+<td class="tb">no</td></tr>
+<tr><td class="tb">Crude oil is in short supply</td>
+<td class="tb">yes</td></tr>
+<tr><td class="tb">Use a bit of cooking oil in the frying pan</td>
+<td class="tb">no</td></tr>
+</tbody>
+</table>
+<p class="table_caption"><span class="tab_num">Table 17.5. </span> Test Documents</p>
+<table id="t0030" frame="box" rules="all">
+<thead>
+<tr><td class="tch">Document Text</td>
+<td class="tch">Classification</td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb">Oil platforms extract crude oil</td>
+<td class="tb">unknown</td></tr>
+<tr><td class="tb">Canola oil is supposed to be healthy</td>
+<td class="tb">unknown</td></tr>
+<tr><td class="tb">Iraq has significant oil reserves</td>
+<td class="tb">unknown</td></tr>
+<tr><td class="tb">There are different types of cooking oil</td>
+<td class="tb">unknown</td></tr>
+</tbody>
+</table>
+</div>
+<div id="s0165">
+<h3 id="st0165">Classifying Actual Documents</h3>
+<p id="p0970" class="noindent">A standard collection of newswire articles is widely used for evaluating document classifiers. <em>ReutersCorn-train.arff</em> and <em>ReutersGrain-train.arff</em> are training sets derived from this collection; <em>ReutersCorn-test.arff</em> and <em>ReutersGrain-test.arff</em> are corresponding test sets. The actual documents in the corn and grain data are the same; only the labels differ. In the first dataset, articles concerning corn-related issues have a class value of 1 and the others have 0; the aim is to build a classifier that identifies “corny” articles. In the second, the labeling is performed with respect to grain-related issues; the aim is to identify “grainy” articles.</p><a id="p0975"></a><div class="none">
+<p class="hang" id="u0290"><a id="p0980"></a><strong>Exercise 17.5.4.</strong> Build classifiers for the two training sets by applying <em>FilteredClassifier</em> with <em>StringToWordVector</em> using (1) <em>J48</em> and (2) <em>NaiveBayesMultinomial</em>, evaluating them on the corresponding test set in each case. What percentage of correct classifications is obtained in the four scenarios? Based on the results, which classifier would you choose?</p>
+</div>
+<p id="p0985" class="para_indented">Other evaluation metrics are used for document classification besides the percentage of correct classifications: They are tabulated under <em>Detailed Accuracy By Class</em> in the Classifier Outpu<strong>t</strong> area—the number of true positives (TP), false positives (FP), true negatives (TN), and false negatives (FN). The statistics output by Weka are computed as specified in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#t0040">Table 5.7</a>; the <em>F</em>-measure is mentioned in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#s0065">Section 5.7</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#p175">page 175</a>).</p><a id="p0990"></a><div class="none">
+<p class="hang" id="u0295"><a id="p0995"></a><strong>Exercise 17.5.5.</strong> Based on the formulas in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#t0040">Table 5.7</a>, what are the best possible values for each of the output statistics? Describe when these values are attained.</p>
+</div>
+<p id="p1000" class="para_indented">The Classifier Output also gives the ROC area (also known as AUC), which, as explained in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#s0065">Section 5.7</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#p177">page 177</a>), is the probability that a randomly chosen positive instance in the test data is ranked above a randomly chosen negative instance, based on the ranking produced by the classifier. The best outcome is that all positive examples are ranked above all negative examples, in which case the AUC is 1. In the worst case it is 0. In the case where the ranking is essentially random, the AUC is 0.5, and if it is significantly less than this the classifier has performed anti-learning!</p><a id="p1005"></a><div class="none">
+<p class="hang" id="u0300"><a id="p1010"></a><a id="p581"></a><strong>Exercise 17.5.6.</strong> Which of the two classifiers used above produces the best AUC for the two Reuters datasets? Compare this to the outcome for percent correct. What do the different outcomes mean?</p>
+</div>
+<p id="p1015" class="para_indented">The ROC curves discussed in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#s0065">Section 5.7</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0005.html#p172">page 172</a>) can be generated by right-clicking on an entry in the result list and selecting <em>Visualize threshold curve</em>. This gives a plot with FP Rate on the <em>x</em>-axis and TP Rate on the <em>y</em>-axis. Depending on the classifier used, this plot can be quite smooth or it can be fairly irregular.</p><a id="p1020"></a><div class="none">
+<p class="hang" id="u0305"><a id="p1025"></a><strong>Exercise 17.5.7.</strong> For the Reuters dataset that produced the most extreme difference in Exercise 17.5.6, look at the ROC curves for class 1. Make a very rough estimate of the area under each curve, and explain it in words.</p>
+<p class="hang" id="u0310"><a id="p1030"></a><strong>Exercise 17.5.8.</strong> What does the ideal ROC curve corresponding to perfect performance look like?</p>
+</div>
+<p id="p1035" class="para_indented">Other types of threshold curves can be plotted, such as a precision–recall curve with Recall on the <em>x</em>-axis and Precision on the <em>y</em>-axis.</p><a id="p1040"></a><div class="none">
+<p class="hang" id="u0315"><a id="p1045"></a><strong>Exercise 17.5.9.</strong> Change the axes to obtain a precision–recall curve. What is the shape of the ideal precision–recall curve, corresponding to perfect performance?</p>
+</div>
+</div>
+<div id="s0170">
+<h3 id="st0170">Exploring the <em>StringToWordVector</em> Filter</h3>
+<p id="p1050" class="noindent">By default, the <em>StringToWordVector</em> filter simply makes the attribute value in the transformed dataset 1 or 0 for all single-word terms, depending on whether the word appears in the document or not. However, as mentioned in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#s0100">Section 11.3</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p439">page 439</a>), there are many options:</p><a id="p1055"></a><div class="none">
+<p class="hang" id="u0320">• <a id="p1060"></a><em>outputWordCounts</em> causes actual word counts to be output.</p>
+<p class="hang" id="u0325">• <a id="p1065"></a><em>IDFTransform</em> and <em>TFTransform</em>: When both are set to <em>true</em>, term frequencies are transformed into TF × IDF values.</p>
+<p class="hang" id="u0330">• <a id="p1070"></a><em>stemmer</em> gives a choice of different word-stemming algorithms.</p>
+<p class="hang" id="u0335">• <a id="p1075"></a><em>useStopList</em> lets you determine whether or not stopwords are deleted.</p>
+<p class="hang" id="u0340">• <a id="p1080"></a><em>tokenizer</em> allows different tokenizers for generating terms, such as one that produces word <em>n</em>-grams instead of single words.</p>
+</div>
+<p id="p1085" class="para_indented">There are several other useful options. For more information, click on <em>More</em> in the Generic Object Editor window.</p><a id="p1090"></a><div class="none">
+<p class="hang" id="u0345"><a id="p1095"></a><strong>Exercise 17.5.10.</strong> Experiment with the options that are available. What options give a good AUC value for the two datasets above, using <em>NaiveBayesMultinomial</em> as the classifier?</p>
+</div>
+<p id="p1100" class="para_indented"><a id="p582"></a>Not all of the attributes (i.e., terms) are important when classifying documents. The reason is that many words are irrelevant for determining an article’s topic. Weka’s <em>AttributeSelectedClassifier</em>, using ranking with <em>InfoGainAttributeEval</em> and the <em>Ranker</em> search, can eliminate less useful attributes. As before, <em>FilteredClassifier</em> should be used to transform the data before passing it to <em>AttributeSelectedClassifier</em>.</p><a id="p1105"></a><div class="none">
+<p class="hang" id="u0350"><a id="p1110"></a><strong>Exercise 17.5.11.</strong> Experiment with this, using default options for <em>StringToWordVector</em> and <em>NaiveBayesMultinomial</em> as the classifier. Vary the number of the most informative attributes that are selected from the information gain–based ranking by changing the value of the <em>numToSelect</em> field in the <em>Ranker</em>. Record the AUC values you obtain. How many attributes give the best AUC for the two datasets discussed before? What are the best AUC values you managed to obtain?</p>
+</div>
+</div>
+</div>
+<div id="s0175">
+<h2 id="st0175">17.6 Mining association rules</h2>
+<p id="p1115" class="noindent">In order to get some experience with association rules, we work with <em>Apriori</em>, the algorithm described in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0004.html#s0085">Section 4.5</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0004.html#p144">page 144</a>). As you will discover, it can be challenging to extract useful information using this algorithm.</p>
+<div id="s0180">
+<h3 id="st0180">Association-Rule Mining</h3>
+<p id="p1120" class="noindent">To get a feel for how to apply <em>Apriori</em>, start by mining rules from the <em>weather.nominal.arff</em> data that was used in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#s0010">Section 17.1</a>. Note that this algorithm expects data that is purely nominal: If present, numeric attributes must be discretized first. After loading the data in the Preprocess panel, click the <em>Start</em> button in the Associate panel to run <em>Apriori</em> with default options. It outputs 10 rules, ranked according to the confidence measure given in parentheses after each one (they are listed in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#f0085">Figure 11.16</a>). As we explained in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#c0011">Chapter 11</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#p430">page 430</a>), the number following a rule’s antecedent shows how many instances satisfy the antecedent; the number following the conclusion shows how many instances satisfy the entire rule (this is the rule’s “support”). Because both numbers are equal for all 10 rules, the confidence of every rule is exactly 1.</p>
+<p id="p1125" class="para_indented">In practice, it can be tedious to find minimum support and confidence values that give satisfactory results. Consequently, as explained in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0011.html#c0011">Chapter 11</a>, Weka’s <em>Apriori</em> runs the basic algorithm several times. It uses the same user-specified minimum confidence value throughout, given by the <em>minMetric</em> parameter. The support level is expressed as a proportion of the total number of instances (14 in the case of the weather data), as a ratio between 0 and 1. The minimum support level starts at a certain value (<em>upperBoundMinSupport</em>, default 1.0). In each iteration the support is decreased by a fixed amount (<em>delta</em>, default 0.05, 5% of the instances) until either a certain number of rules has been generated (<em>numRules</em>, default 10 rules) or the support reaches a certain “minimum minimum” level (<em>lowerBoundMinSupport</em>, <a id="p583"></a>default 0.1)—because rules are generally uninteresting if they apply to less than 10% of the dataset. These four values can all be specified by the user.</p>
+<p id="p1130" class="para_indented">This sounds pretty complicated, so we will examine what happens on the weather data. The Associator output text area shows that the algorithm managed to generate 10 rules. This is based on a minimum confidence level of 0.9, which is the default and is also shown in the output. The <em>Number of cycles performed</em>, which is shown as 17, indicates that <em>Apriori</em> was actually run 17 times to generate these rules, with 17 different values for the minimum support. The final value, which corresponds to the output that was generated, is 0.15 (corresponding to 0.15 × 14 ≈ 2 instances).</p>
+<p id="p1135" class="para_indented">By looking at the options in the Generic Object Editor window, you can see that the initial value for the minimum support (<em>upperBoundMinSupport</em>) is 1 by default, and that delta is 0.05. Now, 1 – 17 × 0.05 = 0.15, so this explains why a minimum support value of 0.15 is reached after 17 iterations. Note that <em>upperBoundMinSupport</em> is decreased by delta <em>before</em> the basic <em>Apriori</em> algorithm is run for the first time.</p>
+<p id="p1140" class="para_indented">The Associator output text area also shows how many frequent item sets were found, based on the last value of the minimum support that was tried (0.15 in this example). In this case, given a minimum support of two instances, there are 12 item sets of size 1, 47 item sets of size 2, 39 item sets of size 3, and six item sets of size 4. By setting <em>outputItemSets</em> to <em>true</em> before running the algorithm, all those different item sets and the number of instances that support them are shown. Try it out!</p><a id="p1145"></a><div class="none">
+<p class="hang" id="u0355"><a id="p1150"></a><strong>Exercise 17.6.1.</strong> Based on the output, what is the support for this item set?</p>
+<div class="none">
+<p class="hang1" id="u0360"><a id="p1155"></a>outlook = rainy humidity = normal windy = FALSE play = yes</p>
+</div>
+<p class="hang" id="u0365"><a id="p1160"></a><strong>Exercise 17.6.2.</strong> Suppose you want to generate all rules with a certain confidence and minimum support. This can be done by choosing appropriate values for <em>minMetric</em>, <em>lowerBoundMinSupport</em>, and <em>numRules</em>. What is the total number of possible rules for the weather data for each combination of values in <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#t0035">Table 17.6</a>?</p>
+</div>
+<p class="table_caption"><span class="tab_num">Table 17.6. </span> Number of Rules for Different Values of Minimum Confidence and Support</p>
+<table id="t0035" frame="box" rules="all">
+<thead>
+<tr><td class="tch"><strong>Minimum Confidence</strong></td>
+<td class="tch"><strong>Minimum Support</strong></td>
+<td class="tch"><strong>Number of Rules</strong></td></tr>
+</thead>
+<tbody valign="top">
+<tr><td class="tb">0.9</td>
+<td class="tb">0.3</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.9</td>
+<td class="tb">0.2</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.9</td>
+<td class="tb">0.1</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.8</td>
+<td class="tb">0.3</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.8</td>
+<td class="tb">0.2</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.8</td>
+<td class="tb">0.1</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.7</td>
+<td class="tb">0.3</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.7</td>
+<td class="tb">0.2</td>
+<td class="tb"></td></tr>
+<tr><td class="tb">0.7</td>
+<td class="tb">0.1</td>
+<td class="tb"></td></tr>
+</tbody>
+</table>
+<p id="p1165" class="para_indented"><a id="p584"></a><em>Apriori</em> has some further parameters. If <em>significanceLevel</em> is set to a value between 0 and 1, the association rules are filtered based on a χ<sup>2</sup> test with the chosen significance level. However, applying a significance test in this context is problematic because of the multiple comparison problem: If a test is performed hundreds of times for hundreds of association rules, it is likely that significant effects will be found just by chance—that is, an association seems to be statistically significant when really it is not. Also, the χ<sup>2</sup> test is inaccurate for small sample sizes (in this context, small support values).</p>
+<p id="p1170" class="para_indented">There are alternative measures for ranking rules. As well as confidence, <em>Apriori</em> supports <em>lift</em>, <em>leverage</em>, and <em>conviction</em>, which can be selected using <em>metricType</em>. More information is available by clicking <em>More</em> in the Generic Object Editor window.</p><a id="p1175"></a><div class="none">
+<p class="hang" id="u0370"><a id="p1180"></a><strong>Exercise 17.6.3.</strong> Run <em>Apriori</em> on the weather data with each of the four rule-ranking metrics, and default settings otherwise. What is the top-ranked rule that is output for each metric?</p>
+</div>
+</div>
+<div id="s0185">
+<h3 id="st0185">Mining a Real-World Dataset</h3>
+<p id="p1185" class="noindent">Now consider a real-world dataset, <em>vote.arff</em>, which gives the votes of 435 U.S. congressmen on 16 key issues gathered in the mid-1980s, and also includes their party affiliation as a binary attribute. This is a purely nominal dataset with some missing values (corresponding to abstentions). It is normally treated as a classification problem, the task being to predict party affiliation based on voting patterns. However, association-rule mining can also be applied to this data to seek interesting associations. More information on the data appears in the comments in the ARFF file.</p><a id="p1190"></a><div class="none">
+<p class="hang" id="u0375"><a id="p1195"></a><strong>Exercise 17.6.4.</strong> Run <em>Apriori</em> on this data with default settings. Comment on the rules that are generated. Several of them are quite similar. How are their support and confidence values related?</p>
+<p class="hang" id="u0380"><a id="p1200"></a><strong>Exercise 17.6.5.</strong> It is interesting to see that none of the rules in the default output involve <em>Class = republican</em>. Why do you think that is?</p>
+</div>
+</div>
+<div id="s0190">
+<h3 id="st0190">Market Basket Analysis</h3>
+<p id="p1205" class="noindent">In <a href="/site/library/view/data-mining-practical/9780123748560/html/c0001.html#s0065">Section 1.3</a> (<a href="/site/library/view/data-mining-practical/9780123748560/html/c0001.html#p26">page 26</a>) we introduced market basket analysis—analyzing customer purchasing habits by seeking associations in the items they buy when visiting a store. To do market basket analysis in Weka, each transaction is coded as an instance of which the attributes represent the items in the store. Each attribute has only one value: If a particular transaction does not contain it (i.e., the customer did not buy that item), this is coded as a missing value.</p>
+<p id="p1210" class="para_indented">Your job is to mine supermarket checkout data for associations. The data in <em>supermarket.arff</em> was collected from an actual New Zealand supermarket. Take a look at this file using a text editor to verify that you understand the structure. The <a id="p585"></a>main point of this exercise is to show you how difficult it is to find any interesting patterns in this type of data!</p>
+<p id="p1215" class="para_indented"><a id="p586"></a></p>
+<div class="none">
+<p class="hang" id="u0385"><a id="p1220"></a><strong>Exercise 17.6.6.</strong> Experiment with <em>Apriori</em> and investigate the effect of the various parameters described before. Write a brief report on the main findings of your investigation.</p>
+</div>
+</div>
+</div>
+<div class="footnote">
+<p class="footnote" id="fn0010"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#cc000171fn0010" class="totri-footnote"><span class="sup">1</span></a> This filter performs sampling with replacement, rather than sampling without replacement, but the effect is minor and we will ignore it here.</p>
+<p class="footnote" id="fn0015"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#cc000171fn0015" class="totri-footnote"><span class="sup">2</span></a> Note that most evaluators, including <em>InfoGainAttributeEval</em> and <em>CfsSubsetEval</em>, discretize numeric attributes using Weka’s supervised discretization method before evaluating them.</p>
+</div>
+</div>
+<div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-0" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/c0016.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Chapter 16. Writing New Learning Schemes</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="/site/library/view/data-mining-practical/9780123748560/html/bib00023.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">Data Mining</div>
+        </a>
+    
+  
+  </div>
+
+
+        
+    </section>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel t-subscribe-nag collapsed slideUp">
+        
+        
+          
+          
+            <p class="usage-data">Find answers on the fly, or master something new. Subscribe today. <a href="https://www.safaribooksonline.com/subscribe/" class="ga-active-trial-subscribe-nag">See pricing options.</a></p>
+          
+
+          
+        
+        
+
+      </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 68.0057px;">
+    <a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li>
+      <a class="t-queue-footer" href="https://www.safaribooksonline.com/playlists/">Playlists</a>
+      </li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/">Settings</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2018 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+
+
+
+    
+
+    
+
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8710861091032658"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.3014037795803548" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5794699&amp;Ver=2&amp;mid=8ef35f68-38c6-ed42-6a73-c7e688e1aa59&amp;pi=-371479882&amp;lg=en-US&amp;sw=1280&amp;sh=800&amp;sc=24&amp;tl=Chapter%2017.%20Tutorial%20Exercises%20for%20the%20Weka%20Explorer%20-%20Data%20Mining%3A%20Practical%20Machine%20Learning%20Tools%20and%20Techniques,%203rd%20Edition&amp;p=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fdata-mining-practical%2F9780123748560%2Fhtml%2Fc0017.html&amp;r=&amp;evt=pageLoad&amp;msclkid=N&amp;rn=916915"></div>
+    
+  
+
+<div class="annotator-notice"></div><div class="font-flyout"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="/site/library/view/data-mining-practical/9780123748560/html/c0017.html#">Reset</a>
+</div>
+</div>
+
+
+<iframe src="cid:frame-9899130567FD2E8B45E933434EA8FFEE@mhtml.blink" style="display: none;"></iframe><span><div id="KampyleAnimationContainer" style="z-index: 2147483000; border: 0px; position: fixed; display: block; width: 0px; height: 0px;"></div></span></body></html>
