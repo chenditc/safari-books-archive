@@ -13,11 +13,15 @@ import glob
 def save_part(part):
     content_path = part.get("content-location")
     if content_path is None:
+        print(part)
         logging.error("Can't find content path ini {}".format(file_name))
         return
 
     # Remove domain name
+    if ".com" not in content_path:
+        return
     path = re.sub(r'http(s*)://[a-zA-z0-9.]*[\/]+', '', content_path)
+    path = re.sub(r'xhtml', 'html', path)
     if os.path.dirname(path):
         os.makedirs(os.path.dirname(path), exist_ok=True)
 
@@ -26,6 +30,7 @@ def save_part(part):
     try:
         temp_content = content.decode("utf-8")
         content = re.sub(r'href="https\:\/\/www.safaribooksonline.com\/library\/view', 'href="/safari-books-archive/site/library/view', temp_content)
+        content = re.sub(r'href="https\:\/\/learning.oreilly.com\/library\/view', 'href="/safari-books-archive/site/library/view', temp_content)
         content = re.sub(r'class="topbar t-topbar"', 'class="topbar t-topbar" style="display:None"', content)
         content = content.encode("utf-8")
     except:
